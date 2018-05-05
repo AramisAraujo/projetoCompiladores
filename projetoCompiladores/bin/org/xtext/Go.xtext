@@ -1,0 +1,9 @@
+grammar org.xtext.Go with org.eclipse.xtext.common.Terminals
+
+generate go "http://www.xtext.org/Go"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
