@@ -964,3 +964,82 @@ terminal SEMICOLON:
 terminal TOKEN:
 	(IDENTIFIER | KEYWORDS | OPERATORS | LITERALS)
 ;
+
+terminal TYPE:
+	TYPENAME | TYPELIT | "(" Type ")"
+;
+terminal TYPENAME:
+	IDENTIFIER | QUALIFIELD_IDENT
+;
+
+terminal QUALIFIELD_IDENT:
+	PACKAGE_NAME "." IDENTIFIER
+;
+
+terminal PACKAGE_NAME:
+	IDENTIFIER
+;
+
+terminal PACKAGE_CLAUSE:
+	"package" IDENTIFIER
+;
+
+terminal TYPELIT:
+	ARRAY_TYPE | STRUCT_TYPE | POINTER_TYPE | FUNCTION_TYPE | INTERFACE_TYPE | SLICE_TYPE | MAP_TYPE | CHANNEL_TYPE
+;
+
+terminal ARRAY_TYPE:
+	"[" ARRAY_LENTGH "]" ELEMENT_TYPE
+;
+
+terminal ARRAY_LENTGH:
+	
+;
+
+terminal ELEMENT_TYPE:
+	TYPE
+;
+
+terminal STRUCT_TYPE:
+	
+;
+
+terminal POINTER_TYPE:
+	
+;
+
+terminal FUNCTION_TYPE;
+
+;
+
+terminal INTERFACE_TYPE:
+	
+;
+
+terminal SLICE_TYPE:
+	
+;
+
+terminal MAP_TYPE:
+	
+;
+
+terminal CHANNEL_TYPE:
+	"struct" "{" FIELD_DECL SEMICOLON "}"
+;
+
+terminal FIELD_DECL:
+	(IDENTIFIER_LIST TYPE | EMBEDDED_FIELD) TAG
+;
+
+terminal IDENTIFIER_LIST:
+	IDENTIFIER ("," IDENTIFIER)*
+;
+
+terminal EMBEDDED_FIELD:
+	"*"TYPENAME
+;
+
+terminal TAG:
+	STRING_LIT
+;
