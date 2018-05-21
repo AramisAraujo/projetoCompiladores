@@ -2,6 +2,7 @@ grammar org.xtext.Go with org.eclipse.xtext.common.Terminals
 
 generate go "http://www.xtext.org/Go"
 
+
 Model:
 	greetings+=Greeting*;
 	
@@ -806,15 +807,13 @@ terminal fragment UNICODE_DIGIT:
 
 terminal fragment LETTER: UNICODE_LETTER | '_';
 
-terminal fragment DECIMAL_DIGIT: '0' .. '9';
+terminal DECIMAL_DIGIT: '0' .. '9';
 
-terminal fragment OCTAL_DIGIT: '0' .. '7';
+terminal OCTAL_DIGIT: '0' .. '7';
 
-terminal fragment HEX_DIGIT: '0' .. '9' | 'A' .. 'F'| 'a' .. 'f';
+terminal HEX_DIGIT: '0' .. '9' | 'A' .. 'F'| 'a' .. 'f';
 
-terminal IDENTIFIER : LETTER(LETTER | UNICODE_DIGIT)+;
-
-terminal fragment KEYWORDS:
+terminal KEYWORDS:
 'break'|
 'default'|
 'func'|
@@ -841,7 +840,10 @@ terminal fragment KEYWORDS:
 'return'|
 'var';
 
-terminal fragment OPERATORS:
+terminal IDENTIFIER : LETTER (LETTER | UNICODE_DIGIT)*;
+
+
+terminal OPERATORS:
 '+'|
 '&'|
 '+='|
@@ -888,30 +890,44 @@ terminal fragment OPERATORS:
 '.'|
 ':'|
 '&^'|
-'&^=';
+'&^='|
+ASSIGN_OP;
+
+terminal fragment ASSIGN_OP:
+	(ADD_OP | MUL_OP)? "=" 
+;
+
+terminal fragment ADD_OP:
+	("+" | "-" | "|" | "^")
+;
+	
+terminal fragment MUL_OP:
+	("*" | "/" | "%" | "<<" | ">>" | "&" | "&^")
+;
 
 terminal INT_LIT:
-	DECIMAL_LIT | OCTAL_LIT | HEX_LIT;
+	DECIMAL_LIT | OCTAL_LIT | HEX_LIT
+;
 	
 terminal DECIMAL_LIT:
-	'1'..'9'(DECIMAL_DIGIT)+;
+	'1'..'9'(DECIMAL_DIGIT)*;
 
 terminal OCTAL_LIT:
-	'0'(OCTAL_DIGIT)+;
+	'0'(OCTAL_DIGIT)*;
 	
 terminal HEX_LIT:
-	'0'('x'|'X')HEX_DIGIT(HEX_DIGIT)+;
+	'0'('x'|'X')HEX_DIGIT(HEX_DIGIT)*;
 
 terminal FLOAT_LIT:
-	DECIMALS '.' DECIMALS EXPONENT |
+	DECIMALS '.' (DECIMALS)? (EXPONENT)? |
 	DECIMALS EXPONENT|
-	'.'DECIMALS EXPONENT;
+	'.'DECIMALS (EXPONENT)?;
 
 terminal DECIMALS:
-	(DECIMAL_DIGIT)+;
+	DECIMAL_DIGIT (DECIMAL_DIGIT)*;
 
 terminal EXPONENT:
-	('e'|'E')('+'|'-')DECIMALS;
+	('e'|'E') ('+'|'-')? DECIMALS;
 
 terminal IMAGINARY_LIT:
 	(DECIMALS|FLOAT_LIT)'i';
@@ -943,21 +959,22 @@ terminal ESCAPED_CHAR:
 terminal STRING_LIT:
 	RAW_STRING_LIT | INTERPRETED_STRING_LIT;
 
-terminal RAW_STRING_LIT:
-	'`'(UNICODE_CHAR|NEWLINE)'`';
+terminal fragment RAW_STRING_LIT:
+	'`' (UNICODE_CHAR|NEWLINE)* '`';
 	
-terminal INTERPRETED_STRING_LIT:
-	'"'(UNICODE_VALUE|BYTE_VALUE)'"';
+terminal fragment INTERPRETED_STRING_LIT:
+	'"' (UNICODE_VALUE|BYTE_VALUE)* '"';
 	
 terminal LITERALS:
 	(INT_LIT | FLOAT_LIT | IMAGINARY_LIT | RUNE_LIT | STRING_LIT)
 ;
 	
 terminal COMMENT:
-	'//' UNICODE_VALUE* NEWLINE| '/*' UNICODE_VALUE* '*/'
+	'//' -> NEWLINE| '/*' -> ('*/')+
 ;
 
-terminal SEMICOLON:
+
+terminal fragment SEMICOLON:
 	';'
 ;
 
@@ -966,34 +983,24 @@ terminal TOKEN:
 ;
 
 terminal TYPE:
-	TYPENAME | TYPELIT | "(" Type ")"
-;
-terminal TYPENAME:
-	IDENTIFIER | QUALIFIELD_IDENT
+	TYPE_NAME | TYPE_LIT | "(" TYPE ")"
 ;
 
-terminal QUALIFIELD_IDENT:
-	PACKAGE_NAME "." IDENTIFIER
+terminal fragment TYPE_NAME:
+	IDENTIFIER | QUALIFIED_IDENT
 ;
 
-terminal PACKAGE_NAME:
-	IDENTIFIER
-;
+terminal fragment TYPE_LIT:
+	ARRAY_TYPE | STRUCT_TYPE | POINTER_TYPE | FUNCTION_TYPE | 
+	INTERFACE_TYPE | SLICE_TYPE | MAP_TYPE | PARAMETER_LIST;
 
-terminal PACKAGE_CLAUSE:
-	"package" IDENTIFIER
-;
-
-terminal TYPELIT:
-	ARRAY_TYPE | STRUCT_TYPE | POINTER_TYPE | FUNCTION_TYPE | INTERFACE_TYPE | SLICE_TYPE | MAP_TYPE | CHANNEL_TYPE
-;
 
 terminal ARRAY_TYPE:
 	"[" ARRAY_LENTGH "]" ELEMENT_TYPE
 ;
 
 terminal ARRAY_LENTGH:
-	
+	PARAMETER_LIST
 ;
 
 terminal ELEMENT_TYPE:
@@ -1001,45 +1008,233 @@ terminal ELEMENT_TYPE:
 ;
 
 terminal STRUCT_TYPE:
-	
+	"struct" "{" (FIELD_DECL ";")* "}"
 ;
+
+terminal fragment FIELD_DECL:
+	(IDENTIFIER_LIST TYPE | EMBEDDED_FIELD) (TAG)?
+;
+
+terminal fragment EMBEDDED_FIELD:
+	("*")+ TYPE_NAME;
+	
+terminal fragment TAG:
+	STRING_LIT;
 
 terminal POINTER_TYPE:
-	
+	"*" BASE_TYPE
 ;
 
-terminal FUNCTION_TYPE;
+terminal fragment BASE_TYPE:
+	TYPE;
 
+terminal FUNCTION_TYPE:
+	"func" SIGNATURE
+;
+
+
+terminal fragment SIGNATURE:
+	PARAMETERS (RESULT)+
+;
+
+terminal fragment RESULT:
+	PARAMETERS | TYPE
+;
+
+terminal fragment PARAMETERS:
+	"(" (PARAMETER_LIST (",")+)+ ")"
+;
+
+terminal fragment PARAMETER_LIST:
+	PARAMETER_DECL ("," PARAMETER_DECL)*
+;
+
+terminal fragment PARAMETER_DECL:
+	(IDENTIFIER_LIST)? ("...")? TYPE
 ;
 
 terminal INTERFACE_TYPE:
-	
+	"interface" "{" (METHOD_SPEC ";")* "}"
+;
+
+terminal fragment METHOD_SPEC:
+	METHOD_NAME SIGNATURE | INTERFACE_TYPE_NAME
+;
+
+terminal fragment METHOD_NAME:
+	IDENTIFIER
+;
+
+terminal fragment INTERFACE_TYPE_NAME:
+	TYPE_NAME
 ;
 
 terminal SLICE_TYPE:
-	
+	"[" "]" ELEMENT_TYPE
 ;
 
 terminal MAP_TYPE:
-	
+	"map" "[" KEY_TYPE "]" ELEMENT_TYPE
+;
+
+terminal fragment KEY_TYPE:
+	TYPE
 ;
 
 terminal CHANNEL_TYPE:
-	"struct" "{" FIELD_DECL SEMICOLON "}"
+	("chan" | "chan" "<-" | "<-" "chan") ELEMENT_TYPE
 ;
 
-terminal FIELD_DECL:
-	(IDENTIFIER_LIST TYPE | EMBEDDED_FIELD) TAG
+terminal BLOCK:
+	"{" STATEMENT_LIST "}"
+;
+
+terminal fragment STATEMENT_LIST:
+	(STATEMENT ";")*
+;
+
+terminal DECLARATION:
+	CONST_DECL | TYPE_DECL | VAR_DECL
+;
+
+terminal TOP_LEVEL_DECL:
+	DECLARATION | FUNCTION_DECL | METHOD_DECL
+;
+
+terminal CONST_DECL:
+	"const" (CONST_SPEC | "(" (CONST_SPEC ";")* ")")
+;
+
+terminal fragment CONST_SPEC:
+	IDENTIFIER_LIST ((TYPE)? "=" EXPRESSION_LIST)?	
 ;
 
 terminal IDENTIFIER_LIST:
 	IDENTIFIER ("," IDENTIFIER)*
 ;
 
-terminal EMBEDDED_FIELD:
-	"*"TYPENAME
+
+terminal EXPRESSION_LIST:
+	EXPRESSION ("," EXPRESSION)*
 ;
 
-terminal TAG:
-	STRING_LIT
+terminal TYPE_DECL:
+	"type" ( TYPE_SPEC | "(" (TYPE_SPEC ";")* ")")
 ;
+
+terminal TYPE_SPEC:
+	ALIAS_DECL | TYPE_DEF
+;
+
+terminal ALIAS_DECL:
+	IDENTIFIER "=" TYPE
+;
+
+terminal TYPE_DEF:
+	IDENTIFIER TYPE
+;
+
+
+terminal VAR_DECL:
+	"var" (VAR_SPEC | "(" (VAR_SPEC ";")* ")")
+;
+
+terminal VAR_SPEC:
+	IDENTIFIER_LIST (TYPE ("=" EXPRESSION_LIST)? | "=" EXPRESSION_LIST)
+;
+
+terminal SHORT_VAR_DECL:
+	IDENTIFIER_LIST ":=" EXPRESSION_LIST
+;
+
+terminal FUNCTION_DECL:
+	"func" FUNCTION_NAME SIGNATURE (FUNCTION_BODY)?
+;
+
+terminal fragment FUNCTION_NAME:
+	IDENTIFIER
+;
+
+terminal fragment FUNCTION_BODY:
+	BLOCK
+;
+
+terminal METHOD_DECL:
+	"func" RECIEVER METHOD_NAME SIGNATURE (FUNCTION_BODY)?
+;
+
+terminal fragment RECIEVER:
+	PARAMETERS
+;
+
+terminal OPERAND:
+	LITERAL | OPERAND_NAME | "(" EXPRESSION ")"
+;
+
+
+terminal fragment LITERAL:
+	BASIC_LIT | COMPOSITE_LIT | FUNCTION_LIT
+;
+
+terminal fragment BASIC_LIT:
+	INT_LIT | FLOAT_LIT | IMAGINARY_LIT | RUNE_LIT | STRING_LIT
+;
+
+terminal fragment OPERAND_NAME:
+	IDENTIFIER | QUALIFIED_IDENT
+;
+
+terminal QUALIFIED_IDENT:
+	PACKAGE_NAME "." IDENTIFIER
+;
+
+terminal COMPOSITE_LIT:
+	LITERAL_TYPE LITERAL_VALUE
+;
+
+terminal LITERAL_TYPE:
+	STRUCT_TYPE | ARRAY_TYPE | "[" "..." "]" ELEMENT_TYPE |
+	SLICE_TYPE | MAP_TYPE | TYPE_NAME
+;
+
+terminal LITERAL_VALUE:
+	"{" (ELEMENT_LIST (",")?)? "}"
+;
+
+terminal ELEMENT_LIST:
+	KEYED_ELEMENT ("," KEYED_ELEMENT)*
+;
+
+terminal fragment KEYED_ELEMENT:
+	(KEY ":")? ELEMENT
+;
+
+terminal fragment KEY:
+	FIELD_NAME | EXPRESSION | LITERAL_VALUE
+;
+
+terminal fragment FIELD_NAME:
+	IDENTIFIER
+;
+
+terminal fragment ELEMENT:
+	EXPRESSION | LITERAL_VALUE
+;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
