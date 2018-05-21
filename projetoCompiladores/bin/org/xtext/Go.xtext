@@ -1222,14 +1222,49 @@ terminal fragment ELEMENT:
 ;
 
 
+terminal fragment FUNCTION_LIT:
+	"func" SIGNATURE FUNCTION_BODY
+;
 
+terminal PRIMARY_EXPR:
+	OPERAND|
+	CONVERSION|
+	METHOD_EXPR|
+	PRIMARY_EXPR SELECTOR|
+	PRIMARY_EXPR INDEX|
+	PRIMARY_EXPR SLICE|
+	PRIMARY_EXPR TYPE_ASSERTION|
+	PRIMARY_EXPR ARGUMENTS
+;
 
+terminal fragment SELECTOR:
+	"." IDENTIFIER
+;
 
+terminal fragment INDEX:
+	"[" EXPRESSION "]"
+;
 
+terminal fragment SLICE:
+	"[" (EXPRESSION)? ":" (EXPRESSION)? "]"|
+	"[" (EXPRESSION)? ":" EXPRESSION ":" EXPRESSION "]"
+;
 
+terminal fragment TYPE_ASSERTION:
+	"." "(" TYPE ")"
+;
 
+terminal ARGUMENTS:
+	"(" ( EXPRESSION_LIST | TYPE ("," EXPRESSION_LIST)? ("...")? (",")? )? ")"
+;
 
+terminal METHOD_EXPR:
+	RECIEVER_TYPE "." METHOD_NAME
+;
 
+terminal fragment RECIEVER_TYPE:
+	TYPE
+;
 
 
 
