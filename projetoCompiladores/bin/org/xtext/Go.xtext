@@ -893,18 +893,6 @@ terminal OPERATORS:
 '&^='|
 ASSIGN_OP;
 
-terminal fragment ASSIGN_OP:
-	(ADD_OP | MUL_OP)? "=" 
-;
-
-terminal fragment ADD_OP:
-	("+" | "-" | "|" | "^")
-;
-	
-terminal fragment MUL_OP:
-	("*" | "/" | "%" | "<<" | ">>" | "&" | "&^")
-;
-
 terminal INT_LIT:
 	DECIMAL_LIT | OCTAL_LIT | HEX_LIT
 ;
@@ -1266,10 +1254,223 @@ terminal fragment RECIEVER_TYPE:
 	TYPE
 ;
 
+terminal EXPRESSION:
+	UNARY_EXPR | EXPRESSION BINARY_OP EXPRESSION
+;
+
+terminal fragment UNARY_EXPR:
+	PRIMARY_EXPR | UNARY_OP UNARY_EXPR
+;
+
+terminal fragment BINARY_OP:
+	"||" | "&&" | REL_OP | ADD_OP | MUL_OP
+;
+
+terminal fragment REL_OP:
+	"==" | "!=" | "<" | "<=" | ">" | ">="
+;
+
+terminal fragment ADD_OP:
+	("+" | "-" | "|" | "^")
+;
+	
+terminal fragment MUL_OP:
+	("*" | "/" | "%" | "<<" | ">>" | "&" | "&^")
+;
+
+terminal fragment UNARY_OP:
+	"+" | "-" | "!" | "^" | "*" | "&" | "<-"
+	
+;
+
+terminal fragment CONVERSION:
+	TYPE "(" EXPRESSION (",")? ")"
+;
+
+terminal STATEMENT:
+	DECLARATION | LABELED_STMT | SIMPLE_STMT |
+	GO_STMT | RETURN_STMT | BREAK_STMT | CONTINUE_STMT | GOTO_STMT|
+	FALLTHROUGH_STMT | BLOCK | IF_STMT | SWITCH_STMT | SELECT_STMT | FOR_STMT|
+	DEFER_STMT  
+;
+
+terminal fragment SIMPLE_STMT:
+	EMPTY_STMT | EXPRESSION_STMT | SEND_STMT | INC_DEC_STMT | ASSIGNMENT | SHORT_VAR_DECL
+;
+
+terminal fragment EMPTY_STMT:
+	('\u0020')* //should be empty, how to represent that? // 0 or more whitespaces?
+;
+
+terminal fragment LABELED_STMT:
+	LABEL ":" STATEMENT
+;
+
+terminal fragment LABEL:
+	IDENTIFIER
+;
+
+terminal fragment EXPRESSION_STMT:
+	EXPRESSION
+;
+
+terminal fragment SEND_STMT:
+	CHANNEL "<-" EXPRESSION
+;
+
+terminal fragment CHANNEL:
+	EXPRESSION
+;
+
+terminal INC_DEC_STMT:
+	EXPRESSION ("++" | "--")
+;
+
+terminal fragment ASSIGNMENT:
+	EXPRESSION_LIST ASSIGN_OP EXPRESSION_LIST
+;
+
+terminal fragment ASSIGN_OP:
+	(ADD_OP | MUL_OP)? "="
+;
 
 
+terminal IF_STMT:
+	"if" (SIMPLE_STMT ";")? EXPRESSION BLOCK ("else" (IF_STMT | BLOCK))?
+;
+
+terminal SWITCH_STMT:
+	EXPR_SWITCH_STMT | TYPE_SWITCH_STMT
+;
+
+terminal fragment EXPR_SWITCH_STMT:
+	"switch" (SIMPLE_STMT ";")? (EXPRESSION)? "{" (EXPR_CASE_CLAUSE)* "}"
+;
+
+terminal fragment EXPR_CASE_CLAUSE:
+	EXPR_SWITCH_CASE ":" STATEMENT_LIST
+;
+
+terminal fragment EXPR_SWITCH_CASE:
+	"case" EXPRESSION_LIST | "default"
+;
+
+terminal fragment TYPE_SWITCH_STMT:
+	"switch" (SIMPLE_STMT ";")? TYPE_SWITCH_GUARD "{" (TYPE_CASE_CLAUSE)* "}"
+;
+
+terminal fragment TYPE_SWITCH_GUARD:
+	(IDENTIFIER ":=")? PRIMARY_EXPR "." "(" "type" ")"
+;
+
+terminal fragment TYPE_CASE_CLAUSE:
+	TYPE_SWITCH_CASE ":" STATEMENT_LIST
+;
+
+terminal fragment TYPE_SWITCH_CASE:
+	"case" TYPE_LIST | "default"
+;
+
+terminal fragment TYPE_LIST:
+	TYPE ("," TYPE)*
+;
+
+terminal FOR_STMT:
+	"for" (CONDITION | FOR_CLAUSE | RANGE_CLAUSE)? BLOCK
+;
+
+terminal fragment CONDITION:
+	EXPRESSION
+;
+
+terminal fragment FOR_CLAUSE:
+	(INIT_STMT)? ";" (CONDITION)? ";" (POST_STMT)?
+;
+
+terminal fragment INIT_STMT:
+	SIMPLE_STMT
+;
+
+terminal fragment POST_STMT:
+	SIMPLE_STMT
+;
+
+terminal fragment RANGE_CLAUSE:
+	(EXPRESSION_LIST "="| IDENTIFIER_LIST ":=")? "range" EXPRESSION
+;
+
+terminal  GO_STMT:
+	"go" EXPRESSION
+;
+
+terminal SELECT_STMT:
+	"select" "{" (COMM_CLAUSE)* "}"
+;
+
+terminal fragment COMM_CLAUSE:
+	COMM_CASE ":" STATEMENT_LIST
+;
+
+terminal fragment COMM_CASE:
+	"case" (SEND_STMT | RECV_STMT) | "default"
+;
+
+terminal fragment RECV_STMT:
+	(EXPRESSION_LIST "=" | IDENTIFIER_LIST ":=")? RECV_EXPR
+;
+
+terminal fragment RECV_EXPR:
+	EXPRESSION
+;
+
+terminal RETURN_STMT:
+	"return" (EXPRESSION_LIST)?
+;
+
+terminal BREAK_STMT:
+	"break" (LABEL)?
+;
+
+terminal CONTINUE_STMT:
+	"continue" (LABEL)?
+;
+
+terminal GOTO_STMT:
+	"goto" LABEL
+;
+
+terminal FALLTHROUGH_STMT:
+	"fallthrough"
+;
 
 
+terminal DEFER_STMT:
+	"defer" EXPRESSION
+;
 
+
+terminal SOURCE_FILE:
+	PACKAGE_CLAUSE ";" (IMPORT_DECL ";")* (TOP_LEVEL_DECL ";")*
+;
+
+terminal fragment PACKAGE_CLAUSE:
+	"package" PACKAGE_NAME
+;
+
+terminal fragment PACKAGE_NAME:
+	IDENTIFIER
+;
+
+terminal IMPORT_DECL:
+	"import" (IMPORT_SPEC | "(" (IMPORT_SPEC ";")* ")")
+;
+
+terminal fragment IMPORT_SPEC:
+	("." | PACKAGE_NAME)? IMPORT_PATH
+;
+
+terminal fragment IMPORT_PATH:
+	STRING_LIT
+;
 
 

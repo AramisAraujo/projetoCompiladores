@@ -63,22 +63,165 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//'!'
 		public Keyword getExclamationMarkKeyword_2() { return cExclamationMarkKeyword_2; }
 	}
-	public class NewlineElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.newline");
-		private final Keyword cU000AKeyword = (Keyword)rule.eContents().get(1);
-		
-		//newline:
-		//	'U+000A';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'U+000A'
-		public Keyword getU000AKeyword() { return cU000AKeyword; }
-	}
 	
 	
 	private final ModelElements pModel;
 	private final GreetingElements pGreeting;
-	private final NewlineElements pNewline;
+	private final TerminalRule tNEWLINE;
+	private final TerminalRule tUNICODE_CHAR;
+	private final TerminalRule tUNICODE_LETTER;
+	private final TerminalRule tUNICODE_DIGIT;
+	private final TerminalRule tLETTER;
+	private final TerminalRule tDECIMAL_DIGIT;
+	private final TerminalRule tOCTAL_DIGIT;
+	private final TerminalRule tHEX_DIGIT;
+	private final TerminalRule tKEYWORDS;
+	private final TerminalRule tIDENTIFIER;
+	private final TerminalRule tOPERATORS;
+	private final TerminalRule tINT_LIT;
+	private final TerminalRule tDECIMAL_LIT;
+	private final TerminalRule tOCTAL_LIT;
+	private final TerminalRule tHEX_LIT;
+	private final TerminalRule tFLOAT_LIT;
+	private final TerminalRule tDECIMALS;
+	private final TerminalRule tEXPONENT;
+	private final TerminalRule tIMAGINARY_LIT;
+	private final TerminalRule tRUNE_LIT;
+	private final TerminalRule tUNICODE_VALUE;
+	private final TerminalRule tBYTE_VALUE;
+	private final TerminalRule tOCTAL_BYTE_VALUE;
+	private final TerminalRule tHEX_BYTE_VALUE;
+	private final TerminalRule tLITTLE_U_VALUE;
+	private final TerminalRule tBIG_U_VALUE;
+	private final TerminalRule tESCAPED_CHAR;
+	private final TerminalRule tSTRING_LIT;
+	private final TerminalRule tRAW_STRING_LIT;
+	private final TerminalRule tINTERPRETED_STRING_LIT;
+	private final TerminalRule tLITERALS;
+	private final TerminalRule tCOMMENT;
+	private final TerminalRule tSEMICOLON;
+	private final TerminalRule tTOKEN;
+	private final TerminalRule tTYPE;
+	private final TerminalRule tTYPE_NAME;
+	private final TerminalRule tTYPE_LIT;
+	private final TerminalRule tARRAY_TYPE;
+	private final TerminalRule tARRAY_LENTGH;
+	private final TerminalRule tELEMENT_TYPE;
+	private final TerminalRule tSTRUCT_TYPE;
+	private final TerminalRule tFIELD_DECL;
+	private final TerminalRule tEMBEDDED_FIELD;
+	private final TerminalRule tTAG;
+	private final TerminalRule tPOINTER_TYPE;
+	private final TerminalRule tBASE_TYPE;
+	private final TerminalRule tFUNCTION_TYPE;
+	private final TerminalRule tSIGNATURE;
+	private final TerminalRule tRESULT;
+	private final TerminalRule tPARAMETERS;
+	private final TerminalRule tPARAMETER_LIST;
+	private final TerminalRule tPARAMETER_DECL;
+	private final TerminalRule tINTERFACE_TYPE;
+	private final TerminalRule tMETHOD_SPEC;
+	private final TerminalRule tMETHOD_NAME;
+	private final TerminalRule tINTERFACE_TYPE_NAME;
+	private final TerminalRule tSLICE_TYPE;
+	private final TerminalRule tMAP_TYPE;
+	private final TerminalRule tKEY_TYPE;
+	private final TerminalRule tCHANNEL_TYPE;
+	private final TerminalRule tBLOCK;
+	private final TerminalRule tSTATEMENT_LIST;
+	private final TerminalRule tDECLARATION;
+	private final TerminalRule tTOP_LEVEL_DECL;
+	private final TerminalRule tCONST_DECL;
+	private final TerminalRule tCONST_SPEC;
+	private final TerminalRule tIDENTIFIER_LIST;
+	private final TerminalRule tEXPRESSION_LIST;
+	private final TerminalRule tTYPE_DECL;
+	private final TerminalRule tTYPE_SPEC;
+	private final TerminalRule tALIAS_DECL;
+	private final TerminalRule tTYPE_DEF;
+	private final TerminalRule tVAR_DECL;
+	private final TerminalRule tVAR_SPEC;
+	private final TerminalRule tSHORT_VAR_DECL;
+	private final TerminalRule tFUNCTION_DECL;
+	private final TerminalRule tFUNCTION_NAME;
+	private final TerminalRule tFUNCTION_BODY;
+	private final TerminalRule tMETHOD_DECL;
+	private final TerminalRule tRECIEVER;
+	private final TerminalRule tOPERAND;
+	private final TerminalRule tLITERAL;
+	private final TerminalRule tBASIC_LIT;
+	private final TerminalRule tOPERAND_NAME;
+	private final TerminalRule tQUALIFIED_IDENT;
+	private final TerminalRule tCOMPOSITE_LIT;
+	private final TerminalRule tLITERAL_TYPE;
+	private final TerminalRule tLITERAL_VALUE;
+	private final TerminalRule tELEMENT_LIST;
+	private final TerminalRule tKEYED_ELEMENT;
+	private final TerminalRule tKEY;
+	private final TerminalRule tFIELD_NAME;
+	private final TerminalRule tELEMENT;
+	private final TerminalRule tFUNCTION_LIT;
+	private final TerminalRule tPRIMARY_EXPR;
+	private final TerminalRule tSELECTOR;
+	private final TerminalRule tINDEX;
+	private final TerminalRule tSLICE;
+	private final TerminalRule tTYPE_ASSERTION;
+	private final TerminalRule tARGUMENTS;
+	private final TerminalRule tMETHOD_EXPR;
+	private final TerminalRule tRECIEVER_TYPE;
+	private final TerminalRule tEXPRESSION;
+	private final TerminalRule tUNARY_EXPR;
+	private final TerminalRule tBINARY_OP;
+	private final TerminalRule tREL_OP;
+	private final TerminalRule tADD_OP;
+	private final TerminalRule tMUL_OP;
+	private final TerminalRule tUNARY_OP;
+	private final TerminalRule tCONVERSION;
+	private final TerminalRule tSTATEMENT;
+	private final TerminalRule tSIMPLE_STMT;
+	private final TerminalRule tEMPTY_STMT;
+	private final TerminalRule tLABELED_STMT;
+	private final TerminalRule tLABEL;
+	private final TerminalRule tEXPRESSION_STMT;
+	private final TerminalRule tSEND_STMT;
+	private final TerminalRule tCHANNEL;
+	private final TerminalRule tINC_DEC_STMT;
+	private final TerminalRule tASSIGNMENT;
+	private final TerminalRule tASSIGN_OP;
+	private final TerminalRule tIF_STMT;
+	private final TerminalRule tSWITCH_STMT;
+	private final TerminalRule tEXPR_SWITCH_STMT;
+	private final TerminalRule tEXPR_CASE_CLAUSE;
+	private final TerminalRule tEXPR_SWITCH_CASE;
+	private final TerminalRule tTYPE_SWITCH_STMT;
+	private final TerminalRule tTYPE_SWITCH_GUARD;
+	private final TerminalRule tTYPE_CASE_CLAUSE;
+	private final TerminalRule tTYPE_SWITCH_CASE;
+	private final TerminalRule tTYPE_LIST;
+	private final TerminalRule tFOR_STMT;
+	private final TerminalRule tCONDITION;
+	private final TerminalRule tFOR_CLAUSE;
+	private final TerminalRule tINIT_STMT;
+	private final TerminalRule tPOST_STMT;
+	private final TerminalRule tRANGE_CLAUSE;
+	private final TerminalRule tGO_STMT;
+	private final TerminalRule tSELECT_STMT;
+	private final TerminalRule tCOMM_CLAUSE;
+	private final TerminalRule tCOMM_CASE;
+	private final TerminalRule tRECV_STMT;
+	private final TerminalRule tRECV_EXPR;
+	private final TerminalRule tRETURN_STMT;
+	private final TerminalRule tBREAK_STMT;
+	private final TerminalRule tCONTINUE_STMT;
+	private final TerminalRule tGOTO_STMT;
+	private final TerminalRule tFALLTHROUGH_STMT;
+	private final TerminalRule tDEFER_STMT;
+	private final TerminalRule tSOURCE_FILE;
+	private final TerminalRule tPACKAGE_CLAUSE;
+	private final TerminalRule tPACKAGE_NAME;
+	private final TerminalRule tIMPORT_DECL;
+	private final TerminalRule tIMPORT_SPEC;
+	private final TerminalRule tIMPORT_PATH;
 	
 	private final Grammar grammar;
 	
@@ -91,7 +234,161 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
 		this.pGreeting = new GreetingElements();
-		this.pNewline = new NewlineElements();
+		this.tNEWLINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.NEWLINE");
+		this.tUNICODE_CHAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.UNICODE_CHAR");
+		this.tUNICODE_LETTER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.UNICODE_LETTER");
+		this.tUNICODE_DIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.UNICODE_DIGIT");
+		this.tLETTER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.LETTER");
+		this.tDECIMAL_DIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.DECIMAL_DIGIT");
+		this.tOCTAL_DIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.OCTAL_DIGIT");
+		this.tHEX_DIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.HEX_DIGIT");
+		this.tKEYWORDS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.KEYWORDS");
+		this.tIDENTIFIER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.IDENTIFIER");
+		this.tOPERATORS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.OPERATORS");
+		this.tINT_LIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.INT_LIT");
+		this.tDECIMAL_LIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.DECIMAL_LIT");
+		this.tOCTAL_LIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.OCTAL_LIT");
+		this.tHEX_LIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.HEX_LIT");
+		this.tFLOAT_LIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.FLOAT_LIT");
+		this.tDECIMALS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.DECIMALS");
+		this.tEXPONENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.EXPONENT");
+		this.tIMAGINARY_LIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.IMAGINARY_LIT");
+		this.tRUNE_LIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.RUNE_LIT");
+		this.tUNICODE_VALUE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.UNICODE_VALUE");
+		this.tBYTE_VALUE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.BYTE_VALUE");
+		this.tOCTAL_BYTE_VALUE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.OCTAL_BYTE_VALUE");
+		this.tHEX_BYTE_VALUE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.HEX_BYTE_VALUE");
+		this.tLITTLE_U_VALUE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.LITTLE_U_VALUE");
+		this.tBIG_U_VALUE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.BIG_U_VALUE");
+		this.tESCAPED_CHAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.ESCAPED_CHAR");
+		this.tSTRING_LIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.STRING_LIT");
+		this.tRAW_STRING_LIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.RAW_STRING_LIT");
+		this.tINTERPRETED_STRING_LIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.INTERPRETED_STRING_LIT");
+		this.tLITERALS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.LITERALS");
+		this.tCOMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.COMMENT");
+		this.tSEMICOLON = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.SEMICOLON");
+		this.tTOKEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.TOKEN");
+		this.tTYPE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.TYPE");
+		this.tTYPE_NAME = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.TYPE_NAME");
+		this.tTYPE_LIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.TYPE_LIT");
+		this.tARRAY_TYPE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.ARRAY_TYPE");
+		this.tARRAY_LENTGH = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.ARRAY_LENTGH");
+		this.tELEMENT_TYPE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.ELEMENT_TYPE");
+		this.tSTRUCT_TYPE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.STRUCT_TYPE");
+		this.tFIELD_DECL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.FIELD_DECL");
+		this.tEMBEDDED_FIELD = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.EMBEDDED_FIELD");
+		this.tTAG = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.TAG");
+		this.tPOINTER_TYPE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.POINTER_TYPE");
+		this.tBASE_TYPE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.BASE_TYPE");
+		this.tFUNCTION_TYPE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.FUNCTION_TYPE");
+		this.tSIGNATURE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.SIGNATURE");
+		this.tRESULT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.RESULT");
+		this.tPARAMETERS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.PARAMETERS");
+		this.tPARAMETER_LIST = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.PARAMETER_LIST");
+		this.tPARAMETER_DECL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.PARAMETER_DECL");
+		this.tINTERFACE_TYPE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.INTERFACE_TYPE");
+		this.tMETHOD_SPEC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.METHOD_SPEC");
+		this.tMETHOD_NAME = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.METHOD_NAME");
+		this.tINTERFACE_TYPE_NAME = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.INTERFACE_TYPE_NAME");
+		this.tSLICE_TYPE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.SLICE_TYPE");
+		this.tMAP_TYPE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.MAP_TYPE");
+		this.tKEY_TYPE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.KEY_TYPE");
+		this.tCHANNEL_TYPE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.CHANNEL_TYPE");
+		this.tBLOCK = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.BLOCK");
+		this.tSTATEMENT_LIST = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.STATEMENT_LIST");
+		this.tDECLARATION = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.DECLARATION");
+		this.tTOP_LEVEL_DECL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.TOP_LEVEL_DECL");
+		this.tCONST_DECL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.CONST_DECL");
+		this.tCONST_SPEC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.CONST_SPEC");
+		this.tIDENTIFIER_LIST = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.IDENTIFIER_LIST");
+		this.tEXPRESSION_LIST = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.EXPRESSION_LIST");
+		this.tTYPE_DECL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.TYPE_DECL");
+		this.tTYPE_SPEC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.TYPE_SPEC");
+		this.tALIAS_DECL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.ALIAS_DECL");
+		this.tTYPE_DEF = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.TYPE_DEF");
+		this.tVAR_DECL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.VAR_DECL");
+		this.tVAR_SPEC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.VAR_SPEC");
+		this.tSHORT_VAR_DECL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.SHORT_VAR_DECL");
+		this.tFUNCTION_DECL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.FUNCTION_DECL");
+		this.tFUNCTION_NAME = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.FUNCTION_NAME");
+		this.tFUNCTION_BODY = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.FUNCTION_BODY");
+		this.tMETHOD_DECL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.METHOD_DECL");
+		this.tRECIEVER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.RECIEVER");
+		this.tOPERAND = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.OPERAND");
+		this.tLITERAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.LITERAL");
+		this.tBASIC_LIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.BASIC_LIT");
+		this.tOPERAND_NAME = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.OPERAND_NAME");
+		this.tQUALIFIED_IDENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.QUALIFIED_IDENT");
+		this.tCOMPOSITE_LIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.COMPOSITE_LIT");
+		this.tLITERAL_TYPE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.LITERAL_TYPE");
+		this.tLITERAL_VALUE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.LITERAL_VALUE");
+		this.tELEMENT_LIST = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.ELEMENT_LIST");
+		this.tKEYED_ELEMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.KEYED_ELEMENT");
+		this.tKEY = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.KEY");
+		this.tFIELD_NAME = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.FIELD_NAME");
+		this.tELEMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.ELEMENT");
+		this.tFUNCTION_LIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.FUNCTION_LIT");
+		this.tPRIMARY_EXPR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.PRIMARY_EXPR");
+		this.tSELECTOR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.SELECTOR");
+		this.tINDEX = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.INDEX");
+		this.tSLICE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.SLICE");
+		this.tTYPE_ASSERTION = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.TYPE_ASSERTION");
+		this.tARGUMENTS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.ARGUMENTS");
+		this.tMETHOD_EXPR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.METHOD_EXPR");
+		this.tRECIEVER_TYPE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.RECIEVER_TYPE");
+		this.tEXPRESSION = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.EXPRESSION");
+		this.tUNARY_EXPR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.UNARY_EXPR");
+		this.tBINARY_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.BINARY_OP");
+		this.tREL_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.REL_OP");
+		this.tADD_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.ADD_OP");
+		this.tMUL_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.MUL_OP");
+		this.tUNARY_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.UNARY_OP");
+		this.tCONVERSION = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.CONVERSION");
+		this.tSTATEMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.STATEMENT");
+		this.tSIMPLE_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.SIMPLE_STMT");
+		this.tEMPTY_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.EMPTY_STMT");
+		this.tLABELED_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.LABELED_STMT");
+		this.tLABEL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.LABEL");
+		this.tEXPRESSION_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.EXPRESSION_STMT");
+		this.tSEND_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.SEND_STMT");
+		this.tCHANNEL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.CHANNEL");
+		this.tINC_DEC_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.INC_DEC_STMT");
+		this.tASSIGNMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.ASSIGNMENT");
+		this.tASSIGN_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.ASSIGN_OP");
+		this.tIF_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.IF_STMT");
+		this.tSWITCH_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.SWITCH_STMT");
+		this.tEXPR_SWITCH_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.EXPR_SWITCH_STMT");
+		this.tEXPR_CASE_CLAUSE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.EXPR_CASE_CLAUSE");
+		this.tEXPR_SWITCH_CASE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.EXPR_SWITCH_CASE");
+		this.tTYPE_SWITCH_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.TYPE_SWITCH_STMT");
+		this.tTYPE_SWITCH_GUARD = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.TYPE_SWITCH_GUARD");
+		this.tTYPE_CASE_CLAUSE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.TYPE_CASE_CLAUSE");
+		this.tTYPE_SWITCH_CASE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.TYPE_SWITCH_CASE");
+		this.tTYPE_LIST = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.TYPE_LIST");
+		this.tFOR_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.FOR_STMT");
+		this.tCONDITION = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.CONDITION");
+		this.tFOR_CLAUSE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.FOR_CLAUSE");
+		this.tINIT_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.INIT_STMT");
+		this.tPOST_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.POST_STMT");
+		this.tRANGE_CLAUSE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.RANGE_CLAUSE");
+		this.tGO_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.GO_STMT");
+		this.tSELECT_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.SELECT_STMT");
+		this.tCOMM_CLAUSE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.COMM_CLAUSE");
+		this.tCOMM_CASE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.COMM_CASE");
+		this.tRECV_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.RECV_STMT");
+		this.tRECV_EXPR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.RECV_EXPR");
+		this.tRETURN_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.RETURN_STMT");
+		this.tBREAK_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.BREAK_STMT");
+		this.tCONTINUE_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.CONTINUE_STMT");
+		this.tGOTO_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.GOTO_STMT");
+		this.tFALLTHROUGH_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.FALLTHROUGH_STMT");
+		this.tDEFER_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.DEFER_STMT");
+		this.tSOURCE_FILE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.SOURCE_FILE");
+		this.tPACKAGE_CLAUSE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.PACKAGE_CLAUSE");
+		this.tPACKAGE_NAME = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.PACKAGE_NAME");
+		this.tIMPORT_DECL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.IMPORT_DECL");
+		this.tIMPORT_SPEC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.IMPORT_SPEC");
+		this.tIMPORT_PATH = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.IMPORT_PATH");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -141,14 +438,1484 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		return getGreetingAccess().getRule();
 	}
 	
-	//newline:
-	//	'U+000A';
-	public NewlineElements getNewlineAccess() {
-		return pNewline;
+	//terminal fragment NEWLINE:
+	//	'\\u000A';
+	public TerminalRule getNEWLINERule() {
+		return tNEWLINE;
 	}
 	
-	public ParserRule getNewlineRule() {
-		return getNewlineAccess().getRule();
+	//terminal fragment UNICODE_CHAR: // unicode char classes Lu, Ll, Lt, Lm, or Lo
+	//	'\\u0041'..'\\u005A' | '\\u0061'..'\\u007A' | '\\u00AA' | '\\u00B5' | '\\u00BA' | '\\u00C0'..'\\u00D6' | '\\u00D8'..'\\u00F6' |
+	//	'\\u00F8'..'\\u02C1' | '\\u02C6'..'\\u02D1' | '\\u02E0'..'\\u02E4' | '\\u02EC' | '\\u02EE' | '\\u0370'..'\\u0374' |
+	//	'\\u0376'..'\\u0377' | '\\u037A'..'\\u037D' | '\\u037F' | '\\u0386' | '\\u0388'..'\\u038A' | '\\u038C' | '\\u038E'..'\\u03A1' |
+	//	'\\u03A3'..'\\u03F5' | '\\u03F7'..'\\u0481' | '\\u048A'..'\\u052F' | '\\u0531'..'\\u0556' | '\\u0559' | '\\u0561'..'\\u0587' |
+	//	'\\u05D0'..'\\u05EA' | '\\u05F0'..'\\u05F2' | '\\u0620'..'\\u064A' | '\\u066E'..'\\u066F' | '\\u0671'..'\\u06D3' | '\\u06D5' |
+	//	'\\u06E5'..'\\u06E6' | '\\u06EE'..'\\u06EF' | '\\u06FA'..'\\u06FC' | '\\u06FF' | '\\u0710' | '\\u0712'..'\\u072F' |
+	//	'\\u074D'..'\\u07A5' | '\\u07B1' | '\\u07CA'..'\\u07EA' | '\\u07F4'..'\\u07F5' | '\\u07FA' | '\\u0800'..'\\u0815' | '\\u081A' |
+	//	'\\u0824' | '\\u0828' | '\\u0840'..'\\u0858' | '\\u08A0'..'\\u08B2' | '\\u0904'..'\\u0939' | '\\u093D' | '\\u0950' |
+	//	'\\u0958'..'\\u0961' | '\\u0971'..'\\u0980' | '\\u0985'..'\\u098C' | '\\u098F'..'\\u0990' | '\\u0993'..'\\u09A8' |
+	//	'\\u09AA'..'\\u09B0' | '\\u09B2' | '\\u09B6'..'\\u09B9' | '\\u09BD' | '\\u09CE' | '\\u09DC'..'\\u09DD' | '\\u09DF'..'\\u09E1' |
+	//	'\\u09F0'..'\\u09F1' | '\\u0A05'..'\\u0A0A' | '\\u0A0F'..'\\u0A10' | '\\u0A13'..'\\u0A28' | '\\u0A2A'..'\\u0A30' |
+	//	'\\u0A32'..'\\u0A33' | '\\u0A35'..'\\u0A36' | '\\u0A38'..'\\u0A39' | '\\u0A59'..'\\u0A5C' | '\\u0A5E' | '\\u0A72'..'\\u0A74' |
+	//	'\\u0A85'..'\\u0A8D' | '\\u0A8F'..'\\u0A91' | '\\u0A93'..'\\u0AA8' | '\\u0AAA'..'\\u0AB0' | '\\u0AB2'..'\\u0AB3' |
+	//	'\\u0AB5'..'\\u0AB9' | '\\u0ABD' | '\\u0AD0' | '\\u0AE0'..'\\u0AE1' | '\\u0B05'..'\\u0B0C' | '\\u0B0F'..'\\u0B10' |
+	//	'\\u0B13'..'\\u0B28' | '\\u0B2A'..'\\u0B30' | '\\u0B32'..'\\u0B33' | '\\u0B35'..'\\u0B39' | '\\u0B3D' | '\\u0B5C'..'\\u0B5D' |
+	//	'\\u0B5F'..'\\u0B61' | '\\u0B71' | '\\u0B83' | '\\u0B85'..'\\u0B8A' | '\\u0B8E'..'\\u0B90' | '\\u0B92'..'\\u0B95' |
+	//	'\\u0B99'..'\\u0B9A' | '\\u0B9C' | '\\u0B9E'..'\\u0B9F' | '\\u0BA3'..'\\u0BA4' | '\\u0BA8'..'\\u0BAA' | '\\u0BAE'..'\\u0BB9' |
+	//	'\\u0BD0' | '\\u0C05'..'\\u0C0C' | '\\u0C0E'..'\\u0C10' | '\\u0C12'..'\\u0C28' | '\\u0C2A'..'\\u0C39' | '\\u0C3D' |
+	//	'\\u0C58'..'\\u0C59' | '\\u0C60'..'\\u0C61' | '\\u0C85'..'\\u0C8C' | '\\u0C8E'..'\\u0C90' | '\\u0C92'..'\\u0CA8' |
+	//	'\\u0CAA'..'\\u0CB3' | '\\u0CB5'..'\\u0CB9' | '\\u0CBD' | '\\u0CDE' | '\\u0CE0'..'\\u0CE1' | '\\u0CF1'..'\\u0CF2' |
+	//	'\\u0D05'..'\\u0D0C' | '\\u0D0E'..'\\u0D10' | '\\u0D12'..'\\u0D3A' | '\\u0D3D' | '\\u0D4E' | '\\u0D60'..'\\u0D61' |
+	//	'\\u0D7A'..'\\u0D7F' | '\\u0D85'..'\\u0D96' | '\\u0D9A'..'\\u0DB1' | '\\u0DB3'..'\\u0DBB' | '\\u0DBD' | '\\u0DC0'..'\\u0DC6' |
+	//	'\\u0E01'..'\\u0E30' | '\\u0E32'..'\\u0E33' | '\\u0E40'..'\\u0E46' | '\\u0E81'..'\\u0E82' | '\\u0E84' | '\\u0E87'..'\\u0E88' |
+	//	'\\u0E8A' | '\\u0E8D' | '\\u0E94'..'\\u0E97' | '\\u0E99'..'\\u0E9F' | '\\u0EA1'..'\\u0EA3' | '\\u0EA5' | '\\u0EA7' |
+	//	'\\u0EAA'..'\\u0EAB' | '\\u0EAD'..'\\u0EB0' | '\\u0EB2'..'\\u0EB3' | '\\u0EBD' | '\\u0EC0'..'\\u0EC4' | '\\u0EC6' |
+	//	'\\u0EDC'..'\\u0EDF' | '\\u0F00' | '\\u0F40'..'\\u0F47' | '\\u0F49'..'\\u0F6C' | '\\u0F88'..'\\u0F8C' | '\\u1000'..'\\u102A' |
+	//	'\\u103F' | '\\u1050'..'\\u1055' | '\\u105A'..'\\u105D' | '\\u1061' | '\\u1065'..'\\u1066' | '\\u106E'..'\\u1070' |
+	//	'\\u1075'..'\\u1081' | '\\u108E' | '\\u10A0'..'\\u10C5' | '\\u10C7' | '\\u10CD' | '\\u10D0'..'\\u10FA' | '\\u10FC'..'\\u1248' |
+	//	'\\u124A'..'\\u124D' | '\\u1250'..'\\u1256' | '\\u1258' | '\\u125A'..'\\u125D' | '\\u1260'..'\\u1288' | '\\u128A'..'\\u128D' |
+	//	'\\u1290'..'\\u12B0' | '\\u12B2'..'\\u12B5' | '\\u12B8'..'\\u12BE' | '\\u12C0' | '\\u12C2'..'\\u12C5' | '\\u12C8'..'\\u12D6' |
+	//	'\\u12D8'..'\\u1310' | '\\u1312'..'\\u1315' | '\\u1318'..'\\u135A' | '\\u1380'..'\\u138F' | '\\u13A0'..'\\u13F4' |
+	//	'\\u1401'..'\\u166C' | '\\u166F'..'\\u167F' | '\\u1681'..'\\u169A' | '\\u16A0'..'\\u16EA' | '\\u16F1'..'\\u16F8' |
+	//	'\\u1700'..'\\u170C' | '\\u170E'..'\\u1711' | '\\u1720'..'\\u1731' | '\\u1740'..'\\u1751' | '\\u1760'..'\\u176C' |
+	//	'\\u176E'..'\\u1770' | '\\u1780'..'\\u17B3' | '\\u17D7' | '\\u17DC' | '\\u1820'..'\\u1877' | '\\u1880'..'\\u18A8' | '\\u18AA' |
+	//	'\\u18B0'..'\\u18F5' | '\\u1900'..'\\u191E' | '\\u1950'..'\\u196D' | '\\u1970'..'\\u1974' | '\\u1980'..'\\u19AB' |
+	//	'\\u19C1'..'\\u19C7' | '\\u1A00'..'\\u1A16' | '\\u1A20'..'\\u1A54' | '\\u1AA7' | '\\u1B05'..'\\u1B33' | '\\u1B45'..'\\u1B4B' |
+	//	'\\u1B83'..'\\u1BA0' | '\\u1BAE'..'\\u1BAF' | '\\u1BBA'..'\\u1BE5' | '\\u1C00'..'\\u1C23' | '\\u1C4D'..'\\u1C4F' |
+	//	'\\u1C5A'..'\\u1C7D' | '\\u1CE9'..'\\u1CEC' | '\\u1CEE'..'\\u1CF1' | '\\u1CF5'..'\\u1CF6' | '\\u1D00'..'\\u1DBF' |
+	//	'\\u1E00'..'\\u1F15' | '\\u1F18'..'\\u1F1D' | '\\u1F20'..'\\u1F45' | '\\u1F48'..'\\u1F4D' | '\\u1F50'..'\\u1F57' | '\\u1F59' |
+	//	'\\u1F5B' | '\\u1F5D' | '\\u1F5F'..'\\u1F7D' | '\\u1F80'..'\\u1FB4' | '\\u1FB6'..'\\u1FBC' | '\\u1FBE' | '\\u1FC2'..'\\u1FC4' |
+	//	'\\u1FC6'..'\\u1FCC' | '\\u1FD0'..'\\u1FD3' | '\\u1FD6'..'\\u1FDB' | '\\u1FE0'..'\\u1FEC' | '\\u1FF2'..'\\u1FF4' |
+	//	'\\u1FF6'..'\\u1FFC' | '\\u2071' | '\\u207F' | '\\u2090'..'\\u209C' | '\\u2102' | '\\u2107' | '\\u210A'..'\\u2113' | '\\u2115' |
+	//	'\\u2119'..'\\u211D' | '\\u2124' | '\\u2126' | '\\u2128' | '\\u212A'..'\\u212D' | '\\u212F'..'\\u2139' | '\\u213C'..'\\u213F' |
+	//	'\\u2145'..'\\u2149' | '\\u214E' | '\\u2C00'..'\\u2C2E' | '\\u2C30'..'\\u2C5E' | '\\u2C60'..'\\u2CE4' | '\\u2CEB'..'\\u2CEE' |
+	//	'\\u2CF2'..'\\u2CF3' | '\\u2D00'..'\\u2D25' | '\\u2D27' | '\\u2D2D' | '\\u2D30'..'\\u2D67' | '\\u2D6F' | '\\u2D80'..'\\u2D96' |
+	//	'\\u2DA0'..'\\u2DA6' | '\\u2DA8'..'\\u2DAE' | '\\u2DB0'..'\\u2DB6' | '\\u2DB8'..'\\u2DBE' | '\\u2DC0'..'\\u2DC6' |
+	//	'\\u2DC8'..'\\u2DCE' | '\\u2DD0'..'\\u2DD6' | '\\u2DD8'..'\\u2DDE' | '\\u2E2F' | '\\u3005'..'\\u3006' | '\\u3031'..'\\u3035' |
+	//	'\\u303B'..'\\u303C' | '\\u3041'..'\\u3096' | '\\u309D'..'\\u309F' | '\\u30A1'..'\\u30FA' | '\\u30FC'..'\\u30FF' |
+	//	'\\u3105'..'\\u312D' | '\\u3131'..'\\u318E' | '\\u31A0'..'\\u31BA' | '\\u31F0'..'\\u31FF' | '\\u3400'..'\\u4DB5' |
+	//	'\\u4E00'..'\\u9FCC' | '\\uA000'..'\\uA48C' | '\\uA4D0'..'\\uA4FD' | '\\uA500'..'\\uA60C' | '\\uA610'..'\\uA61F' |
+	//	'\\uA62A'..'\\uA62B' | '\\uA640'..'\\uA66E' | '\\uA67F'..'\\uA69D' | '\\uA6A0'..'\\uA6E5' | '\\uA717'..'\\uA71F' |
+	//	'\\uA722'..'\\uA788' | '\\uA78B'..'\\uA78E' | '\\uA790'..'\\uA7AD' | '\\uA7B0'..'\\uA7B1' | '\\uA7F7'..'\\uA801' |
+	//	'\\uA803'..'\\uA805' | '\\uA807'..'\\uA80A' | '\\uA80C'..'\\uA822' | '\\uA840'..'\\uA873' | '\\uA882'..'\\uA8B3' |
+	//	'\\uA8F2'..'\\uA8F7' | '\\uA8FB' | '\\uA90A'..'\\uA925' | '\\uA930'..'\\uA946' | '\\uA960'..'\\uA97C' | '\\uA984'..'\\uA9B2' |
+	//	'\\uA9CF' | '\\uA9E0'..'\\uA9E4' | '\\uA9E6'..'\\uA9EF' | '\\uA9FA'..'\\uA9FE' | '\\uAA00'..'\\uAA28' | '\\uAA40'..'\\uAA42' |
+	//	'\\uAA44'..'\\uAA4B' | '\\uAA60'..'\\uAA76' | '\\uAA7A' | '\\uAA7E'..'\\uAAAF' | '\\uAAB1' | '\\uAAB5'..'\\uAAB6' |
+	//	'\\uAAB9'..'\\uAABD' | '\\uAAC0' | '\\uAAC2' | '\\uAADB'..'\\uAADD' | '\\uAAE0'..'\\uAAEA' | '\\uAAF2'..'\\uAAF4' |
+	//	'\\uAB01'..'\\uAB06' | '\\uAB09'..'\\uAB0E' | '\\uAB11'..'\\uAB16' | '\\uAB20'..'\\uAB26' | '\\uAB28'..'\\uAB2E' |
+	//	'\\uAB30'..'\\uAB5A' | '\\uAB5C'..'\\uAB5F' | '\\uAB64'..'\\uAB65' | '\\uABC0'..'\\uABE2' | '\\uAC00'..'\\uD7A3' |
+	//	'\\uD7B0'..'\\uD7C6' | '\\uD7CB'..'\\uD7FB' | '\\uF900'..'\\uFA6D' | '\\uFA70'..'\\uFAD9' | '\\uFB00'..'\\uFB06' |
+	//	'\\uFB13'..'\\uFB17' | '\\uFB1D' | '\\uFB1F'..'\\uFB28' | '\\uFB2A'..'\\uFB36' | '\\uFB38'..'\\uFB3C' | '\\uFB3E' |
+	//	'\\uFB40'..'\\uFB41' | '\\uFB43'..'\\uFB44' | '\\uFB46'..'\\uFBB1' | '\\uFBD3'..'\\uFD3D' | '\\uFD50'..'\\uFD8F' |
+	//	'\\uFD92'..'\\uFDC7' | '\\uFDF0'..'\\uFDFB' | '\\uFE70'..'\\uFE74' | '\\uFE76'..'\\uFEFC' | '\\uFF21'..'\\uFF3A' |
+	//	'\\uFF41'..'\\uFF5A' | '\\uFF66'..'\\uFFBE' | '\\uFFC2'..'\\uFFC7' | '\\uFFCA'..'\\uFFCF' | '\\uFFD2'..'\\uFFD7' |
+	//	'\\uFFDA'..'\\uFFDC';
+	public TerminalRule getUNICODE_CHARRule() {
+		return tUNICODE_CHAR;
+	}
+	
+	//terminal fragment UNICODE_LETTER:
+	//	'\\u0041'..'\\u005A'
+	//	| '\\u0061'..'\\u007A'
+	//	| '\\u00AA'
+	//	| '\\u00B5'
+	//	| '\\u00BA'
+	//	| '\\u00C0'..'\\u00D6'
+	//	| '\\u00D8'..'\\u00F6'
+	//	| '\\u00F8'..'\\u02C1'
+	//	| '\\u02C6'..'\\u02D1'
+	//	| '\\u02E0'..'\\u02E4'
+	//	| '\\u02EC'
+	//	| '\\u02EE'
+	//	| '\\u0370'..'\\u0374'
+	//	| '\\u0376'..'\\u0377'
+	//	| '\\u037A'..'\\u037D'
+	//	| '\\u037F'
+	//	| '\\u0386'
+	//	| '\\u0388'..'\\u038A'
+	//	| '\\u038C'
+	//	| '\\u038E'..'\\u03A1'
+	//	| '\\u03A3'..'\\u03F5'
+	//	| '\\u03F7'..'\\u0481'
+	//	| '\\u048A'..'\\u052F'
+	//	| '\\u0531'..'\\u0556'
+	//	| '\\u0559'
+	//	| '\\u0561'..'\\u0587'
+	//	| '\\u05D0'..'\\u05EA'
+	//	| '\\u05F0'..'\\u05F2'
+	//	| '\\u0620'..'\\u064A'
+	//	| '\\u066E'..'\\u066F'
+	//	| '\\u0671'..'\\u06D3'
+	//	| '\\u06D5'
+	//	| '\\u06E5'..'\\u06E6'
+	//	| '\\u06EE'..'\\u06EF'
+	//	| '\\u06FA'..'\\u06FC'
+	//	| '\\u06FF'
+	//	| '\\u0710'
+	//	| '\\u0712'..'\\u072F'
+	//	| '\\u074D'..'\\u07A5'
+	//	| '\\u07B1'
+	//	| '\\u07CA'..'\\u07EA'
+	//	| '\\u07F4'..'\\u07F5'
+	//	| '\\u07FA'
+	//	| '\\u0800'..'\\u0815'
+	//	| '\\u081A'
+	//	| '\\u0824'
+	//	| '\\u0828'
+	//	| '\\u0840'..'\\u0858'
+	//	| '\\u08A0'..'\\u08B2'
+	//	| '\\u0904'..'\\u0939'
+	//	| '\\u093D'
+	//	| '\\u0950'
+	//	| '\\u0958'..'\\u0961'
+	//	| '\\u0971'..'\\u0980'
+	//	| '\\u0985'..'\\u098C'
+	//	| '\\u098F'..'\\u0990'
+	//	| '\\u0993'..'\\u09A8'
+	//	| '\\u09AA'..'\\u09B0'
+	//	| '\\u09B2'
+	//	| '\\u09B6'..'\\u09B9'
+	//	| '\\u09BD'
+	//	| '\\u09CE'
+	//	| '\\u09DC'..'\\u09DD'
+	//	| '\\u09DF'..'\\u09E1'
+	//	| '\\u09F0'..'\\u09F1'
+	//	| '\\u0A05'..'\\u0A0A'
+	//	| '\\u0A0F'..'\\u0A10'
+	//	| '\\u0A13'..'\\u0A28'
+	//	| '\\u0A2A'..'\\u0A30'
+	//	| '\\u0A32'..'\\u0A33'
+	//	| '\\u0A35'..'\\u0A36'
+	//	| '\\u0A38'..'\\u0A39'
+	//	| '\\u0A59'..'\\u0A5C'
+	//	| '\\u0A5E'
+	//	| '\\u0A72'..'\\u0A74'
+	//	| '\\u0A85'..'\\u0A8D'
+	//	| '\\u0A8F'..'\\u0A91'
+	//	| '\\u0A93'..'\\u0AA8'
+	//	| '\\u0AAA'..'\\u0AB0'
+	//	| '\\u0AB2'..'\\u0AB3'
+	//	| '\\u0AB5'..'\\u0AB9'
+	//	| '\\u0ABD'
+	//	| '\\u0AD0'
+	//	| '\\u0AE0'..'\\u0AE1'
+	//	| '\\u0B05'..'\\u0B0C'
+	//	| '\\u0B0F'..'\\u0B10'
+	//	| '\\u0B13'..'\\u0B28'
+	//	| '\\u0B2A'..'\\u0B30'
+	//	| '\\u0B32'..'\\u0B33'
+	//	| '\\u0B35'..'\\u0B39'
+	//	| '\\u0B3D'
+	//	| '\\u0B5C'..'\\u0B5D'
+	//	| '\\u0B5F'..'\\u0B61'
+	//	| '\\u0B71'
+	//	| '\\u0B83'
+	//	| '\\u0B85'..'\\u0B8A'
+	//	| '\\u0B8E'..'\\u0B90'
+	//	| '\\u0B92'..'\\u0B95'
+	//	| '\\u0B99'..'\\u0B9A'
+	//	| '\\u0B9C'
+	//	| '\\u0B9E'..'\\u0B9F'
+	//	| '\\u0BA3'..'\\u0BA4'
+	//	| '\\u0BA8'..'\\u0BAA'
+	//	| '\\u0BAE'..'\\u0BB9'
+	//	| '\\u0BD0'
+	//	| '\\u0C05'..'\\u0C0C'
+	//	| '\\u0C0E'..'\\u0C10'
+	//	| '\\u0C12'..'\\u0C28'
+	//	| '\\u0C2A'..'\\u0C39'
+	//	| '\\u0C3D'
+	//	| '\\u0C58'..'\\u0C59'
+	//	| '\\u0C60'..'\\u0C61'
+	//	| '\\u0C85'..'\\u0C8C'
+	//	| '\\u0C8E'..'\\u0C90'
+	//	| '\\u0C92'..'\\u0CA8'
+	//	| '\\u0CAA'..'\\u0CB3'
+	//	| '\\u0CB5'..'\\u0CB9'
+	//	| '\\u0CBD'
+	//	| '\\u0CDE'
+	//	| '\\u0CE0'..'\\u0CE1'
+	//	| '\\u0CF1'..'\\u0CF2'
+	//	| '\\u0D05'..'\\u0D0C'
+	//	| '\\u0D0E'..'\\u0D10'
+	//	| '\\u0D12'..'\\u0D3A'
+	//	| '\\u0D3D'
+	//	| '\\u0D4E'
+	//	| '\\u0D60'..'\\u0D61'
+	//	| '\\u0D7A'..'\\u0D7F'
+	//	| '\\u0D85'..'\\u0D96'
+	//	| '\\u0D9A'..'\\u0DB1'
+	//	| '\\u0DB3'..'\\u0DBB'
+	//	| '\\u0DBD'
+	//	| '\\u0DC0'..'\\u0DC6'
+	//	| '\\u0E01'..'\\u0E30'
+	//	| '\\u0E32'..'\\u0E33'
+	//	| '\\u0E40'..'\\u0E46'
+	//	| '\\u0E81'..'\\u0E82'
+	//	| '\\u0E84'
+	//	| '\\u0E87'..'\\u0E88'
+	//	| '\\u0E8A'
+	//	| '\\u0E8D'
+	//	| '\\u0E94'..'\\u0E97'
+	//	| '\\u0E99'..'\\u0E9F'
+	//	| '\\u0EA1'..'\\u0EA3'
+	//	| '\\u0EA5'
+	//	| '\\u0EA7'
+	//	| '\\u0EAA'..'\\u0EAB'
+	//	| '\\u0EAD'..'\\u0EB0'
+	//	| '\\u0EB2'..'\\u0EB3'
+	//	| '\\u0EBD'
+	//	| '\\u0EC0'..'\\u0EC4'
+	//	| '\\u0EC6'
+	//	| '\\u0EDC'..'\\u0EDF'
+	//	| '\\u0F00'
+	//	| '\\u0F40'..'\\u0F47'
+	//	| '\\u0F49'..'\\u0F6C'
+	//	| '\\u0F88'..'\\u0F8C'
+	//	| '\\u1000'..'\\u102A'
+	//	| '\\u103F'
+	//	| '\\u1050'..'\\u1055'
+	//	| '\\u105A'..'\\u105D'
+	//	| '\\u1061'
+	//	| '\\u1065'..'\\u1066'
+	//	| '\\u106E'..'\\u1070'
+	//	| '\\u1075'..'\\u1081'
+	//	| '\\u108E'
+	//	| '\\u10A0'..'\\u10C5'
+	//	| '\\u10C7'
+	//	| '\\u10CD'
+	//	| '\\u10D0'..'\\u10FA'
+	//	| '\\u10FC'..'\\u1248'
+	//	| '\\u124A'..'\\u124D'
+	//	| '\\u1250'..'\\u1256'
+	//	| '\\u1258'
+	//	| '\\u125A'..'\\u125D'
+	//	| '\\u1260'..'\\u1288'
+	//	| '\\u128A'..'\\u128D'
+	//	| '\\u1290'..'\\u12B0'
+	//	| '\\u12B2'..'\\u12B5'
+	//	| '\\u12B8'..'\\u12BE'
+	//	| '\\u12C0'
+	//	| '\\u12C2'..'\\u12C5'
+	//	| '\\u12C8'..'\\u12D6'
+	//	| '\\u12D8'..'\\u1310'
+	//	| '\\u1312'..'\\u1315'
+	//	| '\\u1318'..'\\u135A'
+	//	| '\\u1380'..'\\u138F'
+	//	| '\\u13A0'..'\\u13F4'
+	//	| '\\u1401'..'\\u166C'
+	//	| '\\u166F'..'\\u167F'
+	//	| '\\u1681'..'\\u169A'
+	//	| '\\u16A0'..'\\u16EA'
+	//	| '\\u16EE'..'\\u16F8'
+	//	| '\\u1700'..'\\u170C'
+	//	| '\\u170E'..'\\u1711'
+	//	| '\\u1720'..'\\u1731'
+	//	| '\\u1740'..'\\u1751'
+	//	| '\\u1760'..'\\u176C'
+	//	| '\\u176E'..'\\u1770'
+	//	| '\\u1780'..'\\u17B3'
+	//	| '\\u17D7'
+	//	| '\\u17DC'
+	//	| '\\u1820'..'\\u1877'
+	//	| '\\u1880'..'\\u18A8'
+	//	| '\\u18AA'
+	//	| '\\u18B0'..'\\u18F5'
+	//	| '\\u1900'..'\\u191E'
+	//	| '\\u1950'..'\\u196D'
+	//	| '\\u1970'..'\\u1974'
+	//	| '\\u1980'..'\\u19AB'
+	//	| '\\u19C1'..'\\u19C7'
+	//	| '\\u1A00'..'\\u1A16'
+	//	| '\\u1A20'..'\\u1A54'
+	//	| '\\u1AA7'
+	//	| '\\u1B05'..'\\u1B33'
+	//	| '\\u1B45'..'\\u1B4B'
+	//	| '\\u1B83'..'\\u1BA0'
+	//	| '\\u1BAE'..'\\u1BAF'
+	//	| '\\u1BBA'..'\\u1BE5'
+	//	| '\\u1C00'..'\\u1C23'
+	//	| '\\u1C4D'..'\\u1C4F'
+	//	| '\\u1C5A'..'\\u1C7D'
+	//	| '\\u1CE9'..'\\u1CEC'
+	//	| '\\u1CEE'..'\\u1CF1'
+	//	| '\\u1CF5'..'\\u1CF6'
+	//	| '\\u1D00'..'\\u1DBF'
+	//	| '\\u1E00'..'\\u1F15'
+	//	| '\\u1F18'..'\\u1F1D'
+	//	| '\\u1F20'..'\\u1F45'
+	//	| '\\u1F48'..'\\u1F4D'
+	//	| '\\u1F50'..'\\u1F57'
+	//	| '\\u1F59'
+	//	| '\\u1F5B'
+	//	| '\\u1F5D'
+	//	| '\\u1F5F'..'\\u1F7D'
+	//	| '\\u1F80'..'\\u1FB4'
+	//	| '\\u1FB6'..'\\u1FBC'
+	//	| '\\u1FBE'
+	//	| '\\u1FC2'..'\\u1FC4'
+	//	| '\\u1FC6'..'\\u1FCC'
+	//	| '\\u1FD0'..'\\u1FD3'
+	//	| '\\u1FD6'..'\\u1FDB'
+	//	| '\\u1FE0'..'\\u1FEC'
+	//	| '\\u1FF2'..'\\u1FF4'
+	//	| '\\u1FF6'..'\\u1FFC'
+	//	| '\\u2071'
+	//	| '\\u207F'
+	//	| '\\u2090'..'\\u209C'
+	//	| '\\u2102'
+	//	| '\\u2107'
+	//	| '\\u210A'..'\\u2113'
+	//	| '\\u2115'
+	//	| '\\u2119'..'\\u211D'
+	//	| '\\u2124'
+	//	| '\\u2126'
+	//	| '\\u2128'
+	//	| '\\u212A'..'\\u212D'
+	//	| '\\u212F'..'\\u2139'
+	//	| '\\u213C'..'\\u213F'
+	//	| '\\u2145'..'\\u2149'
+	//	| '\\u214E'
+	//	| '\\u2160'..'\\u2188'
+	//	| '\\u2C00'..'\\u2C2E'
+	//	| '\\u2C30'..'\\u2C5E'
+	//	| '\\u2C60'..'\\u2CE4'
+	//	| '\\u2CEB'..'\\u2CEE'
+	//	| '\\u2CF2'..'\\u2CF3'
+	//	| '\\u2D00'..'\\u2D25'
+	//	| '\\u2D27'
+	//	| '\\u2D2D'
+	//	| '\\u2D30'..'\\u2D67'
+	//	| '\\u2D6F'
+	//	| '\\u2D80'..'\\u2D96'
+	//	| '\\u2DA0'..'\\u2DA6'
+	//	| '\\u2DA8'..'\\u2DAE'
+	//	| '\\u2DB0'..'\\u2DB6'
+	//	| '\\u2DB8'..'\\u2DBE'
+	//	| '\\u2DC0'..'\\u2DC6'
+	//	| '\\u2DC8'..'\\u2DCE'
+	//	| '\\u2DD0'..'\\u2DD6'
+	//	| '\\u2DD8'..'\\u2DDE'
+	//	| '\\u2E2F'
+	//	| '\\u3005'..'\\u3007'
+	//	| '\\u3021'..'\\u3029'
+	//	| '\\u3031'..'\\u3035'
+	//	| '\\u3038'..'\\u303C'
+	//	| '\\u3041'..'\\u3096'
+	//	| '\\u309D'..'\\u309F'
+	//	| '\\u30A1'..'\\u30FA'
+	//	| '\\u30FC'..'\\u30FF'
+	//	| '\\u3105'..'\\u312D'
+	//	| '\\u3131'..'\\u318E'
+	//	| '\\u31A0'..'\\u31BA'
+	//	| '\\u31F0'..'\\u31FF'
+	//	| '\\u3400'..'\\u4DB5'
+	//	| '\\u4E00'..'\\u9FCC'
+	//	| '\\uA000'..'\\uA48C'
+	//	| '\\uA4D0'..'\\uA4FD'
+	//	| '\\uA500'..'\\uA60C'
+	//	| '\\uA610'..'\\uA61F'
+	//	| '\\uA62A'..'\\uA62B'
+	//	| '\\uA640'..'\\uA66E'
+	//	| '\\uA67F'..'\\uA69D'
+	//	| '\\uA6A0'..'\\uA6EF'
+	//	| '\\uA717'..'\\uA71F'
+	//	| '\\uA722'..'\\uA788'
+	//	| '\\uA78B'..'\\uA78E'
+	//	| '\\uA790'..'\\uA7AD'
+	//	| '\\uA7B0'..'\\uA7B1'
+	//	| '\\uA7F7'..'\\uA801'
+	//	| '\\uA803'..'\\uA805'
+	//	| '\\uA807'..'\\uA80A'
+	//	| '\\uA80C'..'\\uA822'
+	//	| '\\uA840'..'\\uA873'
+	//	| '\\uA882'..'\\uA8B3'
+	//	| '\\uA8F2'..'\\uA8F7'
+	//	| '\\uA8FB'
+	//	| '\\uA90A'..'\\uA925'
+	//	| '\\uA930'..'\\uA946'
+	//	| '\\uA960'..'\\uA97C'
+	//	| '\\uA984'..'\\uA9B2'
+	//	| '\\uA9CF'
+	//	| '\\uA9E0'..'\\uA9E4'
+	//	| '\\uA9E6'..'\\uA9EF'
+	//	| '\\uA9FA'..'\\uA9FE'
+	//	| '\\uAA00'..'\\uAA28'
+	//	| '\\uAA40'..'\\uAA42'
+	//	| '\\uAA44'..'\\uAA4B'
+	//	| '\\uAA60'..'\\uAA76'
+	//	| '\\uAA7A'
+	//	| '\\uAA7E'..'\\uAAAF'
+	//	| '\\uAAB1'
+	//	| '\\uAAB5'..'\\uAAB6'
+	//	| '\\uAAB9'..'\\uAABD'
+	//	| '\\uAAC0'
+	//	| '\\uAAC2'
+	//	| '\\uAADB'..'\\uAADD'
+	//	| '\\uAAE0'..'\\uAAEA'
+	//	| '\\uAAF2'..'\\uAAF4'
+	//	| '\\uAB01'..'\\uAB06'
+	//	| '\\uAB09'..'\\uAB0E'
+	//	| '\\uAB11'..'\\uAB16'
+	//	| '\\uAB20'..'\\uAB26'
+	//	| '\\uAB28'..'\\uAB2E'
+	//	| '\\uAB30'..'\\uAB5A'
+	//	| '\\uAB5C'..'\\uAB5F'
+	//	| '\\uAB64'..'\\uAB65'
+	//	| '\\uABC0'..'\\uABE2'
+	//	| '\\uAC00'..'\\uD7A3'
+	//	| '\\uD7B0'..'\\uD7C6'
+	//	| '\\uD7CB'..'\\uD7FB'
+	//	| '\\uF900'..'\\uFA6D'
+	//	| '\\uFA70'..'\\uFAD9'
+	//	| '\\uFB00'..'\\uFB06'
+	//	| '\\uFB13'..'\\uFB17'
+	//	| '\\uFB1D'
+	//	| '\\uFB1F'..'\\uFB28'
+	//	| '\\uFB2A'..'\\uFB36'
+	//	| '\\uFB38'..'\\uFB3C'
+	//	| '\\uFB3E'
+	//	| '\\uFB40'..'\\uFB41'
+	//	| '\\uFB43'..'\\uFB44'
+	//	| '\\uFB46'..'\\uFBB1'
+	//	| '\\uFBD3'..'\\uFD3D'
+	//	| '\\uFD50'..'\\uFD8F'
+	//	| '\\uFD92'..'\\uFDC7'
+	//	| '\\uFDF0'..'\\uFDFB'
+	//	| '\\uFE70'..'\\uFE74'
+	//	| '\\uFE76'..'\\uFEFC'
+	//	| '\\uFF21'..'\\uFF3A'
+	//	| '\\uFF41'..'\\uFF5A'
+	//	| '\\uFF66'..'\\uFFBE'
+	//	| '\\uFFC2'..'\\uFFC7'
+	//	| '\\uFFCA'..'\\uFFCF'
+	//	| '\\uFFD2'..'\\uFFD7'
+	//	| '\\uFFDA'..'\\uFFDC';
+	public TerminalRule getUNICODE_LETTERRule() {
+		return tUNICODE_LETTER;
+	}
+	
+	//terminal fragment UNICODE_DIGIT:
+	//	'\\u0030'..'\\u0039'
+	//	| '\\u0660'..'\\u0669'
+	//	| '\\u06F0'..'\\u06F9'
+	//	| '\\u07C0'..'\\u07C9'
+	//	| '\\u0966'..'\\u096F'
+	//	| '\\u09E6'..'\\u09EF'
+	//	| '\\u0A66'..'\\u0A6F'
+	//	| '\\u0AE6'..'\\u0AEF'
+	//	| '\\u0B66'..'\\u0B6F'
+	//	| '\\u0BE6'..'\\u0BEF'
+	//	| '\\u0C66'..'\\u0C6F'
+	//	| '\\u0CE6'..'\\u0CEF'
+	//	| '\\u0D66'..'\\u0D6F'
+	//	| '\\u0DE6'..'\\u0DEF'
+	//	| '\\u0E50'..'\\u0E59'
+	//	| '\\u0ED0'..'\\u0ED9'
+	//	| '\\u0F20'..'\\u0F29'
+	//	| '\\u1040'..'\\u1049'
+	//	| '\\u1090'..'\\u1099'
+	//	| '\\u17E0'..'\\u17E9'
+	//	| '\\u1810'..'\\u1819'
+	//	| '\\u1946'..'\\u194F'
+	//	| '\\u19D0'..'\\u19D9'
+	//	| '\\u1A80'..'\\u1A89'
+	//	| '\\u1A90'..'\\u1A99'
+	//	| '\\u1B50'..'\\u1B59'
+	//	| '\\u1BB0'..'\\u1BB9'
+	//	| '\\u1C40'..'\\u1C49'
+	//	| '\\u1C50'..'\\u1C59'
+	//	| '\\uA620'..'\\uA629'
+	//	| '\\uA8D0'..'\\uA8D9'
+	//	| '\\uA900'..'\\uA909'
+	//	| '\\uA9D0'..'\\uA9D9'
+	//	| '\\uA9F0'..'\\uA9F9'
+	//	| '\\uAA50'..'\\uAA59'
+	//	| '\\uABF0'..'\\uABF9'
+	//	| '\\uFF10'..'\\uFF19';
+	public TerminalRule getUNICODE_DIGITRule() {
+		return tUNICODE_DIGIT;
+	}
+	
+	//terminal fragment LETTER:
+	//	UNICODE_LETTER | '_';
+	public TerminalRule getLETTERRule() {
+		return tLETTER;
+	}
+	
+	//terminal DECIMAL_DIGIT:
+	//	'0'..'9';
+	public TerminalRule getDECIMAL_DIGITRule() {
+		return tDECIMAL_DIGIT;
+	}
+	
+	//terminal OCTAL_DIGIT:
+	//	'0'..'7';
+	public TerminalRule getOCTAL_DIGITRule() {
+		return tOCTAL_DIGIT;
+	}
+	
+	//terminal HEX_DIGIT:
+	//	'0'..'9' | 'A'..'F' | 'a'..'f';
+	public TerminalRule getHEX_DIGITRule() {
+		return tHEX_DIGIT;
+	}
+	
+	//terminal KEYWORDS:
+	//	'break' |
+	//	'default' |
+	//	'func' |
+	//	'interface' |
+	//	'select' |
+	//	'case' |
+	//	'defer' |
+	//	'go' |
+	//	'map' |
+	//	'struct' |
+	//	'chan' |
+	//	'else' |
+	//	'goto' |
+	//	'package' |
+	//	'switch' |
+	//	'const' |
+	//	'fallthrough' |
+	//	'if' |
+	//	'range' |
+	//	'type' |
+	//	'continue' |
+	//	'for' |
+	//	'import' |
+	//	'return' |
+	//	'var';
+	public TerminalRule getKEYWORDSRule() {
+		return tKEYWORDS;
+	}
+	
+	//terminal IDENTIFIER:
+	//	LETTER (LETTER | UNICODE_DIGIT)*;
+	public TerminalRule getIDENTIFIERRule() {
+		return tIDENTIFIER;
+	}
+	
+	//terminal OPERATORS:
+	//	'+' |
+	//	'&' |
+	//	'+=' |
+	//	'&=' |
+	//	'&&' |
+	//	'==' |
+	//	'!=' |
+	//	'(' |
+	//	')' |
+	//	'-' |
+	//	'|' |
+	//	'-=' |
+	//	'|=' |
+	//	'||' |
+	//	'<' |
+	//	'<=' |
+	//	'[' |
+	//	']' |
+	//	'*' |
+	//	'^' |
+	//	'*=' |
+	//	'^=' |
+	//	'<-' |
+	//	'>' |
+	//	'>=' |
+	//	'{' |
+	//	'}' |
+	//	'/' |
+	//	'<<' |
+	//	'/=' |
+	//	'<<=' |
+	//	'++' |
+	//	'=' |
+	//	':=' |
+	//	',' |
+	//	';' |
+	//	'%' |
+	//	'>>' |
+	//	'%=' |
+	//	'>>=' |
+	//	'--' |
+	//	'!' |
+	//	'...' |
+	//	'.' |
+	//	':' |
+	//	'&^' |
+	//	'&^=' | ASSIGN_OP;
+	public TerminalRule getOPERATORSRule() {
+		return tOPERATORS;
+	}
+	
+	//terminal INT_LIT:
+	//	DECIMAL_LIT | OCTAL_LIT | HEX_LIT;
+	public TerminalRule getINT_LITRule() {
+		return tINT_LIT;
+	}
+	
+	//terminal DECIMAL_LIT:
+	//	'1'..'9' DECIMAL_DIGIT*;
+	public TerminalRule getDECIMAL_LITRule() {
+		return tDECIMAL_LIT;
+	}
+	
+	//terminal OCTAL_LIT:
+	//	'0' OCTAL_DIGIT*;
+	public TerminalRule getOCTAL_LITRule() {
+		return tOCTAL_LIT;
+	}
+	
+	//terminal HEX_LIT:
+	//	'0' ('x' | 'X') HEX_DIGIT HEX_DIGIT*;
+	public TerminalRule getHEX_LITRule() {
+		return tHEX_LIT;
+	}
+	
+	//terminal FLOAT_LIT:
+	//	DECIMALS '.' DECIMALS? EXPONENT? | DECIMALS EXPONENT |
+	//	'.' DECIMALS EXPONENT?;
+	public TerminalRule getFLOAT_LITRule() {
+		return tFLOAT_LIT;
+	}
+	
+	//terminal DECIMALS:
+	//	DECIMAL_DIGIT DECIMAL_DIGIT*;
+	public TerminalRule getDECIMALSRule() {
+		return tDECIMALS;
+	}
+	
+	//terminal EXPONENT:
+	//	('e' | 'E') ('+' | '-')? DECIMALS;
+	public TerminalRule getEXPONENTRule() {
+		return tEXPONENT;
+	}
+	
+	//terminal IMAGINARY_LIT:
+	//	(DECIMALS | FLOAT_LIT) 'i';
+	public TerminalRule getIMAGINARY_LITRule() {
+		return tIMAGINARY_LIT;
+	}
+	
+	//terminal RUNE_LIT:
+	//	"'" (UNICODE_VALUE | BYTE_VALUE) "'";
+	public TerminalRule getRUNE_LITRule() {
+		return tRUNE_LIT;
+	}
+	
+	//terminal UNICODE_VALUE:
+	//	UNICODE_CHAR | LITTLE_U_VALUE | BIG_U_VALUE | ESCAPED_CHAR;
+	public TerminalRule getUNICODE_VALUERule() {
+		return tUNICODE_VALUE;
+	}
+	
+	//terminal BYTE_VALUE:
+	//	OCTAL_BYTE_VALUE | HEX_BYTE_VALUE;
+	public TerminalRule getBYTE_VALUERule() {
+		return tBYTE_VALUE;
+	}
+	
+	//terminal OCTAL_BYTE_VALUE:
+	//	"\\" OCTAL_DIGIT OCTAL_DIGIT OCTAL_DIGIT;
+	public TerminalRule getOCTAL_BYTE_VALUERule() {
+		return tOCTAL_BYTE_VALUE;
+	}
+	
+	//terminal HEX_BYTE_VALUE:
+	//	"\\" 'x' HEX_DIGIT HEX_DIGIT;
+	public TerminalRule getHEX_BYTE_VALUERule() {
+		return tHEX_BYTE_VALUE;
+	}
+	
+	//terminal LITTLE_U_VALUE:
+	//	"\\" 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT;
+	public TerminalRule getLITTLE_U_VALUERule() {
+		return tLITTLE_U_VALUE;
+	}
+	
+	//terminal BIG_U_VALUE:
+	//	"\\" 'U' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT;
+	public TerminalRule getBIG_U_VALUERule() {
+		return tBIG_U_VALUE;
+	}
+	
+	//terminal ESCAPED_CHAR:
+	//	"\\" ('a' | 'b' | 'f' | 'n' | 'r' | 't' | 'v' | '\\' | "'" | '"');
+	public TerminalRule getESCAPED_CHARRule() {
+		return tESCAPED_CHAR;
+	}
+	
+	//terminal STRING_LIT:
+	//	RAW_STRING_LIT | INTERPRETED_STRING_LIT;
+	public TerminalRule getSTRING_LITRule() {
+		return tSTRING_LIT;
+	}
+	
+	//terminal fragment RAW_STRING_LIT:
+	//	'`' (UNICODE_CHAR | NEWLINE)* '`';
+	public TerminalRule getRAW_STRING_LITRule() {
+		return tRAW_STRING_LIT;
+	}
+	
+	//terminal fragment INTERPRETED_STRING_LIT:
+	//	'"' (UNICODE_VALUE | BYTE_VALUE)* '"';
+	public TerminalRule getINTERPRETED_STRING_LITRule() {
+		return tINTERPRETED_STRING_LIT;
+	}
+	
+	//terminal LITERALS:
+	//	INT_LIT | FLOAT_LIT | IMAGINARY_LIT | RUNE_LIT | STRING_LIT;
+	public TerminalRule getLITERALSRule() {
+		return tLITERALS;
+	}
+	
+	//terminal COMMENT:
+	//	'//'->NEWLINE | '/*'->'*/'+;
+	public TerminalRule getCOMMENTRule() {
+		return tCOMMENT;
+	}
+	
+	//terminal fragment SEMICOLON:
+	//	';';
+	public TerminalRule getSEMICOLONRule() {
+		return tSEMICOLON;
+	}
+	
+	//terminal TOKEN:
+	//	IDENTIFIER | KEYWORDS | OPERATORS | LITERALS;
+	public TerminalRule getTOKENRule() {
+		return tTOKEN;
+	}
+	
+	//terminal TYPE:
+	//	TYPE_NAME | TYPE_LIT | "(" TYPE ")";
+	public TerminalRule getTYPERule() {
+		return tTYPE;
+	}
+	
+	//terminal fragment TYPE_NAME:
+	//	IDENTIFIER | QUALIFIED_IDENT;
+	public TerminalRule getTYPE_NAMERule() {
+		return tTYPE_NAME;
+	}
+	
+	//terminal fragment TYPE_LIT:
+	//	ARRAY_TYPE | STRUCT_TYPE | POINTER_TYPE | FUNCTION_TYPE | INTERFACE_TYPE | SLICE_TYPE | MAP_TYPE | PARAMETER_LIST;
+	public TerminalRule getTYPE_LITRule() {
+		return tTYPE_LIT;
+	}
+	
+	//terminal ARRAY_TYPE:
+	//	"[" ARRAY_LENTGH "]" ELEMENT_TYPE;
+	public TerminalRule getARRAY_TYPERule() {
+		return tARRAY_TYPE;
+	}
+	
+	//terminal ARRAY_LENTGH:
+	//	PARAMETER_LIST;
+	public TerminalRule getARRAY_LENTGHRule() {
+		return tARRAY_LENTGH;
+	}
+	
+	//terminal ELEMENT_TYPE:
+	//	TYPE;
+	public TerminalRule getELEMENT_TYPERule() {
+		return tELEMENT_TYPE;
+	}
+	
+	//terminal STRUCT_TYPE:
+	//	"struct" "{" (FIELD_DECL ";")* "}";
+	public TerminalRule getSTRUCT_TYPERule() {
+		return tSTRUCT_TYPE;
+	}
+	
+	//terminal fragment FIELD_DECL:
+	//	(IDENTIFIER_LIST TYPE | EMBEDDED_FIELD) TAG?;
+	public TerminalRule getFIELD_DECLRule() {
+		return tFIELD_DECL;
+	}
+	
+	//terminal fragment EMBEDDED_FIELD:
+	//	"*"+ TYPE_NAME;
+	public TerminalRule getEMBEDDED_FIELDRule() {
+		return tEMBEDDED_FIELD;
+	}
+	
+	//terminal fragment TAG:
+	//	STRING_LIT;
+	public TerminalRule getTAGRule() {
+		return tTAG;
+	}
+	
+	//terminal POINTER_TYPE:
+	//	"*" BASE_TYPE;
+	public TerminalRule getPOINTER_TYPERule() {
+		return tPOINTER_TYPE;
+	}
+	
+	//terminal fragment BASE_TYPE:
+	//	TYPE;
+	public TerminalRule getBASE_TYPERule() {
+		return tBASE_TYPE;
+	}
+	
+	//terminal FUNCTION_TYPE:
+	//	"func" SIGNATURE;
+	public TerminalRule getFUNCTION_TYPERule() {
+		return tFUNCTION_TYPE;
+	}
+	
+	//terminal fragment SIGNATURE:
+	//	PARAMETERS RESULT+;
+	public TerminalRule getSIGNATURERule() {
+		return tSIGNATURE;
+	}
+	
+	//terminal fragment RESULT:
+	//	PARAMETERS | TYPE;
+	public TerminalRule getRESULTRule() {
+		return tRESULT;
+	}
+	
+	//terminal fragment PARAMETERS:
+	//	"(" (PARAMETER_LIST ","+)+ ")";
+	public TerminalRule getPARAMETERSRule() {
+		return tPARAMETERS;
+	}
+	
+	//terminal fragment PARAMETER_LIST:
+	//	PARAMETER_DECL ("," PARAMETER_DECL)*;
+	public TerminalRule getPARAMETER_LISTRule() {
+		return tPARAMETER_LIST;
+	}
+	
+	//terminal fragment PARAMETER_DECL:
+	//	IDENTIFIER_LIST? "..."? TYPE;
+	public TerminalRule getPARAMETER_DECLRule() {
+		return tPARAMETER_DECL;
+	}
+	
+	//terminal INTERFACE_TYPE:
+	//	"interface" "{" (METHOD_SPEC ";")* "}";
+	public TerminalRule getINTERFACE_TYPERule() {
+		return tINTERFACE_TYPE;
+	}
+	
+	//terminal fragment METHOD_SPEC:
+	//	METHOD_NAME SIGNATURE | INTERFACE_TYPE_NAME;
+	public TerminalRule getMETHOD_SPECRule() {
+		return tMETHOD_SPEC;
+	}
+	
+	//terminal fragment METHOD_NAME:
+	//	IDENTIFIER;
+	public TerminalRule getMETHOD_NAMERule() {
+		return tMETHOD_NAME;
+	}
+	
+	//terminal fragment INTERFACE_TYPE_NAME:
+	//	TYPE_NAME;
+	public TerminalRule getINTERFACE_TYPE_NAMERule() {
+		return tINTERFACE_TYPE_NAME;
+	}
+	
+	//terminal SLICE_TYPE:
+	//	"[" "]" ELEMENT_TYPE;
+	public TerminalRule getSLICE_TYPERule() {
+		return tSLICE_TYPE;
+	}
+	
+	//terminal MAP_TYPE:
+	//	"map" "[" KEY_TYPE "]" ELEMENT_TYPE;
+	public TerminalRule getMAP_TYPERule() {
+		return tMAP_TYPE;
+	}
+	
+	//terminal fragment KEY_TYPE:
+	//	TYPE;
+	public TerminalRule getKEY_TYPERule() {
+		return tKEY_TYPE;
+	}
+	
+	//terminal CHANNEL_TYPE:
+	//	("chan" | "chan" "<-" | "<-" "chan") ELEMENT_TYPE;
+	public TerminalRule getCHANNEL_TYPERule() {
+		return tCHANNEL_TYPE;
+	}
+	
+	//terminal BLOCK:
+	//	"{" STATEMENT_LIST "}";
+	public TerminalRule getBLOCKRule() {
+		return tBLOCK;
+	}
+	
+	//terminal fragment STATEMENT_LIST:
+	//	STATEMENT ";"*;
+	public TerminalRule getSTATEMENT_LISTRule() {
+		return tSTATEMENT_LIST;
+	}
+	
+	//terminal DECLARATION:
+	//	CONST_DECL | TYPE_DECL | VAR_DECL;
+	public TerminalRule getDECLARATIONRule() {
+		return tDECLARATION;
+	}
+	
+	//terminal TOP_LEVEL_DECL:
+	//	DECLARATION | FUNCTION_DECL | METHOD_DECL;
+	public TerminalRule getTOP_LEVEL_DECLRule() {
+		return tTOP_LEVEL_DECL;
+	}
+	
+	//terminal CONST_DECL:
+	//	"const" (CONST_SPEC | "(" (CONST_SPEC ";")* ")");
+	public TerminalRule getCONST_DECLRule() {
+		return tCONST_DECL;
+	}
+	
+	//terminal fragment CONST_SPEC:
+	//	IDENTIFIER_LIST (TYPE? "=" EXPRESSION_LIST)?;
+	public TerminalRule getCONST_SPECRule() {
+		return tCONST_SPEC;
+	}
+	
+	//terminal IDENTIFIER_LIST:
+	//	IDENTIFIER ("," IDENTIFIER)*;
+	public TerminalRule getIDENTIFIER_LISTRule() {
+		return tIDENTIFIER_LIST;
+	}
+	
+	//terminal EXPRESSION_LIST:
+	//	EXPRESSION ("," EXPRESSION)*;
+	public TerminalRule getEXPRESSION_LISTRule() {
+		return tEXPRESSION_LIST;
+	}
+	
+	//terminal TYPE_DECL:
+	//	"type" (TYPE_SPEC | "(" (TYPE_SPEC ";")* ")");
+	public TerminalRule getTYPE_DECLRule() {
+		return tTYPE_DECL;
+	}
+	
+	//terminal TYPE_SPEC:
+	//	ALIAS_DECL | TYPE_DEF;
+	public TerminalRule getTYPE_SPECRule() {
+		return tTYPE_SPEC;
+	}
+	
+	//terminal ALIAS_DECL:
+	//	IDENTIFIER "=" TYPE;
+	public TerminalRule getALIAS_DECLRule() {
+		return tALIAS_DECL;
+	}
+	
+	//terminal TYPE_DEF:
+	//	IDENTIFIER TYPE;
+	public TerminalRule getTYPE_DEFRule() {
+		return tTYPE_DEF;
+	}
+	
+	//terminal VAR_DECL:
+	//	"var" (VAR_SPEC | "(" (VAR_SPEC ";")* ")");
+	public TerminalRule getVAR_DECLRule() {
+		return tVAR_DECL;
+	}
+	
+	//terminal VAR_SPEC:
+	//	IDENTIFIER_LIST (TYPE ("=" EXPRESSION_LIST)? | "=" EXPRESSION_LIST);
+	public TerminalRule getVAR_SPECRule() {
+		return tVAR_SPEC;
+	}
+	
+	//terminal SHORT_VAR_DECL:
+	//	IDENTIFIER_LIST ":=" EXPRESSION_LIST;
+	public TerminalRule getSHORT_VAR_DECLRule() {
+		return tSHORT_VAR_DECL;
+	}
+	
+	//terminal FUNCTION_DECL:
+	//	"func" FUNCTION_NAME SIGNATURE FUNCTION_BODY?;
+	public TerminalRule getFUNCTION_DECLRule() {
+		return tFUNCTION_DECL;
+	}
+	
+	//terminal fragment FUNCTION_NAME:
+	//	IDENTIFIER;
+	public TerminalRule getFUNCTION_NAMERule() {
+		return tFUNCTION_NAME;
+	}
+	
+	//terminal fragment FUNCTION_BODY:
+	//	BLOCK;
+	public TerminalRule getFUNCTION_BODYRule() {
+		return tFUNCTION_BODY;
+	}
+	
+	//terminal METHOD_DECL:
+	//	"func" RECIEVER METHOD_NAME SIGNATURE FUNCTION_BODY?;
+	public TerminalRule getMETHOD_DECLRule() {
+		return tMETHOD_DECL;
+	}
+	
+	//terminal fragment RECIEVER:
+	//	PARAMETERS;
+	public TerminalRule getRECIEVERRule() {
+		return tRECIEVER;
+	}
+	
+	//terminal OPERAND:
+	//	LITERAL | OPERAND_NAME | "(" EXPRESSION ")";
+	public TerminalRule getOPERANDRule() {
+		return tOPERAND;
+	}
+	
+	//terminal fragment LITERAL:
+	//	BASIC_LIT | COMPOSITE_LIT | FUNCTION_LIT;
+	public TerminalRule getLITERALRule() {
+		return tLITERAL;
+	}
+	
+	//terminal fragment BASIC_LIT:
+	//	INT_LIT | FLOAT_LIT | IMAGINARY_LIT | RUNE_LIT | STRING_LIT;
+	public TerminalRule getBASIC_LITRule() {
+		return tBASIC_LIT;
+	}
+	
+	//terminal fragment OPERAND_NAME:
+	//	IDENTIFIER | QUALIFIED_IDENT;
+	public TerminalRule getOPERAND_NAMERule() {
+		return tOPERAND_NAME;
+	}
+	
+	//terminal QUALIFIED_IDENT:
+	//	PACKAGE_NAME "." IDENTIFIER;
+	public TerminalRule getQUALIFIED_IDENTRule() {
+		return tQUALIFIED_IDENT;
+	}
+	
+	//terminal COMPOSITE_LIT:
+	//	LITERAL_TYPE LITERAL_VALUE;
+	public TerminalRule getCOMPOSITE_LITRule() {
+		return tCOMPOSITE_LIT;
+	}
+	
+	//terminal LITERAL_TYPE:
+	//	STRUCT_TYPE | ARRAY_TYPE | "[" "..." "]" ELEMENT_TYPE | SLICE_TYPE | MAP_TYPE | TYPE_NAME;
+	public TerminalRule getLITERAL_TYPERule() {
+		return tLITERAL_TYPE;
+	}
+	
+	//terminal LITERAL_VALUE:
+	//	"{" (ELEMENT_LIST ","?)? "}";
+	public TerminalRule getLITERAL_VALUERule() {
+		return tLITERAL_VALUE;
+	}
+	
+	//terminal ELEMENT_LIST:
+	//	KEYED_ELEMENT ("," KEYED_ELEMENT)*;
+	public TerminalRule getELEMENT_LISTRule() {
+		return tELEMENT_LIST;
+	}
+	
+	//terminal fragment KEYED_ELEMENT:
+	//	(KEY ":")? ELEMENT;
+	public TerminalRule getKEYED_ELEMENTRule() {
+		return tKEYED_ELEMENT;
+	}
+	
+	//terminal fragment KEY:
+	//	FIELD_NAME | EXPRESSION | LITERAL_VALUE;
+	public TerminalRule getKEYRule() {
+		return tKEY;
+	}
+	
+	//terminal fragment FIELD_NAME:
+	//	IDENTIFIER;
+	public TerminalRule getFIELD_NAMERule() {
+		return tFIELD_NAME;
+	}
+	
+	//terminal fragment ELEMENT:
+	//	EXPRESSION | LITERAL_VALUE;
+	public TerminalRule getELEMENTRule() {
+		return tELEMENT;
+	}
+	
+	//terminal fragment FUNCTION_LIT:
+	//	"func" SIGNATURE FUNCTION_BODY;
+	public TerminalRule getFUNCTION_LITRule() {
+		return tFUNCTION_LIT;
+	}
+	
+	//terminal PRIMARY_EXPR:
+	//	OPERAND | CONVERSION | METHOD_EXPR | PRIMARY_EXPR SELECTOR | PRIMARY_EXPR INDEX | PRIMARY_EXPR SLICE | PRIMARY_EXPR
+	//	TYPE_ASSERTION | PRIMARY_EXPR ARGUMENTS;
+	public TerminalRule getPRIMARY_EXPRRule() {
+		return tPRIMARY_EXPR;
+	}
+	
+	//terminal fragment SELECTOR:
+	//	"." IDENTIFIER;
+	public TerminalRule getSELECTORRule() {
+		return tSELECTOR;
+	}
+	
+	//terminal fragment INDEX:
+	//	"[" EXPRESSION "]";
+	public TerminalRule getINDEXRule() {
+		return tINDEX;
+	}
+	
+	//terminal fragment SLICE:
+	//	"[" EXPRESSION? ":" EXPRESSION? "]" |
+	//	"[" EXPRESSION? ":" EXPRESSION ":" EXPRESSION "]";
+	public TerminalRule getSLICERule() {
+		return tSLICE;
+	}
+	
+	//terminal fragment TYPE_ASSERTION:
+	//	"." "(" TYPE ")";
+	public TerminalRule getTYPE_ASSERTIONRule() {
+		return tTYPE_ASSERTION;
+	}
+	
+	//terminal ARGUMENTS:
+	//	"(" (EXPRESSION_LIST | TYPE ("," EXPRESSION_LIST)? "..."? ","?)? ")";
+	public TerminalRule getARGUMENTSRule() {
+		return tARGUMENTS;
+	}
+	
+	//terminal METHOD_EXPR:
+	//	RECIEVER_TYPE "." METHOD_NAME;
+	public TerminalRule getMETHOD_EXPRRule() {
+		return tMETHOD_EXPR;
+	}
+	
+	//terminal fragment RECIEVER_TYPE:
+	//	TYPE;
+	public TerminalRule getRECIEVER_TYPERule() {
+		return tRECIEVER_TYPE;
+	}
+	
+	//terminal EXPRESSION:
+	//	UNARY_EXPR | EXPRESSION BINARY_OP EXPRESSION;
+	public TerminalRule getEXPRESSIONRule() {
+		return tEXPRESSION;
+	}
+	
+	//terminal fragment UNARY_EXPR:
+	//	PRIMARY_EXPR | UNARY_OP UNARY_EXPR;
+	public TerminalRule getUNARY_EXPRRule() {
+		return tUNARY_EXPR;
+	}
+	
+	//terminal fragment BINARY_OP:
+	//	"||" | "&&" | REL_OP | ADD_OP | MUL_OP;
+	public TerminalRule getBINARY_OPRule() {
+		return tBINARY_OP;
+	}
+	
+	//terminal fragment REL_OP:
+	//	"==" | "!=" | "<" | "<=" | ">" | ">=";
+	public TerminalRule getREL_OPRule() {
+		return tREL_OP;
+	}
+	
+	//terminal fragment ADD_OP:
+	//	"+" | "-" | "|" | "^";
+	public TerminalRule getADD_OPRule() {
+		return tADD_OP;
+	}
+	
+	//terminal fragment MUL_OP:
+	//	"*" | "/" | "%" | "<<" | ">>" | "&" | "&^";
+	public TerminalRule getMUL_OPRule() {
+		return tMUL_OP;
+	}
+	
+	//terminal fragment UNARY_OP:
+	//	"+" | "-" | "!" | "^" | "*" | "&" | "<-";
+	public TerminalRule getUNARY_OPRule() {
+		return tUNARY_OP;
+	}
+	
+	//terminal fragment CONVERSION:
+	//	TYPE "(" EXPRESSION ","? ")";
+	public TerminalRule getCONVERSIONRule() {
+		return tCONVERSION;
+	}
+	
+	//terminal STATEMENT:
+	//	DECLARATION | LABELED_STMT | SIMPLE_STMT | GO_STMT | RETURN_STMT | BREAK_STMT | CONTINUE_STMT | GOTO_STMT |
+	//	FALLTHROUGH_STMT | BLOCK | IF_STMT | SWITCH_STMT | SELECT_STMT | FOR_STMT | DEFER_STMT;
+	public TerminalRule getSTATEMENTRule() {
+		return tSTATEMENT;
+	}
+	
+	//terminal fragment SIMPLE_STMT:
+	//	EMPTY_STMT | EXPRESSION_STMT | SEND_STMT | INC_DEC_STMT | ASSIGNMENT | SHORT_VAR_DECL;
+	public TerminalRule getSIMPLE_STMTRule() {
+		return tSIMPLE_STMT;
+	}
+	
+	//terminal fragment EMPTY_STMT:
+	//	'\\u0020'* //should be empty, how to represent that? // 0 or more whitespaces?
+	//;
+	public TerminalRule getEMPTY_STMTRule() {
+		return tEMPTY_STMT;
+	}
+	
+	//terminal fragment LABELED_STMT:
+	//	LABEL ":" STATEMENT;
+	public TerminalRule getLABELED_STMTRule() {
+		return tLABELED_STMT;
+	}
+	
+	//terminal fragment LABEL:
+	//	IDENTIFIER;
+	public TerminalRule getLABELRule() {
+		return tLABEL;
+	}
+	
+	//terminal fragment EXPRESSION_STMT:
+	//	EXPRESSION;
+	public TerminalRule getEXPRESSION_STMTRule() {
+		return tEXPRESSION_STMT;
+	}
+	
+	//terminal fragment SEND_STMT:
+	//	CHANNEL "<-" EXPRESSION;
+	public TerminalRule getSEND_STMTRule() {
+		return tSEND_STMT;
+	}
+	
+	//terminal fragment CHANNEL:
+	//	EXPRESSION;
+	public TerminalRule getCHANNELRule() {
+		return tCHANNEL;
+	}
+	
+	//terminal INC_DEC_STMT:
+	//	EXPRESSION ("++" | "--");
+	public TerminalRule getINC_DEC_STMTRule() {
+		return tINC_DEC_STMT;
+	}
+	
+	//terminal fragment ASSIGNMENT:
+	//	EXPRESSION_LIST ASSIGN_OP EXPRESSION_LIST;
+	public TerminalRule getASSIGNMENTRule() {
+		return tASSIGNMENT;
+	}
+	
+	//terminal fragment ASSIGN_OP:
+	//	(ADD_OP | MUL_OP)? "=";
+	public TerminalRule getASSIGN_OPRule() {
+		return tASSIGN_OP;
+	}
+	
+	//terminal IF_STMT:
+	//	"if" (SIMPLE_STMT ";")? EXPRESSION BLOCK ("else" (IF_STMT | BLOCK))?;
+	public TerminalRule getIF_STMTRule() {
+		return tIF_STMT;
+	}
+	
+	//terminal SWITCH_STMT:
+	//	EXPR_SWITCH_STMT | TYPE_SWITCH_STMT;
+	public TerminalRule getSWITCH_STMTRule() {
+		return tSWITCH_STMT;
+	}
+	
+	//terminal fragment EXPR_SWITCH_STMT:
+	//	"switch" (SIMPLE_STMT ";")? EXPRESSION? "{" EXPR_CASE_CLAUSE* "}";
+	public TerminalRule getEXPR_SWITCH_STMTRule() {
+		return tEXPR_SWITCH_STMT;
+	}
+	
+	//terminal fragment EXPR_CASE_CLAUSE:
+	//	EXPR_SWITCH_CASE ":" STATEMENT_LIST;
+	public TerminalRule getEXPR_CASE_CLAUSERule() {
+		return tEXPR_CASE_CLAUSE;
+	}
+	
+	//terminal fragment EXPR_SWITCH_CASE:
+	//	"case" EXPRESSION_LIST | "default";
+	public TerminalRule getEXPR_SWITCH_CASERule() {
+		return tEXPR_SWITCH_CASE;
+	}
+	
+	//terminal fragment TYPE_SWITCH_STMT:
+	//	"switch" (SIMPLE_STMT ";")? TYPE_SWITCH_GUARD "{" TYPE_CASE_CLAUSE* "}";
+	public TerminalRule getTYPE_SWITCH_STMTRule() {
+		return tTYPE_SWITCH_STMT;
+	}
+	
+	//terminal fragment TYPE_SWITCH_GUARD:
+	//	(IDENTIFIER ":=")? PRIMARY_EXPR "." "(" "type" ")";
+	public TerminalRule getTYPE_SWITCH_GUARDRule() {
+		return tTYPE_SWITCH_GUARD;
+	}
+	
+	//terminal fragment TYPE_CASE_CLAUSE:
+	//	TYPE_SWITCH_CASE ":" STATEMENT_LIST;
+	public TerminalRule getTYPE_CASE_CLAUSERule() {
+		return tTYPE_CASE_CLAUSE;
+	}
+	
+	//terminal fragment TYPE_SWITCH_CASE:
+	//	"case" TYPE_LIST | "default";
+	public TerminalRule getTYPE_SWITCH_CASERule() {
+		return tTYPE_SWITCH_CASE;
+	}
+	
+	//terminal fragment TYPE_LIST:
+	//	TYPE ("," TYPE)*;
+	public TerminalRule getTYPE_LISTRule() {
+		return tTYPE_LIST;
+	}
+	
+	//terminal FOR_STMT:
+	//	"for" (CONDITION | FOR_CLAUSE | RANGE_CLAUSE)? BLOCK;
+	public TerminalRule getFOR_STMTRule() {
+		return tFOR_STMT;
+	}
+	
+	//terminal fragment CONDITION:
+	//	EXPRESSION;
+	public TerminalRule getCONDITIONRule() {
+		return tCONDITION;
+	}
+	
+	//terminal fragment FOR_CLAUSE:
+	//	INIT_STMT? ";" CONDITION? ";" POST_STMT?;
+	public TerminalRule getFOR_CLAUSERule() {
+		return tFOR_CLAUSE;
+	}
+	
+	//terminal fragment INIT_STMT:
+	//	SIMPLE_STMT;
+	public TerminalRule getINIT_STMTRule() {
+		return tINIT_STMT;
+	}
+	
+	//terminal fragment POST_STMT:
+	//	SIMPLE_STMT;
+	public TerminalRule getPOST_STMTRule() {
+		return tPOST_STMT;
+	}
+	
+	//terminal fragment RANGE_CLAUSE:
+	//	(EXPRESSION_LIST "=" | IDENTIFIER_LIST ":=")? "range" EXPRESSION;
+	public TerminalRule getRANGE_CLAUSERule() {
+		return tRANGE_CLAUSE;
+	}
+	
+	//terminal GO_STMT:
+	//	"go" EXPRESSION;
+	public TerminalRule getGO_STMTRule() {
+		return tGO_STMT;
+	}
+	
+	//terminal SELECT_STMT:
+	//	"select" "{" COMM_CLAUSE* "}";
+	public TerminalRule getSELECT_STMTRule() {
+		return tSELECT_STMT;
+	}
+	
+	//terminal fragment COMM_CLAUSE:
+	//	COMM_CASE ":" STATEMENT_LIST;
+	public TerminalRule getCOMM_CLAUSERule() {
+		return tCOMM_CLAUSE;
+	}
+	
+	//terminal fragment COMM_CASE:
+	//	"case" (SEND_STMT | RECV_STMT) | "default";
+	public TerminalRule getCOMM_CASERule() {
+		return tCOMM_CASE;
+	}
+	
+	//terminal fragment RECV_STMT:
+	//	(EXPRESSION_LIST "=" | IDENTIFIER_LIST ":=")? RECV_EXPR;
+	public TerminalRule getRECV_STMTRule() {
+		return tRECV_STMT;
+	}
+	
+	//terminal fragment RECV_EXPR:
+	//	EXPRESSION;
+	public TerminalRule getRECV_EXPRRule() {
+		return tRECV_EXPR;
+	}
+	
+	//terminal RETURN_STMT:
+	//	"return" EXPRESSION_LIST?;
+	public TerminalRule getRETURN_STMTRule() {
+		return tRETURN_STMT;
+	}
+	
+	//terminal BREAK_STMT:
+	//	"break" LABEL?;
+	public TerminalRule getBREAK_STMTRule() {
+		return tBREAK_STMT;
+	}
+	
+	//terminal CONTINUE_STMT:
+	//	"continue" LABEL?;
+	public TerminalRule getCONTINUE_STMTRule() {
+		return tCONTINUE_STMT;
+	}
+	
+	//terminal GOTO_STMT:
+	//	"goto" LABEL;
+	public TerminalRule getGOTO_STMTRule() {
+		return tGOTO_STMT;
+	}
+	
+	//terminal FALLTHROUGH_STMT:
+	//	"fallthrough";
+	public TerminalRule getFALLTHROUGH_STMTRule() {
+		return tFALLTHROUGH_STMT;
+	}
+	
+	//terminal DEFER_STMT:
+	//	"defer" EXPRESSION;
+	public TerminalRule getDEFER_STMTRule() {
+		return tDEFER_STMT;
+	}
+	
+	//terminal SOURCE_FILE:
+	//	PACKAGE_CLAUSE ";" (IMPORT_DECL ";")* (TOP_LEVEL_DECL ";")*;
+	public TerminalRule getSOURCE_FILERule() {
+		return tSOURCE_FILE;
+	}
+	
+	//terminal fragment PACKAGE_CLAUSE:
+	//	"package" PACKAGE_NAME;
+	public TerminalRule getPACKAGE_CLAUSERule() {
+		return tPACKAGE_CLAUSE;
+	}
+	
+	//terminal fragment PACKAGE_NAME:
+	//	IDENTIFIER;
+	public TerminalRule getPACKAGE_NAMERule() {
+		return tPACKAGE_NAME;
+	}
+	
+	//terminal IMPORT_DECL:
+	//	"import" (IMPORT_SPEC | "(" (IMPORT_SPEC ";")* ")");
+	public TerminalRule getIMPORT_DECLRule() {
+		return tIMPORT_DECL;
+	}
+	
+	//terminal fragment IMPORT_SPEC:
+	//	("." | PACKAGE_NAME)? IMPORT_PATH;
+	public TerminalRule getIMPORT_SPECRule() {
+		return tIMPORT_SPEC;
+	}
+	
+	//terminal fragment IMPORT_PATH:
+	//	STRING_LIT;
+	public TerminalRule getIMPORT_PATHRule() {
+		return tIMPORT_PATH;
 	}
 	
 	//terminal ID:
