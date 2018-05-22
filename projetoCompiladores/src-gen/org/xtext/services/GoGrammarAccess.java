@@ -779,13 +779,13 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cInterface_typeParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cSlice_typeParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		private final RuleCall cMap_typeParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		private final RuleCall cParameter_listParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cChannel_typeParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
 		//Type_lit:
-		//	Array_type | Struct_type | Pointer_type | Function_type | Interface_type | Slice_type | Map_type | Parameter_list;
+		//	Array_type | Struct_type | Pointer_type | Function_type | Interface_type | Slice_type | Map_type | Channel_type;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Array_type | Struct_type | Pointer_type | Function_type | Interface_type | Slice_type | Map_type | Parameter_list
+		//Array_type | Struct_type | Pointer_type | Function_type | Interface_type | Slice_type | Map_type | Channel_type
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Array_type
@@ -809,8 +809,8 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//Map_type
 		public RuleCall getMap_typeParserRuleCall_6() { return cMap_typeParserRuleCall_6; }
 		
-		//Parameter_list
-		public RuleCall getParameter_listParserRuleCall_7() { return cParameter_listParserRuleCall_7; }
+		//Channel_type
+		public RuleCall getChannel_typeParserRuleCall_7() { return cChannel_typeParserRuleCall_7; }
 	}
 	public class Array_typeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Array_type");
@@ -2233,29 +2233,19 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOperandParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cConversionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cMethod_exprParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final RuleCall cPrimary_exprParserRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
-		private final RuleCall cSelectorParserRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
-		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final RuleCall cPrimary_exprParserRuleCall_4_0 = (RuleCall)cGroup_4.eContents().get(0);
-		private final RuleCall cIndexParserRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
-		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
-		private final RuleCall cPrimary_exprParserRuleCall_5_0 = (RuleCall)cGroup_5.eContents().get(0);
-		private final RuleCall cSliceParserRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
-		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
-		private final RuleCall cPrimary_exprParserRuleCall_6_0 = (RuleCall)cGroup_6.eContents().get(0);
-		private final RuleCall cType_assertionParserRuleCall_6_1 = (RuleCall)cGroup_6.eContents().get(1);
-		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
-		private final RuleCall cPrimary_exprParserRuleCall_7_0 = (RuleCall)cGroup_7.eContents().get(0);
-		private final RuleCall cArgumentsParserRuleCall_7_1 = (RuleCall)cGroup_7.eContents().get(1);
+		private final RuleCall cPrimary_expr_selectorParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cPrimary_expr_indexParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cPrimary_expr_sliceParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cPrimary_expr_type_assertionParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cPrimary_expr_argumentsParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
 		//Primary_expr:
-		//	Operand | Conversion | Method_expr | Primary_expr Selector | Primary_expr Index | Primary_expr Slice | Primary_expr
-		//	Type_assertion | Primary_expr Arguments;
+		//	Operand | Conversion | Method_expr | Primary_expr_selector | Primary_expr_index | Primary_expr_slice |
+		//	Primary_expr_type_assertion | Primary_expr_arguments;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Operand | Conversion | Method_expr | Primary_expr Selector | Primary_expr Index | Primary_expr Slice | Primary_expr
-		//Type_assertion | Primary_expr Arguments
+		//Operand | Conversion | Method_expr | Primary_expr_selector | Primary_expr_index | Primary_expr_slice |
+		//Primary_expr_type_assertion | Primary_expr_arguments
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Operand
@@ -2267,50 +2257,215 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//Method_expr
 		public RuleCall getMethod_exprParserRuleCall_2() { return cMethod_exprParserRuleCall_2; }
 		
-		//Primary_expr Selector
-		public Group getGroup_3() { return cGroup_3; }
+		//Primary_expr_selector
+		public RuleCall getPrimary_expr_selectorParserRuleCall_3() { return cPrimary_expr_selectorParserRuleCall_3; }
 		
-		//Primary_expr
-		public RuleCall getPrimary_exprParserRuleCall_3_0() { return cPrimary_exprParserRuleCall_3_0; }
+		//Primary_expr_index
+		public RuleCall getPrimary_expr_indexParserRuleCall_4() { return cPrimary_expr_indexParserRuleCall_4; }
+		
+		//Primary_expr_slice
+		public RuleCall getPrimary_expr_sliceParserRuleCall_5() { return cPrimary_expr_sliceParserRuleCall_5; }
+		
+		//Primary_expr_type_assertion
+		public RuleCall getPrimary_expr_type_assertionParserRuleCall_6() { return cPrimary_expr_type_assertionParserRuleCall_6; }
+		
+		//Primary_expr_arguments
+		public RuleCall getPrimary_expr_argumentsParserRuleCall_7() { return cPrimary_expr_argumentsParserRuleCall_7; }
+	}
+	public class Primary_expr_selectorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Primary_expr_selector");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final RuleCall cSelectorParserRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
+		private final RuleCall cPrimary_expr_selectorParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Alternatives cAlternatives_1 = (Alternatives)cAlternatives.eContents().get(1);
+		private final RuleCall cOperandParserRuleCall_1_0 = (RuleCall)cAlternatives_1.eContents().get(0);
+		private final RuleCall cConversionParserRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
+		private final RuleCall cMethod_exprParserRuleCall_1_2 = (RuleCall)cAlternatives_1.eContents().get(2);
+		
+		//Primary_expr_selector:
+		//	Selector Primary_expr_selector | (Operand | Conversion | Method_expr);
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Selector Primary_expr_selector | (Operand | Conversion | Method_expr)
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Selector Primary_expr_selector
+		public Group getGroup_0() { return cGroup_0; }
 		
 		//Selector
-		public RuleCall getSelectorParserRuleCall_3_1() { return cSelectorParserRuleCall_3_1; }
+		public RuleCall getSelectorParserRuleCall_0_0() { return cSelectorParserRuleCall_0_0; }
 		
-		//Primary_expr Index
-		public Group getGroup_4() { return cGroup_4; }
+		//Primary_expr_selector
+		public RuleCall getPrimary_expr_selectorParserRuleCall_0_1() { return cPrimary_expr_selectorParserRuleCall_0_1; }
 		
-		//Primary_expr
-		public RuleCall getPrimary_exprParserRuleCall_4_0() { return cPrimary_exprParserRuleCall_4_0; }
+		//(Operand | Conversion | Method_expr)
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
+		//Operand
+		public RuleCall getOperandParserRuleCall_1_0() { return cOperandParserRuleCall_1_0; }
+		
+		//Conversion
+		public RuleCall getConversionParserRuleCall_1_1() { return cConversionParserRuleCall_1_1; }
+		
+		//Method_expr
+		public RuleCall getMethod_exprParserRuleCall_1_2() { return cMethod_exprParserRuleCall_1_2; }
+	}
+	public class Primary_expr_indexElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Primary_expr_index");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final RuleCall cIndexParserRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
+		private final RuleCall cPrimary_expr_selectorParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Alternatives cAlternatives_1 = (Alternatives)cAlternatives.eContents().get(1);
+		private final RuleCall cOperandParserRuleCall_1_0 = (RuleCall)cAlternatives_1.eContents().get(0);
+		private final RuleCall cConversionParserRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
+		private final RuleCall cMethod_exprParserRuleCall_1_2 = (RuleCall)cAlternatives_1.eContents().get(2);
+		
+		//Primary_expr_index:
+		//	Index Primary_expr_selector | (Operand | Conversion | Method_expr);
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Index Primary_expr_selector | (Operand | Conversion | Method_expr)
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Index Primary_expr_selector
+		public Group getGroup_0() { return cGroup_0; }
 		
 		//Index
-		public RuleCall getIndexParserRuleCall_4_1() { return cIndexParserRuleCall_4_1; }
+		public RuleCall getIndexParserRuleCall_0_0() { return cIndexParserRuleCall_0_0; }
 		
-		//Primary_expr Slice
-		public Group getGroup_5() { return cGroup_5; }
+		//Primary_expr_selector
+		public RuleCall getPrimary_expr_selectorParserRuleCall_0_1() { return cPrimary_expr_selectorParserRuleCall_0_1; }
 		
-		//Primary_expr
-		public RuleCall getPrimary_exprParserRuleCall_5_0() { return cPrimary_exprParserRuleCall_5_0; }
+		//(Operand | Conversion | Method_expr)
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
+		//Operand
+		public RuleCall getOperandParserRuleCall_1_0() { return cOperandParserRuleCall_1_0; }
+		
+		//Conversion
+		public RuleCall getConversionParserRuleCall_1_1() { return cConversionParserRuleCall_1_1; }
+		
+		//Method_expr
+		public RuleCall getMethod_exprParserRuleCall_1_2() { return cMethod_exprParserRuleCall_1_2; }
+	}
+	public class Primary_expr_sliceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Primary_expr_slice");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final RuleCall cSliceParserRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
+		private final RuleCall cPrimary_expr_selectorParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Alternatives cAlternatives_1 = (Alternatives)cAlternatives.eContents().get(1);
+		private final RuleCall cOperandParserRuleCall_1_0 = (RuleCall)cAlternatives_1.eContents().get(0);
+		private final RuleCall cConversionParserRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
+		private final RuleCall cMethod_exprParserRuleCall_1_2 = (RuleCall)cAlternatives_1.eContents().get(2);
+		
+		//Primary_expr_slice:
+		//	Slice Primary_expr_selector | (Operand | Conversion | Method_expr);
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Slice Primary_expr_selector | (Operand | Conversion | Method_expr)
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Slice Primary_expr_selector
+		public Group getGroup_0() { return cGroup_0; }
 		
 		//Slice
-		public RuleCall getSliceParserRuleCall_5_1() { return cSliceParserRuleCall_5_1; }
+		public RuleCall getSliceParserRuleCall_0_0() { return cSliceParserRuleCall_0_0; }
 		
-		//Primary_expr Type_assertion
-		public Group getGroup_6() { return cGroup_6; }
+		//Primary_expr_selector
+		public RuleCall getPrimary_expr_selectorParserRuleCall_0_1() { return cPrimary_expr_selectorParserRuleCall_0_1; }
 		
-		//Primary_expr
-		public RuleCall getPrimary_exprParserRuleCall_6_0() { return cPrimary_exprParserRuleCall_6_0; }
+		//(Operand | Conversion | Method_expr)
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
+		//Operand
+		public RuleCall getOperandParserRuleCall_1_0() { return cOperandParserRuleCall_1_0; }
+		
+		//Conversion
+		public RuleCall getConversionParserRuleCall_1_1() { return cConversionParserRuleCall_1_1; }
+		
+		//Method_expr
+		public RuleCall getMethod_exprParserRuleCall_1_2() { return cMethod_exprParserRuleCall_1_2; }
+	}
+	public class Primary_expr_type_assertionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Primary_expr_type_assertion");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final RuleCall cType_assertionParserRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
+		private final RuleCall cPrimary_expr_selectorParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Alternatives cAlternatives_1 = (Alternatives)cAlternatives.eContents().get(1);
+		private final RuleCall cOperandParserRuleCall_1_0 = (RuleCall)cAlternatives_1.eContents().get(0);
+		private final RuleCall cConversionParserRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
+		private final RuleCall cMethod_exprParserRuleCall_1_2 = (RuleCall)cAlternatives_1.eContents().get(2);
+		
+		//Primary_expr_type_assertion:
+		//	Type_assertion Primary_expr_selector | (Operand | Conversion | Method_expr);
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Type_assertion Primary_expr_selector | (Operand | Conversion | Method_expr)
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Type_assertion Primary_expr_selector
+		public Group getGroup_0() { return cGroup_0; }
 		
 		//Type_assertion
-		public RuleCall getType_assertionParserRuleCall_6_1() { return cType_assertionParserRuleCall_6_1; }
+		public RuleCall getType_assertionParserRuleCall_0_0() { return cType_assertionParserRuleCall_0_0; }
 		
-		//Primary_expr Arguments
-		public Group getGroup_7() { return cGroup_7; }
+		//Primary_expr_selector
+		public RuleCall getPrimary_expr_selectorParserRuleCall_0_1() { return cPrimary_expr_selectorParserRuleCall_0_1; }
 		
-		//Primary_expr
-		public RuleCall getPrimary_exprParserRuleCall_7_0() { return cPrimary_exprParserRuleCall_7_0; }
+		//(Operand | Conversion | Method_expr)
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
+		//Operand
+		public RuleCall getOperandParserRuleCall_1_0() { return cOperandParserRuleCall_1_0; }
+		
+		//Conversion
+		public RuleCall getConversionParserRuleCall_1_1() { return cConversionParserRuleCall_1_1; }
+		
+		//Method_expr
+		public RuleCall getMethod_exprParserRuleCall_1_2() { return cMethod_exprParserRuleCall_1_2; }
+	}
+	public class Primary_expr_argumentsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Primary_expr_arguments");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final RuleCall cArgumentsParserRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
+		private final RuleCall cPrimary_expr_selectorParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Alternatives cAlternatives_1 = (Alternatives)cAlternatives.eContents().get(1);
+		private final RuleCall cOperandParserRuleCall_1_0 = (RuleCall)cAlternatives_1.eContents().get(0);
+		private final RuleCall cConversionParserRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
+		private final RuleCall cMethod_exprParserRuleCall_1_2 = (RuleCall)cAlternatives_1.eContents().get(2);
+		
+		//Primary_expr_arguments:
+		//	Arguments Primary_expr_selector | (Operand | Conversion | Method_expr);
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Arguments Primary_expr_selector | (Operand | Conversion | Method_expr)
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Arguments Primary_expr_selector
+		public Group getGroup_0() { return cGroup_0; }
 		
 		//Arguments
-		public RuleCall getArgumentsParserRuleCall_7_1() { return cArgumentsParserRuleCall_7_1; }
+		public RuleCall getArgumentsParserRuleCall_0_0() { return cArgumentsParserRuleCall_0_0; }
+		
+		//Primary_expr_selector
+		public RuleCall getPrimary_expr_selectorParserRuleCall_0_1() { return cPrimary_expr_selectorParserRuleCall_0_1; }
+		
+		//(Operand | Conversion | Method_expr)
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
+		//Operand
+		public RuleCall getOperandParserRuleCall_1_0() { return cOperandParserRuleCall_1_0; }
+		
+		//Conversion
+		public RuleCall getConversionParserRuleCall_1_1() { return cConversionParserRuleCall_1_1; }
+		
+		//Method_expr
+		public RuleCall getMethod_exprParserRuleCall_1_2() { return cMethod_exprParserRuleCall_1_2; }
 	}
 	public class SelectorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Selector");
@@ -3864,6 +4019,11 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	private final ElementElements pElement;
 	private final Function_litElements pFunction_lit;
 	private final Primary_exprElements pPrimary_expr;
+	private final Primary_expr_selectorElements pPrimary_expr_selector;
+	private final Primary_expr_indexElements pPrimary_expr_index;
+	private final Primary_expr_sliceElements pPrimary_expr_slice;
+	private final Primary_expr_type_assertionElements pPrimary_expr_type_assertion;
+	private final Primary_expr_argumentsElements pPrimary_expr_arguments;
 	private final SelectorElements pSelector;
 	private final IndexElements pIndex;
 	private final SliceElements pSlice;
@@ -4032,6 +4192,11 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		this.pElement = new ElementElements();
 		this.pFunction_lit = new Function_litElements();
 		this.pPrimary_expr = new Primary_exprElements();
+		this.pPrimary_expr_selector = new Primary_expr_selectorElements();
+		this.pPrimary_expr_index = new Primary_expr_indexElements();
+		this.pPrimary_expr_slice = new Primary_expr_sliceElements();
+		this.pPrimary_expr_type_assertion = new Primary_expr_type_assertionElements();
+		this.pPrimary_expr_arguments = new Primary_expr_argumentsElements();
 		this.pSelector = new SelectorElements();
 		this.pIndex = new IndexElements();
 		this.pSlice = new SliceElements();
@@ -4154,7 +4319,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		return tUNICODE_CHAR;
 	}
 	
-	//terminal UNICODE_LETTER:
+	//terminal UNICODE_LETTER: // unicode char classes Lu, Ll, Lt, Lm, or Lo
 	//	'\\u0041'..'\\u005A' | '\\u0061'..'\\u007A' | '\\u00AA' | '\\u00B5' | '\\u00BA' | '\\u00C0'..'\\u00D6' | '\\u00D8'..'\\u00F6' |
 	//	'\\u00F8'..'\\u02C1' | '\\u02C6'..'\\u02D1' | '\\u02E0'..'\\u02E4' | '\\u02EC' | '\\u02EE' | '\\u0370'..'\\u0374' |
 	//	'\\u0376'..'\\u0377' | '\\u037A'..'\\u037D' | '\\u037F' | '\\u0386' | '\\u0388'..'\\u038A' | '\\u038C' | '\\u038E'..'\\u03A1' |
@@ -4531,7 +4696,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Type_lit:
-	//	Array_type | Struct_type | Pointer_type | Function_type | Interface_type | Slice_type | Map_type | Parameter_list;
+	//	Array_type | Struct_type | Pointer_type | Function_type | Interface_type | Slice_type | Map_type | Channel_type;
 	public Type_litElements getType_litAccess() {
 		return pType_lit;
 	}
@@ -5111,14 +5276,64 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Primary_expr:
-	//	Operand | Conversion | Method_expr | Primary_expr Selector | Primary_expr Index | Primary_expr Slice | Primary_expr
-	//	Type_assertion | Primary_expr Arguments;
+	//	Operand | Conversion | Method_expr | Primary_expr_selector | Primary_expr_index | Primary_expr_slice |
+	//	Primary_expr_type_assertion | Primary_expr_arguments;
 	public Primary_exprElements getPrimary_exprAccess() {
 		return pPrimary_expr;
 	}
 	
 	public ParserRule getPrimary_exprRule() {
 		return getPrimary_exprAccess().getRule();
+	}
+	
+	//Primary_expr_selector:
+	//	Selector Primary_expr_selector | (Operand | Conversion | Method_expr);
+	public Primary_expr_selectorElements getPrimary_expr_selectorAccess() {
+		return pPrimary_expr_selector;
+	}
+	
+	public ParserRule getPrimary_expr_selectorRule() {
+		return getPrimary_expr_selectorAccess().getRule();
+	}
+	
+	//Primary_expr_index:
+	//	Index Primary_expr_selector | (Operand | Conversion | Method_expr);
+	public Primary_expr_indexElements getPrimary_expr_indexAccess() {
+		return pPrimary_expr_index;
+	}
+	
+	public ParserRule getPrimary_expr_indexRule() {
+		return getPrimary_expr_indexAccess().getRule();
+	}
+	
+	//Primary_expr_slice:
+	//	Slice Primary_expr_selector | (Operand | Conversion | Method_expr);
+	public Primary_expr_sliceElements getPrimary_expr_sliceAccess() {
+		return pPrimary_expr_slice;
+	}
+	
+	public ParserRule getPrimary_expr_sliceRule() {
+		return getPrimary_expr_sliceAccess().getRule();
+	}
+	
+	//Primary_expr_type_assertion:
+	//	Type_assertion Primary_expr_selector | (Operand | Conversion | Method_expr);
+	public Primary_expr_type_assertionElements getPrimary_expr_type_assertionAccess() {
+		return pPrimary_expr_type_assertion;
+	}
+	
+	public ParserRule getPrimary_expr_type_assertionRule() {
+		return getPrimary_expr_type_assertionAccess().getRule();
+	}
+	
+	//Primary_expr_arguments:
+	//	Arguments Primary_expr_selector | (Operand | Conversion | Method_expr);
+	public Primary_expr_argumentsElements getPrimary_expr_argumentsAccess() {
+		return pPrimary_expr_arguments;
+	}
+	
+	public ParserRule getPrimary_expr_argumentsRule() {
+		return getPrimary_expr_argumentsAccess().getRule();
 	}
 	
 	//Selector:

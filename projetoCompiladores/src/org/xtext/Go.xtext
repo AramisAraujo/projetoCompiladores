@@ -11,10 +11,10 @@ Greeting:
 terminal NEWLINE:
 	'\u000A';
 
-terminal UNICODE_CHAR: // unicode char classes Lu, Ll, Lt, Lm, or Lo
+terminal UNICODE_CHAR: 
 	!(NEWLINE);
 
-terminal UNICODE_LETTER:
+terminal UNICODE_LETTER: // unicode char classes Lu, Ll, Lt, Lm, or Lo
 	'\u0041'..'\u005A' | '\u0061'..'\u007A' | '\u00AA' | '\u00B5' | '\u00BA' | '\u00C0'..'\u00D6' | '\u00D8'..'\u00F6' |
 	'\u00F8'..'\u02C1' | '\u02C6'..'\u02D1' | '\u02E0'..'\u02E4' | '\u02EC' | '\u02EE' | '\u0370'..'\u0374' |
 	'\u0376'..'\u0377' | '\u037A'..'\u037D' | '\u037F' | '\u0386' | '\u0388'..'\u038A' | '\u038C' | '\u038E'..'\u03A1' |
@@ -195,7 +195,7 @@ Type_name:
 
 Type_lit:
 	Array_type | Struct_type | Pointer_type | Function_type |
-	Interface_type | Slice_type | Map_type | Parameter_list;
+	Interface_type | Slice_type | Map_type | Channel_type;
 
 Array_type:
 	"[" Array_length "]" Element_type;
@@ -374,11 +374,40 @@ Primary_expr:
 		Operand |
 		Conversion |
 		Method_expr|
-		Primary_expr Selector |
-		Primary_expr Index |
-		Primary_expr Slice |
-		Primary_expr Type_assertion |
-	 	Primary_expr Arguments
+		Primary_expr_selector |
+		Primary_expr_index |
+		Primary_expr_slice |
+		Primary_expr_type_assertion |
+	 	Primary_expr_arguments
+;
+
+Primary_expr_selector:
+	Selector Primary_expr_selector | (Operand |
+		Conversion |
+		Method_expr)
+;
+Primary_expr_index:
+	Index Primary_expr_selector | (Operand |
+		Conversion |
+		Method_expr)
+;
+
+Primary_expr_slice:
+	Slice Primary_expr_selector | (Operand |
+		Conversion |
+		Method_expr)
+;
+
+Primary_expr_type_assertion:
+	Type_assertion Primary_expr_selector | (Operand |
+		Conversion |
+		Method_expr)
+;
+
+Primary_expr_arguments:
+	Arguments Primary_expr_selector | (Operand |
+		Conversion |
+		Method_expr)
 ;
 
 Selector:
