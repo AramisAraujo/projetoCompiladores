@@ -842,7 +842,6 @@ terminal KEYWORDS:
 
 terminal IDENTIFIER : LETTER (LETTER | UNICODE_DIGIT)*;
 
-
 terminal OPERATORS:
 '+'|
 '&'|
@@ -961,7 +960,6 @@ terminal COMMENT:
 	'//' -> NEWLINE| '/*' -> ('*/')+
 ;
 
-
 terminal fragment SEMICOLON:
 	';'
 ;
@@ -981,7 +979,6 @@ terminal fragment TYPE_NAME:
 terminal fragment TYPE_LIT:
 	ARRAY_TYPE | STRUCT_TYPE | POINTER_TYPE | FUNCTION_TYPE | 
 	INTERFACE_TYPE | SLICE_TYPE | MAP_TYPE | PARAMETER_LIST;
-
 
 terminal ARRAY_TYPE:
 	"[" ARRAY_LENTGH "]" ELEMENT_TYPE
@@ -1019,7 +1016,6 @@ terminal fragment BASE_TYPE:
 terminal FUNCTION_TYPE:
 	"func" SIGNATURE
 ;
-
 
 terminal fragment SIGNATURE:
 	PARAMETERS (RESULT)+
@@ -1101,7 +1097,6 @@ terminal IDENTIFIER_LIST:
 	IDENTIFIER ("," IDENTIFIER)*
 ;
 
-
 terminal EXPRESSION_LIST:
 	EXPRESSION ("," EXPRESSION)*
 ;
@@ -1121,7 +1116,6 @@ terminal ALIAS_DECL:
 terminal TYPE_DEF:
 	IDENTIFIER TYPE
 ;
-
 
 terminal VAR_DECL:
 	"var" (VAR_SPEC | "(" (VAR_SPEC ";")* ")")
@@ -1158,7 +1152,6 @@ terminal fragment RECIEVER:
 terminal OPERAND:
 	LITERAL | OPERAND_NAME | "(" EXPRESSION ")"
 ;
-
 
 terminal fragment LITERAL:
 	BASIC_LIT | COMPOSITE_LIT | FUNCTION_LIT
@@ -1208,7 +1201,6 @@ terminal fragment FIELD_NAME:
 terminal fragment ELEMENT:
 	EXPRESSION | LITERAL_VALUE
 ;
-
 
 terminal fragment FUNCTION_LIT:
 	"func" SIGNATURE FUNCTION_BODY
@@ -1348,7 +1340,6 @@ terminal fragment ASSIGN_OP:
 	(ADD_OP | MUL_OP)? "="
 ;
 
-
 terminal IF_STMT:
 	"if" (SIMPLE_STMT ";")? EXPRESSION BLOCK ("else" (IF_STMT | BLOCK))?
 ;
@@ -1413,7 +1404,7 @@ terminal fragment RANGE_CLAUSE:
 	(EXPRESSION_LIST "="| IDENTIFIER_LIST ":=")? "range" EXPRESSION
 ;
 
-terminal  GO_STMT:
+terminal GO_STMT:
 	"go" EXPRESSION
 ;
 
@@ -1457,11 +1448,9 @@ terminal FALLTHROUGH_STMT:
 	"fallthrough"
 ;
 
-
 terminal DEFER_STMT:
 	"defer" EXPRESSION
 ;
-
 
 terminal SOURCE_FILE:
 	PACKAGE_CLAUSE ";" (IMPORT_DECL ";")* (TOP_LEVEL_DECL ";")*

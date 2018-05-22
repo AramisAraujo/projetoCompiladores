@@ -119,6 +119,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tPARAMETERS;
 	private final TerminalRule tPARAMETER_LIST;
 	private final TerminalRule tPARAMETER_DECL;
+	private final TerminalRule tTYPE_PARAMETER_DECL;
 	private final TerminalRule tINTERFACE_TYPE;
 	private final TerminalRule tMETHOD_SPEC;
 	private final TerminalRule tMETHOD_NAME;
@@ -288,6 +289,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		this.tPARAMETERS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.PARAMETERS");
 		this.tPARAMETER_LIST = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.PARAMETER_LIST");
 		this.tPARAMETER_DECL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.PARAMETER_DECL");
+		this.tTYPE_PARAMETER_DECL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.TYPE_PARAMETER_DECL");
 		this.tINTERFACE_TYPE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.INTERFACE_TYPE");
 		this.tMETHOD_SPEC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.METHOD_SPEC");
 		this.tMETHOD_NAME = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.METHOD_NAME");
@@ -1295,9 +1297,15 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal fragment PARAMETER_DECL:
-	//	IDENTIFIER_LIST? "..."? TYPE;
+	//	IDENTIFIER_LIST? "..."? TYPE_PARAMETER_DECL;
 	public TerminalRule getPARAMETER_DECLRule() {
 		return tPARAMETER_DECL;
+	}
+	
+	//terminal fragment TYPE_PARAMETER_DECL:
+	//	TYPE_NAME | TYPE_LIT | "(" TYPE ")";
+	public TerminalRule getTYPE_PARAMETER_DECLRule() {
+		return tTYPE_PARAMETER_DECL;
 	}
 	
 	//terminal INTERFACE_TYPE:
