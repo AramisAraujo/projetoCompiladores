@@ -3,12 +3,10 @@
  */
 package org.xtext.ui.contentassist;
 
-import org.xtext.ui.contentassist.AbstractGoProposalProvider;
-
 /**
  * See https://www.eclipse.org/Xtext/documentation/304_ide_concepts.html#content-assist
  * on how to customize the content assistant.
  */
 @SuppressWarnings("all")
-public class GoProposalProvider extends AbstractGoProposalProvider {
+public class GoProposalProvider /* implements AbstractGoProposalProvider  */{
 }

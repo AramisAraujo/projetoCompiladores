@@ -3,14 +3,13 @@
  */
 package org.xtext;
 
-import org.xtext.GoStandaloneSetupGenerated;
-
 /**
  * Initialization support for running Xtext languages without Equinox extension registry.
  */
 @SuppressWarnings("all")
-public class GoStandaloneSetup extends GoStandaloneSetupGenerated {
+public class GoStandaloneSetup /* implements GoStandaloneSetupGenerated  */{
   public static void doSetup() {
-    new GoStandaloneSetup().createInjectorAndDoEMFRegistration();
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method createInjectorAndDoEMFRegistration() is undefined for the type GoStandaloneSetup");
   }
 }

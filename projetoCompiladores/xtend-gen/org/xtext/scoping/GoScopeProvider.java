@@ -3,8 +3,6 @@
  */
 package org.xtext.scoping;
 
-import org.xtext.scoping.AbstractGoScopeProvider;
-
 /**
  * This class contains custom scoping description.
  * 
@@ -12,5 +10,5 @@ import org.xtext.scoping.AbstractGoScopeProvider;
  * on how and when to use it.
  */
 @SuppressWarnings("all")
-public class GoScopeProvider extends AbstractGoScopeProvider {
+public class GoScopeProvider /* implements AbstractGoScopeProvider  */{
 }

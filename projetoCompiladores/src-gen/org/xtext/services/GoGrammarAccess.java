@@ -162,6 +162,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tELEMENT;
 	private final TerminalRule tFUNCTION_LIT;
 	private final TerminalRule tPRIMARY_EXPR;
+	private final TerminalRule tPRIMARY_EXPR_LINE;
 	private final TerminalRule tSELECTOR;
 	private final TerminalRule tINDEX;
 	private final TerminalRule tSLICE;
@@ -170,6 +171,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tMETHOD_EXPR;
 	private final TerminalRule tRECIEVER_TYPE;
 	private final TerminalRule tEXPRESSION;
+	private final TerminalRule tEXPRESSION_LINE;
 	private final TerminalRule tUNARY_EXPR;
 	private final TerminalRule tBINARY_OP;
 	private final TerminalRule tREL_OP;
@@ -329,6 +331,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		this.tELEMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.ELEMENT");
 		this.tFUNCTION_LIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.FUNCTION_LIT");
 		this.tPRIMARY_EXPR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.PRIMARY_EXPR");
+		this.tPRIMARY_EXPR_LINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.PRIMARY_EXPR_LINE");
 		this.tSELECTOR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.SELECTOR");
 		this.tINDEX = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.INDEX");
 		this.tSLICE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.SLICE");
@@ -337,6 +340,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		this.tMETHOD_EXPR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.METHOD_EXPR");
 		this.tRECIEVER_TYPE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.RECIEVER_TYPE");
 		this.tEXPRESSION = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.EXPRESSION");
+		this.tEXPRESSION_LINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.EXPRESSION_LINE");
 		this.tUNARY_EXPR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.UNARY_EXPR");
 		this.tBINARY_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.BINARY_OP");
 		this.tREL_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.REL_OP");
@@ -1549,10 +1553,18 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal PRIMARY_EXPR:
-	//	OPERAND | CONVERSION | METHOD_EXPR | PRIMARY_EXPR SELECTOR | PRIMARY_EXPR INDEX | PRIMARY_EXPR SLICE | PRIMARY_EXPR
-	//	TYPE_ASSERTION | PRIMARY_EXPR ARGUMENTS;
+	//	OPERAND | CONVERSION | METHOD_EXPR | PRIMARY_EXPR_LINE SELECTOR | PRIMARY_EXPR_LINE INDEX | PRIMARY_EXPR_LINE SLICE |
+	//	PRIMARY_EXPR_LINE TYPE_ASSERTION | PRIMARY_EXPR_LINE ARGUMENTS;
 	public TerminalRule getPRIMARY_EXPRRule() {
 		return tPRIMARY_EXPR;
+	}
+	
+	//terminal PRIMARY_EXPR_LINE:
+	//	SELECTOR PRIMARY_EXPR_LINE | INDEX PRIMARY_EXPR_LINE | SLICE PRIMARY_EXPR_LINE | TYPE_ASSERTION PRIMARY_EXPR_LINE |
+	//	ARGUMENTS PRIMARY_EXPR_LINE |
+	//	" "*;
+	public TerminalRule getPRIMARY_EXPR_LINERule() {
+		return tPRIMARY_EXPR_LINE;
 	}
 	
 	//terminal fragment SELECTOR:
@@ -1599,9 +1611,16 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal EXPRESSION:
-	//	UNARY_EXPR | EXPRESSION BINARY_OP EXPRESSION;
+	//	UNARY_EXPR | EXPRESSION_LINE BINARY_OP EXPRESSION;
 	public TerminalRule getEXPRESSIONRule() {
 		return tEXPRESSION;
+	}
+	
+	//terminal EXPRESSION_LINE:
+	//	BINARY_OP EXPRESSION EXPRESSION_LINE |
+	//	" "*;
+	public TerminalRule getEXPRESSION_LINERule() {
+		return tEXPRESSION_LINE;
 	}
 	
 	//terminal fragment UNARY_EXPR:
