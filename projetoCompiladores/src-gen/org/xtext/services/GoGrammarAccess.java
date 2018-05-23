@@ -64,320 +64,28 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//'!'
 		public Keyword getExclamationMarkKeyword_2() { return cExclamationMarkKeyword_2; }
 	}
-	public class IDENTIFIERElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.IDENTIFIER");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final RuleCall cKEYWORDSTerminalRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final RuleCall cLETTERTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
-		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
-		private final RuleCall cLETTERTerminalRuleCall_1_1_0 = (RuleCall)cAlternatives_1_1.eContents().get(0);
-		private final RuleCall cUNICODE_DIGITTerminalRuleCall_1_1_1 = (RuleCall)cAlternatives_1_1.eContents().get(1);
-		
-		//IDENTIFIER:
-		//	=> (KEYWORDS) | LETTER (LETTER | UNICODE_DIGIT)*;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//=> (KEYWORDS) | LETTER (LETTER | UNICODE_DIGIT)*
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//=> (KEYWORDS)
-		public Group getGroup_0() { return cGroup_0; }
-		
-		//KEYWORDS
-		public RuleCall getKEYWORDSTerminalRuleCall_0_0() { return cKEYWORDSTerminalRuleCall_0_0; }
-		
-		//LETTER (LETTER | UNICODE_DIGIT)*
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//LETTER
-		public RuleCall getLETTERTerminalRuleCall_1_0() { return cLETTERTerminalRuleCall_1_0; }
-		
-		//(LETTER | UNICODE_DIGIT)*
-		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
-		
-		//LETTER
-		public RuleCall getLETTERTerminalRuleCall_1_1_0() { return cLETTERTerminalRuleCall_1_1_0; }
-		
-		//UNICODE_DIGIT
-		public RuleCall getUNICODE_DIGITTerminalRuleCall_1_1_1() { return cUNICODE_DIGITTerminalRuleCall_1_1_1; }
-	}
-	public class OPERATORSElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.OPERATORS");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final RuleCall cUNARY_OPTerminalRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final RuleCall cBINARY_OPTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final RuleCall cASSIGN_OPTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
-		private final Keyword cPlusSignKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
-		private final Keyword cAmpersandKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
-		private final Keyword cPlusSignEqualsSignKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
-		private final Keyword cAmpersandEqualsSignKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
-		private final Keyword cAmpersandAmpersandKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
-		private final Keyword cEqualsSignEqualsSignKeyword_8 = (Keyword)cAlternatives.eContents().get(8);
-		private final Keyword cExclamationMarkEqualsSignKeyword_9 = (Keyword)cAlternatives.eContents().get(9);
-		private final Keyword cLeftParenthesisKeyword_10 = (Keyword)cAlternatives.eContents().get(10);
-		private final Keyword cRightParenthesisKeyword_11 = (Keyword)cAlternatives.eContents().get(11);
-		private final Keyword cHyphenMinusKeyword_12 = (Keyword)cAlternatives.eContents().get(12);
-		private final Keyword cVerticalLineKeyword_13 = (Keyword)cAlternatives.eContents().get(13);
-		private final Keyword cHyphenMinusEqualsSignKeyword_14 = (Keyword)cAlternatives.eContents().get(14);
-		private final Keyword cVerticalLineEqualsSignKeyword_15 = (Keyword)cAlternatives.eContents().get(15);
-		private final Keyword cVerticalLineVerticalLineKeyword_16 = (Keyword)cAlternatives.eContents().get(16);
-		private final Keyword cLessThanSignKeyword_17 = (Keyword)cAlternatives.eContents().get(17);
-		private final Keyword cLessThanSignEqualsSignKeyword_18 = (Keyword)cAlternatives.eContents().get(18);
-		private final Keyword cLeftSquareBracketKeyword_19 = (Keyword)cAlternatives.eContents().get(19);
-		private final Keyword cRightSquareBracketKeyword_20 = (Keyword)cAlternatives.eContents().get(20);
-		private final Keyword cAsteriskKeyword_21 = (Keyword)cAlternatives.eContents().get(21);
-		private final Keyword cCircumflexAccentKeyword_22 = (Keyword)cAlternatives.eContents().get(22);
-		private final Keyword cAsteriskEqualsSignKeyword_23 = (Keyword)cAlternatives.eContents().get(23);
-		private final Keyword cCircumflexAccentEqualsSignKeyword_24 = (Keyword)cAlternatives.eContents().get(24);
-		private final Keyword cLessThanSignHyphenMinusKeyword_25 = (Keyword)cAlternatives.eContents().get(25);
-		private final Keyword cGreaterThanSignKeyword_26 = (Keyword)cAlternatives.eContents().get(26);
-		private final Keyword cGreaterThanSignEqualsSignKeyword_27 = (Keyword)cAlternatives.eContents().get(27);
-		private final Keyword cLeftCurlyBracketKeyword_28 = (Keyword)cAlternatives.eContents().get(28);
-		private final Keyword cRightCurlyBracketKeyword_29 = (Keyword)cAlternatives.eContents().get(29);
-		private final Keyword cSolidusKeyword_30 = (Keyword)cAlternatives.eContents().get(30);
-		private final Keyword cLessThanSignLessThanSignKeyword_31 = (Keyword)cAlternatives.eContents().get(31);
-		private final Keyword cSolidusEqualsSignKeyword_32 = (Keyword)cAlternatives.eContents().get(32);
-		private final Keyword cLessThanSignLessThanSignEqualsSignKeyword_33 = (Keyword)cAlternatives.eContents().get(33);
-		private final Keyword cPlusSignPlusSignKeyword_34 = (Keyword)cAlternatives.eContents().get(34);
-		private final Keyword cEqualsSignKeyword_35 = (Keyword)cAlternatives.eContents().get(35);
-		private final Keyword cColonEqualsSignKeyword_36 = (Keyword)cAlternatives.eContents().get(36);
-		private final Keyword cCommaKeyword_37 = (Keyword)cAlternatives.eContents().get(37);
-		private final RuleCall cSEMICOLONTerminalRuleCall_38 = (RuleCall)cAlternatives.eContents().get(38);
-		private final Keyword cPercentSignKeyword_39 = (Keyword)cAlternatives.eContents().get(39);
-		private final Keyword cGreaterThanSignGreaterThanSignKeyword_40 = (Keyword)cAlternatives.eContents().get(40);
-		private final Keyword cPercentSignEqualsSignKeyword_41 = (Keyword)cAlternatives.eContents().get(41);
-		private final Keyword cGreaterThanSignGreaterThanSignEqualsSignKeyword_42 = (Keyword)cAlternatives.eContents().get(42);
-		private final Keyword cHyphenMinusHyphenMinusKeyword_43 = (Keyword)cAlternatives.eContents().get(43);
-		private final Keyword cExclamationMarkKeyword_44 = (Keyword)cAlternatives.eContents().get(44);
-		private final Keyword cFullStopFullStopFullStopKeyword_45 = (Keyword)cAlternatives.eContents().get(45);
-		private final Keyword cFullStopKeyword_46 = (Keyword)cAlternatives.eContents().get(46);
-		private final Keyword cColonKeyword_47 = (Keyword)cAlternatives.eContents().get(47);
-		private final Keyword cAmpersandCircumflexAccentKeyword_48 = (Keyword)cAlternatives.eContents().get(48);
-		private final Keyword cAmpersandCircumflexAccentEqualsSignKeyword_49 = (Keyword)cAlternatives.eContents().get(49);
-		private final RuleCall cASSIGN_OPTerminalRuleCall_50 = (RuleCall)cAlternatives.eContents().get(50);
-		
-		//OPERATORS:
-		//	=> (UNARY_OP) | => (BINARY_OP) | => (ASSIGN_OP) | '+' | '&' | '+=' | '&=' | '&&' | '==' | '!=' | '(' | ')' | '-' | '|'
-		//	| '-=' | '|=' | '||' | '<' | '<=' | '[' | ']' |
-		//	'*' | '^' | '*=' | '^=' | '<-' | '>' | '>=' | '{' | '}' | '/' | '<<' | '/=' | '<<=' | '++' | '=' | ':=' | ',' |
-		//	SEMICOLON |
-		//	'%' | '>>' | '%=' | '>>=' | '--' | '!' | '...' | '.' | ':' | '&^' | '&^=' | ASSIGN_OP;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//=> (UNARY_OP) | => (BINARY_OP) | => (ASSIGN_OP) | '+' | '&' | '+=' | '&=' | '&&' | '==' | '!=' | '(' | ')' | '-' | '|' |
-		//'-=' | '|=' | '||' | '<' | '<=' | '[' | ']' | '*' | '^' | '*=' | '^=' | '<-' | '>' | '>=' | '{' | '}' | '/' | '<<' |
-		//'/=' | '<<=' | '++' | '=' | ':=' | ',' | SEMICOLON | '%' | '>>' | '%=' | '>>=' | '--' | '!' | '...' | '.' | ':' | '&^'
-		//| '&^=' | ASSIGN_OP
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//=> (UNARY_OP)
-		public Group getGroup_0() { return cGroup_0; }
-		
-		//UNARY_OP
-		public RuleCall getUNARY_OPTerminalRuleCall_0_0() { return cUNARY_OPTerminalRuleCall_0_0; }
-		
-		//=> (BINARY_OP)
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//BINARY_OP
-		public RuleCall getBINARY_OPTerminalRuleCall_1_0() { return cBINARY_OPTerminalRuleCall_1_0; }
-		
-		//=> (ASSIGN_OP)
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//ASSIGN_OP
-		public RuleCall getASSIGN_OPTerminalRuleCall_2_0() { return cASSIGN_OPTerminalRuleCall_2_0; }
-		
-		//'+'
-		public Keyword getPlusSignKeyword_3() { return cPlusSignKeyword_3; }
-		
-		//'&'
-		public Keyword getAmpersandKeyword_4() { return cAmpersandKeyword_4; }
-		
-		//'+='
-		public Keyword getPlusSignEqualsSignKeyword_5() { return cPlusSignEqualsSignKeyword_5; }
-		
-		//'&='
-		public Keyword getAmpersandEqualsSignKeyword_6() { return cAmpersandEqualsSignKeyword_6; }
-		
-		//'&&'
-		public Keyword getAmpersandAmpersandKeyword_7() { return cAmpersandAmpersandKeyword_7; }
-		
-		//'=='
-		public Keyword getEqualsSignEqualsSignKeyword_8() { return cEqualsSignEqualsSignKeyword_8; }
-		
-		//'!='
-		public Keyword getExclamationMarkEqualsSignKeyword_9() { return cExclamationMarkEqualsSignKeyword_9; }
-		
-		//'('
-		public Keyword getLeftParenthesisKeyword_10() { return cLeftParenthesisKeyword_10; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_11() { return cRightParenthesisKeyword_11; }
-		
-		//'-'
-		public Keyword getHyphenMinusKeyword_12() { return cHyphenMinusKeyword_12; }
-		
-		//'|'
-		public Keyword getVerticalLineKeyword_13() { return cVerticalLineKeyword_13; }
-		
-		//'-='
-		public Keyword getHyphenMinusEqualsSignKeyword_14() { return cHyphenMinusEqualsSignKeyword_14; }
-		
-		//'|='
-		public Keyword getVerticalLineEqualsSignKeyword_15() { return cVerticalLineEqualsSignKeyword_15; }
-		
-		//'||'
-		public Keyword getVerticalLineVerticalLineKeyword_16() { return cVerticalLineVerticalLineKeyword_16; }
-		
-		//'<'
-		public Keyword getLessThanSignKeyword_17() { return cLessThanSignKeyword_17; }
-		
-		//'<='
-		public Keyword getLessThanSignEqualsSignKeyword_18() { return cLessThanSignEqualsSignKeyword_18; }
-		
-		//'['
-		public Keyword getLeftSquareBracketKeyword_19() { return cLeftSquareBracketKeyword_19; }
-		
-		//']'
-		public Keyword getRightSquareBracketKeyword_20() { return cRightSquareBracketKeyword_20; }
-		
-		//'*'
-		public Keyword getAsteriskKeyword_21() { return cAsteriskKeyword_21; }
-		
-		//'^'
-		public Keyword getCircumflexAccentKeyword_22() { return cCircumflexAccentKeyword_22; }
-		
-		//'*='
-		public Keyword getAsteriskEqualsSignKeyword_23() { return cAsteriskEqualsSignKeyword_23; }
-		
-		//'^='
-		public Keyword getCircumflexAccentEqualsSignKeyword_24() { return cCircumflexAccentEqualsSignKeyword_24; }
-		
-		//'<-'
-		public Keyword getLessThanSignHyphenMinusKeyword_25() { return cLessThanSignHyphenMinusKeyword_25; }
-		
-		//'>'
-		public Keyword getGreaterThanSignKeyword_26() { return cGreaterThanSignKeyword_26; }
-		
-		//'>='
-		public Keyword getGreaterThanSignEqualsSignKeyword_27() { return cGreaterThanSignEqualsSignKeyword_27; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_28() { return cLeftCurlyBracketKeyword_28; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_29() { return cRightCurlyBracketKeyword_29; }
-		
-		//'/'
-		public Keyword getSolidusKeyword_30() { return cSolidusKeyword_30; }
-		
-		//'<<'
-		public Keyword getLessThanSignLessThanSignKeyword_31() { return cLessThanSignLessThanSignKeyword_31; }
-		
-		//'/='
-		public Keyword getSolidusEqualsSignKeyword_32() { return cSolidusEqualsSignKeyword_32; }
-		
-		//'<<='
-		public Keyword getLessThanSignLessThanSignEqualsSignKeyword_33() { return cLessThanSignLessThanSignEqualsSignKeyword_33; }
-		
-		//'++'
-		public Keyword getPlusSignPlusSignKeyword_34() { return cPlusSignPlusSignKeyword_34; }
-		
-		//'='
-		public Keyword getEqualsSignKeyword_35() { return cEqualsSignKeyword_35; }
-		
-		//':='
-		public Keyword getColonEqualsSignKeyword_36() { return cColonEqualsSignKeyword_36; }
-		
-		//','
-		public Keyword getCommaKeyword_37() { return cCommaKeyword_37; }
-		
-		//SEMICOLON
-		public RuleCall getSEMICOLONTerminalRuleCall_38() { return cSEMICOLONTerminalRuleCall_38; }
-		
-		//'%'
-		public Keyword getPercentSignKeyword_39() { return cPercentSignKeyword_39; }
-		
-		//'>>'
-		public Keyword getGreaterThanSignGreaterThanSignKeyword_40() { return cGreaterThanSignGreaterThanSignKeyword_40; }
-		
-		//'%='
-		public Keyword getPercentSignEqualsSignKeyword_41() { return cPercentSignEqualsSignKeyword_41; }
-		
-		//'>>='
-		public Keyword getGreaterThanSignGreaterThanSignEqualsSignKeyword_42() { return cGreaterThanSignGreaterThanSignEqualsSignKeyword_42; }
-		
-		//'--'
-		public Keyword getHyphenMinusHyphenMinusKeyword_43() { return cHyphenMinusHyphenMinusKeyword_43; }
-		
-		//'!'
-		public Keyword getExclamationMarkKeyword_44() { return cExclamationMarkKeyword_44; }
-		
-		//'...'
-		public Keyword getFullStopFullStopFullStopKeyword_45() { return cFullStopFullStopFullStopKeyword_45; }
-		
-		//'.'
-		public Keyword getFullStopKeyword_46() { return cFullStopKeyword_46; }
-		
-		//':'
-		public Keyword getColonKeyword_47() { return cColonKeyword_47; }
-		
-		//'&^'
-		public Keyword getAmpersandCircumflexAccentKeyword_48() { return cAmpersandCircumflexAccentKeyword_48; }
-		
-		//'&^='
-		public Keyword getAmpersandCircumflexAccentEqualsSignKeyword_49() { return cAmpersandCircumflexAccentEqualsSignKeyword_49; }
-		
-		//ASSIGN_OP
-		public RuleCall getASSIGN_OPTerminalRuleCall_50() { return cASSIGN_OPTerminalRuleCall_50; }
-	}
 	public class Int_litElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Int_lit");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cDecimal_litParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cDECIMAL_DIGITSTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cOctal_litParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cHex_litParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//Int_lit:
-		//	Decimal_lit | Octal_lit | Hex_lit;
+		//	DECIMAL_DIGITS | Octal_lit | Hex_lit;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Decimal_lit | Octal_lit | Hex_lit
+		//DECIMAL_DIGITS | Octal_lit | Hex_lit
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//Decimal_lit
-		public RuleCall getDecimal_litParserRuleCall_0() { return cDecimal_litParserRuleCall_0; }
+		//DECIMAL_DIGITS
+		public RuleCall getDECIMAL_DIGITSTerminalRuleCall_0() { return cDECIMAL_DIGITSTerminalRuleCall_0; }
 		
 		//Octal_lit
 		public RuleCall getOctal_litParserRuleCall_1() { return cOctal_litParserRuleCall_1; }
 		
 		//Hex_lit
 		public RuleCall getHex_litParserRuleCall_2() { return cHex_litParserRuleCall_2; }
-	}
-	public class Decimal_litElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Decimal_lit");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cDECIMAL_DIGITTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final RuleCall cDECIMAL_DIGITTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		
-		//Decimal_lit:
-		//	DECIMAL_DIGIT DECIMAL_DIGIT*;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//DECIMAL_DIGIT DECIMAL_DIGIT*
-		public Group getGroup() { return cGroup; }
-		
-		//DECIMAL_DIGIT
-		public RuleCall getDECIMAL_DIGITTerminalRuleCall_0() { return cDECIMAL_DIGITTerminalRuleCall_0; }
-		
-		//DECIMAL_DIGIT*
-		public RuleCall getDECIMAL_DIGITTerminalRuleCall_1() { return cDECIMAL_DIGITTerminalRuleCall_1; }
 	}
 	public class Octal_litElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Octal_lit");
@@ -437,80 +145,61 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Float_lit");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final RuleCall cDecimalsParserRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
+		private final RuleCall cDECIMAL_DIGITSTerminalRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
 		private final Keyword cFullStopKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final RuleCall cDecimalsParserRuleCall_0_2 = (RuleCall)cGroup_0.eContents().get(2);
+		private final RuleCall cDECIMAL_DIGITSTerminalRuleCall_0_2 = (RuleCall)cGroup_0.eContents().get(2);
 		private final RuleCall cExponentParserRuleCall_0_3 = (RuleCall)cGroup_0.eContents().get(3);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final RuleCall cDecimalsParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final RuleCall cDECIMAL_DIGITSTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
 		private final RuleCall cExponentParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final Keyword cFullStopKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final RuleCall cDecimalsParserRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		private final RuleCall cDECIMAL_DIGITSTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
 		private final RuleCall cExponentParserRuleCall_2_2 = (RuleCall)cGroup_2.eContents().get(2);
 		
 		//Float_lit:
-		//	Decimals '.' Decimals? Exponent? | Decimals Exponent |
-		//	'.' Decimals Exponent?;
+		//	DECIMAL_DIGITS '.' DECIMAL_DIGITS? Exponent? | DECIMAL_DIGITS Exponent |
+		//	'.' DECIMAL_DIGITS Exponent?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Decimals '.' Decimals? Exponent? | Decimals Exponent | '.' Decimals Exponent?
+		//DECIMAL_DIGITS '.' DECIMAL_DIGITS? Exponent? | DECIMAL_DIGITS Exponent | '.' DECIMAL_DIGITS Exponent?
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//Decimals '.' Decimals? Exponent?
+		//DECIMAL_DIGITS '.' DECIMAL_DIGITS? Exponent?
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//Decimals
-		public RuleCall getDecimalsParserRuleCall_0_0() { return cDecimalsParserRuleCall_0_0; }
+		//DECIMAL_DIGITS
+		public RuleCall getDECIMAL_DIGITSTerminalRuleCall_0_0() { return cDECIMAL_DIGITSTerminalRuleCall_0_0; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_0_1() { return cFullStopKeyword_0_1; }
 		
-		//Decimals?
-		public RuleCall getDecimalsParserRuleCall_0_2() { return cDecimalsParserRuleCall_0_2; }
+		//DECIMAL_DIGITS?
+		public RuleCall getDECIMAL_DIGITSTerminalRuleCall_0_2() { return cDECIMAL_DIGITSTerminalRuleCall_0_2; }
 		
 		//Exponent?
 		public RuleCall getExponentParserRuleCall_0_3() { return cExponentParserRuleCall_0_3; }
 		
-		//Decimals Exponent
+		//DECIMAL_DIGITS Exponent
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//Decimals
-		public RuleCall getDecimalsParserRuleCall_1_0() { return cDecimalsParserRuleCall_1_0; }
+		//DECIMAL_DIGITS
+		public RuleCall getDECIMAL_DIGITSTerminalRuleCall_1_0() { return cDECIMAL_DIGITSTerminalRuleCall_1_0; }
 		
 		//Exponent
 		public RuleCall getExponentParserRuleCall_1_1() { return cExponentParserRuleCall_1_1; }
 		
-		//'.' Decimals Exponent?
+		//'.' DECIMAL_DIGITS Exponent?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_2_0() { return cFullStopKeyword_2_0; }
 		
-		//Decimals
-		public RuleCall getDecimalsParserRuleCall_2_1() { return cDecimalsParserRuleCall_2_1; }
+		//DECIMAL_DIGITS
+		public RuleCall getDECIMAL_DIGITSTerminalRuleCall_2_1() { return cDECIMAL_DIGITSTerminalRuleCall_2_1; }
 		
 		//Exponent?
 		public RuleCall getExponentParserRuleCall_2_2() { return cExponentParserRuleCall_2_2; }
-	}
-	public class DecimalsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Decimals");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cDECIMAL_DIGITTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final RuleCall cDECIMAL_DIGITTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		
-		//Decimals:
-		//	DECIMAL_DIGIT DECIMAL_DIGIT*;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//DECIMAL_DIGIT DECIMAL_DIGIT*
-		public Group getGroup() { return cGroup; }
-		
-		//DECIMAL_DIGIT
-		public RuleCall getDECIMAL_DIGITTerminalRuleCall_0() { return cDECIMAL_DIGITTerminalRuleCall_0; }
-		
-		//DECIMAL_DIGIT*
-		public RuleCall getDECIMAL_DIGITTerminalRuleCall_1() { return cDECIMAL_DIGITTerminalRuleCall_1; }
 	}
 	public class ExponentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Exponent");
@@ -521,13 +210,13 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Keyword cPlusSignKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
 		private final Keyword cHyphenMinusKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
-		private final RuleCall cDecimalsParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final RuleCall cDECIMAL_DIGITSTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//Exponent:
-		//	('e' | 'e') ('+' | '-')? Decimals;
+		//	('e' | 'e') ('+' | '-')? DECIMAL_DIGITS;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('e' | 'e') ('+' | '-')? Decimals
+		//('e' | 'e') ('+' | '-')? DECIMAL_DIGITS
 		public Group getGroup() { return cGroup; }
 		
 		//'e' | 'e'
@@ -548,29 +237,29 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//'-'
 		public Keyword getHyphenMinusKeyword_1_1() { return cHyphenMinusKeyword_1_1; }
 		
-		//Decimals
-		public RuleCall getDecimalsParserRuleCall_2() { return cDecimalsParserRuleCall_2; }
+		//DECIMAL_DIGITS
+		public RuleCall getDECIMAL_DIGITSTerminalRuleCall_2() { return cDECIMAL_DIGITSTerminalRuleCall_2; }
 	}
 	public class Imaginary_litElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Imaginary_lit");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final RuleCall cDecimalsParserRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
+		private final RuleCall cDECIMAL_DIGITSTerminalRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
 		private final RuleCall cFloat_litParserRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
 		private final Keyword cIKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//Imaginary_lit:
-		//	(Decimals | Float_lit) 'i';
+		//	(DECIMAL_DIGITS | Float_lit) 'i';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(Decimals | Float_lit) 'i'
+		//(DECIMAL_DIGITS | Float_lit) 'i'
 		public Group getGroup() { return cGroup; }
 		
-		//Decimals | Float_lit
+		//DECIMAL_DIGITS | Float_lit
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 		
-		//Decimals
-		public RuleCall getDecimalsParserRuleCall_0_0() { return cDecimalsParserRuleCall_0_0; }
+		//DECIMAL_DIGITS
+		public RuleCall getDECIMAL_DIGITSTerminalRuleCall_0_0() { return cDECIMAL_DIGITSTerminalRuleCall_0_0; }
 		
 		//Float_lit
 		public RuleCall getFloat_litParserRuleCall_0_1() { return cFloat_litParserRuleCall_0_1; }
@@ -964,9 +653,9 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	public class TokenElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Token");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cIDENTIFIERParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cIDENTIFIERTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cKEYWORDSTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cOPERATORSParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cOPERATORSTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cLiteralsParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//Token:
@@ -977,13 +666,13 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//IDENTIFIER
-		public RuleCall getIDENTIFIERParserRuleCall_0() { return cIDENTIFIERParserRuleCall_0; }
+		public RuleCall getIDENTIFIERTerminalRuleCall_0() { return cIDENTIFIERTerminalRuleCall_0; }
 		
 		//KEYWORDS
 		public RuleCall getKEYWORDSTerminalRuleCall_1() { return cKEYWORDSTerminalRuleCall_1; }
 		
 		//OPERATORS
-		public RuleCall getOPERATORSParserRuleCall_2() { return cOPERATORSParserRuleCall_2; }
+		public RuleCall getOPERATORSTerminalRuleCall_2() { return cOPERATORSTerminalRuleCall_2; }
 		
 		//Literals
 		public RuleCall getLiteralsParserRuleCall_3() { return cLiteralsParserRuleCall_3; }
@@ -1026,7 +715,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	public class Type_nameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Type_name");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cIDENTIFIERParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cIDENTIFIERTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cQualified_identParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Type_name:
@@ -1037,7 +726,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//=> IDENTIFIER
-		public RuleCall getIDENTIFIERParserRuleCall_0() { return cIDENTIFIERParserRuleCall_0; }
+		public RuleCall getIDENTIFIERTerminalRuleCall_0() { return cIDENTIFIERTerminalRuleCall_0; }
 		
 		//Qualified_ident
 		public RuleCall getQualified_identParserRuleCall_1() { return cQualified_identParserRuleCall_1; }
@@ -1470,14 +1159,14 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class Method_nameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Method_name");
-		private final RuleCall cIDENTIFIERParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final RuleCall cIDENTIFIERTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//Method_name:
 		//	IDENTIFIER;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//IDENTIFIER
-		public RuleCall getIDENTIFIERParserRuleCall() { return cIDENTIFIERParserRuleCall; }
+		public RuleCall getIDENTIFIERTerminalRuleCall() { return cIDENTIFIERTerminalRuleCall; }
 	}
 	public class Interface_type_nameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Interface_type_name");
@@ -1771,10 +1460,10 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	public class Identifier_listElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Identifier_list");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cIDENTIFIERParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cIDENTIFIERTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cIDENTIFIERParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final RuleCall cIDENTIFIERTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
 		//Identifier_list:
 		//	IDENTIFIER ("," IDENTIFIER)*;
@@ -1784,7 +1473,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		public Group getGroup() { return cGroup; }
 		
 		//IDENTIFIER
-		public RuleCall getIDENTIFIERParserRuleCall_0() { return cIDENTIFIERParserRuleCall_0; }
+		public RuleCall getIDENTIFIERTerminalRuleCall_0() { return cIDENTIFIERTerminalRuleCall_0; }
 		
 		//("," IDENTIFIER)*
 		public Group getGroup_1() { return cGroup_1; }
@@ -1793,7 +1482,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
 		
 		//IDENTIFIER
-		public RuleCall getIDENTIFIERParserRuleCall_1_1() { return cIDENTIFIERParserRuleCall_1_1; }
+		public RuleCall getIDENTIFIERTerminalRuleCall_1_1() { return cIDENTIFIERTerminalRuleCall_1_1; }
 	}
 	public class Expression_listElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Expression_list");
@@ -1891,7 +1580,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	public class Alias_declElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Alias_decl");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cIDENTIFIERParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cIDENTIFIERTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final RuleCall cTypeParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
@@ -1903,7 +1592,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		public Group getGroup() { return cGroup; }
 		
 		//IDENTIFIER
-		public RuleCall getIDENTIFIERParserRuleCall_0() { return cIDENTIFIERParserRuleCall_0; }
+		public RuleCall getIDENTIFIERTerminalRuleCall_0() { return cIDENTIFIERTerminalRuleCall_0; }
 		
 		//"="
 		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
@@ -1914,7 +1603,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	public class Type_defElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Type_def");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cIDENTIFIERParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cIDENTIFIERTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final RuleCall cTypeParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//Type_def:
@@ -1925,7 +1614,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		public Group getGroup() { return cGroup; }
 		
 		//IDENTIFIER
-		public RuleCall getIDENTIFIERParserRuleCall_0() { return cIDENTIFIERParserRuleCall_0; }
+		public RuleCall getIDENTIFIERTerminalRuleCall_0() { return cIDENTIFIERTerminalRuleCall_0; }
 		
 		//Type
 		public RuleCall getTypeParserRuleCall_1() { return cTypeParserRuleCall_1; }
@@ -2080,14 +1769,14 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class Function_nameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Function_name");
-		private final RuleCall cIDENTIFIERParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final RuleCall cIDENTIFIERTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//Function_name:
 		//	IDENTIFIER;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//IDENTIFIER
-		public RuleCall getIDENTIFIERParserRuleCall() { return cIDENTIFIERParserRuleCall; }
+		public RuleCall getIDENTIFIERTerminalRuleCall() { return cIDENTIFIERTerminalRuleCall; }
 	}
 	public class Function_bodyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Function_body");
@@ -2234,7 +1923,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	public class Operand_nameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Operand_name");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cIDENTIFIERParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cIDENTIFIERTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cQualified_identParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Operand_name:
@@ -2245,7 +1934,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//=> IDENTIFIER
-		public RuleCall getIDENTIFIERParserRuleCall_0() { return cIDENTIFIERParserRuleCall_0; }
+		public RuleCall getIDENTIFIERTerminalRuleCall_0() { return cIDENTIFIERTerminalRuleCall_0; }
 		
 		//Qualified_ident
 		public RuleCall getQualified_identParserRuleCall_1() { return cQualified_identParserRuleCall_1; }
@@ -2255,7 +1944,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cPackage_nameParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Keyword cFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final RuleCall cIDENTIFIERParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final RuleCall cIDENTIFIERTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//Qualified_ident:
 		//	Package_name "." IDENTIFIER;
@@ -2271,7 +1960,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
 		
 		//IDENTIFIER
-		public RuleCall getIDENTIFIERParserRuleCall_2() { return cIDENTIFIERParserRuleCall_2; }
+		public RuleCall getIDENTIFIERTerminalRuleCall_2() { return cIDENTIFIERTerminalRuleCall_2; }
 	}
 	public class Composite_litElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Composite_lit");
@@ -2457,14 +2146,14 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class Field_nameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Field_name");
-		private final RuleCall cIDENTIFIERParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final RuleCall cIDENTIFIERTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//Field_name:
 		//	IDENTIFIER;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//IDENTIFIER
-		public RuleCall getIDENTIFIERParserRuleCall() { return cIDENTIFIERParserRuleCall; }
+		public RuleCall getIDENTIFIERTerminalRuleCall() { return cIDENTIFIERTerminalRuleCall; }
 	}
 	public class ElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Element");
@@ -2753,7 +2442,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Selector");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cFullStopKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cIDENTIFIERParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final RuleCall cIDENTIFIERTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//Selector:
 		//	"." IDENTIFIER;
@@ -2766,7 +2455,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getFullStopKeyword_0() { return cFullStopKeyword_0; }
 		
 		//IDENTIFIER
-		public RuleCall getIDENTIFIERParserRuleCall_1() { return cIDENTIFIERParserRuleCall_1; }
+		public RuleCall getIDENTIFIERTerminalRuleCall_1() { return cIDENTIFIERTerminalRuleCall_1; }
 	}
 	public class IndexElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Index");
@@ -3214,14 +2903,14 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class LabelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Label");
-		private final RuleCall cIDENTIFIERParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final RuleCall cIDENTIFIERTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//Label:
 		//	IDENTIFIER;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//IDENTIFIER
-		public RuleCall getIDENTIFIERParserRuleCall() { return cIDENTIFIERParserRuleCall; }
+		public RuleCall getIDENTIFIERTerminalRuleCall() { return cIDENTIFIERTerminalRuleCall; }
 	}
 	public class Expression_stmtElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Expression_stmt");
@@ -3536,7 +3225,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Type_switch_guard");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
-		private final RuleCall cIDENTIFIERParserRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
+		private final RuleCall cIDENTIFIERTerminalRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
 		private final Keyword cColonEqualsSignKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
 		private final RuleCall cPrimary_exprParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final Keyword cFullStopKeyword_2 = (Keyword)cGroup.eContents().get(2);
@@ -3555,7 +3244,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//IDENTIFIER
-		public RuleCall getIDENTIFIERParserRuleCall_0_0() { return cIDENTIFIERParserRuleCall_0_0; }
+		public RuleCall getIDENTIFIERTerminalRuleCall_0_0() { return cIDENTIFIERTerminalRuleCall_0_0; }
 		
 		//":="
 		public Keyword getColonEqualsSignKeyword_0_1() { return cColonEqualsSignKeyword_0_1; }
@@ -4115,14 +3804,14 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class Package_nameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Package_name");
-		private final RuleCall cIDENTIFIERParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final RuleCall cIDENTIFIERTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//Package_name:
 		//	IDENTIFIER;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//IDENTIFIER
-		public RuleCall getIDENTIFIERParserRuleCall() { return cIDENTIFIERParserRuleCall; }
+		public RuleCall getIDENTIFIERTerminalRuleCall() { return cIDENTIFIERTerminalRuleCall; }
 	}
 	public class Import_declElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Import_decl");
@@ -4223,21 +3912,19 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tFALLTHROUGH_STMT;
 	private final TerminalRule tNEWLINE;
 	private final TerminalRule tLETTER;
-	private final TerminalRule tDECIMAL_DIGIT;
+	private final TerminalRule tDECIMAL_DIGITS;
 	private final TerminalRule tOCTAL_DIGIT;
 	private final TerminalRule tHEX_DIGIT;
 	private final TerminalRule tKEYWORDS;
-	private final IDENTIFIERElements pIDENTIFIER;
-	private final OPERATORSElements pOPERATORS;
+	private final TerminalRule tIDENTIFIER;
+	private final TerminalRule tOPERATORS;
 	private final TerminalRule tUNICODE_CHAR;
 	private final TerminalRule tUNICODE_LETTER;
 	private final TerminalRule tUNICODE_DIGIT;
 	private final Int_litElements pInt_lit;
-	private final Decimal_litElements pDecimal_lit;
 	private final Octal_litElements pOctal_lit;
 	private final Hex_litElements pHex_lit;
 	private final Float_litElements pFloat_lit;
-	private final DecimalsElements pDecimals;
 	private final ExponentElements pExponent;
 	private final Imaginary_litElements pImaginary_lit;
 	private final Rune_litElements pRune_lit;
@@ -4396,21 +4083,19 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		this.tFALLTHROUGH_STMT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.FALLTHROUGH_STMT");
 		this.tNEWLINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.NEWLINE");
 		this.tLETTER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.LETTER");
-		this.tDECIMAL_DIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.DECIMAL_DIGIT");
+		this.tDECIMAL_DIGITS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.DECIMAL_DIGITS");
 		this.tOCTAL_DIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.OCTAL_DIGIT");
 		this.tHEX_DIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.HEX_DIGIT");
 		this.tKEYWORDS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.KEYWORDS");
-		this.pIDENTIFIER = new IDENTIFIERElements();
-		this.pOPERATORS = new OPERATORSElements();
+		this.tIDENTIFIER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.IDENTIFIER");
+		this.tOPERATORS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.OPERATORS");
 		this.tUNICODE_CHAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.UNICODE_CHAR");
 		this.tUNICODE_LETTER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.UNICODE_LETTER");
 		this.tUNICODE_DIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.UNICODE_DIGIT");
 		this.pInt_lit = new Int_litElements();
-		this.pDecimal_lit = new Decimal_litElements();
 		this.pOctal_lit = new Octal_litElements();
 		this.pHex_lit = new Hex_litElements();
 		this.pFloat_lit = new Float_litElements();
-		this.pDecimals = new DecimalsElements();
 		this.pExponent = new ExponentElements();
 		this.pImaginary_lit = new Imaginary_litElements();
 		this.pRune_lit = new Rune_litElements();
@@ -4656,10 +4341,10 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		return tLETTER;
 	}
 	
-	//terminal DECIMAL_DIGIT:
-	//	'0'..'9';
-	public TerminalRule getDECIMAL_DIGITRule() {
-		return tDECIMAL_DIGIT;
+	//terminal DECIMAL_DIGITS:
+	//	'0'..'9'+;
+	public TerminalRule getDECIMAL_DIGITSRule() {
+		return tDECIMAL_DIGITS;
 	}
 	
 	//terminal OCTAL_DIGIT:
@@ -4682,28 +4367,18 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		return tKEYWORDS;
 	}
 	
-	//IDENTIFIER:
-	//	=> (KEYWORDS) | LETTER (LETTER | UNICODE_DIGIT)*;
-	public IDENTIFIERElements getIDENTIFIERAccess() {
-		return pIDENTIFIER;
+	//terminal IDENTIFIER:
+	//	LETTER (LETTER | UNICODE_DIGIT)*;
+	public TerminalRule getIDENTIFIERRule() {
+		return tIDENTIFIER;
 	}
 	
-	public ParserRule getIDENTIFIERRule() {
-		return getIDENTIFIERAccess().getRule();
-	}
-	
-	//OPERATORS:
-	//	=> (UNARY_OP) | => (BINARY_OP) | => (ASSIGN_OP) | '+' | '&' | '+=' | '&=' | '&&' | '==' | '!=' | '(' | ')' | '-' | '|'
-	//	| '-=' | '|=' | '||' | '<' | '<=' | '[' | ']' |
-	//	'*' | '^' | '*=' | '^=' | '<-' | '>' | '>=' | '{' | '}' | '/' | '<<' | '/=' | '<<=' | '++' | '=' | ':=' | ',' |
-	//	SEMICOLON |
+	//terminal OPERATORS:
+	//	'+' | '&' | '+=' | '&=' | '&&' | '==' | '!=' | '(' | ')' | '-' | '|' | '-=' | '|=' | '||' | '<' | '<=' | '[' | ']' |
+	//	'*' | '^' | '*=' | '^=' | '<-' | '>' | '>=' | '{' | '}' | '/' | '<<' | '/=' | '<<=' | '++' | '=' | ':=' | ',' | ';' |
 	//	'%' | '>>' | '%=' | '>>=' | '--' | '!' | '...' | '.' | ':' | '&^' | '&^=' | ASSIGN_OP;
-	public OPERATORSElements getOPERATORSAccess() {
-		return pOPERATORS;
-	}
-	
-	public ParserRule getOPERATORSRule() {
-		return getOPERATORSAccess().getRule();
+	public TerminalRule getOPERATORSRule() {
+		return tOPERATORS;
 	}
 	
 	//terminal UNICODE_CHAR:
@@ -4782,7 +4457,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		return tUNICODE_LETTER;
 	}
 	
-	//terminal UNICODE_DIGIT:
+	//terminal fragment UNICODE_DIGIT:
 	//	'\\u0030'..'\\u0039' | '\\u0660'..'\\u0669' | '\\u06F0'..'\\u06F9' | '\\u07C0'..'\\u07C9' | '\\u0966'..'\\u096F' |
 	//	'\\u09E6'..'\\u09EF' | '\\u0A66'..'\\u0A6F' | '\\u0AE6'..'\\u0AEF' | '\\u0B66'..'\\u0B6F' | '\\u0BE6'..'\\u0BEF' |
 	//	'\\u0C66'..'\\u0C6F' | '\\u0CE6'..'\\u0CEF' | '\\u0D66'..'\\u0D6F' | '\\u0DE6'..'\\u0DEF' | '\\u0E50'..'\\u0E59' |
@@ -4796,23 +4471,13 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Int_lit:
-	//	Decimal_lit | Octal_lit | Hex_lit;
+	//	DECIMAL_DIGITS | Octal_lit | Hex_lit;
 	public Int_litElements getInt_litAccess() {
 		return pInt_lit;
 	}
 	
 	public ParserRule getInt_litRule() {
 		return getInt_litAccess().getRule();
-	}
-	
-	//Decimal_lit:
-	//	DECIMAL_DIGIT DECIMAL_DIGIT*;
-	public Decimal_litElements getDecimal_litAccess() {
-		return pDecimal_lit;
-	}
-	
-	public ParserRule getDecimal_litRule() {
-		return getDecimal_litAccess().getRule();
 	}
 	
 	//Octal_lit:
@@ -4836,8 +4501,8 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Float_lit:
-	//	Decimals '.' Decimals? Exponent? | Decimals Exponent |
-	//	'.' Decimals Exponent?;
+	//	DECIMAL_DIGITS '.' DECIMAL_DIGITS? Exponent? | DECIMAL_DIGITS Exponent |
+	//	'.' DECIMAL_DIGITS Exponent?;
 	public Float_litElements getFloat_litAccess() {
 		return pFloat_lit;
 	}
@@ -4846,18 +4511,8 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		return getFloat_litAccess().getRule();
 	}
 	
-	//Decimals:
-	//	DECIMAL_DIGIT DECIMAL_DIGIT*;
-	public DecimalsElements getDecimalsAccess() {
-		return pDecimals;
-	}
-	
-	public ParserRule getDecimalsRule() {
-		return getDecimalsAccess().getRule();
-	}
-	
 	//Exponent:
-	//	('e' | 'e') ('+' | '-')? Decimals;
+	//	('e' | 'e') ('+' | '-')? DECIMAL_DIGITS;
 	public ExponentElements getExponentAccess() {
 		return pExponent;
 	}
@@ -4867,7 +4522,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Imaginary_lit:
-	//	(Decimals | Float_lit) 'i';
+	//	(DECIMAL_DIGITS | Float_lit) 'i';
 	public Imaginary_litElements getImaginary_litAccess() {
 		return pImaginary_lit;
 	}

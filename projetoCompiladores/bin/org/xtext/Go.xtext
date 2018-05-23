@@ -40,8 +40,8 @@ terminal NEWLINE:
 terminal LETTER:
 	UNICODE_LETTER | '_';
 
-terminal DECIMAL_DIGIT:
-	'0'..'9';
+terminal DECIMAL_DIGITS:
+	('0'..'9')+;
 
 terminal OCTAL_DIGIT:
 	'0'..'7';
@@ -145,10 +145,7 @@ terminal fragment UNICODE_DIGIT:
 
 
 Int_lit:
-	Decimal_lit | Octal_lit | Hex_lit;
-
-Decimal_lit:
-	DECIMAL_DIGIT (DECIMAL_DIGIT)*;
+	DECIMAL_DIGITS | Octal_lit | Hex_lit;
 
 Octal_lit:
 	'0' (OCTAL_DIGIT)*;
@@ -157,18 +154,16 @@ Hex_lit:
 	'0' ('x' | 'x') HEX_DIGIT (HEX_DIGIT)*;
 
 Float_lit:
-	Decimals '.' (Decimals)? (Exponent)? |
-	Decimals Exponent |
-	'.' Decimals (Exponent)?;
+	DECIMAL_DIGITS '.' (DECIMAL_DIGITS)? (Exponent)? |
+	DECIMAL_DIGITS Exponent |
+	'.' DECIMAL_DIGITS (Exponent)?;
 
-Decimals:
-	DECIMAL_DIGIT (DECIMAL_DIGIT)*;
 
 Exponent:
-	('e' | 'e') ('+' | '-')? Decimals;
+	('e' | 'e') ('+' | '-')? DECIMAL_DIGITS;
 
 Imaginary_lit:
-	(Decimals | Float_lit) 'i';
+	(DECIMAL_DIGITS | Float_lit) 'i';
 
 Rune_lit:
 	"'" (Unicode_value | Byte_value) "'";
