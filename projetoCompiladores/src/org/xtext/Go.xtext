@@ -1,21 +1,73 @@
 grammar org.xtext.Go with org.eclipse.xtext.common.Terminals
 
 generate go "http://www.xtext.org/Go"
-
 Model:
 	greetings+=Greeting*;
 
 Greeting:
 	'Hello' name=ID '!';
 
+terminal SEMICOLON:
+	';'
+;
+
+terminal BINARY_OP:
+	"||" | "&&" | REL_OP | ADD_OP | MUL_OP;
+
+terminal REL_OP:
+	"==" | "!=" | "<" | "<=" | ">" | ">=";
+
+terminal ADD_OP:
+	("+" | "-" | "|" | "^");
+
+terminal MUL_OP:
+	("*" | "/" | "%" | "<<" | ">>" | "&" | "&^");
+
+terminal UNARY_OP:
+	"+" | "-" | "!" | "^" | "*" | "&" | "<-";
+
+terminal ASSIGN_OP:
+	(ADD_OP | MUL_OP)? "=";
+
+
+terminal FALLTHROUGH_STMT:
+	"fallthrough";
+
+
 terminal NEWLINE:
 	'\u000A';
+
+terminal LETTER:
+	UNICODE_LETTER | '_';
+
+terminal DECIMAL_DIGIT:
+	'0'..'9';
+
+terminal OCTAL_DIGIT:
+	'0'..'7';
+
+terminal HEX_DIGIT:
+	'0'..'9' | 'A'..'F' | 'a'..'f';
+
+terminal KEYWORDS:
+	'break' | 'default' | 'func' | 'interface' | 'select' | 'case' | 'defer' | 'go' | 'map' | 'struct' | 'chan' | 'else' |
+	'goto' | 'package' | 'switch' | 'const' | 'fallthrough' | 'if' | 'range' | 'type' | 'continue' | 'for' | 'import' |
+	'return' | 'var';
+
+terminal IDENTIFIER:
+	LETTER (LETTER | UNICODE_DIGIT)*;
+
+terminal OPERATORS:
+	'+' | '&' | '+=' | '&=' | '&&' | '==' | '!=' | '(' | ')' | '-' | '|' | '-=' | '|=' | '||' | '<' | '<=' | '[' | ']' |
+	'*' | '^' | '*=' | '^=' | '<-' | '>' | '>=' | '{' | '}' | '/' | '<<' | '/=' | '<<=' | '++' | '=' | ':=' | ',' | ';' |
+	'%' | '>>' | '%=' | '>>=' | '--' | '!' | '...' | '.' | ':' | '&^' | '&^=' | ASSIGN_OP;
+
 
 terminal UNICODE_CHAR: 
 	!(NEWLINE);
 
 terminal UNICODE_LETTER: // unicode char classes Lu, Ll, Lt, Lm, or Lo
-	'\u0041'..'\u005A' | '\u0061'..'\u007A' | '\u00AA' | '\u00B5' | '\u00BA' | '\u00C0'..'\u00D6' | '\u00D8'..'\u00F6' |
+	('\u0041'..'\u005A' | '\u0061'..'\u007A' | '\u00AA' | '\u00B5' | '\u00BA' | '\u00C0'..'\u00D6' | '\u00D8'..'\u00F6' |
 	'\u00F8'..'\u02C1' | '\u02C6'..'\u02D1' | '\u02E0'..'\u02E4' | '\u02EC' | '\u02EE' | '\u0370'..'\u0374' |
 	'\u0376'..'\u0377' | '\u037A'..'\u037D' | '\u037F' | '\u0386' | '\u0388'..'\u038A' | '\u038C' | '\u038E'..'\u03A1' |
 	'\u03A3'..'\u03F5' | '\u03F7'..'\u0481' | '\u048A'..'\u052F' | '\u0531'..'\u0556' | '\u0559' | '\u0561'..'\u0587' |
@@ -79,9 +131,9 @@ terminal UNICODE_LETTER: // unicode char classes Lu, Ll, Lt, Lm, or Lo
 	'\uFB3E' | '\uFB40'..'\uFB41' | '\uFB43'..'\uFB44' | '\uFB46'..'\uFBB1' | '\uFBD3'..'\uFD3D' | '\uFD50'..'\uFD8F' |
 	'\uFD92'..'\uFDC7' | '\uFDF0'..'\uFDFB' | '\uFE70'..'\uFE74' | '\uFE76'..'\uFEFC' | '\uFF21'..'\uFF3A' |
 	'\uFF41'..'\uFF5A' | '\uFF66'..'\uFFBE' | '\uFFC2'..'\uFFC7' | '\uFFCA'..'\uFFCF' | '\uFFD2'..'\uFFD7' |
-	'\uFFDA'..'\uFFDC';
+	'\uFFDA'..'\uFFDC');
 
-terminal UNICODE_DIGIT:
+terminal fragment UNICODE_DIGIT:
 	'\u0030'..'\u0039' | '\u0660'..'\u0669' | '\u06F0'..'\u06F9' | '\u07C0'..'\u07C9' | '\u0966'..'\u096F' |
 	'\u09E6'..'\u09EF' | '\u0A66'..'\u0A6F' | '\u0AE6'..'\u0AEF' | '\u0B66'..'\u0B6F' | '\u0BE6'..'\u0BEF' |
 	'\u0C66'..'\u0C6F' | '\u0CE6'..'\u0CEF' | '\u0D66'..'\u0D6F' | '\u0DE6'..'\u0DEF' | '\u0E50'..'\u0E59' |
@@ -91,30 +143,6 @@ terminal UNICODE_DIGIT:
 	'\uA8D0'..'\uA8D9' | '\uA900'..'\uA909' | '\uA9D0'..'\uA9D9' | '\uA9F0'..'\uA9F9' | '\uAA50'..'\uAA59' |
 	'\uABF0'..'\uABF9' | '\uFF10'..'\uFF19';
 
-terminal LETTER:
-	UNICODE_LETTER | '_';
-
-terminal DECIMAL_DIGIT:
-	'0'..'9';
-
-terminal OCTAL_DIGIT:
-	'0'..'7';
-
-terminal HEX_DIGIT:
-	'0'..'9' | 'A'..'F' | 'a'..'f';
-
-terminal KEYWORDS:
-	'break' | 'default' | 'func' | 'interface' | 'select' | 'case' | 'defer' | 'go' | 'map' | 'struct' | 'chan' | 'else' |
-	'goto' | 'package' | 'switch' | 'const' | 'fallthrough' | 'if' | 'range' | 'type' | 'continue' | 'for' | 'import' |
-	'return' | 'var';
-
-terminal IDENTIFIER:
-	LETTER (LETTER | UNICODE_DIGIT)*;
-
-terminal OPERATORS:
-	'+' | '&' | '+=' | '&=' | '&&' | '==' | '!=' | '(' | ')' | '-' | '|' | '-=' | '|=' | '||' | '<' | '<=' | '[' | ']' |
-	'*' | '^' | '*=' | '^=' | '<-' | '>' | '>=' | '{' | '}' | '/' | '<<' | '/=' | '<<=' | '++' | '=' | ':=' | ',' | ';' |
-	'%' | '>>' | '%=' | '>>=' | '--' | '!' | '...' | '.' | ':' | '&^' | '&^=' | ASSIGN_OP;
 
 Int_lit:
 	Decimal_lit | Octal_lit | Hex_lit;
@@ -181,8 +209,6 @@ Literals:
 Comment:
 	ML_COMMENT;
 
-terminal SEMICOLON:
-	';';
 
 Token:
 	(IDENTIFIER | KEYWORDS | OPERATORS | Literals);
@@ -191,7 +217,7 @@ Type:
 	Type_name | Type_lit | "(" Type ")";
 
 Type_name:
-	IDENTIFIER | Qualified_ident;
+	=>IDENTIFIER | Qualified_ident;
 
 Type_lit:
 	Array_type | Struct_type | Pointer_type | Function_type |
@@ -204,7 +230,7 @@ Array_length:
 	Parameter_list;
 
 Element_type:
-	Type;
+	=> Type;
 
 Struct_type:
 	"struct" "{" (Field_decl SEMICOLON)* "}";
@@ -228,16 +254,16 @@ Function_type:
 	"func" Signature;
 
 Signature:
-	Parameters (Result)+;
+	Parameters (=>Result)+;
 
 Result:
-	Parameters | Type;
+	Parameters | =>Type;
 
 Parameters:
 	"(" (Parameter_list (",")+)+ ")";
 
 Parameter_list:
-	Parameter_decl ("," Parameter_decl)*;
+	Parameter_decl =>("," Parameter_decl)*;
 
 Parameter_decl:
 	(Identifier_list)? ("...")? Type;
@@ -264,7 +290,7 @@ Key_type:
 	Type;
 
 Channel_type:
-	("chan" | "chan" "<-" | "<-" "chan") Element_type;
+	(=>"chan" | "chan" "<-" | "<-" "chan") Element_type;
 
 Block:
 	"{" Statement_list "}";
@@ -309,7 +335,7 @@ Var_spec:
 	Identifier_list (Type ("=" Expression_list)? | "=" Expression_list);
 
 Short_var_decl:
-	Identifier_list ":=" Expression_list;
+	=>Identifier_list ":=" Expression_list;
 
 Function_decl:
 	"func" Function_name Signature (Function_body)?;
@@ -334,10 +360,10 @@ Literal:
 	
 
 Basic_lit:
-	Int_lit | Float_lit | Imaginary_lit | Rune_lit | String_lit;
+	=>Int_lit | Float_lit | Imaginary_lit | Rune_lit | String_lit;
 
 Operand_name:
-	IDENTIFIER | Qualified_ident;
+	=>IDENTIFIER | Qualified_ident;
 
 Qualified_ident:
 	Package_name "." IDENTIFIER;
@@ -356,7 +382,7 @@ Element_list:
 	Keyed_element ("," Keyed_element)*;
 
 Keyed_element:
-	(Key ":")? Element;
+	=>(Key ":")? Element;
 
 Key:
 	Field_name | Expression | Literal_value;
@@ -370,11 +396,13 @@ Element:
 Function_lit:
 	"func" Signature Function_body;
 
+
+
 Primary_expr:
 		Operand |
 		Conversion |
 		Method_expr|
-		Primary_expr_selector |
+		=>Primary_expr_selector |
 		Primary_expr_index |
 		Primary_expr_slice |
 		Primary_expr_type_assertion |
@@ -382,30 +410,31 @@ Primary_expr:
 ;
 
 Primary_expr_selector:
-	Selector Primary_expr_selector | (Operand |
+	Selector Primary_expr_selector| (=>Operand |
 		Conversion |
 		Method_expr)
 ;
+
 Primary_expr_index:
-	Index Primary_expr_selector | (Operand |
+	Index Primary_expr_index | (=>Operand |
 		Conversion |
 		Method_expr)
 ;
 
 Primary_expr_slice:
-	Slice Primary_expr_selector | (Operand |
+	Slice Primary_expr_slice |(=>Operand |
 		Conversion |
 		Method_expr)
 ;
 
 Primary_expr_type_assertion:
-	Type_assertion Primary_expr_selector | (Operand |
+	Type_assertion Primary_expr_type_assertion | (=>Operand |
 		Conversion |
 		Method_expr)
 ;
 
 Primary_expr_arguments:
-	Arguments Primary_expr_selector | (Operand |
+	Arguments Primary_expr_arguments | (=>Operand |
 		Conversion |
 		Method_expr)
 ;
@@ -417,13 +446,13 @@ Index:
 	"[" Expression "]";
 
 Slice:
-	"[" (Expression)? ":" (Expression)? "]" | "[" (Expression)? ":" Expression ":" Expression "]";
+	=>("[" (Expression)? ":" (Expression)? "]") | ("[" (Expression)? ":" Expression ":" Expression "]");
 
 Type_assertion:
 	"." "(" Type ")";
 
 Arguments:
-	"(" (Expression_list | Type ("," Expression_list)? ("...")? (",")?)? ")";
+	"(" (=>Expression_list | Type ("," Expression_list)? ("...")? (",")?)? ")";
 
 Method_expr:
 	Reciever_type "." Method_name;
@@ -440,21 +469,6 @@ Expression_line:
 Unary_expr:
 	(Primary_expr | UNARY_OP)+;
 
-terminal BINARY_OP:
-	"||" | "&&" | REL_OP | ADD_OP | MUL_OP;
-
-terminal REL_OP:
-	"==" | "!=" | "<" | "<=" | ">" | ">=";
-
-terminal ADD_OP:
-	("+" | "-" | "|" | "^");
-
-terminal MUL_OP:
-	("*" | "/" | "%" | "<<" | ">>" | "&" | "&^");
-
-terminal UNARY_OP:
-	"+" | "-" | "!" | "^" | "*" | "&" | "<-";
-
 Conversion:
 	Type "(" Expression (",")? ")"
 ;
@@ -469,11 +483,11 @@ Simple_stmt:
 	Empty_stmt | Expression_stmt | Send_stmt | Inc_dec_stmt | Assignment | Short_var_decl;
 
 Empty_stmt:
-	"a" //not anything = nothing
+	WS
 ;
 
 Labeled_stmt:
-	Label ":" Statement
+	=>Label ":" Statement
 ;
 
 Label:
@@ -483,28 +497,26 @@ Expression_stmt:
 	Expression;
 
 Send_stmt:
-	Channel "<-" Expression;
+	=>Channel "<-" Expression;
 
 Channel:
 	Expression;
 
 Inc_dec_stmt:
-	Expression ("++" | "--");
+	=>Expression ("++" | "--");
 
 Assignment:
-	Expression_list ASSIGN_OP Expression_list;
+	=>Expression_list ASSIGN_OP Expression_list;
 
-terminal ASSIGN_OP:
-	(ADD_OP | MUL_OP)? "=";
 
 If_stmt:
-	"if" (Simple_stmt SEMICOLON)? Expression Block ("else" (If_stmt | Block))?;
+	"if" (Simple_stmt SEMICOLON)? =>Expression Block ("else" (If_stmt | Block))?;
 
 Switch_stmt:
-	Expr_switch_stmt | Type_switch_stmt;
+	=>Expr_switch_stmt | Type_switch_stmt;
 
 Expr_switch_stmt:
-	"switch" (Simple_stmt SEMICOLON)? (Expression)? "{" (Expr_case_clause)* "}";
+	"switch" (Simple_stmt SEMICOLON)? =>(Expression)? "{" (Expr_case_clause)* "}";
 
 Expr_case_clause:
 	Expr_switch_case ":" Statement_list;
@@ -513,7 +525,7 @@ Expr_switch_case:
 	"case" Expression_list | "default";
 
 Type_switch_stmt:
-	"switch" (Simple_stmt SEMICOLON)? Type_switch_guard "{" (Type_case_clause)* "}";
+	"switch" (Simple_stmt SEMICOLON)? =>Type_switch_guard "{" (Type_case_clause)* "}";
 
 Type_switch_guard:
 	(IDENTIFIER ":=")? Primary_expr "." "(" "type" ")";
@@ -528,7 +540,7 @@ Type_list:
 	Type ("," Type)*;
 
 For_stmt:
-	"for" (Condition | For_clause | Range_clause)? Block;
+	"for" (=>Condition | For_clause | Range_clause)? Block;
 
 Condition:
 	Expression;
@@ -558,7 +570,7 @@ Comm_case:
 	"case" (Send_stmt | Recv_stmt) | "default";
 
 Recv_stmt:
-	(Expression_list "=" | Identifier_list ":=")? Recv_expr;
+	(=>Expression_list "=" | Identifier_list ":=")? Recv_expr;
 
 Recv_expr:
 	Expression;
@@ -574,9 +586,6 @@ Continue_stmt:
 
 Goto_stmt:
 	"goto" Label;
-
-terminal FALLTHROUGH_STMT:
-	"fallthrough";
 
 Defer_stmt:
 	"defer" Expression;
