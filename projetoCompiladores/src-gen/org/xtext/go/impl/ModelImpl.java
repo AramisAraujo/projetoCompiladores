@@ -5,20 +5,15 @@ package org.xtext.go.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 import org.xtext.go.GoPackage;
-import org.xtext.go.Greeting;
 import org.xtext.go.Model;
 
 /**
@@ -37,14 +32,14 @@ import org.xtext.go.Model;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getGreetings() <em>Greetings</em>}' containment reference list.
+   * The cached value of the '{@link #getGreetings() <em>Greetings</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getGreetings()
    * @generated
    * @ordered
    */
-  protected EList<Greeting> greetings;
+  protected EList<String> greetings;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,29 +67,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Greeting> getGreetings()
+  public EList<String> getGreetings()
   {
     if (greetings == null)
     {
-      greetings = new EObjectContainmentEList<Greeting>(Greeting.class, this, GoPackage.MODEL__GREETINGS);
+      greetings = new EDataTypeEList<String>(String.class, this, GoPackage.MODEL__GREETINGS);
     }
     return greetings;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case GoPackage.MODEL__GREETINGS:
-        return ((InternalEList<?>)getGreetings()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -126,7 +105,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case GoPackage.MODEL__GREETINGS:
         getGreetings().clear();
-        getGreetings().addAll((Collection<? extends Greeting>)newValue);
+        getGreetings().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -163,6 +142,23 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return greetings != null && !greetings.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (greetings: ");
+    result.append(greetings);
+    result.append(')');
+    return result.toString();
   }
 
 } //ModelImpl

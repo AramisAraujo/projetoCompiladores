@@ -11,11 +11,8 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
-import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.go.GoPackage;
-import org.xtext.go.Greeting;
 import org.xtext.go.Model;
 import org.xtext.services.GoGrammarAccess;
 
@@ -33,9 +30,6 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == GoPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case GoPackage.GREETING:
-				sequence_Greeting(context, (Greeting) semanticObject); 
-				return; 
 			case GoPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
@@ -46,28 +40,10 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Greeting returns Greeting
-	 *
-	 * Constraint:
-	 *     name=ID
-	 */
-	protected void sequence_Greeting(ISerializationContext context, Greeting semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.GREETING__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.GREETING__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     greetings+=Greeting+
+	 *     greetings+=program
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

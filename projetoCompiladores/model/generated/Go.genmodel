@@ -7,10 +7,7 @@
   <genPackages prefix="Go" basePackage="org.xtext" disposableProviderFactory="true"
       fileExtensions="mydsl" ecorePackage="Go.ecore#/">
     <genClasses ecoreClass="Go.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//Model/greetings"/>
-    </genClasses>
-    <genClasses ecoreClass="Go.ecore#//Greeting">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//Greeting/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//Model/greetings"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -78,9 +78,9 @@ ruleModel returns [EObject current=null]
 	(
 		(
 			{
-				newCompositeNode(grammarAccess.getModelAccess().getGreetingsGreetingParserRuleCall_0());
+				newCompositeNode(grammarAccess.getModelAccess().getGreetingsProgramParserRuleCall_0());
 			}
-			lv_greetings_0_0=ruleGreeting
+			lv_greetings_0_0=ruleprogram
 			{
 				if ($current==null) {
 					$current = createModelElementForParent(grammarAccess.getModelRule());
@@ -89,22 +89,22 @@ ruleModel returns [EObject current=null]
 					$current,
 					"greetings",
 					lv_greetings_0_0,
-					"org.xtext.Go.Greeting");
+					"org.xtext.Go.program");
 				afterParserOrEnumRuleCall();
 			}
 		)
-	)*
+	)
 ;
 
-// Entry rule entryRuleGreeting
-entryRuleGreeting returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getGreetingRule()); }
-	iv_ruleGreeting=ruleGreeting
-	{ $current=$iv_ruleGreeting.current; }
+// Entry rule entryRuleprogram
+entryRuleprogram returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getProgramRule()); }
+	iv_ruleprogram=ruleprogram
+	{ $current=$iv_ruleprogram.current.getText(); }
 	EOF;
 
-// Rule Greeting
-ruleGreeting returns [EObject current=null]
+// Rule program
+ruleprogram returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 @init {
 	enterRule();
 }
@@ -112,31 +112,37 @@ ruleGreeting returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Hello'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getGreetingAccess().getHelloKeyword_0());
+			newCompositeNode(grammarAccess.getProgramAccess().getImport_declParserRuleCall_0());
 		}
-		(
-			(
-				lv_name_1_0=RULE_ID
-				{
-					newLeafNode(lv_name_1_0, grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getGreetingRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		otherlv_2='!'
+		this_Import_decl_0=ruleImport_decl
 		{
-			newLeafNode(otherlv_2, grammarAccess.getGreetingAccess().getExclamationMarkKeyword_2());
+			$current.merge(this_Import_decl_0);
+		}
+		{
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getProgramAccess().getPackage_clauseParserRuleCall_1());
+		}
+		this_Package_clause_1=rulePackage_clause
+		{
+			$current.merge(this_Package_clause_1);
+		}
+		{
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getProgramAccess().getFunction_declParserRuleCall_2());
+		}
+		this_Function_decl_2=ruleFunction_decl
+		{
+			$current.merge(this_Function_decl_2);
+		}
+		{
+			afterParserOrEnumRuleCall();
 		}
 	)
 ;
@@ -1274,16 +1280,19 @@ ruleType_lit returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
 			afterParserOrEnumRuleCall();
 		}
 		    |
-		{
-			newCompositeNode(grammarAccess.getType_litAccess().getInterface_typeParserRuleCall_4());
-		}
-		this_Interface_type_4=ruleInterface_type
-		{
-			$current.merge(this_Interface_type_4);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
+		(
+			('interface')=>
+			{
+				newCompositeNode(grammarAccess.getType_litAccess().getInterface_typeParserRuleCall_4());
+			}
+			this_Interface_type_4=ruleInterface_type
+			{
+				$current.merge(this_Interface_type_4);
+			}
+			{
+				afterParserOrEnumRuleCall();
+			}
+		)
 		    |
 		{
 			newCompositeNode(grammarAccess.getType_litAccess().getSlice_typeParserRuleCall_5());
@@ -1953,11 +1962,14 @@ ruleInterface_type returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRule
 	leaveRule();
 }:
 	(
-		kw='interface'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getInterface_typeAccess().getInterfaceKeyword_0());
-		}
+		(
+			('interface')=>
+			kw='interface'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getInterface_typeAccess().getInterfaceKeyword_0());
+			}
+		)
 		kw='{'
 		{
 			$current.merge(kw);

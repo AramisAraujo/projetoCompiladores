@@ -66,7 +66,6 @@ public class GoFactoryImpl extends EFactoryImpl implements GoFactory
     switch (eClass.getClassifierID())
     {
       case GoPackage.MODEL: return createModel();
-      case GoPackage.GREETING: return createGreeting();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -81,17 +80,6 @@ public class GoFactoryImpl extends EFactoryImpl implements GoFactory
   {
     ModelImpl model = new ModelImpl();
     return model;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Greeting createGreeting()
-  {
-    GreetingImpl greeting = new GreetingImpl();
-    return greeting;
   }
 
   /**

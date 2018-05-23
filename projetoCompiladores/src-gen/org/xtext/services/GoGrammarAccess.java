@@ -25,44 +25,40 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Model");
 		private final Assignment cGreetingsAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cGreetingsGreetingParserRuleCall_0 = (RuleCall)cGreetingsAssignment.eContents().get(0);
+		private final RuleCall cGreetingsProgramParserRuleCall_0 = (RuleCall)cGreetingsAssignment.eContents().get(0);
 		
 		//Model:
-		//	greetings+=Greeting*;
+		//	greetings+=program;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//greetings+=Greeting*
+		//greetings+=program
 		public Assignment getGreetingsAssignment() { return cGreetingsAssignment; }
 		
-		//Greeting
-		public RuleCall getGreetingsGreetingParserRuleCall_0() { return cGreetingsGreetingParserRuleCall_0; }
+		//program
+		public RuleCall getGreetingsProgramParserRuleCall_0() { return cGreetingsProgramParserRuleCall_0; }
 	}
-	public class GreetingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Greeting");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHelloKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cExclamationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
+	public class ProgramElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.program");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cImport_declParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cPackage_clauseParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cFunction_declParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//Greeting:
-		//	'Hello' name=ID '!';
+		//program:
+		//	Import_decl | Package_clause | Function_decl;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Hello' name=ID '!'
-		public Group getGroup() { return cGroup; }
+		//Import_decl | Package_clause | Function_decl
+		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'Hello'
-		public Keyword getHelloKeyword_0() { return cHelloKeyword_0; }
+		//Import_decl
+		public RuleCall getImport_declParserRuleCall_0() { return cImport_declParserRuleCall_0; }
 		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//Package_clause
+		public RuleCall getPackage_clauseParserRuleCall_1() { return cPackage_clauseParserRuleCall_1; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-		
-		//'!'
-		public Keyword getExclamationMarkKeyword_2() { return cExclamationMarkKeyword_2; }
+		//Function_decl
+		public RuleCall getFunction_declParserRuleCall_2() { return cFunction_declParserRuleCall_2; }
 	}
 	public class Int_litElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Int_lit");
@@ -1098,13 +1094,13 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Interface_type:
-		//	"interface" "{" (Method_spec SEMICOLON)* "}";
+		//	=> "interface" "{" (Method_spec SEMICOLON)* "}";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"interface" "{" (Method_spec SEMICOLON)* "}"
+		//=> "interface" "{" (Method_spec SEMICOLON)* "}"
 		public Group getGroup() { return cGroup; }
 		
-		//"interface"
+		//=> "interface"
 		public Keyword getInterfaceKeyword_0() { return cInterfaceKeyword_0; }
 		
 		//"{"
@@ -3882,7 +3878,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	private final ModelElements pModel;
-	private final GreetingElements pGreeting;
+	private final ProgramElements pProgram;
 	private final TerminalRule tSEMICOLON;
 	private final TerminalRule tBINARY_OP;
 	private final TerminalRule tREL_OP;
@@ -4052,7 +4048,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
-		this.pGreeting = new GreetingElements();
+		this.pProgram = new ProgramElements();
 		this.tSEMICOLON = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.SEMICOLON");
 		this.tBINARY_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.BINARY_OP");
 		this.tREL_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.REL_OP");
@@ -4241,7 +4237,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
-	//	greetings+=Greeting*;
+	//	greetings+=program;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -4250,14 +4246,14 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		return getModelAccess().getRule();
 	}
 	
-	//Greeting:
-	//	'Hello' name=ID '!';
-	public GreetingElements getGreetingAccess() {
-		return pGreeting;
+	//program:
+	//	Import_decl | Package_clause | Function_decl;
+	public ProgramElements getProgramAccess() {
+		return pProgram;
 	}
 	
-	public ParserRule getGreetingRule() {
-		return getGreetingAccess().getRule();
+	public ParserRule getProgramRule() {
+		return getProgramAccess().getRule();
 	}
 	
 	//terminal SEMICOLON:
@@ -4831,7 +4827,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Interface_type:
-	//	"interface" "{" (Method_spec SEMICOLON)* "}";
+	//	=> "interface" "{" (Method_spec SEMICOLON)* "}";
 	public Interface_typeElements getInterface_typeAccess() {
 		return pInterface_type;
 	}

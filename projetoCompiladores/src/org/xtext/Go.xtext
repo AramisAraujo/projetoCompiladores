@@ -2,10 +2,11 @@ grammar org.xtext.Go with org.eclipse.xtext.common.Terminals
 
 generate go "http://www.xtext.org/Go"
 Model:
-	greetings+=Greeting*;
-
-Greeting:
-	'Hello' name=ID '!';
+	greetings+= program;
+	
+program:
+	Import_decl | Package_clause | Function_decl
+;
 
 terminal SEMICOLON:
 	';'
@@ -263,7 +264,7 @@ Parameter_decl:
 	(Identifier_list)? ("...")? Type;
 
 Interface_type:
-	"interface" "{" (Method_spec SEMICOLON)* "}";
+	=>"interface" "{" (Method_spec SEMICOLON)* "}";
 
 Method_spec:
 	Method_name Signature | Interface_type_name;

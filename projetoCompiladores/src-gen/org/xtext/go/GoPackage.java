@@ -6,7 +6,6 @@ package org.xtext.go;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -68,7 +67,7 @@ public interface GoPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Greetings</b></em>' containment reference list.
+   * The feature id for the '<em><b>Greetings</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -85,34 +84,6 @@ public interface GoPackage extends EPackage
    */
   int MODEL_FEATURE_COUNT = 1;
 
-  /**
-   * The meta object id for the '{@link org.xtext.go.impl.GreetingImpl <em>Greeting</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.go.impl.GreetingImpl
-   * @see org.xtext.go.impl.GoPackageImpl#getGreeting()
-   * @generated
-   */
-  int GREETING = 1;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GREETING__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Greeting</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GREETING_FEATURE_COUNT = 1;
-
 
   /**
    * Returns the meta object for class '{@link org.xtext.go.Model <em>Model</em>}'.
@@ -125,36 +96,15 @@ public interface GoPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.go.Model#getGreetings <em>Greetings</em>}'.
+   * Returns the meta object for the attribute list '{@link org.xtext.go.Model#getGreetings <em>Greetings</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Greetings</em>'.
+   * @return the meta object for the attribute list '<em>Greetings</em>'.
    * @see org.xtext.go.Model#getGreetings()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Greetings();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.go.Greeting <em>Greeting</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Greeting</em>'.
-   * @see org.xtext.go.Greeting
-   * @generated
-   */
-  EClass getGreeting();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.go.Greeting#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.go.Greeting#getName()
-   * @see #getGreeting()
-   * @generated
-   */
-  EAttribute getGreeting_Name();
+  EAttribute getModel_Greetings();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -190,30 +140,12 @@ public interface GoPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Greetings</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Greetings</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__GREETINGS = eINSTANCE.getModel_Greetings();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.go.impl.GreetingImpl <em>Greeting</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.go.impl.GreetingImpl
-     * @see org.xtext.go.impl.GoPackageImpl#getGreeting()
-     * @generated
-     */
-    EClass GREETING = eINSTANCE.getGreeting();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GREETING__NAME = eINSTANCE.getGreeting_Name();
+    EAttribute MODEL__GREETINGS = eINSTANCE.getModel_Greetings();
 
   }
 
