@@ -159,7 +159,7 @@ Float_lit:
 
 
 Exponent:
-	('e' | 'e') ('+' | '-')? DECIMAL_DIGITS;
+	('E' | 'e') ('+' | '-')? DECIMAL_DIGITS;
 
 Imaginary_lit:
 	(DECIMAL_DIGITS | Float_lit) 'i';
@@ -332,10 +332,7 @@ Short_var_decl:
 	=>Identifier_list ":=" Expression_list;
 
 Function_decl:
-	"func" Function_name Signature (Function_body)?;
-
-Function_name:
-	IDENTIFIER;
+	"func" IDENTIFIER Signature (Function_body)?;
 
 Function_body:
 	Block;

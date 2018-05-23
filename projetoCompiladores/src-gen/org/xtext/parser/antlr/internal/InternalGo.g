@@ -383,7 +383,7 @@ ruleExponent returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
 }:
 	(
 		(
-			kw='e'
+			kw='E'
 			{
 				$current.merge(kw);
 				newLeafNode(kw, grammarAccess.getExponentAccess().getEKeyword_0_0());
@@ -3066,15 +3066,12 @@ ruleFunction_decl returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleT
 			$current.merge(kw);
 			newLeafNode(kw, grammarAccess.getFunction_declAccess().getFuncKeyword_0());
 		}
+		this_IDENTIFIER_1=RULE_IDENTIFIER
 		{
-			newCompositeNode(grammarAccess.getFunction_declAccess().getFunction_nameParserRuleCall_1());
-		}
-		this_Function_name_1=ruleFunction_name
-		{
-			$current.merge(this_Function_name_1);
+			$current.merge(this_IDENTIFIER_1);
 		}
 		{
-			afterParserOrEnumRuleCall();
+			newLeafNode(this_IDENTIFIER_1, grammarAccess.getFunction_declAccess().getIDENTIFIERTerminalRuleCall_1());
 		}
 		{
 			newCompositeNode(grammarAccess.getFunction_declAccess().getSignatureParserRuleCall_2());
@@ -3099,30 +3096,6 @@ ruleFunction_decl returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleT
 			}
 		)?
 	)
-;
-
-// Entry rule entryRuleFunction_name
-entryRuleFunction_name returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getFunction_nameRule()); }
-	iv_ruleFunction_name=ruleFunction_name
-	{ $current=$iv_ruleFunction_name.current.getText(); }
-	EOF;
-
-// Rule Function_name
-ruleFunction_name returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	this_IDENTIFIER_0=RULE_IDENTIFIER
-	{
-		$current.merge(this_IDENTIFIER_0);
-	}
-	{
-		newLeafNode(this_IDENTIFIER_0, grammarAccess.getFunction_nameAccess().getIDENTIFIERTerminalRuleCall());
-	}
 ;
 
 // Entry rule entryRuleFunction_body

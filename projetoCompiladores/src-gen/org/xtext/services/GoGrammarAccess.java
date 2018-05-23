@@ -205,16 +205,16 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDECIMAL_DIGITSTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//Exponent:
-		//	('e' | 'e') ('+' | '-')? DECIMAL_DIGITS;
+		//	('E' | 'e') ('+' | '-')? DECIMAL_DIGITS;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('e' | 'e') ('+' | '-')? DECIMAL_DIGITS
+		//('E' | 'e') ('+' | '-')? DECIMAL_DIGITS
 		public Group getGroup() { return cGroup; }
 		
-		//'e' | 'e'
+		//'E' | 'e'
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 		
-		//'e'
+		//'E'
 		public Keyword getEKeyword_0_0() { return cEKeyword_0_0; }
 		
 		//'e'
@@ -1736,39 +1736,28 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Function_decl");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cFuncKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cFunction_nameParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final RuleCall cIDENTIFIERTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final RuleCall cSignatureParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		private final RuleCall cFunction_bodyParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//Function_decl:
-		//	"func" Function_name Signature Function_body?;
+		//	"func" IDENTIFIER Signature Function_body?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"func" Function_name Signature Function_body?
+		//"func" IDENTIFIER Signature Function_body?
 		public Group getGroup() { return cGroup; }
 		
 		//"func"
 		public Keyword getFuncKeyword_0() { return cFuncKeyword_0; }
 		
-		//Function_name
-		public RuleCall getFunction_nameParserRuleCall_1() { return cFunction_nameParserRuleCall_1; }
+		//IDENTIFIER
+		public RuleCall getIDENTIFIERTerminalRuleCall_1() { return cIDENTIFIERTerminalRuleCall_1; }
 		
 		//Signature
 		public RuleCall getSignatureParserRuleCall_2() { return cSignatureParserRuleCall_2; }
 		
 		//Function_body?
 		public RuleCall getFunction_bodyParserRuleCall_3() { return cFunction_bodyParserRuleCall_3; }
-	}
-	public class Function_nameElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Function_name");
-		private final RuleCall cIDENTIFIERTerminalRuleCall = (RuleCall)rule.eContents().get(1);
-		
-		//Function_name:
-		//	IDENTIFIER;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//IDENTIFIER
-		public RuleCall getIDENTIFIERTerminalRuleCall() { return cIDENTIFIERTerminalRuleCall; }
 	}
 	public class Function_bodyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Function_body");
@@ -3975,7 +3964,6 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	private final Var_specElements pVar_spec;
 	private final Short_var_declElements pShort_var_decl;
 	private final Function_declElements pFunction_decl;
-	private final Function_nameElements pFunction_name;
 	private final Function_bodyElements pFunction_body;
 	private final Method_declElements pMethod_decl;
 	private final RrecieverElements pRreciever;
@@ -4146,7 +4134,6 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		this.pVar_spec = new Var_specElements();
 		this.pShort_var_decl = new Short_var_declElements();
 		this.pFunction_decl = new Function_declElements();
-		this.pFunction_name = new Function_nameElements();
 		this.pFunction_body = new Function_bodyElements();
 		this.pMethod_decl = new Method_declElements();
 		this.pRreciever = new RrecieverElements();
@@ -4504,7 +4491,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Exponent:
-	//	('e' | 'e') ('+' | '-')? DECIMAL_DIGITS;
+	//	('E' | 'e') ('+' | '-')? DECIMAL_DIGITS;
 	public ExponentElements getExponentAccess() {
 		return pExponent;
 	}
@@ -5074,23 +5061,13 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Function_decl:
-	//	"func" Function_name Signature Function_body?;
+	//	"func" IDENTIFIER Signature Function_body?;
 	public Function_declElements getFunction_declAccess() {
 		return pFunction_decl;
 	}
 	
 	public ParserRule getFunction_declRule() {
 		return getFunction_declAccess().getRule();
-	}
-	
-	//Function_name:
-	//	IDENTIFIER;
-	public Function_nameElements getFunction_nameAccess() {
-		return pFunction_name;
-	}
-	
-	public ParserRule getFunction_nameRule() {
-		return getFunction_nameAccess().getRule();
 	}
 	
 	//Function_body:
