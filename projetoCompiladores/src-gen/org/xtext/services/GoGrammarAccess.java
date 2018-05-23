@@ -117,19 +117,19 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cHEX_DIGITTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//Hex_lit:
-		//	'0' ('x' | 'x') HEX_DIGIT HEX_DIGIT*;
+		//	'0' ('X' | 'x') HEX_DIGIT HEX_DIGIT*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'0' ('x' | 'x') HEX_DIGIT HEX_DIGIT*
+		//'0' ('X' | 'x') HEX_DIGIT HEX_DIGIT*
 		public Group getGroup() { return cGroup; }
 		
 		//'0'
 		public Keyword getDigitZeroKeyword_0() { return cDigitZeroKeyword_0; }
 		
-		//'x' | 'x'
+		//'X' | 'x'
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
-		//'x'
+		//'X'
 		public Keyword getXKeyword_1_0() { return cXKeyword_1_0; }
 		
 		//'x'
@@ -143,63 +143,55 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class Float_litElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Float_lit");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final RuleCall cDECIMAL_DIGITSTerminalRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
-		private final Keyword cFullStopKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final RuleCall cDECIMAL_DIGITSTerminalRuleCall_0_2 = (RuleCall)cGroup_0.eContents().get(2);
-		private final RuleCall cExponentParserRuleCall_0_3 = (RuleCall)cGroup_0.eContents().get(3);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final RuleCall cDECIMAL_DIGITSTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
-		private final RuleCall cExponentParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Keyword cFullStopKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final RuleCall cDECIMAL_DIGITSTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
-		private final RuleCall cExponentParserRuleCall_2_2 = (RuleCall)cGroup_2.eContents().get(2);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cDECIMAL_DIGITSTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
+		private final Keyword cFullStopKeyword_1_0_0 = (Keyword)cGroup_1_0.eContents().get(0);
+		private final RuleCall cDECIMAL_DIGITSTerminalRuleCall_1_0_1 = (RuleCall)cGroup_1_0.eContents().get(1);
+		private final RuleCall cExponentParserRuleCall_1_0_2 = (RuleCall)cGroup_1_0.eContents().get(2);
+		private final RuleCall cExponentParserRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
+		private final Keyword cFullStopKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cDECIMAL_DIGITSTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final RuleCall cExponentParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
 		//Float_lit:
-		//	DECIMAL_DIGITS '.' DECIMAL_DIGITS? Exponent? | DECIMAL_DIGITS Exponent |
+		//	DECIMAL_DIGITS ('.' DECIMAL_DIGITS? Exponent? | Exponent)
 		//	'.' DECIMAL_DIGITS Exponent?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//DECIMAL_DIGITS '.' DECIMAL_DIGITS? Exponent? | DECIMAL_DIGITS Exponent | '.' DECIMAL_DIGITS Exponent?
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//DECIMAL_DIGITS '.' DECIMAL_DIGITS? Exponent?
-		public Group getGroup_0() { return cGroup_0; }
+		//DECIMAL_DIGITS ('.' DECIMAL_DIGITS? Exponent? | Exponent) '.' DECIMAL_DIGITS Exponent?
+		public Group getGroup() { return cGroup; }
 		
 		//DECIMAL_DIGITS
-		public RuleCall getDECIMAL_DIGITSTerminalRuleCall_0_0() { return cDECIMAL_DIGITSTerminalRuleCall_0_0; }
+		public RuleCall getDECIMAL_DIGITSTerminalRuleCall_0() { return cDECIMAL_DIGITSTerminalRuleCall_0; }
+		
+		//'.' DECIMAL_DIGITS? Exponent? | Exponent
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
+		//'.' DECIMAL_DIGITS? Exponent?
+		public Group getGroup_1_0() { return cGroup_1_0; }
 		
 		//'.'
-		public Keyword getFullStopKeyword_0_1() { return cFullStopKeyword_0_1; }
+		public Keyword getFullStopKeyword_1_0_0() { return cFullStopKeyword_1_0_0; }
 		
 		//DECIMAL_DIGITS?
-		public RuleCall getDECIMAL_DIGITSTerminalRuleCall_0_2() { return cDECIMAL_DIGITSTerminalRuleCall_0_2; }
+		public RuleCall getDECIMAL_DIGITSTerminalRuleCall_1_0_1() { return cDECIMAL_DIGITSTerminalRuleCall_1_0_1; }
 		
 		//Exponent?
-		public RuleCall getExponentParserRuleCall_0_3() { return cExponentParserRuleCall_0_3; }
-		
-		//DECIMAL_DIGITS Exponent
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//DECIMAL_DIGITS
-		public RuleCall getDECIMAL_DIGITSTerminalRuleCall_1_0() { return cDECIMAL_DIGITSTerminalRuleCall_1_0; }
+		public RuleCall getExponentParserRuleCall_1_0_2() { return cExponentParserRuleCall_1_0_2; }
 		
 		//Exponent
 		public RuleCall getExponentParserRuleCall_1_1() { return cExponentParserRuleCall_1_1; }
 		
-		//'.' DECIMAL_DIGITS Exponent?
-		public Group getGroup_2() { return cGroup_2; }
-		
 		//'.'
-		public Keyword getFullStopKeyword_2_0() { return cFullStopKeyword_2_0; }
+		public Keyword getFullStopKeyword_2() { return cFullStopKeyword_2; }
 		
 		//DECIMAL_DIGITS
-		public RuleCall getDECIMAL_DIGITSTerminalRuleCall_2_1() { return cDECIMAL_DIGITSTerminalRuleCall_2_1; }
+		public RuleCall getDECIMAL_DIGITSTerminalRuleCall_3() { return cDECIMAL_DIGITSTerminalRuleCall_3; }
 		
 		//Exponent?
-		public RuleCall getExponentParserRuleCall_2_2() { return cExponentParserRuleCall_2_2; }
+		public RuleCall getExponentParserRuleCall_4() { return cExponentParserRuleCall_4; }
 	}
 	public class ExponentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Exponent");
@@ -4491,7 +4483,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Hex_lit:
-	//	'0' ('x' | 'x') HEX_DIGIT HEX_DIGIT*;
+	//	'0' ('X' | 'x') HEX_DIGIT HEX_DIGIT*;
 	public Hex_litElements getHex_litAccess() {
 		return pHex_lit;
 	}
@@ -4501,7 +4493,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Float_lit:
-	//	DECIMAL_DIGITS '.' DECIMAL_DIGITS? Exponent? | DECIMAL_DIGITS Exponent |
+	//	DECIMAL_DIGITS ('.' DECIMAL_DIGITS? Exponent? | Exponent)
 	//	'.' DECIMAL_DIGITS Exponent?;
 	public Float_litElements getFloat_litAccess() {
 		return pFloat_lit;

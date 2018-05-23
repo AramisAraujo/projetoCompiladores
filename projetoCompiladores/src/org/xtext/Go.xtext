@@ -151,11 +151,10 @@ Octal_lit:
 	'0' (OCTAL_DIGIT)*;
 
 Hex_lit:
-	'0' ('x' | 'x') HEX_DIGIT (HEX_DIGIT)*;
+	'0' ('X' | 'x') HEX_DIGIT (HEX_DIGIT)*;
 
 Float_lit:
-	DECIMAL_DIGITS '.' (DECIMAL_DIGITS)? (Exponent)? |
-	DECIMAL_DIGITS Exponent |
+	DECIMAL_DIGITS ('.' (DECIMAL_DIGITS)? (Exponent)? | Exponent)
 	'.' DECIMAL_DIGITS (Exponent)?;
 
 

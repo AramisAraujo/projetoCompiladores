@@ -244,7 +244,7 @@ ruleHex_lit returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 			newLeafNode(kw, grammarAccess.getHex_litAccess().getDigitZeroKeyword_0());
 		}
 		(
-			kw='x'
+			kw='X'
 			{
 				$current.merge(kw);
 				newLeafNode(kw, grammarAccess.getHex_litAccess().getXKeyword_1_0());
@@ -291,88 +291,78 @@ ruleFloat_lit returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken
 	leaveRule();
 }:
 	(
+		this_DECIMAL_DIGITS_0=RULE_DECIMAL_DIGITS
+		{
+			$current.merge(this_DECIMAL_DIGITS_0);
+		}
+		{
+			newLeafNode(this_DECIMAL_DIGITS_0, grammarAccess.getFloat_litAccess().getDECIMAL_DIGITSTerminalRuleCall_0());
+		}
 		(
-			this_DECIMAL_DIGITS_0=RULE_DECIMAL_DIGITS
-			{
-				$current.merge(this_DECIMAL_DIGITS_0);
-			}
-			{
-				newLeafNode(this_DECIMAL_DIGITS_0, grammarAccess.getFloat_litAccess().getDECIMAL_DIGITSTerminalRuleCall_0_0());
-			}
-			kw='.'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getFloat_litAccess().getFullStopKeyword_0_1());
-			}
 			(
-				this_DECIMAL_DIGITS_2=RULE_DECIMAL_DIGITS
+				kw='.'
 				{
-					$current.merge(this_DECIMAL_DIGITS_2);
+					$current.merge(kw);
+					newLeafNode(kw, grammarAccess.getFloat_litAccess().getFullStopKeyword_1_0_0());
 				}
-				{
-					newLeafNode(this_DECIMAL_DIGITS_2, grammarAccess.getFloat_litAccess().getDECIMAL_DIGITSTerminalRuleCall_0_2());
-				}
-			)?
-			(
-				{
-					newCompositeNode(grammarAccess.getFloat_litAccess().getExponentParserRuleCall_0_3());
-				}
-				this_Exponent_3=ruleExponent
-				{
-					$current.merge(this_Exponent_3);
-				}
-				{
-					afterParserOrEnumRuleCall();
-				}
-			)?
-		)
-		    |
-		(
-			this_DECIMAL_DIGITS_4=RULE_DECIMAL_DIGITS
-			{
-				$current.merge(this_DECIMAL_DIGITS_4);
-			}
-			{
-				newLeafNode(this_DECIMAL_DIGITS_4, grammarAccess.getFloat_litAccess().getDECIMAL_DIGITSTerminalRuleCall_1_0());
-			}
+				(
+					this_DECIMAL_DIGITS_2=RULE_DECIMAL_DIGITS
+					{
+						$current.merge(this_DECIMAL_DIGITS_2);
+					}
+					{
+						newLeafNode(this_DECIMAL_DIGITS_2, grammarAccess.getFloat_litAccess().getDECIMAL_DIGITSTerminalRuleCall_1_0_1());
+					}
+				)?
+				(
+					{
+						newCompositeNode(grammarAccess.getFloat_litAccess().getExponentParserRuleCall_1_0_2());
+					}
+					this_Exponent_3=ruleExponent
+					{
+						$current.merge(this_Exponent_3);
+					}
+					{
+						afterParserOrEnumRuleCall();
+					}
+				)?
+			)
+			    |
 			{
 				newCompositeNode(grammarAccess.getFloat_litAccess().getExponentParserRuleCall_1_1());
 			}
-			this_Exponent_5=ruleExponent
+			this_Exponent_4=ruleExponent
 			{
-				$current.merge(this_Exponent_5);
+				$current.merge(this_Exponent_4);
 			}
 			{
 				afterParserOrEnumRuleCall();
 			}
 		)
-		    |
+		kw='.'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getFloat_litAccess().getFullStopKeyword_2());
+		}
+		this_DECIMAL_DIGITS_6=RULE_DECIMAL_DIGITS
+		{
+			$current.merge(this_DECIMAL_DIGITS_6);
+		}
+		{
+			newLeafNode(this_DECIMAL_DIGITS_6, grammarAccess.getFloat_litAccess().getDECIMAL_DIGITSTerminalRuleCall_3());
+		}
 		(
-			kw='.'
 			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getFloat_litAccess().getFullStopKeyword_2_0());
+				newCompositeNode(grammarAccess.getFloat_litAccess().getExponentParserRuleCall_4());
 			}
-			this_DECIMAL_DIGITS_7=RULE_DECIMAL_DIGITS
+			this_Exponent_7=ruleExponent
 			{
-				$current.merge(this_DECIMAL_DIGITS_7);
+				$current.merge(this_Exponent_7);
 			}
 			{
-				newLeafNode(this_DECIMAL_DIGITS_7, grammarAccess.getFloat_litAccess().getDECIMAL_DIGITSTerminalRuleCall_2_1());
+				afterParserOrEnumRuleCall();
 			}
-			(
-				{
-					newCompositeNode(grammarAccess.getFloat_litAccess().getExponentParserRuleCall_2_2());
-				}
-				this_Exponent_8=ruleExponent
-				{
-					$current.merge(this_Exponent_8);
-				}
-				{
-					afterParserOrEnumRuleCall();
-				}
-			)?
-		)
+		)?
 	)
 ;
 
