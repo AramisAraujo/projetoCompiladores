@@ -87,20 +87,52 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Octal_lit");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cDigitZeroKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cOCTAL_DIGITTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Keyword cDigitZeroKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
+		private final Keyword cDigitOneKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
+		private final Keyword cDigitTwoKeyword_1_2 = (Keyword)cAlternatives_1.eContents().get(2);
+		private final Keyword cDigitThreeKeyword_1_3 = (Keyword)cAlternatives_1.eContents().get(3);
+		private final Keyword cDigitFourKeyword_1_4 = (Keyword)cAlternatives_1.eContents().get(4);
+		private final Keyword cDigitFiveKeyword_1_5 = (Keyword)cAlternatives_1.eContents().get(5);
+		private final Keyword cDigitSixKeyword_1_6 = (Keyword)cAlternatives_1.eContents().get(6);
+		private final Keyword cDigitSevenKeyword_1_7 = (Keyword)cAlternatives_1.eContents().get(7);
 		
 		//Octal_lit:
-		//	'0' OCTAL_DIGIT*;
+		//	'0' ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7')*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'0' OCTAL_DIGIT*
+		//'0' ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7')*
 		public Group getGroup() { return cGroup; }
 		
 		//'0'
 		public Keyword getDigitZeroKeyword_0() { return cDigitZeroKeyword_0; }
 		
-		//OCTAL_DIGIT*
-		public RuleCall getOCTAL_DIGITTerminalRuleCall_1() { return cOCTAL_DIGITTerminalRuleCall_1; }
+		//('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7')*
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
+		//'0'
+		public Keyword getDigitZeroKeyword_1_0() { return cDigitZeroKeyword_1_0; }
+		
+		//'1'
+		public Keyword getDigitOneKeyword_1_1() { return cDigitOneKeyword_1_1; }
+		
+		//'2'
+		public Keyword getDigitTwoKeyword_1_2() { return cDigitTwoKeyword_1_2; }
+		
+		//'3'
+		public Keyword getDigitThreeKeyword_1_3() { return cDigitThreeKeyword_1_3; }
+		
+		//'4'
+		public Keyword getDigitFourKeyword_1_4() { return cDigitFourKeyword_1_4; }
+		
+		//'5'
+		public Keyword getDigitFiveKeyword_1_5() { return cDigitFiveKeyword_1_5; }
+		
+		//'6'
+		public Keyword getDigitSixKeyword_1_6() { return cDigitSixKeyword_1_6; }
+		
+		//'7'
+		public Keyword getDigitSevenKeyword_1_7() { return cDigitSevenKeyword_1_7; }
 	}
 	public class Hex_litElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Hex_lit");
@@ -336,28 +368,126 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Octal_byte_value");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cBackslashKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cOCTAL_DIGITTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final RuleCall cOCTAL_DIGITTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final RuleCall cOCTAL_DIGITTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Keyword cDigitZeroKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
+		private final Keyword cDigitOneKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
+		private final Keyword cDigitTwoKeyword_1_2 = (Keyword)cAlternatives_1.eContents().get(2);
+		private final Keyword cDigitThreeKeyword_1_3 = (Keyword)cAlternatives_1.eContents().get(3);
+		private final Keyword cDigitFourKeyword_1_4 = (Keyword)cAlternatives_1.eContents().get(4);
+		private final Keyword cDigitFiveKeyword_1_5 = (Keyword)cAlternatives_1.eContents().get(5);
+		private final Keyword cDigitSixKeyword_1_6 = (Keyword)cAlternatives_1.eContents().get(6);
+		private final Keyword cDigitSevenKeyword_1_7 = (Keyword)cAlternatives_1.eContents().get(7);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Keyword cDigitZeroKeyword_2_0 = (Keyword)cAlternatives_2.eContents().get(0);
+		private final Keyword cDigitOneKeyword_2_1 = (Keyword)cAlternatives_2.eContents().get(1);
+		private final Keyword cDigitTwoKeyword_2_2 = (Keyword)cAlternatives_2.eContents().get(2);
+		private final Keyword cDigitThreeKeyword_2_3 = (Keyword)cAlternatives_2.eContents().get(3);
+		private final Keyword cDigitFourKeyword_2_4 = (Keyword)cAlternatives_2.eContents().get(4);
+		private final Keyword cDigitFiveKeyword_2_5 = (Keyword)cAlternatives_2.eContents().get(5);
+		private final Keyword cDigitSixKeyword_2_6 = (Keyword)cAlternatives_2.eContents().get(6);
+		private final Keyword cDigitSevenKeyword_2_7 = (Keyword)cAlternatives_2.eContents().get(7);
+		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
+		private final Keyword cDigitZeroKeyword_3_0 = (Keyword)cAlternatives_3.eContents().get(0);
+		private final Keyword cDigitOneKeyword_3_1 = (Keyword)cAlternatives_3.eContents().get(1);
+		private final Keyword cDigitTwoKeyword_3_2 = (Keyword)cAlternatives_3.eContents().get(2);
+		private final Keyword cDigitThreeKeyword_3_3 = (Keyword)cAlternatives_3.eContents().get(3);
+		private final Keyword cDigitFourKeyword_3_4 = (Keyword)cAlternatives_3.eContents().get(4);
+		private final Keyword cDigitFiveKeyword_3_5 = (Keyword)cAlternatives_3.eContents().get(5);
+		private final Keyword cDigitSixKeyword_3_6 = (Keyword)cAlternatives_3.eContents().get(6);
+		private final Keyword cDigitSevenKeyword_3_7 = (Keyword)cAlternatives_3.eContents().get(7);
 		
 		//Octal_byte_value:
-		//	"\\" OCTAL_DIGIT OCTAL_DIGIT OCTAL_DIGIT;
+		//	"\\" ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7') ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7') ('0' | '1' | '2'
+		//	| '3' | '4' | '5' | '6' | '7');
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"\\" OCTAL_DIGIT OCTAL_DIGIT OCTAL_DIGIT
+		//"\\" ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7') ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7') ('0' | '1' | '2' |
+		//'3' | '4' | '5' | '6' | '7')
 		public Group getGroup() { return cGroup; }
 		
 		//"\\"
 		public Keyword getBackslashKeyword_0() { return cBackslashKeyword_0; }
 		
-		//OCTAL_DIGIT
-		public RuleCall getOCTAL_DIGITTerminalRuleCall_1() { return cOCTAL_DIGITTerminalRuleCall_1; }
+		//'0' | '1' | '2' | '3' | '4' | '5' | '6' | '7'
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
-		//OCTAL_DIGIT
-		public RuleCall getOCTAL_DIGITTerminalRuleCall_2() { return cOCTAL_DIGITTerminalRuleCall_2; }
+		//'0'
+		public Keyword getDigitZeroKeyword_1_0() { return cDigitZeroKeyword_1_0; }
 		
-		//OCTAL_DIGIT
-		public RuleCall getOCTAL_DIGITTerminalRuleCall_3() { return cOCTAL_DIGITTerminalRuleCall_3; }
+		//'1'
+		public Keyword getDigitOneKeyword_1_1() { return cDigitOneKeyword_1_1; }
+		
+		//'2'
+		public Keyword getDigitTwoKeyword_1_2() { return cDigitTwoKeyword_1_2; }
+		
+		//'3'
+		public Keyword getDigitThreeKeyword_1_3() { return cDigitThreeKeyword_1_3; }
+		
+		//'4'
+		public Keyword getDigitFourKeyword_1_4() { return cDigitFourKeyword_1_4; }
+		
+		//'5'
+		public Keyword getDigitFiveKeyword_1_5() { return cDigitFiveKeyword_1_5; }
+		
+		//'6'
+		public Keyword getDigitSixKeyword_1_6() { return cDigitSixKeyword_1_6; }
+		
+		//'7'
+		public Keyword getDigitSevenKeyword_1_7() { return cDigitSevenKeyword_1_7; }
+		
+		//'0' | '1' | '2' | '3' | '4' | '5' | '6' | '7'
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+		
+		//'0'
+		public Keyword getDigitZeroKeyword_2_0() { return cDigitZeroKeyword_2_0; }
+		
+		//'1'
+		public Keyword getDigitOneKeyword_2_1() { return cDigitOneKeyword_2_1; }
+		
+		//'2'
+		public Keyword getDigitTwoKeyword_2_2() { return cDigitTwoKeyword_2_2; }
+		
+		//'3'
+		public Keyword getDigitThreeKeyword_2_3() { return cDigitThreeKeyword_2_3; }
+		
+		//'4'
+		public Keyword getDigitFourKeyword_2_4() { return cDigitFourKeyword_2_4; }
+		
+		//'5'
+		public Keyword getDigitFiveKeyword_2_5() { return cDigitFiveKeyword_2_5; }
+		
+		//'6'
+		public Keyword getDigitSixKeyword_2_6() { return cDigitSixKeyword_2_6; }
+		
+		//'7'
+		public Keyword getDigitSevenKeyword_2_7() { return cDigitSevenKeyword_2_7; }
+		
+		//'0' | '1' | '2' | '3' | '4' | '5' | '6' | '7'
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+		
+		//'0'
+		public Keyword getDigitZeroKeyword_3_0() { return cDigitZeroKeyword_3_0; }
+		
+		//'1'
+		public Keyword getDigitOneKeyword_3_1() { return cDigitOneKeyword_3_1; }
+		
+		//'2'
+		public Keyword getDigitTwoKeyword_3_2() { return cDigitTwoKeyword_3_2; }
+		
+		//'3'
+		public Keyword getDigitThreeKeyword_3_3() { return cDigitThreeKeyword_3_3; }
+		
+		//'4'
+		public Keyword getDigitFourKeyword_3_4() { return cDigitFourKeyword_3_4; }
+		
+		//'5'
+		public Keyword getDigitFiveKeyword_3_5() { return cDigitFiveKeyword_3_5; }
+		
+		//'6'
+		public Keyword getDigitSixKeyword_3_6() { return cDigitSixKeyword_3_6; }
+		
+		//'7'
+		public Keyword getDigitSevenKeyword_3_7() { return cDigitSevenKeyword_3_7; }
 	}
 	public class Hex_byte_valueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.Hex_byte_value");
@@ -3890,7 +4020,6 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tNEWLINE;
 	private final TerminalRule tLETTER;
 	private final TerminalRule tDECIMAL_DIGITS;
-	private final TerminalRule tOCTAL_DIGIT;
 	private final TerminalRule tHEX_DIGIT;
 	private final TerminalRule tKEYWORDS;
 	private final TerminalRule tIDENTIFIER;
@@ -4060,7 +4189,6 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		this.tNEWLINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.NEWLINE");
 		this.tLETTER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.LETTER");
 		this.tDECIMAL_DIGITS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.DECIMAL_DIGITS");
-		this.tOCTAL_DIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.OCTAL_DIGIT");
 		this.tHEX_DIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.HEX_DIGIT");
 		this.tKEYWORDS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.KEYWORDS");
 		this.tIDENTIFIER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.IDENTIFIER");
@@ -4322,12 +4450,6 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		return tDECIMAL_DIGITS;
 	}
 	
-	//terminal OCTAL_DIGIT:
-	//	'0'..'7';
-	public TerminalRule getOCTAL_DIGITRule() {
-		return tOCTAL_DIGIT;
-	}
-	
 	//terminal HEX_DIGIT:
 	//	'0'..'9' | 'A'..'F' | 'a'..'f';
 	public TerminalRule getHEX_DIGITRule() {
@@ -4349,9 +4471,9 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal OPERATORS:
-	//	'+' | '&' | '+=' | '&=' | '&&' | '==' | '!=' | '(' | ')' | '-' | '|' | '-=' | '|=' | '||' | '<' | '<=' | '[' | ']' |
-	//	'*' | '^' | '*=' | '^=' | '<-' | '>' | '>=' | '{' | '}' | '/' | '<<' | '/=' | '<<=' | '++' | '=' | ':=' | ',' | ';' |
-	//	'%' | '>>' | '%=' | '>>=' | '--' | '!' | '...' | '.' | ':' | '&^' | '&^=' | ASSIGN_OP;
+	//	BINARY_OP | '+=' | '&=' | '(' | ')' | '-=' | '|=' | '[' | ']' |
+	//	'*=' | '^=' | '{' | '}' | '/=' | '<<=' | '++' | '=' | ':=' | ',' | ';' |
+	//	'%=' | '>>=' | '--' | '...' | '.' | ':' | '&^=' | ASSIGN_OP;
 	public TerminalRule getOPERATORSRule() {
 		return tOPERATORS;
 	}
@@ -4456,7 +4578,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Octal_lit:
-	//	'0' OCTAL_DIGIT*;
+	//	'0' ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7')*;
 	public Octal_litElements getOctal_litAccess() {
 		return pOctal_lit;
 	}
@@ -4537,7 +4659,8 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Octal_byte_value:
-	//	"\\" OCTAL_DIGIT OCTAL_DIGIT OCTAL_DIGIT;
+	//	"\\" ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7') ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7') ('0' | '1' | '2'
+	//	| '3' | '4' | '5' | '6' | '7');
 	public Octal_byte_valueElements getOctal_byte_valueAccess() {
 		return pOctal_byte_value;
 	}

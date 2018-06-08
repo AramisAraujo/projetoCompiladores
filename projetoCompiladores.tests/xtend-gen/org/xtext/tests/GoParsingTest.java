@@ -16,9 +16,10 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.xtext.go.Model;
+import org.xtext.tests.GoInjectorProvider;
 
-@RunWith(XtextRunner.class)/* 
-@InjectWith(/* name is null */) */
+@RunWith(XtextRunner.class)
+@InjectWith(GoInjectorProvider.class)
 @SuppressWarnings("all")
 public class GoParsingTest {
   @Inject

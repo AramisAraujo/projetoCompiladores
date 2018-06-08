@@ -217,12 +217,52 @@ ruleOctal_lit returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken
 			newLeafNode(kw, grammarAccess.getOctal_litAccess().getDigitZeroKeyword_0());
 		}
 		(
-			this_OCTAL_DIGIT_1=RULE_OCTAL_DIGIT
+			kw='0'
 			{
-				$current.merge(this_OCTAL_DIGIT_1);
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_litAccess().getDigitZeroKeyword_1_0());
 			}
+			    |
+			kw='1'
 			{
-				newLeafNode(this_OCTAL_DIGIT_1, grammarAccess.getOctal_litAccess().getOCTAL_DIGITTerminalRuleCall_1());
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_litAccess().getDigitOneKeyword_1_1());
+			}
+			    |
+			kw='2'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_litAccess().getDigitTwoKeyword_1_2());
+			}
+			    |
+			kw='3'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_litAccess().getDigitThreeKeyword_1_3());
+			}
+			    |
+			kw='4'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_litAccess().getDigitFourKeyword_1_4());
+			}
+			    |
+			kw='5'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_litAccess().getDigitFiveKeyword_1_5());
+			}
+			    |
+			kw='6'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_litAccess().getDigitSixKeyword_1_6());
+			}
+			    |
+			kw='7'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_litAccess().getDigitSevenKeyword_1_7());
 			}
 		)*
 	)
@@ -640,27 +680,153 @@ ruleOctal_byte_value returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRu
 			$current.merge(kw);
 			newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getBackslashKeyword_0());
 		}
-		this_OCTAL_DIGIT_1=RULE_OCTAL_DIGIT
-		{
-			$current.merge(this_OCTAL_DIGIT_1);
-		}
-		{
-			newLeafNode(this_OCTAL_DIGIT_1, grammarAccess.getOctal_byte_valueAccess().getOCTAL_DIGITTerminalRuleCall_1());
-		}
-		this_OCTAL_DIGIT_2=RULE_OCTAL_DIGIT
-		{
-			$current.merge(this_OCTAL_DIGIT_2);
-		}
-		{
-			newLeafNode(this_OCTAL_DIGIT_2, grammarAccess.getOctal_byte_valueAccess().getOCTAL_DIGITTerminalRuleCall_2());
-		}
-		this_OCTAL_DIGIT_3=RULE_OCTAL_DIGIT
-		{
-			$current.merge(this_OCTAL_DIGIT_3);
-		}
-		{
-			newLeafNode(this_OCTAL_DIGIT_3, grammarAccess.getOctal_byte_valueAccess().getOCTAL_DIGITTerminalRuleCall_3());
-		}
+		(
+			kw='0'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitZeroKeyword_1_0());
+			}
+			    |
+			kw='1'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitOneKeyword_1_1());
+			}
+			    |
+			kw='2'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitTwoKeyword_1_2());
+			}
+			    |
+			kw='3'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitThreeKeyword_1_3());
+			}
+			    |
+			kw='4'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitFourKeyword_1_4());
+			}
+			    |
+			kw='5'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitFiveKeyword_1_5());
+			}
+			    |
+			kw='6'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitSixKeyword_1_6());
+			}
+			    |
+			kw='7'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitSevenKeyword_1_7());
+			}
+		)
+		(
+			kw='0'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitZeroKeyword_2_0());
+			}
+			    |
+			kw='1'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitOneKeyword_2_1());
+			}
+			    |
+			kw='2'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitTwoKeyword_2_2());
+			}
+			    |
+			kw='3'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitThreeKeyword_2_3());
+			}
+			    |
+			kw='4'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitFourKeyword_2_4());
+			}
+			    |
+			kw='5'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitFiveKeyword_2_5());
+			}
+			    |
+			kw='6'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitSixKeyword_2_6());
+			}
+			    |
+			kw='7'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitSevenKeyword_2_7());
+			}
+		)
+		(
+			kw='0'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitZeroKeyword_3_0());
+			}
+			    |
+			kw='1'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitOneKeyword_3_1());
+			}
+			    |
+			kw='2'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitTwoKeyword_3_2());
+			}
+			    |
+			kw='3'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitThreeKeyword_3_3());
+			}
+			    |
+			kw='4'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitFourKeyword_3_4());
+			}
+			    |
+			kw='5'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitFiveKeyword_3_5());
+			}
+			    |
+			kw='6'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitSixKeyword_3_6());
+			}
+			    |
+			kw='7'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getOctal_byte_valueAccess().getDigitSevenKeyword_3_7());
+			}
+		)
 	)
 ;
 
@@ -7166,15 +7332,13 @@ fragment RULE_LETTER : (RULE_UNICODE_LETTER|'_');
 
 RULE_DECIMAL_DIGITS : ('0'..'9')+;
 
-RULE_OCTAL_DIGIT : '0'..'7';
-
 RULE_HEX_DIGIT : ('0'..'9'|'A'..'F'|'a'..'f');
 
 RULE_KEYWORDS : ('break'|'default'|'func'|'interface'|'select'|'case'|'defer'|'go'|'map'|'struct'|'chan'|'else'|'goto'|'package'|'switch'|'const'|'fallthrough'|'if'|'range'|'type'|'continue'|'for'|'import'|'return'|'var');
 
 RULE_IDENTIFIER : RULE_LETTER (RULE_LETTER|RULE_UNICODE_DIGIT)*;
 
-RULE_OPERATORS : ('+'|'&'|'+='|'&='|'&&'|'=='|'!='|'('|')'|'-'|'|'|'-='|'|='|'||'|'<'|'<='|'['|']'|'*'|'^'|'*='|'^='|'<-'|'>'|'>='|'{'|'}'|'/'|'<<'|'/='|'<<='|'++'|'='|':='|','|';'|'%'|'>>'|'%='|'>>='|'--'|'!'|'...'|'.'|':'|'&^'|'&^='|RULE_ASSIGN_OP);
+RULE_OPERATORS : (RULE_BINARY_OP|'+='|'&='|'('|')'|'-='|'|='|'['|']'|'*='|'^='|'{'|'}'|'/='|'<<='|'++'|'='|':='|','|';'|'%='|'>>='|'--'|'...'|'.'|':'|'&^='|RULE_ASSIGN_OP);
 
 RULE_UNICODE_CHAR : ~(RULE_NEWLINE);
 
