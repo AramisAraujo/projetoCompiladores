@@ -8,7 +8,7 @@ Model:
 program:
 	Import_decl | Package_clause | Function_decl;
 
-fragment SEMICOLON:
+terminal SEMICOLON:
 	';';
 
 terminal BINARY_OP:
@@ -23,13 +23,11 @@ terminal ADD_OP:
 terminal MUL_OP:
 	("*" | "/" | "%" | "<<" | ">>" | "&" | "&^");
 
-fragment UNARY_OP:
+terminal UNARY_OP:
 	"+" | "-" | "!" | "^" | "*" | "&" | "<-";
 
 terminal ASSIGN_OP:
 	(ADD_OP | MUL_OP)? "=";
-
-
 
 terminal NEWLINE:
 	'\u000A';
@@ -51,9 +49,9 @@ terminal KEYWORDS:
 terminal IDENTIFIER:
 	LETTER (LETTER | UNICODE_DIGIT)*;
 
-terminal OPERATORS:
+fragment OPERATORS:
 	 BINARY_OP | '+=' | '&=' | '(' | ')'  | '-=' | '|=' | '[' | ']' |
-	 '*=' | '^=' | '{' | '}'  | '/=' | '<<=' | '++' | '=' | ':=' | ',' | ';' |
+	 '*=' | '^=' | '{' | '}'  | '/=' | '<<=' | '++' | '=' | ':=' | ',' | SEMICOLON |
 	 '%=' | '>>=' | '--' | '...' | '.' | ':' | '&^=' | ASSIGN_OP;
 
 terminal UNICODE_CHAR:
@@ -127,7 +125,7 @@ terminal UNICODE_LETTER: // unicode char classes Lu, Ll, Lt, Lm, or Lo
 //	'\uFF41'..'\uFF5A' | '\uFF66'..'\uFFBE' | '\uFFC2'..'\uFFC7' | '\uFFCA'..'\uFFCF' | '\uFFD2'..'\uFFD7' |
 //	'\uFFDA'..'\uFFDC');
 
-terminal UNICODE_DIGIT:
+terminal fragment UNICODE_DIGIT:
 	'0' .. '9'
 ;
 //	'\u0030'..'\u0039' | '\u0660'..'\u0669' | '\u06F0'..'\u06F9' | '\u07C0'..'\u07C9' | '\u0966'..'\u096F' |
@@ -141,9 +139,9 @@ terminal UNICODE_DIGIT:
 
 
 Int_lit:
-	DECIMAL_DIGITS | Octal_lit | Hex_lit;
+	DECIMAL_DIGITS | OCTAL_LIT | Hex_lit;
 
-fragment Octal_lit:
+terminal OCTAL_LIT:
 	'0' ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7')*;
 
 Hex_lit:
@@ -249,7 +247,7 @@ Parameters:
 	"(" (Parameter_list (",")+)+ ")";
 
 Parameter_list:
-	Parameter_decl => ("," Parameter_decl)*;
+	Parameter_decl  ("," Parameter_decl)*;
 
 Parameter_decl:
 	(Identifier_list)? ("...")? Type;
@@ -565,5 +563,4 @@ Import_spec:
 
 Import_path:
 	String_lit;
-
 
