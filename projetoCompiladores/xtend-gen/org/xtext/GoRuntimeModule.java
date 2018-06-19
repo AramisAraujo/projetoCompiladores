@@ -3,9 +3,11 @@
  */
 package org.xtext;
 
+import org.xtext.AbstractGoRuntimeModule;
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 @SuppressWarnings("all")
-public class GoRuntimeModule /* implements AbstractGoRuntimeModule  */{
+public class GoRuntimeModule extends AbstractGoRuntimeModule {
 }
