@@ -206,9 +206,9 @@ Type:
 Type_name:
 	IDENTIFIER | Qualified_ident;
 
-//Type_lit:
-//	Array_type | Struct_type | Pointer_type | Function_type |
-//	Interface_type | Slice_type | Map_type | Channel_type;
+Type_lit:
+	Array_type | Struct_type | Pointer_type ;//| Function_type |
+	//Interface_type | Slice_type | Map_type | Channel_type;
 
 Array_type:
 	"[" Parameter_list "]" Type;
@@ -219,38 +219,37 @@ Array_type:
 //Element_type:
 //	Type;
 
-//Struct_type:
-//	"struct" "{" (Field_decl SEMICOLON)* "}";
-//
-//Field_decl:
-//	(Identifier_list Type | Embedded_field) (Tag)?;
-//
-//Embedded_field:
-//	("*")+ =>Type_name;
-//
+Struct_type:
+	"struct" "{" (Field_decl SEMICOLON)* "}";
+
+Field_decl:
+	(Identifier_list Type | Embedded_field) (String_lit)?;
+
+Embedded_field:
+	("*")+ Type_name;
+
 //Tag:
 //	String_lit;
 //
-//Pointer_type:
-//	"*" Type;
-//
+Pointer_type:
+	"*" Type;
+
 //Function_type:
 //	"func" Signature;
 //
 //Signature:
-//	Parameters (=> Result)+;
-//
-//Result:
-//	Parameters | => Type;
-//
-//Parameters:
-//	"(" (Parameter_list (",")+)+ ")";
+//	Parameters (Parameters | Type)+;
+
+Parameters:
+	"(" (Parameter_list (",")+)+ ")";
 
 Parameter_list:
 	Parameter_decl  ("," Parameter_decl)*;
 
-fragment Parameter_decl:
-	(Identifier_list)? ("...")? Type;
+Parameter_decl:
+//{Identifier , Identifier} should be derivated through identifier_list
+// and type before Identifier_list alone
+	=>(Identifier_list)? ("...")? Type;
 
 //Interface_type:
 //	=> "interface" "{" (Method_spec SEMICOLON)* "}";

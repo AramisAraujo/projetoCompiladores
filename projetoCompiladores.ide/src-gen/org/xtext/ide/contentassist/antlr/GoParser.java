@@ -44,6 +44,8 @@ public class GoParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLiteralsAccess().getAlternatives(), "rule__Literals__Alternatives");
 			builder.put(grammarAccess.getTokenAccess().getAlternatives(), "rule__Token__Alternatives");
 			builder.put(grammarAccess.getType_nameAccess().getAlternatives(), "rule__Type_name__Alternatives");
+			builder.put(grammarAccess.getType_litAccess().getAlternatives(), "rule__Type_lit__Alternatives");
+			builder.put(grammarAccess.getField_declAccess().getAlternatives_0(), "rule__Field_decl__Alternatives_0");
 			builder.put(grammarAccess.getImport_declAccess().getAlternatives_1(), "rule__Import_decl__Alternatives_1");
 			builder.put(grammarAccess.getImport_specAccess().getAlternatives_0(), "rule__Import_spec__Alternatives_0");
 			builder.put(grammarAccess.getFloat_litAccess().getGroup(), "rule__Float_lit__Group__0");
@@ -53,9 +55,18 @@ public class GoParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getRune_litAccess().getGroup(), "rule__Rune_lit__Group__0");
 			builder.put(grammarAccess.getInterpreted_string_litAccess().getGroup(), "rule__Interpreted_string_lit__Group__0");
 			builder.put(grammarAccess.getArray_typeAccess().getGroup(), "rule__Array_type__Group__0");
+			builder.put(grammarAccess.getStruct_typeAccess().getGroup(), "rule__Struct_type__Group__0");
+			builder.put(grammarAccess.getStruct_typeAccess().getGroup_2(), "rule__Struct_type__Group_2__0");
+			builder.put(grammarAccess.getField_declAccess().getGroup(), "rule__Field_decl__Group__0");
+			builder.put(grammarAccess.getField_declAccess().getGroup_0_0(), "rule__Field_decl__Group_0_0__0");
+			builder.put(grammarAccess.getEmbedded_fieldAccess().getGroup(), "rule__Embedded_field__Group__0");
+			builder.put(grammarAccess.getPointer_typeAccess().getGroup(), "rule__Pointer_type__Group__0");
+			builder.put(grammarAccess.getParametersAccess().getGroup(), "rule__Parameters__Group__0");
+			builder.put(grammarAccess.getParametersAccess().getGroup_1(), "rule__Parameters__Group_1__0");
 			builder.put(grammarAccess.getParameter_listAccess().getGroup(), "rule__Parameter_list__Group__0");
 			builder.put(grammarAccess.getParameter_listAccess().getGroup_1(), "rule__Parameter_list__Group_1__0");
 			builder.put(grammarAccess.getParameter_declAccess().getGroup(), "rule__Parameter_decl__Group__0");
+			builder.put(grammarAccess.getParameter_declAccess().getGroup_0(), "rule__Parameter_decl__Group_0__0");
 			builder.put(grammarAccess.getIdentifier_listAccess().getGroup(), "rule__Identifier_list__Group__0");
 			builder.put(grammarAccess.getIdentifier_listAccess().getGroup_1(), "rule__Identifier_list__Group_1__0");
 			builder.put(grammarAccess.getQualified_identAccess().getGroup(), "rule__Qualified_ident__Group__0");
