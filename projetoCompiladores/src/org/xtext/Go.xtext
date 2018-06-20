@@ -201,14 +201,14 @@ Token:
 	(IDENTIFIER | KEYWORDS | OPERATORS | Literals);
 
 Type:
-	Type_name | Type_lit ;//| "(" Type ")";
+	Type_name | Type_lit | "(" Type ")";
 
 Type_name:
 	IDENTIFIER | Qualified_ident;
 
 Type_lit:
 	Array_type | Struct_type | Pointer_type | Function_type |
-	Interface_type | Slice_type | Map_type | Channel_type;
+	Slice_type | Map_type | Interface_type | Channel_type;
 
 Array_type:
 	"[" Parameter_list "]" Type;
@@ -237,8 +237,12 @@ Pointer_type:
 Function_type:
 	"func" Signature;
 
-Signature:
-	Parameters (Parameters | Type)+;
+Signature://precedence on result
+	Parameters =>Result+;
+
+Result://precedence on type (both work, so maybe change..)
+	(Parameters | =>Type)
+;
 
 Parameters:
 	"(" (Parameter_list (",")+)+ ")";
@@ -275,14 +279,14 @@ Map_type:
 //	Type;
 //
 Channel_type:
-	( "chan" | "chan" "<-" | "<-" "chan") Type;
+	("chan" | "chan<-" | "<-chan") Type;
 
 //Block:
 //	"{" Statement_list "}";
 //
 //Statement_list:
 //	(Statement SEMICOLON)*;
-//
+
 //Declaration:
 //	Const_decl | Type_decl | Var_decl;
 //
@@ -337,13 +341,13 @@ Channel_type:
 //
 //Literal:
 //	Basic_lit | Composite_lit | Function_lit;
-//
-//Basic_lit:
-//	=> Int_lit | Float_lit | Imaginary_lit | Rune_lit | String_lit;
-//
-//Operand_name:
-//	=> IDENTIFIER | Qualified_ident;
-//
+
+Basic_lit:
+	 Int_lit | Float_lit | Imaginary_lit | Rune_lit | String_lit;
+
+Operand_name:
+	IDENTIFIER | Qualified_ident;
+
 Qualified_ident:
 	IDENTIFIER "." IDENTIFIER;
 
@@ -371,7 +375,7 @@ Qualified_ident:
 //
 //Function_lit:
 //	"func" Signature Function_body;
-//
+
 //Primary_expr:
 //	Operand |
 //	Conversion |
@@ -407,18 +411,18 @@ Qualified_ident:
 //	Conversion |
 //	Method_expr);
 //
-//Selector:
-//	"." IDENTIFIER;
-//
+Selector:
+	"." IDENTIFIER;
+
 //Index:
 //	"[" Expression "]";
 //
 //Slice:
 //	=> ("[" (Expression)? ":" (Expression)? "]") | ("[" (Expression)? ":" Expression ":" Expression "]");
 //
-//Type_assertion:
-//	"." "(" Type ")";
-//
+Type_assertion:
+	"." "(" Type ")";
+
 //Arguments:
 //	"(" (=> Expression_list | Type ("," Expression_list)? ("...")? (",")?)? ")";
 //
