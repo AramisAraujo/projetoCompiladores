@@ -230,27 +230,32 @@ Embedded_field:
 
 //Tag:
 //	String_lit;
-//
+
 Pointer_type:
 	"*" Type;
 
 //Function_type:
 //	"func" Signature;
-//
-//Signature:
-//	Parameters (Parameters | Type)+;
+
+Signature:
+	Parameters (Parameters | Type)+;
 
 Parameters:
 	"(" (Parameter_list (",")+)+ ")";
 
 Parameter_list:
-	Parameter_decl  ("," Parameter_decl)*;
+//{Identifier , Identifier} should be derivated through identifier_list
+// and type before Identifier_list alone
+	Parameter_decl  =>("," Parameter_decl)*;
 
 Parameter_decl:
 //{Identifier , Identifier} should be derivated through identifier_list
 // and type before Identifier_list alone
 	=>(Identifier_list)? ("...")? Type;
 
+Identifier_list:
+	IDENTIFIER ("," IDENTIFIER)*;
+	
 //Interface_type:
 //	=> "interface" "{" (Method_spec SEMICOLON)* "}";
 //
@@ -290,8 +295,6 @@ Parameter_decl:
 //Const_spec:
 //	Identifier_list ((Type)? "=" Expression_list)?;
 //
-Identifier_list:
-	IDENTIFIER ("," IDENTIFIER)*;
 
 //Expression_list:
 //	Expression ("," Expression)*;
