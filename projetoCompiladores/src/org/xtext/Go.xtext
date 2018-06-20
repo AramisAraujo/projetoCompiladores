@@ -201,14 +201,14 @@ Token:
 	(IDENTIFIER | KEYWORDS | OPERATORS | Literals);
 
 Type:
-	Type_name ;//| Type_lit | "(" Type ")";
+	Type_name | Type_lit ;//| "(" Type ")";
 
 Type_name:
 	IDENTIFIER | Qualified_ident;
 
 Type_lit:
-	Array_type | Struct_type | Pointer_type ;//| Function_type |
-	//Interface_type | Slice_type | Map_type | Channel_type;
+	Array_type | Struct_type | Pointer_type | Function_type |
+	Interface_type | Slice_type | Map_type | Channel_type;
 
 Array_type:
 	"[" Parameter_list "]" Type;
@@ -234,8 +234,8 @@ Embedded_field:
 Pointer_type:
 	"*" Type;
 
-//Function_type:
-//	"func" Signature;
+Function_type:
+	"func" Signature;
 
 Signature:
 	Parameters (Parameters | Type)+;
@@ -256,27 +256,27 @@ Parameter_decl:
 Identifier_list:
 	IDENTIFIER ("," IDENTIFIER)*;
 	
-//Interface_type:
-//	=> "interface" "{" (Method_spec SEMICOLON)* "}";
-//
-//Method_spec:
-//	IDENTIFIER Signature | Interface_type_name;
-//
+Interface_type:
+	 "interface" "{" (Method_spec SEMICOLON)* "}";
+
+Method_spec:
+	IDENTIFIER Signature | Type_name;
+
 //Interface_type_name:
 //	Type_name;
 //
-//Slice_type:
-//	"[" "]" Element_type;
-//
-//Map_type:
-//	"map" "[" Key_type "]" Element_type;
-//
+Slice_type:
+	"[" "]" Type;
+
+Map_type:
+	"map" "[" Type "]" Type;
+
 //Key_type:
 //	Type;
 //
-//Channel_type:
-//	(=> "chan" | "chan" "<-" | "<-" "chan") Element_type;
-//
+Channel_type:
+	( "chan" | "chan" "<-" | "<-" "chan") Type;
+
 //Block:
 //	"{" Statement_list "}";
 //
