@@ -320,9 +320,9 @@ Expression_list:
 //Var_spec:
 //	Identifier_list (Type ("=" Expression_list)? | "=" Expression_list);
 //
-//Short_var_decl:
-//	=> Identifier_list ":=" Expression_list;
-//
+Short_var_decl:
+  Identifier_list ":=" Expression_list;
+
 Function_decl:
 	"func" IDENTIFIER Signature (Function_body)?;
 
@@ -447,10 +447,10 @@ Statement:
 	Declaration | Labeled_stmt | Go_stmt | Return_stmt |
 	Break_stmt | Continue_stmt | Goto_stmt |
 	"fallthrough" | Block | If_stmt |
-	Defer_stmt;// | Simple_stmt | Switch_stmt | Select_stmt | For_stmt;
+	Defer_stmt | Simple_stmt;// | Switch_stmt | Select_stmt | For_stmt;
 
 Simple_stmt:
-	Empty_stmt | Expression_stmt; // | Send_stmt | Inc_dec_stmt | Assignment | Short_var_decl;
+	Empty_stmt | Short_var_decl;// | Expression_stmt | Inc_dec_stmt | Send_stmt | Assignment;
 
 Empty_stmt:
 	WS;

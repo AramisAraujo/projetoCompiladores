@@ -2029,6 +2029,50 @@ ruleExpression_list returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRul
 	)
 ;
 
+// Entry rule entryRuleShort_var_decl
+entryRuleShort_var_decl returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getShort_var_declRule()); }
+	iv_ruleShort_var_decl=ruleShort_var_decl
+	{ $current=$iv_ruleShort_var_decl.current.getText(); }
+	EOF;
+
+// Rule Short_var_decl
+ruleShort_var_decl returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getShort_var_declAccess().getIdentifier_listParserRuleCall_0());
+		}
+		this_Identifier_list_0=ruleIdentifier_list
+		{
+			$current.merge(this_Identifier_list_0);
+		}
+		{
+			afterParserOrEnumRuleCall();
+		}
+		kw=':='
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getShort_var_declAccess().getColonEqualsSignKeyword_1());
+		}
+		{
+			newCompositeNode(grammarAccess.getShort_var_declAccess().getExpression_listParserRuleCall_2());
+		}
+		this_Expression_list_2=ruleExpression_list
+		{
+			$current.merge(this_Expression_list_2);
+		}
+		{
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
 // Entry rule entryRuleFunction_decl
 entryRuleFunction_decl returns [String current=null]:
 	{ newCompositeNode(grammarAccess.getFunction_declRule()); }
@@ -2527,6 +2571,17 @@ ruleStatement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken
 		{
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getStatementAccess().getSimple_stmtParserRuleCall_11());
+		}
+		this_Simple_stmt_11=ruleSimple_stmt
+		{
+			$current.merge(this_Simple_stmt_11);
+		}
+		{
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -2558,11 +2613,22 @@ ruleSimple_stmt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTok
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getSimple_stmtAccess().getExpression_stmtParserRuleCall_1());
+			newCompositeNode(grammarAccess.getSimple_stmtAccess().getShort_var_declParserRuleCall_1());
 		}
-		this_Expression_stmt_1=ruleExpression_stmt
+		this_Short_var_decl_1=ruleShort_var_decl
 		{
-			$current.merge(this_Expression_stmt_1);
+			$current.merge(this_Short_var_decl_1);
+		}
+		{
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getSimple_stmtAccess().getExpression_stmtParserRuleCall_2());
+		}
+		this_Expression_stmt_2=ruleExpression_stmt
+		{
+			$current.merge(this_Expression_stmt_2);
 		}
 		{
 			afterParserOrEnumRuleCall();
