@@ -3,9 +3,11 @@
  */
 package org.xtext.ide;
 
+import org.xtext.ide.AbstractGoIdeModule;
+
 /**
  * Use this class to register ide components.
  */
 @SuppressWarnings("all")
-public class GoIdeModule /* implements AbstractGoIdeModule  */{
+public class GoIdeModule extends AbstractGoIdeModule {
 }
