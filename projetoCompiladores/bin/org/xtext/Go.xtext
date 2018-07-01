@@ -287,7 +287,7 @@ Statement_list:
 	(Statement SEMICOLON)*;
 
 Declaration:
-	Const_decl; //| Type_decl | Var_decl;
+	Const_decl| Type_decl | Var_decl;
 
 //Top_level_decl:
 //	Declaration | Function_decl | Method_decl;
@@ -302,24 +302,24 @@ Const_spec:
 Expression_list:
 	Expression ("," Expression)*;
 
-//Type_decl:
-//	"type" (Type_spec | "(" (Type_spec SEMICOLON)* ")");
-//
-//Type_spec:
-//	Alias_decl | Type_def;
-//
-//Alias_decl:
-//	IDENTIFIER "=" Type;
-//
-//Type_def:
-//	IDENTIFIER Type;
-//
-//Var_decl:
-//	"var" (Var_spec | "(" (Var_spec SEMICOLON)* ")");
-//
-//Var_spec:
-//	Identifier_list (Type ("=" Expression_list)? | "=" Expression_list);
-//
+Type_decl:
+	"type" (Type_spec | "(" (Type_spec SEMICOLON)* ")");
+
+Type_spec:
+	Alias_decl | Type_def;
+
+Alias_decl:
+	IDENTIFIER "=" Type;
+
+Type_def:
+	IDENTIFIER Type;
+
+Var_decl:
+	"var" (Var_spec | "(" (Var_spec SEMICOLON)* ")");
+
+Var_spec:
+	Identifier_list (Type ("=" Expression_list)? | "=" Expression_list);
+
 Short_var_decl:
   Identifier_list ":=" Expression_list;
 
