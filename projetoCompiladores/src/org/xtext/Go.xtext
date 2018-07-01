@@ -3,11 +3,10 @@ grammar org.xtext.Go with org.eclipse.xtext.common.Terminals
 generate go "http://www.xtext.org/Go"
 
 Model:
-	greetings+="oi";
-//	greetings+=program;
+	greetings+=program;
 
-//program:
-//	Import_decl | Package_clause | Function_decl;
+program:
+	Import_decl | Package_clause | Function_decl;
 
 terminal SEMICOLON:
 	';';
@@ -281,28 +280,28 @@ Map_type:
 Channel_type:
 	("chan" | "chan<-" | "<-chan") Type;
 
-//Block:
-//	"{" Statement_list "}";
-//
-//Statement_list:
-//	(Statement SEMICOLON)*;
+Block:
+	"{" Statement_list "}";
 
-//Declaration:
-//	Const_decl | Type_decl | Var_decl;
-//
+Statement_list:
+	(Statement SEMICOLON)*;
+
+Declaration:
+	Const_decl; //| Type_decl | Var_decl;
+
 //Top_level_decl:
 //	Declaration | Function_decl | Method_decl;
 //
-//Const_decl:
-//	"const" Const_spec | "(" (Const_spec SEMICOLON)* ")";
-//
-//Const_spec:
-//	Identifier_list ((Type)? "=" Expression_list)?;
-//
+Const_decl:
+	"const" Const_spec | "(" (Const_spec SEMICOLON)* ")";
 
-//Expression_list:
-//	Expression ("," Expression)*;
-//
+Const_spec:
+	Identifier_list ((Type)? "=" Expression_list)?;
+
+
+Expression_list:
+	Expression ("," Expression)*;
+
 //Type_decl:
 //	"type" (Type_spec | "(" (Type_spec SEMICOLON)* ")");
 //
@@ -324,21 +323,21 @@ Channel_type:
 //Short_var_decl:
 //	=> Identifier_list ":=" Expression_list;
 //
-//Function_decl:
-//	"func" IDENTIFIER Signature (Function_body)?;
-//
-//Function_body:
-//	Block;
+Function_decl:
+	"func" IDENTIFIER Signature (Function_body)?;
+
+Function_body:
+	Block;
 //
 //Method_decl:
 //	"func" Rreciever IDENTIFIER Signature (Function_body)?;
 //
 //Rreciever:
 //	Parameters;
-//
-//Operand:
-//	Literal | Operand_name | "(" Expression ")";
-//
+
+Operand:
+	Literals | Operand_name | "(" Expression ")";
+
 //Literal:
 //	Basic_lit | Composite_lit | Function_lit;
 
@@ -376,8 +375,8 @@ Qualified_ident:
 //Function_lit:
 //	"func" Signature Function_body;
 
-//Primary_expr:
-//	Operand |
+Primary_expr:
+	Operand; // |
 //	Conversion |
 //	Method_expr |
 //	=> Primary_expr_selector |
@@ -432,24 +431,24 @@ Type_assertion:
 //Reciever_type:
 //	Type;
 //
-//Expression:
-//	Unary_expr Expression_line;
-//
-//Expression_line:
-//	BINARY_OP Expression Expression_line;
-//
-//Unary_expr:
-//	(Primary_expr | UNARY_OP)+;
-//
+Expression:
+	Unary_expr Expression_line;
+
+Expression_line:
+	BINARY_OP Expression Expression_line;
+
+Unary_expr:
+	(Primary_expr | UNARY_OP)+;
+
 //Conversion:
 //	Type "(" Expression (",")? ")";
 //
-//Statement:
-//	Declaration | Labeled_stmt | Simple_stmt | Go_stmt | Return_stmt |
+Statement:
+	Declaration; //| Labeled_stmt | Simple_stmt | Go_stmt | Return_stmt |
 //	Break_stmt | Continue_stmt | Goto_stmt |
 //	"fallthrough" | Block | If_stmt | Switch_stmt |
 //	Select_stmt | For_stmt | Defer_stmt;
-//
+
 //Simple_stmt:
 //	Empty_stmt | Expression_stmt | Send_stmt | Inc_dec_stmt | Assignment | Short_var_decl;
 //

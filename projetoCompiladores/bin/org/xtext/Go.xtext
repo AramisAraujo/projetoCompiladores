@@ -3,11 +3,10 @@ grammar org.xtext.Go with org.eclipse.xtext.common.Terminals
 generate go "http://www.xtext.org/Go"
 
 Model:
-	greetings+="oi";
-//	greetings+=program;
+	greetings+=program;
 
-//program:
-//	Import_decl | Package_clause | Function_decl;
+program:
+	Import_decl | Package_clause | Function_decl;
 
 terminal SEMICOLON:
 	';';
@@ -201,14 +200,14 @@ Token:
 	(IDENTIFIER | KEYWORDS | OPERATORS | Literals);
 
 Type:
-	Type_name ;//| Type_lit | "(" Type ")";
+	Type_name | Type_lit | "(" Type ")";
 
 Type_name:
 	IDENTIFIER | Qualified_ident;
 
 Type_lit:
-	Array_type | Struct_type | Pointer_type ;//| Function_type |
-	//Interface_type | Slice_type | Map_type | Channel_type;
+	Array_type | Struct_type | Pointer_type | Function_type |
+	Slice_type | Map_type | Interface_type | Channel_type;
 
 Array_type:
 	"[" Parameter_list "]" Type;
@@ -230,72 +229,79 @@ Embedded_field:
 
 //Tag:
 //	String_lit;
-//
+
 Pointer_type:
 	"*" Type;
 
-//Function_type:
-//	"func" Signature;
-//
-//Signature:
-//	Parameters (Parameters | Type)+;
+Function_type:
+	"func" Signature;
+
+Signature://precedence on result
+	Parameters =>Result+;
+
+Result://precedence on type (both work, so maybe change..)
+	(Parameters | =>Type)
+;
 
 Parameters:
 	"(" (Parameter_list (",")+)+ ")";
 
 Parameter_list:
-	Parameter_decl  ("," Parameter_decl)*;
+//{Identifier , Identifier} should be derivated through identifier_list
+// and type before Identifier_list alone
+	Parameter_decl  =>("," Parameter_decl)*;
 
 Parameter_decl:
 //{Identifier , Identifier} should be derivated through identifier_list
 // and type before Identifier_list alone
 	=>(Identifier_list)? ("...")? Type;
 
-//Interface_type:
-//	=> "interface" "{" (Method_spec SEMICOLON)* "}";
-//
-//Method_spec:
-//	IDENTIFIER Signature | Interface_type_name;
-//
+Identifier_list:
+	IDENTIFIER ("," IDENTIFIER)*;
+	
+Interface_type:
+	 "interface" "{" (Method_spec SEMICOLON)* "}";
+
+Method_spec:
+	IDENTIFIER Signature | Type_name;
+
 //Interface_type_name:
 //	Type_name;
 //
-//Slice_type:
-//	"[" "]" Element_type;
-//
-//Map_type:
-//	"map" "[" Key_type "]" Element_type;
-//
+Slice_type:
+	"[" "]" Type;
+
+Map_type:
+	"map" "[" Type "]" Type;
+
 //Key_type:
 //	Type;
 //
-//Channel_type:
-//	(=> "chan" | "chan" "<-" | "<-" "chan") Element_type;
-//
-//Block:
-//	"{" Statement_list "}";
-//
-//Statement_list:
-//	(Statement SEMICOLON)*;
-//
-//Declaration:
-//	Const_decl | Type_decl | Var_decl;
-//
+Channel_type:
+	("chan" | "chan<-" | "<-chan") Type;
+
+Block:
+	"{" Statement_list "}";
+
+Statement_list:
+	(Statement SEMICOLON)*;
+
+Declaration:
+	Const_decl; //| Type_decl | Var_decl;
+
 //Top_level_decl:
 //	Declaration | Function_decl | Method_decl;
 //
-//Const_decl:
-//	"const" Const_spec | "(" (Const_spec SEMICOLON)* ")";
-//
-//Const_spec:
-//	Identifier_list ((Type)? "=" Expression_list)?;
-//
-Identifier_list:
-	IDENTIFIER ("," IDENTIFIER)*;
+Const_decl:
+	"const" Const_spec | "(" (Const_spec SEMICOLON)* ")";
 
-//Expression_list:
-//	Expression ("," Expression)*;
-//
+Const_spec:
+	Identifier_list ((Type)? "=" Expression_list)?;
+
+
+Expression_list:
+	Expression ("," Expression)*;
+
 //Type_decl:
 //	"type" (Type_spec | "(" (Type_spec SEMICOLON)* ")");
 //
@@ -317,30 +323,30 @@ Identifier_list:
 //Short_var_decl:
 //	=> Identifier_list ":=" Expression_list;
 //
-//Function_decl:
-//	"func" IDENTIFIER Signature (Function_body)?;
-//
-//Function_body:
-//	Block;
+Function_decl:
+	"func" IDENTIFIER Signature (Function_body)?;
+
+Function_body:
+	Block;
 //
 //Method_decl:
 //	"func" Rreciever IDENTIFIER Signature (Function_body)?;
 //
 //Rreciever:
 //	Parameters;
-//
-//Operand:
-//	Literal | Operand_name | "(" Expression ")";
-//
+
+Operand:
+	Literals | Operand_name | "(" Expression ")";
+
 //Literal:
 //	Basic_lit | Composite_lit | Function_lit;
-//
-//Basic_lit:
-//	=> Int_lit | Float_lit | Imaginary_lit | Rune_lit | String_lit;
-//
-//Operand_name:
-//	=> IDENTIFIER | Qualified_ident;
-//
+
+Basic_lit:
+	 Int_lit | Float_lit | Imaginary_lit | Rune_lit | String_lit;
+
+Operand_name:
+	IDENTIFIER | Qualified_ident;
+
 Qualified_ident:
 	IDENTIFIER "." IDENTIFIER;
 
@@ -368,9 +374,9 @@ Qualified_ident:
 //
 //Function_lit:
 //	"func" Signature Function_body;
-//
-//Primary_expr:
-//	Operand |
+
+Primary_expr:
+	Operand; // |
 //	Conversion |
 //	Method_expr |
 //	=> Primary_expr_selector |
@@ -404,18 +410,18 @@ Qualified_ident:
 //	Conversion |
 //	Method_expr);
 //
-//Selector:
-//	"." IDENTIFIER;
-//
+Selector:
+	"." IDENTIFIER;
+
 //Index:
 //	"[" Expression "]";
 //
 //Slice:
 //	=> ("[" (Expression)? ":" (Expression)? "]") | ("[" (Expression)? ":" Expression ":" Expression "]");
 //
-//Type_assertion:
-//	"." "(" Type ")";
-//
+Type_assertion:
+	"." "(" Type ")";
+
 //Arguments:
 //	"(" (=> Expression_list | Type ("," Expression_list)? ("...")? (",")?)? ")";
 //
@@ -425,24 +431,24 @@ Qualified_ident:
 //Reciever_type:
 //	Type;
 //
-//Expression:
-//	Unary_expr Expression_line;
-//
-//Expression_line:
-//	BINARY_OP Expression Expression_line;
-//
-//Unary_expr:
-//	(Primary_expr | UNARY_OP)+;
-//
+Expression:
+	Unary_expr Expression_line;
+
+Expression_line:
+	BINARY_OP Expression Expression_line;
+
+Unary_expr:
+	(Primary_expr | UNARY_OP)+;
+
 //Conversion:
 //	Type "(" Expression (",")? ")";
 //
-//Statement:
-//	Declaration | Labeled_stmt | Simple_stmt | Go_stmt | Return_stmt |
+Statement:
+	Declaration; //| Labeled_stmt | Simple_stmt | Go_stmt | Return_stmt |
 //	Break_stmt | Continue_stmt | Goto_stmt |
 //	"fallthrough" | Block | If_stmt | Switch_stmt |
 //	Select_stmt | For_stmt | Defer_stmt;
-//
+
 //Simple_stmt:
 //	Empty_stmt | Expression_stmt | Send_stmt | Inc_dec_stmt | Assignment | Short_var_decl;
 //
