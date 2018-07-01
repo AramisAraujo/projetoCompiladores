@@ -444,23 +444,23 @@ Unary_expr:
 //	Type "(" Expression (",")? ")";
 //
 Statement:
-	Declaration; //| Labeled_stmt | Simple_stmt | Go_stmt | Return_stmt |
-//	Break_stmt | Continue_stmt | Goto_stmt |
-//	"fallthrough" | Block | If_stmt | Switch_stmt |
-//	Select_stmt | For_stmt | Defer_stmt;
+	Declaration | Labeled_stmt | Go_stmt | Return_stmt |
+	Break_stmt | Continue_stmt | Goto_stmt |
+	"fallthrough" | Block | If_stmt |
+	Defer_stmt;// | Simple_stmt | Switch_stmt | Select_stmt | For_stmt;
 
-//Simple_stmt:
-//	Empty_stmt | Expression_stmt | Send_stmt | Inc_dec_stmt | Assignment | Short_var_decl;
-//
+Simple_stmt:
+	Empty_stmt | Expression_stmt; // | Send_stmt | Inc_dec_stmt | Assignment | Short_var_decl;
+
 Empty_stmt:
 	WS;
 
-//Labeled_stmt:
-//	=> IDENTIFIER ":" Statement;
-//
-//Expression_stmt:
-//	Expression;
-//
+Labeled_stmt:
+	IDENTIFIER ":" Statement;
+
+Expression_stmt:
+	Expression;
+
 //Send_stmt:
 //	=> Channel "<-" Expression;
 //
@@ -473,9 +473,9 @@ Empty_stmt:
 //Assignment:
 //	=> Expression_list ASSIGN_OP Expression_list;
 //
-//If_stmt:
-//	"if" (Simple_stmt SEMICOLON)? => Expression Block ("else" (If_stmt | Block))?;
-//
+If_stmt:
+	"if" (Simple_stmt SEMICOLON)? => Expression Block ("else" (If_stmt | Block))?;
+
 //Switch_stmt:
 //	=> Expr_switch_stmt | Type_switch_stmt;
 //
@@ -521,9 +521,9 @@ Empty_stmt:
 //Range_clause:
 //	(Expression_list "=" | Identifier_list ":=")? "range" Expression;
 //
-//Go_stmt:
-//	"go" Expression;
-//
+Go_stmt:
+	"go" Expression;
+
 //Select_stmt:
 //	"select" "{" (Comm_clause)* "}";
 //
@@ -538,10 +538,10 @@ Empty_stmt:
 //
 //Recv_expr:
 //	Expression;
-//
-//Return_stmt:
-//	"return" (Expression_list)?;
-//
+
+Return_stmt:
+	"return" (Expression_list)?;
+
 Break_stmt:
 	"break" (IDENTIFIER)?;
 
@@ -551,9 +551,9 @@ Continue_stmt:
 Goto_stmt:
 	"goto" IDENTIFIER;
 
-//Defer_stmt:
-//	"defer" Expression;
-//
+Defer_stmt:
+	"defer" Expression;
+
 //Source_file:
 //	Package_clause SEMICOLON (Import_decl SEMICOLON)* (Top_level_decl SEMICOLON)*;
 //

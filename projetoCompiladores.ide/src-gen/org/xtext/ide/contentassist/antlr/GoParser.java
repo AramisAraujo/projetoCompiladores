@@ -56,6 +56,9 @@ public class GoParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBasic_litAccess().getAlternatives(), "rule__Basic_lit__Alternatives");
 					put(grammarAccess.getOperand_nameAccess().getAlternatives(), "rule__Operand_name__Alternatives");
 					put(grammarAccess.getUnary_exprAccess().getAlternatives(), "rule__Unary_expr__Alternatives");
+					put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
+					put(grammarAccess.getSimple_stmtAccess().getAlternatives(), "rule__Simple_stmt__Alternatives");
+					put(grammarAccess.getIf_stmtAccess().getAlternatives_4_1(), "rule__If_stmt__Alternatives_4_1");
 					put(grammarAccess.getImport_declAccess().getAlternatives_1(), "rule__Import_decl__Alternatives_1");
 					put(grammarAccess.getImport_specAccess().getAlternatives_0(), "rule__Import_spec__Alternatives_0");
 					put(grammarAccess.getFloat_litAccess().getGroup(), "rule__Float_lit__Group__0");
@@ -105,9 +108,16 @@ public class GoParser extends AbstractContentAssistParser {
 					put(grammarAccess.getType_assertionAccess().getGroup(), "rule__Type_assertion__Group__0");
 					put(grammarAccess.getExpressionAccess().getGroup(), "rule__Expression__Group__0");
 					put(grammarAccess.getExpression_lineAccess().getGroup(), "rule__Expression_line__Group__0");
+					put(grammarAccess.getLabeled_stmtAccess().getGroup(), "rule__Labeled_stmt__Group__0");
+					put(grammarAccess.getIf_stmtAccess().getGroup(), "rule__If_stmt__Group__0");
+					put(grammarAccess.getIf_stmtAccess().getGroup_1(), "rule__If_stmt__Group_1__0");
+					put(grammarAccess.getIf_stmtAccess().getGroup_4(), "rule__If_stmt__Group_4__0");
+					put(grammarAccess.getGo_stmtAccess().getGroup(), "rule__Go_stmt__Group__0");
+					put(grammarAccess.getReturn_stmtAccess().getGroup(), "rule__Return_stmt__Group__0");
 					put(grammarAccess.getBreak_stmtAccess().getGroup(), "rule__Break_stmt__Group__0");
 					put(grammarAccess.getContinue_stmtAccess().getGroup(), "rule__Continue_stmt__Group__0");
 					put(grammarAccess.getGoto_stmtAccess().getGroup(), "rule__Goto_stmt__Group__0");
+					put(grammarAccess.getDefer_stmtAccess().getGroup(), "rule__Defer_stmt__Group__0");
 					put(grammarAccess.getPackage_clauseAccess().getGroup(), "rule__Package_clause__Group__0");
 					put(grammarAccess.getImport_declAccess().getGroup(), "rule__Import_decl__Group__0");
 					put(grammarAccess.getImport_declAccess().getGroup_1_1(), "rule__Import_decl__Group_1_1__0");
