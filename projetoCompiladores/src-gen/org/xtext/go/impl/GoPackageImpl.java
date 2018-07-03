@@ -6,12 +6,38 @@ package org.xtext.go.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.xtext.go.Block;
+import org.xtext.go.Const_decl;
+import org.xtext.go.Const_spec;
+import org.xtext.go.Declaration;
+import org.xtext.go.Defer_stmt;
+import org.xtext.go.Expression;
+import org.xtext.go.Expression_line;
+import org.xtext.go.Expression_list;
+import org.xtext.go.Expression_stmt;
+import org.xtext.go.Function_body;
+import org.xtext.go.Function_decl;
 import org.xtext.go.GoFactory;
 import org.xtext.go.GoPackage;
+import org.xtext.go.Go_stmt;
+import org.xtext.go.If_stmt;
+import org.xtext.go.Labeled_stmt;
 import org.xtext.go.Model;
+import org.xtext.go.Operand;
+import org.xtext.go.Primary_expr;
+import org.xtext.go.Return_stmt;
+import org.xtext.go.Short_var_decl;
+import org.xtext.go.Simple_stmt;
+import org.xtext.go.Statement;
+import org.xtext.go.Statement_list;
+import org.xtext.go.Unary_expr;
+import org.xtext.go.Var_decl;
+import org.xtext.go.Var_spec;
+import org.xtext.go.program;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +53,181 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
    * @generated
    */
   private EClass modelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass programEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass blockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass statement_listEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass declarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass const_declEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass const_specEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass expression_listEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass var_declEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass var_specEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass short_var_declEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass function_declEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass function_bodyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass operandEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass primary_exprEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass expressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass expression_lineEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass unary_exprEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass statementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass simple_stmtEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass labeled_stmtEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass expression_stmtEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass if_stmtEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass go_stmtEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass return_stmtEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass defer_stmtEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -106,9 +307,419 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getModel_Greetings()
+  public EReference getModel_Greetings()
   {
-    return (EAttribute)modelEClass.getEStructuralFeatures().get(0);
+    return (EReference)modelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getprogram()
+  {
+    return programEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBlock()
+  {
+    return blockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStatement_list()
+  {
+    return statement_listEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStatement_list_Statement()
+  {
+    return (EReference)statement_listEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDeclaration()
+  {
+    return declarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getConst_decl()
+  {
+    return const_declEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getConst_decl_Const_spec()
+  {
+    return (EReference)const_declEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getConst_spec()
+  {
+    return const_specEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExpression_list()
+  {
+    return expression_listEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVar_decl()
+  {
+    return var_declEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVar_decl_Var_spec()
+  {
+    return (EReference)var_declEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVar_spec()
+  {
+    return var_specEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getShort_var_decl()
+  {
+    return short_var_declEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFunction_decl()
+  {
+    return function_declEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFunction_body()
+  {
+    return function_bodyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getOperand()
+  {
+    return operandEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPrimary_expr()
+  {
+    return primary_exprEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExpression()
+  {
+    return expressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExpression_Unary_expr()
+  {
+    return (EReference)expressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExpression_Expression_line()
+  {
+    return (EReference)expressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExpression_line()
+  {
+    return expression_lineEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getExpression_line_Binary_op()
+  {
+    return (EAttribute)expression_lineEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExpression_line_Expression()
+  {
+    return (EReference)expression_lineEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExpression_line_Expression_line()
+  {
+    return (EReference)expression_lineEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getUnary_expr()
+  {
+    return unary_exprEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getUnary_expr_Primary_expr()
+  {
+    return (EReference)unary_exprEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getUnary_expr_Unary_op()
+  {
+    return (EAttribute)unary_exprEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getUnary_expr_Unary_expr()
+  {
+    return (EReference)unary_exprEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStatement()
+  {
+    return statementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSimple_stmt()
+  {
+    return simple_stmtEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLabeled_stmt()
+  {
+    return labeled_stmtEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLabeled_stmt_Id()
+  {
+    return (EAttribute)labeled_stmtEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLabeled_stmt_Statement()
+  {
+    return (EReference)labeled_stmtEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExpression_stmt()
+  {
+    return expression_stmtEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIf_stmt()
+  {
+    return if_stmtEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIf_stmt_Expression()
+  {
+    return (EReference)if_stmtEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIf_stmt_Block()
+  {
+    return (EReference)if_stmtEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIf_stmt_If_stmt()
+  {
+    return (EReference)if_stmtEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGo_stmt()
+  {
+    return go_stmtEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getReturn_stmt()
+  {
+    return return_stmtEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDefer_stmt()
+  {
+    return defer_stmtEClass;
   }
 
   /**
@@ -142,7 +753,73 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
-    createEAttribute(modelEClass, MODEL__GREETINGS);
+    createEReference(modelEClass, MODEL__GREETINGS);
+
+    programEClass = createEClass(PROGRAM);
+
+    blockEClass = createEClass(BLOCK);
+
+    statement_listEClass = createEClass(STATEMENT_LIST);
+    createEReference(statement_listEClass, STATEMENT_LIST__STATEMENT);
+
+    declarationEClass = createEClass(DECLARATION);
+
+    const_declEClass = createEClass(CONST_DECL);
+    createEReference(const_declEClass, CONST_DECL__CONST_SPEC);
+
+    const_specEClass = createEClass(CONST_SPEC);
+
+    expression_listEClass = createEClass(EXPRESSION_LIST);
+
+    var_declEClass = createEClass(VAR_DECL);
+    createEReference(var_declEClass, VAR_DECL__VAR_SPEC);
+
+    var_specEClass = createEClass(VAR_SPEC);
+
+    short_var_declEClass = createEClass(SHORT_VAR_DECL);
+
+    function_declEClass = createEClass(FUNCTION_DECL);
+
+    function_bodyEClass = createEClass(FUNCTION_BODY);
+
+    operandEClass = createEClass(OPERAND);
+
+    primary_exprEClass = createEClass(PRIMARY_EXPR);
+
+    expressionEClass = createEClass(EXPRESSION);
+    createEReference(expressionEClass, EXPRESSION__UNARY_EXPR);
+    createEReference(expressionEClass, EXPRESSION__EXPRESSION_LINE);
+
+    expression_lineEClass = createEClass(EXPRESSION_LINE);
+    createEAttribute(expression_lineEClass, EXPRESSION_LINE__BINARY_OP);
+    createEReference(expression_lineEClass, EXPRESSION_LINE__EXPRESSION);
+    createEReference(expression_lineEClass, EXPRESSION_LINE__EXPRESSION_LINE);
+
+    unary_exprEClass = createEClass(UNARY_EXPR);
+    createEReference(unary_exprEClass, UNARY_EXPR__PRIMARY_EXPR);
+    createEAttribute(unary_exprEClass, UNARY_EXPR__UNARY_OP);
+    createEReference(unary_exprEClass, UNARY_EXPR__UNARY_EXPR);
+
+    statementEClass = createEClass(STATEMENT);
+
+    simple_stmtEClass = createEClass(SIMPLE_STMT);
+
+    labeled_stmtEClass = createEClass(LABELED_STMT);
+    createEAttribute(labeled_stmtEClass, LABELED_STMT__ID);
+    createEReference(labeled_stmtEClass, LABELED_STMT__STATEMENT);
+
+    expression_stmtEClass = createEClass(EXPRESSION_STMT);
+
+    if_stmtEClass = createEClass(IF_STMT);
+    createEReference(if_stmtEClass, IF_STMT__EXPRESSION);
+    createEReference(if_stmtEClass, IF_STMT__BLOCK);
+    createEReference(if_stmtEClass, IF_STMT__IF_STMT);
+
+    go_stmtEClass = createEClass(GO_STMT);
+
+    return_stmtEClass = createEClass(RETURN_STMT);
+
+    defer_stmtEClass = createEClass(DEFER_STMT);
   }
 
   /**
@@ -174,10 +851,102 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    blockEClass.getESuperTypes().add(this.getFunction_body());
+    blockEClass.getESuperTypes().add(this.getStatement());
+    statement_listEClass.getESuperTypes().add(this.getBlock());
+    declarationEClass.getESuperTypes().add(this.getStatement());
+    const_declEClass.getESuperTypes().add(this.getDeclaration());
+    const_specEClass.getESuperTypes().add(this.getConst_decl());
+    expression_listEClass.getESuperTypes().add(this.getConst_spec());
+    expression_listEClass.getESuperTypes().add(this.getVar_spec());
+    expression_listEClass.getESuperTypes().add(this.getShort_var_decl());
+    expression_listEClass.getESuperTypes().add(this.getReturn_stmt());
+    var_declEClass.getESuperTypes().add(this.getDeclaration());
+    short_var_declEClass.getESuperTypes().add(this.getSimple_stmt());
+    function_declEClass.getESuperTypes().add(this.getprogram());
+    function_bodyEClass.getESuperTypes().add(this.getFunction_decl());
+    operandEClass.getESuperTypes().add(this.getPrimary_expr());
+    expressionEClass.getESuperTypes().add(this.getOperand());
+    expressionEClass.getESuperTypes().add(this.getExpression_stmt());
+    expressionEClass.getESuperTypes().add(this.getGo_stmt());
+    expressionEClass.getESuperTypes().add(this.getDefer_stmt());
+    simple_stmtEClass.getESuperTypes().add(this.getStatement());
+    simple_stmtEClass.getESuperTypes().add(this.getIf_stmt());
+    labeled_stmtEClass.getESuperTypes().add(this.getStatement());
+    if_stmtEClass.getESuperTypes().add(this.getStatement());
+    go_stmtEClass.getESuperTypes().add(this.getStatement());
+    return_stmtEClass.getESuperTypes().add(this.getStatement());
+    defer_stmtEClass.getESuperTypes().add(this.getStatement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getModel_Greetings(), ecorePackage.getEString(), "greetings", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Greetings(), this.getprogram(), null, "greetings", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(programEClass, program.class, "program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(statement_listEClass, Statement_list.class, "Statement_list", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStatement_list_Statement(), this.getStatement(), null, "Statement", null, 0, 1, Statement_list.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(declarationEClass, Declaration.class, "Declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(const_declEClass, Const_decl.class, "Const_decl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getConst_decl_Const_spec(), this.getConst_spec(), null, "Const_spec", null, 0, 1, Const_decl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(const_specEClass, Const_spec.class, "Const_spec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(expression_listEClass, Expression_list.class, "Expression_list", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(var_declEClass, Var_decl.class, "Var_decl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getVar_decl_Var_spec(), this.getVar_spec(), null, "Var_spec", null, 0, 1, Var_decl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(var_specEClass, Var_spec.class, "Var_spec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(short_var_declEClass, Short_var_decl.class, "Short_var_decl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(function_declEClass, Function_decl.class, "Function_decl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(function_bodyEClass, Function_body.class, "Function_body", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(operandEClass, Operand.class, "Operand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(primary_exprEClass, Primary_expr.class, "Primary_expr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getExpression_Unary_expr(), this.getUnary_expr(), null, "Unary_expr", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_Expression_line(), this.getExpression_line(), null, "Expression_line", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(expression_lineEClass, Expression_line.class, "Expression_line", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getExpression_line_Binary_op(), ecorePackage.getEString(), "binary_op", null, 0, 1, Expression_line.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_line_Expression(), this.getExpression(), null, "Expression", null, 0, 1, Expression_line.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_line_Expression_line(), this.getExpression_line(), null, "Expression_line", null, 0, 1, Expression_line.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(unary_exprEClass, Unary_expr.class, "Unary_expr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getUnary_expr_Primary_expr(), this.getPrimary_expr(), null, "Primary_expr", null, 0, 1, Unary_expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getUnary_expr_Unary_op(), ecorePackage.getEString(), "unary_op", null, 0, 1, Unary_expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUnary_expr_Unary_expr(), this.getUnary_expr(), null, "Unary_expr", null, 0, 1, Unary_expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(simple_stmtEClass, Simple_stmt.class, "Simple_stmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(labeled_stmtEClass, Labeled_stmt.class, "Labeled_stmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLabeled_stmt_Id(), ecorePackage.getEString(), "id", null, 0, 1, Labeled_stmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLabeled_stmt_Statement(), this.getStatement(), null, "Statement", null, 0, 1, Labeled_stmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(expression_stmtEClass, Expression_stmt.class, "Expression_stmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(if_stmtEClass, If_stmt.class, "If_stmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIf_stmt_Expression(), this.getExpression(), null, "Expression", null, 0, 1, If_stmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIf_stmt_Block(), this.getBlock(), null, "Block", null, 0, 1, If_stmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIf_stmt_If_stmt(), this.getIf_stmt(), null, "If_stmt", null, 0, 1, If_stmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(go_stmtEClass, Go_stmt.class, "Go_stmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(return_stmtEClass, Return_stmt.class, "Return_stmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(defer_stmtEClass, Defer_stmt.class, "Defer_stmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

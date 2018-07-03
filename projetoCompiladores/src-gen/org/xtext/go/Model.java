@@ -14,10 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.Model#getGreetings <em>Greetings</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getModel()
  * @model
@@ -26,19 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Greetings</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Greetings</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.go.program}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Greetings</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Greetings</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Greetings</em>' attribute list.
+   * @return the value of the '<em>Greetings</em>' containment reference list.
    * @see org.xtext.go.GoPackage#getModel_Greetings()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getGreetings();
+  EList<program> getGreetings();
 
 } // Model

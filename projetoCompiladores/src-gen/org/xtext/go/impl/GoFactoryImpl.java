@@ -66,6 +66,31 @@ public class GoFactoryImpl extends EFactoryImpl implements GoFactory
     switch (eClass.getClassifierID())
     {
       case GoPackage.MODEL: return createModel();
+      case GoPackage.PROGRAM: return createprogram();
+      case GoPackage.BLOCK: return createBlock();
+      case GoPackage.STATEMENT_LIST: return createStatement_list();
+      case GoPackage.DECLARATION: return createDeclaration();
+      case GoPackage.CONST_DECL: return createConst_decl();
+      case GoPackage.CONST_SPEC: return createConst_spec();
+      case GoPackage.EXPRESSION_LIST: return createExpression_list();
+      case GoPackage.VAR_DECL: return createVar_decl();
+      case GoPackage.VAR_SPEC: return createVar_spec();
+      case GoPackage.SHORT_VAR_DECL: return createShort_var_decl();
+      case GoPackage.FUNCTION_DECL: return createFunction_decl();
+      case GoPackage.FUNCTION_BODY: return createFunction_body();
+      case GoPackage.OPERAND: return createOperand();
+      case GoPackage.PRIMARY_EXPR: return createPrimary_expr();
+      case GoPackage.EXPRESSION: return createExpression();
+      case GoPackage.EXPRESSION_LINE: return createExpression_line();
+      case GoPackage.UNARY_EXPR: return createUnary_expr();
+      case GoPackage.STATEMENT: return createStatement();
+      case GoPackage.SIMPLE_STMT: return createSimple_stmt();
+      case GoPackage.LABELED_STMT: return createLabeled_stmt();
+      case GoPackage.EXPRESSION_STMT: return createExpression_stmt();
+      case GoPackage.IF_STMT: return createIf_stmt();
+      case GoPackage.GO_STMT: return createGo_stmt();
+      case GoPackage.RETURN_STMT: return createReturn_stmt();
+      case GoPackage.DEFER_STMT: return createDefer_stmt();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -80,6 +105,281 @@ public class GoFactoryImpl extends EFactoryImpl implements GoFactory
   {
     ModelImpl model = new ModelImpl();
     return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public program createprogram()
+  {
+    programImpl program = new programImpl();
+    return program;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Block createBlock()
+  {
+    BlockImpl block = new BlockImpl();
+    return block;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Statement_list createStatement_list()
+  {
+    Statement_listImpl statement_list = new Statement_listImpl();
+    return statement_list;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Declaration createDeclaration()
+  {
+    DeclarationImpl declaration = new DeclarationImpl();
+    return declaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Const_decl createConst_decl()
+  {
+    Const_declImpl const_decl = new Const_declImpl();
+    return const_decl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Const_spec createConst_spec()
+  {
+    Const_specImpl const_spec = new Const_specImpl();
+    return const_spec;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression_list createExpression_list()
+  {
+    Expression_listImpl expression_list = new Expression_listImpl();
+    return expression_list;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Var_decl createVar_decl()
+  {
+    Var_declImpl var_decl = new Var_declImpl();
+    return var_decl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Var_spec createVar_spec()
+  {
+    Var_specImpl var_spec = new Var_specImpl();
+    return var_spec;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Short_var_decl createShort_var_decl()
+  {
+    Short_var_declImpl short_var_decl = new Short_var_declImpl();
+    return short_var_decl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Function_decl createFunction_decl()
+  {
+    Function_declImpl function_decl = new Function_declImpl();
+    return function_decl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Function_body createFunction_body()
+  {
+    Function_bodyImpl function_body = new Function_bodyImpl();
+    return function_body;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Operand createOperand()
+  {
+    OperandImpl operand = new OperandImpl();
+    return operand;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Primary_expr createPrimary_expr()
+  {
+    Primary_exprImpl primary_expr = new Primary_exprImpl();
+    return primary_expr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression createExpression()
+  {
+    ExpressionImpl expression = new ExpressionImpl();
+    return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression_line createExpression_line()
+  {
+    Expression_lineImpl expression_line = new Expression_lineImpl();
+    return expression_line;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Unary_expr createUnary_expr()
+  {
+    Unary_exprImpl unary_expr = new Unary_exprImpl();
+    return unary_expr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Statement createStatement()
+  {
+    StatementImpl statement = new StatementImpl();
+    return statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Simple_stmt createSimple_stmt()
+  {
+    Simple_stmtImpl simple_stmt = new Simple_stmtImpl();
+    return simple_stmt;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Labeled_stmt createLabeled_stmt()
+  {
+    Labeled_stmtImpl labeled_stmt = new Labeled_stmtImpl();
+    return labeled_stmt;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression_stmt createExpression_stmt()
+  {
+    Expression_stmtImpl expression_stmt = new Expression_stmtImpl();
+    return expression_stmt;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public If_stmt createIf_stmt()
+  {
+    If_stmtImpl if_stmt = new If_stmtImpl();
+    return if_stmt;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Go_stmt createGo_stmt()
+  {
+    Go_stmtImpl go_stmt = new Go_stmtImpl();
+    return go_stmt;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Return_stmt createReturn_stmt()
+  {
+    Return_stmtImpl return_stmt = new Return_stmtImpl();
+    return return_stmt;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Defer_stmt createDefer_stmt()
+  {
+    Defer_stmtImpl defer_stmt = new Defer_stmtImpl();
+    return defer_stmt;
   }
 
   /**

@@ -284,7 +284,7 @@ Block:
 	"{" Statement_list "}";
 
 Statement_list:
-	(Statement SEMICOLON)*;
+	(Statement=Statement SEMICOLON)*;
 
 Declaration:
 	Const_decl| Type_decl | Var_decl;
@@ -293,14 +293,14 @@ Declaration:
 //	Declaration | Function_decl | Method_decl;
 //
 Const_decl:
-	"const" Const_spec | "(" (Const_spec SEMICOLON)* ")";
+	"const" Const_spec | "(" (Const_spec=Const_spec SEMICOLON)* ")";
 
 Const_spec:
 	Identifier_list ((Type)? "=" Expression_list)?;
 
 
 Expression_list:
-	Expression ("," Expression)*;
+	Expression=Expression ("," Expression=Expression)*;
 
 Type_decl:
 	"type" (Type_spec | "(" (Type_spec SEMICOLON)* ")");
@@ -315,7 +315,7 @@ Type_def:
 	IDENTIFIER Type;
 
 Var_decl:
-	"var" (Var_spec | "(" (Var_spec SEMICOLON)* ")");
+	"var" (Var_spec=Var_spec | "(" (Var_spec=Var_spec SEMICOLON)* ")");
 
 Var_spec:
 	Identifier_list (Type ("=" Expression_list)? | "=" Expression_list);
@@ -432,13 +432,14 @@ Type_assertion:
 //	Type;
 //
 Expression:
-	Unary_expr Expression_line;
+	Unary_expr=Unary_expr Expression_line=Expression_line;
 
 Expression_line:
-	BINARY_OP Expression Expression_line;
+	binary_op=BINARY_OP Expression=Expression Expression_line=Expression_line | {Expression_line} ANY_OTHER;
 
 Unary_expr:
-	(Primary_expr | UNARY_OP)+;
+	Primary_expr=Primary_expr | unary_op=UNARY_OP Unary_expr=Unary_expr
+;
 
 //Conversion:
 //	Type "(" Expression (",")? ")";
@@ -456,7 +457,7 @@ Empty_stmt:
 	WS;
 
 Labeled_stmt:
-	IDENTIFIER ":" Statement;
+	id=IDENTIFIER ":" Statement=Statement;
 
 Expression_stmt:
 	Expression;
@@ -474,7 +475,7 @@ Expression_stmt:
 //	=> Expression_list ASSIGN_OP Expression_list;
 //
 If_stmt:
-	"if" (Simple_stmt SEMICOLON)? => Expression Block ("else" (If_stmt | Block))?;
+	"if" (Simple_stmt SEMICOLON)? Expression=Expression Block=Block ("else" (If_stmt=If_stmt | Block=Block))?;
 
 //Switch_stmt:
 //	=> Expr_switch_stmt | Type_switch_stmt;
