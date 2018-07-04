@@ -33,6 +33,231 @@ public interface GoFactory extends EFactory
   Model createModel();
 
   /**
+   * Returns a new object of class '<em>program</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>program</em>'.
+   * @generated
+   */
+  program createprogram();
+
+  /**
+   * Returns a new object of class '<em>Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Block</em>'.
+   * @generated
+   */
+  Block createBlock();
+
+  /**
+   * Returns a new object of class '<em>Statement list</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Statement list</em>'.
+   * @generated
+   */
+  Statement_list createStatement_list();
+
+  /**
+   * Returns a new object of class '<em>Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declaration</em>'.
+   * @generated
+   */
+  Declaration createDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Const decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Const decl</em>'.
+   * @generated
+   */
+  Const_decl createConst_decl();
+
+  /**
+   * Returns a new object of class '<em>Const spec</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Const spec</em>'.
+   * @generated
+   */
+  Const_spec createConst_spec();
+
+  /**
+   * Returns a new object of class '<em>Expression list</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression list</em>'.
+   * @generated
+   */
+  Expression_list createExpression_list();
+
+  /**
+   * Returns a new object of class '<em>Var decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Var decl</em>'.
+   * @generated
+   */
+  Var_decl createVar_decl();
+
+  /**
+   * Returns a new object of class '<em>Var spec</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Var spec</em>'.
+   * @generated
+   */
+  Var_spec createVar_spec();
+
+  /**
+   * Returns a new object of class '<em>Short var decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Short var decl</em>'.
+   * @generated
+   */
+  Short_var_decl createShort_var_decl();
+
+  /**
+   * Returns a new object of class '<em>Function decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function decl</em>'.
+   * @generated
+   */
+  Function_decl createFunction_decl();
+
+  /**
+   * Returns a new object of class '<em>Function body</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function body</em>'.
+   * @generated
+   */
+  Function_body createFunction_body();
+
+  /**
+   * Returns a new object of class '<em>Operand</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operand</em>'.
+   * @generated
+   */
+  Operand createOperand();
+
+  /**
+   * Returns a new object of class '<em>Primary expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Primary expr</em>'.
+   * @generated
+   */
+  Primary_expr createPrimary_expr();
+
+  /**
+   * Returns a new object of class '<em>Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression</em>'.
+   * @generated
+   */
+  Expression createExpression();
+
+  /**
+   * Returns a new object of class '<em>Expression line</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression line</em>'.
+   * @generated
+   */
+  Expression_line createExpression_line();
+
+  /**
+   * Returns a new object of class '<em>Unary expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Unary expr</em>'.
+   * @generated
+   */
+  Unary_expr createUnary_expr();
+
+  /**
+   * Returns a new object of class '<em>Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Statement</em>'.
+   * @generated
+   */
+  Statement createStatement();
+
+  /**
+   * Returns a new object of class '<em>Simple stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Simple stmt</em>'.
+   * @generated
+   */
+  Simple_stmt createSimple_stmt();
+
+  /**
+   * Returns a new object of class '<em>Labeled stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Labeled stmt</em>'.
+   * @generated
+   */
+  Labeled_stmt createLabeled_stmt();
+
+  /**
+   * Returns a new object of class '<em>Expression stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression stmt</em>'.
+   * @generated
+   */
+  Expression_stmt createExpression_stmt();
+
+  /**
+   * Returns a new object of class '<em>If stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>If stmt</em>'.
+   * @generated
+   */
+  If_stmt createIf_stmt();
+
+  /**
+   * Returns a new object of class '<em>Go stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Go stmt</em>'.
+   * @generated
+   */
+  Go_stmt createGo_stmt();
+
+  /**
+   * Returns a new object of class '<em>Return stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Return stmt</em>'.
+   * @generated
+   */
+  Return_stmt createReturn_stmt();
+
+  /**
+   * Returns a new object of class '<em>Defer stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Defer stmt</em>'.
+   * @generated
+   */
+  Defer_stmt createDefer_stmt();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

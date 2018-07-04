@@ -60,6 +60,7 @@ public class GoParser extends AbstractContentAssistParser {
 					put(grammarAccess.getOperandAccess().getAlternatives(), "rule__Operand__Alternatives");
 					put(grammarAccess.getBasic_litAccess().getAlternatives(), "rule__Basic_lit__Alternatives");
 					put(grammarAccess.getOperand_nameAccess().getAlternatives(), "rule__Operand_name__Alternatives");
+					put(grammarAccess.getExpression_lineAccess().getAlternatives(), "rule__Expression_line__Alternatives");
 					put(grammarAccess.getUnary_exprAccess().getAlternatives(), "rule__Unary_expr__Alternatives");
 					put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
 					put(grammarAccess.getSimple_stmtAccess().getAlternatives(), "rule__Simple_stmt__Alternatives");
@@ -125,7 +126,9 @@ public class GoParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSelectorAccess().getGroup(), "rule__Selector__Group__0");
 					put(grammarAccess.getType_assertionAccess().getGroup(), "rule__Type_assertion__Group__0");
 					put(grammarAccess.getExpressionAccess().getGroup(), "rule__Expression__Group__0");
-					put(grammarAccess.getExpression_lineAccess().getGroup(), "rule__Expression_line__Group__0");
+					put(grammarAccess.getExpression_lineAccess().getGroup_0(), "rule__Expression_line__Group_0__0");
+					put(grammarAccess.getExpression_lineAccess().getGroup_1(), "rule__Expression_line__Group_1__0");
+					put(grammarAccess.getUnary_exprAccess().getGroup_1(), "rule__Unary_expr__Group_1__0");
 					put(grammarAccess.getLabeled_stmtAccess().getGroup(), "rule__Labeled_stmt__Group__0");
 					put(grammarAccess.getIf_stmtAccess().getGroup(), "rule__If_stmt__Group__0");
 					put(grammarAccess.getIf_stmtAccess().getGroup_1(), "rule__If_stmt__Group_1__0");
@@ -142,6 +145,26 @@ public class GoParser extends AbstractContentAssistParser {
 					put(grammarAccess.getImport_declAccess().getGroup_1_1_1(), "rule__Import_decl__Group_1_1_1__0");
 					put(grammarAccess.getImport_specAccess().getGroup(), "rule__Import_spec__Group__0");
 					put(grammarAccess.getModelAccess().getGreetingsAssignment(), "rule__Model__GreetingsAssignment");
+					put(grammarAccess.getStatement_listAccess().getStatementAssignment_0(), "rule__Statement_list__StatementAssignment_0");
+					put(grammarAccess.getConst_declAccess().getConst_specAssignment_1_1_0(), "rule__Const_decl__Const_specAssignment_1_1_0");
+					put(grammarAccess.getExpression_listAccess().getExpressionAssignment_0(), "rule__Expression_list__ExpressionAssignment_0");
+					put(grammarAccess.getExpression_listAccess().getExpressionAssignment_1_1(), "rule__Expression_list__ExpressionAssignment_1_1");
+					put(grammarAccess.getVar_declAccess().getVar_specAssignment_1_0(), "rule__Var_decl__Var_specAssignment_1_0");
+					put(grammarAccess.getVar_declAccess().getVar_specAssignment_1_1_1_0(), "rule__Var_decl__Var_specAssignment_1_1_1_0");
+					put(grammarAccess.getExpressionAccess().getUnary_exprAssignment_0(), "rule__Expression__Unary_exprAssignment_0");
+					put(grammarAccess.getExpressionAccess().getExpression_lineAssignment_1(), "rule__Expression__Expression_lineAssignment_1");
+					put(grammarAccess.getExpression_lineAccess().getBinary_opAssignment_0_0(), "rule__Expression_line__Binary_opAssignment_0_0");
+					put(grammarAccess.getExpression_lineAccess().getExpressionAssignment_0_1(), "rule__Expression_line__ExpressionAssignment_0_1");
+					put(grammarAccess.getExpression_lineAccess().getExpression_lineAssignment_0_2(), "rule__Expression_line__Expression_lineAssignment_0_2");
+					put(grammarAccess.getUnary_exprAccess().getPrimary_exprAssignment_0(), "rule__Unary_expr__Primary_exprAssignment_0");
+					put(grammarAccess.getUnary_exprAccess().getUnary_opAssignment_1_0(), "rule__Unary_expr__Unary_opAssignment_1_0");
+					put(grammarAccess.getUnary_exprAccess().getUnary_exprAssignment_1_1(), "rule__Unary_expr__Unary_exprAssignment_1_1");
+					put(grammarAccess.getLabeled_stmtAccess().getIdAssignment_0(), "rule__Labeled_stmt__IdAssignment_0");
+					put(grammarAccess.getLabeled_stmtAccess().getStatementAssignment_2(), "rule__Labeled_stmt__StatementAssignment_2");
+					put(grammarAccess.getIf_stmtAccess().getExpressionAssignment_2(), "rule__If_stmt__ExpressionAssignment_2");
+					put(grammarAccess.getIf_stmtAccess().getBlockAssignment_3(), "rule__If_stmt__BlockAssignment_3");
+					put(grammarAccess.getIf_stmtAccess().getIf_stmtAssignment_4_1_0(), "rule__If_stmt__If_stmtAssignment_4_1_0");
+					put(grammarAccess.getIf_stmtAccess().getBlockAssignment_4_1_1(), "rule__If_stmt__BlockAssignment_4_1_1");
 				}
 			};
 		}

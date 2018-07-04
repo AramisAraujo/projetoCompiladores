@@ -2,7 +2,69 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="go" nsURI="http://www.xtext.org/Go" nsPrefix="go">
   <eClassifiers xsi:type="ecore:EClass" name="Model">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="greetings" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="greetings" upperBound="-1"
+        eType="#//program" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="program"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Block" eSuperTypes="#//Function_body #//Statement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Statement_list" eSuperTypes="#//Block">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Statement" eType="#//Statement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Declaration" eSuperTypes="#//Statement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Const_decl" eSuperTypes="#//Declaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Const_spec" eType="#//Const_spec"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Const_spec" eSuperTypes="#//Const_decl"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression_list" eSuperTypes="#//Const_spec #//Var_spec #//Short_var_decl #//Return_stmt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Var_decl" eSuperTypes="#//Declaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Var_spec" eType="#//Var_spec"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Var_spec"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Short_var_decl" eSuperTypes="#//Simple_stmt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Function_decl" eSuperTypes="#//program"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Function_body" eSuperTypes="#//Function_decl"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Operand" eSuperTypes="#//Primary_expr"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Primary_expr"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression" eSuperTypes="#//Operand #//Expression_stmt #//Go_stmt #//Defer_stmt">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Unary_expr" eType="#//Unary_expr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Expression_line" eType="#//Expression_line"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression_line">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="binary_op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Expression" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Expression_line" eType="#//Expression_line"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Unary_expr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Primary_expr" eType="#//Primary_expr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unary_op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Unary_expr" eType="#//Unary_expr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Statement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Simple_stmt" eSuperTypes="#//Statement #//If_stmt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Labeled_stmt" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Statement" eType="#//Statement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression_stmt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="If_stmt" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Expression" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Block" eType="#//Block"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="If_stmt" eType="#//If_stmt"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Go_stmt" eSuperTypes="#//Statement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Return_stmt" eSuperTypes="#//Statement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Defer_stmt" eSuperTypes="#//Statement"/>
 </ecore:EPackage>
