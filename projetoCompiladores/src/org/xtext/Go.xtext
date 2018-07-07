@@ -760,7 +760,7 @@ terminal fragment NEWLINE:
 
 //unicode_char = /* an arbitrary Unicode code point except newline */ .
 terminal fragment UNICODE_CHAR:
-	!'\u000A';
+	'A' .. 'Z'| 'a' .. 'z';
 
 //unicode_digit = /* a Unicode code point classified as "Number, decimal digit" */ .
 terminal fragment UNICODE_DIGIT:

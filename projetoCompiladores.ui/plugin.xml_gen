@@ -249,6 +249,15 @@
 		<super type="org.eclipse.xtext.ui.check.expensive"/>
 		<persistent value="true"/>
 	</extension>
+	<extension point="org.eclipse.ui.preferencePages">
+		<page
+			category="org.xtext.Go"
+			class="org.xtext.ui.GoExecutableExtensionFactory:org.eclipse.xtext.ui.validation.ValidatorPreferencePage"
+			id="org.xtext.Go.validator.preferencePage"
+			name="Errors/Warnings">
+			<keywordReference id="org.xtext.ui.keyword_Go"/>
+		</page>
+	</extension>
 	<extension point="org.eclipse.xtext.builder.participant">
 		<participant
 			class="org.xtext.ui.GoExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
@@ -397,12 +406,18 @@
 			class="org.xtext.ui.GoExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="mydsl">
 		</viewer>
+		<contentTypeBinding
+			contentTypeId="org.xtext.Go.contenttype"
+			contentViewerId="org.xtext.Go.compare.contentViewers" />
 	</extension>
 	<extension point="org.eclipse.compare.contentMergeViewers">
 		<viewer id="org.xtext.Go.compare.contentMergeViewers"
 			class="org.xtext.ui.GoExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="mydsl" label="Go Compare">
 		</viewer>
+		<contentTypeBinding
+			contentTypeId="org.xtext.Go.contenttype"
+			contentMergeViewerId="org.xtext.Go.compare.contentMergeViewers" />
 	</extension>
 	<extension point="org.eclipse.ui.editors.documentProviders">
 		<provider id="org.xtext.Go.editors.documentProviders"
