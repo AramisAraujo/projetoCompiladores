@@ -3,6 +3,8 @@
  */
 package org.xtext.go;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -24,29 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface elementList extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Keyed Element</b></em>' containment reference.
+   * Returns the value of the '<em><b>Keyed Element</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.go.keyedElement}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Keyed Element</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Keyed Element</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Keyed Element</em>' containment reference.
-   * @see #setKeyedElement(keyedElement)
+   * @return the value of the '<em>Keyed Element</em>' containment reference list.
    * @see org.xtext.go.GoPackage#getelementList_KeyedElement()
    * @model containment="true"
    * @generated
    */
-  keyedElement getKeyedElement();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.elementList#getKeyedElement <em>Keyed Element</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Keyed Element</em>' containment reference.
-   * @see #getKeyedElement()
-   * @generated
-   */
-  void setKeyedElement(keyedElement value);
+  EList<keyedElement> getKeyedElement();
 
 } // elementList

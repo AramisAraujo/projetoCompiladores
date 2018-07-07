@@ -3,14 +3,19 @@
  */
 package org.xtext.go.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.go.GoPackage;
 import org.xtext.go.parameterDecl;
@@ -32,14 +37,14 @@ import org.xtext.go.parameterList;
 public class parameterListImpl extends MinimalEObjectImpl.Container implements parameterList
 {
   /**
-   * The cached value of the '{@link #getParameterDecl() <em>Parameter Decl</em>}' containment reference.
+   * The cached value of the '{@link #getParameterDecl() <em>Parameter Decl</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getParameterDecl()
    * @generated
    * @ordered
    */
-  protected parameterDecl parameterDecl;
+  protected EList<parameterDecl> parameterDecl;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,47 +72,13 @@ public class parameterListImpl extends MinimalEObjectImpl.Container implements p
    * <!-- end-user-doc -->
    * @generated
    */
-  public parameterDecl getParameterDecl()
+  public EList<parameterDecl> getParameterDecl()
   {
+    if (parameterDecl == null)
+    {
+      parameterDecl = new EObjectContainmentEList<parameterDecl>(parameterDecl.class, this, GoPackage.PARAMETER_LIST__PARAMETER_DECL);
+    }
     return parameterDecl;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetParameterDecl(parameterDecl newParameterDecl, NotificationChain msgs)
-  {
-    parameterDecl oldParameterDecl = parameterDecl;
-    parameterDecl = newParameterDecl;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.PARAMETER_LIST__PARAMETER_DECL, oldParameterDecl, newParameterDecl);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setParameterDecl(parameterDecl newParameterDecl)
-  {
-    if (newParameterDecl != parameterDecl)
-    {
-      NotificationChain msgs = null;
-      if (parameterDecl != null)
-        msgs = ((InternalEObject)parameterDecl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.PARAMETER_LIST__PARAMETER_DECL, null, msgs);
-      if (newParameterDecl != null)
-        msgs = ((InternalEObject)newParameterDecl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.PARAMETER_LIST__PARAMETER_DECL, null, msgs);
-      msgs = basicSetParameterDecl(newParameterDecl, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.PARAMETER_LIST__PARAMETER_DECL, newParameterDecl, newParameterDecl));
   }
 
   /**
@@ -121,7 +92,7 @@ public class parameterListImpl extends MinimalEObjectImpl.Container implements p
     switch (featureID)
     {
       case GoPackage.PARAMETER_LIST__PARAMETER_DECL:
-        return basicSetParameterDecl(null, msgs);
+        return ((InternalEList<?>)getParameterDecl()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -147,13 +118,15 @@ public class parameterListImpl extends MinimalEObjectImpl.Container implements p
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case GoPackage.PARAMETER_LIST__PARAMETER_DECL:
-        setParameterDecl((parameterDecl)newValue);
+        getParameterDecl().clear();
+        getParameterDecl().addAll((Collection<? extends parameterDecl>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -170,7 +143,7 @@ public class parameterListImpl extends MinimalEObjectImpl.Container implements p
     switch (featureID)
     {
       case GoPackage.PARAMETER_LIST__PARAMETER_DECL:
-        setParameterDecl((parameterDecl)null);
+        getParameterDecl().clear();
         return;
     }
     super.eUnset(featureID);
@@ -187,7 +160,7 @@ public class parameterListImpl extends MinimalEObjectImpl.Container implements p
     switch (featureID)
     {
       case GoPackage.PARAMETER_LIST__PARAMETER_DECL:
-        return parameterDecl != null;
+        return parameterDecl != null && !parameterDecl.isEmpty();
     }
     return super.eIsSet(featureID);
   }

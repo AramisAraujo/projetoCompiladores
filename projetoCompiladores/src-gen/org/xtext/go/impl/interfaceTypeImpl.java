@@ -3,14 +3,19 @@
  */
 package org.xtext.go.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.go.GoPackage;
 import org.xtext.go.interfaceType;
@@ -32,14 +37,14 @@ import org.xtext.go.methodSpec;
 public class interfaceTypeImpl extends MinimalEObjectImpl.Container implements interfaceType
 {
   /**
-   * The cached value of the '{@link #getMethodSpec() <em>Method Spec</em>}' containment reference.
+   * The cached value of the '{@link #getMethodSpec() <em>Method Spec</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getMethodSpec()
    * @generated
    * @ordered
    */
-  protected methodSpec methodSpec;
+  protected EList<methodSpec> methodSpec;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,47 +72,13 @@ public class interfaceTypeImpl extends MinimalEObjectImpl.Container implements i
    * <!-- end-user-doc -->
    * @generated
    */
-  public methodSpec getMethodSpec()
+  public EList<methodSpec> getMethodSpec()
   {
+    if (methodSpec == null)
+    {
+      methodSpec = new EObjectContainmentEList<methodSpec>(methodSpec.class, this, GoPackage.INTERFACE_TYPE__METHOD_SPEC);
+    }
     return methodSpec;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetMethodSpec(methodSpec newMethodSpec, NotificationChain msgs)
-  {
-    methodSpec oldMethodSpec = methodSpec;
-    methodSpec = newMethodSpec;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.INTERFACE_TYPE__METHOD_SPEC, oldMethodSpec, newMethodSpec);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setMethodSpec(methodSpec newMethodSpec)
-  {
-    if (newMethodSpec != methodSpec)
-    {
-      NotificationChain msgs = null;
-      if (methodSpec != null)
-        msgs = ((InternalEObject)methodSpec).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.INTERFACE_TYPE__METHOD_SPEC, null, msgs);
-      if (newMethodSpec != null)
-        msgs = ((InternalEObject)newMethodSpec).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.INTERFACE_TYPE__METHOD_SPEC, null, msgs);
-      msgs = basicSetMethodSpec(newMethodSpec, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.INTERFACE_TYPE__METHOD_SPEC, newMethodSpec, newMethodSpec));
   }
 
   /**
@@ -121,7 +92,7 @@ public class interfaceTypeImpl extends MinimalEObjectImpl.Container implements i
     switch (featureID)
     {
       case GoPackage.INTERFACE_TYPE__METHOD_SPEC:
-        return basicSetMethodSpec(null, msgs);
+        return ((InternalEList<?>)getMethodSpec()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -147,13 +118,15 @@ public class interfaceTypeImpl extends MinimalEObjectImpl.Container implements i
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case GoPackage.INTERFACE_TYPE__METHOD_SPEC:
-        setMethodSpec((methodSpec)newValue);
+        getMethodSpec().clear();
+        getMethodSpec().addAll((Collection<? extends methodSpec>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -170,7 +143,7 @@ public class interfaceTypeImpl extends MinimalEObjectImpl.Container implements i
     switch (featureID)
     {
       case GoPackage.INTERFACE_TYPE__METHOD_SPEC:
-        setMethodSpec((methodSpec)null);
+        getMethodSpec().clear();
         return;
     }
     super.eUnset(featureID);
@@ -187,7 +160,7 @@ public class interfaceTypeImpl extends MinimalEObjectImpl.Container implements i
     switch (featureID)
     {
       case GoPackage.INTERFACE_TYPE__METHOD_SPEC:
-        return methodSpec != null;
+        return methodSpec != null && !methodSpec.isEmpty();
     }
     return super.eIsSet(featureID);
   }

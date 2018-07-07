@@ -3,6 +3,8 @@
  */
 package org.xtext.go;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -24,29 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface structType extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Field Decl</b></em>' containment reference.
+   * Returns the value of the '<em><b>Field Decl</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.go.fieldDecl}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Field Decl</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Field Decl</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Field Decl</em>' containment reference.
-   * @see #setFieldDecl(fieldDecl)
+   * @return the value of the '<em>Field Decl</em>' containment reference list.
    * @see org.xtext.go.GoPackage#getstructType_FieldDecl()
    * @model containment="true"
    * @generated
    */
-  fieldDecl getFieldDecl();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.structType#getFieldDecl <em>Field Decl</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Field Decl</em>' containment reference.
-   * @see #getFieldDecl()
-   * @generated
-   */
-  void setFieldDecl(fieldDecl value);
+  EList<fieldDecl> getFieldDecl();
 
 } // structType

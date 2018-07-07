@@ -604,7 +604,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     constDecl returns constDecl
 	 *
 	 * Constraint:
-	 *     (constSpec=constSpec | constSpec=constSpec+)
+	 *     (constSpec+=constSpec | constSpec+=constSpec+)
 	 */
 	protected void sequence_constDecl(ISerializationContext context, constDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -679,7 +679,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     elementList returns elementList
 	 *
 	 * Constraint:
-	 *     (keyedElement=keyedElement keyedElement=keyedElement*)
+	 *     (keyedElement+=keyedElement keyedElement+=keyedElement*)
 	 */
 	protected void sequence_elementList(ISerializationContext context, elementList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -772,7 +772,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     expressionList returns expressionList
 	 *
 	 * Constraint:
-	 *     (expression=expression expression=expression*)
+	 *     (expression+=expression expression+=expression*)
 	 */
 	protected void sequence_expressionList(ISerializationContext context, expressionList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -977,7 +977,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     importDecl returns importDecl
 	 *
 	 * Constraint:
-	 *     (importSpec=importSpec | importSpec=importSpec+)
+	 *     (importSpec+=importSpec | importSpec+=importSpec+)
 	 */
 	protected void sequence_importDecl(ISerializationContext context, importDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1025,7 +1025,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     interfaceType returns interfaceType
 	 *
 	 * Constraint:
-	 *     methodSpec=methodSpec+
+	 *     methodSpec+=methodSpec+
 	 */
 	protected void sequence_interfaceType(ISerializationContext context, interfaceType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1233,7 +1233,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     parameterList returns parameterList
 	 *
 	 * Constraint:
-	 *     (parameterDecl=parameterDecl parameterDecl=parameterDecl*)
+	 *     (parameterDecl+=parameterDecl parameterDecl+=parameterDecl*)
 	 */
 	protected void sequence_parameterList(ISerializationContext context, parameterList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1502,7 +1502,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     selectStmt returns selectStmt
 	 *
 	 * Constraint:
-	 *     commClause=commClause+
+	 *     commClause+=commClause+
 	 */
 	protected void sequence_selectStmt(ISerializationContext context, selectStmt semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1608,7 +1608,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     sourceFile returns sourceFile
 	 *
 	 * Constraint:
-	 *     (packageClause=packageClause importDecl=importDecl* topLevelDecl=topLevelDecl*)
+	 *     (packageClause=packageClause importDecl+=importDecl* topLevelDecl+=topLevelDecl*)
 	 */
 	protected void sequence_sourceFile(ISerializationContext context, sourceFile semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1620,7 +1620,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     statementList returns statementList
 	 *
 	 * Constraint:
-	 *     statement=statement+
+	 *     statement+=statement+
 	 */
 	protected void sequence_statementList(ISerializationContext context, statementList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1660,7 +1660,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     structType returns structType
 	 *
 	 * Constraint:
-	 *     fieldDecl=fieldDecl+
+	 *     fieldDecl+=fieldDecl+
 	 */
 	protected void sequence_structType(ISerializationContext context, structType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1735,7 +1735,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     typeDecl returns typeDecl
 	 *
 	 * Constraint:
-	 *     (typeSpec=typeSpec | typeSpec=typeSpec+)
+	 *     (typeSpec+=typeSpec | typeSpec+=typeSpec+)
 	 */
 	protected void sequence_typeDecl(ISerializationContext context, typeDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1747,7 +1747,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     typeList returns typeList
 	 *
 	 * Constraint:
-	 *     (type=type type=type*)
+	 *     (type+=type type+=type*)
 	 */
 	protected void sequence_typeList(ISerializationContext context, typeList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1852,7 +1852,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     typeSwitchStmt returns typeSwitchStmt
 	 *
 	 * Constraint:
-	 *     (simpleStmt=simpleStmt? typeSwitchGuard=typeSwitchGuard typeCaseClause=typeCaseClause*)
+	 *     (simpleStmt=simpleStmt? typeSwitchGuard=typeSwitchGuard typeCaseClause+=typeCaseClause*)
 	 */
 	protected void sequence_typeSwitchStmt(ISerializationContext context, typeSwitchStmt semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1888,7 +1888,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     varDecl returns varDecl
 	 *
 	 * Constraint:
-	 *     (varSpec=varSpec | varSpec=varSpec+)
+	 *     (varSpec+=varSpec | varSpec+=varSpec+)
 	 */
 	protected void sequence_varDecl(ISerializationContext context, varDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

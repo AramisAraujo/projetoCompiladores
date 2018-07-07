@@ -3,6 +3,8 @@
  */
 package org.xtext.go;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -24,29 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface interfaceType extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Method Spec</b></em>' containment reference.
+   * Returns the value of the '<em><b>Method Spec</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.go.methodSpec}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Method Spec</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Method Spec</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Method Spec</em>' containment reference.
-   * @see #setMethodSpec(methodSpec)
+   * @return the value of the '<em>Method Spec</em>' containment reference list.
    * @see org.xtext.go.GoPackage#getinterfaceType_MethodSpec()
    * @model containment="true"
    * @generated
    */
-  methodSpec getMethodSpec();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.interfaceType#getMethodSpec <em>Method Spec</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Method Spec</em>' containment reference.
-   * @see #getMethodSpec()
-   * @generated
-   */
-  void setMethodSpec(methodSpec value);
+  EList<methodSpec> getMethodSpec();
 
 } // interfaceType

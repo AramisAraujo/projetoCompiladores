@@ -3,6 +3,8 @@
  */
 package org.xtext.go;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -78,29 +80,19 @@ public interface typeSwitchStmt extends EObject
   void setTypeSwitchGuard(typeSwitchGuard value);
 
   /**
-   * Returns the value of the '<em><b>Type Case Clause</b></em>' containment reference.
+   * Returns the value of the '<em><b>Type Case Clause</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.go.typeCaseClause}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Type Case Clause</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Type Case Clause</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type Case Clause</em>' containment reference.
-   * @see #setTypeCaseClause(typeCaseClause)
+   * @return the value of the '<em>Type Case Clause</em>' containment reference list.
    * @see org.xtext.go.GoPackage#gettypeSwitchStmt_TypeCaseClause()
    * @model containment="true"
    * @generated
    */
-  typeCaseClause getTypeCaseClause();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.typeSwitchStmt#getTypeCaseClause <em>Type Case Clause</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type Case Clause</em>' containment reference.
-   * @see #getTypeCaseClause()
-   * @generated
-   */
-  void setTypeCaseClause(typeCaseClause value);
+  EList<typeCaseClause> getTypeCaseClause();
 
 } // typeSwitchStmt

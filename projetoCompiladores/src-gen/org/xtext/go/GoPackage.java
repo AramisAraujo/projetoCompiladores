@@ -105,7 +105,7 @@ public interface GoPackage extends EPackage
   int SOURCE_FILE__PACKAGE_CLAUSE = 0;
 
   /**
-   * The feature id for the '<em><b>Import Decl</b></em>' containment reference.
+   * The feature id for the '<em><b>Import Decl</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -114,7 +114,7 @@ public interface GoPackage extends EPackage
   int SOURCE_FILE__IMPORT_DECL = 1;
 
   /**
-   * The feature id for the '<em><b>Top Level Decl</b></em>' containment reference.
+   * The feature id for the '<em><b>Top Level Decl</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -142,7 +142,7 @@ public interface GoPackage extends EPackage
   int IMPORT_DECL = 2;
 
   /**
-   * The feature id for the '<em><b>Import Spec</b></em>' containment reference.
+   * The feature id for the '<em><b>Import Spec</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -290,7 +290,7 @@ public interface GoPackage extends EPackage
   int CONST_DECL = 6;
 
   /**
-   * The feature id for the '<em><b>Const Spec</b></em>' containment reference.
+   * The feature id for the '<em><b>Const Spec</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -364,7 +364,7 @@ public interface GoPackage extends EPackage
   int EXPRESSION_LIST = 8;
 
   /**
-   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * The feature id for the '<em><b>Expression</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -392,7 +392,7 @@ public interface GoPackage extends EPackage
   int TYPE_DECL = 9;
 
   /**
-   * The feature id for the '<em><b>Type Spec</b></em>' containment reference.
+   * The feature id for the '<em><b>Type Spec</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -596,7 +596,7 @@ public interface GoPackage extends EPackage
   int VAR_DECL = 15;
 
   /**
-   * The feature id for the '<em><b>Var Spec</b></em>' containment reference.
+   * The feature id for the '<em><b>Var Spec</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -698,7 +698,7 @@ public interface GoPackage extends EPackage
   int STATEMENT_LIST = 18;
 
   /**
-   * The feature id for the '<em><b>Statement</b></em>' containment reference.
+   * The feature id for the '<em><b>Statement</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1416,7 +1416,7 @@ public interface GoPackage extends EPackage
   int TYPE_SWITCH_STMT__TYPE_SWITCH_GUARD = 1;
 
   /**
-   * The feature id for the '<em><b>Type Case Clause</b></em>' containment reference.
+   * The feature id for the '<em><b>Type Case Clause</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1537,7 +1537,7 @@ public interface GoPackage extends EPackage
   int TYPE_LIST = 38;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * The feature id for the '<em><b>Type</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1565,7 +1565,7 @@ public interface GoPackage extends EPackage
   int SELECT_STMT = 39;
 
   /**
-   * The feature id for the '<em><b>Comm Clause</b></em>' containment reference.
+   * The feature id for the '<em><b>Comm Clause</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2165,7 +2165,7 @@ public interface GoPackage extends EPackage
   int INTERFACE_TYPE = 54;
 
   /**
-   * The feature id for the '<em><b>Method Spec</b></em>' containment reference.
+   * The feature id for the '<em><b>Method Spec</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2453,7 +2453,7 @@ public interface GoPackage extends EPackage
   int PARAMETER_LIST = 63;
 
   /**
-   * The feature id for the '<em><b>Parameter Decl</b></em>' containment reference.
+   * The feature id for the '<em><b>Parameter Decl</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2785,7 +2785,7 @@ public interface GoPackage extends EPackage
   int ELEMENT_LIST = 71;
 
   /**
-   * The feature id for the '<em><b>Keyed Element</b></em>' containment reference.
+   * The feature id for the '<em><b>Keyed Element</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2924,7 +2924,7 @@ public interface GoPackage extends EPackage
   int STRUCT_TYPE = 75;
 
   /**
-   * The feature id for the '<em><b>Field Decl</b></em>' containment reference.
+   * The feature id for the '<em><b>Field Decl</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -3734,10 +3734,10 @@ public interface GoPackage extends EPackage
   EAttribute getsourceFile_PackageClause();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.go.sourceFile#getImportDecl <em>Import Decl</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.go.sourceFile#getImportDecl <em>Import Decl</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Import Decl</em>'.
+   * @return the meta object for the containment reference list '<em>Import Decl</em>'.
    * @see org.xtext.go.sourceFile#getImportDecl()
    * @see #getsourceFile()
    * @generated
@@ -3745,10 +3745,10 @@ public interface GoPackage extends EPackage
   EReference getsourceFile_ImportDecl();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.go.sourceFile#getTopLevelDecl <em>Top Level Decl</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.go.sourceFile#getTopLevelDecl <em>Top Level Decl</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Top Level Decl</em>'.
+   * @return the meta object for the containment reference list '<em>Top Level Decl</em>'.
    * @see org.xtext.go.sourceFile#getTopLevelDecl()
    * @see #getsourceFile()
    * @generated
@@ -3766,10 +3766,10 @@ public interface GoPackage extends EPackage
   EClass getimportDecl();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.go.importDecl#getImportSpec <em>Import Spec</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.go.importDecl#getImportSpec <em>Import Spec</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Import Spec</em>'.
+   * @return the meta object for the containment reference list '<em>Import Spec</em>'.
    * @see org.xtext.go.importDecl#getImportSpec()
    * @see #getimportDecl()
    * @generated
@@ -3894,10 +3894,10 @@ public interface GoPackage extends EPackage
   EClass getconstDecl();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.go.constDecl#getConstSpec <em>Const Spec</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.go.constDecl#getConstSpec <em>Const Spec</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Const Spec</em>'.
+   * @return the meta object for the containment reference list '<em>Const Spec</em>'.
    * @see org.xtext.go.constDecl#getConstSpec()
    * @see #getconstDecl()
    * @generated
@@ -3958,10 +3958,10 @@ public interface GoPackage extends EPackage
   EClass getexpressionList();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.go.expressionList#getExpression <em>Expression</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.go.expressionList#getExpression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @return the meta object for the containment reference list '<em>Expression</em>'.
    * @see org.xtext.go.expressionList#getExpression()
    * @see #getexpressionList()
    * @generated
@@ -3979,10 +3979,10 @@ public interface GoPackage extends EPackage
   EClass gettypeDecl();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.go.typeDecl#getTypeSpec <em>Type Spec</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.go.typeDecl#getTypeSpec <em>Type Spec</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Type Spec</em>'.
+   * @return the meta object for the containment reference list '<em>Type Spec</em>'.
    * @see org.xtext.go.typeDecl#getTypeSpec()
    * @see #gettypeDecl()
    * @generated
@@ -4149,10 +4149,10 @@ public interface GoPackage extends EPackage
   EClass getvarDecl();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.go.varDecl#getVarSpec <em>Var Spec</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.go.varDecl#getVarSpec <em>Var Spec</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Var Spec</em>'.
+   * @return the meta object for the containment reference list '<em>Var Spec</em>'.
    * @see org.xtext.go.varDecl#getVarSpec()
    * @see #getvarDecl()
    * @generated
@@ -4234,10 +4234,10 @@ public interface GoPackage extends EPackage
   EClass getstatementList();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.go.statementList#getStatement <em>Statement</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.go.statementList#getStatement <em>Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Statement</em>'.
+   * @return the meta object for the containment reference list '<em>Statement</em>'.
    * @see org.xtext.go.statementList#getStatement()
    * @see #getstatementList()
    * @generated
@@ -4900,10 +4900,10 @@ public interface GoPackage extends EPackage
   EReference gettypeSwitchStmt_TypeSwitchGuard();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.go.typeSwitchStmt#getTypeCaseClause <em>Type Case Clause</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.go.typeSwitchStmt#getTypeCaseClause <em>Type Case Clause</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Type Case Clause</em>'.
+   * @return the meta object for the containment reference list '<em>Type Case Clause</em>'.
    * @see org.xtext.go.typeSwitchStmt#getTypeCaseClause()
    * @see #gettypeSwitchStmt()
    * @generated
@@ -4995,10 +4995,10 @@ public interface GoPackage extends EPackage
   EClass gettypeList();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.go.typeList#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.go.typeList#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @return the meta object for the containment reference list '<em>Type</em>'.
    * @see org.xtext.go.typeList#getType()
    * @see #gettypeList()
    * @generated
@@ -5016,10 +5016,10 @@ public interface GoPackage extends EPackage
   EClass getselectStmt();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.go.selectStmt#getCommClause <em>Comm Clause</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.go.selectStmt#getCommClause <em>Comm Clause</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Comm Clause</em>'.
+   * @return the meta object for the containment reference list '<em>Comm Clause</em>'.
    * @see org.xtext.go.selectStmt#getCommClause()
    * @see #getselectStmt()
    * @generated
@@ -5551,10 +5551,10 @@ public interface GoPackage extends EPackage
   EClass getinterfaceType();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.go.interfaceType#getMethodSpec <em>Method Spec</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.go.interfaceType#getMethodSpec <em>Method Spec</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Method Spec</em>'.
+   * @return the meta object for the containment reference list '<em>Method Spec</em>'.
    * @see org.xtext.go.interfaceType#getMethodSpec()
    * @see #getinterfaceType()
    * @generated
@@ -5784,10 +5784,10 @@ public interface GoPackage extends EPackage
   EClass getparameterList();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.go.parameterList#getParameterDecl <em>Parameter Decl</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.go.parameterList#getParameterDecl <em>Parameter Decl</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Parameter Decl</em>'.
+   * @return the meta object for the containment reference list '<em>Parameter Decl</em>'.
    * @see org.xtext.go.parameterList#getParameterDecl()
    * @see #getparameterList()
    * @generated
@@ -6084,10 +6084,10 @@ public interface GoPackage extends EPackage
   EClass getelementList();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.go.elementList#getKeyedElement <em>Keyed Element</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.go.elementList#getKeyedElement <em>Keyed Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Keyed Element</em>'.
+   * @return the meta object for the containment reference list '<em>Keyed Element</em>'.
    * @see org.xtext.go.elementList#getKeyedElement()
    * @see #getelementList()
    * @generated
@@ -6201,10 +6201,10 @@ public interface GoPackage extends EPackage
   EClass getstructType();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.go.structType#getFieldDecl <em>Field Decl</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.go.structType#getFieldDecl <em>Field Decl</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Field Decl</em>'.
+   * @return the meta object for the containment reference list '<em>Field Decl</em>'.
    * @see org.xtext.go.structType#getFieldDecl()
    * @see #getstructType()
    * @generated
@@ -6922,7 +6922,7 @@ public interface GoPackage extends EPackage
     EAttribute SOURCE_FILE__PACKAGE_CLAUSE = eINSTANCE.getsourceFile_PackageClause();
 
     /**
-     * The meta object literal for the '<em><b>Import Decl</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Import Decl</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -6930,7 +6930,7 @@ public interface GoPackage extends EPackage
     EReference SOURCE_FILE__IMPORT_DECL = eINSTANCE.getsourceFile_ImportDecl();
 
     /**
-     * The meta object literal for the '<em><b>Top Level Decl</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Top Level Decl</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -6948,7 +6948,7 @@ public interface GoPackage extends EPackage
     EClass IMPORT_DECL = eINSTANCE.getimportDecl();
 
     /**
-     * The meta object literal for the '<em><b>Import Spec</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Import Spec</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -7052,7 +7052,7 @@ public interface GoPackage extends EPackage
     EClass CONST_DECL = eINSTANCE.getconstDecl();
 
     /**
-     * The meta object literal for the '<em><b>Const Spec</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Const Spec</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -7104,7 +7104,7 @@ public interface GoPackage extends EPackage
     EClass EXPRESSION_LIST = eINSTANCE.getexpressionList();
 
     /**
-     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -7122,7 +7122,7 @@ public interface GoPackage extends EPackage
     EClass TYPE_DECL = eINSTANCE.gettypeDecl();
 
     /**
-     * The meta object literal for the '<em><b>Type Spec</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Type Spec</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -7262,7 +7262,7 @@ public interface GoPackage extends EPackage
     EClass VAR_DECL = eINSTANCE.getvarDecl();
 
     /**
-     * The meta object literal for the '<em><b>Var Spec</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Var Spec</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -7332,7 +7332,7 @@ public interface GoPackage extends EPackage
     EClass STATEMENT_LIST = eINSTANCE.getstatementList();
 
     /**
-     * The meta object literal for the '<em><b>Statement</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Statement</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -7860,7 +7860,7 @@ public interface GoPackage extends EPackage
     EReference TYPE_SWITCH_STMT__TYPE_SWITCH_GUARD = eINSTANCE.gettypeSwitchStmt_TypeSwitchGuard();
 
     /**
-     * The meta object literal for the '<em><b>Type Case Clause</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Type Case Clause</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -7940,7 +7940,7 @@ public interface GoPackage extends EPackage
     EClass TYPE_LIST = eINSTANCE.gettypeList();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -7958,7 +7958,7 @@ public interface GoPackage extends EPackage
     EClass SELECT_STMT = eINSTANCE.getselectStmt();
 
     /**
-     * The meta object literal for the '<em><b>Comm Clause</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Comm Clause</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -8388,7 +8388,7 @@ public interface GoPackage extends EPackage
     EClass INTERFACE_TYPE = eINSTANCE.getinterfaceType();
 
     /**
-     * The meta object literal for the '<em><b>Method Spec</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Method Spec</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -8582,7 +8582,7 @@ public interface GoPackage extends EPackage
     EClass PARAMETER_LIST = eINSTANCE.getparameterList();
 
     /**
-     * The meta object literal for the '<em><b>Parameter Decl</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Parameter Decl</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -8822,7 +8822,7 @@ public interface GoPackage extends EPackage
     EClass ELEMENT_LIST = eINSTANCE.getelementList();
 
     /**
-     * The meta object literal for the '<em><b>Keyed Element</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Keyed Element</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -8918,7 +8918,7 @@ public interface GoPackage extends EPackage
     EClass STRUCT_TYPE = eINSTANCE.getstructType();
 
     /**
-     * The meta object literal for the '<em><b>Field Decl</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Field Decl</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

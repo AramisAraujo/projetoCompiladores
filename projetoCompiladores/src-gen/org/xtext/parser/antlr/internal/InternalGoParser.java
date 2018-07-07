@@ -409,7 +409,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
             	      						if (current==null) {
             	      							current = createModelElementForParent(grammarAccess.getSourceFileRule());
             	      						}
-            	      						set(
+            	      						add(
             	      							current,
             	      							"importDecl",
             	      							lv_importDecl_1_0,
@@ -474,7 +474,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
             	      						if (current==null) {
             	      							current = createModelElementForParent(grammarAccess.getSourceFileRule());
             	      						}
-            	      						set(
+            	      						add(
             	      							current,
             	      							"topLevelDecl",
             	      							lv_topLevelDecl_3_0,
@@ -738,7 +738,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
                       						if (current==null) {
                       							current = createModelElementForParent(grammarAccess.getImportDeclRule());
                       						}
-                      						set(
+                      						add(
                       							current,
                       							"importSpec",
                       							lv_importSpec_1_0,
@@ -800,7 +800,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
                     	      							if (current==null) {
                     	      								current = createModelElementForParent(grammarAccess.getImportDeclRule());
                     	      							}
-                    	      							set(
+                    	      							add(
                     	      								current,
                     	      								"importSpec",
                     	      								lv_importSpec_3_0,
@@ -1685,7 +1685,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
                       						if (current==null) {
                       							current = createModelElementForParent(grammarAccess.getConstDeclRule());
                       						}
-                      						set(
+                      						add(
                       							current,
                       							"constSpec",
                       							lv_constSpec_1_0,
@@ -1750,7 +1750,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
                     	      								if (current==null) {
                     	      									current = createModelElementForParent(grammarAccess.getConstDeclRule());
                     	      								}
-                    	      								set(
+                    	      								add(
                     	      									current,
                     	      									"constSpec",
                     	      									lv_constSpec_3_0,
@@ -2262,7 +2262,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
               					if (current==null) {
               						current = createModelElementForParent(grammarAccess.getExpressionListRule());
               					}
-              					set(
+              					add(
               						current,
               						"expression",
               						lv_expression_0_0,
@@ -2324,7 +2324,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
             	      						if (current==null) {
             	      							current = createModelElementForParent(grammarAccess.getExpressionListRule());
             	      						}
-            	      						set(
+            	      						add(
             	      							current,
             	      							"expression",
             	      							lv_expression_2_0,
@@ -2483,7 +2483,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
                       						if (current==null) {
                       							current = createModelElementForParent(grammarAccess.getTypeDeclRule());
                       						}
-                      						set(
+                      						add(
                       							current,
                       							"typeSpec",
                       							lv_typeSpec_1_0,
@@ -2548,7 +2548,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
                     	      								if (current==null) {
                     	      									current = createModelElementForParent(grammarAccess.getTypeDeclRule());
                     	      								}
-                    	      								set(
+                    	      								add(
                     	      									current,
                     	      									"typeSpec",
                     	      									lv_typeSpec_3_0,
@@ -3578,7 +3578,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
                       						if (current==null) {
                       							current = createModelElementForParent(grammarAccess.getVarDeclRule());
                       						}
-                      						set(
+                      						add(
                       							current,
                       							"varSpec",
                       							lv_varSpec_1_0,
@@ -3643,7 +3643,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
                     	      								if (current==null) {
                     	      									current = createModelElementForParent(grammarAccess.getVarDeclRule());
                     	      								}
-                    	      								set(
+                    	      								add(
                     	      									current,
                     	      									"varSpec",
                     	      									lv_varSpec_3_0,
@@ -4238,7 +4238,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
             	      					if (current==null) {
             	      						current = createModelElementForParent(grammarAccess.getStatementListRule());
             	      					}
-            	      					set(
+            	      					add(
             	      						current,
             	      						"statement",
             	      						lv_statement_0_0,
@@ -8705,7 +8705,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
             	      					if (current==null) {
             	      						current = createModelElementForParent(grammarAccess.getTypeSwitchStmtRule());
             	      					}
-            	      					set(
+            	      					add(
             	      						current,
             	      						"typeCaseClause",
             	      						lv_typeCaseClause_5_0,
@@ -9342,7 +9342,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
               					if (current==null) {
               						current = createModelElementForParent(grammarAccess.getTypeListRule());
               					}
-              					set(
+              					add(
               						current,
               						"type",
               						lv_type_0_0,
@@ -9398,7 +9398,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
             	      						if (current==null) {
             	      							current = createModelElementForParent(grammarAccess.getTypeListRule());
             	      						}
-            	      						set(
+            	      						add(
             	      							current,
             	      							"type",
             	      							lv_type_2_0,
@@ -9551,7 +9551,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
             	      					if (current==null) {
             	      						current = createModelElementForParent(grammarAccess.getSelectStmtRule());
             	      					}
-            	      					set(
+            	      					add(
             	      						current,
             	      						"commClause",
             	      						lv_commClause_2_0,
@@ -12646,7 +12646,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
             	      						if (current==null) {
             	      							current = createModelElementForParent(grammarAccess.getInterfaceTypeRule());
             	      						}
-            	      						set(
+            	      						add(
             	      							current,
             	      							"methodSpec",
             	      							lv_methodSpec_2_0,
@@ -14139,7 +14139,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
               					if (current==null) {
               						current = createModelElementForParent(grammarAccess.getParameterListRule());
               					}
-              					set(
+              					add(
               						current,
               						"parameterDecl",
               						lv_parameterDecl_0_0,
@@ -14201,7 +14201,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
             	      						if (current==null) {
             	      							current = createModelElementForParent(grammarAccess.getParameterListRule());
             	      						}
-            	      						set(
+            	      						add(
             	      							current,
             	      							"parameterDecl",
             	      							lv_parameterDecl_2_0,
@@ -16283,7 +16283,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
               					if (current==null) {
               						current = createModelElementForParent(grammarAccess.getElementListRule());
               					}
-              					set(
+              					add(
               						current,
               						"keyedElement",
               						lv_keyedElement_0_0,
@@ -16345,7 +16345,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
             	      						if (current==null) {
             	      							current = createModelElementForParent(grammarAccess.getElementListRule());
             	      						}
-            	      						set(
+            	      						add(
             	      							current,
             	      							"keyedElement",
             	      							lv_keyedElement_2_0,
@@ -17096,7 +17096,7 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
             	      						if (current==null) {
             	      							current = createModelElementForParent(grammarAccess.getStructTypeRule());
             	      						}
-            	      						set(
+            	      						add(
             	      							current,
             	      							"fieldDecl",
             	      							lv_fieldDecl_2_0,

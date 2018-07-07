@@ -3,14 +3,19 @@
  */
 package org.xtext.go.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.go.GoPackage;
 import org.xtext.go.importDecl;
@@ -32,14 +37,14 @@ import org.xtext.go.importSpec;
 public class importDeclImpl extends MinimalEObjectImpl.Container implements importDecl
 {
   /**
-   * The cached value of the '{@link #getImportSpec() <em>Import Spec</em>}' containment reference.
+   * The cached value of the '{@link #getImportSpec() <em>Import Spec</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getImportSpec()
    * @generated
    * @ordered
    */
-  protected importSpec importSpec;
+  protected EList<importSpec> importSpec;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,47 +72,13 @@ public class importDeclImpl extends MinimalEObjectImpl.Container implements impo
    * <!-- end-user-doc -->
    * @generated
    */
-  public importSpec getImportSpec()
+  public EList<importSpec> getImportSpec()
   {
+    if (importSpec == null)
+    {
+      importSpec = new EObjectContainmentEList<importSpec>(importSpec.class, this, GoPackage.IMPORT_DECL__IMPORT_SPEC);
+    }
     return importSpec;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetImportSpec(importSpec newImportSpec, NotificationChain msgs)
-  {
-    importSpec oldImportSpec = importSpec;
-    importSpec = newImportSpec;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.IMPORT_DECL__IMPORT_SPEC, oldImportSpec, newImportSpec);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setImportSpec(importSpec newImportSpec)
-  {
-    if (newImportSpec != importSpec)
-    {
-      NotificationChain msgs = null;
-      if (importSpec != null)
-        msgs = ((InternalEObject)importSpec).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.IMPORT_DECL__IMPORT_SPEC, null, msgs);
-      if (newImportSpec != null)
-        msgs = ((InternalEObject)newImportSpec).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.IMPORT_DECL__IMPORT_SPEC, null, msgs);
-      msgs = basicSetImportSpec(newImportSpec, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.IMPORT_DECL__IMPORT_SPEC, newImportSpec, newImportSpec));
   }
 
   /**
@@ -121,7 +92,7 @@ public class importDeclImpl extends MinimalEObjectImpl.Container implements impo
     switch (featureID)
     {
       case GoPackage.IMPORT_DECL__IMPORT_SPEC:
-        return basicSetImportSpec(null, msgs);
+        return ((InternalEList<?>)getImportSpec()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -147,13 +118,15 @@ public class importDeclImpl extends MinimalEObjectImpl.Container implements impo
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case GoPackage.IMPORT_DECL__IMPORT_SPEC:
-        setImportSpec((importSpec)newValue);
+        getImportSpec().clear();
+        getImportSpec().addAll((Collection<? extends importSpec>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -170,7 +143,7 @@ public class importDeclImpl extends MinimalEObjectImpl.Container implements impo
     switch (featureID)
     {
       case GoPackage.IMPORT_DECL__IMPORT_SPEC:
-        setImportSpec((importSpec)null);
+        getImportSpec().clear();
         return;
     }
     super.eUnset(featureID);
@@ -187,7 +160,7 @@ public class importDeclImpl extends MinimalEObjectImpl.Container implements impo
     switch (featureID)
     {
       case GoPackage.IMPORT_DECL__IMPORT_SPEC:
-        return importSpec != null;
+        return importSpec != null && !importSpec.isEmpty();
     }
     return super.eIsSet(featureID);
   }

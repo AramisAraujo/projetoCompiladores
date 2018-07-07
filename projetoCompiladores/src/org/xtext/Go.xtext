@@ -10,7 +10,7 @@ Model:
 //SourceFile       = PackageClause ";" { ImportDecl ";" } { TopLevelDecl ";" } .
 sourceFile: 
 	packageClause=packageClause //';' 
-	( importDecl=importDecl ';' )* ( topLevelDecl=topLevelDecl ';')*;
+	( importDecl+=importDecl ';' )* ( topLevelDecl+=topLevelDecl ';')*;
 
 //PackageClause  = "package" PackageName .
 //PackageName    = identifier .
@@ -18,7 +18,7 @@ packageClause :
 	'package' IDENTIFIER;
 
 importDecl: 
-	'import' ( importSpec=importSpec | '(' ( importSpec=importSpec //';'
+	'import' ( importSpec+=importSpec | '(' ( importSpec+=importSpec //';'
 	 )* ')' );
 
 importSpec: 
@@ -42,7 +42,7 @@ declaration:
 
 //ConstDecl      = "const" ( ConstSpec | "(" { ConstSpec ";" } ")" ) .
 constDecl: 
-	'const' ( constSpec=constSpec | '(' ( constSpec=constSpec ';' )* ')' );
+	'const' ( constSpec+=constSpec | '(' ( constSpec+=constSpec ';' )* ')' );
 
 //ConstSpec      = IdentifierList [ [ Type ] "=" ExpressionList ] .
 constSpec: 
@@ -55,11 +55,11 @@ identifierList:
 
 //ExpressionList = Expression { "," Expression } .
 expressionList: 
-	expression=expression ( ',' expression=expression )*;
+	expression+=expression ( ',' expression+=expression )*;
 
 //TypeDecl     = "type" ( TypeSpec | "(" { TypeSpec ";" } ")" ) .
 typeDecl: 
-	'type' ( typeSpec=typeSpec | '(' ( typeSpec=typeSpec ';' )* ')' );
+	'type' ( typeSpec+=typeSpec | '(' ( typeSpec+=typeSpec ';' )* ')' );
 
 //TypeSpec     = identifier Type .
 typeSpec: 
@@ -89,7 +89,7 @@ receiver:
 //VarDecl     = "var" ( VarSpec | "(" { VarSpec ";" } ")" ) .
 //VarSpec     = IdentifierList ( Type [ "=" ExpressionList ] | "=" ExpressionList ) .
 varDecl: 
-	'var' ( varSpec=varSpec | '(' ( varSpec=varSpec ';' )* ')' );
+	'var' ( varSpec+=varSpec | '(' ( varSpec+=varSpec ';' )* ')' );
 
 varSpec: 
 	identifierList=identifierList ( type=type ( '=' expressionList=expressionList )? |
@@ -98,11 +98,11 @@ varSpec:
 
 //Block = "{" StatementList "}" .
 block: 
-	'{' statementList=statementList '}';
+	"{" statementList=statementList "}";
 
 //StatementList = { Statement ";" } .
 statementList: 
-	( statement=statement ';' )*;
+	( statement+=statement ';' )*;
 
 statement: 
 	declaration=declaration
@@ -218,7 +218,7 @@ exprSwitchCase:
 //TypeList        = Type { "," Type } .
 typeSwitchStmt: 
 	'switch' ( simpleStmt=simpleStmt ';' )? 
-	typeSwitchGuard=typeSwitchGuard '{' typeCaseClause=typeCaseClause* '}';
+	typeSwitchGuard=typeSwitchGuard '{' typeCaseClause+=typeCaseClause* '}';
     
 typeSwitchGuard: 
 	( IDENTIFIER ':=' )? primaryExpr=primaryExpr '.' '(' 'type' ')';
@@ -230,7 +230,7 @@ typeSwitchCase:
 	'case' typeList=typeList | 'default';
     
 typeList: 
-	type=type ( ',' type=type )*;
+	type+=type ( ',' type+=type )*;
 
 
 //SelectStmt = "select" "{" { CommClause } "}" .
@@ -239,7 +239,7 @@ typeList:
 //RecvStmt   = [ ExpressionList "=" | IdentifierList ":=" ] RecvExpr .
 //RecvExpr   = Expression .
 selectStmt: 
-	'select' '{' commClause=commClause* '}';
+	'select' '{' commClause+=commClause* '}';
     
 commClause: 
 	commCase=commCase ':' statementList=statementList;
@@ -318,7 +318,7 @@ pointerType:
 //MethodName         = identifier .
 //InterfaceTypeName  = TypeName .
 interfaceType: 
-	'interface' '{' ( methodSpec=methodSpec ';' )* '}';
+	'interface' '{' ( methodSpec+=methodSpec ';' )* '}';
 
 //SliceType = "[" "]" ElementType .
 sliceType: 
@@ -358,7 +358,7 @@ parameters:
 	'(' ( parameterList=parameterList ','? )? ')';
 
 parameterList: 
-	parameterDecl=parameterDecl ( ',' parameterDecl=parameterDecl )*;
+	parameterDecl+=parameterDecl ( ',' parameterDecl+=parameterDecl )*;
 
 parameterDecl: 
 	identifierList=identifierList? '...'? type=type;
@@ -422,7 +422,7 @@ literalValue:
 	'{' ( elementList=elementList ','? )? '}';
 
 elementList:
-	keyedElement=keyedElement (',' keyedElement=keyedElement)*;
+	keyedElement+=keyedElement (',' keyedElement+=keyedElement)*;
 
 keyedElement:
 	(key=key ':')? element=element;
@@ -441,7 +441,7 @@ element:
 //AnonymousField = [ "*" ] TypeName .
 //Tag            = string_lit .
 structType: 
-	'struct' '{' ( fieldDecl=fieldDecl ';' )* '}';
+	'struct' '{' ( fieldDecl+=fieldDecl ';' )* '}';
 
 fieldDecl: 
 	(identifierList=identifierList type=type |

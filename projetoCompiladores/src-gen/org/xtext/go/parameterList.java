@@ -3,6 +3,8 @@
  */
 package org.xtext.go;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -24,29 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface parameterList extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Parameter Decl</b></em>' containment reference.
+   * Returns the value of the '<em><b>Parameter Decl</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.go.parameterDecl}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Parameter Decl</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Parameter Decl</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Parameter Decl</em>' containment reference.
-   * @see #setParameterDecl(parameterDecl)
+   * @return the value of the '<em>Parameter Decl</em>' containment reference list.
    * @see org.xtext.go.GoPackage#getparameterList_ParameterDecl()
    * @model containment="true"
    * @generated
    */
-  parameterDecl getParameterDecl();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.parameterList#getParameterDecl <em>Parameter Decl</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Parameter Decl</em>' containment reference.
-   * @see #getParameterDecl()
-   * @generated
-   */
-  void setParameterDecl(parameterDecl value);
+  EList<parameterDecl> getParameterDecl();
 
 } // parameterList

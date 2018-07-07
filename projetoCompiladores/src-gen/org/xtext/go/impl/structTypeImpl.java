@@ -3,14 +3,19 @@
  */
 package org.xtext.go.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.go.GoPackage;
 import org.xtext.go.fieldDecl;
@@ -32,14 +37,14 @@ import org.xtext.go.structType;
 public class structTypeImpl extends MinimalEObjectImpl.Container implements structType
 {
   /**
-   * The cached value of the '{@link #getFieldDecl() <em>Field Decl</em>}' containment reference.
+   * The cached value of the '{@link #getFieldDecl() <em>Field Decl</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getFieldDecl()
    * @generated
    * @ordered
    */
-  protected fieldDecl fieldDecl;
+  protected EList<fieldDecl> fieldDecl;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,47 +72,13 @@ public class structTypeImpl extends MinimalEObjectImpl.Container implements stru
    * <!-- end-user-doc -->
    * @generated
    */
-  public fieldDecl getFieldDecl()
+  public EList<fieldDecl> getFieldDecl()
   {
+    if (fieldDecl == null)
+    {
+      fieldDecl = new EObjectContainmentEList<fieldDecl>(fieldDecl.class, this, GoPackage.STRUCT_TYPE__FIELD_DECL);
+    }
     return fieldDecl;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetFieldDecl(fieldDecl newFieldDecl, NotificationChain msgs)
-  {
-    fieldDecl oldFieldDecl = fieldDecl;
-    fieldDecl = newFieldDecl;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.STRUCT_TYPE__FIELD_DECL, oldFieldDecl, newFieldDecl);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setFieldDecl(fieldDecl newFieldDecl)
-  {
-    if (newFieldDecl != fieldDecl)
-    {
-      NotificationChain msgs = null;
-      if (fieldDecl != null)
-        msgs = ((InternalEObject)fieldDecl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.STRUCT_TYPE__FIELD_DECL, null, msgs);
-      if (newFieldDecl != null)
-        msgs = ((InternalEObject)newFieldDecl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.STRUCT_TYPE__FIELD_DECL, null, msgs);
-      msgs = basicSetFieldDecl(newFieldDecl, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.STRUCT_TYPE__FIELD_DECL, newFieldDecl, newFieldDecl));
   }
 
   /**
@@ -121,7 +92,7 @@ public class structTypeImpl extends MinimalEObjectImpl.Container implements stru
     switch (featureID)
     {
       case GoPackage.STRUCT_TYPE__FIELD_DECL:
-        return basicSetFieldDecl(null, msgs);
+        return ((InternalEList<?>)getFieldDecl()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -147,13 +118,15 @@ public class structTypeImpl extends MinimalEObjectImpl.Container implements stru
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case GoPackage.STRUCT_TYPE__FIELD_DECL:
-        setFieldDecl((fieldDecl)newValue);
+        getFieldDecl().clear();
+        getFieldDecl().addAll((Collection<? extends fieldDecl>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -170,7 +143,7 @@ public class structTypeImpl extends MinimalEObjectImpl.Container implements stru
     switch (featureID)
     {
       case GoPackage.STRUCT_TYPE__FIELD_DECL:
-        setFieldDecl((fieldDecl)null);
+        getFieldDecl().clear();
         return;
     }
     super.eUnset(featureID);
@@ -187,7 +160,7 @@ public class structTypeImpl extends MinimalEObjectImpl.Container implements stru
     switch (featureID)
     {
       case GoPackage.STRUCT_TYPE__FIELD_DECL:
-        return fieldDecl != null;
+        return fieldDecl != null && !fieldDecl.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -3,14 +3,19 @@
  */
 package org.xtext.go.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.go.GoPackage;
 import org.xtext.go.commClause;
@@ -32,14 +37,14 @@ import org.xtext.go.selectStmt;
 public class selectStmtImpl extends MinimalEObjectImpl.Container implements selectStmt
 {
   /**
-   * The cached value of the '{@link #getCommClause() <em>Comm Clause</em>}' containment reference.
+   * The cached value of the '{@link #getCommClause() <em>Comm Clause</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getCommClause()
    * @generated
    * @ordered
    */
-  protected commClause commClause;
+  protected EList<commClause> commClause;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,47 +72,13 @@ public class selectStmtImpl extends MinimalEObjectImpl.Container implements sele
    * <!-- end-user-doc -->
    * @generated
    */
-  public commClause getCommClause()
+  public EList<commClause> getCommClause()
   {
+    if (commClause == null)
+    {
+      commClause = new EObjectContainmentEList<commClause>(commClause.class, this, GoPackage.SELECT_STMT__COMM_CLAUSE);
+    }
     return commClause;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetCommClause(commClause newCommClause, NotificationChain msgs)
-  {
-    commClause oldCommClause = commClause;
-    commClause = newCommClause;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SELECT_STMT__COMM_CLAUSE, oldCommClause, newCommClause);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setCommClause(commClause newCommClause)
-  {
-    if (newCommClause != commClause)
-    {
-      NotificationChain msgs = null;
-      if (commClause != null)
-        msgs = ((InternalEObject)commClause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SELECT_STMT__COMM_CLAUSE, null, msgs);
-      if (newCommClause != null)
-        msgs = ((InternalEObject)newCommClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SELECT_STMT__COMM_CLAUSE, null, msgs);
-      msgs = basicSetCommClause(newCommClause, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SELECT_STMT__COMM_CLAUSE, newCommClause, newCommClause));
   }
 
   /**
@@ -121,7 +92,7 @@ public class selectStmtImpl extends MinimalEObjectImpl.Container implements sele
     switch (featureID)
     {
       case GoPackage.SELECT_STMT__COMM_CLAUSE:
-        return basicSetCommClause(null, msgs);
+        return ((InternalEList<?>)getCommClause()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -147,13 +118,15 @@ public class selectStmtImpl extends MinimalEObjectImpl.Container implements sele
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case GoPackage.SELECT_STMT__COMM_CLAUSE:
-        setCommClause((commClause)newValue);
+        getCommClause().clear();
+        getCommClause().addAll((Collection<? extends commClause>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -170,7 +143,7 @@ public class selectStmtImpl extends MinimalEObjectImpl.Container implements sele
     switch (featureID)
     {
       case GoPackage.SELECT_STMT__COMM_CLAUSE:
-        setCommClause((commClause)null);
+        getCommClause().clear();
         return;
     }
     super.eUnset(featureID);
@@ -187,7 +160,7 @@ public class selectStmtImpl extends MinimalEObjectImpl.Container implements sele
     switch (featureID)
     {
       case GoPackage.SELECT_STMT__COMM_CLAUSE:
-        return commClause != null;
+        return commClause != null && !commClause.isEmpty();
     }
     return super.eIsSet(featureID);
   }

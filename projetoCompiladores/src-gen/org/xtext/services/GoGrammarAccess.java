@@ -53,10 +53,10 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		
 		////SourceFile       = PackageClause ";" { ImportDecl ";" } { TopLevelDecl ";" } .
 		//sourceFile:
-		//	packageClause=packageClause (importDecl=importDecl ';')* (topLevelDecl=topLevelDecl ';')*;
+		//	packageClause=packageClause (importDecl+=importDecl ';')* (topLevelDecl+=topLevelDecl ';')*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//packageClause=packageClause (importDecl=importDecl ';')* (topLevelDecl=topLevelDecl ';')*
+		//packageClause=packageClause (importDecl+=importDecl ';')* (topLevelDecl+=topLevelDecl ';')*
 		public Group getGroup() { return cGroup; }
 		
 		//packageClause=packageClause
@@ -65,10 +65,10 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//packageClause
 		public RuleCall getPackageClausePackageClauseParserRuleCall_0_0() { return cPackageClausePackageClauseParserRuleCall_0_0; }
 		
-		//(importDecl=importDecl ';')*
+		//(importDecl+=importDecl ';')*
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//importDecl=importDecl
+		//importDecl+=importDecl
 		public Assignment getImportDeclAssignment_1_0() { return cImportDeclAssignment_1_0; }
 		
 		//importDecl
@@ -77,10 +77,10 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//';'
 		public Keyword getSemicolonKeyword_1_1() { return cSemicolonKeyword_1_1; }
 		
-		//(topLevelDecl=topLevelDecl ';')*
+		//(topLevelDecl+=topLevelDecl ';')*
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//topLevelDecl=topLevelDecl
+		//topLevelDecl+=topLevelDecl
 		public Assignment getTopLevelDeclAssignment_2_0() { return cTopLevelDeclAssignment_2_0; }
 		
 		//topLevelDecl
@@ -124,35 +124,35 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_1_1_2 = (Keyword)cGroup_1_1.eContents().get(2);
 		
 		//importDecl:
-		//	'import' (importSpec=importSpec | '(' importSpec=importSpec //';'
+		//	'import' (importSpec+=importSpec | '(' importSpec+=importSpec //';'
 		//* ')');
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'import' (importSpec=importSpec | '(' importSpec=importSpec //';'
+		//'import' (importSpec+=importSpec | '(' importSpec+=importSpec //';'
 		//* ')')
 		public Group getGroup() { return cGroup; }
 		
 		//'import'
 		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
 		
-		//importSpec=importSpec | '(' importSpec=importSpec //';'
+		//importSpec+=importSpec | '(' importSpec+=importSpec //';'
 		//* ')'
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
-		//importSpec=importSpec
+		//importSpec+=importSpec
 		public Assignment getImportSpecAssignment_1_0() { return cImportSpecAssignment_1_0; }
 		
 		//importSpec
 		public RuleCall getImportSpecImportSpecParserRuleCall_1_0_0() { return cImportSpecImportSpecParserRuleCall_1_0_0; }
 		
-		//'(' importSpec=importSpec //';'
+		//'(' importSpec+=importSpec //';'
 		//* ')'
 		public Group getGroup_1_1() { return cGroup_1_1; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1_1_0() { return cLeftParenthesisKeyword_1_1_0; }
 		
-		//importSpec=importSpec //';'
+		//importSpec+=importSpec //';'
 		//*
 		public Assignment getImportSpecAssignment_1_1_1() { return cImportSpecAssignment_1_1_1; }
 		
@@ -297,34 +297,34 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		
 		////ConstDecl      = "const" ( ConstSpec | "(" { ConstSpec ";" } ")" ) .
 		//constDecl:
-		//	'const' (constSpec=constSpec | '(' (constSpec=constSpec ';')* ')');
+		//	'const' (constSpec+=constSpec | '(' (constSpec+=constSpec ';')* ')');
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'const' (constSpec=constSpec | '(' (constSpec=constSpec ';')* ')')
+		//'const' (constSpec+=constSpec | '(' (constSpec+=constSpec ';')* ')')
 		public Group getGroup() { return cGroup; }
 		
 		//'const'
 		public Keyword getConstKeyword_0() { return cConstKeyword_0; }
 		
-		//constSpec=constSpec | '(' (constSpec=constSpec ';')* ')'
+		//constSpec+=constSpec | '(' (constSpec+=constSpec ';')* ')'
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
-		//constSpec=constSpec
+		//constSpec+=constSpec
 		public Assignment getConstSpecAssignment_1_0() { return cConstSpecAssignment_1_0; }
 		
 		//constSpec
 		public RuleCall getConstSpecConstSpecParserRuleCall_1_0_0() { return cConstSpecConstSpecParserRuleCall_1_0_0; }
 		
-		//'(' (constSpec=constSpec ';')* ')'
+		//'(' (constSpec+=constSpec ';')* ')'
 		public Group getGroup_1_1() { return cGroup_1_1; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1_1_0() { return cLeftParenthesisKeyword_1_1_0; }
 		
-		//(constSpec=constSpec ';')*
+		//(constSpec+=constSpec ';')*
 		public Group getGroup_1_1_1() { return cGroup_1_1_1; }
 		
-		//constSpec=constSpec
+		//constSpec+=constSpec
 		public Assignment getConstSpecAssignment_1_1_1_0() { return cConstSpecAssignment_1_1_1_0; }
 		
 		//constSpec
@@ -421,25 +421,25 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		
 		////ExpressionList = Expression { "," Expression } .
 		//expressionList:
-		//	expression=expression (',' expression=expression)*;
+		//	expression+=expression (',' expression+=expression)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//expression=expression (',' expression=expression)*
+		//expression+=expression (',' expression+=expression)*
 		public Group getGroup() { return cGroup; }
 		
-		//expression=expression
+		//expression+=expression
 		public Assignment getExpressionAssignment_0() { return cExpressionAssignment_0; }
 		
 		//expression
 		public RuleCall getExpressionExpressionParserRuleCall_0_0() { return cExpressionExpressionParserRuleCall_0_0; }
 		
-		//(',' expression=expression)*
+		//(',' expression+=expression)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//','
 		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
 		
-		//expression=expression
+		//expression+=expression
 		public Assignment getExpressionAssignment_1_1() { return cExpressionAssignment_1_1; }
 		
 		//expression
@@ -462,34 +462,34 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		
 		////TypeDecl     = "type" ( TypeSpec | "(" { TypeSpec ";" } ")" ) .
 		//typeDecl:
-		//	'type' (typeSpec=typeSpec | '(' (typeSpec=typeSpec ';')* ')');
+		//	'type' (typeSpec+=typeSpec | '(' (typeSpec+=typeSpec ';')* ')');
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'type' (typeSpec=typeSpec | '(' (typeSpec=typeSpec ';')* ')')
+		//'type' (typeSpec+=typeSpec | '(' (typeSpec+=typeSpec ';')* ')')
 		public Group getGroup() { return cGroup; }
 		
 		//'type'
 		public Keyword getTypeKeyword_0() { return cTypeKeyword_0; }
 		
-		//typeSpec=typeSpec | '(' (typeSpec=typeSpec ';')* ')'
+		//typeSpec+=typeSpec | '(' (typeSpec+=typeSpec ';')* ')'
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
-		//typeSpec=typeSpec
+		//typeSpec+=typeSpec
 		public Assignment getTypeSpecAssignment_1_0() { return cTypeSpecAssignment_1_0; }
 		
 		//typeSpec
 		public RuleCall getTypeSpecTypeSpecParserRuleCall_1_0_0() { return cTypeSpecTypeSpecParserRuleCall_1_0_0; }
 		
-		//'(' (typeSpec=typeSpec ';')* ')'
+		//'(' (typeSpec+=typeSpec ';')* ')'
 		public Group getGroup_1_1() { return cGroup_1_1; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1_1_0() { return cLeftParenthesisKeyword_1_1_0; }
 		
-		//(typeSpec=typeSpec ';')*
+		//(typeSpec+=typeSpec ';')*
 		public Group getGroup_1_1_1() { return cGroup_1_1_1; }
 		
-		//typeSpec=typeSpec
+		//typeSpec+=typeSpec
 		public Assignment getTypeSpecAssignment_1_1_1_0() { return cTypeSpecAssignment_1_1_1_0; }
 		
 		//typeSpec
@@ -678,34 +678,34 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		////VarDecl     = "var" ( VarSpec | "(" { VarSpec ";" } ")" ) .
 		////VarSpec     = IdentifierList ( Type [ "=" ExpressionList ] | "=" ExpressionList ) .
 		//varDecl:
-		//	'var' (varSpec=varSpec | '(' (varSpec=varSpec ';')* ')');
+		//	'var' (varSpec+=varSpec | '(' (varSpec+=varSpec ';')* ')');
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'var' (varSpec=varSpec | '(' (varSpec=varSpec ';')* ')')
+		//'var' (varSpec+=varSpec | '(' (varSpec+=varSpec ';')* ')')
 		public Group getGroup() { return cGroup; }
 		
 		//'var'
 		public Keyword getVarKeyword_0() { return cVarKeyword_0; }
 		
-		//varSpec=varSpec | '(' (varSpec=varSpec ';')* ')'
+		//varSpec+=varSpec | '(' (varSpec+=varSpec ';')* ')'
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
-		//varSpec=varSpec
+		//varSpec+=varSpec
 		public Assignment getVarSpecAssignment_1_0() { return cVarSpecAssignment_1_0; }
 		
 		//varSpec
 		public RuleCall getVarSpecVarSpecParserRuleCall_1_0_0() { return cVarSpecVarSpecParserRuleCall_1_0_0; }
 		
-		//'(' (varSpec=varSpec ';')* ')'
+		//'(' (varSpec+=varSpec ';')* ')'
 		public Group getGroup_1_1() { return cGroup_1_1; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1_1_0() { return cLeftParenthesisKeyword_1_1_0; }
 		
-		//(varSpec=varSpec ';')*
+		//(varSpec+=varSpec ';')*
 		public Group getGroup_1_1_1() { return cGroup_1_1_1; }
 		
-		//varSpec=varSpec
+		//varSpec+=varSpec
 		public Assignment getVarSpecAssignment_1_1_1_0() { return cVarSpecAssignment_1_1_1_0; }
 		
 		//varSpec
@@ -795,13 +795,13 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		
 		////Block = "{" StatementList "}" .
 		//block:
-		//	'{' statementList=statementList '}';
+		//	"{" statementList=statementList "}";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'{' statementList=statementList '}'
+		//"{" statementList=statementList "}"
 		public Group getGroup() { return cGroup; }
 		
-		//'{'
+		//"{"
 		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
 		
 		//statementList=statementList
@@ -810,7 +810,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//statementList
 		public RuleCall getStatementListStatementListParserRuleCall_1_0() { return cStatementListStatementListParserRuleCall_1_0; }
 		
-		//'}'
+		//"}"
 		public Keyword getRightCurlyBracketKeyword_2() { return cRightCurlyBracketKeyword_2; }
 	}
 	public class StatementListElements extends AbstractParserRuleElementFinder {
@@ -822,13 +822,13 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		
 		////StatementList = { Statement ";" } .
 		//statementList:
-		//	(statement=statement ';')*;
+		//	(statement+=statement ';')*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(statement=statement ';')*
+		//(statement+=statement ';')*
 		public Group getGroup() { return cGroup; }
 		
-		//statement=statement
+		//statement+=statement
 		public Assignment getStatementAssignment_0() { return cStatementAssignment_0; }
 		
 		//statement
@@ -1672,10 +1672,10 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		////TypeList        = Type { "," Type } .
 		//typeSwitchStmt:
 		//	'switch' (simpleStmt=simpleStmt ';')?
-		//	typeSwitchGuard=typeSwitchGuard '{' typeCaseClause=typeCaseClause* '}';
+		//	typeSwitchGuard=typeSwitchGuard '{' typeCaseClause+=typeCaseClause* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'switch' (simpleStmt=simpleStmt ';')? typeSwitchGuard=typeSwitchGuard '{' typeCaseClause=typeCaseClause* '}'
+		//'switch' (simpleStmt=simpleStmt ';')? typeSwitchGuard=typeSwitchGuard '{' typeCaseClause+=typeCaseClause* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'switch'
@@ -1702,7 +1702,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
-		//typeCaseClause=typeCaseClause*
+		//typeCaseClause+=typeCaseClause*
 		public Assignment getTypeCaseClauseAssignment_4() { return cTypeCaseClauseAssignment_4; }
 		
 		//typeCaseClause
@@ -1831,25 +1831,25 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTypeTypeParserRuleCall_1_1_0 = (RuleCall)cTypeAssignment_1_1.eContents().get(0);
 		
 		//typeList:
-		//	type=type (',' type=type)*;
+		//	type+=type (',' type+=type)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//type=type (',' type=type)*
+		//type+=type (',' type+=type)*
 		public Group getGroup() { return cGroup; }
 		
-		//type=type
+		//type+=type
 		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
 		
 		//type
 		public RuleCall getTypeTypeParserRuleCall_0_0() { return cTypeTypeParserRuleCall_0_0; }
 		
-		//(',' type=type)*
+		//(',' type+=type)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//','
 		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
 		
-		//type=type
+		//type+=type
 		public Assignment getTypeAssignment_1_1() { return cTypeAssignment_1_1; }
 		
 		//type
@@ -1870,10 +1870,10 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		////RecvStmt   = [ ExpressionList "=" | IdentifierList ":=" ] RecvExpr .
 		////RecvExpr   = Expression .
 		//selectStmt:
-		//	'select' '{' commClause=commClause* '}';
+		//	'select' '{' commClause+=commClause* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'select' '{' commClause=commClause* '}'
+		//'select' '{' commClause+=commClause* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'select'
@@ -1882,7 +1882,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//commClause=commClause*
+		//commClause+=commClause*
 		public Assignment getCommClauseAssignment_2() { return cCommClauseAssignment_2; }
 		
 		//commClause
@@ -2469,10 +2469,10 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		////MethodName         = identifier .
 		////InterfaceTypeName  = TypeName .
 		//interfaceType:
-		//	'interface' '{' (methodSpec=methodSpec ';')* '}';
+		//	'interface' '{' (methodSpec+=methodSpec ';')* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'interface' '{' (methodSpec=methodSpec ';')* '}'
+		//'interface' '{' (methodSpec+=methodSpec ';')* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'interface'
@@ -2481,10 +2481,10 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//(methodSpec=methodSpec ';')*
+		//(methodSpec+=methodSpec ';')*
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//methodSpec=methodSpec
+		//methodSpec+=methodSpec
 		public Assignment getMethodSpecAssignment_2_0() { return cMethodSpecAssignment_2_0; }
 		
 		//methodSpec
@@ -2781,25 +2781,25 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cParameterDeclParameterDeclParserRuleCall_1_1_0 = (RuleCall)cParameterDeclAssignment_1_1.eContents().get(0);
 		
 		//parameterList:
-		//	parameterDecl=parameterDecl (',' parameterDecl=parameterDecl)*;
+		//	parameterDecl+=parameterDecl (',' parameterDecl+=parameterDecl)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//parameterDecl=parameterDecl (',' parameterDecl=parameterDecl)*
+		//parameterDecl+=parameterDecl (',' parameterDecl+=parameterDecl)*
 		public Group getGroup() { return cGroup; }
 		
-		//parameterDecl=parameterDecl
+		//parameterDecl+=parameterDecl
 		public Assignment getParameterDeclAssignment_0() { return cParameterDeclAssignment_0; }
 		
 		//parameterDecl
 		public RuleCall getParameterDeclParameterDeclParserRuleCall_0_0() { return cParameterDeclParameterDeclParserRuleCall_0_0; }
 		
-		//(',' parameterDecl=parameterDecl)*
+		//(',' parameterDecl+=parameterDecl)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//','
 		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
 		
-		//parameterDecl=parameterDecl
+		//parameterDecl+=parameterDecl
 		public Assignment getParameterDeclAssignment_1_1() { return cParameterDeclAssignment_1_1; }
 		
 		//parameterDecl
@@ -3174,25 +3174,25 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cKeyedElementKeyedElementParserRuleCall_1_1_0 = (RuleCall)cKeyedElementAssignment_1_1.eContents().get(0);
 		
 		//elementList:
-		//	keyedElement=keyedElement (',' keyedElement=keyedElement)*;
+		//	keyedElement+=keyedElement (',' keyedElement+=keyedElement)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//keyedElement=keyedElement (',' keyedElement=keyedElement)*
+		//keyedElement+=keyedElement (',' keyedElement+=keyedElement)*
 		public Group getGroup() { return cGroup; }
 		
-		//keyedElement=keyedElement
+		//keyedElement+=keyedElement
 		public Assignment getKeyedElementAssignment_0() { return cKeyedElementAssignment_0; }
 		
 		//keyedElement
 		public RuleCall getKeyedElementKeyedElementParserRuleCall_0_0() { return cKeyedElementKeyedElementParserRuleCall_0_0; }
 		
-		//(',' keyedElement=keyedElement)*
+		//(',' keyedElement+=keyedElement)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//','
 		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
 		
-		//keyedElement=keyedElement
+		//keyedElement+=keyedElement
 		public Assignment getKeyedElementAssignment_1_1() { return cKeyedElementAssignment_1_1; }
 		
 		//keyedElement
@@ -3307,10 +3307,10 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		////AnonymousField = [ "*" ] TypeName .
 		////Tag            = string_lit .
 		//structType:
-		//	'struct' '{' (fieldDecl=fieldDecl ';')* '}';
+		//	'struct' '{' (fieldDecl+=fieldDecl ';')* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'struct' '{' (fieldDecl=fieldDecl ';')* '}'
+		//'struct' '{' (fieldDecl+=fieldDecl ';')* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'struct'
@@ -3319,10 +3319,10 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//(fieldDecl=fieldDecl ';')*
+		//(fieldDecl+=fieldDecl ';')*
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//fieldDecl=fieldDecl
+		//fieldDecl+=fieldDecl
 		public Assignment getFieldDeclAssignment_2_0() { return cFieldDeclAssignment_2_0; }
 		
 		//fieldDecl
@@ -4527,7 +4527,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////SourceFile       = PackageClause ";" { ImportDecl ";" } { TopLevelDecl ";" } .
 	//sourceFile:
-	//	packageClause=packageClause (importDecl=importDecl ';')* (topLevelDecl=topLevelDecl ';')*;
+	//	packageClause=packageClause (importDecl+=importDecl ';')* (topLevelDecl+=topLevelDecl ';')*;
 	public SourceFileElements getSourceFileAccess() {
 		return pSourceFile;
 	}
@@ -4549,7 +4549,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//importDecl:
-	//	'import' (importSpec=importSpec | '(' importSpec=importSpec //';'
+	//	'import' (importSpec+=importSpec | '(' importSpec+=importSpec //';'
 	//* ')');
 	public ImportDeclElements getImportDeclAccess() {
 		return pImportDecl;
@@ -4607,7 +4607,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////ConstDecl      = "const" ( ConstSpec | "(" { ConstSpec ";" } ")" ) .
 	//constDecl:
-	//	'const' (constSpec=constSpec | '(' (constSpec=constSpec ';')* ')');
+	//	'const' (constSpec+=constSpec | '(' (constSpec+=constSpec ';')* ')');
 	public ConstDeclElements getConstDeclAccess() {
 		return pConstDecl;
 	}
@@ -4641,7 +4641,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////ExpressionList = Expression { "," Expression } .
 	//expressionList:
-	//	expression=expression (',' expression=expression)*;
+	//	expression+=expression (',' expression+=expression)*;
 	public ExpressionListElements getExpressionListAccess() {
 		return pExpressionList;
 	}
@@ -4652,7 +4652,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////TypeDecl     = "type" ( TypeSpec | "(" { TypeSpec ";" } ")" ) .
 	//typeDecl:
-	//	'type' (typeSpec=typeSpec | '(' (typeSpec=typeSpec ';')* ')');
+	//	'type' (typeSpec+=typeSpec | '(' (typeSpec+=typeSpec ';')* ')');
 	public TypeDeclElements getTypeDeclAccess() {
 		return pTypeDecl;
 	}
@@ -4722,7 +4722,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	////VarDecl     = "var" ( VarSpec | "(" { VarSpec ";" } ")" ) .
 	////VarSpec     = IdentifierList ( Type [ "=" ExpressionList ] | "=" ExpressionList ) .
 	//varDecl:
-	//	'var' (varSpec=varSpec | '(' (varSpec=varSpec ';')* ')');
+	//	'var' (varSpec+=varSpec | '(' (varSpec+=varSpec ';')* ')');
 	public VarDeclElements getVarDeclAccess() {
 		return pVarDecl;
 	}
@@ -4744,7 +4744,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////Block = "{" StatementList "}" .
 	//block:
-	//	'{' statementList=statementList '}';
+	//	"{" statementList=statementList "}";
 	public BlockElements getBlockAccess() {
 		return pBlock;
 	}
@@ -4755,7 +4755,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////StatementList = { Statement ";" } .
 	//statementList:
-	//	(statement=statement ';')*;
+	//	(statement+=statement ';')*;
 	public StatementListElements getStatementListAccess() {
 		return pStatementList;
 	}
@@ -5024,7 +5024,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	////TypeList        = Type { "," Type } .
 	//typeSwitchStmt:
 	//	'switch' (simpleStmt=simpleStmt ';')?
-	//	typeSwitchGuard=typeSwitchGuard '{' typeCaseClause=typeCaseClause* '}';
+	//	typeSwitchGuard=typeSwitchGuard '{' typeCaseClause+=typeCaseClause* '}';
 	public TypeSwitchStmtElements getTypeSwitchStmtAccess() {
 		return pTypeSwitchStmt;
 	}
@@ -5064,7 +5064,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//typeList:
-	//	type=type (',' type=type)*;
+	//	type+=type (',' type+=type)*;
 	public TypeListElements getTypeListAccess() {
 		return pTypeList;
 	}
@@ -5079,7 +5079,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	////RecvStmt   = [ ExpressionList "=" | IdentifierList ":=" ] RecvExpr .
 	////RecvExpr   = Expression .
 	//selectStmt:
-	//	'select' '{' commClause=commClause* '}';
+	//	'select' '{' commClause+=commClause* '}';
 	public SelectStmtElements getSelectStmtAccess() {
 		return pSelectStmt;
 	}
@@ -5256,7 +5256,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	////MethodName         = identifier .
 	////InterfaceTypeName  = TypeName .
 	//interfaceType:
-	//	'interface' '{' (methodSpec=methodSpec ';')* '}';
+	//	'interface' '{' (methodSpec+=methodSpec ';')* '}';
 	public InterfaceTypeElements getInterfaceTypeAccess() {
 		return pInterfaceType;
 	}
@@ -5356,7 +5356,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//parameterList:
-	//	parameterDecl=parameterDecl (',' parameterDecl=parameterDecl)*;
+	//	parameterDecl+=parameterDecl (',' parameterDecl+=parameterDecl)*;
 	public ParameterListElements getParameterListAccess() {
 		return pParameterList;
 	}
@@ -5478,7 +5478,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//elementList:
-	//	keyedElement=keyedElement (',' keyedElement=keyedElement)*;
+	//	keyedElement+=keyedElement (',' keyedElement+=keyedElement)*;
 	public ElementListElements getElementListAccess() {
 		return pElementList;
 	}
@@ -5522,7 +5522,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	////AnonymousField = [ "*" ] TypeName .
 	////Tag            = string_lit .
 	//structType:
-	//	'struct' '{' (fieldDecl=fieldDecl ';')* '}';
+	//	'struct' '{' (fieldDecl+=fieldDecl ';')* '}';
 	public StructTypeElements getStructTypeAccess() {
 		return pStructType;
 	}

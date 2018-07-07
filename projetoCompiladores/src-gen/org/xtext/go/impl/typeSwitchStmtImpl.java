@@ -3,14 +3,21 @@
  */
 package org.xtext.go.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.go.GoPackage;
 import org.xtext.go.simpleStmt;
@@ -56,14 +63,14 @@ public class typeSwitchStmtImpl extends MinimalEObjectImpl.Container implements 
   protected typeSwitchGuard typeSwitchGuard;
 
   /**
-   * The cached value of the '{@link #getTypeCaseClause() <em>Type Case Clause</em>}' containment reference.
+   * The cached value of the '{@link #getTypeCaseClause() <em>Type Case Clause</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTypeCaseClause()
    * @generated
    * @ordered
    */
-  protected typeCaseClause typeCaseClause;
+  protected EList<typeCaseClause> typeCaseClause;
 
   /**
    * <!-- begin-user-doc -->
@@ -187,47 +194,13 @@ public class typeSwitchStmtImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public typeCaseClause getTypeCaseClause()
+  public EList<typeCaseClause> getTypeCaseClause()
   {
+    if (typeCaseClause == null)
+    {
+      typeCaseClause = new EObjectContainmentEList<typeCaseClause>(typeCaseClause.class, this, GoPackage.TYPE_SWITCH_STMT__TYPE_CASE_CLAUSE);
+    }
     return typeCaseClause;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetTypeCaseClause(typeCaseClause newTypeCaseClause, NotificationChain msgs)
-  {
-    typeCaseClause oldTypeCaseClause = typeCaseClause;
-    typeCaseClause = newTypeCaseClause;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_SWITCH_STMT__TYPE_CASE_CLAUSE, oldTypeCaseClause, newTypeCaseClause);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setTypeCaseClause(typeCaseClause newTypeCaseClause)
-  {
-    if (newTypeCaseClause != typeCaseClause)
-    {
-      NotificationChain msgs = null;
-      if (typeCaseClause != null)
-        msgs = ((InternalEObject)typeCaseClause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_SWITCH_STMT__TYPE_CASE_CLAUSE, null, msgs);
-      if (newTypeCaseClause != null)
-        msgs = ((InternalEObject)newTypeCaseClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_SWITCH_STMT__TYPE_CASE_CLAUSE, null, msgs);
-      msgs = basicSetTypeCaseClause(newTypeCaseClause, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_SWITCH_STMT__TYPE_CASE_CLAUSE, newTypeCaseClause, newTypeCaseClause));
   }
 
   /**
@@ -245,7 +218,7 @@ public class typeSwitchStmtImpl extends MinimalEObjectImpl.Container implements 
       case GoPackage.TYPE_SWITCH_STMT__TYPE_SWITCH_GUARD:
         return basicSetTypeSwitchGuard(null, msgs);
       case GoPackage.TYPE_SWITCH_STMT__TYPE_CASE_CLAUSE:
-        return basicSetTypeCaseClause(null, msgs);
+        return ((InternalEList<?>)getTypeCaseClause()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -275,6 +248,7 @@ public class typeSwitchStmtImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -287,7 +261,8 @@ public class typeSwitchStmtImpl extends MinimalEObjectImpl.Container implements 
         setTypeSwitchGuard((typeSwitchGuard)newValue);
         return;
       case GoPackage.TYPE_SWITCH_STMT__TYPE_CASE_CLAUSE:
-        setTypeCaseClause((typeCaseClause)newValue);
+        getTypeCaseClause().clear();
+        getTypeCaseClause().addAll((Collection<? extends typeCaseClause>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -310,7 +285,7 @@ public class typeSwitchStmtImpl extends MinimalEObjectImpl.Container implements 
         setTypeSwitchGuard((typeSwitchGuard)null);
         return;
       case GoPackage.TYPE_SWITCH_STMT__TYPE_CASE_CLAUSE:
-        setTypeCaseClause((typeCaseClause)null);
+        getTypeCaseClause().clear();
         return;
     }
     super.eUnset(featureID);
@@ -331,7 +306,7 @@ public class typeSwitchStmtImpl extends MinimalEObjectImpl.Container implements 
       case GoPackage.TYPE_SWITCH_STMT__TYPE_SWITCH_GUARD:
         return typeSwitchGuard != null;
       case GoPackage.TYPE_SWITCH_STMT__TYPE_CASE_CLAUSE:
-        return typeCaseClause != null;
+        return typeCaseClause != null && !typeCaseClause.isEmpty();
     }
     return super.eIsSet(featureID);
   }

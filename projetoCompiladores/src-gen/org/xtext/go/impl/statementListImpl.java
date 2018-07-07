@@ -3,14 +3,19 @@
  */
 package org.xtext.go.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.go.GoPackage;
 import org.xtext.go.statement;
@@ -32,14 +37,14 @@ import org.xtext.go.statementList;
 public class statementListImpl extends MinimalEObjectImpl.Container implements statementList
 {
   /**
-   * The cached value of the '{@link #getStatement() <em>Statement</em>}' containment reference.
+   * The cached value of the '{@link #getStatement() <em>Statement</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getStatement()
    * @generated
    * @ordered
    */
-  protected statement statement;
+  protected EList<statement> statement;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,47 +72,13 @@ public class statementListImpl extends MinimalEObjectImpl.Container implements s
    * <!-- end-user-doc -->
    * @generated
    */
-  public statement getStatement()
+  public EList<statement> getStatement()
   {
+    if (statement == null)
+    {
+      statement = new EObjectContainmentEList<statement>(statement.class, this, GoPackage.STATEMENT_LIST__STATEMENT);
+    }
     return statement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetStatement(statement newStatement, NotificationChain msgs)
-  {
-    statement oldStatement = statement;
-    statement = newStatement;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.STATEMENT_LIST__STATEMENT, oldStatement, newStatement);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setStatement(statement newStatement)
-  {
-    if (newStatement != statement)
-    {
-      NotificationChain msgs = null;
-      if (statement != null)
-        msgs = ((InternalEObject)statement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.STATEMENT_LIST__STATEMENT, null, msgs);
-      if (newStatement != null)
-        msgs = ((InternalEObject)newStatement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.STATEMENT_LIST__STATEMENT, null, msgs);
-      msgs = basicSetStatement(newStatement, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.STATEMENT_LIST__STATEMENT, newStatement, newStatement));
   }
 
   /**
@@ -121,7 +92,7 @@ public class statementListImpl extends MinimalEObjectImpl.Container implements s
     switch (featureID)
     {
       case GoPackage.STATEMENT_LIST__STATEMENT:
-        return basicSetStatement(null, msgs);
+        return ((InternalEList<?>)getStatement()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -147,13 +118,15 @@ public class statementListImpl extends MinimalEObjectImpl.Container implements s
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case GoPackage.STATEMENT_LIST__STATEMENT:
-        setStatement((statement)newValue);
+        getStatement().clear();
+        getStatement().addAll((Collection<? extends statement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -170,7 +143,7 @@ public class statementListImpl extends MinimalEObjectImpl.Container implements s
     switch (featureID)
     {
       case GoPackage.STATEMENT_LIST__STATEMENT:
-        setStatement((statement)null);
+        getStatement().clear();
         return;
     }
     super.eUnset(featureID);
@@ -187,7 +160,7 @@ public class statementListImpl extends MinimalEObjectImpl.Container implements s
     switch (featureID)
     {
       case GoPackage.STATEMENT_LIST__STATEMENT:
-        return statement != null;
+        return statement != null && !statement.isEmpty();
     }
     return super.eIsSet(featureID);
   }
