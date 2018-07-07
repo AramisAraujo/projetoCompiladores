@@ -42,6 +42,852 @@ public interface GoFactory extends EFactory
   sourceFile createsourceFile();
 
   /**
+   * Returns a new object of class '<em>import Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>import Decl</em>'.
+   * @generated
+   */
+  importDecl createimportDecl();
+
+  /**
+   * Returns a new object of class '<em>import Spec</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>import Spec</em>'.
+   * @generated
+   */
+  importSpec createimportSpec();
+
+  /**
+   * Returns a new object of class '<em>top Level Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>top Level Decl</em>'.
+   * @generated
+   */
+  topLevelDecl createtopLevelDecl();
+
+  /**
+   * Returns a new object of class '<em>declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>declaration</em>'.
+   * @generated
+   */
+  declaration createdeclaration();
+
+  /**
+   * Returns a new object of class '<em>const Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>const Decl</em>'.
+   * @generated
+   */
+  constDecl createconstDecl();
+
+  /**
+   * Returns a new object of class '<em>const Spec</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>const Spec</em>'.
+   * @generated
+   */
+  constSpec createconstSpec();
+
+  /**
+   * Returns a new object of class '<em>expression List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>expression List</em>'.
+   * @generated
+   */
+  expressionList createexpressionList();
+
+  /**
+   * Returns a new object of class '<em>type Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>type Decl</em>'.
+   * @generated
+   */
+  typeDecl createtypeDecl();
+
+  /**
+   * Returns a new object of class '<em>type Spec</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>type Spec</em>'.
+   * @generated
+   */
+  typeSpec createtypeSpec();
+
+  /**
+   * Returns a new object of class '<em>function Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>function Decl</em>'.
+   * @generated
+   */
+  functionDecl createfunctionDecl();
+
+  /**
+   * Returns a new object of class '<em>function</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>function</em>'.
+   * @generated
+   */
+  function createfunction();
+
+  /**
+   * Returns a new object of class '<em>method Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>method Decl</em>'.
+   * @generated
+   */
+  methodDecl createmethodDecl();
+
+  /**
+   * Returns a new object of class '<em>receiver</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>receiver</em>'.
+   * @generated
+   */
+  receiver createreceiver();
+
+  /**
+   * Returns a new object of class '<em>var Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>var Decl</em>'.
+   * @generated
+   */
+  varDecl createvarDecl();
+
+  /**
+   * Returns a new object of class '<em>var Spec</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>var Spec</em>'.
+   * @generated
+   */
+  varSpec createvarSpec();
+
+  /**
+   * Returns a new object of class '<em>block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>block</em>'.
+   * @generated
+   */
+  block createblock();
+
+  /**
+   * Returns a new object of class '<em>statement List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>statement List</em>'.
+   * @generated
+   */
+  statementList createstatementList();
+
+  /**
+   * Returns a new object of class '<em>statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>statement</em>'.
+   * @generated
+   */
+  statement createstatement();
+
+  /**
+   * Returns a new object of class '<em>simple Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>simple Stmt</em>'.
+   * @generated
+   */
+  simpleStmt createsimpleStmt();
+
+  /**
+   * Returns a new object of class '<em>expression Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>expression Stmt</em>'.
+   * @generated
+   */
+  expressionStmt createexpressionStmt();
+
+  /**
+   * Returns a new object of class '<em>send Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>send Stmt</em>'.
+   * @generated
+   */
+  sendStmt createsendStmt();
+
+  /**
+   * Returns a new object of class '<em>inc Dec Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>inc Dec Stmt</em>'.
+   * @generated
+   */
+  incDecStmt createincDecStmt();
+
+  /**
+   * Returns a new object of class '<em>assignment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>assignment</em>'.
+   * @generated
+   */
+  assignment createassignment();
+
+  /**
+   * Returns a new object of class '<em>short Var Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>short Var Decl</em>'.
+   * @generated
+   */
+  shortVarDecl createshortVarDecl();
+
+  /**
+   * Returns a new object of class '<em>labeled Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>labeled Stmt</em>'.
+   * @generated
+   */
+  labeledStmt createlabeledStmt();
+
+  /**
+   * Returns a new object of class '<em>return Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>return Stmt</em>'.
+   * @generated
+   */
+  returnStmt createreturnStmt();
+
+  /**
+   * Returns a new object of class '<em>defer Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>defer Stmt</em>'.
+   * @generated
+   */
+  deferStmt createdeferStmt();
+
+  /**
+   * Returns a new object of class '<em>if Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>if Stmt</em>'.
+   * @generated
+   */
+  ifStmt createifStmt();
+
+  /**
+   * Returns a new object of class '<em>switch Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>switch Stmt</em>'.
+   * @generated
+   */
+  switchStmt createswitchStmt();
+
+  /**
+   * Returns a new object of class '<em>expr Switch Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>expr Switch Stmt</em>'.
+   * @generated
+   */
+  exprSwitchStmt createexprSwitchStmt();
+
+  /**
+   * Returns a new object of class '<em>expr Case Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>expr Case Clause</em>'.
+   * @generated
+   */
+  exprCaseClause createexprCaseClause();
+
+  /**
+   * Returns a new object of class '<em>expr Switch Case</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>expr Switch Case</em>'.
+   * @generated
+   */
+  exprSwitchCase createexprSwitchCase();
+
+  /**
+   * Returns a new object of class '<em>type Switch Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>type Switch Stmt</em>'.
+   * @generated
+   */
+  typeSwitchStmt createtypeSwitchStmt();
+
+  /**
+   * Returns a new object of class '<em>type Switch Guard</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>type Switch Guard</em>'.
+   * @generated
+   */
+  typeSwitchGuard createtypeSwitchGuard();
+
+  /**
+   * Returns a new object of class '<em>type Case Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>type Case Clause</em>'.
+   * @generated
+   */
+  typeCaseClause createtypeCaseClause();
+
+  /**
+   * Returns a new object of class '<em>type Switch Case</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>type Switch Case</em>'.
+   * @generated
+   */
+  typeSwitchCase createtypeSwitchCase();
+
+  /**
+   * Returns a new object of class '<em>type List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>type List</em>'.
+   * @generated
+   */
+  typeList createtypeList();
+
+  /**
+   * Returns a new object of class '<em>select Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>select Stmt</em>'.
+   * @generated
+   */
+  selectStmt createselectStmt();
+
+  /**
+   * Returns a new object of class '<em>comm Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>comm Clause</em>'.
+   * @generated
+   */
+  commClause createcommClause();
+
+  /**
+   * Returns a new object of class '<em>comm Case</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>comm Case</em>'.
+   * @generated
+   */
+  commCase createcommCase();
+
+  /**
+   * Returns a new object of class '<em>recv Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>recv Stmt</em>'.
+   * @generated
+   */
+  recvStmt createrecvStmt();
+
+  /**
+   * Returns a new object of class '<em>for Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>for Stmt</em>'.
+   * @generated
+   */
+  forStmt createforStmt();
+
+  /**
+   * Returns a new object of class '<em>for Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>for Clause</em>'.
+   * @generated
+   */
+  forClause createforClause();
+
+  /**
+   * Returns a new object of class '<em>range Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>range Clause</em>'.
+   * @generated
+   */
+  rangeClause createrangeClause();
+
+  /**
+   * Returns a new object of class '<em>go Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>go Stmt</em>'.
+   * @generated
+   */
+  goStmt creategoStmt();
+
+  /**
+   * Returns a new object of class '<em>type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>type</em>'.
+   * @generated
+   */
+  type createtype();
+
+  /**
+   * Returns a new object of class '<em>type Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>type Name</em>'.
+   * @generated
+   */
+  typeName createtypeName();
+
+  /**
+   * Returns a new object of class '<em>type Lit</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>type Lit</em>'.
+   * @generated
+   */
+  typeLit createtypeLit();
+
+  /**
+   * Returns a new object of class '<em>array Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>array Type</em>'.
+   * @generated
+   */
+  arrayType createarrayType();
+
+  /**
+   * Returns a new object of class '<em>array Length</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>array Length</em>'.
+   * @generated
+   */
+  arrayLength createarrayLength();
+
+  /**
+   * Returns a new object of class '<em>element Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>element Type</em>'.
+   * @generated
+   */
+  elementType createelementType();
+
+  /**
+   * Returns a new object of class '<em>pointer Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>pointer Type</em>'.
+   * @generated
+   */
+  pointerType createpointerType();
+
+  /**
+   * Returns a new object of class '<em>interface Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>interface Type</em>'.
+   * @generated
+   */
+  interfaceType createinterfaceType();
+
+  /**
+   * Returns a new object of class '<em>slice Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>slice Type</em>'.
+   * @generated
+   */
+  sliceType createsliceType();
+
+  /**
+   * Returns a new object of class '<em>map Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>map Type</em>'.
+   * @generated
+   */
+  mapType createmapType();
+
+  /**
+   * Returns a new object of class '<em>channel Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>channel Type</em>'.
+   * @generated
+   */
+  channelType createchannelType();
+
+  /**
+   * Returns a new object of class '<em>method Spec</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>method Spec</em>'.
+   * @generated
+   */
+  methodSpec createmethodSpec();
+
+  /**
+   * Returns a new object of class '<em>function Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>function Type</em>'.
+   * @generated
+   */
+  functionType createfunctionType();
+
+  /**
+   * Returns a new object of class '<em>signature</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>signature</em>'.
+   * @generated
+   */
+  signature createsignature();
+
+  /**
+   * Returns a new object of class '<em>result</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>result</em>'.
+   * @generated
+   */
+  result createresult();
+
+  /**
+   * Returns a new object of class '<em>parameters</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>parameters</em>'.
+   * @generated
+   */
+  parameters createparameters();
+
+  /**
+   * Returns a new object of class '<em>parameter List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>parameter List</em>'.
+   * @generated
+   */
+  parameterList createparameterList();
+
+  /**
+   * Returns a new object of class '<em>parameter Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>parameter Decl</em>'.
+   * @generated
+   */
+  parameterDecl createparameterDecl();
+
+  /**
+   * Returns a new object of class '<em>operand</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>operand</em>'.
+   * @generated
+   */
+  operand createoperand();
+
+  /**
+   * Returns a new object of class '<em>literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>literal</em>'.
+   * @generated
+   */
+  literal createliteral();
+
+  /**
+   * Returns a new object of class '<em>operand Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>operand Name</em>'.
+   * @generated
+   */
+  operandName createoperandName();
+
+  /**
+   * Returns a new object of class '<em>composite Lit</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>composite Lit</em>'.
+   * @generated
+   */
+  compositeLit createcompositeLit();
+
+  /**
+   * Returns a new object of class '<em>literal Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>literal Type</em>'.
+   * @generated
+   */
+  literalType createliteralType();
+
+  /**
+   * Returns a new object of class '<em>literal Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>literal Value</em>'.
+   * @generated
+   */
+  literalValue createliteralValue();
+
+  /**
+   * Returns a new object of class '<em>element List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>element List</em>'.
+   * @generated
+   */
+  elementList createelementList();
+
+  /**
+   * Returns a new object of class '<em>keyed Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>keyed Element</em>'.
+   * @generated
+   */
+  keyedElement createkeyedElement();
+
+  /**
+   * Returns a new object of class '<em>key</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>key</em>'.
+   * @generated
+   */
+  key createkey();
+
+  /**
+   * Returns a new object of class '<em>element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>element</em>'.
+   * @generated
+   */
+  element createelement();
+
+  /**
+   * Returns a new object of class '<em>struct Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>struct Type</em>'.
+   * @generated
+   */
+  structType createstructType();
+
+  /**
+   * Returns a new object of class '<em>field Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>field Decl</em>'.
+   * @generated
+   */
+  fieldDecl createfieldDecl();
+
+  /**
+   * Returns a new object of class '<em>anonymous Field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>anonymous Field</em>'.
+   * @generated
+   */
+  anonymousField createanonymousField();
+
+  /**
+   * Returns a new object of class '<em>function Lit</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>function Lit</em>'.
+   * @generated
+   */
+  functionLit createfunctionLit();
+
+  /**
+   * Returns a new object of class '<em>primary Expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>primary Expr</em>'.
+   * @generated
+   */
+  primaryExpr createprimaryExpr();
+
+  /**
+   * Returns a new object of class '<em>primary Expr Stuff</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>primary Expr Stuff</em>'.
+   * @generated
+   */
+  primaryExprStuff createprimaryExprStuff();
+
+  /**
+   * Returns a new object of class '<em>primary Expr Selector</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>primary Expr Selector</em>'.
+   * @generated
+   */
+  primaryExprSelector createprimaryExprSelector();
+
+  /**
+   * Returns a new object of class '<em>primary Expr Index</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>primary Expr Index</em>'.
+   * @generated
+   */
+  primaryExprIndex createprimaryExprIndex();
+
+  /**
+   * Returns a new object of class '<em>primary Expr Slice</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>primary Expr Slice</em>'.
+   * @generated
+   */
+  primaryExprSlice createprimaryExprSlice();
+
+  /**
+   * Returns a new object of class '<em>primary Expr Type Assertion</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>primary Expr Type Assertion</em>'.
+   * @generated
+   */
+  primaryExprTypeAssertion createprimaryExprTypeAssertion();
+
+  /**
+   * Returns a new object of class '<em>primary Expr Arguments</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>primary Expr Arguments</em>'.
+   * @generated
+   */
+  primaryExprArguments createprimaryExprArguments();
+
+  /**
+   * Returns a new object of class '<em>index</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>index</em>'.
+   * @generated
+   */
+  index createindex();
+
+  /**
+   * Returns a new object of class '<em>slice</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>slice</em>'.
+   * @generated
+   */
+  slice createslice();
+
+  /**
+   * Returns a new object of class '<em>type Assertion</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>type Assertion</em>'.
+   * @generated
+   */
+  typeAssertion createtypeAssertion();
+
+  /**
+   * Returns a new object of class '<em>arguments</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>arguments</em>'.
+   * @generated
+   */
+  arguments createarguments();
+
+  /**
+   * Returns a new object of class '<em>method Expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>method Expr</em>'.
+   * @generated
+   */
+  methodExpr createmethodExpr();
+
+  /**
+   * Returns a new object of class '<em>receiver Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>receiver Type</em>'.
+   * @generated
+   */
+  receiverType createreceiverType();
+
+  /**
+   * Returns a new object of class '<em>expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>expression</em>'.
+   * @generated
+   */
+  expression createexpression();
+
+  /**
+   * Returns a new object of class '<em>expression Matched</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>expression Matched</em>'.
+   * @generated
+   */
+  expressionMatched createexpressionMatched();
+
+  /**
+   * Returns a new object of class '<em>unary Expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>unary Expr</em>'.
+   * @generated
+   */
+  unaryExpr createunaryExpr();
+
+  /**
+   * Returns a new object of class '<em>conversion</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>conversion</em>'.
+   * @generated
+   */
+  conversion createconversion();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

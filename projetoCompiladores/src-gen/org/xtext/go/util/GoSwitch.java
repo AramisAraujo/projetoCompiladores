@@ -87,6 +87,665 @@ public class GoSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case GoPackage.IMPORT_DECL:
+      {
+        importDecl importDecl = (importDecl)theEObject;
+        T result = caseimportDecl(importDecl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.IMPORT_SPEC:
+      {
+        importSpec importSpec = (importSpec)theEObject;
+        T result = caseimportSpec(importSpec);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.TOP_LEVEL_DECL:
+      {
+        topLevelDecl topLevelDecl = (topLevelDecl)theEObject;
+        T result = casetopLevelDecl(topLevelDecl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.DECLARATION:
+      {
+        declaration declaration = (declaration)theEObject;
+        T result = casedeclaration(declaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.CONST_DECL:
+      {
+        constDecl constDecl = (constDecl)theEObject;
+        T result = caseconstDecl(constDecl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.CONST_SPEC:
+      {
+        constSpec constSpec = (constSpec)theEObject;
+        T result = caseconstSpec(constSpec);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.EXPRESSION_LIST:
+      {
+        expressionList expressionList = (expressionList)theEObject;
+        T result = caseexpressionList(expressionList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.TYPE_DECL:
+      {
+        typeDecl typeDecl = (typeDecl)theEObject;
+        T result = casetypeDecl(typeDecl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.TYPE_SPEC:
+      {
+        typeSpec typeSpec = (typeSpec)theEObject;
+        T result = casetypeSpec(typeSpec);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.FUNCTION_DECL:
+      {
+        functionDecl functionDecl = (functionDecl)theEObject;
+        T result = casefunctionDecl(functionDecl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.FUNCTION:
+      {
+        function function = (function)theEObject;
+        T result = casefunction(function);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.METHOD_DECL:
+      {
+        methodDecl methodDecl = (methodDecl)theEObject;
+        T result = casemethodDecl(methodDecl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.RECEIVER:
+      {
+        receiver receiver = (receiver)theEObject;
+        T result = casereceiver(receiver);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.VAR_DECL:
+      {
+        varDecl varDecl = (varDecl)theEObject;
+        T result = casevarDecl(varDecl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.VAR_SPEC:
+      {
+        varSpec varSpec = (varSpec)theEObject;
+        T result = casevarSpec(varSpec);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.BLOCK:
+      {
+        block block = (block)theEObject;
+        T result = caseblock(block);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.STATEMENT_LIST:
+      {
+        statementList statementList = (statementList)theEObject;
+        T result = casestatementList(statementList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.STATEMENT:
+      {
+        statement statement = (statement)theEObject;
+        T result = casestatement(statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.SIMPLE_STMT:
+      {
+        simpleStmt simpleStmt = (simpleStmt)theEObject;
+        T result = casesimpleStmt(simpleStmt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.EXPRESSION_STMT:
+      {
+        expressionStmt expressionStmt = (expressionStmt)theEObject;
+        T result = caseexpressionStmt(expressionStmt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.SEND_STMT:
+      {
+        sendStmt sendStmt = (sendStmt)theEObject;
+        T result = casesendStmt(sendStmt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.INC_DEC_STMT:
+      {
+        incDecStmt incDecStmt = (incDecStmt)theEObject;
+        T result = caseincDecStmt(incDecStmt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.ASSIGNMENT:
+      {
+        assignment assignment = (assignment)theEObject;
+        T result = caseassignment(assignment);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.SHORT_VAR_DECL:
+      {
+        shortVarDecl shortVarDecl = (shortVarDecl)theEObject;
+        T result = caseshortVarDecl(shortVarDecl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.LABELED_STMT:
+      {
+        labeledStmt labeledStmt = (labeledStmt)theEObject;
+        T result = caselabeledStmt(labeledStmt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.RETURN_STMT:
+      {
+        returnStmt returnStmt = (returnStmt)theEObject;
+        T result = casereturnStmt(returnStmt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.DEFER_STMT:
+      {
+        deferStmt deferStmt = (deferStmt)theEObject;
+        T result = casedeferStmt(deferStmt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.IF_STMT:
+      {
+        ifStmt ifStmt = (ifStmt)theEObject;
+        T result = caseifStmt(ifStmt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.SWITCH_STMT:
+      {
+        switchStmt switchStmt = (switchStmt)theEObject;
+        T result = caseswitchStmt(switchStmt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.EXPR_SWITCH_STMT:
+      {
+        exprSwitchStmt exprSwitchStmt = (exprSwitchStmt)theEObject;
+        T result = caseexprSwitchStmt(exprSwitchStmt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.EXPR_CASE_CLAUSE:
+      {
+        exprCaseClause exprCaseClause = (exprCaseClause)theEObject;
+        T result = caseexprCaseClause(exprCaseClause);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.EXPR_SWITCH_CASE:
+      {
+        exprSwitchCase exprSwitchCase = (exprSwitchCase)theEObject;
+        T result = caseexprSwitchCase(exprSwitchCase);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.TYPE_SWITCH_STMT:
+      {
+        typeSwitchStmt typeSwitchStmt = (typeSwitchStmt)theEObject;
+        T result = casetypeSwitchStmt(typeSwitchStmt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.TYPE_SWITCH_GUARD:
+      {
+        typeSwitchGuard typeSwitchGuard = (typeSwitchGuard)theEObject;
+        T result = casetypeSwitchGuard(typeSwitchGuard);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.TYPE_CASE_CLAUSE:
+      {
+        typeCaseClause typeCaseClause = (typeCaseClause)theEObject;
+        T result = casetypeCaseClause(typeCaseClause);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.TYPE_SWITCH_CASE:
+      {
+        typeSwitchCase typeSwitchCase = (typeSwitchCase)theEObject;
+        T result = casetypeSwitchCase(typeSwitchCase);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.TYPE_LIST:
+      {
+        typeList typeList = (typeList)theEObject;
+        T result = casetypeList(typeList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.SELECT_STMT:
+      {
+        selectStmt selectStmt = (selectStmt)theEObject;
+        T result = caseselectStmt(selectStmt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.COMM_CLAUSE:
+      {
+        commClause commClause = (commClause)theEObject;
+        T result = casecommClause(commClause);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.COMM_CASE:
+      {
+        commCase commCase = (commCase)theEObject;
+        T result = casecommCase(commCase);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.RECV_STMT:
+      {
+        recvStmt recvStmt = (recvStmt)theEObject;
+        T result = caserecvStmt(recvStmt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.FOR_STMT:
+      {
+        forStmt forStmt = (forStmt)theEObject;
+        T result = caseforStmt(forStmt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.FOR_CLAUSE:
+      {
+        forClause forClause = (forClause)theEObject;
+        T result = caseforClause(forClause);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.RANGE_CLAUSE:
+      {
+        rangeClause rangeClause = (rangeClause)theEObject;
+        T result = caserangeClause(rangeClause);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.GO_STMT:
+      {
+        goStmt goStmt = (goStmt)theEObject;
+        T result = casegoStmt(goStmt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.TYPE:
+      {
+        type type = (type)theEObject;
+        T result = casetype(type);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.TYPE_NAME:
+      {
+        typeName typeName = (typeName)theEObject;
+        T result = casetypeName(typeName);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.TYPE_LIT:
+      {
+        typeLit typeLit = (typeLit)theEObject;
+        T result = casetypeLit(typeLit);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.ARRAY_TYPE:
+      {
+        arrayType arrayType = (arrayType)theEObject;
+        T result = casearrayType(arrayType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.ARRAY_LENGTH:
+      {
+        arrayLength arrayLength = (arrayLength)theEObject;
+        T result = casearrayLength(arrayLength);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.ELEMENT_TYPE:
+      {
+        elementType elementType = (elementType)theEObject;
+        T result = caseelementType(elementType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.POINTER_TYPE:
+      {
+        pointerType pointerType = (pointerType)theEObject;
+        T result = casepointerType(pointerType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.INTERFACE_TYPE:
+      {
+        interfaceType interfaceType = (interfaceType)theEObject;
+        T result = caseinterfaceType(interfaceType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.SLICE_TYPE:
+      {
+        sliceType sliceType = (sliceType)theEObject;
+        T result = casesliceType(sliceType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.MAP_TYPE:
+      {
+        mapType mapType = (mapType)theEObject;
+        T result = casemapType(mapType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.CHANNEL_TYPE:
+      {
+        channelType channelType = (channelType)theEObject;
+        T result = casechannelType(channelType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.METHOD_SPEC:
+      {
+        methodSpec methodSpec = (methodSpec)theEObject;
+        T result = casemethodSpec(methodSpec);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.FUNCTION_TYPE:
+      {
+        functionType functionType = (functionType)theEObject;
+        T result = casefunctionType(functionType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.SIGNATURE:
+      {
+        signature signature = (signature)theEObject;
+        T result = casesignature(signature);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.RESULT:
+      {
+        result result = (result)theEObject;
+        T theResult = caseresult(result);
+        if (theResult == null) theResult = defaultCase(theEObject);
+        return theResult;
+      }
+      case GoPackage.PARAMETERS:
+      {
+        parameters parameters = (parameters)theEObject;
+        T result = caseparameters(parameters);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.PARAMETER_LIST:
+      {
+        parameterList parameterList = (parameterList)theEObject;
+        T result = caseparameterList(parameterList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.PARAMETER_DECL:
+      {
+        parameterDecl parameterDecl = (parameterDecl)theEObject;
+        T result = caseparameterDecl(parameterDecl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.OPERAND:
+      {
+        operand operand = (operand)theEObject;
+        T result = caseoperand(operand);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.LITERAL:
+      {
+        literal literal = (literal)theEObject;
+        T result = caseliteral(literal);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.OPERAND_NAME:
+      {
+        operandName operandName = (operandName)theEObject;
+        T result = caseoperandName(operandName);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.COMPOSITE_LIT:
+      {
+        compositeLit compositeLit = (compositeLit)theEObject;
+        T result = casecompositeLit(compositeLit);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.LITERAL_TYPE:
+      {
+        literalType literalType = (literalType)theEObject;
+        T result = caseliteralType(literalType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.LITERAL_VALUE:
+      {
+        literalValue literalValue = (literalValue)theEObject;
+        T result = caseliteralValue(literalValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.ELEMENT_LIST:
+      {
+        elementList elementList = (elementList)theEObject;
+        T result = caseelementList(elementList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.KEYED_ELEMENT:
+      {
+        keyedElement keyedElement = (keyedElement)theEObject;
+        T result = casekeyedElement(keyedElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.KEY:
+      {
+        key key = (key)theEObject;
+        T result = casekey(key);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.ELEMENT:
+      {
+        element element = (element)theEObject;
+        T result = caseelement(element);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.STRUCT_TYPE:
+      {
+        structType structType = (structType)theEObject;
+        T result = casestructType(structType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.FIELD_DECL:
+      {
+        fieldDecl fieldDecl = (fieldDecl)theEObject;
+        T result = casefieldDecl(fieldDecl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.ANONYMOUS_FIELD:
+      {
+        anonymousField anonymousField = (anonymousField)theEObject;
+        T result = caseanonymousField(anonymousField);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.FUNCTION_LIT:
+      {
+        functionLit functionLit = (functionLit)theEObject;
+        T result = casefunctionLit(functionLit);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.PRIMARY_EXPR:
+      {
+        primaryExpr primaryExpr = (primaryExpr)theEObject;
+        T result = caseprimaryExpr(primaryExpr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.PRIMARY_EXPR_STUFF:
+      {
+        primaryExprStuff primaryExprStuff = (primaryExprStuff)theEObject;
+        T result = caseprimaryExprStuff(primaryExprStuff);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.PRIMARY_EXPR_SELECTOR:
+      {
+        primaryExprSelector primaryExprSelector = (primaryExprSelector)theEObject;
+        T result = caseprimaryExprSelector(primaryExprSelector);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.PRIMARY_EXPR_INDEX:
+      {
+        primaryExprIndex primaryExprIndex = (primaryExprIndex)theEObject;
+        T result = caseprimaryExprIndex(primaryExprIndex);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.PRIMARY_EXPR_SLICE:
+      {
+        primaryExprSlice primaryExprSlice = (primaryExprSlice)theEObject;
+        T result = caseprimaryExprSlice(primaryExprSlice);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.PRIMARY_EXPR_TYPE_ASSERTION:
+      {
+        primaryExprTypeAssertion primaryExprTypeAssertion = (primaryExprTypeAssertion)theEObject;
+        T result = caseprimaryExprTypeAssertion(primaryExprTypeAssertion);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.PRIMARY_EXPR_ARGUMENTS:
+      {
+        primaryExprArguments primaryExprArguments = (primaryExprArguments)theEObject;
+        T result = caseprimaryExprArguments(primaryExprArguments);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.INDEX:
+      {
+        index index = (index)theEObject;
+        T result = caseindex(index);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.SLICE:
+      {
+        slice slice = (slice)theEObject;
+        T result = caseslice(slice);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.TYPE_ASSERTION:
+      {
+        typeAssertion typeAssertion = (typeAssertion)theEObject;
+        T result = casetypeAssertion(typeAssertion);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.ARGUMENTS:
+      {
+        arguments arguments = (arguments)theEObject;
+        T result = casearguments(arguments);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.METHOD_EXPR:
+      {
+        methodExpr methodExpr = (methodExpr)theEObject;
+        T result = casemethodExpr(methodExpr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.RECEIVER_TYPE:
+      {
+        receiverType receiverType = (receiverType)theEObject;
+        T result = casereceiverType(receiverType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.EXPRESSION:
+      {
+        expression expression = (expression)theEObject;
+        T result = caseexpression(expression);
+        if (result == null) result = caseindex(expression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.EXPRESSION_MATCHED:
+      {
+        expressionMatched expressionMatched = (expressionMatched)theEObject;
+        T result = caseexpressionMatched(expressionMatched);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.UNARY_EXPR:
+      {
+        unaryExpr unaryExpr = (unaryExpr)theEObject;
+        T result = caseunaryExpr(unaryExpr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.CONVERSION:
+      {
+        conversion conversion = (conversion)theEObject;
+        T result = caseconversion(conversion);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -119,6 +778,1510 @@ public class GoSwitch<T> extends Switch<T>
    * @generated
    */
   public T casesourceFile(sourceFile object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>import Decl</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>import Decl</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseimportDecl(importDecl object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>import Spec</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>import Spec</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseimportSpec(importSpec object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>top Level Decl</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>top Level Decl</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casetopLevelDecl(topLevelDecl object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casedeclaration(declaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>const Decl</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>const Decl</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseconstDecl(constDecl object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>const Spec</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>const Spec</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseconstSpec(constSpec object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>expression List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>expression List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseexpressionList(expressionList object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>type Decl</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>type Decl</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casetypeDecl(typeDecl object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>type Spec</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>type Spec</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casetypeSpec(typeSpec object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>function Decl</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>function Decl</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casefunctionDecl(functionDecl object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>function</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>function</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casefunction(function object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>method Decl</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>method Decl</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casemethodDecl(methodDecl object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>receiver</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>receiver</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casereceiver(receiver object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>var Decl</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>var Decl</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casevarDecl(varDecl object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>var Spec</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>var Spec</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casevarSpec(varSpec object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseblock(block object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>statement List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>statement List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casestatementList(statementList object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casestatement(statement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>simple Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>simple Stmt</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casesimpleStmt(simpleStmt object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>expression Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>expression Stmt</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseexpressionStmt(expressionStmt object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>send Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>send Stmt</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casesendStmt(sendStmt object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>inc Dec Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>inc Dec Stmt</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseincDecStmt(incDecStmt object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>assignment</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>assignment</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseassignment(assignment object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>short Var Decl</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>short Var Decl</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseshortVarDecl(shortVarDecl object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>labeled Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>labeled Stmt</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caselabeledStmt(labeledStmt object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>return Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>return Stmt</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casereturnStmt(returnStmt object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>defer Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>defer Stmt</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casedeferStmt(deferStmt object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>if Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>if Stmt</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseifStmt(ifStmt object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>switch Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>switch Stmt</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseswitchStmt(switchStmt object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>expr Switch Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>expr Switch Stmt</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseexprSwitchStmt(exprSwitchStmt object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>expr Case Clause</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>expr Case Clause</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseexprCaseClause(exprCaseClause object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>expr Switch Case</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>expr Switch Case</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseexprSwitchCase(exprSwitchCase object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>type Switch Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>type Switch Stmt</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casetypeSwitchStmt(typeSwitchStmt object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>type Switch Guard</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>type Switch Guard</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casetypeSwitchGuard(typeSwitchGuard object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>type Case Clause</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>type Case Clause</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casetypeCaseClause(typeCaseClause object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>type Switch Case</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>type Switch Case</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casetypeSwitchCase(typeSwitchCase object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>type List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>type List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casetypeList(typeList object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>select Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>select Stmt</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseselectStmt(selectStmt object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>comm Clause</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>comm Clause</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casecommClause(commClause object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>comm Case</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>comm Case</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casecommCase(commCase object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>recv Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>recv Stmt</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caserecvStmt(recvStmt object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>for Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>for Stmt</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseforStmt(forStmt object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>for Clause</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>for Clause</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseforClause(forClause object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>range Clause</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>range Clause</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caserangeClause(rangeClause object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>go Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>go Stmt</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casegoStmt(goStmt object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casetype(type object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>type Name</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>type Name</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casetypeName(typeName object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>type Lit</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>type Lit</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casetypeLit(typeLit object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>array Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>array Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casearrayType(arrayType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>array Length</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>array Length</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casearrayLength(arrayLength object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>element Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>element Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseelementType(elementType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>pointer Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>pointer Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casepointerType(pointerType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>interface Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>interface Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseinterfaceType(interfaceType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>slice Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>slice Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casesliceType(sliceType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>map Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>map Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casemapType(mapType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>channel Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>channel Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casechannelType(channelType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>method Spec</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>method Spec</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casemethodSpec(methodSpec object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>function Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>function Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casefunctionType(functionType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>signature</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>signature</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casesignature(signature object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>result</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>result</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseresult(result object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>parameters</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>parameters</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseparameters(parameters object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>parameter List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>parameter List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseparameterList(parameterList object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>parameter Decl</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>parameter Decl</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseparameterDecl(parameterDecl object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>operand</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>operand</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseoperand(operand object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseliteral(literal object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>operand Name</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>operand Name</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseoperandName(operandName object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>composite Lit</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>composite Lit</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casecompositeLit(compositeLit object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>literal Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>literal Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseliteralType(literalType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>literal Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>literal Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseliteralValue(literalValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>element List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>element List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseelementList(elementList object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>keyed Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>keyed Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casekeyedElement(keyedElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>key</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>key</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casekey(key object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseelement(element object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>struct Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>struct Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casestructType(structType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>field Decl</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>field Decl</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casefieldDecl(fieldDecl object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>anonymous Field</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>anonymous Field</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseanonymousField(anonymousField object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>function Lit</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>function Lit</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casefunctionLit(functionLit object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>primary Expr</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>primary Expr</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseprimaryExpr(primaryExpr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>primary Expr Stuff</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>primary Expr Stuff</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseprimaryExprStuff(primaryExprStuff object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>primary Expr Selector</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>primary Expr Selector</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseprimaryExprSelector(primaryExprSelector object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>primary Expr Index</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>primary Expr Index</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseprimaryExprIndex(primaryExprIndex object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>primary Expr Slice</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>primary Expr Slice</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseprimaryExprSlice(primaryExprSlice object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>primary Expr Type Assertion</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>primary Expr Type Assertion</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseprimaryExprTypeAssertion(primaryExprTypeAssertion object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>primary Expr Arguments</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>primary Expr Arguments</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseprimaryExprArguments(primaryExprArguments object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>index</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>index</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseindex(index object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>slice</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>slice</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseslice(slice object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>type Assertion</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>type Assertion</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casetypeAssertion(typeAssertion object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>arguments</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>arguments</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casearguments(arguments object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>method Expr</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>method Expr</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casemethodExpr(methodExpr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>receiver Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>receiver Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casereceiverType(receiverType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseexpression(expression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>expression Matched</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>expression Matched</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseexpressionMatched(expressionMatched object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>unary Expr</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>unary Expr</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseunaryExpr(unaryExpr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>conversion</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>conversion</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseconversion(conversion object)
   {
     return null;
   }

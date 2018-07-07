@@ -86,6 +86,476 @@ public class GoAdapterFactory extends AdapterFactoryImpl
         return createsourceFileAdapter();
       }
       @Override
+      public Adapter caseimportDecl(importDecl object)
+      {
+        return createimportDeclAdapter();
+      }
+      @Override
+      public Adapter caseimportSpec(importSpec object)
+      {
+        return createimportSpecAdapter();
+      }
+      @Override
+      public Adapter casetopLevelDecl(topLevelDecl object)
+      {
+        return createtopLevelDeclAdapter();
+      }
+      @Override
+      public Adapter casedeclaration(declaration object)
+      {
+        return createdeclarationAdapter();
+      }
+      @Override
+      public Adapter caseconstDecl(constDecl object)
+      {
+        return createconstDeclAdapter();
+      }
+      @Override
+      public Adapter caseconstSpec(constSpec object)
+      {
+        return createconstSpecAdapter();
+      }
+      @Override
+      public Adapter caseexpressionList(expressionList object)
+      {
+        return createexpressionListAdapter();
+      }
+      @Override
+      public Adapter casetypeDecl(typeDecl object)
+      {
+        return createtypeDeclAdapter();
+      }
+      @Override
+      public Adapter casetypeSpec(typeSpec object)
+      {
+        return createtypeSpecAdapter();
+      }
+      @Override
+      public Adapter casefunctionDecl(functionDecl object)
+      {
+        return createfunctionDeclAdapter();
+      }
+      @Override
+      public Adapter casefunction(function object)
+      {
+        return createfunctionAdapter();
+      }
+      @Override
+      public Adapter casemethodDecl(methodDecl object)
+      {
+        return createmethodDeclAdapter();
+      }
+      @Override
+      public Adapter casereceiver(receiver object)
+      {
+        return createreceiverAdapter();
+      }
+      @Override
+      public Adapter casevarDecl(varDecl object)
+      {
+        return createvarDeclAdapter();
+      }
+      @Override
+      public Adapter casevarSpec(varSpec object)
+      {
+        return createvarSpecAdapter();
+      }
+      @Override
+      public Adapter caseblock(block object)
+      {
+        return createblockAdapter();
+      }
+      @Override
+      public Adapter casestatementList(statementList object)
+      {
+        return createstatementListAdapter();
+      }
+      @Override
+      public Adapter casestatement(statement object)
+      {
+        return createstatementAdapter();
+      }
+      @Override
+      public Adapter casesimpleStmt(simpleStmt object)
+      {
+        return createsimpleStmtAdapter();
+      }
+      @Override
+      public Adapter caseexpressionStmt(expressionStmt object)
+      {
+        return createexpressionStmtAdapter();
+      }
+      @Override
+      public Adapter casesendStmt(sendStmt object)
+      {
+        return createsendStmtAdapter();
+      }
+      @Override
+      public Adapter caseincDecStmt(incDecStmt object)
+      {
+        return createincDecStmtAdapter();
+      }
+      @Override
+      public Adapter caseassignment(assignment object)
+      {
+        return createassignmentAdapter();
+      }
+      @Override
+      public Adapter caseshortVarDecl(shortVarDecl object)
+      {
+        return createshortVarDeclAdapter();
+      }
+      @Override
+      public Adapter caselabeledStmt(labeledStmt object)
+      {
+        return createlabeledStmtAdapter();
+      }
+      @Override
+      public Adapter casereturnStmt(returnStmt object)
+      {
+        return createreturnStmtAdapter();
+      }
+      @Override
+      public Adapter casedeferStmt(deferStmt object)
+      {
+        return createdeferStmtAdapter();
+      }
+      @Override
+      public Adapter caseifStmt(ifStmt object)
+      {
+        return createifStmtAdapter();
+      }
+      @Override
+      public Adapter caseswitchStmt(switchStmt object)
+      {
+        return createswitchStmtAdapter();
+      }
+      @Override
+      public Adapter caseexprSwitchStmt(exprSwitchStmt object)
+      {
+        return createexprSwitchStmtAdapter();
+      }
+      @Override
+      public Adapter caseexprCaseClause(exprCaseClause object)
+      {
+        return createexprCaseClauseAdapter();
+      }
+      @Override
+      public Adapter caseexprSwitchCase(exprSwitchCase object)
+      {
+        return createexprSwitchCaseAdapter();
+      }
+      @Override
+      public Adapter casetypeSwitchStmt(typeSwitchStmt object)
+      {
+        return createtypeSwitchStmtAdapter();
+      }
+      @Override
+      public Adapter casetypeSwitchGuard(typeSwitchGuard object)
+      {
+        return createtypeSwitchGuardAdapter();
+      }
+      @Override
+      public Adapter casetypeCaseClause(typeCaseClause object)
+      {
+        return createtypeCaseClauseAdapter();
+      }
+      @Override
+      public Adapter casetypeSwitchCase(typeSwitchCase object)
+      {
+        return createtypeSwitchCaseAdapter();
+      }
+      @Override
+      public Adapter casetypeList(typeList object)
+      {
+        return createtypeListAdapter();
+      }
+      @Override
+      public Adapter caseselectStmt(selectStmt object)
+      {
+        return createselectStmtAdapter();
+      }
+      @Override
+      public Adapter casecommClause(commClause object)
+      {
+        return createcommClauseAdapter();
+      }
+      @Override
+      public Adapter casecommCase(commCase object)
+      {
+        return createcommCaseAdapter();
+      }
+      @Override
+      public Adapter caserecvStmt(recvStmt object)
+      {
+        return createrecvStmtAdapter();
+      }
+      @Override
+      public Adapter caseforStmt(forStmt object)
+      {
+        return createforStmtAdapter();
+      }
+      @Override
+      public Adapter caseforClause(forClause object)
+      {
+        return createforClauseAdapter();
+      }
+      @Override
+      public Adapter caserangeClause(rangeClause object)
+      {
+        return createrangeClauseAdapter();
+      }
+      @Override
+      public Adapter casegoStmt(goStmt object)
+      {
+        return creategoStmtAdapter();
+      }
+      @Override
+      public Adapter casetype(type object)
+      {
+        return createtypeAdapter();
+      }
+      @Override
+      public Adapter casetypeName(typeName object)
+      {
+        return createtypeNameAdapter();
+      }
+      @Override
+      public Adapter casetypeLit(typeLit object)
+      {
+        return createtypeLitAdapter();
+      }
+      @Override
+      public Adapter casearrayType(arrayType object)
+      {
+        return createarrayTypeAdapter();
+      }
+      @Override
+      public Adapter casearrayLength(arrayLength object)
+      {
+        return createarrayLengthAdapter();
+      }
+      @Override
+      public Adapter caseelementType(elementType object)
+      {
+        return createelementTypeAdapter();
+      }
+      @Override
+      public Adapter casepointerType(pointerType object)
+      {
+        return createpointerTypeAdapter();
+      }
+      @Override
+      public Adapter caseinterfaceType(interfaceType object)
+      {
+        return createinterfaceTypeAdapter();
+      }
+      @Override
+      public Adapter casesliceType(sliceType object)
+      {
+        return createsliceTypeAdapter();
+      }
+      @Override
+      public Adapter casemapType(mapType object)
+      {
+        return createmapTypeAdapter();
+      }
+      @Override
+      public Adapter casechannelType(channelType object)
+      {
+        return createchannelTypeAdapter();
+      }
+      @Override
+      public Adapter casemethodSpec(methodSpec object)
+      {
+        return createmethodSpecAdapter();
+      }
+      @Override
+      public Adapter casefunctionType(functionType object)
+      {
+        return createfunctionTypeAdapter();
+      }
+      @Override
+      public Adapter casesignature(signature object)
+      {
+        return createsignatureAdapter();
+      }
+      @Override
+      public Adapter caseresult(result object)
+      {
+        return createresultAdapter();
+      }
+      @Override
+      public Adapter caseparameters(parameters object)
+      {
+        return createparametersAdapter();
+      }
+      @Override
+      public Adapter caseparameterList(parameterList object)
+      {
+        return createparameterListAdapter();
+      }
+      @Override
+      public Adapter caseparameterDecl(parameterDecl object)
+      {
+        return createparameterDeclAdapter();
+      }
+      @Override
+      public Adapter caseoperand(operand object)
+      {
+        return createoperandAdapter();
+      }
+      @Override
+      public Adapter caseliteral(literal object)
+      {
+        return createliteralAdapter();
+      }
+      @Override
+      public Adapter caseoperandName(operandName object)
+      {
+        return createoperandNameAdapter();
+      }
+      @Override
+      public Adapter casecompositeLit(compositeLit object)
+      {
+        return createcompositeLitAdapter();
+      }
+      @Override
+      public Adapter caseliteralType(literalType object)
+      {
+        return createliteralTypeAdapter();
+      }
+      @Override
+      public Adapter caseliteralValue(literalValue object)
+      {
+        return createliteralValueAdapter();
+      }
+      @Override
+      public Adapter caseelementList(elementList object)
+      {
+        return createelementListAdapter();
+      }
+      @Override
+      public Adapter casekeyedElement(keyedElement object)
+      {
+        return createkeyedElementAdapter();
+      }
+      @Override
+      public Adapter casekey(key object)
+      {
+        return createkeyAdapter();
+      }
+      @Override
+      public Adapter caseelement(element object)
+      {
+        return createelementAdapter();
+      }
+      @Override
+      public Adapter casestructType(structType object)
+      {
+        return createstructTypeAdapter();
+      }
+      @Override
+      public Adapter casefieldDecl(fieldDecl object)
+      {
+        return createfieldDeclAdapter();
+      }
+      @Override
+      public Adapter caseanonymousField(anonymousField object)
+      {
+        return createanonymousFieldAdapter();
+      }
+      @Override
+      public Adapter casefunctionLit(functionLit object)
+      {
+        return createfunctionLitAdapter();
+      }
+      @Override
+      public Adapter caseprimaryExpr(primaryExpr object)
+      {
+        return createprimaryExprAdapter();
+      }
+      @Override
+      public Adapter caseprimaryExprStuff(primaryExprStuff object)
+      {
+        return createprimaryExprStuffAdapter();
+      }
+      @Override
+      public Adapter caseprimaryExprSelector(primaryExprSelector object)
+      {
+        return createprimaryExprSelectorAdapter();
+      }
+      @Override
+      public Adapter caseprimaryExprIndex(primaryExprIndex object)
+      {
+        return createprimaryExprIndexAdapter();
+      }
+      @Override
+      public Adapter caseprimaryExprSlice(primaryExprSlice object)
+      {
+        return createprimaryExprSliceAdapter();
+      }
+      @Override
+      public Adapter caseprimaryExprTypeAssertion(primaryExprTypeAssertion object)
+      {
+        return createprimaryExprTypeAssertionAdapter();
+      }
+      @Override
+      public Adapter caseprimaryExprArguments(primaryExprArguments object)
+      {
+        return createprimaryExprArgumentsAdapter();
+      }
+      @Override
+      public Adapter caseindex(index object)
+      {
+        return createindexAdapter();
+      }
+      @Override
+      public Adapter caseslice(slice object)
+      {
+        return createsliceAdapter();
+      }
+      @Override
+      public Adapter casetypeAssertion(typeAssertion object)
+      {
+        return createtypeAssertionAdapter();
+      }
+      @Override
+      public Adapter casearguments(arguments object)
+      {
+        return createargumentsAdapter();
+      }
+      @Override
+      public Adapter casemethodExpr(methodExpr object)
+      {
+        return createmethodExprAdapter();
+      }
+      @Override
+      public Adapter casereceiverType(receiverType object)
+      {
+        return createreceiverTypeAdapter();
+      }
+      @Override
+      public Adapter caseexpression(expression object)
+      {
+        return createexpressionAdapter();
+      }
+      @Override
+      public Adapter caseexpressionMatched(expressionMatched object)
+      {
+        return createexpressionMatchedAdapter();
+      }
+      @Override
+      public Adapter caseunaryExpr(unaryExpr object)
+      {
+        return createunaryExprAdapter();
+      }
+      @Override
+      public Adapter caseconversion(conversion object)
+      {
+        return createconversionAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -133,6 +603,1416 @@ public class GoAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createsourceFileAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.importDecl <em>import Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.importDecl
+   * @generated
+   */
+  public Adapter createimportDeclAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.importSpec <em>import Spec</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.importSpec
+   * @generated
+   */
+  public Adapter createimportSpecAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.topLevelDecl <em>top Level Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.topLevelDecl
+   * @generated
+   */
+  public Adapter createtopLevelDeclAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.declaration <em>declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.declaration
+   * @generated
+   */
+  public Adapter createdeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.constDecl <em>const Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.constDecl
+   * @generated
+   */
+  public Adapter createconstDeclAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.constSpec <em>const Spec</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.constSpec
+   * @generated
+   */
+  public Adapter createconstSpecAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.expressionList <em>expression List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.expressionList
+   * @generated
+   */
+  public Adapter createexpressionListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.typeDecl <em>type Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.typeDecl
+   * @generated
+   */
+  public Adapter createtypeDeclAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.typeSpec <em>type Spec</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.typeSpec
+   * @generated
+   */
+  public Adapter createtypeSpecAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.functionDecl <em>function Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.functionDecl
+   * @generated
+   */
+  public Adapter createfunctionDeclAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.function <em>function</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.function
+   * @generated
+   */
+  public Adapter createfunctionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.methodDecl <em>method Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.methodDecl
+   * @generated
+   */
+  public Adapter createmethodDeclAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.receiver <em>receiver</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.receiver
+   * @generated
+   */
+  public Adapter createreceiverAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.varDecl <em>var Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.varDecl
+   * @generated
+   */
+  public Adapter createvarDeclAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.varSpec <em>var Spec</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.varSpec
+   * @generated
+   */
+  public Adapter createvarSpecAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.block <em>block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.block
+   * @generated
+   */
+  public Adapter createblockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.statementList <em>statement List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.statementList
+   * @generated
+   */
+  public Adapter createstatementListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.statement <em>statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.statement
+   * @generated
+   */
+  public Adapter createstatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.simpleStmt <em>simple Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.simpleStmt
+   * @generated
+   */
+  public Adapter createsimpleStmtAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.expressionStmt <em>expression Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.expressionStmt
+   * @generated
+   */
+  public Adapter createexpressionStmtAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.sendStmt <em>send Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.sendStmt
+   * @generated
+   */
+  public Adapter createsendStmtAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.incDecStmt <em>inc Dec Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.incDecStmt
+   * @generated
+   */
+  public Adapter createincDecStmtAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.assignment <em>assignment</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.assignment
+   * @generated
+   */
+  public Adapter createassignmentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.shortVarDecl <em>short Var Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.shortVarDecl
+   * @generated
+   */
+  public Adapter createshortVarDeclAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.labeledStmt <em>labeled Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.labeledStmt
+   * @generated
+   */
+  public Adapter createlabeledStmtAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.returnStmt <em>return Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.returnStmt
+   * @generated
+   */
+  public Adapter createreturnStmtAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.deferStmt <em>defer Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.deferStmt
+   * @generated
+   */
+  public Adapter createdeferStmtAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.ifStmt <em>if Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.ifStmt
+   * @generated
+   */
+  public Adapter createifStmtAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.switchStmt <em>switch Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.switchStmt
+   * @generated
+   */
+  public Adapter createswitchStmtAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.exprSwitchStmt <em>expr Switch Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.exprSwitchStmt
+   * @generated
+   */
+  public Adapter createexprSwitchStmtAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.exprCaseClause <em>expr Case Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.exprCaseClause
+   * @generated
+   */
+  public Adapter createexprCaseClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.exprSwitchCase <em>expr Switch Case</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.exprSwitchCase
+   * @generated
+   */
+  public Adapter createexprSwitchCaseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.typeSwitchStmt <em>type Switch Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.typeSwitchStmt
+   * @generated
+   */
+  public Adapter createtypeSwitchStmtAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.typeSwitchGuard <em>type Switch Guard</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.typeSwitchGuard
+   * @generated
+   */
+  public Adapter createtypeSwitchGuardAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.typeCaseClause <em>type Case Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.typeCaseClause
+   * @generated
+   */
+  public Adapter createtypeCaseClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.typeSwitchCase <em>type Switch Case</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.typeSwitchCase
+   * @generated
+   */
+  public Adapter createtypeSwitchCaseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.typeList <em>type List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.typeList
+   * @generated
+   */
+  public Adapter createtypeListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.selectStmt <em>select Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.selectStmt
+   * @generated
+   */
+  public Adapter createselectStmtAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.commClause <em>comm Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.commClause
+   * @generated
+   */
+  public Adapter createcommClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.commCase <em>comm Case</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.commCase
+   * @generated
+   */
+  public Adapter createcommCaseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.recvStmt <em>recv Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.recvStmt
+   * @generated
+   */
+  public Adapter createrecvStmtAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.forStmt <em>for Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.forStmt
+   * @generated
+   */
+  public Adapter createforStmtAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.forClause <em>for Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.forClause
+   * @generated
+   */
+  public Adapter createforClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.rangeClause <em>range Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.rangeClause
+   * @generated
+   */
+  public Adapter createrangeClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.goStmt <em>go Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.goStmt
+   * @generated
+   */
+  public Adapter creategoStmtAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.type <em>type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.type
+   * @generated
+   */
+  public Adapter createtypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.typeName <em>type Name</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.typeName
+   * @generated
+   */
+  public Adapter createtypeNameAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.typeLit <em>type Lit</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.typeLit
+   * @generated
+   */
+  public Adapter createtypeLitAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.arrayType <em>array Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.arrayType
+   * @generated
+   */
+  public Adapter createarrayTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.arrayLength <em>array Length</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.arrayLength
+   * @generated
+   */
+  public Adapter createarrayLengthAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.elementType <em>element Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.elementType
+   * @generated
+   */
+  public Adapter createelementTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.pointerType <em>pointer Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.pointerType
+   * @generated
+   */
+  public Adapter createpointerTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.interfaceType <em>interface Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.interfaceType
+   * @generated
+   */
+  public Adapter createinterfaceTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.sliceType <em>slice Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.sliceType
+   * @generated
+   */
+  public Adapter createsliceTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.mapType <em>map Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.mapType
+   * @generated
+   */
+  public Adapter createmapTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.channelType <em>channel Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.channelType
+   * @generated
+   */
+  public Adapter createchannelTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.methodSpec <em>method Spec</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.methodSpec
+   * @generated
+   */
+  public Adapter createmethodSpecAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.functionType <em>function Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.functionType
+   * @generated
+   */
+  public Adapter createfunctionTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.signature <em>signature</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.signature
+   * @generated
+   */
+  public Adapter createsignatureAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.result <em>result</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.result
+   * @generated
+   */
+  public Adapter createresultAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.parameters <em>parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.parameters
+   * @generated
+   */
+  public Adapter createparametersAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.parameterList <em>parameter List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.parameterList
+   * @generated
+   */
+  public Adapter createparameterListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.parameterDecl <em>parameter Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.parameterDecl
+   * @generated
+   */
+  public Adapter createparameterDeclAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.operand <em>operand</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.operand
+   * @generated
+   */
+  public Adapter createoperandAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.literal <em>literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.literal
+   * @generated
+   */
+  public Adapter createliteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.operandName <em>operand Name</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.operandName
+   * @generated
+   */
+  public Adapter createoperandNameAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.compositeLit <em>composite Lit</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.compositeLit
+   * @generated
+   */
+  public Adapter createcompositeLitAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.literalType <em>literal Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.literalType
+   * @generated
+   */
+  public Adapter createliteralTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.literalValue <em>literal Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.literalValue
+   * @generated
+   */
+  public Adapter createliteralValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.elementList <em>element List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.elementList
+   * @generated
+   */
+  public Adapter createelementListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.keyedElement <em>keyed Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.keyedElement
+   * @generated
+   */
+  public Adapter createkeyedElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.key <em>key</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.key
+   * @generated
+   */
+  public Adapter createkeyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.element <em>element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.element
+   * @generated
+   */
+  public Adapter createelementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.structType <em>struct Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.structType
+   * @generated
+   */
+  public Adapter createstructTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.fieldDecl <em>field Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.fieldDecl
+   * @generated
+   */
+  public Adapter createfieldDeclAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.anonymousField <em>anonymous Field</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.anonymousField
+   * @generated
+   */
+  public Adapter createanonymousFieldAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.functionLit <em>function Lit</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.functionLit
+   * @generated
+   */
+  public Adapter createfunctionLitAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.primaryExpr <em>primary Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.primaryExpr
+   * @generated
+   */
+  public Adapter createprimaryExprAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.primaryExprStuff <em>primary Expr Stuff</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.primaryExprStuff
+   * @generated
+   */
+  public Adapter createprimaryExprStuffAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.primaryExprSelector <em>primary Expr Selector</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.primaryExprSelector
+   * @generated
+   */
+  public Adapter createprimaryExprSelectorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.primaryExprIndex <em>primary Expr Index</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.primaryExprIndex
+   * @generated
+   */
+  public Adapter createprimaryExprIndexAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.primaryExprSlice <em>primary Expr Slice</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.primaryExprSlice
+   * @generated
+   */
+  public Adapter createprimaryExprSliceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.primaryExprTypeAssertion <em>primary Expr Type Assertion</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.primaryExprTypeAssertion
+   * @generated
+   */
+  public Adapter createprimaryExprTypeAssertionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.primaryExprArguments <em>primary Expr Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.primaryExprArguments
+   * @generated
+   */
+  public Adapter createprimaryExprArgumentsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.index <em>index</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.index
+   * @generated
+   */
+  public Adapter createindexAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.slice <em>slice</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.slice
+   * @generated
+   */
+  public Adapter createsliceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.typeAssertion <em>type Assertion</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.typeAssertion
+   * @generated
+   */
+  public Adapter createtypeAssertionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.arguments <em>arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.arguments
+   * @generated
+   */
+  public Adapter createargumentsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.methodExpr <em>method Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.methodExpr
+   * @generated
+   */
+  public Adapter createmethodExprAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.receiverType <em>receiver Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.receiverType
+   * @generated
+   */
+  public Adapter createreceiverTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.expression <em>expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.expression
+   * @generated
+   */
+  public Adapter createexpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.expressionMatched <em>expression Matched</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.expressionMatched
+   * @generated
+   */
+  public Adapter createexpressionMatchedAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.unaryExpr <em>unary Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.unaryExpr
+   * @generated
+   */
+  public Adapter createunaryExprAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.conversion <em>conversion</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.conversion
+   * @generated
+   */
+  public Adapter createconversionAdapter()
   {
     return null;
   }

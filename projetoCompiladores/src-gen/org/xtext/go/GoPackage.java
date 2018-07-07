@@ -105,13 +105,3590 @@ public interface GoPackage extends EPackage
   int SOURCE_FILE__PACKAGE_CLAUSE = 0;
 
   /**
+   * The feature id for the '<em><b>Import Decl</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SOURCE_FILE__IMPORT_DECL = 1;
+
+  /**
+   * The feature id for the '<em><b>Top Level Decl</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SOURCE_FILE__TOP_LEVEL_DECL = 2;
+
+  /**
    * The number of structural features of the '<em>source File</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SOURCE_FILE_FEATURE_COUNT = 1;
+  int SOURCE_FILE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.importDeclImpl <em>import Decl</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.importDeclImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getimportDecl()
+   * @generated
+   */
+  int IMPORT_DECL = 2;
+
+  /**
+   * The feature id for the '<em><b>Import Spec</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_DECL__IMPORT_SPEC = 0;
+
+  /**
+   * The number of structural features of the '<em>import Decl</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_DECL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.importSpecImpl <em>import Spec</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.importSpecImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getimportSpec()
+   * @generated
+   */
+  int IMPORT_SPEC = 3;
+
+  /**
+   * The feature id for the '<em><b>Import Path</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_SPEC__IMPORT_PATH = 0;
+
+  /**
+   * The number of structural features of the '<em>import Spec</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_SPEC_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.topLevelDeclImpl <em>top Level Decl</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.topLevelDeclImpl
+   * @see org.xtext.go.impl.GoPackageImpl#gettopLevelDecl()
+   * @generated
+   */
+  int TOP_LEVEL_DECL = 4;
+
+  /**
+   * The feature id for the '<em><b>Declaration</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TOP_LEVEL_DECL__DECLARATION = 0;
+
+  /**
+   * The feature id for the '<em><b>Function Decl</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TOP_LEVEL_DECL__FUNCTION_DECL = 1;
+
+  /**
+   * The feature id for the '<em><b>Method Decl</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TOP_LEVEL_DECL__METHOD_DECL = 2;
+
+  /**
+   * The number of structural features of the '<em>top Level Decl</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TOP_LEVEL_DECL_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.declarationImpl <em>declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.declarationImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getdeclaration()
+   * @generated
+   */
+  int DECLARATION = 5;
+
+  /**
+   * The feature id for the '<em><b>Const Decl</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__CONST_DECL = 0;
+
+  /**
+   * The feature id for the '<em><b>Type Decl</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__TYPE_DECL = 1;
+
+  /**
+   * The feature id for the '<em><b>Var Decl</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__VAR_DECL = 2;
+
+  /**
+   * The number of structural features of the '<em>declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.constDeclImpl <em>const Decl</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.constDeclImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getconstDecl()
+   * @generated
+   */
+  int CONST_DECL = 6;
+
+  /**
+   * The feature id for the '<em><b>Const Spec</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONST_DECL__CONST_SPEC = 0;
+
+  /**
+   * The number of structural features of the '<em>const Decl</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONST_DECL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.constSpecImpl <em>const Spec</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.constSpecImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getconstSpec()
+   * @generated
+   */
+  int CONST_SPEC = 7;
+
+  /**
+   * The feature id for the '<em><b>Identifier List</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONST_SPEC__IDENTIFIER_LIST = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONST_SPEC__TYPE = 1;
+
+  /**
+   * The feature id for the '<em><b>Expression List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONST_SPEC__EXPRESSION_LIST = 2;
+
+  /**
+   * The number of structural features of the '<em>const Spec</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONST_SPEC_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.expressionListImpl <em>expression List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.expressionListImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getexpressionList()
+   * @generated
+   */
+  int EXPRESSION_LIST = 8;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_LIST__EXPRESSION = 0;
+
+  /**
+   * The number of structural features of the '<em>expression List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_LIST_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.typeDeclImpl <em>type Decl</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.typeDeclImpl
+   * @see org.xtext.go.impl.GoPackageImpl#gettypeDecl()
+   * @generated
+   */
+  int TYPE_DECL = 9;
+
+  /**
+   * The feature id for the '<em><b>Type Spec</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_DECL__TYPE_SPEC = 0;
+
+  /**
+   * The number of structural features of the '<em>type Decl</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_DECL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.typeSpecImpl <em>type Spec</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.typeSpecImpl
+   * @see org.xtext.go.impl.GoPackageImpl#gettypeSpec()
+   * @generated
+   */
+  int TYPE_SPEC = 10;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_SPEC__TYPE = 0;
+
+  /**
+   * The number of structural features of the '<em>type Spec</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_SPEC_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.functionDeclImpl <em>function Decl</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.functionDeclImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getfunctionDecl()
+   * @generated
+   */
+  int FUNCTION_DECL = 11;
+
+  /**
+   * The feature id for the '<em><b>Function</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_DECL__FUNCTION = 0;
+
+  /**
+   * The feature id for the '<em><b>Signature</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_DECL__SIGNATURE = 1;
+
+  /**
+   * The number of structural features of the '<em>function Decl</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_DECL_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.functionImpl <em>function</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.functionImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getfunction()
+   * @generated
+   */
+  int FUNCTION = 12;
+
+  /**
+   * The feature id for the '<em><b>Signature</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__SIGNATURE = 0;
+
+  /**
+   * The feature id for the '<em><b>Block</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__BLOCK = 1;
+
+  /**
+   * The number of structural features of the '<em>function</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.methodDeclImpl <em>method Decl</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.methodDeclImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getmethodDecl()
+   * @generated
+   */
+  int METHOD_DECL = 13;
+
+  /**
+   * The feature id for the '<em><b>Receiver</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_DECL__RECEIVER = 0;
+
+  /**
+   * The feature id for the '<em><b>Function</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_DECL__FUNCTION = 1;
+
+  /**
+   * The feature id for the '<em><b>Signature</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_DECL__SIGNATURE = 2;
+
+  /**
+   * The number of structural features of the '<em>method Decl</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_DECL_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.receiverImpl <em>receiver</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.receiverImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getreceiver()
+   * @generated
+   */
+  int RECEIVER = 14;
+
+  /**
+   * The feature id for the '<em><b>Parameters</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECEIVER__PARAMETERS = 0;
+
+  /**
+   * The number of structural features of the '<em>receiver</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECEIVER_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.varDeclImpl <em>var Decl</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.varDeclImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getvarDecl()
+   * @generated
+   */
+  int VAR_DECL = 15;
+
+  /**
+   * The feature id for the '<em><b>Var Spec</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VAR_DECL__VAR_SPEC = 0;
+
+  /**
+   * The number of structural features of the '<em>var Decl</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VAR_DECL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.varSpecImpl <em>var Spec</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.varSpecImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getvarSpec()
+   * @generated
+   */
+  int VAR_SPEC = 16;
+
+  /**
+   * The feature id for the '<em><b>Identifier List</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VAR_SPEC__IDENTIFIER_LIST = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VAR_SPEC__TYPE = 1;
+
+  /**
+   * The feature id for the '<em><b>Expression List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VAR_SPEC__EXPRESSION_LIST = 2;
+
+  /**
+   * The number of structural features of the '<em>var Spec</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VAR_SPEC_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.blockImpl <em>block</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.blockImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getblock()
+   * @generated
+   */
+  int BLOCK = 17;
+
+  /**
+   * The feature id for the '<em><b>Statement List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BLOCK__STATEMENT_LIST = 0;
+
+  /**
+   * The number of structural features of the '<em>block</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BLOCK_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.statementListImpl <em>statement List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.statementListImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getstatementList()
+   * @generated
+   */
+  int STATEMENT_LIST = 18;
+
+  /**
+   * The feature id for the '<em><b>Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT_LIST__STATEMENT = 0;
+
+  /**
+   * The number of structural features of the '<em>statement List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT_LIST_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.statementImpl <em>statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.statementImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getstatement()
+   * @generated
+   */
+  int STATEMENT = 19;
+
+  /**
+   * The feature id for the '<em><b>Declaration</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__DECLARATION = 0;
+
+  /**
+   * The feature id for the '<em><b>Labeled Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__LABELED_STMT = 1;
+
+  /**
+   * The feature id for the '<em><b>Simple Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__SIMPLE_STMT = 2;
+
+  /**
+   * The feature id for the '<em><b>Go Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__GO_STMT = 3;
+
+  /**
+   * The feature id for the '<em><b>Return Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__RETURN_STMT = 4;
+
+  /**
+   * The feature id for the '<em><b>Break Stmt</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__BREAK_STMT = 5;
+
+  /**
+   * The feature id for the '<em><b>Continue Stmt</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__CONTINUE_STMT = 6;
+
+  /**
+   * The feature id for the '<em><b>Goto Stmt</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__GOTO_STMT = 7;
+
+  /**
+   * The feature id for the '<em><b>Fallthrough Stmt</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__FALLTHROUGH_STMT = 8;
+
+  /**
+   * The feature id for the '<em><b>Block</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__BLOCK = 9;
+
+  /**
+   * The feature id for the '<em><b>If Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__IF_STMT = 10;
+
+  /**
+   * The feature id for the '<em><b>Switch Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__SWITCH_STMT = 11;
+
+  /**
+   * The feature id for the '<em><b>Select Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__SELECT_STMT = 12;
+
+  /**
+   * The feature id for the '<em><b>For Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__FOR_STMT = 13;
+
+  /**
+   * The feature id for the '<em><b>Defer Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__DEFER_STMT = 14;
+
+  /**
+   * The number of structural features of the '<em>statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT_FEATURE_COUNT = 15;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.simpleStmtImpl <em>simple Stmt</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.simpleStmtImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getsimpleStmt()
+   * @generated
+   */
+  int SIMPLE_STMT = 20;
+
+  /**
+   * The feature id for the '<em><b>Send Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_STMT__SEND_STMT = 0;
+
+  /**
+   * The feature id for the '<em><b>Expression Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_STMT__EXPRESSION_STMT = 1;
+
+  /**
+   * The feature id for the '<em><b>Inc Dec Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_STMT__INC_DEC_STMT = 2;
+
+  /**
+   * The feature id for the '<em><b>Assignment</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_STMT__ASSIGNMENT = 3;
+
+  /**
+   * The feature id for the '<em><b>Short Var Decl</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_STMT__SHORT_VAR_DECL = 4;
+
+  /**
+   * The feature id for the '<em><b>Empty Stmt</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_STMT__EMPTY_STMT = 5;
+
+  /**
+   * The number of structural features of the '<em>simple Stmt</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_STMT_FEATURE_COUNT = 6;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.expressionStmtImpl <em>expression Stmt</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.expressionStmtImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getexpressionStmt()
+   * @generated
+   */
+  int EXPRESSION_STMT = 21;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_STMT__EXPRESSION = 0;
+
+  /**
+   * The number of structural features of the '<em>expression Stmt</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_STMT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.sendStmtImpl <em>send Stmt</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.sendStmtImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getsendStmt()
+   * @generated
+   */
+  int SEND_STMT = 22;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEND_STMT__EXPRESSION = 0;
+
+  /**
+   * The number of structural features of the '<em>send Stmt</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEND_STMT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.incDecStmtImpl <em>inc Dec Stmt</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.incDecStmtImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getincDecStmt()
+   * @generated
+   */
+  int INC_DEC_STMT = 23;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INC_DEC_STMT__EXPRESSION = 0;
+
+  /**
+   * The number of structural features of the '<em>inc Dec Stmt</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INC_DEC_STMT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.assignmentImpl <em>assignment</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.assignmentImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getassignment()
+   * @generated
+   */
+  int ASSIGNMENT = 24;
+
+  /**
+   * The feature id for the '<em><b>Expression List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGNMENT__EXPRESSION_LIST = 0;
+
+  /**
+   * The feature id for the '<em><b>Assign op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGNMENT__ASSIGN_OP = 1;
+
+  /**
+   * The number of structural features of the '<em>assignment</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGNMENT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.shortVarDeclImpl <em>short Var Decl</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.shortVarDeclImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getshortVarDecl()
+   * @generated
+   */
+  int SHORT_VAR_DECL = 25;
+
+  /**
+   * The feature id for the '<em><b>Identifier List</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_VAR_DECL__IDENTIFIER_LIST = 0;
+
+  /**
+   * The feature id for the '<em><b>Expression List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_VAR_DECL__EXPRESSION_LIST = 1;
+
+  /**
+   * The number of structural features of the '<em>short Var Decl</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_VAR_DECL_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.labeledStmtImpl <em>labeled Stmt</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.labeledStmtImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getlabeledStmt()
+   * @generated
+   */
+  int LABELED_STMT = 26;
+
+  /**
+   * The feature id for the '<em><b>Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LABELED_STMT__STATEMENT = 0;
+
+  /**
+   * The number of structural features of the '<em>labeled Stmt</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LABELED_STMT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.returnStmtImpl <em>return Stmt</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.returnStmtImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getreturnStmt()
+   * @generated
+   */
+  int RETURN_STMT = 27;
+
+  /**
+   * The feature id for the '<em><b>Expression List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_STMT__EXPRESSION_LIST = 0;
+
+  /**
+   * The number of structural features of the '<em>return Stmt</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_STMT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.deferStmtImpl <em>defer Stmt</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.deferStmtImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getdeferStmt()
+   * @generated
+   */
+  int DEFER_STMT = 28;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFER_STMT__EXPRESSION = 0;
+
+  /**
+   * The number of structural features of the '<em>defer Stmt</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFER_STMT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.ifStmtImpl <em>if Stmt</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.ifStmtImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getifStmt()
+   * @generated
+   */
+  int IF_STMT = 29;
+
+  /**
+   * The feature id for the '<em><b>Simple Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STMT__SIMPLE_STMT = 0;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STMT__EXPRESSION = 1;
+
+  /**
+   * The feature id for the '<em><b>Block</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STMT__BLOCK = 2;
+
+  /**
+   * The feature id for the '<em><b>If Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STMT__IF_STMT = 3;
+
+  /**
+   * The number of structural features of the '<em>if Stmt</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STMT_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.switchStmtImpl <em>switch Stmt</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.switchStmtImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getswitchStmt()
+   * @generated
+   */
+  int SWITCH_STMT = 30;
+
+  /**
+   * The feature id for the '<em><b>Expr Switch Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCH_STMT__EXPR_SWITCH_STMT = 0;
+
+  /**
+   * The feature id for the '<em><b>Type Switch Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCH_STMT__TYPE_SWITCH_STMT = 1;
+
+  /**
+   * The number of structural features of the '<em>switch Stmt</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCH_STMT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.exprSwitchStmtImpl <em>expr Switch Stmt</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.exprSwitchStmtImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getexprSwitchStmt()
+   * @generated
+   */
+  int EXPR_SWITCH_STMT = 31;
+
+  /**
+   * The feature id for the '<em><b>Simple Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR_SWITCH_STMT__SIMPLE_STMT = 0;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR_SWITCH_STMT__EXPRESSION = 1;
+
+  /**
+   * The feature id for the '<em><b>Expr Case Clause</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR_SWITCH_STMT__EXPR_CASE_CLAUSE = 2;
+
+  /**
+   * The number of structural features of the '<em>expr Switch Stmt</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR_SWITCH_STMT_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.exprCaseClauseImpl <em>expr Case Clause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.exprCaseClauseImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getexprCaseClause()
+   * @generated
+   */
+  int EXPR_CASE_CLAUSE = 32;
+
+  /**
+   * The feature id for the '<em><b>Expr Switch Case</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR_CASE_CLAUSE__EXPR_SWITCH_CASE = 0;
+
+  /**
+   * The feature id for the '<em><b>Statement List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR_CASE_CLAUSE__STATEMENT_LIST = 1;
+
+  /**
+   * The number of structural features of the '<em>expr Case Clause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR_CASE_CLAUSE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.exprSwitchCaseImpl <em>expr Switch Case</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.exprSwitchCaseImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getexprSwitchCase()
+   * @generated
+   */
+  int EXPR_SWITCH_CASE = 33;
+
+  /**
+   * The feature id for the '<em><b>Expression List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR_SWITCH_CASE__EXPRESSION_LIST = 0;
+
+  /**
+   * The number of structural features of the '<em>expr Switch Case</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR_SWITCH_CASE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.typeSwitchStmtImpl <em>type Switch Stmt</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.typeSwitchStmtImpl
+   * @see org.xtext.go.impl.GoPackageImpl#gettypeSwitchStmt()
+   * @generated
+   */
+  int TYPE_SWITCH_STMT = 34;
+
+  /**
+   * The feature id for the '<em><b>Simple Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_SWITCH_STMT__SIMPLE_STMT = 0;
+
+  /**
+   * The feature id for the '<em><b>Type Switch Guard</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_SWITCH_STMT__TYPE_SWITCH_GUARD = 1;
+
+  /**
+   * The feature id for the '<em><b>Type Case Clause</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_SWITCH_STMT__TYPE_CASE_CLAUSE = 2;
+
+  /**
+   * The number of structural features of the '<em>type Switch Stmt</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_SWITCH_STMT_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.typeSwitchGuardImpl <em>type Switch Guard</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.typeSwitchGuardImpl
+   * @see org.xtext.go.impl.GoPackageImpl#gettypeSwitchGuard()
+   * @generated
+   */
+  int TYPE_SWITCH_GUARD = 35;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_SWITCH_GUARD__PRIMARY_EXPR = 0;
+
+  /**
+   * The number of structural features of the '<em>type Switch Guard</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_SWITCH_GUARD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.typeCaseClauseImpl <em>type Case Clause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.typeCaseClauseImpl
+   * @see org.xtext.go.impl.GoPackageImpl#gettypeCaseClause()
+   * @generated
+   */
+  int TYPE_CASE_CLAUSE = 36;
+
+  /**
+   * The feature id for the '<em><b>Type Switch Case</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_CASE_CLAUSE__TYPE_SWITCH_CASE = 0;
+
+  /**
+   * The feature id for the '<em><b>Statement List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_CASE_CLAUSE__STATEMENT_LIST = 1;
+
+  /**
+   * The number of structural features of the '<em>type Case Clause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_CASE_CLAUSE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.typeSwitchCaseImpl <em>type Switch Case</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.typeSwitchCaseImpl
+   * @see org.xtext.go.impl.GoPackageImpl#gettypeSwitchCase()
+   * @generated
+   */
+  int TYPE_SWITCH_CASE = 37;
+
+  /**
+   * The feature id for the '<em><b>Type List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_SWITCH_CASE__TYPE_LIST = 0;
+
+  /**
+   * The number of structural features of the '<em>type Switch Case</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_SWITCH_CASE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.typeListImpl <em>type List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.typeListImpl
+   * @see org.xtext.go.impl.GoPackageImpl#gettypeList()
+   * @generated
+   */
+  int TYPE_LIST = 38;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_LIST__TYPE = 0;
+
+  /**
+   * The number of structural features of the '<em>type List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_LIST_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.selectStmtImpl <em>select Stmt</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.selectStmtImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getselectStmt()
+   * @generated
+   */
+  int SELECT_STMT = 39;
+
+  /**
+   * The feature id for the '<em><b>Comm Clause</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT_STMT__COMM_CLAUSE = 0;
+
+  /**
+   * The number of structural features of the '<em>select Stmt</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT_STMT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.commClauseImpl <em>comm Clause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.commClauseImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getcommClause()
+   * @generated
+   */
+  int COMM_CLAUSE = 40;
+
+  /**
+   * The feature id for the '<em><b>Comm Case</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMM_CLAUSE__COMM_CASE = 0;
+
+  /**
+   * The feature id for the '<em><b>Statement List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMM_CLAUSE__STATEMENT_LIST = 1;
+
+  /**
+   * The number of structural features of the '<em>comm Clause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMM_CLAUSE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.commCaseImpl <em>comm Case</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.commCaseImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getcommCase()
+   * @generated
+   */
+  int COMM_CASE = 41;
+
+  /**
+   * The feature id for the '<em><b>Send Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMM_CASE__SEND_STMT = 0;
+
+  /**
+   * The feature id for the '<em><b>Recv Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMM_CASE__RECV_STMT = 1;
+
+  /**
+   * The number of structural features of the '<em>comm Case</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMM_CASE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.recvStmtImpl <em>recv Stmt</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.recvStmtImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getrecvStmt()
+   * @generated
+   */
+  int RECV_STMT = 42;
+
+  /**
+   * The feature id for the '<em><b>Expression List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECV_STMT__EXPRESSION_LIST = 0;
+
+  /**
+   * The feature id for the '<em><b>Identifier List</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECV_STMT__IDENTIFIER_LIST = 1;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECV_STMT__EXPRESSION = 2;
+
+  /**
+   * The number of structural features of the '<em>recv Stmt</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECV_STMT_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.forStmtImpl <em>for Stmt</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.forStmtImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getforStmt()
+   * @generated
+   */
+  int FOR_STMT = 43;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STMT__EXPRESSION = 0;
+
+  /**
+   * The feature id for the '<em><b>For Clause</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STMT__FOR_CLAUSE = 1;
+
+  /**
+   * The feature id for the '<em><b>Range Clause</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STMT__RANGE_CLAUSE = 2;
+
+  /**
+   * The feature id for the '<em><b>Block</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STMT__BLOCK = 3;
+
+  /**
+   * The number of structural features of the '<em>for Stmt</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STMT_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.forClauseImpl <em>for Clause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.forClauseImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getforClause()
+   * @generated
+   */
+  int FOR_CLAUSE = 44;
+
+  /**
+   * The feature id for the '<em><b>Simple Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_CLAUSE__SIMPLE_STMT = 0;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_CLAUSE__EXPRESSION = 1;
+
+  /**
+   * The number of structural features of the '<em>for Clause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_CLAUSE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.rangeClauseImpl <em>range Clause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.rangeClauseImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getrangeClause()
+   * @generated
+   */
+  int RANGE_CLAUSE = 45;
+
+  /**
+   * The feature id for the '<em><b>Expression List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RANGE_CLAUSE__EXPRESSION_LIST = 0;
+
+  /**
+   * The feature id for the '<em><b>Identifier List</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RANGE_CLAUSE__IDENTIFIER_LIST = 1;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RANGE_CLAUSE__EXPRESSION = 2;
+
+  /**
+   * The number of structural features of the '<em>range Clause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RANGE_CLAUSE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.goStmtImpl <em>go Stmt</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.goStmtImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getgoStmt()
+   * @generated
+   */
+  int GO_STMT = 46;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GO_STMT__EXPRESSION = 0;
+
+  /**
+   * The number of structural features of the '<em>go Stmt</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GO_STMT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.typeImpl <em>type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.typeImpl
+   * @see org.xtext.go.impl.GoPackageImpl#gettype()
+   * @generated
+   */
+  int TYPE = 47;
+
+  /**
+   * The feature id for the '<em><b>Type Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__TYPE_NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Type Lit</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__TYPE_LIT = 1;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__TYPE = 2;
+
+  /**
+   * The number of structural features of the '<em>type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.typeNameImpl <em>type Name</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.typeNameImpl
+   * @see org.xtext.go.impl.GoPackageImpl#gettypeName()
+   * @generated
+   */
+  int TYPE_NAME = 48;
+
+  /**
+   * The feature id for the '<em><b>Qualified Ident</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_NAME__QUALIFIED_IDENT = 0;
+
+  /**
+   * The number of structural features of the '<em>type Name</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_NAME_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.typeLitImpl <em>type Lit</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.typeLitImpl
+   * @see org.xtext.go.impl.GoPackageImpl#gettypeLit()
+   * @generated
+   */
+  int TYPE_LIT = 49;
+
+  /**
+   * The feature id for the '<em><b>Array Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_LIT__ARRAY_TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Struct Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_LIT__STRUCT_TYPE = 1;
+
+  /**
+   * The feature id for the '<em><b>Pointer Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_LIT__POINTER_TYPE = 2;
+
+  /**
+   * The feature id for the '<em><b>Function Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_LIT__FUNCTION_TYPE = 3;
+
+  /**
+   * The feature id for the '<em><b>Interface Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_LIT__INTERFACE_TYPE = 4;
+
+  /**
+   * The feature id for the '<em><b>Slice Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_LIT__SLICE_TYPE = 5;
+
+  /**
+   * The feature id for the '<em><b>Map Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_LIT__MAP_TYPE = 6;
+
+  /**
+   * The feature id for the '<em><b>Channel Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_LIT__CHANNEL_TYPE = 7;
+
+  /**
+   * The number of structural features of the '<em>type Lit</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_LIT_FEATURE_COUNT = 8;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.arrayTypeImpl <em>array Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.arrayTypeImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getarrayType()
+   * @generated
+   */
+  int ARRAY_TYPE = 50;
+
+  /**
+   * The feature id for the '<em><b>Array Length</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_TYPE__ARRAY_LENGTH = 0;
+
+  /**
+   * The feature id for the '<em><b>Element Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_TYPE__ELEMENT_TYPE = 1;
+
+  /**
+   * The number of structural features of the '<em>array Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_TYPE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.arrayLengthImpl <em>array Length</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.arrayLengthImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getarrayLength()
+   * @generated
+   */
+  int ARRAY_LENGTH = 51;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_LENGTH__EXPRESSION = 0;
+
+  /**
+   * The number of structural features of the '<em>array Length</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_LENGTH_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.elementTypeImpl <em>element Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.elementTypeImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getelementType()
+   * @generated
+   */
+  int ELEMENT_TYPE = 52;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_TYPE__TYPE = 0;
+
+  /**
+   * The number of structural features of the '<em>element Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_TYPE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.pointerTypeImpl <em>pointer Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.pointerTypeImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getpointerType()
+   * @generated
+   */
+  int POINTER_TYPE = 53;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POINTER_TYPE__TYPE = 0;
+
+  /**
+   * The number of structural features of the '<em>pointer Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POINTER_TYPE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.interfaceTypeImpl <em>interface Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.interfaceTypeImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getinterfaceType()
+   * @generated
+   */
+  int INTERFACE_TYPE = 54;
+
+  /**
+   * The feature id for the '<em><b>Method Spec</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERFACE_TYPE__METHOD_SPEC = 0;
+
+  /**
+   * The number of structural features of the '<em>interface Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERFACE_TYPE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.sliceTypeImpl <em>slice Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.sliceTypeImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getsliceType()
+   * @generated
+   */
+  int SLICE_TYPE = 55;
+
+  /**
+   * The feature id for the '<em><b>Element Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SLICE_TYPE__ELEMENT_TYPE = 0;
+
+  /**
+   * The number of structural features of the '<em>slice Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SLICE_TYPE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.mapTypeImpl <em>map Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.mapTypeImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getmapType()
+   * @generated
+   */
+  int MAP_TYPE = 56;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_TYPE__TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Element Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_TYPE__ELEMENT_TYPE = 1;
+
+  /**
+   * The number of structural features of the '<em>map Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_TYPE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.channelTypeImpl <em>channel Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.channelTypeImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getchannelType()
+   * @generated
+   */
+  int CHANNEL_TYPE = 57;
+
+  /**
+   * The feature id for the '<em><b>Element Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHANNEL_TYPE__ELEMENT_TYPE = 0;
+
+  /**
+   * The number of structural features of the '<em>channel Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHANNEL_TYPE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.methodSpecImpl <em>method Spec</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.methodSpecImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getmethodSpec()
+   * @generated
+   */
+  int METHOD_SPEC = 58;
+
+  /**
+   * The feature id for the '<em><b>Signature</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_SPEC__SIGNATURE = 0;
+
+  /**
+   * The feature id for the '<em><b>Type Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_SPEC__TYPE_NAME = 1;
+
+  /**
+   * The number of structural features of the '<em>method Spec</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_SPEC_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.functionTypeImpl <em>function Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.functionTypeImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getfunctionType()
+   * @generated
+   */
+  int FUNCTION_TYPE = 59;
+
+  /**
+   * The feature id for the '<em><b>Signature</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_TYPE__SIGNATURE = 0;
+
+  /**
+   * The number of structural features of the '<em>function Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_TYPE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.signatureImpl <em>signature</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.signatureImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getsignature()
+   * @generated
+   */
+  int SIGNATURE = 60;
+
+  /**
+   * The feature id for the '<em><b>Parameters</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIGNATURE__PARAMETERS = 0;
+
+  /**
+   * The feature id for the '<em><b>Result</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIGNATURE__RESULT = 1;
+
+  /**
+   * The number of structural features of the '<em>signature</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIGNATURE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.resultImpl <em>result</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.resultImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getresult()
+   * @generated
+   */
+  int RESULT = 61;
+
+  /**
+   * The feature id for the '<em><b>Parameters</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESULT__PARAMETERS = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESULT__TYPE = 1;
+
+  /**
+   * The number of structural features of the '<em>result</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESULT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.parametersImpl <em>parameters</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.parametersImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getparameters()
+   * @generated
+   */
+  int PARAMETERS = 62;
+
+  /**
+   * The feature id for the '<em><b>Parameter List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETERS__PARAMETER_LIST = 0;
+
+  /**
+   * The number of structural features of the '<em>parameters</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETERS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.parameterListImpl <em>parameter List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.parameterListImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getparameterList()
+   * @generated
+   */
+  int PARAMETER_LIST = 63;
+
+  /**
+   * The feature id for the '<em><b>Parameter Decl</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER_LIST__PARAMETER_DECL = 0;
+
+  /**
+   * The number of structural features of the '<em>parameter List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER_LIST_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.parameterDeclImpl <em>parameter Decl</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.parameterDeclImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getparameterDecl()
+   * @generated
+   */
+  int PARAMETER_DECL = 64;
+
+  /**
+   * The feature id for the '<em><b>Identifier List</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER_DECL__IDENTIFIER_LIST = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER_DECL__TYPE = 1;
+
+  /**
+   * The number of structural features of the '<em>parameter Decl</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER_DECL_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.operandImpl <em>operand</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.operandImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getoperand()
+   * @generated
+   */
+  int OPERAND = 65;
+
+  /**
+   * The feature id for the '<em><b>Literal</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND__LITERAL = 0;
+
+  /**
+   * The feature id for the '<em><b>Operand Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND__OPERAND_NAME = 1;
+
+  /**
+   * The feature id for the '<em><b>Method Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND__METHOD_EXPR = 2;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND__EXPRESSION = 3;
+
+  /**
+   * The number of structural features of the '<em>operand</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.literalImpl <em>literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.literalImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getliteral()
+   * @generated
+   */
+  int LITERAL = 66;
+
+  /**
+   * The feature id for the '<em><b>Basic Lit</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__BASIC_LIT = 0;
+
+  /**
+   * The feature id for the '<em><b>Composite Lit</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__COMPOSITE_LIT = 1;
+
+  /**
+   * The feature id for the '<em><b>Function Lit</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__FUNCTION_LIT = 2;
+
+  /**
+   * The number of structural features of the '<em>literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.operandNameImpl <em>operand Name</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.operandNameImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getoperandName()
+   * @generated
+   */
+  int OPERAND_NAME = 67;
+
+  /**
+   * The feature id for the '<em><b>Qualified Ident</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND_NAME__QUALIFIED_IDENT = 0;
+
+  /**
+   * The number of structural features of the '<em>operand Name</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND_NAME_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.compositeLitImpl <em>composite Lit</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.compositeLitImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getcompositeLit()
+   * @generated
+   */
+  int COMPOSITE_LIT = 68;
+
+  /**
+   * The feature id for the '<em><b>Literal Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPOSITE_LIT__LITERAL_TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Literal Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPOSITE_LIT__LITERAL_VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>composite Lit</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPOSITE_LIT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.literalTypeImpl <em>literal Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.literalTypeImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getliteralType()
+   * @generated
+   */
+  int LITERAL_TYPE = 69;
+
+  /**
+   * The feature id for the '<em><b>Struct Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL_TYPE__STRUCT_TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Array Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL_TYPE__ARRAY_TYPE = 1;
+
+  /**
+   * The feature id for the '<em><b>Element Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL_TYPE__ELEMENT_TYPE = 2;
+
+  /**
+   * The feature id for the '<em><b>Slice Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL_TYPE__SLICE_TYPE = 3;
+
+  /**
+   * The feature id for the '<em><b>Map Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL_TYPE__MAP_TYPE = 4;
+
+  /**
+   * The feature id for the '<em><b>Type Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL_TYPE__TYPE_NAME = 5;
+
+  /**
+   * The number of structural features of the '<em>literal Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL_TYPE_FEATURE_COUNT = 6;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.literalValueImpl <em>literal Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.literalValueImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getliteralValue()
+   * @generated
+   */
+  int LITERAL_VALUE = 70;
+
+  /**
+   * The feature id for the '<em><b>Element List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL_VALUE__ELEMENT_LIST = 0;
+
+  /**
+   * The number of structural features of the '<em>literal Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL_VALUE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.elementListImpl <em>element List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.elementListImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getelementList()
+   * @generated
+   */
+  int ELEMENT_LIST = 71;
+
+  /**
+   * The feature id for the '<em><b>Keyed Element</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_LIST__KEYED_ELEMENT = 0;
+
+  /**
+   * The number of structural features of the '<em>element List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_LIST_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.keyedElementImpl <em>keyed Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.keyedElementImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getkeyedElement()
+   * @generated
+   */
+  int KEYED_ELEMENT = 72;
+
+  /**
+   * The feature id for the '<em><b>Key</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int KEYED_ELEMENT__KEY = 0;
+
+  /**
+   * The feature id for the '<em><b>Element</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int KEYED_ELEMENT__ELEMENT = 1;
+
+  /**
+   * The number of structural features of the '<em>keyed Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int KEYED_ELEMENT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.keyImpl <em>key</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.keyImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getkey()
+   * @generated
+   */
+  int KEY = 73;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int KEY__EXPRESSION = 0;
+
+  /**
+   * The feature id for the '<em><b>Literal Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int KEY__LITERAL_VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>key</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int KEY_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.elementImpl <em>element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.elementImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getelement()
+   * @generated
+   */
+  int ELEMENT = 74;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT__EXPRESSION = 0;
+
+  /**
+   * The feature id for the '<em><b>Literal Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT__LITERAL_VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.structTypeImpl <em>struct Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.structTypeImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getstructType()
+   * @generated
+   */
+  int STRUCT_TYPE = 75;
+
+  /**
+   * The feature id for the '<em><b>Field Decl</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUCT_TYPE__FIELD_DECL = 0;
+
+  /**
+   * The number of structural features of the '<em>struct Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUCT_TYPE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.fieldDeclImpl <em>field Decl</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.fieldDeclImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getfieldDecl()
+   * @generated
+   */
+  int FIELD_DECL = 76;
+
+  /**
+   * The feature id for the '<em><b>Identifier List</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_DECL__IDENTIFIER_LIST = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_DECL__TYPE = 1;
+
+  /**
+   * The feature id for the '<em><b>Anonymous Field</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_DECL__ANONYMOUS_FIELD = 2;
+
+  /**
+   * The number of structural features of the '<em>field Decl</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_DECL_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.anonymousFieldImpl <em>anonymous Field</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.anonymousFieldImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getanonymousField()
+   * @generated
+   */
+  int ANONYMOUS_FIELD = 77;
+
+  /**
+   * The feature id for the '<em><b>Type Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANONYMOUS_FIELD__TYPE_NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>anonymous Field</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANONYMOUS_FIELD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.functionLitImpl <em>function Lit</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.functionLitImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getfunctionLit()
+   * @generated
+   */
+  int FUNCTION_LIT = 78;
+
+  /**
+   * The feature id for the '<em><b>Function</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_LIT__FUNCTION = 0;
+
+  /**
+   * The number of structural features of the '<em>function Lit</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_LIT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.primaryExprImpl <em>primary Expr</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.primaryExprImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getprimaryExpr()
+   * @generated
+   */
+  int PRIMARY_EXPR = 79;
+
+  /**
+   * The feature id for the '<em><b>Operand</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR__OPERAND = 0;
+
+  /**
+   * The feature id for the '<em><b>Conversion</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR__CONVERSION = 1;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr Selector</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR__PRIMARY_EXPR_SELECTOR = 2;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr Index</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR__PRIMARY_EXPR_INDEX = 3;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr Slice</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR__PRIMARY_EXPR_SLICE = 4;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr Type Assertion</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR__PRIMARY_EXPR_TYPE_ASSERTION = 5;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr Arguments</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR__PRIMARY_EXPR_ARGUMENTS = 6;
+
+  /**
+   * The number of structural features of the '<em>primary Expr</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_FEATURE_COUNT = 7;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.primaryExprStuffImpl <em>primary Expr Stuff</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.primaryExprStuffImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getprimaryExprStuff()
+   * @generated
+   */
+  int PRIMARY_EXPR_STUFF = 80;
+
+  /**
+   * The feature id for the '<em><b>Selector</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_STUFF__SELECTOR = 0;
+
+  /**
+   * The feature id for the '<em><b>Index</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_STUFF__INDEX = 1;
+
+  /**
+   * The feature id for the '<em><b>Slice</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_STUFF__SLICE = 2;
+
+  /**
+   * The feature id for the '<em><b>Type Assertion</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_STUFF__TYPE_ASSERTION = 3;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_STUFF__ARGUMENTS = 4;
+
+  /**
+   * The number of structural features of the '<em>primary Expr Stuff</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_STUFF_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.primaryExprSelectorImpl <em>primary Expr Selector</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.primaryExprSelectorImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getprimaryExprSelector()
+   * @generated
+   */
+  int PRIMARY_EXPR_SELECTOR = 81;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr Stuff</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_SELECTOR__PRIMARY_EXPR_STUFF = 0;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr Selector</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_SELECTOR__PRIMARY_EXPR_SELECTOR = 1;
+
+  /**
+   * The number of structural features of the '<em>primary Expr Selector</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_SELECTOR_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.primaryExprIndexImpl <em>primary Expr Index</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.primaryExprIndexImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getprimaryExprIndex()
+   * @generated
+   */
+  int PRIMARY_EXPR_INDEX = 82;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr Stuff</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_INDEX__PRIMARY_EXPR_STUFF = 0;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr Index</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_INDEX__PRIMARY_EXPR_INDEX = 1;
+
+  /**
+   * The number of structural features of the '<em>primary Expr Index</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_INDEX_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.primaryExprSliceImpl <em>primary Expr Slice</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.primaryExprSliceImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getprimaryExprSlice()
+   * @generated
+   */
+  int PRIMARY_EXPR_SLICE = 83;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr Stuff</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_SLICE__PRIMARY_EXPR_STUFF = 0;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr Slice</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_SLICE__PRIMARY_EXPR_SLICE = 1;
+
+  /**
+   * The number of structural features of the '<em>primary Expr Slice</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_SLICE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.primaryExprTypeAssertionImpl <em>primary Expr Type Assertion</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.primaryExprTypeAssertionImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getprimaryExprTypeAssertion()
+   * @generated
+   */
+  int PRIMARY_EXPR_TYPE_ASSERTION = 84;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr Stuff</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_TYPE_ASSERTION__PRIMARY_EXPR_STUFF = 0;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr Type Assertion</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_TYPE_ASSERTION__PRIMARY_EXPR_TYPE_ASSERTION = 1;
+
+  /**
+   * The number of structural features of the '<em>primary Expr Type Assertion</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_TYPE_ASSERTION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.primaryExprArgumentsImpl <em>primary Expr Arguments</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.primaryExprArgumentsImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getprimaryExprArguments()
+   * @generated
+   */
+  int PRIMARY_EXPR_ARGUMENTS = 85;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr Stuff</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_STUFF = 0;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr Arguments</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_ARGUMENTS = 1;
+
+  /**
+   * The number of structural features of the '<em>primary Expr Arguments</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_ARGUMENTS_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.indexImpl <em>index</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.indexImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getindex()
+   * @generated
+   */
+  int INDEX = 86;
+
+  /**
+   * The number of structural features of the '<em>index</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INDEX_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.sliceImpl <em>slice</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.sliceImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getslice()
+   * @generated
+   */
+  int SLICE = 87;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SLICE__EXPRESSION = 0;
+
+  /**
+   * The number of structural features of the '<em>slice</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SLICE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.typeAssertionImpl <em>type Assertion</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.typeAssertionImpl
+   * @see org.xtext.go.impl.GoPackageImpl#gettypeAssertion()
+   * @generated
+   */
+  int TYPE_ASSERTION = 88;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_ASSERTION__TYPE = 0;
+
+  /**
+   * The number of structural features of the '<em>type Assertion</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_ASSERTION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.argumentsImpl <em>arguments</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.argumentsImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getarguments()
+   * @generated
+   */
+  int ARGUMENTS = 89;
+
+  /**
+   * The feature id for the '<em><b>Expression List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENTS__EXPRESSION_LIST = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENTS__TYPE = 1;
+
+  /**
+   * The number of structural features of the '<em>arguments</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENTS_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.methodExprImpl <em>method Expr</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.methodExprImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getmethodExpr()
+   * @generated
+   */
+  int METHOD_EXPR = 90;
+
+  /**
+   * The feature id for the '<em><b>Receiver Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_EXPR__RECEIVER_TYPE = 0;
+
+  /**
+   * The number of structural features of the '<em>method Expr</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_EXPR_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.receiverTypeImpl <em>receiver Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.receiverTypeImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getreceiverType()
+   * @generated
+   */
+  int RECEIVER_TYPE = 91;
+
+  /**
+   * The feature id for the '<em><b>Type Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECEIVER_TYPE__TYPE_NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Receiver Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECEIVER_TYPE__RECEIVER_TYPE = 1;
+
+  /**
+   * The number of structural features of the '<em>receiver Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECEIVER_TYPE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.expressionImpl <em>expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.expressionImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getexpression()
+   * @generated
+   */
+  int EXPRESSION = 92;
+
+  /**
+   * The feature id for the '<em><b>Unary Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__UNARY_EXPR = INDEX_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Expression Matched</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__EXPRESSION_MATCHED = INDEX_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_FEATURE_COUNT = INDEX_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.expressionMatchedImpl <em>expression Matched</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.expressionMatchedImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getexpressionMatched()
+   * @generated
+   */
+  int EXPRESSION_MATCHED = 93;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_MATCHED__EXPRESSION = 0;
+
+  /**
+   * The number of structural features of the '<em>expression Matched</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_MATCHED_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.unaryExprImpl <em>unary Expr</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.unaryExprImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getunaryExpr()
+   * @generated
+   */
+  int UNARY_EXPR = 94;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPR__PRIMARY_EXPR = 0;
+
+  /**
+   * The feature id for the '<em><b>Unary Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPR__UNARY_EXPR = 1;
+
+  /**
+   * The number of structural features of the '<em>unary Expr</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPR_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.go.impl.conversionImpl <em>conversion</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.conversionImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getconversion()
+   * @generated
+   */
+  int CONVERSION = 95;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONVERSION__TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONVERSION__EXPRESSION = 1;
+
+  /**
+   * The number of structural features of the '<em>conversion</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONVERSION_FEATURE_COUNT = 2;
 
 
   /**
@@ -155,6 +3732,3135 @@ public interface GoPackage extends EPackage
    * @generated
    */
   EAttribute getsourceFile_PackageClause();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.sourceFile#getImportDecl <em>Import Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Import Decl</em>'.
+   * @see org.xtext.go.sourceFile#getImportDecl()
+   * @see #getsourceFile()
+   * @generated
+   */
+  EReference getsourceFile_ImportDecl();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.sourceFile#getTopLevelDecl <em>Top Level Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Top Level Decl</em>'.
+   * @see org.xtext.go.sourceFile#getTopLevelDecl()
+   * @see #getsourceFile()
+   * @generated
+   */
+  EReference getsourceFile_TopLevelDecl();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.importDecl <em>import Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>import Decl</em>'.
+   * @see org.xtext.go.importDecl
+   * @generated
+   */
+  EClass getimportDecl();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.importDecl#getImportSpec <em>Import Spec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Import Spec</em>'.
+   * @see org.xtext.go.importDecl#getImportSpec()
+   * @see #getimportDecl()
+   * @generated
+   */
+  EReference getimportDecl_ImportSpec();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.importSpec <em>import Spec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>import Spec</em>'.
+   * @see org.xtext.go.importSpec
+   * @generated
+   */
+  EClass getimportSpec();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.importSpec#getImportPath <em>Import Path</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Import Path</em>'.
+   * @see org.xtext.go.importSpec#getImportPath()
+   * @see #getimportSpec()
+   * @generated
+   */
+  EAttribute getimportSpec_ImportPath();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.topLevelDecl <em>top Level Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>top Level Decl</em>'.
+   * @see org.xtext.go.topLevelDecl
+   * @generated
+   */
+  EClass gettopLevelDecl();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.topLevelDecl#getDeclaration <em>Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Declaration</em>'.
+   * @see org.xtext.go.topLevelDecl#getDeclaration()
+   * @see #gettopLevelDecl()
+   * @generated
+   */
+  EReference gettopLevelDecl_Declaration();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.topLevelDecl#getFunctionDecl <em>Function Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Function Decl</em>'.
+   * @see org.xtext.go.topLevelDecl#getFunctionDecl()
+   * @see #gettopLevelDecl()
+   * @generated
+   */
+  EReference gettopLevelDecl_FunctionDecl();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.topLevelDecl#getMethodDecl <em>Method Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Method Decl</em>'.
+   * @see org.xtext.go.topLevelDecl#getMethodDecl()
+   * @see #gettopLevelDecl()
+   * @generated
+   */
+  EReference gettopLevelDecl_MethodDecl();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.declaration <em>declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>declaration</em>'.
+   * @see org.xtext.go.declaration
+   * @generated
+   */
+  EClass getdeclaration();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.declaration#getConstDecl <em>Const Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Const Decl</em>'.
+   * @see org.xtext.go.declaration#getConstDecl()
+   * @see #getdeclaration()
+   * @generated
+   */
+  EReference getdeclaration_ConstDecl();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.declaration#getTypeDecl <em>Type Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type Decl</em>'.
+   * @see org.xtext.go.declaration#getTypeDecl()
+   * @see #getdeclaration()
+   * @generated
+   */
+  EReference getdeclaration_TypeDecl();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.declaration#getVarDecl <em>Var Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Var Decl</em>'.
+   * @see org.xtext.go.declaration#getVarDecl()
+   * @see #getdeclaration()
+   * @generated
+   */
+  EReference getdeclaration_VarDecl();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.constDecl <em>const Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>const Decl</em>'.
+   * @see org.xtext.go.constDecl
+   * @generated
+   */
+  EClass getconstDecl();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.constDecl#getConstSpec <em>Const Spec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Const Spec</em>'.
+   * @see org.xtext.go.constDecl#getConstSpec()
+   * @see #getconstDecl()
+   * @generated
+   */
+  EReference getconstDecl_ConstSpec();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.constSpec <em>const Spec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>const Spec</em>'.
+   * @see org.xtext.go.constSpec
+   * @generated
+   */
+  EClass getconstSpec();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.constSpec#getIdentifierList <em>Identifier List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Identifier List</em>'.
+   * @see org.xtext.go.constSpec#getIdentifierList()
+   * @see #getconstSpec()
+   * @generated
+   */
+  EAttribute getconstSpec_IdentifierList();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.constSpec#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.go.constSpec#getType()
+   * @see #getconstSpec()
+   * @generated
+   */
+  EReference getconstSpec_Type();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.constSpec#getExpressionList <em>Expression List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression List</em>'.
+   * @see org.xtext.go.constSpec#getExpressionList()
+   * @see #getconstSpec()
+   * @generated
+   */
+  EReference getconstSpec_ExpressionList();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.expressionList <em>expression List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>expression List</em>'.
+   * @see org.xtext.go.expressionList
+   * @generated
+   */
+  EClass getexpressionList();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.expressionList#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.go.expressionList#getExpression()
+   * @see #getexpressionList()
+   * @generated
+   */
+  EReference getexpressionList_Expression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.typeDecl <em>type Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>type Decl</em>'.
+   * @see org.xtext.go.typeDecl
+   * @generated
+   */
+  EClass gettypeDecl();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.typeDecl#getTypeSpec <em>Type Spec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type Spec</em>'.
+   * @see org.xtext.go.typeDecl#getTypeSpec()
+   * @see #gettypeDecl()
+   * @generated
+   */
+  EReference gettypeDecl_TypeSpec();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.typeSpec <em>type Spec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>type Spec</em>'.
+   * @see org.xtext.go.typeSpec
+   * @generated
+   */
+  EClass gettypeSpec();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.typeSpec#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.go.typeSpec#getType()
+   * @see #gettypeSpec()
+   * @generated
+   */
+  EReference gettypeSpec_Type();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.functionDecl <em>function Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>function Decl</em>'.
+   * @see org.xtext.go.functionDecl
+   * @generated
+   */
+  EClass getfunctionDecl();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.functionDecl#getFunction <em>Function</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Function</em>'.
+   * @see org.xtext.go.functionDecl#getFunction()
+   * @see #getfunctionDecl()
+   * @generated
+   */
+  EReference getfunctionDecl_Function();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.functionDecl#getSignature <em>Signature</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Signature</em>'.
+   * @see org.xtext.go.functionDecl#getSignature()
+   * @see #getfunctionDecl()
+   * @generated
+   */
+  EReference getfunctionDecl_Signature();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.function <em>function</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>function</em>'.
+   * @see org.xtext.go.function
+   * @generated
+   */
+  EClass getfunction();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.function#getSignature <em>Signature</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Signature</em>'.
+   * @see org.xtext.go.function#getSignature()
+   * @see #getfunction()
+   * @generated
+   */
+  EReference getfunction_Signature();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.function#getBlock <em>Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Block</em>'.
+   * @see org.xtext.go.function#getBlock()
+   * @see #getfunction()
+   * @generated
+   */
+  EReference getfunction_Block();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.methodDecl <em>method Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>method Decl</em>'.
+   * @see org.xtext.go.methodDecl
+   * @generated
+   */
+  EClass getmethodDecl();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.methodDecl#getReceiver <em>Receiver</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Receiver</em>'.
+   * @see org.xtext.go.methodDecl#getReceiver()
+   * @see #getmethodDecl()
+   * @generated
+   */
+  EReference getmethodDecl_Receiver();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.methodDecl#getFunction <em>Function</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Function</em>'.
+   * @see org.xtext.go.methodDecl#getFunction()
+   * @see #getmethodDecl()
+   * @generated
+   */
+  EReference getmethodDecl_Function();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.methodDecl#getSignature <em>Signature</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Signature</em>'.
+   * @see org.xtext.go.methodDecl#getSignature()
+   * @see #getmethodDecl()
+   * @generated
+   */
+  EReference getmethodDecl_Signature();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.receiver <em>receiver</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>receiver</em>'.
+   * @see org.xtext.go.receiver
+   * @generated
+   */
+  EClass getreceiver();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.receiver#getParameters <em>Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Parameters</em>'.
+   * @see org.xtext.go.receiver#getParameters()
+   * @see #getreceiver()
+   * @generated
+   */
+  EReference getreceiver_Parameters();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.varDecl <em>var Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>var Decl</em>'.
+   * @see org.xtext.go.varDecl
+   * @generated
+   */
+  EClass getvarDecl();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.varDecl#getVarSpec <em>Var Spec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Var Spec</em>'.
+   * @see org.xtext.go.varDecl#getVarSpec()
+   * @see #getvarDecl()
+   * @generated
+   */
+  EReference getvarDecl_VarSpec();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.varSpec <em>var Spec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>var Spec</em>'.
+   * @see org.xtext.go.varSpec
+   * @generated
+   */
+  EClass getvarSpec();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.varSpec#getIdentifierList <em>Identifier List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Identifier List</em>'.
+   * @see org.xtext.go.varSpec#getIdentifierList()
+   * @see #getvarSpec()
+   * @generated
+   */
+  EAttribute getvarSpec_IdentifierList();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.varSpec#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.go.varSpec#getType()
+   * @see #getvarSpec()
+   * @generated
+   */
+  EReference getvarSpec_Type();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.varSpec#getExpressionList <em>Expression List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression List</em>'.
+   * @see org.xtext.go.varSpec#getExpressionList()
+   * @see #getvarSpec()
+   * @generated
+   */
+  EReference getvarSpec_ExpressionList();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.block <em>block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>block</em>'.
+   * @see org.xtext.go.block
+   * @generated
+   */
+  EClass getblock();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.block#getStatementList <em>Statement List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Statement List</em>'.
+   * @see org.xtext.go.block#getStatementList()
+   * @see #getblock()
+   * @generated
+   */
+  EReference getblock_StatementList();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.statementList <em>statement List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>statement List</em>'.
+   * @see org.xtext.go.statementList
+   * @generated
+   */
+  EClass getstatementList();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statementList#getStatement <em>Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Statement</em>'.
+   * @see org.xtext.go.statementList#getStatement()
+   * @see #getstatementList()
+   * @generated
+   */
+  EReference getstatementList_Statement();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.statement <em>statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>statement</em>'.
+   * @see org.xtext.go.statement
+   * @generated
+   */
+  EClass getstatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getDeclaration <em>Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Declaration</em>'.
+   * @see org.xtext.go.statement#getDeclaration()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_Declaration();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getLabeledStmt <em>Labeled Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Labeled Stmt</em>'.
+   * @see org.xtext.go.statement#getLabeledStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_LabeledStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getSimpleStmt <em>Simple Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Simple Stmt</em>'.
+   * @see org.xtext.go.statement#getSimpleStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_SimpleStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getGoStmt <em>Go Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Go Stmt</em>'.
+   * @see org.xtext.go.statement#getGoStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_GoStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getReturnStmt <em>Return Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Return Stmt</em>'.
+   * @see org.xtext.go.statement#getReturnStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_ReturnStmt();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.statement#getBreakStmt <em>Break Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Break Stmt</em>'.
+   * @see org.xtext.go.statement#getBreakStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EAttribute getstatement_BreakStmt();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.statement#getContinueStmt <em>Continue Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Continue Stmt</em>'.
+   * @see org.xtext.go.statement#getContinueStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EAttribute getstatement_ContinueStmt();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.statement#getGotoStmt <em>Goto Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Goto Stmt</em>'.
+   * @see org.xtext.go.statement#getGotoStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EAttribute getstatement_GotoStmt();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.statement#getFallthroughStmt <em>Fallthrough Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Fallthrough Stmt</em>'.
+   * @see org.xtext.go.statement#getFallthroughStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EAttribute getstatement_FallthroughStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getBlock <em>Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Block</em>'.
+   * @see org.xtext.go.statement#getBlock()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_Block();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getIfStmt <em>If Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>If Stmt</em>'.
+   * @see org.xtext.go.statement#getIfStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_IfStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getSwitchStmt <em>Switch Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Switch Stmt</em>'.
+   * @see org.xtext.go.statement#getSwitchStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_SwitchStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getSelectStmt <em>Select Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Select Stmt</em>'.
+   * @see org.xtext.go.statement#getSelectStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_SelectStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getForStmt <em>For Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>For Stmt</em>'.
+   * @see org.xtext.go.statement#getForStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_ForStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getDeferStmt <em>Defer Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Defer Stmt</em>'.
+   * @see org.xtext.go.statement#getDeferStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_DeferStmt();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.simpleStmt <em>simple Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>simple Stmt</em>'.
+   * @see org.xtext.go.simpleStmt
+   * @generated
+   */
+  EClass getsimpleStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.simpleStmt#getSendStmt <em>Send Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Send Stmt</em>'.
+   * @see org.xtext.go.simpleStmt#getSendStmt()
+   * @see #getsimpleStmt()
+   * @generated
+   */
+  EReference getsimpleStmt_SendStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.simpleStmt#getExpressionStmt <em>Expression Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression Stmt</em>'.
+   * @see org.xtext.go.simpleStmt#getExpressionStmt()
+   * @see #getsimpleStmt()
+   * @generated
+   */
+  EReference getsimpleStmt_ExpressionStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.simpleStmt#getIncDecStmt <em>Inc Dec Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Inc Dec Stmt</em>'.
+   * @see org.xtext.go.simpleStmt#getIncDecStmt()
+   * @see #getsimpleStmt()
+   * @generated
+   */
+  EReference getsimpleStmt_IncDecStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.simpleStmt#getAssignment <em>Assignment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Assignment</em>'.
+   * @see org.xtext.go.simpleStmt#getAssignment()
+   * @see #getsimpleStmt()
+   * @generated
+   */
+  EReference getsimpleStmt_Assignment();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.simpleStmt#getShortVarDecl <em>Short Var Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Short Var Decl</em>'.
+   * @see org.xtext.go.simpleStmt#getShortVarDecl()
+   * @see #getsimpleStmt()
+   * @generated
+   */
+  EReference getsimpleStmt_ShortVarDecl();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.simpleStmt#getEmptyStmt <em>Empty Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Empty Stmt</em>'.
+   * @see org.xtext.go.simpleStmt#getEmptyStmt()
+   * @see #getsimpleStmt()
+   * @generated
+   */
+  EAttribute getsimpleStmt_EmptyStmt();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.expressionStmt <em>expression Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>expression Stmt</em>'.
+   * @see org.xtext.go.expressionStmt
+   * @generated
+   */
+  EClass getexpressionStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.expressionStmt#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.go.expressionStmt#getExpression()
+   * @see #getexpressionStmt()
+   * @generated
+   */
+  EReference getexpressionStmt_Expression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.sendStmt <em>send Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>send Stmt</em>'.
+   * @see org.xtext.go.sendStmt
+   * @generated
+   */
+  EClass getsendStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.sendStmt#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.go.sendStmt#getExpression()
+   * @see #getsendStmt()
+   * @generated
+   */
+  EReference getsendStmt_Expression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.incDecStmt <em>inc Dec Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>inc Dec Stmt</em>'.
+   * @see org.xtext.go.incDecStmt
+   * @generated
+   */
+  EClass getincDecStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.incDecStmt#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.go.incDecStmt#getExpression()
+   * @see #getincDecStmt()
+   * @generated
+   */
+  EReference getincDecStmt_Expression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.assignment <em>assignment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>assignment</em>'.
+   * @see org.xtext.go.assignment
+   * @generated
+   */
+  EClass getassignment();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.assignment#getExpressionList <em>Expression List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression List</em>'.
+   * @see org.xtext.go.assignment#getExpressionList()
+   * @see #getassignment()
+   * @generated
+   */
+  EReference getassignment_ExpressionList();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.assignment#getAssign_op <em>Assign op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Assign op</em>'.
+   * @see org.xtext.go.assignment#getAssign_op()
+   * @see #getassignment()
+   * @generated
+   */
+  EAttribute getassignment_Assign_op();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.shortVarDecl <em>short Var Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>short Var Decl</em>'.
+   * @see org.xtext.go.shortVarDecl
+   * @generated
+   */
+  EClass getshortVarDecl();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.shortVarDecl#getIdentifierList <em>Identifier List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Identifier List</em>'.
+   * @see org.xtext.go.shortVarDecl#getIdentifierList()
+   * @see #getshortVarDecl()
+   * @generated
+   */
+  EAttribute getshortVarDecl_IdentifierList();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.shortVarDecl#getExpressionList <em>Expression List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression List</em>'.
+   * @see org.xtext.go.shortVarDecl#getExpressionList()
+   * @see #getshortVarDecl()
+   * @generated
+   */
+  EReference getshortVarDecl_ExpressionList();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.labeledStmt <em>labeled Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>labeled Stmt</em>'.
+   * @see org.xtext.go.labeledStmt
+   * @generated
+   */
+  EClass getlabeledStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.labeledStmt#getStatement <em>Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Statement</em>'.
+   * @see org.xtext.go.labeledStmt#getStatement()
+   * @see #getlabeledStmt()
+   * @generated
+   */
+  EReference getlabeledStmt_Statement();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.returnStmt <em>return Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>return Stmt</em>'.
+   * @see org.xtext.go.returnStmt
+   * @generated
+   */
+  EClass getreturnStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.returnStmt#getExpressionList <em>Expression List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression List</em>'.
+   * @see org.xtext.go.returnStmt#getExpressionList()
+   * @see #getreturnStmt()
+   * @generated
+   */
+  EReference getreturnStmt_ExpressionList();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.deferStmt <em>defer Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>defer Stmt</em>'.
+   * @see org.xtext.go.deferStmt
+   * @generated
+   */
+  EClass getdeferStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.deferStmt#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.go.deferStmt#getExpression()
+   * @see #getdeferStmt()
+   * @generated
+   */
+  EReference getdeferStmt_Expression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.ifStmt <em>if Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>if Stmt</em>'.
+   * @see org.xtext.go.ifStmt
+   * @generated
+   */
+  EClass getifStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.ifStmt#getSimpleStmt <em>Simple Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Simple Stmt</em>'.
+   * @see org.xtext.go.ifStmt#getSimpleStmt()
+   * @see #getifStmt()
+   * @generated
+   */
+  EReference getifStmt_SimpleStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.ifStmt#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.go.ifStmt#getExpression()
+   * @see #getifStmt()
+   * @generated
+   */
+  EReference getifStmt_Expression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.ifStmt#getBlock <em>Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Block</em>'.
+   * @see org.xtext.go.ifStmt#getBlock()
+   * @see #getifStmt()
+   * @generated
+   */
+  EReference getifStmt_Block();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.ifStmt#getIfStmt <em>If Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>If Stmt</em>'.
+   * @see org.xtext.go.ifStmt#getIfStmt()
+   * @see #getifStmt()
+   * @generated
+   */
+  EReference getifStmt_IfStmt();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.switchStmt <em>switch Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>switch Stmt</em>'.
+   * @see org.xtext.go.switchStmt
+   * @generated
+   */
+  EClass getswitchStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.switchStmt#getExprSwitchStmt <em>Expr Switch Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr Switch Stmt</em>'.
+   * @see org.xtext.go.switchStmt#getExprSwitchStmt()
+   * @see #getswitchStmt()
+   * @generated
+   */
+  EReference getswitchStmt_ExprSwitchStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.switchStmt#getTypeSwitchStmt <em>Type Switch Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type Switch Stmt</em>'.
+   * @see org.xtext.go.switchStmt#getTypeSwitchStmt()
+   * @see #getswitchStmt()
+   * @generated
+   */
+  EReference getswitchStmt_TypeSwitchStmt();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.exprSwitchStmt <em>expr Switch Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>expr Switch Stmt</em>'.
+   * @see org.xtext.go.exprSwitchStmt
+   * @generated
+   */
+  EClass getexprSwitchStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.exprSwitchStmt#getSimpleStmt <em>Simple Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Simple Stmt</em>'.
+   * @see org.xtext.go.exprSwitchStmt#getSimpleStmt()
+   * @see #getexprSwitchStmt()
+   * @generated
+   */
+  EReference getexprSwitchStmt_SimpleStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.exprSwitchStmt#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.go.exprSwitchStmt#getExpression()
+   * @see #getexprSwitchStmt()
+   * @generated
+   */
+  EReference getexprSwitchStmt_Expression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.exprSwitchStmt#getExprCaseClause <em>Expr Case Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr Case Clause</em>'.
+   * @see org.xtext.go.exprSwitchStmt#getExprCaseClause()
+   * @see #getexprSwitchStmt()
+   * @generated
+   */
+  EReference getexprSwitchStmt_ExprCaseClause();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.exprCaseClause <em>expr Case Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>expr Case Clause</em>'.
+   * @see org.xtext.go.exprCaseClause
+   * @generated
+   */
+  EClass getexprCaseClause();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.exprCaseClause#getExprSwitchCase <em>Expr Switch Case</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr Switch Case</em>'.
+   * @see org.xtext.go.exprCaseClause#getExprSwitchCase()
+   * @see #getexprCaseClause()
+   * @generated
+   */
+  EReference getexprCaseClause_ExprSwitchCase();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.exprCaseClause#getStatementList <em>Statement List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Statement List</em>'.
+   * @see org.xtext.go.exprCaseClause#getStatementList()
+   * @see #getexprCaseClause()
+   * @generated
+   */
+  EReference getexprCaseClause_StatementList();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.exprSwitchCase <em>expr Switch Case</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>expr Switch Case</em>'.
+   * @see org.xtext.go.exprSwitchCase
+   * @generated
+   */
+  EClass getexprSwitchCase();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.exprSwitchCase#getExpressionList <em>Expression List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression List</em>'.
+   * @see org.xtext.go.exprSwitchCase#getExpressionList()
+   * @see #getexprSwitchCase()
+   * @generated
+   */
+  EReference getexprSwitchCase_ExpressionList();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.typeSwitchStmt <em>type Switch Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>type Switch Stmt</em>'.
+   * @see org.xtext.go.typeSwitchStmt
+   * @generated
+   */
+  EClass gettypeSwitchStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.typeSwitchStmt#getSimpleStmt <em>Simple Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Simple Stmt</em>'.
+   * @see org.xtext.go.typeSwitchStmt#getSimpleStmt()
+   * @see #gettypeSwitchStmt()
+   * @generated
+   */
+  EReference gettypeSwitchStmt_SimpleStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.typeSwitchStmt#getTypeSwitchGuard <em>Type Switch Guard</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type Switch Guard</em>'.
+   * @see org.xtext.go.typeSwitchStmt#getTypeSwitchGuard()
+   * @see #gettypeSwitchStmt()
+   * @generated
+   */
+  EReference gettypeSwitchStmt_TypeSwitchGuard();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.typeSwitchStmt#getTypeCaseClause <em>Type Case Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type Case Clause</em>'.
+   * @see org.xtext.go.typeSwitchStmt#getTypeCaseClause()
+   * @see #gettypeSwitchStmt()
+   * @generated
+   */
+  EReference gettypeSwitchStmt_TypeCaseClause();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.typeSwitchGuard <em>type Switch Guard</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>type Switch Guard</em>'.
+   * @see org.xtext.go.typeSwitchGuard
+   * @generated
+   */
+  EClass gettypeSwitchGuard();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.typeSwitchGuard#getPrimaryExpr <em>Primary Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr</em>'.
+   * @see org.xtext.go.typeSwitchGuard#getPrimaryExpr()
+   * @see #gettypeSwitchGuard()
+   * @generated
+   */
+  EReference gettypeSwitchGuard_PrimaryExpr();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.typeCaseClause <em>type Case Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>type Case Clause</em>'.
+   * @see org.xtext.go.typeCaseClause
+   * @generated
+   */
+  EClass gettypeCaseClause();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.typeCaseClause#getTypeSwitchCase <em>Type Switch Case</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type Switch Case</em>'.
+   * @see org.xtext.go.typeCaseClause#getTypeSwitchCase()
+   * @see #gettypeCaseClause()
+   * @generated
+   */
+  EReference gettypeCaseClause_TypeSwitchCase();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.typeCaseClause#getStatementList <em>Statement List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Statement List</em>'.
+   * @see org.xtext.go.typeCaseClause#getStatementList()
+   * @see #gettypeCaseClause()
+   * @generated
+   */
+  EReference gettypeCaseClause_StatementList();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.typeSwitchCase <em>type Switch Case</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>type Switch Case</em>'.
+   * @see org.xtext.go.typeSwitchCase
+   * @generated
+   */
+  EClass gettypeSwitchCase();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.typeSwitchCase#getTypeList <em>Type List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type List</em>'.
+   * @see org.xtext.go.typeSwitchCase#getTypeList()
+   * @see #gettypeSwitchCase()
+   * @generated
+   */
+  EReference gettypeSwitchCase_TypeList();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.typeList <em>type List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>type List</em>'.
+   * @see org.xtext.go.typeList
+   * @generated
+   */
+  EClass gettypeList();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.typeList#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.go.typeList#getType()
+   * @see #gettypeList()
+   * @generated
+   */
+  EReference gettypeList_Type();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.selectStmt <em>select Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>select Stmt</em>'.
+   * @see org.xtext.go.selectStmt
+   * @generated
+   */
+  EClass getselectStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.selectStmt#getCommClause <em>Comm Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Comm Clause</em>'.
+   * @see org.xtext.go.selectStmt#getCommClause()
+   * @see #getselectStmt()
+   * @generated
+   */
+  EReference getselectStmt_CommClause();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.commClause <em>comm Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>comm Clause</em>'.
+   * @see org.xtext.go.commClause
+   * @generated
+   */
+  EClass getcommClause();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.commClause#getCommCase <em>Comm Case</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Comm Case</em>'.
+   * @see org.xtext.go.commClause#getCommCase()
+   * @see #getcommClause()
+   * @generated
+   */
+  EReference getcommClause_CommCase();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.commClause#getStatementList <em>Statement List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Statement List</em>'.
+   * @see org.xtext.go.commClause#getStatementList()
+   * @see #getcommClause()
+   * @generated
+   */
+  EReference getcommClause_StatementList();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.commCase <em>comm Case</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>comm Case</em>'.
+   * @see org.xtext.go.commCase
+   * @generated
+   */
+  EClass getcommCase();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.commCase#getSendStmt <em>Send Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Send Stmt</em>'.
+   * @see org.xtext.go.commCase#getSendStmt()
+   * @see #getcommCase()
+   * @generated
+   */
+  EReference getcommCase_SendStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.commCase#getRecvStmt <em>Recv Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Recv Stmt</em>'.
+   * @see org.xtext.go.commCase#getRecvStmt()
+   * @see #getcommCase()
+   * @generated
+   */
+  EReference getcommCase_RecvStmt();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.recvStmt <em>recv Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>recv Stmt</em>'.
+   * @see org.xtext.go.recvStmt
+   * @generated
+   */
+  EClass getrecvStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.recvStmt#getExpressionList <em>Expression List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression List</em>'.
+   * @see org.xtext.go.recvStmt#getExpressionList()
+   * @see #getrecvStmt()
+   * @generated
+   */
+  EReference getrecvStmt_ExpressionList();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.recvStmt#getIdentifierList <em>Identifier List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Identifier List</em>'.
+   * @see org.xtext.go.recvStmt#getIdentifierList()
+   * @see #getrecvStmt()
+   * @generated
+   */
+  EAttribute getrecvStmt_IdentifierList();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.recvStmt#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.go.recvStmt#getExpression()
+   * @see #getrecvStmt()
+   * @generated
+   */
+  EReference getrecvStmt_Expression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.forStmt <em>for Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>for Stmt</em>'.
+   * @see org.xtext.go.forStmt
+   * @generated
+   */
+  EClass getforStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.forStmt#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.go.forStmt#getExpression()
+   * @see #getforStmt()
+   * @generated
+   */
+  EReference getforStmt_Expression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.forStmt#getForClause <em>For Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>For Clause</em>'.
+   * @see org.xtext.go.forStmt#getForClause()
+   * @see #getforStmt()
+   * @generated
+   */
+  EReference getforStmt_ForClause();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.forStmt#getRangeClause <em>Range Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Range Clause</em>'.
+   * @see org.xtext.go.forStmt#getRangeClause()
+   * @see #getforStmt()
+   * @generated
+   */
+  EReference getforStmt_RangeClause();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.forStmt#getBlock <em>Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Block</em>'.
+   * @see org.xtext.go.forStmt#getBlock()
+   * @see #getforStmt()
+   * @generated
+   */
+  EReference getforStmt_Block();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.forClause <em>for Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>for Clause</em>'.
+   * @see org.xtext.go.forClause
+   * @generated
+   */
+  EClass getforClause();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.forClause#getSimpleStmt <em>Simple Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Simple Stmt</em>'.
+   * @see org.xtext.go.forClause#getSimpleStmt()
+   * @see #getforClause()
+   * @generated
+   */
+  EReference getforClause_SimpleStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.forClause#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.go.forClause#getExpression()
+   * @see #getforClause()
+   * @generated
+   */
+  EReference getforClause_Expression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.rangeClause <em>range Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>range Clause</em>'.
+   * @see org.xtext.go.rangeClause
+   * @generated
+   */
+  EClass getrangeClause();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.rangeClause#getExpressionList <em>Expression List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression List</em>'.
+   * @see org.xtext.go.rangeClause#getExpressionList()
+   * @see #getrangeClause()
+   * @generated
+   */
+  EReference getrangeClause_ExpressionList();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.rangeClause#getIdentifierList <em>Identifier List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Identifier List</em>'.
+   * @see org.xtext.go.rangeClause#getIdentifierList()
+   * @see #getrangeClause()
+   * @generated
+   */
+  EAttribute getrangeClause_IdentifierList();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.rangeClause#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.go.rangeClause#getExpression()
+   * @see #getrangeClause()
+   * @generated
+   */
+  EReference getrangeClause_Expression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.goStmt <em>go Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>go Stmt</em>'.
+   * @see org.xtext.go.goStmt
+   * @generated
+   */
+  EClass getgoStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.goStmt#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.go.goStmt#getExpression()
+   * @see #getgoStmt()
+   * @generated
+   */
+  EReference getgoStmt_Expression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.type <em>type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>type</em>'.
+   * @see org.xtext.go.type
+   * @generated
+   */
+  EClass gettype();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.type#getTypeName <em>Type Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type Name</em>'.
+   * @see org.xtext.go.type#getTypeName()
+   * @see #gettype()
+   * @generated
+   */
+  EReference gettype_TypeName();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.type#getTypeLit <em>Type Lit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type Lit</em>'.
+   * @see org.xtext.go.type#getTypeLit()
+   * @see #gettype()
+   * @generated
+   */
+  EReference gettype_TypeLit();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.type#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.go.type#getType()
+   * @see #gettype()
+   * @generated
+   */
+  EReference gettype_Type();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.typeName <em>type Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>type Name</em>'.
+   * @see org.xtext.go.typeName
+   * @generated
+   */
+  EClass gettypeName();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.typeName#getQualifiedIdent <em>Qualified Ident</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Qualified Ident</em>'.
+   * @see org.xtext.go.typeName#getQualifiedIdent()
+   * @see #gettypeName()
+   * @generated
+   */
+  EAttribute gettypeName_QualifiedIdent();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.typeLit <em>type Lit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>type Lit</em>'.
+   * @see org.xtext.go.typeLit
+   * @generated
+   */
+  EClass gettypeLit();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.typeLit#getArrayType <em>Array Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Array Type</em>'.
+   * @see org.xtext.go.typeLit#getArrayType()
+   * @see #gettypeLit()
+   * @generated
+   */
+  EReference gettypeLit_ArrayType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.typeLit#getStructType <em>Struct Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Struct Type</em>'.
+   * @see org.xtext.go.typeLit#getStructType()
+   * @see #gettypeLit()
+   * @generated
+   */
+  EReference gettypeLit_StructType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.typeLit#getPointerType <em>Pointer Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Pointer Type</em>'.
+   * @see org.xtext.go.typeLit#getPointerType()
+   * @see #gettypeLit()
+   * @generated
+   */
+  EReference gettypeLit_PointerType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.typeLit#getFunctionType <em>Function Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Function Type</em>'.
+   * @see org.xtext.go.typeLit#getFunctionType()
+   * @see #gettypeLit()
+   * @generated
+   */
+  EReference gettypeLit_FunctionType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.typeLit#getInterfaceType <em>Interface Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Interface Type</em>'.
+   * @see org.xtext.go.typeLit#getInterfaceType()
+   * @see #gettypeLit()
+   * @generated
+   */
+  EReference gettypeLit_InterfaceType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.typeLit#getSliceType <em>Slice Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Slice Type</em>'.
+   * @see org.xtext.go.typeLit#getSliceType()
+   * @see #gettypeLit()
+   * @generated
+   */
+  EReference gettypeLit_SliceType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.typeLit#getMapType <em>Map Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Map Type</em>'.
+   * @see org.xtext.go.typeLit#getMapType()
+   * @see #gettypeLit()
+   * @generated
+   */
+  EReference gettypeLit_MapType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.typeLit#getChannelType <em>Channel Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Channel Type</em>'.
+   * @see org.xtext.go.typeLit#getChannelType()
+   * @see #gettypeLit()
+   * @generated
+   */
+  EReference gettypeLit_ChannelType();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.arrayType <em>array Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>array Type</em>'.
+   * @see org.xtext.go.arrayType
+   * @generated
+   */
+  EClass getarrayType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.arrayType#getArrayLength <em>Array Length</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Array Length</em>'.
+   * @see org.xtext.go.arrayType#getArrayLength()
+   * @see #getarrayType()
+   * @generated
+   */
+  EReference getarrayType_ArrayLength();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.arrayType#getElementType <em>Element Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Element Type</em>'.
+   * @see org.xtext.go.arrayType#getElementType()
+   * @see #getarrayType()
+   * @generated
+   */
+  EReference getarrayType_ElementType();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.arrayLength <em>array Length</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>array Length</em>'.
+   * @see org.xtext.go.arrayLength
+   * @generated
+   */
+  EClass getarrayLength();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.arrayLength#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.go.arrayLength#getExpression()
+   * @see #getarrayLength()
+   * @generated
+   */
+  EReference getarrayLength_Expression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.elementType <em>element Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>element Type</em>'.
+   * @see org.xtext.go.elementType
+   * @generated
+   */
+  EClass getelementType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.elementType#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.go.elementType#getType()
+   * @see #getelementType()
+   * @generated
+   */
+  EReference getelementType_Type();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.pointerType <em>pointer Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>pointer Type</em>'.
+   * @see org.xtext.go.pointerType
+   * @generated
+   */
+  EClass getpointerType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.pointerType#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.go.pointerType#getType()
+   * @see #getpointerType()
+   * @generated
+   */
+  EReference getpointerType_Type();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.interfaceType <em>interface Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>interface Type</em>'.
+   * @see org.xtext.go.interfaceType
+   * @generated
+   */
+  EClass getinterfaceType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.interfaceType#getMethodSpec <em>Method Spec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Method Spec</em>'.
+   * @see org.xtext.go.interfaceType#getMethodSpec()
+   * @see #getinterfaceType()
+   * @generated
+   */
+  EReference getinterfaceType_MethodSpec();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.sliceType <em>slice Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>slice Type</em>'.
+   * @see org.xtext.go.sliceType
+   * @generated
+   */
+  EClass getsliceType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.sliceType#getElementType <em>Element Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Element Type</em>'.
+   * @see org.xtext.go.sliceType#getElementType()
+   * @see #getsliceType()
+   * @generated
+   */
+  EReference getsliceType_ElementType();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.mapType <em>map Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>map Type</em>'.
+   * @see org.xtext.go.mapType
+   * @generated
+   */
+  EClass getmapType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.mapType#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.go.mapType#getType()
+   * @see #getmapType()
+   * @generated
+   */
+  EReference getmapType_Type();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.mapType#getElementType <em>Element Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Element Type</em>'.
+   * @see org.xtext.go.mapType#getElementType()
+   * @see #getmapType()
+   * @generated
+   */
+  EReference getmapType_ElementType();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.channelType <em>channel Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>channel Type</em>'.
+   * @see org.xtext.go.channelType
+   * @generated
+   */
+  EClass getchannelType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.channelType#getElementType <em>Element Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Element Type</em>'.
+   * @see org.xtext.go.channelType#getElementType()
+   * @see #getchannelType()
+   * @generated
+   */
+  EReference getchannelType_ElementType();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.methodSpec <em>method Spec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>method Spec</em>'.
+   * @see org.xtext.go.methodSpec
+   * @generated
+   */
+  EClass getmethodSpec();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.methodSpec#getSignature <em>Signature</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Signature</em>'.
+   * @see org.xtext.go.methodSpec#getSignature()
+   * @see #getmethodSpec()
+   * @generated
+   */
+  EReference getmethodSpec_Signature();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.methodSpec#getTypeName <em>Type Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type Name</em>'.
+   * @see org.xtext.go.methodSpec#getTypeName()
+   * @see #getmethodSpec()
+   * @generated
+   */
+  EReference getmethodSpec_TypeName();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.functionType <em>function Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>function Type</em>'.
+   * @see org.xtext.go.functionType
+   * @generated
+   */
+  EClass getfunctionType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.functionType#getSignature <em>Signature</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Signature</em>'.
+   * @see org.xtext.go.functionType#getSignature()
+   * @see #getfunctionType()
+   * @generated
+   */
+  EReference getfunctionType_Signature();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.signature <em>signature</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>signature</em>'.
+   * @see org.xtext.go.signature
+   * @generated
+   */
+  EClass getsignature();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.signature#getParameters <em>Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Parameters</em>'.
+   * @see org.xtext.go.signature#getParameters()
+   * @see #getsignature()
+   * @generated
+   */
+  EReference getsignature_Parameters();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.signature#getResult <em>Result</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Result</em>'.
+   * @see org.xtext.go.signature#getResult()
+   * @see #getsignature()
+   * @generated
+   */
+  EReference getsignature_Result();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.result <em>result</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>result</em>'.
+   * @see org.xtext.go.result
+   * @generated
+   */
+  EClass getresult();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.result#getParameters <em>Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Parameters</em>'.
+   * @see org.xtext.go.result#getParameters()
+   * @see #getresult()
+   * @generated
+   */
+  EReference getresult_Parameters();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.result#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.go.result#getType()
+   * @see #getresult()
+   * @generated
+   */
+  EReference getresult_Type();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.parameters <em>parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>parameters</em>'.
+   * @see org.xtext.go.parameters
+   * @generated
+   */
+  EClass getparameters();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.parameters#getParameterList <em>Parameter List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Parameter List</em>'.
+   * @see org.xtext.go.parameters#getParameterList()
+   * @see #getparameters()
+   * @generated
+   */
+  EReference getparameters_ParameterList();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.parameterList <em>parameter List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>parameter List</em>'.
+   * @see org.xtext.go.parameterList
+   * @generated
+   */
+  EClass getparameterList();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.parameterList#getParameterDecl <em>Parameter Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Parameter Decl</em>'.
+   * @see org.xtext.go.parameterList#getParameterDecl()
+   * @see #getparameterList()
+   * @generated
+   */
+  EReference getparameterList_ParameterDecl();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.parameterDecl <em>parameter Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>parameter Decl</em>'.
+   * @see org.xtext.go.parameterDecl
+   * @generated
+   */
+  EClass getparameterDecl();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.parameterDecl#getIdentifierList <em>Identifier List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Identifier List</em>'.
+   * @see org.xtext.go.parameterDecl#getIdentifierList()
+   * @see #getparameterDecl()
+   * @generated
+   */
+  EAttribute getparameterDecl_IdentifierList();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.parameterDecl#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.go.parameterDecl#getType()
+   * @see #getparameterDecl()
+   * @generated
+   */
+  EReference getparameterDecl_Type();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.operand <em>operand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>operand</em>'.
+   * @see org.xtext.go.operand
+   * @generated
+   */
+  EClass getoperand();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.operand#getLiteral <em>Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Literal</em>'.
+   * @see org.xtext.go.operand#getLiteral()
+   * @see #getoperand()
+   * @generated
+   */
+  EReference getoperand_Literal();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.operand#getOperandName <em>Operand Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Operand Name</em>'.
+   * @see org.xtext.go.operand#getOperandName()
+   * @see #getoperand()
+   * @generated
+   */
+  EReference getoperand_OperandName();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.operand#getMethodExpr <em>Method Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Method Expr</em>'.
+   * @see org.xtext.go.operand#getMethodExpr()
+   * @see #getoperand()
+   * @generated
+   */
+  EReference getoperand_MethodExpr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.operand#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.go.operand#getExpression()
+   * @see #getoperand()
+   * @generated
+   */
+  EReference getoperand_Expression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.literal <em>literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>literal</em>'.
+   * @see org.xtext.go.literal
+   * @generated
+   */
+  EClass getliteral();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.literal#getBasicLit <em>Basic Lit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Basic Lit</em>'.
+   * @see org.xtext.go.literal#getBasicLit()
+   * @see #getliteral()
+   * @generated
+   */
+  EAttribute getliteral_BasicLit();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.literal#getCompositeLit <em>Composite Lit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Composite Lit</em>'.
+   * @see org.xtext.go.literal#getCompositeLit()
+   * @see #getliteral()
+   * @generated
+   */
+  EReference getliteral_CompositeLit();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.literal#getFunctionLit <em>Function Lit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Function Lit</em>'.
+   * @see org.xtext.go.literal#getFunctionLit()
+   * @see #getliteral()
+   * @generated
+   */
+  EReference getliteral_FunctionLit();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.operandName <em>operand Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>operand Name</em>'.
+   * @see org.xtext.go.operandName
+   * @generated
+   */
+  EClass getoperandName();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.operandName#getQualifiedIdent <em>Qualified Ident</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Qualified Ident</em>'.
+   * @see org.xtext.go.operandName#getQualifiedIdent()
+   * @see #getoperandName()
+   * @generated
+   */
+  EAttribute getoperandName_QualifiedIdent();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.compositeLit <em>composite Lit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>composite Lit</em>'.
+   * @see org.xtext.go.compositeLit
+   * @generated
+   */
+  EClass getcompositeLit();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.compositeLit#getLiteralType <em>Literal Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Literal Type</em>'.
+   * @see org.xtext.go.compositeLit#getLiteralType()
+   * @see #getcompositeLit()
+   * @generated
+   */
+  EReference getcompositeLit_LiteralType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.compositeLit#getLiteralValue <em>Literal Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Literal Value</em>'.
+   * @see org.xtext.go.compositeLit#getLiteralValue()
+   * @see #getcompositeLit()
+   * @generated
+   */
+  EReference getcompositeLit_LiteralValue();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.literalType <em>literal Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>literal Type</em>'.
+   * @see org.xtext.go.literalType
+   * @generated
+   */
+  EClass getliteralType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.literalType#getStructType <em>Struct Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Struct Type</em>'.
+   * @see org.xtext.go.literalType#getStructType()
+   * @see #getliteralType()
+   * @generated
+   */
+  EReference getliteralType_StructType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.literalType#getArrayType <em>Array Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Array Type</em>'.
+   * @see org.xtext.go.literalType#getArrayType()
+   * @see #getliteralType()
+   * @generated
+   */
+  EReference getliteralType_ArrayType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.literalType#getElementType <em>Element Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Element Type</em>'.
+   * @see org.xtext.go.literalType#getElementType()
+   * @see #getliteralType()
+   * @generated
+   */
+  EReference getliteralType_ElementType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.literalType#getSliceType <em>Slice Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Slice Type</em>'.
+   * @see org.xtext.go.literalType#getSliceType()
+   * @see #getliteralType()
+   * @generated
+   */
+  EReference getliteralType_SliceType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.literalType#getMapType <em>Map Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Map Type</em>'.
+   * @see org.xtext.go.literalType#getMapType()
+   * @see #getliteralType()
+   * @generated
+   */
+  EReference getliteralType_MapType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.literalType#getTypeName <em>Type Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type Name</em>'.
+   * @see org.xtext.go.literalType#getTypeName()
+   * @see #getliteralType()
+   * @generated
+   */
+  EReference getliteralType_TypeName();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.literalValue <em>literal Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>literal Value</em>'.
+   * @see org.xtext.go.literalValue
+   * @generated
+   */
+  EClass getliteralValue();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.literalValue#getElementList <em>Element List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Element List</em>'.
+   * @see org.xtext.go.literalValue#getElementList()
+   * @see #getliteralValue()
+   * @generated
+   */
+  EReference getliteralValue_ElementList();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.elementList <em>element List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>element List</em>'.
+   * @see org.xtext.go.elementList
+   * @generated
+   */
+  EClass getelementList();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.elementList#getKeyedElement <em>Keyed Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyed Element</em>'.
+   * @see org.xtext.go.elementList#getKeyedElement()
+   * @see #getelementList()
+   * @generated
+   */
+  EReference getelementList_KeyedElement();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.keyedElement <em>keyed Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>keyed Element</em>'.
+   * @see org.xtext.go.keyedElement
+   * @generated
+   */
+  EClass getkeyedElement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.keyedElement#getKey <em>Key</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Key</em>'.
+   * @see org.xtext.go.keyedElement#getKey()
+   * @see #getkeyedElement()
+   * @generated
+   */
+  EReference getkeyedElement_Key();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.keyedElement#getElement <em>Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Element</em>'.
+   * @see org.xtext.go.keyedElement#getElement()
+   * @see #getkeyedElement()
+   * @generated
+   */
+  EReference getkeyedElement_Element();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.key <em>key</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>key</em>'.
+   * @see org.xtext.go.key
+   * @generated
+   */
+  EClass getkey();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.key#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.go.key#getExpression()
+   * @see #getkey()
+   * @generated
+   */
+  EReference getkey_Expression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.key#getLiteralValue <em>Literal Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Literal Value</em>'.
+   * @see org.xtext.go.key#getLiteralValue()
+   * @see #getkey()
+   * @generated
+   */
+  EReference getkey_LiteralValue();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.element <em>element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>element</em>'.
+   * @see org.xtext.go.element
+   * @generated
+   */
+  EClass getelement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.element#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.go.element#getExpression()
+   * @see #getelement()
+   * @generated
+   */
+  EReference getelement_Expression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.element#getLiteralValue <em>Literal Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Literal Value</em>'.
+   * @see org.xtext.go.element#getLiteralValue()
+   * @see #getelement()
+   * @generated
+   */
+  EReference getelement_LiteralValue();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.structType <em>struct Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>struct Type</em>'.
+   * @see org.xtext.go.structType
+   * @generated
+   */
+  EClass getstructType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.structType#getFieldDecl <em>Field Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Field Decl</em>'.
+   * @see org.xtext.go.structType#getFieldDecl()
+   * @see #getstructType()
+   * @generated
+   */
+  EReference getstructType_FieldDecl();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.fieldDecl <em>field Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>field Decl</em>'.
+   * @see org.xtext.go.fieldDecl
+   * @generated
+   */
+  EClass getfieldDecl();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.fieldDecl#getIdentifierList <em>Identifier List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Identifier List</em>'.
+   * @see org.xtext.go.fieldDecl#getIdentifierList()
+   * @see #getfieldDecl()
+   * @generated
+   */
+  EAttribute getfieldDecl_IdentifierList();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.fieldDecl#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.go.fieldDecl#getType()
+   * @see #getfieldDecl()
+   * @generated
+   */
+  EReference getfieldDecl_Type();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.fieldDecl#getAnonymousField <em>Anonymous Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Anonymous Field</em>'.
+   * @see org.xtext.go.fieldDecl#getAnonymousField()
+   * @see #getfieldDecl()
+   * @generated
+   */
+  EReference getfieldDecl_AnonymousField();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.anonymousField <em>anonymous Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>anonymous Field</em>'.
+   * @see org.xtext.go.anonymousField
+   * @generated
+   */
+  EClass getanonymousField();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.anonymousField#getTypeName <em>Type Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type Name</em>'.
+   * @see org.xtext.go.anonymousField#getTypeName()
+   * @see #getanonymousField()
+   * @generated
+   */
+  EReference getanonymousField_TypeName();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.functionLit <em>function Lit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>function Lit</em>'.
+   * @see org.xtext.go.functionLit
+   * @generated
+   */
+  EClass getfunctionLit();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.functionLit#getFunction <em>Function</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Function</em>'.
+   * @see org.xtext.go.functionLit#getFunction()
+   * @see #getfunctionLit()
+   * @generated
+   */
+  EReference getfunctionLit_Function();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.primaryExpr <em>primary Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>primary Expr</em>'.
+   * @see org.xtext.go.primaryExpr
+   * @generated
+   */
+  EClass getprimaryExpr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExpr#getOperand <em>Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Operand</em>'.
+   * @see org.xtext.go.primaryExpr#getOperand()
+   * @see #getprimaryExpr()
+   * @generated
+   */
+  EReference getprimaryExpr_Operand();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExpr#getConversion <em>Conversion</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Conversion</em>'.
+   * @see org.xtext.go.primaryExpr#getConversion()
+   * @see #getprimaryExpr()
+   * @generated
+   */
+  EReference getprimaryExpr_Conversion();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExpr#getPrimaryExprSelector <em>Primary Expr Selector</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr Selector</em>'.
+   * @see org.xtext.go.primaryExpr#getPrimaryExprSelector()
+   * @see #getprimaryExpr()
+   * @generated
+   */
+  EReference getprimaryExpr_PrimaryExprSelector();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExpr#getPrimaryExprIndex <em>Primary Expr Index</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr Index</em>'.
+   * @see org.xtext.go.primaryExpr#getPrimaryExprIndex()
+   * @see #getprimaryExpr()
+   * @generated
+   */
+  EReference getprimaryExpr_PrimaryExprIndex();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExpr#getPrimaryExprSlice <em>Primary Expr Slice</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr Slice</em>'.
+   * @see org.xtext.go.primaryExpr#getPrimaryExprSlice()
+   * @see #getprimaryExpr()
+   * @generated
+   */
+  EReference getprimaryExpr_PrimaryExprSlice();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExpr#getPrimaryExprTypeAssertion <em>Primary Expr Type Assertion</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr Type Assertion</em>'.
+   * @see org.xtext.go.primaryExpr#getPrimaryExprTypeAssertion()
+   * @see #getprimaryExpr()
+   * @generated
+   */
+  EReference getprimaryExpr_PrimaryExprTypeAssertion();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExpr#getPrimaryExprArguments <em>Primary Expr Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr Arguments</em>'.
+   * @see org.xtext.go.primaryExpr#getPrimaryExprArguments()
+   * @see #getprimaryExpr()
+   * @generated
+   */
+  EReference getprimaryExpr_PrimaryExprArguments();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.primaryExprStuff <em>primary Expr Stuff</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>primary Expr Stuff</em>'.
+   * @see org.xtext.go.primaryExprStuff
+   * @generated
+   */
+  EClass getprimaryExprStuff();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.primaryExprStuff#getSelector <em>Selector</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Selector</em>'.
+   * @see org.xtext.go.primaryExprStuff#getSelector()
+   * @see #getprimaryExprStuff()
+   * @generated
+   */
+  EAttribute getprimaryExprStuff_Selector();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExprStuff#getIndex <em>Index</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Index</em>'.
+   * @see org.xtext.go.primaryExprStuff#getIndex()
+   * @see #getprimaryExprStuff()
+   * @generated
+   */
+  EReference getprimaryExprStuff_Index();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExprStuff#getSlice <em>Slice</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Slice</em>'.
+   * @see org.xtext.go.primaryExprStuff#getSlice()
+   * @see #getprimaryExprStuff()
+   * @generated
+   */
+  EReference getprimaryExprStuff_Slice();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExprStuff#getTypeAssertion <em>Type Assertion</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type Assertion</em>'.
+   * @see org.xtext.go.primaryExprStuff#getTypeAssertion()
+   * @see #getprimaryExprStuff()
+   * @generated
+   */
+  EReference getprimaryExprStuff_TypeAssertion();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExprStuff#getArguments <em>Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Arguments</em>'.
+   * @see org.xtext.go.primaryExprStuff#getArguments()
+   * @see #getprimaryExprStuff()
+   * @generated
+   */
+  EReference getprimaryExprStuff_Arguments();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.primaryExprSelector <em>primary Expr Selector</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>primary Expr Selector</em>'.
+   * @see org.xtext.go.primaryExprSelector
+   * @generated
+   */
+  EClass getprimaryExprSelector();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExprSelector#getPrimaryExprStuff <em>Primary Expr Stuff</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr Stuff</em>'.
+   * @see org.xtext.go.primaryExprSelector#getPrimaryExprStuff()
+   * @see #getprimaryExprSelector()
+   * @generated
+   */
+  EReference getprimaryExprSelector_PrimaryExprStuff();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExprSelector#getPrimaryExprSelector <em>Primary Expr Selector</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr Selector</em>'.
+   * @see org.xtext.go.primaryExprSelector#getPrimaryExprSelector()
+   * @see #getprimaryExprSelector()
+   * @generated
+   */
+  EReference getprimaryExprSelector_PrimaryExprSelector();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.primaryExprIndex <em>primary Expr Index</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>primary Expr Index</em>'.
+   * @see org.xtext.go.primaryExprIndex
+   * @generated
+   */
+  EClass getprimaryExprIndex();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExprIndex#getPrimaryExprStuff <em>Primary Expr Stuff</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr Stuff</em>'.
+   * @see org.xtext.go.primaryExprIndex#getPrimaryExprStuff()
+   * @see #getprimaryExprIndex()
+   * @generated
+   */
+  EReference getprimaryExprIndex_PrimaryExprStuff();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExprIndex#getPrimaryExprIndex <em>Primary Expr Index</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr Index</em>'.
+   * @see org.xtext.go.primaryExprIndex#getPrimaryExprIndex()
+   * @see #getprimaryExprIndex()
+   * @generated
+   */
+  EReference getprimaryExprIndex_PrimaryExprIndex();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.primaryExprSlice <em>primary Expr Slice</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>primary Expr Slice</em>'.
+   * @see org.xtext.go.primaryExprSlice
+   * @generated
+   */
+  EClass getprimaryExprSlice();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExprSlice#getPrimaryExprStuff <em>Primary Expr Stuff</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr Stuff</em>'.
+   * @see org.xtext.go.primaryExprSlice#getPrimaryExprStuff()
+   * @see #getprimaryExprSlice()
+   * @generated
+   */
+  EReference getprimaryExprSlice_PrimaryExprStuff();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExprSlice#getPrimaryExprSlice <em>Primary Expr Slice</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr Slice</em>'.
+   * @see org.xtext.go.primaryExprSlice#getPrimaryExprSlice()
+   * @see #getprimaryExprSlice()
+   * @generated
+   */
+  EReference getprimaryExprSlice_PrimaryExprSlice();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.primaryExprTypeAssertion <em>primary Expr Type Assertion</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>primary Expr Type Assertion</em>'.
+   * @see org.xtext.go.primaryExprTypeAssertion
+   * @generated
+   */
+  EClass getprimaryExprTypeAssertion();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExprTypeAssertion#getPrimaryExprStuff <em>Primary Expr Stuff</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr Stuff</em>'.
+   * @see org.xtext.go.primaryExprTypeAssertion#getPrimaryExprStuff()
+   * @see #getprimaryExprTypeAssertion()
+   * @generated
+   */
+  EReference getprimaryExprTypeAssertion_PrimaryExprStuff();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExprTypeAssertion#getPrimaryExprTypeAssertion <em>Primary Expr Type Assertion</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr Type Assertion</em>'.
+   * @see org.xtext.go.primaryExprTypeAssertion#getPrimaryExprTypeAssertion()
+   * @see #getprimaryExprTypeAssertion()
+   * @generated
+   */
+  EReference getprimaryExprTypeAssertion_PrimaryExprTypeAssertion();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.primaryExprArguments <em>primary Expr Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>primary Expr Arguments</em>'.
+   * @see org.xtext.go.primaryExprArguments
+   * @generated
+   */
+  EClass getprimaryExprArguments();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExprArguments#getPrimaryExprStuff <em>Primary Expr Stuff</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr Stuff</em>'.
+   * @see org.xtext.go.primaryExprArguments#getPrimaryExprStuff()
+   * @see #getprimaryExprArguments()
+   * @generated
+   */
+  EReference getprimaryExprArguments_PrimaryExprStuff();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExprArguments#getPrimaryExprArguments <em>Primary Expr Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr Arguments</em>'.
+   * @see org.xtext.go.primaryExprArguments#getPrimaryExprArguments()
+   * @see #getprimaryExprArguments()
+   * @generated
+   */
+  EReference getprimaryExprArguments_PrimaryExprArguments();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.index <em>index</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>index</em>'.
+   * @see org.xtext.go.index
+   * @generated
+   */
+  EClass getindex();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.slice <em>slice</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>slice</em>'.
+   * @see org.xtext.go.slice
+   * @generated
+   */
+  EClass getslice();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.slice#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.go.slice#getExpression()
+   * @see #getslice()
+   * @generated
+   */
+  EReference getslice_Expression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.typeAssertion <em>type Assertion</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>type Assertion</em>'.
+   * @see org.xtext.go.typeAssertion
+   * @generated
+   */
+  EClass gettypeAssertion();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.typeAssertion#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.go.typeAssertion#getType()
+   * @see #gettypeAssertion()
+   * @generated
+   */
+  EReference gettypeAssertion_Type();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.arguments <em>arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>arguments</em>'.
+   * @see org.xtext.go.arguments
+   * @generated
+   */
+  EClass getarguments();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.arguments#getExpressionList <em>Expression List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression List</em>'.
+   * @see org.xtext.go.arguments#getExpressionList()
+   * @see #getarguments()
+   * @generated
+   */
+  EReference getarguments_ExpressionList();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.arguments#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.go.arguments#getType()
+   * @see #getarguments()
+   * @generated
+   */
+  EReference getarguments_Type();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.methodExpr <em>method Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>method Expr</em>'.
+   * @see org.xtext.go.methodExpr
+   * @generated
+   */
+  EClass getmethodExpr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.methodExpr#getReceiverType <em>Receiver Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Receiver Type</em>'.
+   * @see org.xtext.go.methodExpr#getReceiverType()
+   * @see #getmethodExpr()
+   * @generated
+   */
+  EReference getmethodExpr_ReceiverType();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.receiverType <em>receiver Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>receiver Type</em>'.
+   * @see org.xtext.go.receiverType
+   * @generated
+   */
+  EClass getreceiverType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.receiverType#getTypeName <em>Type Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type Name</em>'.
+   * @see org.xtext.go.receiverType#getTypeName()
+   * @see #getreceiverType()
+   * @generated
+   */
+  EReference getreceiverType_TypeName();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.receiverType#getReceiverType <em>Receiver Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Receiver Type</em>'.
+   * @see org.xtext.go.receiverType#getReceiverType()
+   * @see #getreceiverType()
+   * @generated
+   */
+  EReference getreceiverType_ReceiverType();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.expression <em>expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>expression</em>'.
+   * @see org.xtext.go.expression
+   * @generated
+   */
+  EClass getexpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.expression#getUnaryExpr <em>Unary Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Unary Expr</em>'.
+   * @see org.xtext.go.expression#getUnaryExpr()
+   * @see #getexpression()
+   * @generated
+   */
+  EReference getexpression_UnaryExpr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.expression#getExpressionMatched <em>Expression Matched</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression Matched</em>'.
+   * @see org.xtext.go.expression#getExpressionMatched()
+   * @see #getexpression()
+   * @generated
+   */
+  EReference getexpression_ExpressionMatched();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.expressionMatched <em>expression Matched</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>expression Matched</em>'.
+   * @see org.xtext.go.expressionMatched
+   * @generated
+   */
+  EClass getexpressionMatched();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.expressionMatched#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.go.expressionMatched#getExpression()
+   * @see #getexpressionMatched()
+   * @generated
+   */
+  EReference getexpressionMatched_Expression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.unaryExpr <em>unary Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>unary Expr</em>'.
+   * @see org.xtext.go.unaryExpr
+   * @generated
+   */
+  EClass getunaryExpr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.unaryExpr#getPrimaryExpr <em>Primary Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr</em>'.
+   * @see org.xtext.go.unaryExpr#getPrimaryExpr()
+   * @see #getunaryExpr()
+   * @generated
+   */
+  EReference getunaryExpr_PrimaryExpr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.unaryExpr#getUnaryExpr <em>Unary Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Unary Expr</em>'.
+   * @see org.xtext.go.unaryExpr#getUnaryExpr()
+   * @see #getunaryExpr()
+   * @generated
+   */
+  EReference getunaryExpr_UnaryExpr();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.conversion <em>conversion</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>conversion</em>'.
+   * @see org.xtext.go.conversion
+   * @generated
+   */
+  EClass getconversion();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.conversion#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.go.conversion#getType()
+   * @see #getconversion()
+   * @generated
+   */
+  EReference getconversion_Type();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.conversion#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.go.conversion#getExpression()
+   * @see #getconversion()
+   * @generated
+   */
+  EReference getconversion_Expression();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -214,6 +6920,2538 @@ public interface GoPackage extends EPackage
      * @generated
      */
     EAttribute SOURCE_FILE__PACKAGE_CLAUSE = eINSTANCE.getsourceFile_PackageClause();
+
+    /**
+     * The meta object literal for the '<em><b>Import Decl</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SOURCE_FILE__IMPORT_DECL = eINSTANCE.getsourceFile_ImportDecl();
+
+    /**
+     * The meta object literal for the '<em><b>Top Level Decl</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SOURCE_FILE__TOP_LEVEL_DECL = eINSTANCE.getsourceFile_TopLevelDecl();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.importDeclImpl <em>import Decl</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.importDeclImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getimportDecl()
+     * @generated
+     */
+    EClass IMPORT_DECL = eINSTANCE.getimportDecl();
+
+    /**
+     * The meta object literal for the '<em><b>Import Spec</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IMPORT_DECL__IMPORT_SPEC = eINSTANCE.getimportDecl_ImportSpec();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.importSpecImpl <em>import Spec</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.importSpecImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getimportSpec()
+     * @generated
+     */
+    EClass IMPORT_SPEC = eINSTANCE.getimportSpec();
+
+    /**
+     * The meta object literal for the '<em><b>Import Path</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IMPORT_SPEC__IMPORT_PATH = eINSTANCE.getimportSpec_ImportPath();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.topLevelDeclImpl <em>top Level Decl</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.topLevelDeclImpl
+     * @see org.xtext.go.impl.GoPackageImpl#gettopLevelDecl()
+     * @generated
+     */
+    EClass TOP_LEVEL_DECL = eINSTANCE.gettopLevelDecl();
+
+    /**
+     * The meta object literal for the '<em><b>Declaration</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TOP_LEVEL_DECL__DECLARATION = eINSTANCE.gettopLevelDecl_Declaration();
+
+    /**
+     * The meta object literal for the '<em><b>Function Decl</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TOP_LEVEL_DECL__FUNCTION_DECL = eINSTANCE.gettopLevelDecl_FunctionDecl();
+
+    /**
+     * The meta object literal for the '<em><b>Method Decl</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TOP_LEVEL_DECL__METHOD_DECL = eINSTANCE.gettopLevelDecl_MethodDecl();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.declarationImpl <em>declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.declarationImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getdeclaration()
+     * @generated
+     */
+    EClass DECLARATION = eINSTANCE.getdeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Const Decl</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION__CONST_DECL = eINSTANCE.getdeclaration_ConstDecl();
+
+    /**
+     * The meta object literal for the '<em><b>Type Decl</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION__TYPE_DECL = eINSTANCE.getdeclaration_TypeDecl();
+
+    /**
+     * The meta object literal for the '<em><b>Var Decl</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION__VAR_DECL = eINSTANCE.getdeclaration_VarDecl();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.constDeclImpl <em>const Decl</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.constDeclImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getconstDecl()
+     * @generated
+     */
+    EClass CONST_DECL = eINSTANCE.getconstDecl();
+
+    /**
+     * The meta object literal for the '<em><b>Const Spec</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONST_DECL__CONST_SPEC = eINSTANCE.getconstDecl_ConstSpec();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.constSpecImpl <em>const Spec</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.constSpecImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getconstSpec()
+     * @generated
+     */
+    EClass CONST_SPEC = eINSTANCE.getconstSpec();
+
+    /**
+     * The meta object literal for the '<em><b>Identifier List</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONST_SPEC__IDENTIFIER_LIST = eINSTANCE.getconstSpec_IdentifierList();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONST_SPEC__TYPE = eINSTANCE.getconstSpec_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Expression List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONST_SPEC__EXPRESSION_LIST = eINSTANCE.getconstSpec_ExpressionList();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.expressionListImpl <em>expression List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.expressionListImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getexpressionList()
+     * @generated
+     */
+    EClass EXPRESSION_LIST = eINSTANCE.getexpressionList();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_LIST__EXPRESSION = eINSTANCE.getexpressionList_Expression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.typeDeclImpl <em>type Decl</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.typeDeclImpl
+     * @see org.xtext.go.impl.GoPackageImpl#gettypeDecl()
+     * @generated
+     */
+    EClass TYPE_DECL = eINSTANCE.gettypeDecl();
+
+    /**
+     * The meta object literal for the '<em><b>Type Spec</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_DECL__TYPE_SPEC = eINSTANCE.gettypeDecl_TypeSpec();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.typeSpecImpl <em>type Spec</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.typeSpecImpl
+     * @see org.xtext.go.impl.GoPackageImpl#gettypeSpec()
+     * @generated
+     */
+    EClass TYPE_SPEC = eINSTANCE.gettypeSpec();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_SPEC__TYPE = eINSTANCE.gettypeSpec_Type();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.functionDeclImpl <em>function Decl</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.functionDeclImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getfunctionDecl()
+     * @generated
+     */
+    EClass FUNCTION_DECL = eINSTANCE.getfunctionDecl();
+
+    /**
+     * The meta object literal for the '<em><b>Function</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_DECL__FUNCTION = eINSTANCE.getfunctionDecl_Function();
+
+    /**
+     * The meta object literal for the '<em><b>Signature</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_DECL__SIGNATURE = eINSTANCE.getfunctionDecl_Signature();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.functionImpl <em>function</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.functionImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getfunction()
+     * @generated
+     */
+    EClass FUNCTION = eINSTANCE.getfunction();
+
+    /**
+     * The meta object literal for the '<em><b>Signature</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION__SIGNATURE = eINSTANCE.getfunction_Signature();
+
+    /**
+     * The meta object literal for the '<em><b>Block</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION__BLOCK = eINSTANCE.getfunction_Block();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.methodDeclImpl <em>method Decl</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.methodDeclImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getmethodDecl()
+     * @generated
+     */
+    EClass METHOD_DECL = eINSTANCE.getmethodDecl();
+
+    /**
+     * The meta object literal for the '<em><b>Receiver</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METHOD_DECL__RECEIVER = eINSTANCE.getmethodDecl_Receiver();
+
+    /**
+     * The meta object literal for the '<em><b>Function</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METHOD_DECL__FUNCTION = eINSTANCE.getmethodDecl_Function();
+
+    /**
+     * The meta object literal for the '<em><b>Signature</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METHOD_DECL__SIGNATURE = eINSTANCE.getmethodDecl_Signature();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.receiverImpl <em>receiver</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.receiverImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getreceiver()
+     * @generated
+     */
+    EClass RECEIVER = eINSTANCE.getreceiver();
+
+    /**
+     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RECEIVER__PARAMETERS = eINSTANCE.getreceiver_Parameters();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.varDeclImpl <em>var Decl</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.varDeclImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getvarDecl()
+     * @generated
+     */
+    EClass VAR_DECL = eINSTANCE.getvarDecl();
+
+    /**
+     * The meta object literal for the '<em><b>Var Spec</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VAR_DECL__VAR_SPEC = eINSTANCE.getvarDecl_VarSpec();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.varSpecImpl <em>var Spec</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.varSpecImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getvarSpec()
+     * @generated
+     */
+    EClass VAR_SPEC = eINSTANCE.getvarSpec();
+
+    /**
+     * The meta object literal for the '<em><b>Identifier List</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VAR_SPEC__IDENTIFIER_LIST = eINSTANCE.getvarSpec_IdentifierList();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VAR_SPEC__TYPE = eINSTANCE.getvarSpec_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Expression List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VAR_SPEC__EXPRESSION_LIST = eINSTANCE.getvarSpec_ExpressionList();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.blockImpl <em>block</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.blockImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getblock()
+     * @generated
+     */
+    EClass BLOCK = eINSTANCE.getblock();
+
+    /**
+     * The meta object literal for the '<em><b>Statement List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BLOCK__STATEMENT_LIST = eINSTANCE.getblock_StatementList();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.statementListImpl <em>statement List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.statementListImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getstatementList()
+     * @generated
+     */
+    EClass STATEMENT_LIST = eINSTANCE.getstatementList();
+
+    /**
+     * The meta object literal for the '<em><b>Statement</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT_LIST__STATEMENT = eINSTANCE.getstatementList_Statement();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.statementImpl <em>statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.statementImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getstatement()
+     * @generated
+     */
+    EClass STATEMENT = eINSTANCE.getstatement();
+
+    /**
+     * The meta object literal for the '<em><b>Declaration</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__DECLARATION = eINSTANCE.getstatement_Declaration();
+
+    /**
+     * The meta object literal for the '<em><b>Labeled Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__LABELED_STMT = eINSTANCE.getstatement_LabeledStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Simple Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__SIMPLE_STMT = eINSTANCE.getstatement_SimpleStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Go Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__GO_STMT = eINSTANCE.getstatement_GoStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Return Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__RETURN_STMT = eINSTANCE.getstatement_ReturnStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Break Stmt</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STATEMENT__BREAK_STMT = eINSTANCE.getstatement_BreakStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Continue Stmt</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STATEMENT__CONTINUE_STMT = eINSTANCE.getstatement_ContinueStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Goto Stmt</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STATEMENT__GOTO_STMT = eINSTANCE.getstatement_GotoStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Fallthrough Stmt</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STATEMENT__FALLTHROUGH_STMT = eINSTANCE.getstatement_FallthroughStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Block</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__BLOCK = eINSTANCE.getstatement_Block();
+
+    /**
+     * The meta object literal for the '<em><b>If Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__IF_STMT = eINSTANCE.getstatement_IfStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Switch Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__SWITCH_STMT = eINSTANCE.getstatement_SwitchStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Select Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__SELECT_STMT = eINSTANCE.getstatement_SelectStmt();
+
+    /**
+     * The meta object literal for the '<em><b>For Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__FOR_STMT = eINSTANCE.getstatement_ForStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Defer Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__DEFER_STMT = eINSTANCE.getstatement_DeferStmt();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.simpleStmtImpl <em>simple Stmt</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.simpleStmtImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getsimpleStmt()
+     * @generated
+     */
+    EClass SIMPLE_STMT = eINSTANCE.getsimpleStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Send Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIMPLE_STMT__SEND_STMT = eINSTANCE.getsimpleStmt_SendStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Expression Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIMPLE_STMT__EXPRESSION_STMT = eINSTANCE.getsimpleStmt_ExpressionStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Inc Dec Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIMPLE_STMT__INC_DEC_STMT = eINSTANCE.getsimpleStmt_IncDecStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Assignment</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIMPLE_STMT__ASSIGNMENT = eINSTANCE.getsimpleStmt_Assignment();
+
+    /**
+     * The meta object literal for the '<em><b>Short Var Decl</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIMPLE_STMT__SHORT_VAR_DECL = eINSTANCE.getsimpleStmt_ShortVarDecl();
+
+    /**
+     * The meta object literal for the '<em><b>Empty Stmt</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SIMPLE_STMT__EMPTY_STMT = eINSTANCE.getsimpleStmt_EmptyStmt();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.expressionStmtImpl <em>expression Stmt</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.expressionStmtImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getexpressionStmt()
+     * @generated
+     */
+    EClass EXPRESSION_STMT = eINSTANCE.getexpressionStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_STMT__EXPRESSION = eINSTANCE.getexpressionStmt_Expression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.sendStmtImpl <em>send Stmt</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.sendStmtImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getsendStmt()
+     * @generated
+     */
+    EClass SEND_STMT = eINSTANCE.getsendStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SEND_STMT__EXPRESSION = eINSTANCE.getsendStmt_Expression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.incDecStmtImpl <em>inc Dec Stmt</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.incDecStmtImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getincDecStmt()
+     * @generated
+     */
+    EClass INC_DEC_STMT = eINSTANCE.getincDecStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INC_DEC_STMT__EXPRESSION = eINSTANCE.getincDecStmt_Expression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.assignmentImpl <em>assignment</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.assignmentImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getassignment()
+     * @generated
+     */
+    EClass ASSIGNMENT = eINSTANCE.getassignment();
+
+    /**
+     * The meta object literal for the '<em><b>Expression List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ASSIGNMENT__EXPRESSION_LIST = eINSTANCE.getassignment_ExpressionList();
+
+    /**
+     * The meta object literal for the '<em><b>Assign op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ASSIGNMENT__ASSIGN_OP = eINSTANCE.getassignment_Assign_op();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.shortVarDeclImpl <em>short Var Decl</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.shortVarDeclImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getshortVarDecl()
+     * @generated
+     */
+    EClass SHORT_VAR_DECL = eINSTANCE.getshortVarDecl();
+
+    /**
+     * The meta object literal for the '<em><b>Identifier List</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SHORT_VAR_DECL__IDENTIFIER_LIST = eINSTANCE.getshortVarDecl_IdentifierList();
+
+    /**
+     * The meta object literal for the '<em><b>Expression List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SHORT_VAR_DECL__EXPRESSION_LIST = eINSTANCE.getshortVarDecl_ExpressionList();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.labeledStmtImpl <em>labeled Stmt</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.labeledStmtImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getlabeledStmt()
+     * @generated
+     */
+    EClass LABELED_STMT = eINSTANCE.getlabeledStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Statement</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LABELED_STMT__STATEMENT = eINSTANCE.getlabeledStmt_Statement();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.returnStmtImpl <em>return Stmt</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.returnStmtImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getreturnStmt()
+     * @generated
+     */
+    EClass RETURN_STMT = eINSTANCE.getreturnStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Expression List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RETURN_STMT__EXPRESSION_LIST = eINSTANCE.getreturnStmt_ExpressionList();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.deferStmtImpl <em>defer Stmt</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.deferStmtImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getdeferStmt()
+     * @generated
+     */
+    EClass DEFER_STMT = eINSTANCE.getdeferStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DEFER_STMT__EXPRESSION = eINSTANCE.getdeferStmt_Expression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.ifStmtImpl <em>if Stmt</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.ifStmtImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getifStmt()
+     * @generated
+     */
+    EClass IF_STMT = eINSTANCE.getifStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Simple Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STMT__SIMPLE_STMT = eINSTANCE.getifStmt_SimpleStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STMT__EXPRESSION = eINSTANCE.getifStmt_Expression();
+
+    /**
+     * The meta object literal for the '<em><b>Block</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STMT__BLOCK = eINSTANCE.getifStmt_Block();
+
+    /**
+     * The meta object literal for the '<em><b>If Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STMT__IF_STMT = eINSTANCE.getifStmt_IfStmt();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.switchStmtImpl <em>switch Stmt</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.switchStmtImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getswitchStmt()
+     * @generated
+     */
+    EClass SWITCH_STMT = eINSTANCE.getswitchStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Expr Switch Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SWITCH_STMT__EXPR_SWITCH_STMT = eINSTANCE.getswitchStmt_ExprSwitchStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Type Switch Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SWITCH_STMT__TYPE_SWITCH_STMT = eINSTANCE.getswitchStmt_TypeSwitchStmt();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.exprSwitchStmtImpl <em>expr Switch Stmt</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.exprSwitchStmtImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getexprSwitchStmt()
+     * @generated
+     */
+    EClass EXPR_SWITCH_STMT = eINSTANCE.getexprSwitchStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Simple Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR_SWITCH_STMT__SIMPLE_STMT = eINSTANCE.getexprSwitchStmt_SimpleStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR_SWITCH_STMT__EXPRESSION = eINSTANCE.getexprSwitchStmt_Expression();
+
+    /**
+     * The meta object literal for the '<em><b>Expr Case Clause</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR_SWITCH_STMT__EXPR_CASE_CLAUSE = eINSTANCE.getexprSwitchStmt_ExprCaseClause();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.exprCaseClauseImpl <em>expr Case Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.exprCaseClauseImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getexprCaseClause()
+     * @generated
+     */
+    EClass EXPR_CASE_CLAUSE = eINSTANCE.getexprCaseClause();
+
+    /**
+     * The meta object literal for the '<em><b>Expr Switch Case</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR_CASE_CLAUSE__EXPR_SWITCH_CASE = eINSTANCE.getexprCaseClause_ExprSwitchCase();
+
+    /**
+     * The meta object literal for the '<em><b>Statement List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR_CASE_CLAUSE__STATEMENT_LIST = eINSTANCE.getexprCaseClause_StatementList();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.exprSwitchCaseImpl <em>expr Switch Case</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.exprSwitchCaseImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getexprSwitchCase()
+     * @generated
+     */
+    EClass EXPR_SWITCH_CASE = eINSTANCE.getexprSwitchCase();
+
+    /**
+     * The meta object literal for the '<em><b>Expression List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR_SWITCH_CASE__EXPRESSION_LIST = eINSTANCE.getexprSwitchCase_ExpressionList();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.typeSwitchStmtImpl <em>type Switch Stmt</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.typeSwitchStmtImpl
+     * @see org.xtext.go.impl.GoPackageImpl#gettypeSwitchStmt()
+     * @generated
+     */
+    EClass TYPE_SWITCH_STMT = eINSTANCE.gettypeSwitchStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Simple Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_SWITCH_STMT__SIMPLE_STMT = eINSTANCE.gettypeSwitchStmt_SimpleStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Type Switch Guard</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_SWITCH_STMT__TYPE_SWITCH_GUARD = eINSTANCE.gettypeSwitchStmt_TypeSwitchGuard();
+
+    /**
+     * The meta object literal for the '<em><b>Type Case Clause</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_SWITCH_STMT__TYPE_CASE_CLAUSE = eINSTANCE.gettypeSwitchStmt_TypeCaseClause();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.typeSwitchGuardImpl <em>type Switch Guard</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.typeSwitchGuardImpl
+     * @see org.xtext.go.impl.GoPackageImpl#gettypeSwitchGuard()
+     * @generated
+     */
+    EClass TYPE_SWITCH_GUARD = eINSTANCE.gettypeSwitchGuard();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_SWITCH_GUARD__PRIMARY_EXPR = eINSTANCE.gettypeSwitchGuard_PrimaryExpr();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.typeCaseClauseImpl <em>type Case Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.typeCaseClauseImpl
+     * @see org.xtext.go.impl.GoPackageImpl#gettypeCaseClause()
+     * @generated
+     */
+    EClass TYPE_CASE_CLAUSE = eINSTANCE.gettypeCaseClause();
+
+    /**
+     * The meta object literal for the '<em><b>Type Switch Case</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_CASE_CLAUSE__TYPE_SWITCH_CASE = eINSTANCE.gettypeCaseClause_TypeSwitchCase();
+
+    /**
+     * The meta object literal for the '<em><b>Statement List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_CASE_CLAUSE__STATEMENT_LIST = eINSTANCE.gettypeCaseClause_StatementList();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.typeSwitchCaseImpl <em>type Switch Case</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.typeSwitchCaseImpl
+     * @see org.xtext.go.impl.GoPackageImpl#gettypeSwitchCase()
+     * @generated
+     */
+    EClass TYPE_SWITCH_CASE = eINSTANCE.gettypeSwitchCase();
+
+    /**
+     * The meta object literal for the '<em><b>Type List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_SWITCH_CASE__TYPE_LIST = eINSTANCE.gettypeSwitchCase_TypeList();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.typeListImpl <em>type List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.typeListImpl
+     * @see org.xtext.go.impl.GoPackageImpl#gettypeList()
+     * @generated
+     */
+    EClass TYPE_LIST = eINSTANCE.gettypeList();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_LIST__TYPE = eINSTANCE.gettypeList_Type();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.selectStmtImpl <em>select Stmt</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.selectStmtImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getselectStmt()
+     * @generated
+     */
+    EClass SELECT_STMT = eINSTANCE.getselectStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Comm Clause</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECT_STMT__COMM_CLAUSE = eINSTANCE.getselectStmt_CommClause();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.commClauseImpl <em>comm Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.commClauseImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getcommClause()
+     * @generated
+     */
+    EClass COMM_CLAUSE = eINSTANCE.getcommClause();
+
+    /**
+     * The meta object literal for the '<em><b>Comm Case</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMM_CLAUSE__COMM_CASE = eINSTANCE.getcommClause_CommCase();
+
+    /**
+     * The meta object literal for the '<em><b>Statement List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMM_CLAUSE__STATEMENT_LIST = eINSTANCE.getcommClause_StatementList();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.commCaseImpl <em>comm Case</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.commCaseImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getcommCase()
+     * @generated
+     */
+    EClass COMM_CASE = eINSTANCE.getcommCase();
+
+    /**
+     * The meta object literal for the '<em><b>Send Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMM_CASE__SEND_STMT = eINSTANCE.getcommCase_SendStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Recv Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMM_CASE__RECV_STMT = eINSTANCE.getcommCase_RecvStmt();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.recvStmtImpl <em>recv Stmt</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.recvStmtImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getrecvStmt()
+     * @generated
+     */
+    EClass RECV_STMT = eINSTANCE.getrecvStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Expression List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RECV_STMT__EXPRESSION_LIST = eINSTANCE.getrecvStmt_ExpressionList();
+
+    /**
+     * The meta object literal for the '<em><b>Identifier List</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RECV_STMT__IDENTIFIER_LIST = eINSTANCE.getrecvStmt_IdentifierList();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RECV_STMT__EXPRESSION = eINSTANCE.getrecvStmt_Expression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.forStmtImpl <em>for Stmt</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.forStmtImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getforStmt()
+     * @generated
+     */
+    EClass FOR_STMT = eINSTANCE.getforStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_STMT__EXPRESSION = eINSTANCE.getforStmt_Expression();
+
+    /**
+     * The meta object literal for the '<em><b>For Clause</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_STMT__FOR_CLAUSE = eINSTANCE.getforStmt_ForClause();
+
+    /**
+     * The meta object literal for the '<em><b>Range Clause</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_STMT__RANGE_CLAUSE = eINSTANCE.getforStmt_RangeClause();
+
+    /**
+     * The meta object literal for the '<em><b>Block</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_STMT__BLOCK = eINSTANCE.getforStmt_Block();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.forClauseImpl <em>for Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.forClauseImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getforClause()
+     * @generated
+     */
+    EClass FOR_CLAUSE = eINSTANCE.getforClause();
+
+    /**
+     * The meta object literal for the '<em><b>Simple Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_CLAUSE__SIMPLE_STMT = eINSTANCE.getforClause_SimpleStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_CLAUSE__EXPRESSION = eINSTANCE.getforClause_Expression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.rangeClauseImpl <em>range Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.rangeClauseImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getrangeClause()
+     * @generated
+     */
+    EClass RANGE_CLAUSE = eINSTANCE.getrangeClause();
+
+    /**
+     * The meta object literal for the '<em><b>Expression List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RANGE_CLAUSE__EXPRESSION_LIST = eINSTANCE.getrangeClause_ExpressionList();
+
+    /**
+     * The meta object literal for the '<em><b>Identifier List</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RANGE_CLAUSE__IDENTIFIER_LIST = eINSTANCE.getrangeClause_IdentifierList();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RANGE_CLAUSE__EXPRESSION = eINSTANCE.getrangeClause_Expression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.goStmtImpl <em>go Stmt</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.goStmtImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getgoStmt()
+     * @generated
+     */
+    EClass GO_STMT = eINSTANCE.getgoStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GO_STMT__EXPRESSION = eINSTANCE.getgoStmt_Expression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.typeImpl <em>type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.typeImpl
+     * @see org.xtext.go.impl.GoPackageImpl#gettype()
+     * @generated
+     */
+    EClass TYPE = eINSTANCE.gettype();
+
+    /**
+     * The meta object literal for the '<em><b>Type Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE__TYPE_NAME = eINSTANCE.gettype_TypeName();
+
+    /**
+     * The meta object literal for the '<em><b>Type Lit</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE__TYPE_LIT = eINSTANCE.gettype_TypeLit();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE__TYPE = eINSTANCE.gettype_Type();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.typeNameImpl <em>type Name</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.typeNameImpl
+     * @see org.xtext.go.impl.GoPackageImpl#gettypeName()
+     * @generated
+     */
+    EClass TYPE_NAME = eINSTANCE.gettypeName();
+
+    /**
+     * The meta object literal for the '<em><b>Qualified Ident</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TYPE_NAME__QUALIFIED_IDENT = eINSTANCE.gettypeName_QualifiedIdent();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.typeLitImpl <em>type Lit</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.typeLitImpl
+     * @see org.xtext.go.impl.GoPackageImpl#gettypeLit()
+     * @generated
+     */
+    EClass TYPE_LIT = eINSTANCE.gettypeLit();
+
+    /**
+     * The meta object literal for the '<em><b>Array Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_LIT__ARRAY_TYPE = eINSTANCE.gettypeLit_ArrayType();
+
+    /**
+     * The meta object literal for the '<em><b>Struct Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_LIT__STRUCT_TYPE = eINSTANCE.gettypeLit_StructType();
+
+    /**
+     * The meta object literal for the '<em><b>Pointer Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_LIT__POINTER_TYPE = eINSTANCE.gettypeLit_PointerType();
+
+    /**
+     * The meta object literal for the '<em><b>Function Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_LIT__FUNCTION_TYPE = eINSTANCE.gettypeLit_FunctionType();
+
+    /**
+     * The meta object literal for the '<em><b>Interface Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_LIT__INTERFACE_TYPE = eINSTANCE.gettypeLit_InterfaceType();
+
+    /**
+     * The meta object literal for the '<em><b>Slice Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_LIT__SLICE_TYPE = eINSTANCE.gettypeLit_SliceType();
+
+    /**
+     * The meta object literal for the '<em><b>Map Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_LIT__MAP_TYPE = eINSTANCE.gettypeLit_MapType();
+
+    /**
+     * The meta object literal for the '<em><b>Channel Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_LIT__CHANNEL_TYPE = eINSTANCE.gettypeLit_ChannelType();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.arrayTypeImpl <em>array Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.arrayTypeImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getarrayType()
+     * @generated
+     */
+    EClass ARRAY_TYPE = eINSTANCE.getarrayType();
+
+    /**
+     * The meta object literal for the '<em><b>Array Length</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARRAY_TYPE__ARRAY_LENGTH = eINSTANCE.getarrayType_ArrayLength();
+
+    /**
+     * The meta object literal for the '<em><b>Element Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARRAY_TYPE__ELEMENT_TYPE = eINSTANCE.getarrayType_ElementType();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.arrayLengthImpl <em>array Length</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.arrayLengthImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getarrayLength()
+     * @generated
+     */
+    EClass ARRAY_LENGTH = eINSTANCE.getarrayLength();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARRAY_LENGTH__EXPRESSION = eINSTANCE.getarrayLength_Expression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.elementTypeImpl <em>element Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.elementTypeImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getelementType()
+     * @generated
+     */
+    EClass ELEMENT_TYPE = eINSTANCE.getelementType();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT_TYPE__TYPE = eINSTANCE.getelementType_Type();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.pointerTypeImpl <em>pointer Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.pointerTypeImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getpointerType()
+     * @generated
+     */
+    EClass POINTER_TYPE = eINSTANCE.getpointerType();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference POINTER_TYPE__TYPE = eINSTANCE.getpointerType_Type();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.interfaceTypeImpl <em>interface Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.interfaceTypeImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getinterfaceType()
+     * @generated
+     */
+    EClass INTERFACE_TYPE = eINSTANCE.getinterfaceType();
+
+    /**
+     * The meta object literal for the '<em><b>Method Spec</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTERFACE_TYPE__METHOD_SPEC = eINSTANCE.getinterfaceType_MethodSpec();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.sliceTypeImpl <em>slice Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.sliceTypeImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getsliceType()
+     * @generated
+     */
+    EClass SLICE_TYPE = eINSTANCE.getsliceType();
+
+    /**
+     * The meta object literal for the '<em><b>Element Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SLICE_TYPE__ELEMENT_TYPE = eINSTANCE.getsliceType_ElementType();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.mapTypeImpl <em>map Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.mapTypeImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getmapType()
+     * @generated
+     */
+    EClass MAP_TYPE = eINSTANCE.getmapType();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MAP_TYPE__TYPE = eINSTANCE.getmapType_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Element Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MAP_TYPE__ELEMENT_TYPE = eINSTANCE.getmapType_ElementType();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.channelTypeImpl <em>channel Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.channelTypeImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getchannelType()
+     * @generated
+     */
+    EClass CHANNEL_TYPE = eINSTANCE.getchannelType();
+
+    /**
+     * The meta object literal for the '<em><b>Element Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CHANNEL_TYPE__ELEMENT_TYPE = eINSTANCE.getchannelType_ElementType();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.methodSpecImpl <em>method Spec</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.methodSpecImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getmethodSpec()
+     * @generated
+     */
+    EClass METHOD_SPEC = eINSTANCE.getmethodSpec();
+
+    /**
+     * The meta object literal for the '<em><b>Signature</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METHOD_SPEC__SIGNATURE = eINSTANCE.getmethodSpec_Signature();
+
+    /**
+     * The meta object literal for the '<em><b>Type Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METHOD_SPEC__TYPE_NAME = eINSTANCE.getmethodSpec_TypeName();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.functionTypeImpl <em>function Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.functionTypeImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getfunctionType()
+     * @generated
+     */
+    EClass FUNCTION_TYPE = eINSTANCE.getfunctionType();
+
+    /**
+     * The meta object literal for the '<em><b>Signature</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_TYPE__SIGNATURE = eINSTANCE.getfunctionType_Signature();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.signatureImpl <em>signature</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.signatureImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getsignature()
+     * @generated
+     */
+    EClass SIGNATURE = eINSTANCE.getsignature();
+
+    /**
+     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIGNATURE__PARAMETERS = eINSTANCE.getsignature_Parameters();
+
+    /**
+     * The meta object literal for the '<em><b>Result</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIGNATURE__RESULT = eINSTANCE.getsignature_Result();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.resultImpl <em>result</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.resultImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getresult()
+     * @generated
+     */
+    EClass RESULT = eINSTANCE.getresult();
+
+    /**
+     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RESULT__PARAMETERS = eINSTANCE.getresult_Parameters();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RESULT__TYPE = eINSTANCE.getresult_Type();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.parametersImpl <em>parameters</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.parametersImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getparameters()
+     * @generated
+     */
+    EClass PARAMETERS = eINSTANCE.getparameters();
+
+    /**
+     * The meta object literal for the '<em><b>Parameter List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PARAMETERS__PARAMETER_LIST = eINSTANCE.getparameters_ParameterList();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.parameterListImpl <em>parameter List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.parameterListImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getparameterList()
+     * @generated
+     */
+    EClass PARAMETER_LIST = eINSTANCE.getparameterList();
+
+    /**
+     * The meta object literal for the '<em><b>Parameter Decl</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PARAMETER_LIST__PARAMETER_DECL = eINSTANCE.getparameterList_ParameterDecl();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.parameterDeclImpl <em>parameter Decl</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.parameterDeclImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getparameterDecl()
+     * @generated
+     */
+    EClass PARAMETER_DECL = eINSTANCE.getparameterDecl();
+
+    /**
+     * The meta object literal for the '<em><b>Identifier List</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PARAMETER_DECL__IDENTIFIER_LIST = eINSTANCE.getparameterDecl_IdentifierList();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PARAMETER_DECL__TYPE = eINSTANCE.getparameterDecl_Type();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.operandImpl <em>operand</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.operandImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getoperand()
+     * @generated
+     */
+    EClass OPERAND = eINSTANCE.getoperand();
+
+    /**
+     * The meta object literal for the '<em><b>Literal</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERAND__LITERAL = eINSTANCE.getoperand_Literal();
+
+    /**
+     * The meta object literal for the '<em><b>Operand Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERAND__OPERAND_NAME = eINSTANCE.getoperand_OperandName();
+
+    /**
+     * The meta object literal for the '<em><b>Method Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERAND__METHOD_EXPR = eINSTANCE.getoperand_MethodExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERAND__EXPRESSION = eINSTANCE.getoperand_Expression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.literalImpl <em>literal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.literalImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getliteral()
+     * @generated
+     */
+    EClass LITERAL = eINSTANCE.getliteral();
+
+    /**
+     * The meta object literal for the '<em><b>Basic Lit</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LITERAL__BASIC_LIT = eINSTANCE.getliteral_BasicLit();
+
+    /**
+     * The meta object literal for the '<em><b>Composite Lit</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LITERAL__COMPOSITE_LIT = eINSTANCE.getliteral_CompositeLit();
+
+    /**
+     * The meta object literal for the '<em><b>Function Lit</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LITERAL__FUNCTION_LIT = eINSTANCE.getliteral_FunctionLit();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.operandNameImpl <em>operand Name</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.operandNameImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getoperandName()
+     * @generated
+     */
+    EClass OPERAND_NAME = eINSTANCE.getoperandName();
+
+    /**
+     * The meta object literal for the '<em><b>Qualified Ident</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OPERAND_NAME__QUALIFIED_IDENT = eINSTANCE.getoperandName_QualifiedIdent();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.compositeLitImpl <em>composite Lit</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.compositeLitImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getcompositeLit()
+     * @generated
+     */
+    EClass COMPOSITE_LIT = eINSTANCE.getcompositeLit();
+
+    /**
+     * The meta object literal for the '<em><b>Literal Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPOSITE_LIT__LITERAL_TYPE = eINSTANCE.getcompositeLit_LiteralType();
+
+    /**
+     * The meta object literal for the '<em><b>Literal Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPOSITE_LIT__LITERAL_VALUE = eINSTANCE.getcompositeLit_LiteralValue();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.literalTypeImpl <em>literal Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.literalTypeImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getliteralType()
+     * @generated
+     */
+    EClass LITERAL_TYPE = eINSTANCE.getliteralType();
+
+    /**
+     * The meta object literal for the '<em><b>Struct Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LITERAL_TYPE__STRUCT_TYPE = eINSTANCE.getliteralType_StructType();
+
+    /**
+     * The meta object literal for the '<em><b>Array Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LITERAL_TYPE__ARRAY_TYPE = eINSTANCE.getliteralType_ArrayType();
+
+    /**
+     * The meta object literal for the '<em><b>Element Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LITERAL_TYPE__ELEMENT_TYPE = eINSTANCE.getliteralType_ElementType();
+
+    /**
+     * The meta object literal for the '<em><b>Slice Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LITERAL_TYPE__SLICE_TYPE = eINSTANCE.getliteralType_SliceType();
+
+    /**
+     * The meta object literal for the '<em><b>Map Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LITERAL_TYPE__MAP_TYPE = eINSTANCE.getliteralType_MapType();
+
+    /**
+     * The meta object literal for the '<em><b>Type Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LITERAL_TYPE__TYPE_NAME = eINSTANCE.getliteralType_TypeName();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.literalValueImpl <em>literal Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.literalValueImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getliteralValue()
+     * @generated
+     */
+    EClass LITERAL_VALUE = eINSTANCE.getliteralValue();
+
+    /**
+     * The meta object literal for the '<em><b>Element List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LITERAL_VALUE__ELEMENT_LIST = eINSTANCE.getliteralValue_ElementList();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.elementListImpl <em>element List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.elementListImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getelementList()
+     * @generated
+     */
+    EClass ELEMENT_LIST = eINSTANCE.getelementList();
+
+    /**
+     * The meta object literal for the '<em><b>Keyed Element</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT_LIST__KEYED_ELEMENT = eINSTANCE.getelementList_KeyedElement();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.keyedElementImpl <em>keyed Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.keyedElementImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getkeyedElement()
+     * @generated
+     */
+    EClass KEYED_ELEMENT = eINSTANCE.getkeyedElement();
+
+    /**
+     * The meta object literal for the '<em><b>Key</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference KEYED_ELEMENT__KEY = eINSTANCE.getkeyedElement_Key();
+
+    /**
+     * The meta object literal for the '<em><b>Element</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference KEYED_ELEMENT__ELEMENT = eINSTANCE.getkeyedElement_Element();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.keyImpl <em>key</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.keyImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getkey()
+     * @generated
+     */
+    EClass KEY = eINSTANCE.getkey();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference KEY__EXPRESSION = eINSTANCE.getkey_Expression();
+
+    /**
+     * The meta object literal for the '<em><b>Literal Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference KEY__LITERAL_VALUE = eINSTANCE.getkey_LiteralValue();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.elementImpl <em>element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.elementImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getelement()
+     * @generated
+     */
+    EClass ELEMENT = eINSTANCE.getelement();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT__EXPRESSION = eINSTANCE.getelement_Expression();
+
+    /**
+     * The meta object literal for the '<em><b>Literal Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT__LITERAL_VALUE = eINSTANCE.getelement_LiteralValue();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.structTypeImpl <em>struct Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.structTypeImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getstructType()
+     * @generated
+     */
+    EClass STRUCT_TYPE = eINSTANCE.getstructType();
+
+    /**
+     * The meta object literal for the '<em><b>Field Decl</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STRUCT_TYPE__FIELD_DECL = eINSTANCE.getstructType_FieldDecl();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.fieldDeclImpl <em>field Decl</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.fieldDeclImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getfieldDecl()
+     * @generated
+     */
+    EClass FIELD_DECL = eINSTANCE.getfieldDecl();
+
+    /**
+     * The meta object literal for the '<em><b>Identifier List</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_DECL__IDENTIFIER_LIST = eINSTANCE.getfieldDecl_IdentifierList();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FIELD_DECL__TYPE = eINSTANCE.getfieldDecl_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Anonymous Field</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FIELD_DECL__ANONYMOUS_FIELD = eINSTANCE.getfieldDecl_AnonymousField();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.anonymousFieldImpl <em>anonymous Field</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.anonymousFieldImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getanonymousField()
+     * @generated
+     */
+    EClass ANONYMOUS_FIELD = eINSTANCE.getanonymousField();
+
+    /**
+     * The meta object literal for the '<em><b>Type Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ANONYMOUS_FIELD__TYPE_NAME = eINSTANCE.getanonymousField_TypeName();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.functionLitImpl <em>function Lit</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.functionLitImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getfunctionLit()
+     * @generated
+     */
+    EClass FUNCTION_LIT = eINSTANCE.getfunctionLit();
+
+    /**
+     * The meta object literal for the '<em><b>Function</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_LIT__FUNCTION = eINSTANCE.getfunctionLit_Function();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.primaryExprImpl <em>primary Expr</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.primaryExprImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getprimaryExpr()
+     * @generated
+     */
+    EClass PRIMARY_EXPR = eINSTANCE.getprimaryExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Operand</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR__OPERAND = eINSTANCE.getprimaryExpr_Operand();
+
+    /**
+     * The meta object literal for the '<em><b>Conversion</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR__CONVERSION = eINSTANCE.getprimaryExpr_Conversion();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr Selector</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR__PRIMARY_EXPR_SELECTOR = eINSTANCE.getprimaryExpr_PrimaryExprSelector();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr Index</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR__PRIMARY_EXPR_INDEX = eINSTANCE.getprimaryExpr_PrimaryExprIndex();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr Slice</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR__PRIMARY_EXPR_SLICE = eINSTANCE.getprimaryExpr_PrimaryExprSlice();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr Type Assertion</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR__PRIMARY_EXPR_TYPE_ASSERTION = eINSTANCE.getprimaryExpr_PrimaryExprTypeAssertion();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr Arguments</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR__PRIMARY_EXPR_ARGUMENTS = eINSTANCE.getprimaryExpr_PrimaryExprArguments();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.primaryExprStuffImpl <em>primary Expr Stuff</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.primaryExprStuffImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getprimaryExprStuff()
+     * @generated
+     */
+    EClass PRIMARY_EXPR_STUFF = eINSTANCE.getprimaryExprStuff();
+
+    /**
+     * The meta object literal for the '<em><b>Selector</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PRIMARY_EXPR_STUFF__SELECTOR = eINSTANCE.getprimaryExprStuff_Selector();
+
+    /**
+     * The meta object literal for the '<em><b>Index</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR_STUFF__INDEX = eINSTANCE.getprimaryExprStuff_Index();
+
+    /**
+     * The meta object literal for the '<em><b>Slice</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR_STUFF__SLICE = eINSTANCE.getprimaryExprStuff_Slice();
+
+    /**
+     * The meta object literal for the '<em><b>Type Assertion</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR_STUFF__TYPE_ASSERTION = eINSTANCE.getprimaryExprStuff_TypeAssertion();
+
+    /**
+     * The meta object literal for the '<em><b>Arguments</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR_STUFF__ARGUMENTS = eINSTANCE.getprimaryExprStuff_Arguments();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.primaryExprSelectorImpl <em>primary Expr Selector</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.primaryExprSelectorImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getprimaryExprSelector()
+     * @generated
+     */
+    EClass PRIMARY_EXPR_SELECTOR = eINSTANCE.getprimaryExprSelector();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr Stuff</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR_SELECTOR__PRIMARY_EXPR_STUFF = eINSTANCE.getprimaryExprSelector_PrimaryExprStuff();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr Selector</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR_SELECTOR__PRIMARY_EXPR_SELECTOR = eINSTANCE.getprimaryExprSelector_PrimaryExprSelector();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.primaryExprIndexImpl <em>primary Expr Index</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.primaryExprIndexImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getprimaryExprIndex()
+     * @generated
+     */
+    EClass PRIMARY_EXPR_INDEX = eINSTANCE.getprimaryExprIndex();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr Stuff</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR_INDEX__PRIMARY_EXPR_STUFF = eINSTANCE.getprimaryExprIndex_PrimaryExprStuff();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr Index</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR_INDEX__PRIMARY_EXPR_INDEX = eINSTANCE.getprimaryExprIndex_PrimaryExprIndex();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.primaryExprSliceImpl <em>primary Expr Slice</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.primaryExprSliceImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getprimaryExprSlice()
+     * @generated
+     */
+    EClass PRIMARY_EXPR_SLICE = eINSTANCE.getprimaryExprSlice();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr Stuff</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR_SLICE__PRIMARY_EXPR_STUFF = eINSTANCE.getprimaryExprSlice_PrimaryExprStuff();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr Slice</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR_SLICE__PRIMARY_EXPR_SLICE = eINSTANCE.getprimaryExprSlice_PrimaryExprSlice();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.primaryExprTypeAssertionImpl <em>primary Expr Type Assertion</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.primaryExprTypeAssertionImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getprimaryExprTypeAssertion()
+     * @generated
+     */
+    EClass PRIMARY_EXPR_TYPE_ASSERTION = eINSTANCE.getprimaryExprTypeAssertion();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr Stuff</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR_TYPE_ASSERTION__PRIMARY_EXPR_STUFF = eINSTANCE.getprimaryExprTypeAssertion_PrimaryExprStuff();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr Type Assertion</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR_TYPE_ASSERTION__PRIMARY_EXPR_TYPE_ASSERTION = eINSTANCE.getprimaryExprTypeAssertion_PrimaryExprTypeAssertion();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.primaryExprArgumentsImpl <em>primary Expr Arguments</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.primaryExprArgumentsImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getprimaryExprArguments()
+     * @generated
+     */
+    EClass PRIMARY_EXPR_ARGUMENTS = eINSTANCE.getprimaryExprArguments();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr Stuff</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_STUFF = eINSTANCE.getprimaryExprArguments_PrimaryExprStuff();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr Arguments</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_ARGUMENTS = eINSTANCE.getprimaryExprArguments_PrimaryExprArguments();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.indexImpl <em>index</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.indexImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getindex()
+     * @generated
+     */
+    EClass INDEX = eINSTANCE.getindex();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.sliceImpl <em>slice</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.sliceImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getslice()
+     * @generated
+     */
+    EClass SLICE = eINSTANCE.getslice();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SLICE__EXPRESSION = eINSTANCE.getslice_Expression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.typeAssertionImpl <em>type Assertion</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.typeAssertionImpl
+     * @see org.xtext.go.impl.GoPackageImpl#gettypeAssertion()
+     * @generated
+     */
+    EClass TYPE_ASSERTION = eINSTANCE.gettypeAssertion();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_ASSERTION__TYPE = eINSTANCE.gettypeAssertion_Type();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.argumentsImpl <em>arguments</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.argumentsImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getarguments()
+     * @generated
+     */
+    EClass ARGUMENTS = eINSTANCE.getarguments();
+
+    /**
+     * The meta object literal for the '<em><b>Expression List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARGUMENTS__EXPRESSION_LIST = eINSTANCE.getarguments_ExpressionList();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARGUMENTS__TYPE = eINSTANCE.getarguments_Type();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.methodExprImpl <em>method Expr</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.methodExprImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getmethodExpr()
+     * @generated
+     */
+    EClass METHOD_EXPR = eINSTANCE.getmethodExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Receiver Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METHOD_EXPR__RECEIVER_TYPE = eINSTANCE.getmethodExpr_ReceiverType();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.receiverTypeImpl <em>receiver Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.receiverTypeImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getreceiverType()
+     * @generated
+     */
+    EClass RECEIVER_TYPE = eINSTANCE.getreceiverType();
+
+    /**
+     * The meta object literal for the '<em><b>Type Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RECEIVER_TYPE__TYPE_NAME = eINSTANCE.getreceiverType_TypeName();
+
+    /**
+     * The meta object literal for the '<em><b>Receiver Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RECEIVER_TYPE__RECEIVER_TYPE = eINSTANCE.getreceiverType_ReceiverType();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.expressionImpl <em>expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.expressionImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getexpression()
+     * @generated
+     */
+    EClass EXPRESSION = eINSTANCE.getexpression();
+
+    /**
+     * The meta object literal for the '<em><b>Unary Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION__UNARY_EXPR = eINSTANCE.getexpression_UnaryExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Expression Matched</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION__EXPRESSION_MATCHED = eINSTANCE.getexpression_ExpressionMatched();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.expressionMatchedImpl <em>expression Matched</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.expressionMatchedImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getexpressionMatched()
+     * @generated
+     */
+    EClass EXPRESSION_MATCHED = eINSTANCE.getexpressionMatched();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_MATCHED__EXPRESSION = eINSTANCE.getexpressionMatched_Expression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.unaryExprImpl <em>unary Expr</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.unaryExprImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getunaryExpr()
+     * @generated
+     */
+    EClass UNARY_EXPR = eINSTANCE.getunaryExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UNARY_EXPR__PRIMARY_EXPR = eINSTANCE.getunaryExpr_PrimaryExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Unary Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UNARY_EXPR__UNARY_EXPR = eINSTANCE.getunaryExpr_UnaryExpr();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.conversionImpl <em>conversion</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.conversionImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getconversion()
+     * @generated
+     */
+    EClass CONVERSION = eINSTANCE.getconversion();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONVERSION__TYPE = eINSTANCE.getconversion_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONVERSION__EXPRESSION = eINSTANCE.getconversion_Expression();
 
   }
 

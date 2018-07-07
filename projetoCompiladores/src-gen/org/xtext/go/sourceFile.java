@@ -14,6 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.xtext.go.sourceFile#getPackageClause <em>Package Clause</em>}</li>
+ *   <li>{@link org.xtext.go.sourceFile#getImportDecl <em>Import Decl</em>}</li>
+ *   <li>{@link org.xtext.go.sourceFile#getTopLevelDecl <em>Top Level Decl</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,5 +50,57 @@ public interface sourceFile extends EObject
    * @generated
    */
   void setPackageClause(String value);
+
+  /**
+   * Returns the value of the '<em><b>Import Decl</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Import Decl</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Import Decl</em>' containment reference.
+   * @see #setImportDecl(importDecl)
+   * @see org.xtext.go.GoPackage#getsourceFile_ImportDecl()
+   * @model containment="true"
+   * @generated
+   */
+  importDecl getImportDecl();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.sourceFile#getImportDecl <em>Import Decl</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Import Decl</em>' containment reference.
+   * @see #getImportDecl()
+   * @generated
+   */
+  void setImportDecl(importDecl value);
+
+  /**
+   * Returns the value of the '<em><b>Top Level Decl</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Top Level Decl</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Top Level Decl</em>' containment reference.
+   * @see #setTopLevelDecl(topLevelDecl)
+   * @see org.xtext.go.GoPackage#getsourceFile_TopLevelDecl()
+   * @model containment="true"
+   * @generated
+   */
+  topLevelDecl getTopLevelDecl();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.sourceFile#getTopLevelDecl <em>Top Level Decl</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Top Level Decl</em>' containment reference.
+   * @see #getTopLevelDecl()
+   * @generated
+   */
+  void setTopLevelDecl(topLevelDecl value);
 
 } // sourceFile
