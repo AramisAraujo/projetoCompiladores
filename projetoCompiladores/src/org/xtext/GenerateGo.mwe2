@@ -6,7 +6,7 @@ import org.eclipse.xtext.xtext.generator.model.project.*
 var rootPath = ".."
 
 Workflow {
-	
+
 	component = XtextGenerator {
 		configuration = {
 			project = StandardProjectConfig {
@@ -30,15 +30,22 @@ Workflow {
 			}
 		}
 		language = StandardLanguage {
+
+			parserGenerator = {
+				options = {
+					backtrack = true
+				}
+			}
+
 			name = "org.xtext.Go"
 			fileExtensions = "mydsl"
-
 			serializer = {
 				generateStub = false
 			}
 			validator = {
-				// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+			// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
 			}
 		}
+
 	}
 }
