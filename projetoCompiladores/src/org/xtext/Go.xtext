@@ -1,4 +1,6 @@
-grammar org.xtext.Go with org.eclipse.xtext.common.Terminals
+grammar org.xtext.Go //with org.eclipse.xtext.common.Terminals
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 generate go "http://www.xtext.org/Go"
 
@@ -55,7 +57,7 @@ expressionList:
 
 //TypeDecl     = "type" ( TypeSpec | "(" { TypeSpec ";" } ")" ) .
 typeDecl: 
-	'type' ( typeSpec | '(' ( typeSpec ';' )* ')' );
+	'type' ( typeSpec | '(' ( typeSpec eos )* ')' );
 
 //TypeSpec     = identifier Type .
 typeSpec: 
@@ -524,9 +526,7 @@ expression:
 //// attempt to remove left recursion of rule expression
 
 expressionMatched:
-	(('||' | '&&' | '==' | '!=' | '<' | '<=' | '>' | '>=' |
-    '+' | '-' | '|' | '^' | '*' | '/' | '%' | '<<' | '>>' |
-    '&' | '&^') expression)?;
+	(BINARY_OP expression)?;
 
 
 ////
@@ -570,33 +570,33 @@ terminal IDENTIFIER:
 // Keywords
 //
 
-terminal KEYWORD:
-	'break'
-    | 'default'
-    | 'func'
-    | 'interface'
-    | 'select'
-    | 'case'
-    | 'defer'
-    | 'go'
-    | 'map'
-    | 'struct'
-    | 'chan'
-    | 'else'
-    | 'goto'
-    | 'package'
-    | 'switch'
-    | 'const'
-    | 'fallthrough'
-    | 'if'
-    | 'range'
-    | 'type'
-    | 'continue'
-    | 'for'
-    | 'import'
-    | 'return'
-    | 'var'
-    ;
+//terminal fragment KEYWORD:
+//	'break'
+//    | 'default'
+//    | 'func'
+//    | 'interface'
+//    | 'select'
+//    | 'case'
+//    | 'defer'
+//    | 'go'
+//    | 'map'
+//    | 'struct'
+//    | 'chan'
+//    | 'else'
+//    | 'goto'
+//    | 'package'
+//    | 'switch'
+//    | 'const'
+//    | 'fallthrough'
+//    | 'if'
+//    | 'range'
+//    | 'type'
+//    | 'continue'
+//    | 'for'
+//    | 'import'
+//    | 'return'
+//    | 'var'
+//    ;
 
 
 //
@@ -714,8 +714,6 @@ terminal fragment ESCAPED_CHAR:
 
 
 
-
-
 //
 // String Literals
 //
@@ -726,11 +724,13 @@ terminal STRING_LIT:
 
 //raw_string_lit         = "`" { unicode_char | newline } "`" .
 terminal fragment RAW_STRING_LIT:
-	'`' ((UNICODE_CHAR | NEWLINE | !('`'))*)? '`';
+	"'" (UNICODE_CHAR | NEWLINE )* "'";
 
 //interpreted_string_lit = `"` { unicode_value | byte_value } `"` .
 terminal fragment INTERPRETED_STRING_LIT:
-	'"' (('\\"' | UNICODE_VALUE | BYTE_VALUE)*)? '"';
+	'"' (UNICODE_VALUE | BYTE_VALUE)* '"';
+
+
 
 
 
@@ -1054,7 +1054,7 @@ terminal fragment UNICODE_LETTER:
 // Whitespace and comments
 //
 
-@Override
+
 terminal WS  :
 	'\t'+; //-> channel(HIDDEN)
 
