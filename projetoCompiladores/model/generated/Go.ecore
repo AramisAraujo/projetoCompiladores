@@ -496,20 +496,20 @@
   <eClassifiers xsi:type="ecore:EClass" name="primaryExprIndex">
     <eStructuralFeatures xsi:type="ecore:EReference" name="primaryExprStuff" eType="#//primaryExprStuff"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="primaryExprIndex" eType="#//primaryExprSelector"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primaryExprIndex" eType="#//primaryExprIndex"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="primaryExprSlice">
     <eStructuralFeatures xsi:type="ecore:EReference" name="primaryExprStuff" eType="#//primaryExprStuff"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="primaryExprSlice" eType="#//primaryExprSelector"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primaryExprSlice" eType="#//primaryExprSlice"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="primaryExprTypeAssertion">
     <eStructuralFeatures xsi:type="ecore:EReference" name="primaryExprStuff" eType="#//primaryExprStuff"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="primaryExprTypeAssertion"
-        eType="#//primaryExprSelector" containment="true"/>
+        eType="#//primaryExprTypeAssertion" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="primaryExprArguments">
     <eStructuralFeatures xsi:type="ecore:EReference" name="primaryExprStuff" eType="#//primaryExprStuff"

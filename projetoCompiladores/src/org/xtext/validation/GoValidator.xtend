@@ -3,6 +3,8 @@
  */
 package org.xtext.validation
 
+import org.eclipse.xtext.validation.Check
+import org.xtext.go.ifStmt
 
 /**
  * This class contains custom validation rules. 
@@ -10,6 +12,15 @@ package org.xtext.validation
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class GoValidator extends AbstractGoValidator {
+	
+	@Check
+	def checkUniqueId(ifStmt stmt) {
+		if(stmt.simpleStmt !== null) {
+			
+		}
+	}
+	
+	
 	
 //	public static val INVALID_NAME = 'invalidName'
 //

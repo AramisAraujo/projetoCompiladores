@@ -3,6 +3,9 @@
  */
 package org.xtext.validation;
 
+import org.eclipse.xtext.validation.Check;
+import org.xtext.go.ifStmt;
+import org.xtext.go.simpleStmt;
 import org.xtext.validation.AbstractGoValidator;
 
 /**
@@ -12,4 +15,14 @@ import org.xtext.validation.AbstractGoValidator;
  */
 @SuppressWarnings("all")
 public class GoValidator extends AbstractGoValidator {
+  @Check
+  public Object checkUniqueId(final ifStmt stmt) {
+    Object _xifexpression = null;
+    simpleStmt _simpleStmt = stmt.getSimpleStmt();
+    boolean _tripleNotEquals = (_simpleStmt != null);
+    if (_tripleNotEquals) {
+      _xifexpression = null;
+    }
+    return _xifexpression;
+  }
 }
