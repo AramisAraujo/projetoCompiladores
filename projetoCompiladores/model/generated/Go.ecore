@@ -144,7 +144,9 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="sendStmt">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//expression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expressionLeft" eType="#//expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expressionRight" eType="#//expression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="incDecStmt">

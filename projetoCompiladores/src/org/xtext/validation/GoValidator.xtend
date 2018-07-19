@@ -5,6 +5,7 @@ package org.xtext.validation
 
 import org.eclipse.xtext.validation.Check
 import org.xtext.go.ifStmt
+import org.eclipse.xtend.lib.macro.expression.Expression
 
 /**
  * This class contains custom validation rules. 
@@ -16,8 +17,25 @@ class GoValidator extends AbstractGoValidator {
 	@Check
 	def checkUniqueId(ifStmt stmt) {
 		if(stmt.simpleStmt !== null) {
+			var simpleStmt = stmt.simpleStmt;
 			
+			if(simpleStmt.sendStmt !== null) {
+				var sendStmt = simpleStmt.sendStmt;
+				
+				if(sendStmt.expressionLeft !== null) {
+					if(sendStmt.expressionRight === null) {
+						error("Invalid send statement");
+					}
+					
+					checkExpression(sendStmt.expressionLeft);
+					checkExpression(sendStmt.expressionRight);
+				}
+			}
 		}
+	}
+	
+	def checkExpression(Expression expression) {
+		
 	}
 	
 	

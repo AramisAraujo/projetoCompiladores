@@ -106,7 +106,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//expressionStmt/expression"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//sendStmt">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//sendStmt/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//sendStmt/expressionLeft"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//sendStmt/expressionRight"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//incDecStmt">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//incDecStmt/expression"/>

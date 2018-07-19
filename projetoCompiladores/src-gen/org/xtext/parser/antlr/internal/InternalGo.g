@@ -1914,17 +1914,17 @@ rulesendStmt returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSendStmtAccess().getExpressionExpressionParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getSendStmtAccess().getExpressionLeftExpressionParserRuleCall_0_0());
 				}
-				lv_expression_0_0=ruleexpression
+				lv_expressionLeft_0_0=ruleexpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSendStmtRule());
 					}
 					set(
 						$current,
-						"expression",
-						lv_expression_0_0,
+						"expressionLeft",
+						lv_expressionLeft_0_0,
 						"org.xtext.Go.expression");
 					afterParserOrEnumRuleCall();
 				}
@@ -1937,17 +1937,17 @@ rulesendStmt returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSendStmtAccess().getExpressionExpressionParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getSendStmtAccess().getExpressionRightExpressionParserRuleCall_2_0());
 				}
-				lv_expression_2_0=ruleexpression
+				lv_expressionRight_2_0=ruleexpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSendStmtRule());
 					}
 					set(
 						$current,
-						"expression",
-						lv_expression_2_0,
+						"expressionRight",
+						lv_expressionRight_2_0,
 						"org.xtext.Go.expression");
 					afterParserOrEnumRuleCall();
 				}

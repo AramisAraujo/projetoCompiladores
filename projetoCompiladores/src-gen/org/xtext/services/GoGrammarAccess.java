@@ -1017,35 +1017,35 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	public class SendStmtElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.sendStmt");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cExpressionAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cExpressionExpressionParserRuleCall_0_0 = (RuleCall)cExpressionAssignment_0.eContents().get(0);
+		private final Assignment cExpressionLeftAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cExpressionLeftExpressionParserRuleCall_0_0 = (RuleCall)cExpressionLeftAssignment_0.eContents().get(0);
 		private final Keyword cLessThanSignHyphenMinusKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cExpressionExpressionParserRuleCall_2_0 = (RuleCall)cExpressionAssignment_2.eContents().get(0);
+		private final Assignment cExpressionRightAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cExpressionRightExpressionParserRuleCall_2_0 = (RuleCall)cExpressionRightAssignment_2.eContents().get(0);
 		
 		////SendStmt = Channel "<-" Expression .
 		////Channel  = Expression .
 		//sendStmt:
-		//	expression=expression '<-' expression=expression;
+		//	expressionLeft=expression '<-' expressionRight=expression;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//expression=expression '<-' expression=expression
+		//expressionLeft=expression '<-' expressionRight=expression
 		public Group getGroup() { return cGroup; }
 		
-		//expression=expression
-		public Assignment getExpressionAssignment_0() { return cExpressionAssignment_0; }
+		//expressionLeft=expression
+		public Assignment getExpressionLeftAssignment_0() { return cExpressionLeftAssignment_0; }
 		
 		//expression
-		public RuleCall getExpressionExpressionParserRuleCall_0_0() { return cExpressionExpressionParserRuleCall_0_0; }
+		public RuleCall getExpressionLeftExpressionParserRuleCall_0_0() { return cExpressionLeftExpressionParserRuleCall_0_0; }
 		
 		//'<-'
 		public Keyword getLessThanSignHyphenMinusKeyword_1() { return cLessThanSignHyphenMinusKeyword_1; }
 		
-		//expression=expression
-		public Assignment getExpressionAssignment_2() { return cExpressionAssignment_2; }
+		//expressionRight=expression
+		public Assignment getExpressionRightAssignment_2() { return cExpressionRightAssignment_2; }
 		
 		//expression
-		public RuleCall getExpressionExpressionParserRuleCall_2_0() { return cExpressionExpressionParserRuleCall_2_0; }
+		public RuleCall getExpressionRightExpressionParserRuleCall_2_0() { return cExpressionRightExpressionParserRuleCall_2_0; }
 	}
 	public class IncDecStmtElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.incDecStmt");
@@ -4718,7 +4718,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	////SendStmt = Channel "<-" Expression .
 	////Channel  = Expression .
 	//sendStmt:
-	//	expression=expression '<-' expression=expression;
+	//	expressionLeft=expression '<-' expressionRight=expression;
 	public SendStmtElements getSendStmtAccess() {
 		return pSendStmt;
 	}
@@ -5791,6 +5791,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal LITTLE_U_VALUE:
+	//	'\\\u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT;
 	public TerminalRule getLITTLE_U_VALUERule() {
 		return tLITTLE_U_VALUE;
 	}

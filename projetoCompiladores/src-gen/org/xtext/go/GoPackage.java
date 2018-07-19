@@ -981,13 +981,22 @@ public interface GoPackage extends EPackage
   int SEND_STMT = 22;
 
   /**
-   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * The feature id for the '<em><b>Expression Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SEND_STMT__EXPRESSION = 0;
+  int SEND_STMT__EXPRESSION_LEFT = 0;
+
+  /**
+   * The feature id for the '<em><b>Expression Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEND_STMT__EXPRESSION_RIGHT = 1;
 
   /**
    * The number of structural features of the '<em>send Stmt</em>' class.
@@ -996,7 +1005,7 @@ public interface GoPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SEND_STMT_FEATURE_COUNT = 1;
+  int SEND_STMT_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.go.impl.incDecStmtImpl <em>inc Dec Stmt</em>}' class.
@@ -4527,15 +4536,26 @@ public interface GoPackage extends EPackage
   EClass getsendStmt();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.go.sendStmt#getExpression <em>Expression</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.go.sendStmt#getExpressionLeft <em>Expression Left</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expression</em>'.
-   * @see org.xtext.go.sendStmt#getExpression()
+   * @return the meta object for the containment reference '<em>Expression Left</em>'.
+   * @see org.xtext.go.sendStmt#getExpressionLeft()
    * @see #getsendStmt()
    * @generated
    */
-  EReference getsendStmt_Expression();
+  EReference getsendStmt_ExpressionLeft();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.sendStmt#getExpressionRight <em>Expression Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression Right</em>'.
+   * @see org.xtext.go.sendStmt#getExpressionRight()
+   * @see #getsendStmt()
+   * @generated
+   */
+  EReference getsendStmt_ExpressionRight();
 
   /**
    * Returns the meta object for class '{@link org.xtext.go.incDecStmt <em>inc Dec Stmt</em>}'.
@@ -7556,12 +7576,20 @@ public interface GoPackage extends EPackage
     EClass SEND_STMT = eINSTANCE.getsendStmt();
 
     /**
-     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Expression Left</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SEND_STMT__EXPRESSION = eINSTANCE.getsendStmt_Expression();
+    EReference SEND_STMT__EXPRESSION_LEFT = eINSTANCE.getsendStmt_ExpressionLeft();
+
+    /**
+     * The meta object literal for the '<em><b>Expression Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SEND_STMT__EXPRESSION_RIGHT = eINSTANCE.getsendStmt_ExpressionRight();
 
     /**
      * The meta object literal for the '{@link org.xtext.go.impl.incDecStmtImpl <em>inc Dec Stmt</em>}' class.

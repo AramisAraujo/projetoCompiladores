@@ -1514,10 +1514,19 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     sendStmt returns sendStmt
 	 *
 	 * Constraint:
-	 *     (expression=expression expression=expression)
+	 *     (expressionLeft=expression expressionRight=expression)
 	 */
 	protected void sequence_sendStmt(ISerializationContext context, sendStmt semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.SEND_STMT__EXPRESSION_LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.SEND_STMT__EXPRESSION_LEFT));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.SEND_STMT__EXPRESSION_RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.SEND_STMT__EXPRESSION_RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSendStmtAccess().getExpressionLeftExpressionParserRuleCall_0_0(), semanticObject.getExpressionLeft());
+		feeder.accept(grammarAccess.getSendStmtAccess().getExpressionRightExpressionParserRuleCall_2_0(), semanticObject.getExpressionRight());
+		feeder.finish();
 	}
 	
 	

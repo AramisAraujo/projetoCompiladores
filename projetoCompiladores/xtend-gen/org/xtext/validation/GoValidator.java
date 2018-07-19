@@ -3,10 +3,9 @@
  */
 package org.xtext.validation;
 
+import org.eclipse.xtend.lib.macro.expression.Expression;
 import org.eclipse.xtext.validation.Check;
 import org.xtext.go.ifStmt;
-import org.xtext.go.simpleStmt;
-import org.xtext.validation.AbstractGoValidator;
 
 /**
  * This class contains custom validation rules.
@@ -14,15 +13,16 @@ import org.xtext.validation.AbstractGoValidator;
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 @SuppressWarnings("all")
-public class GoValidator extends AbstractGoValidator {
+public class GoValidator /* implements AbstractGoValidator  */{
   @Check
   public Object checkUniqueId(final ifStmt stmt) {
-    Object _xifexpression = null;
-    simpleStmt _simpleStmt = stmt.getSimpleStmt();
-    boolean _tripleNotEquals = (_simpleStmt != null);
-    if (_tripleNotEquals) {
-      _xifexpression = null;
-    }
-    return _xifexpression;
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method error(String) is undefined"
+      + "\nType mismatch: cannot convert from expression to Expression"
+      + "\nType mismatch: cannot convert from expression to Expression");
+  }
+  
+  public Object checkExpression(final Expression expression) {
+    return null;
   }
 }

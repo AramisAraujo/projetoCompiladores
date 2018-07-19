@@ -24,7 +24,8 @@ import org.xtext.go.sendStmt;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.go.impl.sendStmtImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.xtext.go.impl.sendStmtImpl#getExpressionLeft <em>Expression Left</em>}</li>
+ *   <li>{@link org.xtext.go.impl.sendStmtImpl#getExpressionRight <em>Expression Right</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,14 +33,24 @@ import org.xtext.go.sendStmt;
 public class sendStmtImpl extends MinimalEObjectImpl.Container implements sendStmt
 {
   /**
-   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
+   * The cached value of the '{@link #getExpressionLeft() <em>Expression Left</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExpression()
+   * @see #getExpressionLeft()
    * @generated
    * @ordered
    */
-  protected expression expression;
+  protected expression expressionLeft;
+
+  /**
+   * The cached value of the '{@link #getExpressionRight() <em>Expression Right</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpressionRight()
+   * @generated
+   * @ordered
+   */
+  protected expression expressionRight;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,9 +78,9 @@ public class sendStmtImpl extends MinimalEObjectImpl.Container implements sendSt
    * <!-- end-user-doc -->
    * @generated
    */
-  public expression getExpression()
+  public expression getExpressionLeft()
   {
-    return expression;
+    return expressionLeft;
   }
 
   /**
@@ -77,13 +88,13 @@ public class sendStmtImpl extends MinimalEObjectImpl.Container implements sendSt
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpression(expression newExpression, NotificationChain msgs)
+  public NotificationChain basicSetExpressionLeft(expression newExpressionLeft, NotificationChain msgs)
   {
-    expression oldExpression = expression;
-    expression = newExpression;
+    expression oldExpressionLeft = expressionLeft;
+    expressionLeft = newExpressionLeft;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SEND_STMT__EXPRESSION, oldExpression, newExpression);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SEND_STMT__EXPRESSION_LEFT, oldExpressionLeft, newExpressionLeft);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -94,20 +105,68 @@ public class sendStmtImpl extends MinimalEObjectImpl.Container implements sendSt
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(expression newExpression)
+  public void setExpressionLeft(expression newExpressionLeft)
   {
-    if (newExpression != expression)
+    if (newExpressionLeft != expressionLeft)
     {
       NotificationChain msgs = null;
-      if (expression != null)
-        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SEND_STMT__EXPRESSION, null, msgs);
-      if (newExpression != null)
-        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SEND_STMT__EXPRESSION, null, msgs);
-      msgs = basicSetExpression(newExpression, msgs);
+      if (expressionLeft != null)
+        msgs = ((InternalEObject)expressionLeft).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SEND_STMT__EXPRESSION_LEFT, null, msgs);
+      if (newExpressionLeft != null)
+        msgs = ((InternalEObject)newExpressionLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SEND_STMT__EXPRESSION_LEFT, null, msgs);
+      msgs = basicSetExpressionLeft(newExpressionLeft, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SEND_STMT__EXPRESSION, newExpression, newExpression));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SEND_STMT__EXPRESSION_LEFT, newExpressionLeft, newExpressionLeft));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public expression getExpressionRight()
+  {
+    return expressionRight;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExpressionRight(expression newExpressionRight, NotificationChain msgs)
+  {
+    expression oldExpressionRight = expressionRight;
+    expressionRight = newExpressionRight;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SEND_STMT__EXPRESSION_RIGHT, oldExpressionRight, newExpressionRight);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExpressionRight(expression newExpressionRight)
+  {
+    if (newExpressionRight != expressionRight)
+    {
+      NotificationChain msgs = null;
+      if (expressionRight != null)
+        msgs = ((InternalEObject)expressionRight).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SEND_STMT__EXPRESSION_RIGHT, null, msgs);
+      if (newExpressionRight != null)
+        msgs = ((InternalEObject)newExpressionRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SEND_STMT__EXPRESSION_RIGHT, null, msgs);
+      msgs = basicSetExpressionRight(newExpressionRight, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SEND_STMT__EXPRESSION_RIGHT, newExpressionRight, newExpressionRight));
   }
 
   /**
@@ -120,8 +179,10 @@ public class sendStmtImpl extends MinimalEObjectImpl.Container implements sendSt
   {
     switch (featureID)
     {
-      case GoPackage.SEND_STMT__EXPRESSION:
-        return basicSetExpression(null, msgs);
+      case GoPackage.SEND_STMT__EXPRESSION_LEFT:
+        return basicSetExpressionLeft(null, msgs);
+      case GoPackage.SEND_STMT__EXPRESSION_RIGHT:
+        return basicSetExpressionRight(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +197,10 @@ public class sendStmtImpl extends MinimalEObjectImpl.Container implements sendSt
   {
     switch (featureID)
     {
-      case GoPackage.SEND_STMT__EXPRESSION:
-        return getExpression();
+      case GoPackage.SEND_STMT__EXPRESSION_LEFT:
+        return getExpressionLeft();
+      case GoPackage.SEND_STMT__EXPRESSION_RIGHT:
+        return getExpressionRight();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -152,8 +215,11 @@ public class sendStmtImpl extends MinimalEObjectImpl.Container implements sendSt
   {
     switch (featureID)
     {
-      case GoPackage.SEND_STMT__EXPRESSION:
-        setExpression((expression)newValue);
+      case GoPackage.SEND_STMT__EXPRESSION_LEFT:
+        setExpressionLeft((expression)newValue);
+        return;
+      case GoPackage.SEND_STMT__EXPRESSION_RIGHT:
+        setExpressionRight((expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +235,11 @@ public class sendStmtImpl extends MinimalEObjectImpl.Container implements sendSt
   {
     switch (featureID)
     {
-      case GoPackage.SEND_STMT__EXPRESSION:
-        setExpression((expression)null);
+      case GoPackage.SEND_STMT__EXPRESSION_LEFT:
+        setExpressionLeft((expression)null);
+        return;
+      case GoPackage.SEND_STMT__EXPRESSION_RIGHT:
+        setExpressionRight((expression)null);
         return;
     }
     super.eUnset(featureID);
@@ -186,8 +255,10 @@ public class sendStmtImpl extends MinimalEObjectImpl.Container implements sendSt
   {
     switch (featureID)
     {
-      case GoPackage.SEND_STMT__EXPRESSION:
-        return expression != null;
+      case GoPackage.SEND_STMT__EXPRESSION_LEFT:
+        return expressionLeft != null;
+      case GoPackage.SEND_STMT__EXPRESSION_RIGHT:
+        return expressionRight != null;
     }
     return super.eIsSet(featureID);
   }

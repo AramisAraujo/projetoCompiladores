@@ -1637,9 +1637,19 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getsendStmt_Expression()
+  public EReference getsendStmt_ExpressionLeft()
   {
     return (EReference)sendStmtEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getsendStmt_ExpressionRight()
+  {
+    return (EReference)sendStmtEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3952,7 +3962,8 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
     createEReference(expressionStmtEClass, EXPRESSION_STMT__EXPRESSION);
 
     sendStmtEClass = createEClass(SEND_STMT);
-    createEReference(sendStmtEClass, SEND_STMT__EXPRESSION);
+    createEReference(sendStmtEClass, SEND_STMT__EXPRESSION_LEFT);
+    createEReference(sendStmtEClass, SEND_STMT__EXPRESSION_RIGHT);
 
     incDecStmtEClass = createEClass(INC_DEC_STMT);
     createEReference(incDecStmtEClass, INC_DEC_STMT__EXPRESSION);
@@ -4378,7 +4389,8 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
     initEReference(getexpressionStmt_Expression(), this.getexpression(), null, "expression", null, 0, 1, expressionStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sendStmtEClass, sendStmt.class, "sendStmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getsendStmt_Expression(), this.getexpression(), null, "expression", null, 0, 1, sendStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getsendStmt_ExpressionLeft(), this.getexpression(), null, "expressionLeft", null, 0, 1, sendStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getsendStmt_ExpressionRight(), this.getexpression(), null, "expressionRight", null, 0, 1, sendStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(incDecStmtEClass, incDecStmt.class, "incDecStmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getincDecStmt_Expression(), this.getexpression(), null, "expression", null, 0, 1, incDecStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

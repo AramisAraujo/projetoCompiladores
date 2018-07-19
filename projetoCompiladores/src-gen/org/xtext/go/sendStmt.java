@@ -14,7 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.go.sendStmt#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.xtext.go.sendStmt#getExpressionLeft <em>Expression Left</em>}</li>
+ *   <li>{@link org.xtext.go.sendStmt#getExpressionRight <em>Expression Right</em>}</li>
  * </ul>
  *
  * @see org.xtext.go.GoPackage#getsendStmt()
@@ -24,29 +25,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface sendStmt extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Expression</b></em>' containment reference.
+   * Returns the value of the '<em><b>Expression Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Expression</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Expression Left</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expression</em>' containment reference.
-   * @see #setExpression(expression)
-   * @see org.xtext.go.GoPackage#getsendStmt_Expression()
+   * @return the value of the '<em>Expression Left</em>' containment reference.
+   * @see #setExpressionLeft(expression)
+   * @see org.xtext.go.GoPackage#getsendStmt_ExpressionLeft()
    * @model containment="true"
    * @generated
    */
-  expression getExpression();
+  expression getExpressionLeft();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.sendStmt#getExpression <em>Expression</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.sendStmt#getExpressionLeft <em>Expression Left</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expression</em>' containment reference.
-   * @see #getExpression()
+   * @param value the new value of the '<em>Expression Left</em>' containment reference.
+   * @see #getExpressionLeft()
    * @generated
    */
-  void setExpression(expression value);
+  void setExpressionLeft(expression value);
+
+  /**
+   * Returns the value of the '<em><b>Expression Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Expression Right</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Expression Right</em>' containment reference.
+   * @see #setExpressionRight(expression)
+   * @see org.xtext.go.GoPackage#getsendStmt_ExpressionRight()
+   * @model containment="true"
+   * @generated
+   */
+  expression getExpressionRight();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.sendStmt#getExpressionRight <em>Expression Right</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Expression Right</em>' containment reference.
+   * @see #getExpressionRight()
+   * @generated
+   */
+  void setExpressionRight(expression value);
 
 } // sendStmt
