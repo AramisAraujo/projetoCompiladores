@@ -11,6 +11,7 @@ import org.xtext.GoStandaloneSetupGenerated;
 @SuppressWarnings("all")
 public class GoStandaloneSetup extends GoStandaloneSetupGenerated {
   public static void doSetup() {
-    new GoStandaloneSetup().createInjectorAndDoEMFRegistration();
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method createInjectorAndDoEMFRegistration() is undefined for the type GoStandaloneSetup");
   }
 }

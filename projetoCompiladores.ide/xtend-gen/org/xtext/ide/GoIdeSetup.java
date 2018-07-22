@@ -3,22 +3,18 @@
  */
 package org.xtext.ide;
 
-import com.google.inject.Guice;
-import com.google.inject.Injector;
-import org.eclipse.xtext.util.Modules2;
-import org.xtext.GoRuntimeModule;
-import org.xtext.GoStandaloneSetup;
-import org.xtext.ide.GoIdeModule;
-
 /**
  * Initialization support for running Xtext languages as language servers.
  */
 @SuppressWarnings("all")
-public class GoIdeSetup extends GoStandaloneSetup {
+public class GoIdeSetup /* implements GoStandaloneSetup  */{
   @Override
-  public Injector createInjector() {
-    GoRuntimeModule _goRuntimeModule = new GoRuntimeModule();
-    GoIdeModule _goIdeModule = new GoIdeModule();
-    return Guice.createInjector(Modules2.mixin(_goRuntimeModule, _goIdeModule));
+  public Object createInjector() {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field Guice is undefined"
+      + "\nThe method or field Modules2 is undefined"
+      + "\nGoRuntimeModule cannot be resolved."
+      + "\ncreateInjector cannot be resolved"
+      + "\nmixin cannot be resolved");
   }
 }

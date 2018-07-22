@@ -9,61 +9,61 @@ Model:
 
 //SourceFile       = PackageClause ";" { ImportDecl ";" } { TopLevelDecl ";" } .
 sourceFile: 
-	packageClause=packageClause //';' 
-	( importDecl=importDecl ';' )* ( topLevelDecl=topLevelDecl ';')*;
+	package=packageClause eos 
+	( imports+=importDecl eos )* ( topLevelDecls+=topLevelDecl eos)*;
 
 //PackageClause  = "package" PackageName .
 //PackageName    = identifier .
 packageClause : 
-	'package' IDENTIFIER;
+	'package' packageName=IDENTIFIER;
 
 importDecl: 
-	'import' ( importSpec=importSpec | '(' ( importSpec=importSpec //';'
+	'import' ( specs+=importSpec eos | '(' ( specs+=importSpec eos
 	 )* ')' );
 
 importSpec: 
-	( '.' | IDENTIFIER )? importPath=importPath;
+	( '.' | IDENTIFIER )? path=importPath;
 
 importPath: 
 	STRING_LIT;
 
 //TopLevelDecl  = Declaration | FunctionDecl | MethodDecl .
 topLevelDecl: 
-	declaration=declaration
-    | functionDecl=functionDecl
-    | methodDecl=methodDecl;
+	decl=declaration
+    | decl=functionDecl
+    | decl=methodDecl;
 
 //Declaration   = ConstDecl | TypeDecl | VarDecl .
 declaration: 
-	constDecl=constDecl
-    | typeDecl=typeDecl
-    | varDecl=varDecl;
+	decl=constDecl
+    | decl=typeDecl
+    | decl=varDecl;
 
 
 //ConstDecl      = "const" ( ConstSpec | "(" { ConstSpec ";" } ")" ) .
 constDecl: 
-	'const' ( constSpec=constSpec | '(' ( constSpec=constSpec ';' )* ')' );
+	'const' ( spec+=constSpec | '(' ( spec+=constSpec eos )* ')' );
 
 //ConstSpec      = IdentifierList [ [ Type ] "=" ExpressionList ] .
 constSpec: 
-	identifierList=identifierList ( type=type? '=' expressionList=expressionList )?;
+	identifiers=identifierList ( type=type? '=' expression=expressionList )?;
 
 //
 //IdentifierList = identifier { "," identifier } .
 identifierList: 
-	IDENTIFIER ( ',' IDENTIFIER )*;
+	ids+=IDENTIFIER ( ',' ids+=IDENTIFIER )*;
 
 //ExpressionList = Expression { "," Expression } .
 expressionList: 
-	expression=expression ( ',' expression=expression )*;
+	expr+=expression ( ',' expr+=expression )*;
 
 //TypeDecl     = "type" ( TypeSpec | "(" { TypeSpec ";" } ")" ) .
 typeDecl: 
-	'type' ( typeSpec=typeSpec | '(' ( typeSpec=typeSpec ';' )* ')' );
+	'type' ( spec+=typeSpec | '(' ( spec+=typeSpec eos )* ')' );
 
 //TypeSpec     = identifier Type .
 typeSpec: 
-	IDENTIFIER type=type;
+	name=IDENTIFIER type=type;
 
 
 // Function declarations
@@ -73,143 +73,143 @@ typeSpec:
 //Function     = Signature FunctionBody .
 //FunctionBody = Block .
 functionDecl: 
-	'func' IDENTIFIER ( function=function | signature=signature );
+	'func' name=IDENTIFIER ( func=function | sig=signature );
 
 function: 
-	signature=signature block=block;
+	sig=signature codeBlock=block;
 
 //MethodDecl   = "func" Receiver MethodName ( Function | Signature ) .
 //Receiver     = Parameters .
 methodDecl: 
-	'func' receiver=receiver IDENTIFIER ( function=function | signature=signature );
+	'func' params=receiver name=IDENTIFIER ( func=function | sig=signature );
 
 receiver: 
-	parameters=parameters;
+	params=parameters;
 
 //VarDecl     = "var" ( VarSpec | "(" { VarSpec ";" } ")" ) .
 //VarSpec     = IdentifierList ( Type [ "=" ExpressionList ] | "=" ExpressionList ) .
 varDecl: 
-	'var' ( varSpec=varSpec | '(' ( varSpec=varSpec ';' )* ')' );
+	'var' ( specs+=varSpec | '(' ( specs+=varSpec eos )* ')' );
 
 varSpec: 
-	identifierList=identifierList ( type=type ( '=' expressionList=expressionList )? |
-		'=' expressionList=expressionList);
+	idList=identifierList ( type=type ( '=' exprList+=expressionList )? |
+		'=' exprList+=expressionList);
 
 
 //Block = "{" StatementList "}" .
 block: 
-	'{' statementList=statementList '}';
+	'{' statements=statementList '}';
 
 //StatementList = { Statement ";" } .
 statementList: 
-	( statement=statement ';' )*;
+	( statements+=statement eos )*;
 
 statement: 
-	declaration=declaration
-    | labeledStmt=labeledStmt
-    | simpleStmt=simpleStmt
-    | goStmt=goStmt
-    | returnStmt=returnStmt
-    | breakStmt=breakStmt
-    | continueStmt=continueStmt
-    | gotoStmt=gotoStmt
-    | fallthroughStmt=fallthroughStmt
-    | block=block
-    | ifStmt=ifStmt
-    | switchStmt=switchStmt
-    | selectStmt=selectStmt
-    | forStmt=forStmt
-    | deferStmt=deferStmt;
+	content=declaration
+    | content=labeledStmt
+    | content=simpleStmt
+    | content=goStmt
+    | content=returnStmt
+    | content=breakStmt
+    | content=continueStmt
+    | content=gotoStmt
+    | content=fallthroughStmt
+    | content=block
+    | content=ifStmt
+    | content=switchStmt
+    | content=selectStmt
+    | content=forStmt
+    | content=deferStmt;
 
 //SimpleStmt = EmptyStmt | ExpressionStmt | SendStmt | IncDecStmt | Assignment | ShortVarDecl .
 simpleStmt:
-	sendStmt=sendStmt
-    | expressionStmt=expressionStmt
-    | incDecStmt=incDecStmt
-    | assignment=assignment
-    | shortVarDecl=shortVarDecl
-    | emptyStmt=emptyStmt;
+	content=sendStmt
+    | content=expressionStmt
+    | content=incDecStmt
+    | content=assignment
+    | content=shortVarDecl
+    | content=emptyStmt;
 
 //ExpressionStmt = Expression .
 expressionStmt: 
-	expression=expression;
+	expr=expression;
 
 //SendStmt = Channel "<-" Expression .
 //Channel  = Expression .
 sendStmt: 
-	expression=expression '<-' expression=expression;
+	expr1=expression '<-' expr2=expression;
 
 //IncDecStmt = Expression ( "++" | "--" ) .
 incDecStmt: 
-	expression=expression ( '++' | '--' );
+	expr=expression ( '++' | '--' );
 
 //Assignment = ExpressionList assign_op ExpressionList .
 assignment: 
-	expressionList=expressionList assign_op=assign_op
-	 expressionList=expressionList;
+	exprList1=expressionList operation=assign_op
+	 exprList2=expressionList;
 
-//assign_op = [ add_op | mul_op ] "=" .
+//assign_op =  add_op | mul_op ] "=" .
 assign_op: 
 	('+' | '-' | '|' | '^' | '*' | '/' | '%' | '<<' | '>>' | '&' | '&^')? '=';
 
 
 //ShortVarDecl = IdentifierList ":=" ExpressionList .
 shortVarDecl: 
-	identifierList=identifierList ':=' expressionList=expressionList;
+	idList=identifierList ':=' exprList=expressionList;
 
 emptyStmt: 
-	WS;
+	content=WS;
 
 //LabeledStmt = Label ":" Statement .
 //Label       = identifier .
 labeledStmt: 
-	IDENTIFIER ':' statement=statement;
+	label=IDENTIFIER ':' stmt=statement;
 
 //ReturnStmt = "return" [ ExpressionList ] .
 returnStmt: 
-	'return' expressionList=expressionList?;
+	'return' exprList=expressionList?;
 
 //BreakStmt = "break" [ Label ] .
 breakStmt: 
-	'break' IDENTIFIER?;
+	'break' label=IDENTIFIER?;
 
 //ContinueStmt = "continue" [ Label ] .
 continueStmt: 
-	'continue' IDENTIFIER?;
+	'continue' label=IDENTIFIER?;
 
 //GotoStmt = "goto" Label .
 gotoStmt: 
-	'goto' IDENTIFIER;
+	'goto' label=IDENTIFIER;
 
 //FallthroughStmt = "fallthrough" .
 fallthroughStmt: 
-	'fallthrough';
+	content='fallthrough';
 
 //DeferStmt = "defer" Expression .
 deferStmt: 
-	'defer' expression=expression;
+	'defer' expr=expression;
 
 //IfStmt = "if" [ SimpleStmt ";" ] Expression Block [ "else" ( IfStmt | Block ) ] .
 ifStmt: 
-	'if' (simpleStmt=simpleStmt ';')? expression=expression
-	 block=block ( 'else' ( ifStmt=ifStmt | block=block ) )?;
+	'if' (simplStatement=simpleStmt eos)? expr=expression
+	 codeBlock=block ( 'else' ( ifStatement=ifStmt | codeBlockIf=block ) )?;
 
 //SwitchStmt = ExprSwitchStmt | TypeSwitchStmt .
 switchStmt: 
-	exprSwitchStmt=exprSwitchStmt | typeSwitchStmt=typeSwitchStmt;
+	statement=exprSwitchStmt | statement=typeSwitchStmt;
 
 //ExprSwitchStmt = "switch" [ SimpleStmt ";" ] [ Expression ] "{" { ExprCaseClause } "}" .
 //ExprCaseClause = ExprSwitchCase ":" StatementList .
 //ExprSwitchCase = "case" ExpressionList | "default" .
 exprSwitchStmt: 
-	'switch' ( simpleStmt=simpleStmt ';' )? expression=expression?
-	 '{' exprCaseClause=exprCaseClause* '}';
+	'switch' ( simpleStmt=simpleStmt eos )? expr=expression?
+	 '{' exprCaseClauses+=exprCaseClause* '}';
 
 exprCaseClause: 
-	exprSwitchCase=exprSwitchCase ':' statementList=statementList;
+	exprSwitchCase=exprSwitchCase ':' stmtList=statementList;
 
 exprSwitchCase: 
-	'case' expressionList=expressionList | 'default';
+	'case' exprList=expressionList | 'default';
 
 //TypeSwitchStmt  = "switch" [ SimpleStmt ";" ] TypeSwitchGuard "{" { TypeCaseClause } "}" .
 //TypeSwitchGuard = [ identifier ":=" ] PrimaryExpr "." "(" "type" ")" .
@@ -217,11 +217,11 @@ exprSwitchCase:
 //TypeSwitchCase  = "case" TypeList | "default" .
 //TypeList        = Type { "," Type } .
 typeSwitchStmt: 
-	'switch' ( simpleStmt=simpleStmt ';' )? 
-	typeSwitchGuard=typeSwitchGuard '{' typeCaseClause=typeCaseClause* '}';
+	'switch' ( simpleStatement=simpleStmt eos )? 
+	typeSwitchGuard=typeSwitchGuard '{' typeCaseClauses+=typeCaseClause* '}';
     
 typeSwitchGuard: 
-	( IDENTIFIER ':=' )? primaryExpr=primaryExpr '.' '(' 'type' ')';
+	( name=IDENTIFIER ':=' )? primaryExpression=primaryExpr '.' '(' 'type' ')';
     
 typeCaseClause: 
 	typeSwitchCase=typeSwitchCase ':' statementList=statementList;
@@ -230,7 +230,7 @@ typeSwitchCase:
 	'case' typeList=typeList | 'default';
     
 typeList: 
-	type=type ( ',' type=type )*;
+	types+=type ( ',' types+=type )*;
 
 
 //SelectStmt = "select" "{" { CommClause } "}" .
@@ -239,71 +239,71 @@ typeList:
 //RecvStmt   = [ ExpressionList "=" | IdentifierList ":=" ] RecvExpr .
 //RecvExpr   = Expression .
 selectStmt: 
-	'select' '{' commClause=commClause* '}';
+	'select' '{' commClauses+=commClause* '}';
     
 commClause: 
-	commCase=commCase ':' statementList=statementList;
+	case=commCase ':' stmtList=statementList;
     
 commCase: 
-	'case' ( sendStmt=sendStmt | recvStmt=recvStmt ) | 'default';
+	'case' ( statement=sendStmt | statement=recvStmt ) | 'default';
 	
 recvStmt: 
-	( expressionList=expressionList '=' |
-		identifierList=identifierList ':='
-	)? expression=expression;
+	( exprList=expressionList '=' |
+		idList=identifierList ':='
+	)? expr=expression;
 
 //ForStmt = "for" [ Condition | ForClause | RangeClause ] Block .
 //Condition = Expression .
 forStmt: 
-	'for' ( expression=expression | forClause=forClause |
-		rangeClause=rangeClause
-	)? block=block;
+	'for' ( expr=expression | clause=forClause |
+		clause=rangeClause
+	)? codeBlock=block;
 
 //ForClause = [ InitStmt ] ";" [ Condition ] ";" [ PostStmt ] .
 //InitStmt = SimpleStmt .
 //PostStmt = SimpleStmt .
 forClause: 
-	simpleStmt=simpleStmt? ';' expression=expression? ';' simpleStmt=simpleStmt?;
+	statement1=simpleStmt? eos expr=expression? eos statement2=simpleStmt?;
 
 
 //RangeClause = [ ExpressionList "=" | IdentifierList ":=" ] "range" Expression .
 rangeClause: 
-	(expressionList=expressionList '=' |
-		identifierList=identifierList ':=')? 'range' expression=expression;
+	(exprList=expressionList '=' |
+		idList=identifierList ':=')? 'range' expr=expression;
 
 //GoStmt = "go" Expression .
 goStmt: 
-	'go' expression=expression;
+	'go' expr=expression;
 
 //Type      = TypeName | TypeLit | "(" Type ")" .
 type: 
-	typeName=typeName
-    | typeLit=typeLit
-    | '(' type=type ')';
+	content=typeName
+    | content=typeLit
+    | '(' content=type ')';
 
 //TypeName  = identifier | QualifiedIdent .
 typeName: 
-	IDENTIFIER
-    | qualifiedIdent=qualifiedIdent;
+	name=IDENTIFIER
+    | qualIdent=qualifiedIdent;
 
 //TypeLit   = ArrayType | StructType | PointerType | FunctionType | InterfaceType |
 //	    SliceType | MapType | ChannelType .
 typeLit: 
-	arrayType=arrayType
-    | structType=structType
-    | pointerType=pointerType
-    | functionType=functionType
-    | interfaceType=interfaceType
-    | sliceType=sliceType
-    | mapType=mapType
-    | channelType=channelType;
+	lit=arrayType
+    | lit=structType
+    | lit=pointerType
+    | lit=functionType
+    | lit=interfaceType
+    | lit=sliceType
+    | lit=mapType
+    | lit=channelType;
 
 
 arrayType: 
-	'[' arrayLength=arrayLength ']' elementType=elementType;
+	'[' arrayLength=arrayLength ']' elemType=elementType;
 
 arrayLength: 
-	expression=expression;
+	expr=expression;
 
 elementType: 
 	type=type;
@@ -318,23 +318,23 @@ pointerType:
 //MethodName         = identifier .
 //InterfaceTypeName  = TypeName .
 interfaceType: 
-	'interface' '{' ( methodSpec=methodSpec ';' )* '}';
+	'interface' '{' ( methodSpecs+=methodSpec eos )* '}';
 
 //SliceType = "[" "]" ElementType .
 sliceType: 
-	'[' ']' elementType=elementType;
+	'[' ']' elemType=elementType;
 
 //MapType     = "map" "[" KeyType "]" ElementType .
 //KeyType     = Type .
 mapType: 
-	'map' '[' type=type ']' elementType=elementType;
+	'map' '[' type=type ']' elemType=elementType;
 
 //ChannelType = ( "chan" | "chan" "<-" | "<-" "chan" ) ElementType .
 channelType: 
-	( 'chan' | 'chan' '<-' | '<-' 'chan' ) elementType=elementType;
+	( 'chan' | 'chan' '<-' | '<-' 'chan' ) elemType=elementType;
 
 methodSpec: 
-	IDENTIFIER signature=signature |
+	name=IDENTIFIER sig=signature |
 	typeName=typeName;
 
 
@@ -345,20 +345,20 @@ methodSpec:
 //ParameterList  = ParameterDecl { "," ParameterDecl } .
 //ParameterDecl  = [ IdentifierList ] [ "..." ] Type .
 functionType: 
-	'func' signature=signature;
+	'func' sig=signature;
 
 signature: 
-	parameters=parameters result=result?;
+	params=parameters result=result?;
 
 result: 
-	parameters=parameters | 
+	params=parameters | 
 	type=type;
 
 parameters: 
-	'(' ( parameterList=parameterList ','? )? ')';
+	'(' ( paramList+=parameterList ','? )? ')';
 
 parameterList: 
-	parameterDecl=parameterDecl ( ',' parameterDecl=parameterDecl )*;
+	paramsDecl+=parameterDecl ( ',' paramsDecl+=parameterDecl )*;
 
 parameterDecl: 
 	identifierList=identifierList? '...'? type=type;
@@ -371,15 +371,15 @@ parameterDecl:
 //BasicLit    = int_lit | float_lit | imaginary_lit | rune_lit | string_lit .
 //OperandName = identifier | QualifiedIdent.
 
-operand: literal=literal | 
-	operandName=operandName | 
-	methodExpr=methodExpr | 
-	'(' expression=expression ')';
+operand: content=literal | 
+	content=operandName | 
+	content=methodExpr | 
+	'(' content=expression ')';
 
 literal: 
-	basicLit=basicLit | 
-	compositeLit=compositeLit | 
-	functionLit=functionLit;
+	litBasic=basicLit | 
+	litComposite=compositeLit | 
+	litFunc=functionLit;
 
 basicLit: 
 	INT_LIT |
@@ -389,13 +389,13 @@ basicLit:
 	STRING_LIT;
 
 operandName: 
-	IDENTIFIER |
-	qualifiedIdent=qualifiedIdent
+	name=IDENTIFIER |
+	qualIdent=qualifiedIdent
     ;
 
 //QualifiedIdent = PackageName "." identifier .
 qualifiedIdent:
-	IDENTIFIER '.' IDENTIFIER;
+	packageName=IDENTIFIER '.' name=IDENTIFIER;
 
 //CompositeLit  = LiteralType LiteralValue .
 //LiteralType   = StructType | ArrayType | "[" "..." "]" ElementType |
@@ -411,37 +411,37 @@ compositeLit:
 	literalType=literalType literalValue=literalValue;
 
 literalType:
-	structType=structType
-    | arrayType=arrayType
-    | '[' '...' ']' elementType=elementType
-    | sliceType=sliceType
-    | mapType=mapType
-    | typeName=typeName;
+	type=structType
+    | type=arrayType
+    | '[' '...' ']' type=elementType
+    | type=sliceType
+    | type=mapType
+    | type=typeName;
 
 literalValue:
 	'{' ( elementList=elementList ','? )? '}';
 
 elementList:
-	keyedElement=keyedElement (',' keyedElement=keyedElement)*;
+	keyedElements+=keyedElement (',' keyedElements+=keyedElement)*;
 
 keyedElement:
 	(key=key ':')? element=element;
 
 key:
-	IDENTIFIER |
-	expression=expression |
-	literalValue=literalValue;
+	name=IDENTIFIER |
+	expr=expression |
+	lit=literalValue;
 
 element:
-	expression=expression |
-	literalValue=literalValue;
+	content=expression |
+	content=literalValue;
 
 //StructType     = "struct" "{" { FieldDecl ";" } "}" .
 //FieldDecl      = (IdentifierList Type | AnonymousField) [ Tag ] .
 //AnonymousField = [ "*" ] TypeName .
 //Tag            = string_lit .
 structType: 
-	'struct' '{' ( fieldDecl=fieldDecl ';' )* '}';
+	'struct' '{' ( fieldsDecl+=fieldDecl eos )* '}';
 
 fieldDecl: 
 	(identifierList=identifierList type=type |
@@ -473,46 +473,46 @@ functionLit:
 //Arguments      = "(" [ ( ExpressionList | Type [ "," ExpressionList ] ) [ "..." ] [ "," ] ] ")" .
 
 primaryExpr: 
-	(operand=operand | conversion=conversion) |
-    primaryExprSelector=primaryExprSelector |
-    primaryExprIndex=primaryExprIndex |
-    primaryExprSlice=primaryExprSlice |
-    primaryExprTypeAssertion=primaryExprTypeAssertion |
-	primaryExprArguments=primaryExprArguments;
+	(content=operand | content=conversion) |
+    content=primaryExprSelector |
+    content=primaryExprIndex |
+    content=primaryExprSlice |
+    content=primaryExprTypeAssertion |
+	content=primaryExprArguments;
 
 primaryExprStuff:
-	selector=selector | index=index |
-	 slice=slice | typeAssertion=typeAssertion | arguments=arguments;
+	content=selector | content=index |
+	 content=slice | content=typeAssertion | content=arguments;
 
 
 ////Left Rec removal for primaryExpr
 primaryExprSelector:
-	(primaryExprStuff=primaryExprStuff primaryExprSelector=primaryExprSelector)?;
+	(content=primaryExprStuff primaryExprSelector=primaryExprSelector)?;
 	
 primaryExprIndex:
-	(primaryExprStuff=primaryExprStuff primaryExprIndex=primaryExprSelector)?;
+	(content=primaryExprStuff primaryExprIndex=primaryExprIndex)?;
 
 primaryExprSlice:
-	(primaryExprStuff=primaryExprStuff primaryExprSlice=primaryExprSelector)?;
+	(content=primaryExprStuff primaryExprSlice=primaryExprSlice)?;
 
 primaryExprTypeAssertion:
-	(primaryExprStuff=primaryExprStuff primaryExprTypeAssertion=primaryExprSelector)?;
+	(content=primaryExprStuff primaryExprTypeAssertion=primaryExprTypeAssertion)?;
 
 primaryExprArguments:
-	(primaryExprStuff=primaryExprStuff primaryExprArguments=primaryExprArguments)?;
+	(content=primaryExprStuff primaryExprArguments=primaryExprArguments)?;
 
 
 ////
 
 selector:
-	'.' IDENTIFIER;
+	'.' name=IDENTIFIER;
 
 index: 
-'[' expression ']';
+'[' expr=expression ']';
 
 slice: 
-'[' (( expression=expression? ':' expression=expression? ) |
-	( expression=expression? ':' expression=expression ':' expression=expression )) ']';
+'[' (( expr1=expression? ':' expr2=expression? ) |
+	( expr1=expression? ':' expr2=expression ':' expr3=expression )) ']';
 
 typeAssertion:
 	 '.' '(' type=type ')';
@@ -556,8 +556,8 @@ unaryExpr:
 conversion:
 	 type=type '(' expression=expression ','? ')';
 
-//eos: 
-//	';' | 
+eos: 
+	';';//| 
 //	WS ;//|
 ////	{lineTerminatorAhead()}? |
 ////	{_input.LT(1).getText().equals("}") }?;
@@ -580,7 +580,7 @@ conversion:
 
 //identifier = letter { letter | unicode_digit } .
 terminal IDENTIFIER:
-	LETTER ( LETTER | UNICODE_DIGIT )*;
+	LETTER ( LETTER | DECIMAL_DIGIT )*;
 
 
 //
@@ -778,28 +778,29 @@ terminal fragment UNICODE_CHAR:
 	'A' .. 'Z'| 'a' .. 'z';
 
 //unicode_digit = /* a Unicode code point classified as "Number, decimal digit" */ .
-terminal fragment UNICODE_DIGIT:
-	'\u0030..\u0039'
- | '\u0660..\u0669'
- | '\u06F0..\u06F9'
- | '\u0966..\u096F'
- | '\u09E6..\u09EF'
- | '\u0A66..\u0A6F'
- | '\u0AE6..\u0AEF'
- | '\u0B66..\u0B6F'
- | '\u0BE7..\u0BEF'
- | '\u0C66..\u0C6F'
- | '\u0CE6..\u0CEF'
- | '\u0D66..\u0D6F'
- | '\u0E50..\u0E59'
- | '\u0ED0..\u0ED9'
- | '\u0F20..\u0F29'
- | '\u1040..\u1049'
- | '\u1369..\u1371'
- | '\u17E0..\u17E9'
- | '\u1810..\u1819'
- | '\uFF10..\uFF19';
-
+//terminal fragment UNICODE_DIGIT:
+//
+//	'\u0030'..'\u0039'
+// | '\u0660'..'\u0669'
+// | '\u06F0'..'\u06F9'
+// | '\u0966'..'\u096F'
+// | '\u09E6'..'\u09EF'
+// | '\u0A66'..'\u0A6F'
+// | '\u0AE6'..'\u0AEF'
+// | '\u0B66'..'\u0B6F'
+// | '\u0BE7'..'\u0BEF'
+// | '\u0C66'..'\u0C6F'
+// | '\u0CE6'..'\u0CEF'
+// | '\u0D66'..'\u0D6F'
+// | '\u0E50'..'\u0E59'
+// | '\u0ED0'..'\u0ED9'
+// | '\u0F20'..'\u0F29'
+// | '\u1040'..'\u1049'
+// | '\u1369'..'\u1371'
+// | '\u17E0'..'\u17E9'
+// | '\u1810'..'\u1819'
+// | '\uFF10'..'\uFF19';
+ 
 //unicode_letter = /* a Unicode code point classified as "Letter" */ .
 terminal fragment UNICODE_LETTER:
 	'A' .. 'Z'| 'a' .. 'z'
