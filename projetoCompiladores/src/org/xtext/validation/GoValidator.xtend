@@ -20,34 +20,34 @@ class GoValidator extends AbstractGoValidator {
 	
 	@Check
 	def checkIf(ifStmt stmt) {
-		if(stmt.simpleStmt !== null) {
-			checkSimple(stmt.simpleStmt);
+		if(stmt.getSimplStatement() !== null) {
+			checkSimple(stmt.getSimplStatement());
 		}
-		if(stmt.expression !== null) {
-			checkExpression(stmt.expression);
+		if(stmt.expr !== null) {
+			checkExpression(stmt.getExpr());
 		}
 	}
 		
 	
 	
 	def checkExpression(expression expression) {
-		if(expression.unaryExpr !== null) {
-			checkUnary(expression.unaryExpr);
+		if(expression.getUnaryExpr() !== null) {
+			checkUnary(expression.getUnaryExpr());
 		}
-		if(expression.expressionMatched !== null) {
-			checkMatched(expression.expressionMatched);
+		if(expression.getExpressionMatched() !== null) {
+			checkMatched(expression.getExpressionMatched());
 		}
 	}
 		
 	def checkMatched(expressionMatched matched) {
-		if(matched.expression !== null) {
+		if(matched.getExpression() !== null) {
 //			checkExpression(matched.expression);
 		}
 	}
 	
 	def checkUnary(unaryExpr expr) {
-		if(expr.primaryExpr !== null) {
-			checkPrimary(expr.primaryExpr);
+		if(expr.getPrimaryExpr() !== null) {
+			checkPrimary(expr.getPrimaryExpr());
 		}
 	}
 		
