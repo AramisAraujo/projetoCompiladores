@@ -9,8 +9,7 @@ Model:
 
 //SourceFile       = PackageClause ";" { ImportDecl ";" } { TopLevelDecl ";" } .
 sourceFile: 
-	package=packageClause eos 
-	( imports+=importDecl eos )* ( topLevelDecls+=topLevelDecl eos)*;
+	package=packageClause eos ( imports+=importDecl eos )* ( topLevelDecls+=topLevelDecl eos)*;
 
 //PackageClause  = "package" PackageName .
 //PackageName    = identifier .
@@ -556,8 +555,8 @@ unaryExpr:
 conversion:
 	 type=type '(' expression=expression ','? ')';
 
-eos: 
-	';';//| 
+terminal eos: 
+	(';' | NEWLINE);//| 
 //	WS ;//|
 ////	{lineTerminatorAhead()}? |
 ////	{_input.LT(1).getText().equals("}") }?;
