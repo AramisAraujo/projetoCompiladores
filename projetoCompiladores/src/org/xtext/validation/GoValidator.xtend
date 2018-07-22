@@ -8,6 +8,8 @@ import org.xtext.go.unaryExpr
 import org.xtext.go.expressionMatched
 import org.eclipse.xtext.validation.Check
 import org.xtext.go.primaryExpr
+import org.xtext.go.ifStmt
+import org.xtext.go.simpleStmt
 
 /**
  * This class contains custom validation rules. 
@@ -15,7 +17,19 @@ import org.xtext.go.primaryExpr
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class GoValidator extends AbstractGoValidator {
+	
 	@Check
+	def checkIf(ifStmt stmt) {
+		if(stmt.simpleStmt !== null) {
+			checkSimple(stmt.simpleStmt);
+		}
+		if(stmt.expression !== null) {
+			checkExpression(stmt.expression);
+		}
+	}
+		
+	
+	
 	def checkExpression(expression expression) {
 		if(expression.unaryExpr !== null) {
 			checkUnary(expression.unaryExpr);
@@ -41,4 +55,7 @@ class GoValidator extends AbstractGoValidator {
 		//TODO:
 	}
 	
+	def checkSimple(simpleStmt stmt) {
+		//TODO:
+	}
 }
