@@ -7,17 +7,13 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.go.GoPackage;
-import org.xtext.go.assignment;
-import org.xtext.go.expressionStmt;
-import org.xtext.go.incDecStmt;
-import org.xtext.go.sendStmt;
-import org.xtext.go.shortVarDecl;
 import org.xtext.go.simpleStmt;
 
 /**
@@ -27,12 +23,7 @@ import org.xtext.go.simpleStmt;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.simpleStmtImpl#getSendStmt <em>Send Stmt</em>}</li>
- *   <li>{@link org.xtext.go.impl.simpleStmtImpl#getExpressionStmt <em>Expression Stmt</em>}</li>
- *   <li>{@link org.xtext.go.impl.simpleStmtImpl#getIncDecStmt <em>Inc Dec Stmt</em>}</li>
- *   <li>{@link org.xtext.go.impl.simpleStmtImpl#getAssignment <em>Assignment</em>}</li>
- *   <li>{@link org.xtext.go.impl.simpleStmtImpl#getShortVarDecl <em>Short Var Decl</em>}</li>
- *   <li>{@link org.xtext.go.impl.simpleStmtImpl#getEmptyStmt <em>Empty Stmt</em>}</li>
+ *   <li>{@link org.xtext.go.impl.simpleStmtImpl#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,74 +32,14 @@ import org.xtext.go.simpleStmt;
 public class simpleStmtImpl extends MinimalEObjectImpl.Container implements simpleStmt
 {
   /**
-   * The cached value of the '{@link #getSendStmt() <em>Send Stmt</em>}' containment reference.
+   * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSendStmt()
+   * @see #getContent()
    * @generated
    * @ordered
    */
-  protected sendStmt sendStmt;
-
-  /**
-   * The cached value of the '{@link #getExpressionStmt() <em>Expression Stmt</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getExpressionStmt()
-   * @generated
-   * @ordered
-   */
-  protected expressionStmt expressionStmt;
-
-  /**
-   * The cached value of the '{@link #getIncDecStmt() <em>Inc Dec Stmt</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIncDecStmt()
-   * @generated
-   * @ordered
-   */
-  protected incDecStmt incDecStmt;
-
-  /**
-   * The cached value of the '{@link #getAssignment() <em>Assignment</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAssignment()
-   * @generated
-   * @ordered
-   */
-  protected assignment assignment;
-
-  /**
-   * The cached value of the '{@link #getShortVarDecl() <em>Short Var Decl</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getShortVarDecl()
-   * @generated
-   * @ordered
-   */
-  protected shortVarDecl shortVarDecl;
-
-  /**
-   * The default value of the '{@link #getEmptyStmt() <em>Empty Stmt</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEmptyStmt()
-   * @generated
-   * @ordered
-   */
-  protected static final String EMPTY_STMT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getEmptyStmt() <em>Empty Stmt</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEmptyStmt()
-   * @generated
-   * @ordered
-   */
-  protected String emptyStmt = EMPTY_STMT_EDEFAULT;
+  protected EObject content;
 
   /**
    * <!-- begin-user-doc -->
@@ -136,9 +67,9 @@ public class simpleStmtImpl extends MinimalEObjectImpl.Container implements simp
    * <!-- end-user-doc -->
    * @generated
    */
-  public sendStmt getSendStmt()
+  public EObject getContent()
   {
-    return sendStmt;
+    return content;
   }
 
   /**
@@ -146,13 +77,13 @@ public class simpleStmtImpl extends MinimalEObjectImpl.Container implements simp
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetSendStmt(sendStmt newSendStmt, NotificationChain msgs)
+  public NotificationChain basicSetContent(EObject newContent, NotificationChain msgs)
   {
-    sendStmt oldSendStmt = sendStmt;
-    sendStmt = newSendStmt;
+    EObject oldContent = content;
+    content = newContent;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SIMPLE_STMT__SEND_STMT, oldSendStmt, newSendStmt);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SIMPLE_STMT__CONTENT, oldContent, newContent);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -163,235 +94,20 @@ public class simpleStmtImpl extends MinimalEObjectImpl.Container implements simp
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSendStmt(sendStmt newSendStmt)
+  public void setContent(EObject newContent)
   {
-    if (newSendStmt != sendStmt)
+    if (newContent != content)
     {
       NotificationChain msgs = null;
-      if (sendStmt != null)
-        msgs = ((InternalEObject)sendStmt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SIMPLE_STMT__SEND_STMT, null, msgs);
-      if (newSendStmt != null)
-        msgs = ((InternalEObject)newSendStmt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SIMPLE_STMT__SEND_STMT, null, msgs);
-      msgs = basicSetSendStmt(newSendStmt, msgs);
+      if (content != null)
+        msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SIMPLE_STMT__CONTENT, null, msgs);
+      if (newContent != null)
+        msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SIMPLE_STMT__CONTENT, null, msgs);
+      msgs = basicSetContent(newContent, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SIMPLE_STMT__SEND_STMT, newSendStmt, newSendStmt));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public expressionStmt getExpressionStmt()
-  {
-    return expressionStmt;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetExpressionStmt(expressionStmt newExpressionStmt, NotificationChain msgs)
-  {
-    expressionStmt oldExpressionStmt = expressionStmt;
-    expressionStmt = newExpressionStmt;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SIMPLE_STMT__EXPRESSION_STMT, oldExpressionStmt, newExpressionStmt);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setExpressionStmt(expressionStmt newExpressionStmt)
-  {
-    if (newExpressionStmt != expressionStmt)
-    {
-      NotificationChain msgs = null;
-      if (expressionStmt != null)
-        msgs = ((InternalEObject)expressionStmt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SIMPLE_STMT__EXPRESSION_STMT, null, msgs);
-      if (newExpressionStmt != null)
-        msgs = ((InternalEObject)newExpressionStmt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SIMPLE_STMT__EXPRESSION_STMT, null, msgs);
-      msgs = basicSetExpressionStmt(newExpressionStmt, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SIMPLE_STMT__EXPRESSION_STMT, newExpressionStmt, newExpressionStmt));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public incDecStmt getIncDecStmt()
-  {
-    return incDecStmt;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetIncDecStmt(incDecStmt newIncDecStmt, NotificationChain msgs)
-  {
-    incDecStmt oldIncDecStmt = incDecStmt;
-    incDecStmt = newIncDecStmt;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SIMPLE_STMT__INC_DEC_STMT, oldIncDecStmt, newIncDecStmt);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setIncDecStmt(incDecStmt newIncDecStmt)
-  {
-    if (newIncDecStmt != incDecStmt)
-    {
-      NotificationChain msgs = null;
-      if (incDecStmt != null)
-        msgs = ((InternalEObject)incDecStmt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SIMPLE_STMT__INC_DEC_STMT, null, msgs);
-      if (newIncDecStmt != null)
-        msgs = ((InternalEObject)newIncDecStmt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SIMPLE_STMT__INC_DEC_STMT, null, msgs);
-      msgs = basicSetIncDecStmt(newIncDecStmt, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SIMPLE_STMT__INC_DEC_STMT, newIncDecStmt, newIncDecStmt));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public assignment getAssignment()
-  {
-    return assignment;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetAssignment(assignment newAssignment, NotificationChain msgs)
-  {
-    assignment oldAssignment = assignment;
-    assignment = newAssignment;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SIMPLE_STMT__ASSIGNMENT, oldAssignment, newAssignment);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setAssignment(assignment newAssignment)
-  {
-    if (newAssignment != assignment)
-    {
-      NotificationChain msgs = null;
-      if (assignment != null)
-        msgs = ((InternalEObject)assignment).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SIMPLE_STMT__ASSIGNMENT, null, msgs);
-      if (newAssignment != null)
-        msgs = ((InternalEObject)newAssignment).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SIMPLE_STMT__ASSIGNMENT, null, msgs);
-      msgs = basicSetAssignment(newAssignment, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SIMPLE_STMT__ASSIGNMENT, newAssignment, newAssignment));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public shortVarDecl getShortVarDecl()
-  {
-    return shortVarDecl;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetShortVarDecl(shortVarDecl newShortVarDecl, NotificationChain msgs)
-  {
-    shortVarDecl oldShortVarDecl = shortVarDecl;
-    shortVarDecl = newShortVarDecl;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SIMPLE_STMT__SHORT_VAR_DECL, oldShortVarDecl, newShortVarDecl);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setShortVarDecl(shortVarDecl newShortVarDecl)
-  {
-    if (newShortVarDecl != shortVarDecl)
-    {
-      NotificationChain msgs = null;
-      if (shortVarDecl != null)
-        msgs = ((InternalEObject)shortVarDecl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SIMPLE_STMT__SHORT_VAR_DECL, null, msgs);
-      if (newShortVarDecl != null)
-        msgs = ((InternalEObject)newShortVarDecl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SIMPLE_STMT__SHORT_VAR_DECL, null, msgs);
-      msgs = basicSetShortVarDecl(newShortVarDecl, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SIMPLE_STMT__SHORT_VAR_DECL, newShortVarDecl, newShortVarDecl));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getEmptyStmt()
-  {
-    return emptyStmt;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setEmptyStmt(String newEmptyStmt)
-  {
-    String oldEmptyStmt = emptyStmt;
-    emptyStmt = newEmptyStmt;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SIMPLE_STMT__EMPTY_STMT, oldEmptyStmt, emptyStmt));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SIMPLE_STMT__CONTENT, newContent, newContent));
   }
 
   /**
@@ -404,16 +120,8 @@ public class simpleStmtImpl extends MinimalEObjectImpl.Container implements simp
   {
     switch (featureID)
     {
-      case GoPackage.SIMPLE_STMT__SEND_STMT:
-        return basicSetSendStmt(null, msgs);
-      case GoPackage.SIMPLE_STMT__EXPRESSION_STMT:
-        return basicSetExpressionStmt(null, msgs);
-      case GoPackage.SIMPLE_STMT__INC_DEC_STMT:
-        return basicSetIncDecStmt(null, msgs);
-      case GoPackage.SIMPLE_STMT__ASSIGNMENT:
-        return basicSetAssignment(null, msgs);
-      case GoPackage.SIMPLE_STMT__SHORT_VAR_DECL:
-        return basicSetShortVarDecl(null, msgs);
+      case GoPackage.SIMPLE_STMT__CONTENT:
+        return basicSetContent(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -428,18 +136,8 @@ public class simpleStmtImpl extends MinimalEObjectImpl.Container implements simp
   {
     switch (featureID)
     {
-      case GoPackage.SIMPLE_STMT__SEND_STMT:
-        return getSendStmt();
-      case GoPackage.SIMPLE_STMT__EXPRESSION_STMT:
-        return getExpressionStmt();
-      case GoPackage.SIMPLE_STMT__INC_DEC_STMT:
-        return getIncDecStmt();
-      case GoPackage.SIMPLE_STMT__ASSIGNMENT:
-        return getAssignment();
-      case GoPackage.SIMPLE_STMT__SHORT_VAR_DECL:
-        return getShortVarDecl();
-      case GoPackage.SIMPLE_STMT__EMPTY_STMT:
-        return getEmptyStmt();
+      case GoPackage.SIMPLE_STMT__CONTENT:
+        return getContent();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -454,23 +152,8 @@ public class simpleStmtImpl extends MinimalEObjectImpl.Container implements simp
   {
     switch (featureID)
     {
-      case GoPackage.SIMPLE_STMT__SEND_STMT:
-        setSendStmt((sendStmt)newValue);
-        return;
-      case GoPackage.SIMPLE_STMT__EXPRESSION_STMT:
-        setExpressionStmt((expressionStmt)newValue);
-        return;
-      case GoPackage.SIMPLE_STMT__INC_DEC_STMT:
-        setIncDecStmt((incDecStmt)newValue);
-        return;
-      case GoPackage.SIMPLE_STMT__ASSIGNMENT:
-        setAssignment((assignment)newValue);
-        return;
-      case GoPackage.SIMPLE_STMT__SHORT_VAR_DECL:
-        setShortVarDecl((shortVarDecl)newValue);
-        return;
-      case GoPackage.SIMPLE_STMT__EMPTY_STMT:
-        setEmptyStmt((String)newValue);
+      case GoPackage.SIMPLE_STMT__CONTENT:
+        setContent((EObject)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -486,23 +169,8 @@ public class simpleStmtImpl extends MinimalEObjectImpl.Container implements simp
   {
     switch (featureID)
     {
-      case GoPackage.SIMPLE_STMT__SEND_STMT:
-        setSendStmt((sendStmt)null);
-        return;
-      case GoPackage.SIMPLE_STMT__EXPRESSION_STMT:
-        setExpressionStmt((expressionStmt)null);
-        return;
-      case GoPackage.SIMPLE_STMT__INC_DEC_STMT:
-        setIncDecStmt((incDecStmt)null);
-        return;
-      case GoPackage.SIMPLE_STMT__ASSIGNMENT:
-        setAssignment((assignment)null);
-        return;
-      case GoPackage.SIMPLE_STMT__SHORT_VAR_DECL:
-        setShortVarDecl((shortVarDecl)null);
-        return;
-      case GoPackage.SIMPLE_STMT__EMPTY_STMT:
-        setEmptyStmt(EMPTY_STMT_EDEFAULT);
+      case GoPackage.SIMPLE_STMT__CONTENT:
+        setContent((EObject)null);
         return;
     }
     super.eUnset(featureID);
@@ -518,37 +186,10 @@ public class simpleStmtImpl extends MinimalEObjectImpl.Container implements simp
   {
     switch (featureID)
     {
-      case GoPackage.SIMPLE_STMT__SEND_STMT:
-        return sendStmt != null;
-      case GoPackage.SIMPLE_STMT__EXPRESSION_STMT:
-        return expressionStmt != null;
-      case GoPackage.SIMPLE_STMT__INC_DEC_STMT:
-        return incDecStmt != null;
-      case GoPackage.SIMPLE_STMT__ASSIGNMENT:
-        return assignment != null;
-      case GoPackage.SIMPLE_STMT__SHORT_VAR_DECL:
-        return shortVarDecl != null;
-      case GoPackage.SIMPLE_STMT__EMPTY_STMT:
-        return EMPTY_STMT_EDEFAULT == null ? emptyStmt != null : !EMPTY_STMT_EDEFAULT.equals(emptyStmt);
+      case GoPackage.SIMPLE_STMT__CONTENT:
+        return content != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (emptyStmt: ");
-    result.append(emptyStmt);
-    result.append(')');
-    return result.toString();
   }
 
 } //simpleStmtImpl

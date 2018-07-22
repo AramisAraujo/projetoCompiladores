@@ -24,8 +24,8 @@ import org.xtext.go.statementList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.commClauseImpl#getCommCase <em>Comm Case</em>}</li>
- *   <li>{@link org.xtext.go.impl.commClauseImpl#getStatementList <em>Statement List</em>}</li>
+ *   <li>{@link org.xtext.go.impl.commClauseImpl#getCase <em>Case</em>}</li>
+ *   <li>{@link org.xtext.go.impl.commClauseImpl#getStmtList <em>Stmt List</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,24 +34,24 @@ import org.xtext.go.statementList;
 public class commClauseImpl extends MinimalEObjectImpl.Container implements commClause
 {
   /**
-   * The cached value of the '{@link #getCommCase() <em>Comm Case</em>}' containment reference.
+   * The cached value of the '{@link #getCase() <em>Case</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCommCase()
+   * @see #getCase()
    * @generated
    * @ordered
    */
-  protected commCase commCase;
+  protected commCase case_;
 
   /**
-   * The cached value of the '{@link #getStatementList() <em>Statement List</em>}' containment reference.
+   * The cached value of the '{@link #getStmtList() <em>Stmt List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStatementList()
+   * @see #getStmtList()
    * @generated
    * @ordered
    */
-  protected statementList statementList;
+  protected statementList stmtList;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,9 +79,9 @@ public class commClauseImpl extends MinimalEObjectImpl.Container implements comm
    * <!-- end-user-doc -->
    * @generated
    */
-  public commCase getCommCase()
+  public commCase getCase()
   {
-    return commCase;
+    return case_;
   }
 
   /**
@@ -89,13 +89,13 @@ public class commClauseImpl extends MinimalEObjectImpl.Container implements comm
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCommCase(commCase newCommCase, NotificationChain msgs)
+  public NotificationChain basicSetCase(commCase newCase, NotificationChain msgs)
   {
-    commCase oldCommCase = commCase;
-    commCase = newCommCase;
+    commCase oldCase = case_;
+    case_ = newCase;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.COMM_CLAUSE__COMM_CASE, oldCommCase, newCommCase);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.COMM_CLAUSE__CASE, oldCase, newCase);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -106,20 +106,20 @@ public class commClauseImpl extends MinimalEObjectImpl.Container implements comm
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCommCase(commCase newCommCase)
+  public void setCase(commCase newCase)
   {
-    if (newCommCase != commCase)
+    if (newCase != case_)
     {
       NotificationChain msgs = null;
-      if (commCase != null)
-        msgs = ((InternalEObject)commCase).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.COMM_CLAUSE__COMM_CASE, null, msgs);
-      if (newCommCase != null)
-        msgs = ((InternalEObject)newCommCase).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.COMM_CLAUSE__COMM_CASE, null, msgs);
-      msgs = basicSetCommCase(newCommCase, msgs);
+      if (case_ != null)
+        msgs = ((InternalEObject)case_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.COMM_CLAUSE__CASE, null, msgs);
+      if (newCase != null)
+        msgs = ((InternalEObject)newCase).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.COMM_CLAUSE__CASE, null, msgs);
+      msgs = basicSetCase(newCase, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.COMM_CLAUSE__COMM_CASE, newCommCase, newCommCase));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.COMM_CLAUSE__CASE, newCase, newCase));
   }
 
   /**
@@ -127,9 +127,9 @@ public class commClauseImpl extends MinimalEObjectImpl.Container implements comm
    * <!-- end-user-doc -->
    * @generated
    */
-  public statementList getStatementList()
+  public statementList getStmtList()
   {
-    return statementList;
+    return stmtList;
   }
 
   /**
@@ -137,13 +137,13 @@ public class commClauseImpl extends MinimalEObjectImpl.Container implements comm
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetStatementList(statementList newStatementList, NotificationChain msgs)
+  public NotificationChain basicSetStmtList(statementList newStmtList, NotificationChain msgs)
   {
-    statementList oldStatementList = statementList;
-    statementList = newStatementList;
+    statementList oldStmtList = stmtList;
+    stmtList = newStmtList;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.COMM_CLAUSE__STATEMENT_LIST, oldStatementList, newStatementList);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.COMM_CLAUSE__STMT_LIST, oldStmtList, newStmtList);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -154,20 +154,20 @@ public class commClauseImpl extends MinimalEObjectImpl.Container implements comm
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setStatementList(statementList newStatementList)
+  public void setStmtList(statementList newStmtList)
   {
-    if (newStatementList != statementList)
+    if (newStmtList != stmtList)
     {
       NotificationChain msgs = null;
-      if (statementList != null)
-        msgs = ((InternalEObject)statementList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.COMM_CLAUSE__STATEMENT_LIST, null, msgs);
-      if (newStatementList != null)
-        msgs = ((InternalEObject)newStatementList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.COMM_CLAUSE__STATEMENT_LIST, null, msgs);
-      msgs = basicSetStatementList(newStatementList, msgs);
+      if (stmtList != null)
+        msgs = ((InternalEObject)stmtList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.COMM_CLAUSE__STMT_LIST, null, msgs);
+      if (newStmtList != null)
+        msgs = ((InternalEObject)newStmtList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.COMM_CLAUSE__STMT_LIST, null, msgs);
+      msgs = basicSetStmtList(newStmtList, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.COMM_CLAUSE__STATEMENT_LIST, newStatementList, newStatementList));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.COMM_CLAUSE__STMT_LIST, newStmtList, newStmtList));
   }
 
   /**
@@ -180,10 +180,10 @@ public class commClauseImpl extends MinimalEObjectImpl.Container implements comm
   {
     switch (featureID)
     {
-      case GoPackage.COMM_CLAUSE__COMM_CASE:
-        return basicSetCommCase(null, msgs);
-      case GoPackage.COMM_CLAUSE__STATEMENT_LIST:
-        return basicSetStatementList(null, msgs);
+      case GoPackage.COMM_CLAUSE__CASE:
+        return basicSetCase(null, msgs);
+      case GoPackage.COMM_CLAUSE__STMT_LIST:
+        return basicSetStmtList(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -198,10 +198,10 @@ public class commClauseImpl extends MinimalEObjectImpl.Container implements comm
   {
     switch (featureID)
     {
-      case GoPackage.COMM_CLAUSE__COMM_CASE:
-        return getCommCase();
-      case GoPackage.COMM_CLAUSE__STATEMENT_LIST:
-        return getStatementList();
+      case GoPackage.COMM_CLAUSE__CASE:
+        return getCase();
+      case GoPackage.COMM_CLAUSE__STMT_LIST:
+        return getStmtList();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -216,11 +216,11 @@ public class commClauseImpl extends MinimalEObjectImpl.Container implements comm
   {
     switch (featureID)
     {
-      case GoPackage.COMM_CLAUSE__COMM_CASE:
-        setCommCase((commCase)newValue);
+      case GoPackage.COMM_CLAUSE__CASE:
+        setCase((commCase)newValue);
         return;
-      case GoPackage.COMM_CLAUSE__STATEMENT_LIST:
-        setStatementList((statementList)newValue);
+      case GoPackage.COMM_CLAUSE__STMT_LIST:
+        setStmtList((statementList)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -236,11 +236,11 @@ public class commClauseImpl extends MinimalEObjectImpl.Container implements comm
   {
     switch (featureID)
     {
-      case GoPackage.COMM_CLAUSE__COMM_CASE:
-        setCommCase((commCase)null);
+      case GoPackage.COMM_CLAUSE__CASE:
+        setCase((commCase)null);
         return;
-      case GoPackage.COMM_CLAUSE__STATEMENT_LIST:
-        setStatementList((statementList)null);
+      case GoPackage.COMM_CLAUSE__STMT_LIST:
+        setStmtList((statementList)null);
         return;
     }
     super.eUnset(featureID);
@@ -256,10 +256,10 @@ public class commClauseImpl extends MinimalEObjectImpl.Container implements comm
   {
     switch (featureID)
     {
-      case GoPackage.COMM_CLAUSE__COMM_CASE:
-        return commCase != null;
-      case GoPackage.COMM_CLAUSE__STATEMENT_LIST:
-        return statementList != null;
+      case GoPackage.COMM_CLAUSE__CASE:
+        return case_ != null;
+      case GoPackage.COMM_CLAUSE__STMT_LIST:
+        return stmtList != null;
     }
     return super.eIsSet(featureID);
   }

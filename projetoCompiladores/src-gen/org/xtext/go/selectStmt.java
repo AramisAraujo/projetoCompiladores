@@ -3,6 +3,8 @@
  */
 package org.xtext.go;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.selectStmt#getCommClause <em>Comm Clause</em>}</li>
+ *   <li>{@link org.xtext.go.selectStmt#getCommClauses <em>Comm Clauses</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,29 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface selectStmt extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Comm Clause</b></em>' containment reference.
+   * Returns the value of the '<em><b>Comm Clauses</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.go.commClause}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Comm Clause</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Comm Clauses</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Comm Clause</em>' containment reference.
-   * @see #setCommClause(commClause)
-   * @see org.xtext.go.GoPackage#getselectStmt_CommClause()
+   * @return the value of the '<em>Comm Clauses</em>' containment reference list.
+   * @see org.xtext.go.GoPackage#getselectStmt_CommClauses()
    * @model containment="true"
    * @generated
    */
-  commClause getCommClause();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.selectStmt#getCommClause <em>Comm Clause</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Comm Clause</em>' containment reference.
-   * @see #getCommClause()
-   * @generated
-   */
-  void setCommClause(commClause value);
+  EList<commClause> getCommClauses();
 
 } // selectStmt

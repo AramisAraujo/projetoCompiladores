@@ -13,8 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.switchStmt#getExprSwitchStmt <em>Expr Switch Stmt</em>}</li>
- *   <li>{@link org.xtext.go.switchStmt#getTypeSwitchStmt <em>Type Switch Stmt</em>}</li>
+ *   <li>{@link org.xtext.go.switchStmt#getStatement <em>Statement</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,55 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface switchStmt extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Expr Switch Stmt</b></em>' containment reference.
+   * Returns the value of the '<em><b>Statement</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Expr Switch Stmt</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Statement</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expr Switch Stmt</em>' containment reference.
-   * @see #setExprSwitchStmt(exprSwitchStmt)
-   * @see org.xtext.go.GoPackage#getswitchStmt_ExprSwitchStmt()
+   * @return the value of the '<em>Statement</em>' containment reference.
+   * @see #setStatement(EObject)
+   * @see org.xtext.go.GoPackage#getswitchStmt_Statement()
    * @model containment="true"
    * @generated
    */
-  exprSwitchStmt getExprSwitchStmt();
+  EObject getStatement();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.switchStmt#getExprSwitchStmt <em>Expr Switch Stmt</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.switchStmt#getStatement <em>Statement</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expr Switch Stmt</em>' containment reference.
-   * @see #getExprSwitchStmt()
+   * @param value the new value of the '<em>Statement</em>' containment reference.
+   * @see #getStatement()
    * @generated
    */
-  void setExprSwitchStmt(exprSwitchStmt value);
-
-  /**
-   * Returns the value of the '<em><b>Type Switch Stmt</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Type Switch Stmt</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Type Switch Stmt</em>' containment reference.
-   * @see #setTypeSwitchStmt(typeSwitchStmt)
-   * @see org.xtext.go.GoPackage#getswitchStmt_TypeSwitchStmt()
-   * @model containment="true"
-   * @generated
-   */
-  typeSwitchStmt getTypeSwitchStmt();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.switchStmt#getTypeSwitchStmt <em>Type Switch Stmt</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type Switch Stmt</em>' containment reference.
-   * @see #getTypeSwitchStmt()
-   * @generated
-   */
-  void setTypeSwitchStmt(typeSwitchStmt value);
+  void setStatement(EObject value);
 
 } // switchStmt

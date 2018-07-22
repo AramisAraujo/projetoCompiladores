@@ -3,14 +3,21 @@
  */
 package org.xtext.go.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.go.GoPackage;
 import org.xtext.go.exprCaseClause;
@@ -26,8 +33,8 @@ import org.xtext.go.simpleStmt;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.xtext.go.impl.exprSwitchStmtImpl#getSimpleStmt <em>Simple Stmt</em>}</li>
- *   <li>{@link org.xtext.go.impl.exprSwitchStmtImpl#getExpression <em>Expression</em>}</li>
- *   <li>{@link org.xtext.go.impl.exprSwitchStmtImpl#getExprCaseClause <em>Expr Case Clause</em>}</li>
+ *   <li>{@link org.xtext.go.impl.exprSwitchStmtImpl#getExpr <em>Expr</em>}</li>
+ *   <li>{@link org.xtext.go.impl.exprSwitchStmtImpl#getExprCaseClauses <em>Expr Case Clauses</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,24 +53,24 @@ public class exprSwitchStmtImpl extends MinimalEObjectImpl.Container implements 
   protected simpleStmt simpleStmt;
 
   /**
-   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
+   * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExpression()
+   * @see #getExpr()
    * @generated
    * @ordered
    */
-  protected expression expression;
+  protected expression expr;
 
   /**
-   * The cached value of the '{@link #getExprCaseClause() <em>Expr Case Clause</em>}' containment reference.
+   * The cached value of the '{@link #getExprCaseClauses() <em>Expr Case Clauses</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExprCaseClause()
+   * @see #getExprCaseClauses()
    * @generated
    * @ordered
    */
-  protected exprCaseClause exprCaseClause;
+  protected EList<exprCaseClause> exprCaseClauses;
 
   /**
    * <!-- begin-user-doc -->
@@ -139,9 +146,9 @@ public class exprSwitchStmtImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public expression getExpression()
+  public expression getExpr()
   {
-    return expression;
+    return expr;
   }
 
   /**
@@ -149,13 +156,13 @@ public class exprSwitchStmtImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpression(expression newExpression, NotificationChain msgs)
+  public NotificationChain basicSetExpr(expression newExpr, NotificationChain msgs)
   {
-    expression oldExpression = expression;
-    expression = newExpression;
+    expression oldExpr = expr;
+    expr = newExpr;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.EXPR_SWITCH_STMT__EXPRESSION, oldExpression, newExpression);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.EXPR_SWITCH_STMT__EXPR, oldExpr, newExpr);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -166,20 +173,20 @@ public class exprSwitchStmtImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(expression newExpression)
+  public void setExpr(expression newExpr)
   {
-    if (newExpression != expression)
+    if (newExpr != expr)
     {
       NotificationChain msgs = null;
-      if (expression != null)
-        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.EXPR_SWITCH_STMT__EXPRESSION, null, msgs);
-      if (newExpression != null)
-        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.EXPR_SWITCH_STMT__EXPRESSION, null, msgs);
-      msgs = basicSetExpression(newExpression, msgs);
+      if (expr != null)
+        msgs = ((InternalEObject)expr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.EXPR_SWITCH_STMT__EXPR, null, msgs);
+      if (newExpr != null)
+        msgs = ((InternalEObject)newExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.EXPR_SWITCH_STMT__EXPR, null, msgs);
+      msgs = basicSetExpr(newExpr, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.EXPR_SWITCH_STMT__EXPRESSION, newExpression, newExpression));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.EXPR_SWITCH_STMT__EXPR, newExpr, newExpr));
   }
 
   /**
@@ -187,47 +194,13 @@ public class exprSwitchStmtImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public exprCaseClause getExprCaseClause()
+  public EList<exprCaseClause> getExprCaseClauses()
   {
-    return exprCaseClause;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetExprCaseClause(exprCaseClause newExprCaseClause, NotificationChain msgs)
-  {
-    exprCaseClause oldExprCaseClause = exprCaseClause;
-    exprCaseClause = newExprCaseClause;
-    if (eNotificationRequired())
+    if (exprCaseClauses == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.EXPR_SWITCH_STMT__EXPR_CASE_CLAUSE, oldExprCaseClause, newExprCaseClause);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      exprCaseClauses = new EObjectContainmentEList<exprCaseClause>(exprCaseClause.class, this, GoPackage.EXPR_SWITCH_STMT__EXPR_CASE_CLAUSES);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setExprCaseClause(exprCaseClause newExprCaseClause)
-  {
-    if (newExprCaseClause != exprCaseClause)
-    {
-      NotificationChain msgs = null;
-      if (exprCaseClause != null)
-        msgs = ((InternalEObject)exprCaseClause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.EXPR_SWITCH_STMT__EXPR_CASE_CLAUSE, null, msgs);
-      if (newExprCaseClause != null)
-        msgs = ((InternalEObject)newExprCaseClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.EXPR_SWITCH_STMT__EXPR_CASE_CLAUSE, null, msgs);
-      msgs = basicSetExprCaseClause(newExprCaseClause, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.EXPR_SWITCH_STMT__EXPR_CASE_CLAUSE, newExprCaseClause, newExprCaseClause));
+    return exprCaseClauses;
   }
 
   /**
@@ -242,10 +215,10 @@ public class exprSwitchStmtImpl extends MinimalEObjectImpl.Container implements 
     {
       case GoPackage.EXPR_SWITCH_STMT__SIMPLE_STMT:
         return basicSetSimpleStmt(null, msgs);
-      case GoPackage.EXPR_SWITCH_STMT__EXPRESSION:
-        return basicSetExpression(null, msgs);
-      case GoPackage.EXPR_SWITCH_STMT__EXPR_CASE_CLAUSE:
-        return basicSetExprCaseClause(null, msgs);
+      case GoPackage.EXPR_SWITCH_STMT__EXPR:
+        return basicSetExpr(null, msgs);
+      case GoPackage.EXPR_SWITCH_STMT__EXPR_CASE_CLAUSES:
+        return ((InternalEList<?>)getExprCaseClauses()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -262,10 +235,10 @@ public class exprSwitchStmtImpl extends MinimalEObjectImpl.Container implements 
     {
       case GoPackage.EXPR_SWITCH_STMT__SIMPLE_STMT:
         return getSimpleStmt();
-      case GoPackage.EXPR_SWITCH_STMT__EXPRESSION:
-        return getExpression();
-      case GoPackage.EXPR_SWITCH_STMT__EXPR_CASE_CLAUSE:
-        return getExprCaseClause();
+      case GoPackage.EXPR_SWITCH_STMT__EXPR:
+        return getExpr();
+      case GoPackage.EXPR_SWITCH_STMT__EXPR_CASE_CLAUSES:
+        return getExprCaseClauses();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -275,6 +248,7 @@ public class exprSwitchStmtImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -283,11 +257,12 @@ public class exprSwitchStmtImpl extends MinimalEObjectImpl.Container implements 
       case GoPackage.EXPR_SWITCH_STMT__SIMPLE_STMT:
         setSimpleStmt((simpleStmt)newValue);
         return;
-      case GoPackage.EXPR_SWITCH_STMT__EXPRESSION:
-        setExpression((expression)newValue);
+      case GoPackage.EXPR_SWITCH_STMT__EXPR:
+        setExpr((expression)newValue);
         return;
-      case GoPackage.EXPR_SWITCH_STMT__EXPR_CASE_CLAUSE:
-        setExprCaseClause((exprCaseClause)newValue);
+      case GoPackage.EXPR_SWITCH_STMT__EXPR_CASE_CLAUSES:
+        getExprCaseClauses().clear();
+        getExprCaseClauses().addAll((Collection<? extends exprCaseClause>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -306,11 +281,11 @@ public class exprSwitchStmtImpl extends MinimalEObjectImpl.Container implements 
       case GoPackage.EXPR_SWITCH_STMT__SIMPLE_STMT:
         setSimpleStmt((simpleStmt)null);
         return;
-      case GoPackage.EXPR_SWITCH_STMT__EXPRESSION:
-        setExpression((expression)null);
+      case GoPackage.EXPR_SWITCH_STMT__EXPR:
+        setExpr((expression)null);
         return;
-      case GoPackage.EXPR_SWITCH_STMT__EXPR_CASE_CLAUSE:
-        setExprCaseClause((exprCaseClause)null);
+      case GoPackage.EXPR_SWITCH_STMT__EXPR_CASE_CLAUSES:
+        getExprCaseClauses().clear();
         return;
     }
     super.eUnset(featureID);
@@ -328,10 +303,10 @@ public class exprSwitchStmtImpl extends MinimalEObjectImpl.Container implements 
     {
       case GoPackage.EXPR_SWITCH_STMT__SIMPLE_STMT:
         return simpleStmt != null;
-      case GoPackage.EXPR_SWITCH_STMT__EXPRESSION:
-        return expression != null;
-      case GoPackage.EXPR_SWITCH_STMT__EXPR_CASE_CLAUSE:
-        return exprCaseClause != null;
+      case GoPackage.EXPR_SWITCH_STMT__EXPR:
+        return expr != null;
+      case GoPackage.EXPR_SWITCH_STMT__EXPR_CASE_CLAUSES:
+        return exprCaseClauses != null && !exprCaseClauses.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -7,15 +7,14 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.go.GoPackage;
-import org.xtext.go.exprSwitchStmt;
 import org.xtext.go.switchStmt;
-import org.xtext.go.typeSwitchStmt;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,8 +23,7 @@ import org.xtext.go.typeSwitchStmt;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.switchStmtImpl#getExprSwitchStmt <em>Expr Switch Stmt</em>}</li>
- *   <li>{@link org.xtext.go.impl.switchStmtImpl#getTypeSwitchStmt <em>Type Switch Stmt</em>}</li>
+ *   <li>{@link org.xtext.go.impl.switchStmtImpl#getStatement <em>Statement</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,24 +32,14 @@ import org.xtext.go.typeSwitchStmt;
 public class switchStmtImpl extends MinimalEObjectImpl.Container implements switchStmt
 {
   /**
-   * The cached value of the '{@link #getExprSwitchStmt() <em>Expr Switch Stmt</em>}' containment reference.
+   * The cached value of the '{@link #getStatement() <em>Statement</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExprSwitchStmt()
+   * @see #getStatement()
    * @generated
    * @ordered
    */
-  protected exprSwitchStmt exprSwitchStmt;
-
-  /**
-   * The cached value of the '{@link #getTypeSwitchStmt() <em>Type Switch Stmt</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTypeSwitchStmt()
-   * @generated
-   * @ordered
-   */
-  protected typeSwitchStmt typeSwitchStmt;
+  protected EObject statement;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,9 +67,9 @@ public class switchStmtImpl extends MinimalEObjectImpl.Container implements swit
    * <!-- end-user-doc -->
    * @generated
    */
-  public exprSwitchStmt getExprSwitchStmt()
+  public EObject getStatement()
   {
-    return exprSwitchStmt;
+    return statement;
   }
 
   /**
@@ -89,13 +77,13 @@ public class switchStmtImpl extends MinimalEObjectImpl.Container implements swit
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExprSwitchStmt(exprSwitchStmt newExprSwitchStmt, NotificationChain msgs)
+  public NotificationChain basicSetStatement(EObject newStatement, NotificationChain msgs)
   {
-    exprSwitchStmt oldExprSwitchStmt = exprSwitchStmt;
-    exprSwitchStmt = newExprSwitchStmt;
+    EObject oldStatement = statement;
+    statement = newStatement;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SWITCH_STMT__EXPR_SWITCH_STMT, oldExprSwitchStmt, newExprSwitchStmt);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SWITCH_STMT__STATEMENT, oldStatement, newStatement);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -106,68 +94,20 @@ public class switchStmtImpl extends MinimalEObjectImpl.Container implements swit
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExprSwitchStmt(exprSwitchStmt newExprSwitchStmt)
+  public void setStatement(EObject newStatement)
   {
-    if (newExprSwitchStmt != exprSwitchStmt)
+    if (newStatement != statement)
     {
       NotificationChain msgs = null;
-      if (exprSwitchStmt != null)
-        msgs = ((InternalEObject)exprSwitchStmt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SWITCH_STMT__EXPR_SWITCH_STMT, null, msgs);
-      if (newExprSwitchStmt != null)
-        msgs = ((InternalEObject)newExprSwitchStmt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SWITCH_STMT__EXPR_SWITCH_STMT, null, msgs);
-      msgs = basicSetExprSwitchStmt(newExprSwitchStmt, msgs);
+      if (statement != null)
+        msgs = ((InternalEObject)statement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SWITCH_STMT__STATEMENT, null, msgs);
+      if (newStatement != null)
+        msgs = ((InternalEObject)newStatement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SWITCH_STMT__STATEMENT, null, msgs);
+      msgs = basicSetStatement(newStatement, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SWITCH_STMT__EXPR_SWITCH_STMT, newExprSwitchStmt, newExprSwitchStmt));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public typeSwitchStmt getTypeSwitchStmt()
-  {
-    return typeSwitchStmt;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetTypeSwitchStmt(typeSwitchStmt newTypeSwitchStmt, NotificationChain msgs)
-  {
-    typeSwitchStmt oldTypeSwitchStmt = typeSwitchStmt;
-    typeSwitchStmt = newTypeSwitchStmt;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SWITCH_STMT__TYPE_SWITCH_STMT, oldTypeSwitchStmt, newTypeSwitchStmt);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setTypeSwitchStmt(typeSwitchStmt newTypeSwitchStmt)
-  {
-    if (newTypeSwitchStmt != typeSwitchStmt)
-    {
-      NotificationChain msgs = null;
-      if (typeSwitchStmt != null)
-        msgs = ((InternalEObject)typeSwitchStmt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SWITCH_STMT__TYPE_SWITCH_STMT, null, msgs);
-      if (newTypeSwitchStmt != null)
-        msgs = ((InternalEObject)newTypeSwitchStmt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SWITCH_STMT__TYPE_SWITCH_STMT, null, msgs);
-      msgs = basicSetTypeSwitchStmt(newTypeSwitchStmt, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SWITCH_STMT__TYPE_SWITCH_STMT, newTypeSwitchStmt, newTypeSwitchStmt));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SWITCH_STMT__STATEMENT, newStatement, newStatement));
   }
 
   /**
@@ -180,10 +120,8 @@ public class switchStmtImpl extends MinimalEObjectImpl.Container implements swit
   {
     switch (featureID)
     {
-      case GoPackage.SWITCH_STMT__EXPR_SWITCH_STMT:
-        return basicSetExprSwitchStmt(null, msgs);
-      case GoPackage.SWITCH_STMT__TYPE_SWITCH_STMT:
-        return basicSetTypeSwitchStmt(null, msgs);
+      case GoPackage.SWITCH_STMT__STATEMENT:
+        return basicSetStatement(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -198,10 +136,8 @@ public class switchStmtImpl extends MinimalEObjectImpl.Container implements swit
   {
     switch (featureID)
     {
-      case GoPackage.SWITCH_STMT__EXPR_SWITCH_STMT:
-        return getExprSwitchStmt();
-      case GoPackage.SWITCH_STMT__TYPE_SWITCH_STMT:
-        return getTypeSwitchStmt();
+      case GoPackage.SWITCH_STMT__STATEMENT:
+        return getStatement();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -216,11 +152,8 @@ public class switchStmtImpl extends MinimalEObjectImpl.Container implements swit
   {
     switch (featureID)
     {
-      case GoPackage.SWITCH_STMT__EXPR_SWITCH_STMT:
-        setExprSwitchStmt((exprSwitchStmt)newValue);
-        return;
-      case GoPackage.SWITCH_STMT__TYPE_SWITCH_STMT:
-        setTypeSwitchStmt((typeSwitchStmt)newValue);
+      case GoPackage.SWITCH_STMT__STATEMENT:
+        setStatement((EObject)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -236,11 +169,8 @@ public class switchStmtImpl extends MinimalEObjectImpl.Container implements swit
   {
     switch (featureID)
     {
-      case GoPackage.SWITCH_STMT__EXPR_SWITCH_STMT:
-        setExprSwitchStmt((exprSwitchStmt)null);
-        return;
-      case GoPackage.SWITCH_STMT__TYPE_SWITCH_STMT:
-        setTypeSwitchStmt((typeSwitchStmt)null);
+      case GoPackage.SWITCH_STMT__STATEMENT:
+        setStatement((EObject)null);
         return;
     }
     super.eUnset(featureID);
@@ -256,10 +186,8 @@ public class switchStmtImpl extends MinimalEObjectImpl.Container implements swit
   {
     switch (featureID)
     {
-      case GoPackage.SWITCH_STMT__EXPR_SWITCH_STMT:
-        return exprSwitchStmt != null;
-      case GoPackage.SWITCH_STMT__TYPE_SWITCH_STMT:
-        return typeSwitchStmt != null;
+      case GoPackage.SWITCH_STMT__STATEMENT:
+        return statement != null;
     }
     return super.eIsSet(featureID);
   }

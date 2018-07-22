@@ -23,7 +23,8 @@ import org.xtext.go.typeSwitchGuard;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.typeSwitchGuardImpl#getPrimaryExpr <em>Primary Expr</em>}</li>
+ *   <li>{@link org.xtext.go.impl.typeSwitchGuardImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.go.impl.typeSwitchGuardImpl#getPrimaryExpression <em>Primary Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,14 +33,34 @@ import org.xtext.go.typeSwitchGuard;
 public class typeSwitchGuardImpl extends MinimalEObjectImpl.Container implements typeSwitchGuard
 {
   /**
-   * The cached value of the '{@link #getPrimaryExpr() <em>Primary Expr</em>}' containment reference.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPrimaryExpr()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected primaryExpr primaryExpr;
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getPrimaryExpression() <em>Primary Expression</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrimaryExpression()
+   * @generated
+   * @ordered
+   */
+  protected primaryExpr primaryExpression;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,9 +88,9 @@ public class typeSwitchGuardImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public primaryExpr getPrimaryExpr()
+  public String getName()
   {
-    return primaryExpr;
+    return name;
   }
 
   /**
@@ -77,13 +98,36 @@ public class typeSwitchGuardImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPrimaryExpr(primaryExpr newPrimaryExpr, NotificationChain msgs)
+  public void setName(String newName)
   {
-    primaryExpr oldPrimaryExpr = primaryExpr;
-    primaryExpr = newPrimaryExpr;
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_SWITCH_GUARD__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public primaryExpr getPrimaryExpression()
+  {
+    return primaryExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetPrimaryExpression(primaryExpr newPrimaryExpression, NotificationChain msgs)
+  {
+    primaryExpr oldPrimaryExpression = primaryExpression;
+    primaryExpression = newPrimaryExpression;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_SWITCH_GUARD__PRIMARY_EXPR, oldPrimaryExpr, newPrimaryExpr);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_SWITCH_GUARD__PRIMARY_EXPRESSION, oldPrimaryExpression, newPrimaryExpression);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -94,20 +138,20 @@ public class typeSwitchGuardImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPrimaryExpr(primaryExpr newPrimaryExpr)
+  public void setPrimaryExpression(primaryExpr newPrimaryExpression)
   {
-    if (newPrimaryExpr != primaryExpr)
+    if (newPrimaryExpression != primaryExpression)
     {
       NotificationChain msgs = null;
-      if (primaryExpr != null)
-        msgs = ((InternalEObject)primaryExpr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_SWITCH_GUARD__PRIMARY_EXPR, null, msgs);
-      if (newPrimaryExpr != null)
-        msgs = ((InternalEObject)newPrimaryExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_SWITCH_GUARD__PRIMARY_EXPR, null, msgs);
-      msgs = basicSetPrimaryExpr(newPrimaryExpr, msgs);
+      if (primaryExpression != null)
+        msgs = ((InternalEObject)primaryExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_SWITCH_GUARD__PRIMARY_EXPRESSION, null, msgs);
+      if (newPrimaryExpression != null)
+        msgs = ((InternalEObject)newPrimaryExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_SWITCH_GUARD__PRIMARY_EXPRESSION, null, msgs);
+      msgs = basicSetPrimaryExpression(newPrimaryExpression, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_SWITCH_GUARD__PRIMARY_EXPR, newPrimaryExpr, newPrimaryExpr));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_SWITCH_GUARD__PRIMARY_EXPRESSION, newPrimaryExpression, newPrimaryExpression));
   }
 
   /**
@@ -120,8 +164,8 @@ public class typeSwitchGuardImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case GoPackage.TYPE_SWITCH_GUARD__PRIMARY_EXPR:
-        return basicSetPrimaryExpr(null, msgs);
+      case GoPackage.TYPE_SWITCH_GUARD__PRIMARY_EXPRESSION:
+        return basicSetPrimaryExpression(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +180,10 @@ public class typeSwitchGuardImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case GoPackage.TYPE_SWITCH_GUARD__PRIMARY_EXPR:
-        return getPrimaryExpr();
+      case GoPackage.TYPE_SWITCH_GUARD__NAME:
+        return getName();
+      case GoPackage.TYPE_SWITCH_GUARD__PRIMARY_EXPRESSION:
+        return getPrimaryExpression();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -152,8 +198,11 @@ public class typeSwitchGuardImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case GoPackage.TYPE_SWITCH_GUARD__PRIMARY_EXPR:
-        setPrimaryExpr((primaryExpr)newValue);
+      case GoPackage.TYPE_SWITCH_GUARD__NAME:
+        setName((String)newValue);
+        return;
+      case GoPackage.TYPE_SWITCH_GUARD__PRIMARY_EXPRESSION:
+        setPrimaryExpression((primaryExpr)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +218,11 @@ public class typeSwitchGuardImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case GoPackage.TYPE_SWITCH_GUARD__PRIMARY_EXPR:
-        setPrimaryExpr((primaryExpr)null);
+      case GoPackage.TYPE_SWITCH_GUARD__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case GoPackage.TYPE_SWITCH_GUARD__PRIMARY_EXPRESSION:
+        setPrimaryExpression((primaryExpr)null);
         return;
     }
     super.eUnset(featureID);
@@ -186,10 +238,29 @@ public class typeSwitchGuardImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case GoPackage.TYPE_SWITCH_GUARD__PRIMARY_EXPR:
-        return primaryExpr != null;
+      case GoPackage.TYPE_SWITCH_GUARD__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case GoPackage.TYPE_SWITCH_GUARD__PRIMARY_EXPRESSION:
+        return primaryExpression != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //typeSwitchGuardImpl

@@ -7,6 +7,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -14,8 +15,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.go.GoPackage;
 import org.xtext.go.commCase;
-import org.xtext.go.recvStmt;
-import org.xtext.go.sendStmt;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,8 +23,7 @@ import org.xtext.go.sendStmt;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.commCaseImpl#getSendStmt <em>Send Stmt</em>}</li>
- *   <li>{@link org.xtext.go.impl.commCaseImpl#getRecvStmt <em>Recv Stmt</em>}</li>
+ *   <li>{@link org.xtext.go.impl.commCaseImpl#getStatement <em>Statement</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,24 +32,14 @@ import org.xtext.go.sendStmt;
 public class commCaseImpl extends MinimalEObjectImpl.Container implements commCase
 {
   /**
-   * The cached value of the '{@link #getSendStmt() <em>Send Stmt</em>}' containment reference.
+   * The cached value of the '{@link #getStatement() <em>Statement</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSendStmt()
+   * @see #getStatement()
    * @generated
    * @ordered
    */
-  protected sendStmt sendStmt;
-
-  /**
-   * The cached value of the '{@link #getRecvStmt() <em>Recv Stmt</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRecvStmt()
-   * @generated
-   * @ordered
-   */
-  protected recvStmt recvStmt;
+  protected EObject statement;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,9 +67,9 @@ public class commCaseImpl extends MinimalEObjectImpl.Container implements commCa
    * <!-- end-user-doc -->
    * @generated
    */
-  public sendStmt getSendStmt()
+  public EObject getStatement()
   {
-    return sendStmt;
+    return statement;
   }
 
   /**
@@ -89,13 +77,13 @@ public class commCaseImpl extends MinimalEObjectImpl.Container implements commCa
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetSendStmt(sendStmt newSendStmt, NotificationChain msgs)
+  public NotificationChain basicSetStatement(EObject newStatement, NotificationChain msgs)
   {
-    sendStmt oldSendStmt = sendStmt;
-    sendStmt = newSendStmt;
+    EObject oldStatement = statement;
+    statement = newStatement;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.COMM_CASE__SEND_STMT, oldSendStmt, newSendStmt);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.COMM_CASE__STATEMENT, oldStatement, newStatement);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -106,68 +94,20 @@ public class commCaseImpl extends MinimalEObjectImpl.Container implements commCa
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSendStmt(sendStmt newSendStmt)
+  public void setStatement(EObject newStatement)
   {
-    if (newSendStmt != sendStmt)
+    if (newStatement != statement)
     {
       NotificationChain msgs = null;
-      if (sendStmt != null)
-        msgs = ((InternalEObject)sendStmt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.COMM_CASE__SEND_STMT, null, msgs);
-      if (newSendStmt != null)
-        msgs = ((InternalEObject)newSendStmt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.COMM_CASE__SEND_STMT, null, msgs);
-      msgs = basicSetSendStmt(newSendStmt, msgs);
+      if (statement != null)
+        msgs = ((InternalEObject)statement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.COMM_CASE__STATEMENT, null, msgs);
+      if (newStatement != null)
+        msgs = ((InternalEObject)newStatement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.COMM_CASE__STATEMENT, null, msgs);
+      msgs = basicSetStatement(newStatement, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.COMM_CASE__SEND_STMT, newSendStmt, newSendStmt));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public recvStmt getRecvStmt()
-  {
-    return recvStmt;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetRecvStmt(recvStmt newRecvStmt, NotificationChain msgs)
-  {
-    recvStmt oldRecvStmt = recvStmt;
-    recvStmt = newRecvStmt;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.COMM_CASE__RECV_STMT, oldRecvStmt, newRecvStmt);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setRecvStmt(recvStmt newRecvStmt)
-  {
-    if (newRecvStmt != recvStmt)
-    {
-      NotificationChain msgs = null;
-      if (recvStmt != null)
-        msgs = ((InternalEObject)recvStmt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.COMM_CASE__RECV_STMT, null, msgs);
-      if (newRecvStmt != null)
-        msgs = ((InternalEObject)newRecvStmt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.COMM_CASE__RECV_STMT, null, msgs);
-      msgs = basicSetRecvStmt(newRecvStmt, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.COMM_CASE__RECV_STMT, newRecvStmt, newRecvStmt));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.COMM_CASE__STATEMENT, newStatement, newStatement));
   }
 
   /**
@@ -180,10 +120,8 @@ public class commCaseImpl extends MinimalEObjectImpl.Container implements commCa
   {
     switch (featureID)
     {
-      case GoPackage.COMM_CASE__SEND_STMT:
-        return basicSetSendStmt(null, msgs);
-      case GoPackage.COMM_CASE__RECV_STMT:
-        return basicSetRecvStmt(null, msgs);
+      case GoPackage.COMM_CASE__STATEMENT:
+        return basicSetStatement(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -198,10 +136,8 @@ public class commCaseImpl extends MinimalEObjectImpl.Container implements commCa
   {
     switch (featureID)
     {
-      case GoPackage.COMM_CASE__SEND_STMT:
-        return getSendStmt();
-      case GoPackage.COMM_CASE__RECV_STMT:
-        return getRecvStmt();
+      case GoPackage.COMM_CASE__STATEMENT:
+        return getStatement();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -216,11 +152,8 @@ public class commCaseImpl extends MinimalEObjectImpl.Container implements commCa
   {
     switch (featureID)
     {
-      case GoPackage.COMM_CASE__SEND_STMT:
-        setSendStmt((sendStmt)newValue);
-        return;
-      case GoPackage.COMM_CASE__RECV_STMT:
-        setRecvStmt((recvStmt)newValue);
+      case GoPackage.COMM_CASE__STATEMENT:
+        setStatement((EObject)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -236,11 +169,8 @@ public class commCaseImpl extends MinimalEObjectImpl.Container implements commCa
   {
     switch (featureID)
     {
-      case GoPackage.COMM_CASE__SEND_STMT:
-        setSendStmt((sendStmt)null);
-        return;
-      case GoPackage.COMM_CASE__RECV_STMT:
-        setRecvStmt((recvStmt)null);
+      case GoPackage.COMM_CASE__STATEMENT:
+        setStatement((EObject)null);
         return;
     }
     super.eUnset(featureID);
@@ -256,10 +186,8 @@ public class commCaseImpl extends MinimalEObjectImpl.Container implements commCa
   {
     switch (featureID)
     {
-      case GoPackage.COMM_CASE__SEND_STMT:
-        return sendStmt != null;
-      case GoPackage.COMM_CASE__RECV_STMT:
-        return recvStmt != null;
+      case GoPackage.COMM_CASE__STATEMENT:
+        return statement != null;
     }
     return super.eIsSet(featureID);
   }

@@ -9,8 +9,8 @@ Model:
 
 //SourceFile       = PackageClause ";" { ImportDecl ";" } { TopLevelDecl ";" } .
 sourceFile: 
-	package=packageClause eos 
-	( imports+=importDecl eos )* ( topLevelDecls+=topLevelDecl eos)*;
+	package=packageClause (eos?) 
+	( imports+=importDecl (eos?) )* ( topLevelDecls+=topLevelDecl eos)*;
 
 //PackageClause  = "package" PackageName .
 //PackageName    = identifier .
@@ -18,7 +18,7 @@ packageClause :
 	'package' packageName=IDENTIFIER;
 
 importDecl: 
-	'import' ( specs+=importSpec eos | '(' ( specs+=importSpec eos
+	'import' ( specs+=importSpec | '(' ( specs+=importSpec eos
 	 )* ')' );
 
 importSpec: 
@@ -557,7 +557,7 @@ conversion:
 	 type=type '(' expression=expression ','? ')';
 
 eos: 
-	';';//| 
+	(';');//| 
 //	WS ;//|
 ////	{lineTerminatorAhead()}? |
 ////	{_input.LT(1).getText().equals("}") }?;

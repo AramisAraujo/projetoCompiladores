@@ -13,9 +13,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.rangeClause#getExpressionList <em>Expression List</em>}</li>
- *   <li>{@link org.xtext.go.rangeClause#getIdentifierList <em>Identifier List</em>}</li>
- *   <li>{@link org.xtext.go.rangeClause#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.xtext.go.rangeClause#getExprList <em>Expr List</em>}</li>
+ *   <li>{@link org.xtext.go.rangeClause#getIdList <em>Id List</em>}</li>
+ *   <li>{@link org.xtext.go.rangeClause#getExpr <em>Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,81 +26,81 @@ import org.eclipse.emf.ecore.EObject;
 public interface rangeClause extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Expression List</b></em>' containment reference.
+   * Returns the value of the '<em><b>Expr List</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Expression List</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Expr List</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expression List</em>' containment reference.
-   * @see #setExpressionList(expressionList)
-   * @see org.xtext.go.GoPackage#getrangeClause_ExpressionList()
+   * @return the value of the '<em>Expr List</em>' containment reference.
+   * @see #setExprList(expressionList)
+   * @see org.xtext.go.GoPackage#getrangeClause_ExprList()
    * @model containment="true"
    * @generated
    */
-  expressionList getExpressionList();
+  expressionList getExprList();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.rangeClause#getExpressionList <em>Expression List</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.rangeClause#getExprList <em>Expr List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expression List</em>' containment reference.
-   * @see #getExpressionList()
+   * @param value the new value of the '<em>Expr List</em>' containment reference.
+   * @see #getExprList()
    * @generated
    */
-  void setExpressionList(expressionList value);
+  void setExprList(expressionList value);
 
   /**
-   * Returns the value of the '<em><b>Identifier List</b></em>' attribute.
+   * Returns the value of the '<em><b>Id List</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Identifier List</em>' attribute isn't clear,
+   * If the meaning of the '<em>Id List</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Identifier List</em>' attribute.
-   * @see #setIdentifierList(String)
-   * @see org.xtext.go.GoPackage#getrangeClause_IdentifierList()
-   * @model
-   * @generated
-   */
-  String getIdentifierList();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.rangeClause#getIdentifierList <em>Identifier List</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Identifier List</em>' attribute.
-   * @see #getIdentifierList()
-   * @generated
-   */
-  void setIdentifierList(String value);
-
-  /**
-   * Returns the value of the '<em><b>Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Expression</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Expression</em>' containment reference.
-   * @see #setExpression(expression)
-   * @see org.xtext.go.GoPackage#getrangeClause_Expression()
+   * @return the value of the '<em>Id List</em>' containment reference.
+   * @see #setIdList(identifierList)
+   * @see org.xtext.go.GoPackage#getrangeClause_IdList()
    * @model containment="true"
    * @generated
    */
-  expression getExpression();
+  identifierList getIdList();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.rangeClause#getExpression <em>Expression</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.rangeClause#getIdList <em>Id List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expression</em>' containment reference.
-   * @see #getExpression()
+   * @param value the new value of the '<em>Id List</em>' containment reference.
+   * @see #getIdList()
    * @generated
    */
-  void setExpression(expression value);
+  void setIdList(identifierList value);
+
+  /**
+   * Returns the value of the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Expr</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Expr</em>' containment reference.
+   * @see #setExpr(expression)
+   * @see org.xtext.go.GoPackage#getrangeClause_Expr()
+   * @model containment="true"
+   * @generated
+   */
+  expression getExpr();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.rangeClause#getExpr <em>Expr</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Expr</em>' containment reference.
+   * @see #getExpr()
+   * @generated
+   */
+  void setExpr(expression value);
 
 } // rangeClause

@@ -23,7 +23,7 @@ import org.xtext.go.primaryExprStuff;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.primaryExprArgumentsImpl#getPrimaryExprStuff <em>Primary Expr Stuff</em>}</li>
+ *   <li>{@link org.xtext.go.impl.primaryExprArgumentsImpl#getContent <em>Content</em>}</li>
  *   <li>{@link org.xtext.go.impl.primaryExprArgumentsImpl#getPrimaryExprArguments <em>Primary Expr Arguments</em>}</li>
  * </ul>
  * </p>
@@ -33,14 +33,14 @@ import org.xtext.go.primaryExprStuff;
 public class primaryExprArgumentsImpl extends MinimalEObjectImpl.Container implements primaryExprArguments
 {
   /**
-   * The cached value of the '{@link #getPrimaryExprStuff() <em>Primary Expr Stuff</em>}' containment reference.
+   * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPrimaryExprStuff()
+   * @see #getContent()
    * @generated
    * @ordered
    */
-  protected primaryExprStuff primaryExprStuff;
+  protected primaryExprStuff content;
 
   /**
    * The cached value of the '{@link #getPrimaryExprArguments() <em>Primary Expr Arguments</em>}' containment reference.
@@ -78,9 +78,9 @@ public class primaryExprArgumentsImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public primaryExprStuff getPrimaryExprStuff()
+  public primaryExprStuff getContent()
   {
-    return primaryExprStuff;
+    return content;
   }
 
   /**
@@ -88,13 +88,13 @@ public class primaryExprArgumentsImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPrimaryExprStuff(primaryExprStuff newPrimaryExprStuff, NotificationChain msgs)
+  public NotificationChain basicSetContent(primaryExprStuff newContent, NotificationChain msgs)
   {
-    primaryExprStuff oldPrimaryExprStuff = primaryExprStuff;
-    primaryExprStuff = newPrimaryExprStuff;
+    primaryExprStuff oldContent = content;
+    content = newContent;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_STUFF, oldPrimaryExprStuff, newPrimaryExprStuff);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.PRIMARY_EXPR_ARGUMENTS__CONTENT, oldContent, newContent);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -105,20 +105,20 @@ public class primaryExprArgumentsImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPrimaryExprStuff(primaryExprStuff newPrimaryExprStuff)
+  public void setContent(primaryExprStuff newContent)
   {
-    if (newPrimaryExprStuff != primaryExprStuff)
+    if (newContent != content)
     {
       NotificationChain msgs = null;
-      if (primaryExprStuff != null)
-        msgs = ((InternalEObject)primaryExprStuff).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_STUFF, null, msgs);
-      if (newPrimaryExprStuff != null)
-        msgs = ((InternalEObject)newPrimaryExprStuff).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_STUFF, null, msgs);
-      msgs = basicSetPrimaryExprStuff(newPrimaryExprStuff, msgs);
+      if (content != null)
+        msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.PRIMARY_EXPR_ARGUMENTS__CONTENT, null, msgs);
+      if (newContent != null)
+        msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.PRIMARY_EXPR_ARGUMENTS__CONTENT, null, msgs);
+      msgs = basicSetContent(newContent, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_STUFF, newPrimaryExprStuff, newPrimaryExprStuff));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.PRIMARY_EXPR_ARGUMENTS__CONTENT, newContent, newContent));
   }
 
   /**
@@ -179,8 +179,8 @@ public class primaryExprArgumentsImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case GoPackage.PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_STUFF:
-        return basicSetPrimaryExprStuff(null, msgs);
+      case GoPackage.PRIMARY_EXPR_ARGUMENTS__CONTENT:
+        return basicSetContent(null, msgs);
       case GoPackage.PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_ARGUMENTS:
         return basicSetPrimaryExprArguments(null, msgs);
     }
@@ -197,8 +197,8 @@ public class primaryExprArgumentsImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case GoPackage.PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_STUFF:
-        return getPrimaryExprStuff();
+      case GoPackage.PRIMARY_EXPR_ARGUMENTS__CONTENT:
+        return getContent();
       case GoPackage.PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_ARGUMENTS:
         return getPrimaryExprArguments();
     }
@@ -215,8 +215,8 @@ public class primaryExprArgumentsImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case GoPackage.PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_STUFF:
-        setPrimaryExprStuff((primaryExprStuff)newValue);
+      case GoPackage.PRIMARY_EXPR_ARGUMENTS__CONTENT:
+        setContent((primaryExprStuff)newValue);
         return;
       case GoPackage.PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_ARGUMENTS:
         setPrimaryExprArguments((primaryExprArguments)newValue);
@@ -235,8 +235,8 @@ public class primaryExprArgumentsImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case GoPackage.PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_STUFF:
-        setPrimaryExprStuff((primaryExprStuff)null);
+      case GoPackage.PRIMARY_EXPR_ARGUMENTS__CONTENT:
+        setContent((primaryExprStuff)null);
         return;
       case GoPackage.PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_ARGUMENTS:
         setPrimaryExprArguments((primaryExprArguments)null);
@@ -255,8 +255,8 @@ public class primaryExprArgumentsImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case GoPackage.PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_STUFF:
-        return primaryExprStuff != null;
+      case GoPackage.PRIMARY_EXPR_ARGUMENTS__CONTENT:
+        return content != null;
       case GoPackage.PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_ARGUMENTS:
         return primaryExprArguments != null;
     }

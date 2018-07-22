@@ -7,6 +7,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -15,9 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.xtext.go.GoPackage;
 import org.xtext.go.block;
 import org.xtext.go.expression;
-import org.xtext.go.forClause;
 import org.xtext.go.forStmt;
-import org.xtext.go.rangeClause;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,10 +25,9 @@ import org.xtext.go.rangeClause;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.forStmtImpl#getExpression <em>Expression</em>}</li>
- *   <li>{@link org.xtext.go.impl.forStmtImpl#getForClause <em>For Clause</em>}</li>
- *   <li>{@link org.xtext.go.impl.forStmtImpl#getRangeClause <em>Range Clause</em>}</li>
- *   <li>{@link org.xtext.go.impl.forStmtImpl#getBlock <em>Block</em>}</li>
+ *   <li>{@link org.xtext.go.impl.forStmtImpl#getExpr <em>Expr</em>}</li>
+ *   <li>{@link org.xtext.go.impl.forStmtImpl#getClause <em>Clause</em>}</li>
+ *   <li>{@link org.xtext.go.impl.forStmtImpl#getCodeBlock <em>Code Block</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,44 +36,34 @@ import org.xtext.go.rangeClause;
 public class forStmtImpl extends MinimalEObjectImpl.Container implements forStmt
 {
   /**
-   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
+   * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExpression()
+   * @see #getExpr()
    * @generated
    * @ordered
    */
-  protected expression expression;
+  protected expression expr;
 
   /**
-   * The cached value of the '{@link #getForClause() <em>For Clause</em>}' containment reference.
+   * The cached value of the '{@link #getClause() <em>Clause</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getForClause()
+   * @see #getClause()
    * @generated
    * @ordered
    */
-  protected forClause forClause;
+  protected EObject clause;
 
   /**
-   * The cached value of the '{@link #getRangeClause() <em>Range Clause</em>}' containment reference.
+   * The cached value of the '{@link #getCodeBlock() <em>Code Block</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRangeClause()
+   * @see #getCodeBlock()
    * @generated
    * @ordered
    */
-  protected rangeClause rangeClause;
-
-  /**
-   * The cached value of the '{@link #getBlock() <em>Block</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBlock()
-   * @generated
-   * @ordered
-   */
-  protected block block;
+  protected block codeBlock;
 
   /**
    * <!-- begin-user-doc -->
@@ -103,9 +91,9 @@ public class forStmtImpl extends MinimalEObjectImpl.Container implements forStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public expression getExpression()
+  public expression getExpr()
   {
-    return expression;
+    return expr;
   }
 
   /**
@@ -113,13 +101,13 @@ public class forStmtImpl extends MinimalEObjectImpl.Container implements forStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpression(expression newExpression, NotificationChain msgs)
+  public NotificationChain basicSetExpr(expression newExpr, NotificationChain msgs)
   {
-    expression oldExpression = expression;
-    expression = newExpression;
+    expression oldExpr = expr;
+    expr = newExpr;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FOR_STMT__EXPRESSION, oldExpression, newExpression);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FOR_STMT__EXPR, oldExpr, newExpr);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -130,20 +118,20 @@ public class forStmtImpl extends MinimalEObjectImpl.Container implements forStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(expression newExpression)
+  public void setExpr(expression newExpr)
   {
-    if (newExpression != expression)
+    if (newExpr != expr)
     {
       NotificationChain msgs = null;
-      if (expression != null)
-        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_STMT__EXPRESSION, null, msgs);
-      if (newExpression != null)
-        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_STMT__EXPRESSION, null, msgs);
-      msgs = basicSetExpression(newExpression, msgs);
+      if (expr != null)
+        msgs = ((InternalEObject)expr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_STMT__EXPR, null, msgs);
+      if (newExpr != null)
+        msgs = ((InternalEObject)newExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_STMT__EXPR, null, msgs);
+      msgs = basicSetExpr(newExpr, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FOR_STMT__EXPRESSION, newExpression, newExpression));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FOR_STMT__EXPR, newExpr, newExpr));
   }
 
   /**
@@ -151,9 +139,9 @@ public class forStmtImpl extends MinimalEObjectImpl.Container implements forStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public forClause getForClause()
+  public EObject getClause()
   {
-    return forClause;
+    return clause;
   }
 
   /**
@@ -161,13 +149,13 @@ public class forStmtImpl extends MinimalEObjectImpl.Container implements forStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetForClause(forClause newForClause, NotificationChain msgs)
+  public NotificationChain basicSetClause(EObject newClause, NotificationChain msgs)
   {
-    forClause oldForClause = forClause;
-    forClause = newForClause;
+    EObject oldClause = clause;
+    clause = newClause;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FOR_STMT__FOR_CLAUSE, oldForClause, newForClause);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FOR_STMT__CLAUSE, oldClause, newClause);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -178,20 +166,20 @@ public class forStmtImpl extends MinimalEObjectImpl.Container implements forStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setForClause(forClause newForClause)
+  public void setClause(EObject newClause)
   {
-    if (newForClause != forClause)
+    if (newClause != clause)
     {
       NotificationChain msgs = null;
-      if (forClause != null)
-        msgs = ((InternalEObject)forClause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_STMT__FOR_CLAUSE, null, msgs);
-      if (newForClause != null)
-        msgs = ((InternalEObject)newForClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_STMT__FOR_CLAUSE, null, msgs);
-      msgs = basicSetForClause(newForClause, msgs);
+      if (clause != null)
+        msgs = ((InternalEObject)clause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_STMT__CLAUSE, null, msgs);
+      if (newClause != null)
+        msgs = ((InternalEObject)newClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_STMT__CLAUSE, null, msgs);
+      msgs = basicSetClause(newClause, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FOR_STMT__FOR_CLAUSE, newForClause, newForClause));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FOR_STMT__CLAUSE, newClause, newClause));
   }
 
   /**
@@ -199,9 +187,9 @@ public class forStmtImpl extends MinimalEObjectImpl.Container implements forStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public rangeClause getRangeClause()
+  public block getCodeBlock()
   {
-    return rangeClause;
+    return codeBlock;
   }
 
   /**
@@ -209,13 +197,13 @@ public class forStmtImpl extends MinimalEObjectImpl.Container implements forStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetRangeClause(rangeClause newRangeClause, NotificationChain msgs)
+  public NotificationChain basicSetCodeBlock(block newCodeBlock, NotificationChain msgs)
   {
-    rangeClause oldRangeClause = rangeClause;
-    rangeClause = newRangeClause;
+    block oldCodeBlock = codeBlock;
+    codeBlock = newCodeBlock;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FOR_STMT__RANGE_CLAUSE, oldRangeClause, newRangeClause);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FOR_STMT__CODE_BLOCK, oldCodeBlock, newCodeBlock);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -226,68 +214,20 @@ public class forStmtImpl extends MinimalEObjectImpl.Container implements forStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRangeClause(rangeClause newRangeClause)
+  public void setCodeBlock(block newCodeBlock)
   {
-    if (newRangeClause != rangeClause)
+    if (newCodeBlock != codeBlock)
     {
       NotificationChain msgs = null;
-      if (rangeClause != null)
-        msgs = ((InternalEObject)rangeClause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_STMT__RANGE_CLAUSE, null, msgs);
-      if (newRangeClause != null)
-        msgs = ((InternalEObject)newRangeClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_STMT__RANGE_CLAUSE, null, msgs);
-      msgs = basicSetRangeClause(newRangeClause, msgs);
+      if (codeBlock != null)
+        msgs = ((InternalEObject)codeBlock).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_STMT__CODE_BLOCK, null, msgs);
+      if (newCodeBlock != null)
+        msgs = ((InternalEObject)newCodeBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_STMT__CODE_BLOCK, null, msgs);
+      msgs = basicSetCodeBlock(newCodeBlock, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FOR_STMT__RANGE_CLAUSE, newRangeClause, newRangeClause));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public block getBlock()
-  {
-    return block;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetBlock(block newBlock, NotificationChain msgs)
-  {
-    block oldBlock = block;
-    block = newBlock;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FOR_STMT__BLOCK, oldBlock, newBlock);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBlock(block newBlock)
-  {
-    if (newBlock != block)
-    {
-      NotificationChain msgs = null;
-      if (block != null)
-        msgs = ((InternalEObject)block).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_STMT__BLOCK, null, msgs);
-      if (newBlock != null)
-        msgs = ((InternalEObject)newBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_STMT__BLOCK, null, msgs);
-      msgs = basicSetBlock(newBlock, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FOR_STMT__BLOCK, newBlock, newBlock));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FOR_STMT__CODE_BLOCK, newCodeBlock, newCodeBlock));
   }
 
   /**
@@ -300,14 +240,12 @@ public class forStmtImpl extends MinimalEObjectImpl.Container implements forStmt
   {
     switch (featureID)
     {
-      case GoPackage.FOR_STMT__EXPRESSION:
-        return basicSetExpression(null, msgs);
-      case GoPackage.FOR_STMT__FOR_CLAUSE:
-        return basicSetForClause(null, msgs);
-      case GoPackage.FOR_STMT__RANGE_CLAUSE:
-        return basicSetRangeClause(null, msgs);
-      case GoPackage.FOR_STMT__BLOCK:
-        return basicSetBlock(null, msgs);
+      case GoPackage.FOR_STMT__EXPR:
+        return basicSetExpr(null, msgs);
+      case GoPackage.FOR_STMT__CLAUSE:
+        return basicSetClause(null, msgs);
+      case GoPackage.FOR_STMT__CODE_BLOCK:
+        return basicSetCodeBlock(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -322,14 +260,12 @@ public class forStmtImpl extends MinimalEObjectImpl.Container implements forStmt
   {
     switch (featureID)
     {
-      case GoPackage.FOR_STMT__EXPRESSION:
-        return getExpression();
-      case GoPackage.FOR_STMT__FOR_CLAUSE:
-        return getForClause();
-      case GoPackage.FOR_STMT__RANGE_CLAUSE:
-        return getRangeClause();
-      case GoPackage.FOR_STMT__BLOCK:
-        return getBlock();
+      case GoPackage.FOR_STMT__EXPR:
+        return getExpr();
+      case GoPackage.FOR_STMT__CLAUSE:
+        return getClause();
+      case GoPackage.FOR_STMT__CODE_BLOCK:
+        return getCodeBlock();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -344,17 +280,14 @@ public class forStmtImpl extends MinimalEObjectImpl.Container implements forStmt
   {
     switch (featureID)
     {
-      case GoPackage.FOR_STMT__EXPRESSION:
-        setExpression((expression)newValue);
+      case GoPackage.FOR_STMT__EXPR:
+        setExpr((expression)newValue);
         return;
-      case GoPackage.FOR_STMT__FOR_CLAUSE:
-        setForClause((forClause)newValue);
+      case GoPackage.FOR_STMT__CLAUSE:
+        setClause((EObject)newValue);
         return;
-      case GoPackage.FOR_STMT__RANGE_CLAUSE:
-        setRangeClause((rangeClause)newValue);
-        return;
-      case GoPackage.FOR_STMT__BLOCK:
-        setBlock((block)newValue);
+      case GoPackage.FOR_STMT__CODE_BLOCK:
+        setCodeBlock((block)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -370,17 +303,14 @@ public class forStmtImpl extends MinimalEObjectImpl.Container implements forStmt
   {
     switch (featureID)
     {
-      case GoPackage.FOR_STMT__EXPRESSION:
-        setExpression((expression)null);
+      case GoPackage.FOR_STMT__EXPR:
+        setExpr((expression)null);
         return;
-      case GoPackage.FOR_STMT__FOR_CLAUSE:
-        setForClause((forClause)null);
+      case GoPackage.FOR_STMT__CLAUSE:
+        setClause((EObject)null);
         return;
-      case GoPackage.FOR_STMT__RANGE_CLAUSE:
-        setRangeClause((rangeClause)null);
-        return;
-      case GoPackage.FOR_STMT__BLOCK:
-        setBlock((block)null);
+      case GoPackage.FOR_STMT__CODE_BLOCK:
+        setCodeBlock((block)null);
         return;
     }
     super.eUnset(featureID);
@@ -396,14 +326,12 @@ public class forStmtImpl extends MinimalEObjectImpl.Container implements forStmt
   {
     switch (featureID)
     {
-      case GoPackage.FOR_STMT__EXPRESSION:
-        return expression != null;
-      case GoPackage.FOR_STMT__FOR_CLAUSE:
-        return forClause != null;
-      case GoPackage.FOR_STMT__RANGE_CLAUSE:
-        return rangeClause != null;
-      case GoPackage.FOR_STMT__BLOCK:
-        return block != null;
+      case GoPackage.FOR_STMT__EXPR:
+        return expr != null;
+      case GoPackage.FOR_STMT__CLAUSE:
+        return clause != null;
+      case GoPackage.FOR_STMT__CODE_BLOCK:
+        return codeBlock != null;
     }
     return super.eIsSet(featureID);
   }

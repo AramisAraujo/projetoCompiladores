@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.signature#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link org.xtext.go.signature#getParams <em>Params</em>}</li>
  *   <li>{@link org.xtext.go.signature#getResult <em>Result</em>}</li>
  * </ul>
  * </p>
@@ -25,30 +25,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface signature extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Parameters</b></em>' containment reference.
+   * Returns the value of the '<em><b>Params</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Parameters</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Params</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Parameters</em>' containment reference.
-   * @see #setParameters(parameters)
-   * @see org.xtext.go.GoPackage#getsignature_Parameters()
+   * @return the value of the '<em>Params</em>' containment reference.
+   * @see #setParams(parameters)
+   * @see org.xtext.go.GoPackage#getsignature_Params()
    * @model containment="true"
    * @generated
    */
-  parameters getParameters();
+  parameters getParams();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.signature#getParameters <em>Parameters</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.signature#getParams <em>Params</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Parameters</em>' containment reference.
-   * @see #getParameters()
+   * @param value the new value of the '<em>Params</em>' containment reference.
+   * @see #getParams()
    * @generated
    */
-  void setParameters(parameters value);
+  void setParams(parameters value);
 
   /**
    * Returns the value of the '<em><b>Result</b></em>' containment reference.

@@ -3,6 +3,8 @@
  */
 package org.xtext.go;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,9 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.sourceFile#getPackageClause <em>Package Clause</em>}</li>
- *   <li>{@link org.xtext.go.sourceFile#getImportDecl <em>Import Decl</em>}</li>
- *   <li>{@link org.xtext.go.sourceFile#getTopLevelDecl <em>Top Level Decl</em>}</li>
+ *   <li>{@link org.xtext.go.sourceFile#getPackage <em>Package</em>}</li>
+ *   <li>{@link org.xtext.go.sourceFile#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.xtext.go.sourceFile#getTopLevelDecls <em>Top Level Decls</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,81 +28,61 @@ import org.eclipse.emf.ecore.EObject;
 public interface sourceFile extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Package Clause</b></em>' attribute.
+   * Returns the value of the '<em><b>Package</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Package Clause</em>' attribute isn't clear,
+   * If the meaning of the '<em>Package</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Package Clause</em>' attribute.
-   * @see #setPackageClause(String)
-   * @see org.xtext.go.GoPackage#getsourceFile_PackageClause()
-   * @model
-   * @generated
-   */
-  String getPackageClause();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.sourceFile#getPackageClause <em>Package Clause</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Package Clause</em>' attribute.
-   * @see #getPackageClause()
-   * @generated
-   */
-  void setPackageClause(String value);
-
-  /**
-   * Returns the value of the '<em><b>Import Decl</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Import Decl</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Import Decl</em>' containment reference.
-   * @see #setImportDecl(importDecl)
-   * @see org.xtext.go.GoPackage#getsourceFile_ImportDecl()
+   * @return the value of the '<em>Package</em>' containment reference.
+   * @see #setPackage(packageClause)
+   * @see org.xtext.go.GoPackage#getsourceFile_Package()
    * @model containment="true"
    * @generated
    */
-  importDecl getImportDecl();
+  packageClause getPackage();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.sourceFile#getImportDecl <em>Import Decl</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.sourceFile#getPackage <em>Package</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Import Decl</em>' containment reference.
-   * @see #getImportDecl()
+   * @param value the new value of the '<em>Package</em>' containment reference.
+   * @see #getPackage()
    * @generated
    */
-  void setImportDecl(importDecl value);
+  void setPackage(packageClause value);
 
   /**
-   * Returns the value of the '<em><b>Top Level Decl</b></em>' containment reference.
+   * Returns the value of the '<em><b>Imports</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.go.importDecl}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Top Level Decl</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Imports</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Top Level Decl</em>' containment reference.
-   * @see #setTopLevelDecl(topLevelDecl)
-   * @see org.xtext.go.GoPackage#getsourceFile_TopLevelDecl()
+   * @return the value of the '<em>Imports</em>' containment reference list.
+   * @see org.xtext.go.GoPackage#getsourceFile_Imports()
    * @model containment="true"
    * @generated
    */
-  topLevelDecl getTopLevelDecl();
+  EList<importDecl> getImports();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.sourceFile#getTopLevelDecl <em>Top Level Decl</em>}' containment reference.
+   * Returns the value of the '<em><b>Top Level Decls</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.go.topLevelDecl}.
    * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Top Level Decls</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Top Level Decl</em>' containment reference.
-   * @see #getTopLevelDecl()
+   * @return the value of the '<em>Top Level Decls</em>' containment reference list.
+   * @see org.xtext.go.GoPackage#getsourceFile_TopLevelDecls()
+   * @model containment="true"
    * @generated
    */
-  void setTopLevelDecl(topLevelDecl value);
+  EList<topLevelDecl> getTopLevelDecls();
 
 } // sourceFile

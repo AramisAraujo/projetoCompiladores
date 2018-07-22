@@ -13,7 +13,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.slice#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.xtext.go.slice#getExpr1 <em>Expr1</em>}</li>
+ *   <li>{@link org.xtext.go.slice#getExpr2 <em>Expr2</em>}</li>
+ *   <li>{@link org.xtext.go.slice#getExpr3 <em>Expr3</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,29 +26,81 @@ import org.eclipse.emf.ecore.EObject;
 public interface slice extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Expression</b></em>' containment reference.
+   * Returns the value of the '<em><b>Expr1</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Expression</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Expr1</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expression</em>' containment reference.
-   * @see #setExpression(expression)
-   * @see org.xtext.go.GoPackage#getslice_Expression()
+   * @return the value of the '<em>Expr1</em>' containment reference.
+   * @see #setExpr1(expression)
+   * @see org.xtext.go.GoPackage#getslice_Expr1()
    * @model containment="true"
    * @generated
    */
-  expression getExpression();
+  expression getExpr1();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.slice#getExpression <em>Expression</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.slice#getExpr1 <em>Expr1</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expression</em>' containment reference.
-   * @see #getExpression()
+   * @param value the new value of the '<em>Expr1</em>' containment reference.
+   * @see #getExpr1()
    * @generated
    */
-  void setExpression(expression value);
+  void setExpr1(expression value);
+
+  /**
+   * Returns the value of the '<em><b>Expr2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Expr2</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Expr2</em>' containment reference.
+   * @see #setExpr2(expression)
+   * @see org.xtext.go.GoPackage#getslice_Expr2()
+   * @model containment="true"
+   * @generated
+   */
+  expression getExpr2();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.slice#getExpr2 <em>Expr2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Expr2</em>' containment reference.
+   * @see #getExpr2()
+   * @generated
+   */
+  void setExpr2(expression value);
+
+  /**
+   * Returns the value of the '<em><b>Expr3</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Expr3</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Expr3</em>' containment reference.
+   * @see #setExpr3(expression)
+   * @see org.xtext.go.GoPackage#getslice_Expr3()
+   * @model containment="true"
+   * @generated
+   */
+  expression getExpr3();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.slice#getExpr3 <em>Expr3</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Expr3</em>' containment reference.
+   * @see #getExpr3()
+   * @generated
+   */
+  void setExpr3(expression value);
 
 } // slice

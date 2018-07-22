@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.shortVarDecl#getIdentifierList <em>Identifier List</em>}</li>
- *   <li>{@link org.xtext.go.shortVarDecl#getExpressionList <em>Expression List</em>}</li>
+ *   <li>{@link org.xtext.go.shortVarDecl#getIdList <em>Id List</em>}</li>
+ *   <li>{@link org.xtext.go.shortVarDecl#getExprList <em>Expr List</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,55 +25,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface shortVarDecl extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Identifier List</b></em>' attribute.
+   * Returns the value of the '<em><b>Id List</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Identifier List</em>' attribute isn't clear,
+   * If the meaning of the '<em>Id List</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Identifier List</em>' attribute.
-   * @see #setIdentifierList(String)
-   * @see org.xtext.go.GoPackage#getshortVarDecl_IdentifierList()
-   * @model
-   * @generated
-   */
-  String getIdentifierList();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.shortVarDecl#getIdentifierList <em>Identifier List</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Identifier List</em>' attribute.
-   * @see #getIdentifierList()
-   * @generated
-   */
-  void setIdentifierList(String value);
-
-  /**
-   * Returns the value of the '<em><b>Expression List</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Expression List</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Expression List</em>' containment reference.
-   * @see #setExpressionList(expressionList)
-   * @see org.xtext.go.GoPackage#getshortVarDecl_ExpressionList()
+   * @return the value of the '<em>Id List</em>' containment reference.
+   * @see #setIdList(identifierList)
+   * @see org.xtext.go.GoPackage#getshortVarDecl_IdList()
    * @model containment="true"
    * @generated
    */
-  expressionList getExpressionList();
+  identifierList getIdList();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.shortVarDecl#getExpressionList <em>Expression List</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.shortVarDecl#getIdList <em>Id List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expression List</em>' containment reference.
-   * @see #getExpressionList()
+   * @param value the new value of the '<em>Id List</em>' containment reference.
+   * @see #getIdList()
    * @generated
    */
-  void setExpressionList(expressionList value);
+  void setIdList(identifierList value);
+
+  /**
+   * Returns the value of the '<em><b>Expr List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Expr List</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Expr List</em>' containment reference.
+   * @see #setExprList(expressionList)
+   * @see org.xtext.go.GoPackage#getshortVarDecl_ExprList()
+   * @model containment="true"
+   * @generated
+   */
+  expressionList getExprList();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.shortVarDecl#getExprList <em>Expr List</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Expr List</em>' containment reference.
+   * @see #getExprList()
+   * @generated
+   */
+  void setExprList(expressionList value);
 
 } // shortVarDecl

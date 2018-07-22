@@ -3,6 +3,8 @@
  */
 package org.xtext.go;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,9 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.typeSwitchStmt#getSimpleStmt <em>Simple Stmt</em>}</li>
+ *   <li>{@link org.xtext.go.typeSwitchStmt#getSimpleStatement <em>Simple Statement</em>}</li>
  *   <li>{@link org.xtext.go.typeSwitchStmt#getTypeSwitchGuard <em>Type Switch Guard</em>}</li>
- *   <li>{@link org.xtext.go.typeSwitchStmt#getTypeCaseClause <em>Type Case Clause</em>}</li>
+ *   <li>{@link org.xtext.go.typeSwitchStmt#getTypeCaseClauses <em>Type Case Clauses</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,30 +28,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface typeSwitchStmt extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Simple Stmt</b></em>' containment reference.
+   * Returns the value of the '<em><b>Simple Statement</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Simple Stmt</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Simple Statement</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Simple Stmt</em>' containment reference.
-   * @see #setSimpleStmt(simpleStmt)
-   * @see org.xtext.go.GoPackage#gettypeSwitchStmt_SimpleStmt()
+   * @return the value of the '<em>Simple Statement</em>' containment reference.
+   * @see #setSimpleStatement(simpleStmt)
+   * @see org.xtext.go.GoPackage#gettypeSwitchStmt_SimpleStatement()
    * @model containment="true"
    * @generated
    */
-  simpleStmt getSimpleStmt();
+  simpleStmt getSimpleStatement();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.typeSwitchStmt#getSimpleStmt <em>Simple Stmt</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.typeSwitchStmt#getSimpleStatement <em>Simple Statement</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Simple Stmt</em>' containment reference.
-   * @see #getSimpleStmt()
+   * @param value the new value of the '<em>Simple Statement</em>' containment reference.
+   * @see #getSimpleStatement()
    * @generated
    */
-  void setSimpleStmt(simpleStmt value);
+  void setSimpleStatement(simpleStmt value);
 
   /**
    * Returns the value of the '<em><b>Type Switch Guard</b></em>' containment reference.
@@ -78,29 +80,19 @@ public interface typeSwitchStmt extends EObject
   void setTypeSwitchGuard(typeSwitchGuard value);
 
   /**
-   * Returns the value of the '<em><b>Type Case Clause</b></em>' containment reference.
+   * Returns the value of the '<em><b>Type Case Clauses</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.go.typeCaseClause}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Type Case Clause</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Type Case Clauses</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type Case Clause</em>' containment reference.
-   * @see #setTypeCaseClause(typeCaseClause)
-   * @see org.xtext.go.GoPackage#gettypeSwitchStmt_TypeCaseClause()
+   * @return the value of the '<em>Type Case Clauses</em>' containment reference list.
+   * @see org.xtext.go.GoPackage#gettypeSwitchStmt_TypeCaseClauses()
    * @model containment="true"
    * @generated
    */
-  typeCaseClause getTypeCaseClause();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.typeSwitchStmt#getTypeCaseClause <em>Type Case Clause</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type Case Clause</em>' containment reference.
-   * @see #getTypeCaseClause()
-   * @generated
-   */
-  void setTypeCaseClause(typeCaseClause value);
+  EList<typeCaseClause> getTypeCaseClauses();
 
 } // typeSwitchStmt

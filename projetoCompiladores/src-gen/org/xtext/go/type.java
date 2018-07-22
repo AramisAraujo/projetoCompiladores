@@ -13,9 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.type#getTypeName <em>Type Name</em>}</li>
- *   <li>{@link org.xtext.go.type#getTypeLit <em>Type Lit</em>}</li>
- *   <li>{@link org.xtext.go.type#getType <em>Type</em>}</li>
+ *   <li>{@link org.xtext.go.type#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,81 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface type extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Type Name</b></em>' containment reference.
+   * Returns the value of the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Type Name</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Content</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type Name</em>' containment reference.
-   * @see #setTypeName(typeName)
-   * @see org.xtext.go.GoPackage#gettype_TypeName()
+   * @return the value of the '<em>Content</em>' containment reference.
+   * @see #setContent(EObject)
+   * @see org.xtext.go.GoPackage#gettype_Content()
    * @model containment="true"
    * @generated
    */
-  typeName getTypeName();
+  EObject getContent();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.type#getTypeName <em>Type Name</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.type#getContent <em>Content</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type Name</em>' containment reference.
-   * @see #getTypeName()
+   * @param value the new value of the '<em>Content</em>' containment reference.
+   * @see #getContent()
    * @generated
    */
-  void setTypeName(typeName value);
-
-  /**
-   * Returns the value of the '<em><b>Type Lit</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Type Lit</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Type Lit</em>' containment reference.
-   * @see #setTypeLit(typeLit)
-   * @see org.xtext.go.GoPackage#gettype_TypeLit()
-   * @model containment="true"
-   * @generated
-   */
-  typeLit getTypeLit();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.type#getTypeLit <em>Type Lit</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type Lit</em>' containment reference.
-   * @see #getTypeLit()
-   * @generated
-   */
-  void setTypeLit(typeLit value);
-
-  /**
-   * Returns the value of the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Type</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' containment reference.
-   * @see #setType(type)
-   * @see org.xtext.go.GoPackage#gettype_Type()
-   * @model containment="true"
-   * @generated
-   */
-  type getType();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.type#getType <em>Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' containment reference.
-   * @see #getType()
-   * @generated
-   */
-  void setType(type value);
+  void setContent(EObject value);
 
 } // type

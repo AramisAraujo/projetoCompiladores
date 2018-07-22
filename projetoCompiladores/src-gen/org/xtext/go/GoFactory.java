@@ -42,6 +42,15 @@ public interface GoFactory extends EFactory
   sourceFile createsourceFile();
 
   /**
+   * Returns a new object of class '<em>package Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>package Clause</em>'.
+   * @generated
+   */
+  packageClause createpackageClause();
+
+  /**
    * Returns a new object of class '<em>import Decl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -94,6 +103,15 @@ public interface GoFactory extends EFactory
    * @generated
    */
   constSpec createconstSpec();
+
+  /**
+   * Returns a new object of class '<em>identifier List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>identifier List</em>'.
+   * @generated
+   */
+  identifierList createidentifierList();
 
   /**
    * Returns a new object of class '<em>expression List</em>'.
@@ -258,6 +276,15 @@ public interface GoFactory extends EFactory
   shortVarDecl createshortVarDecl();
 
   /**
+   * Returns a new object of class '<em>empty Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>empty Stmt</em>'.
+   * @generated
+   */
+  emptyStmt createemptyStmt();
+
+  /**
    * Returns a new object of class '<em>labeled Stmt</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -274,6 +301,42 @@ public interface GoFactory extends EFactory
    * @generated
    */
   returnStmt createreturnStmt();
+
+  /**
+   * Returns a new object of class '<em>break Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>break Stmt</em>'.
+   * @generated
+   */
+  breakStmt createbreakStmt();
+
+  /**
+   * Returns a new object of class '<em>continue Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>continue Stmt</em>'.
+   * @generated
+   */
+  continueStmt createcontinueStmt();
+
+  /**
+   * Returns a new object of class '<em>goto Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>goto Stmt</em>'.
+   * @generated
+   */
+  gotoStmt creategotoStmt();
+
+  /**
+   * Returns a new object of class '<em>fallthrough Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>fallthrough Stmt</em>'.
+   * @generated
+   */
+  fallthroughStmt createfallthroughStmt();
 
   /**
    * Returns a new object of class '<em>defer Stmt</em>'.
@@ -636,6 +699,15 @@ public interface GoFactory extends EFactory
   operandName createoperandName();
 
   /**
+   * Returns a new object of class '<em>qualified Ident</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>qualified Ident</em>'.
+   * @generated
+   */
+  qualifiedIdent createqualifiedIdent();
+
+  /**
    * Returns a new object of class '<em>composite Lit</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -796,6 +868,15 @@ public interface GoFactory extends EFactory
    * @generated
    */
   primaryExprArguments createprimaryExprArguments();
+
+  /**
+   * Returns a new object of class '<em>selector</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>selector</em>'.
+   * @generated
+   */
+  selector createselector();
 
   /**
    * Returns a new object of class '<em>index</em>'.

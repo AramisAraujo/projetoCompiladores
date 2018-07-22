@@ -25,9 +25,10 @@ import org.xtext.go.signature;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.methodDeclImpl#getReceiver <em>Receiver</em>}</li>
- *   <li>{@link org.xtext.go.impl.methodDeclImpl#getFunction <em>Function</em>}</li>
- *   <li>{@link org.xtext.go.impl.methodDeclImpl#getSignature <em>Signature</em>}</li>
+ *   <li>{@link org.xtext.go.impl.methodDeclImpl#getParams <em>Params</em>}</li>
+ *   <li>{@link org.xtext.go.impl.methodDeclImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.go.impl.methodDeclImpl#getFunc <em>Func</em>}</li>
+ *   <li>{@link org.xtext.go.impl.methodDeclImpl#getSig <em>Sig</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,34 +37,54 @@ import org.xtext.go.signature;
 public class methodDeclImpl extends MinimalEObjectImpl.Container implements methodDecl
 {
   /**
-   * The cached value of the '{@link #getReceiver() <em>Receiver</em>}' containment reference.
+   * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getReceiver()
+   * @see #getParams()
    * @generated
    * @ordered
    */
-  protected receiver receiver;
+  protected receiver params;
 
   /**
-   * The cached value of the '{@link #getFunction() <em>Function</em>}' containment reference.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFunction()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected function function;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getSignature() <em>Signature</em>}' containment reference.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSignature()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected signature signature;
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getFunc() <em>Func</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFunc()
+   * @generated
+   * @ordered
+   */
+  protected function func;
+
+  /**
+   * The cached value of the '{@link #getSig() <em>Sig</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSig()
+   * @generated
+   * @ordered
+   */
+  protected signature sig;
 
   /**
    * <!-- begin-user-doc -->
@@ -91,9 +112,9 @@ public class methodDeclImpl extends MinimalEObjectImpl.Container implements meth
    * <!-- end-user-doc -->
    * @generated
    */
-  public receiver getReceiver()
+  public receiver getParams()
   {
-    return receiver;
+    return params;
   }
 
   /**
@@ -101,13 +122,13 @@ public class methodDeclImpl extends MinimalEObjectImpl.Container implements meth
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetReceiver(receiver newReceiver, NotificationChain msgs)
+  public NotificationChain basicSetParams(receiver newParams, NotificationChain msgs)
   {
-    receiver oldReceiver = receiver;
-    receiver = newReceiver;
+    receiver oldParams = params;
+    params = newParams;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.METHOD_DECL__RECEIVER, oldReceiver, newReceiver);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.METHOD_DECL__PARAMS, oldParams, newParams);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -118,20 +139,20 @@ public class methodDeclImpl extends MinimalEObjectImpl.Container implements meth
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setReceiver(receiver newReceiver)
+  public void setParams(receiver newParams)
   {
-    if (newReceiver != receiver)
+    if (newParams != params)
     {
       NotificationChain msgs = null;
-      if (receiver != null)
-        msgs = ((InternalEObject)receiver).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.METHOD_DECL__RECEIVER, null, msgs);
-      if (newReceiver != null)
-        msgs = ((InternalEObject)newReceiver).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.METHOD_DECL__RECEIVER, null, msgs);
-      msgs = basicSetReceiver(newReceiver, msgs);
+      if (params != null)
+        msgs = ((InternalEObject)params).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.METHOD_DECL__PARAMS, null, msgs);
+      if (newParams != null)
+        msgs = ((InternalEObject)newParams).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.METHOD_DECL__PARAMS, null, msgs);
+      msgs = basicSetParams(newParams, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.METHOD_DECL__RECEIVER, newReceiver, newReceiver));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.METHOD_DECL__PARAMS, newParams, newParams));
   }
 
   /**
@@ -139,9 +160,9 @@ public class methodDeclImpl extends MinimalEObjectImpl.Container implements meth
    * <!-- end-user-doc -->
    * @generated
    */
-  public function getFunction()
+  public String getName()
   {
-    return function;
+    return name;
   }
 
   /**
@@ -149,13 +170,36 @@ public class methodDeclImpl extends MinimalEObjectImpl.Container implements meth
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetFunction(function newFunction, NotificationChain msgs)
+  public void setName(String newName)
   {
-    function oldFunction = function;
-    function = newFunction;
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.METHOD_DECL__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public function getFunc()
+  {
+    return func;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetFunc(function newFunc, NotificationChain msgs)
+  {
+    function oldFunc = func;
+    func = newFunc;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.METHOD_DECL__FUNCTION, oldFunction, newFunction);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.METHOD_DECL__FUNC, oldFunc, newFunc);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -166,20 +210,20 @@ public class methodDeclImpl extends MinimalEObjectImpl.Container implements meth
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFunction(function newFunction)
+  public void setFunc(function newFunc)
   {
-    if (newFunction != function)
+    if (newFunc != func)
     {
       NotificationChain msgs = null;
-      if (function != null)
-        msgs = ((InternalEObject)function).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.METHOD_DECL__FUNCTION, null, msgs);
-      if (newFunction != null)
-        msgs = ((InternalEObject)newFunction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.METHOD_DECL__FUNCTION, null, msgs);
-      msgs = basicSetFunction(newFunction, msgs);
+      if (func != null)
+        msgs = ((InternalEObject)func).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.METHOD_DECL__FUNC, null, msgs);
+      if (newFunc != null)
+        msgs = ((InternalEObject)newFunc).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.METHOD_DECL__FUNC, null, msgs);
+      msgs = basicSetFunc(newFunc, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.METHOD_DECL__FUNCTION, newFunction, newFunction));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.METHOD_DECL__FUNC, newFunc, newFunc));
   }
 
   /**
@@ -187,9 +231,9 @@ public class methodDeclImpl extends MinimalEObjectImpl.Container implements meth
    * <!-- end-user-doc -->
    * @generated
    */
-  public signature getSignature()
+  public signature getSig()
   {
-    return signature;
+    return sig;
   }
 
   /**
@@ -197,13 +241,13 @@ public class methodDeclImpl extends MinimalEObjectImpl.Container implements meth
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetSignature(signature newSignature, NotificationChain msgs)
+  public NotificationChain basicSetSig(signature newSig, NotificationChain msgs)
   {
-    signature oldSignature = signature;
-    signature = newSignature;
+    signature oldSig = sig;
+    sig = newSig;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.METHOD_DECL__SIGNATURE, oldSignature, newSignature);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.METHOD_DECL__SIG, oldSig, newSig);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -214,20 +258,20 @@ public class methodDeclImpl extends MinimalEObjectImpl.Container implements meth
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSignature(signature newSignature)
+  public void setSig(signature newSig)
   {
-    if (newSignature != signature)
+    if (newSig != sig)
     {
       NotificationChain msgs = null;
-      if (signature != null)
-        msgs = ((InternalEObject)signature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.METHOD_DECL__SIGNATURE, null, msgs);
-      if (newSignature != null)
-        msgs = ((InternalEObject)newSignature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.METHOD_DECL__SIGNATURE, null, msgs);
-      msgs = basicSetSignature(newSignature, msgs);
+      if (sig != null)
+        msgs = ((InternalEObject)sig).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.METHOD_DECL__SIG, null, msgs);
+      if (newSig != null)
+        msgs = ((InternalEObject)newSig).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.METHOD_DECL__SIG, null, msgs);
+      msgs = basicSetSig(newSig, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.METHOD_DECL__SIGNATURE, newSignature, newSignature));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.METHOD_DECL__SIG, newSig, newSig));
   }
 
   /**
@@ -240,12 +284,12 @@ public class methodDeclImpl extends MinimalEObjectImpl.Container implements meth
   {
     switch (featureID)
     {
-      case GoPackage.METHOD_DECL__RECEIVER:
-        return basicSetReceiver(null, msgs);
-      case GoPackage.METHOD_DECL__FUNCTION:
-        return basicSetFunction(null, msgs);
-      case GoPackage.METHOD_DECL__SIGNATURE:
-        return basicSetSignature(null, msgs);
+      case GoPackage.METHOD_DECL__PARAMS:
+        return basicSetParams(null, msgs);
+      case GoPackage.METHOD_DECL__FUNC:
+        return basicSetFunc(null, msgs);
+      case GoPackage.METHOD_DECL__SIG:
+        return basicSetSig(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -260,12 +304,14 @@ public class methodDeclImpl extends MinimalEObjectImpl.Container implements meth
   {
     switch (featureID)
     {
-      case GoPackage.METHOD_DECL__RECEIVER:
-        return getReceiver();
-      case GoPackage.METHOD_DECL__FUNCTION:
-        return getFunction();
-      case GoPackage.METHOD_DECL__SIGNATURE:
-        return getSignature();
+      case GoPackage.METHOD_DECL__PARAMS:
+        return getParams();
+      case GoPackage.METHOD_DECL__NAME:
+        return getName();
+      case GoPackage.METHOD_DECL__FUNC:
+        return getFunc();
+      case GoPackage.METHOD_DECL__SIG:
+        return getSig();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -280,14 +326,17 @@ public class methodDeclImpl extends MinimalEObjectImpl.Container implements meth
   {
     switch (featureID)
     {
-      case GoPackage.METHOD_DECL__RECEIVER:
-        setReceiver((receiver)newValue);
+      case GoPackage.METHOD_DECL__PARAMS:
+        setParams((receiver)newValue);
         return;
-      case GoPackage.METHOD_DECL__FUNCTION:
-        setFunction((function)newValue);
+      case GoPackage.METHOD_DECL__NAME:
+        setName((String)newValue);
         return;
-      case GoPackage.METHOD_DECL__SIGNATURE:
-        setSignature((signature)newValue);
+      case GoPackage.METHOD_DECL__FUNC:
+        setFunc((function)newValue);
+        return;
+      case GoPackage.METHOD_DECL__SIG:
+        setSig((signature)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -303,14 +352,17 @@ public class methodDeclImpl extends MinimalEObjectImpl.Container implements meth
   {
     switch (featureID)
     {
-      case GoPackage.METHOD_DECL__RECEIVER:
-        setReceiver((receiver)null);
+      case GoPackage.METHOD_DECL__PARAMS:
+        setParams((receiver)null);
         return;
-      case GoPackage.METHOD_DECL__FUNCTION:
-        setFunction((function)null);
+      case GoPackage.METHOD_DECL__NAME:
+        setName(NAME_EDEFAULT);
         return;
-      case GoPackage.METHOD_DECL__SIGNATURE:
-        setSignature((signature)null);
+      case GoPackage.METHOD_DECL__FUNC:
+        setFunc((function)null);
+        return;
+      case GoPackage.METHOD_DECL__SIG:
+        setSig((signature)null);
         return;
     }
     super.eUnset(featureID);
@@ -326,14 +378,33 @@ public class methodDeclImpl extends MinimalEObjectImpl.Container implements meth
   {
     switch (featureID)
     {
-      case GoPackage.METHOD_DECL__RECEIVER:
-        return receiver != null;
-      case GoPackage.METHOD_DECL__FUNCTION:
-        return function != null;
-      case GoPackage.METHOD_DECL__SIGNATURE:
-        return signature != null;
+      case GoPackage.METHOD_DECL__PARAMS:
+        return params != null;
+      case GoPackage.METHOD_DECL__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case GoPackage.METHOD_DECL__FUNC:
+        return func != null;
+      case GoPackage.METHOD_DECL__SIG:
+        return sig != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //methodDeclImpl

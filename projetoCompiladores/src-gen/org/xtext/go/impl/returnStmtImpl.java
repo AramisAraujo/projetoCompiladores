@@ -23,7 +23,7 @@ import org.xtext.go.returnStmt;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.returnStmtImpl#getExpressionList <em>Expression List</em>}</li>
+ *   <li>{@link org.xtext.go.impl.returnStmtImpl#getExprList <em>Expr List</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,14 +32,14 @@ import org.xtext.go.returnStmt;
 public class returnStmtImpl extends MinimalEObjectImpl.Container implements returnStmt
 {
   /**
-   * The cached value of the '{@link #getExpressionList() <em>Expression List</em>}' containment reference.
+   * The cached value of the '{@link #getExprList() <em>Expr List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExpressionList()
+   * @see #getExprList()
    * @generated
    * @ordered
    */
-  protected expressionList expressionList;
+  protected expressionList exprList;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,9 +67,9 @@ public class returnStmtImpl extends MinimalEObjectImpl.Container implements retu
    * <!-- end-user-doc -->
    * @generated
    */
-  public expressionList getExpressionList()
+  public expressionList getExprList()
   {
-    return expressionList;
+    return exprList;
   }
 
   /**
@@ -77,13 +77,13 @@ public class returnStmtImpl extends MinimalEObjectImpl.Container implements retu
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpressionList(expressionList newExpressionList, NotificationChain msgs)
+  public NotificationChain basicSetExprList(expressionList newExprList, NotificationChain msgs)
   {
-    expressionList oldExpressionList = expressionList;
-    expressionList = newExpressionList;
+    expressionList oldExprList = exprList;
+    exprList = newExprList;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.RETURN_STMT__EXPRESSION_LIST, oldExpressionList, newExpressionList);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.RETURN_STMT__EXPR_LIST, oldExprList, newExprList);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -94,20 +94,20 @@ public class returnStmtImpl extends MinimalEObjectImpl.Container implements retu
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpressionList(expressionList newExpressionList)
+  public void setExprList(expressionList newExprList)
   {
-    if (newExpressionList != expressionList)
+    if (newExprList != exprList)
     {
       NotificationChain msgs = null;
-      if (expressionList != null)
-        msgs = ((InternalEObject)expressionList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.RETURN_STMT__EXPRESSION_LIST, null, msgs);
-      if (newExpressionList != null)
-        msgs = ((InternalEObject)newExpressionList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.RETURN_STMT__EXPRESSION_LIST, null, msgs);
-      msgs = basicSetExpressionList(newExpressionList, msgs);
+      if (exprList != null)
+        msgs = ((InternalEObject)exprList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.RETURN_STMT__EXPR_LIST, null, msgs);
+      if (newExprList != null)
+        msgs = ((InternalEObject)newExprList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.RETURN_STMT__EXPR_LIST, null, msgs);
+      msgs = basicSetExprList(newExprList, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.RETURN_STMT__EXPRESSION_LIST, newExpressionList, newExpressionList));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.RETURN_STMT__EXPR_LIST, newExprList, newExprList));
   }
 
   /**
@@ -120,8 +120,8 @@ public class returnStmtImpl extends MinimalEObjectImpl.Container implements retu
   {
     switch (featureID)
     {
-      case GoPackage.RETURN_STMT__EXPRESSION_LIST:
-        return basicSetExpressionList(null, msgs);
+      case GoPackage.RETURN_STMT__EXPR_LIST:
+        return basicSetExprList(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +136,8 @@ public class returnStmtImpl extends MinimalEObjectImpl.Container implements retu
   {
     switch (featureID)
     {
-      case GoPackage.RETURN_STMT__EXPRESSION_LIST:
-        return getExpressionList();
+      case GoPackage.RETURN_STMT__EXPR_LIST:
+        return getExprList();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -152,8 +152,8 @@ public class returnStmtImpl extends MinimalEObjectImpl.Container implements retu
   {
     switch (featureID)
     {
-      case GoPackage.RETURN_STMT__EXPRESSION_LIST:
-        setExpressionList((expressionList)newValue);
+      case GoPackage.RETURN_STMT__EXPR_LIST:
+        setExprList((expressionList)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +169,8 @@ public class returnStmtImpl extends MinimalEObjectImpl.Container implements retu
   {
     switch (featureID)
     {
-      case GoPackage.RETURN_STMT__EXPRESSION_LIST:
-        setExpressionList((expressionList)null);
+      case GoPackage.RETURN_STMT__EXPR_LIST:
+        setExprList((expressionList)null);
         return;
     }
     super.eUnset(featureID);
@@ -186,8 +186,8 @@ public class returnStmtImpl extends MinimalEObjectImpl.Container implements retu
   {
     switch (featureID)
     {
-      case GoPackage.RETURN_STMT__EXPRESSION_LIST:
-        return expressionList != null;
+      case GoPackage.RETURN_STMT__EXPR_LIST:
+        return exprList != null;
     }
     return super.eIsSet(featureID);
   }

@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.xtext.go.GoPackage;
 import org.xtext.go.constSpec;
 import org.xtext.go.expressionList;
+import org.xtext.go.identifierList;
 import org.xtext.go.type;
 
 /**
@@ -24,9 +25,9 @@ import org.xtext.go.type;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.constSpecImpl#getIdentifierList <em>Identifier List</em>}</li>
+ *   <li>{@link org.xtext.go.impl.constSpecImpl#getIdentifiers <em>Identifiers</em>}</li>
  *   <li>{@link org.xtext.go.impl.constSpecImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.xtext.go.impl.constSpecImpl#getExpressionList <em>Expression List</em>}</li>
+ *   <li>{@link org.xtext.go.impl.constSpecImpl#getExpression <em>Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,24 +36,14 @@ import org.xtext.go.type;
 public class constSpecImpl extends MinimalEObjectImpl.Container implements constSpec
 {
   /**
-   * The default value of the '{@link #getIdentifierList() <em>Identifier List</em>}' attribute.
+   * The cached value of the '{@link #getIdentifiers() <em>Identifiers</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIdentifierList()
+   * @see #getIdentifiers()
    * @generated
    * @ordered
    */
-  protected static final String IDENTIFIER_LIST_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getIdentifierList() <em>Identifier List</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIdentifierList()
-   * @generated
-   * @ordered
-   */
-  protected String identifierList = IDENTIFIER_LIST_EDEFAULT;
+  protected identifierList identifiers;
 
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
@@ -65,14 +56,14 @@ public class constSpecImpl extends MinimalEObjectImpl.Container implements const
   protected type type;
 
   /**
-   * The cached value of the '{@link #getExpressionList() <em>Expression List</em>}' containment reference.
+   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExpressionList()
+   * @see #getExpression()
    * @generated
    * @ordered
    */
-  protected expressionList expressionList;
+  protected expressionList expression;
 
   /**
    * <!-- begin-user-doc -->
@@ -100,9 +91,9 @@ public class constSpecImpl extends MinimalEObjectImpl.Container implements const
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getIdentifierList()
+  public identifierList getIdentifiers()
   {
-    return identifierList;
+    return identifiers;
   }
 
   /**
@@ -110,12 +101,37 @@ public class constSpecImpl extends MinimalEObjectImpl.Container implements const
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setIdentifierList(String newIdentifierList)
+  public NotificationChain basicSetIdentifiers(identifierList newIdentifiers, NotificationChain msgs)
   {
-    String oldIdentifierList = identifierList;
-    identifierList = newIdentifierList;
+    identifierList oldIdentifiers = identifiers;
+    identifiers = newIdentifiers;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.CONST_SPEC__IDENTIFIER_LIST, oldIdentifierList, identifierList));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.CONST_SPEC__IDENTIFIERS, oldIdentifiers, newIdentifiers);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setIdentifiers(identifierList newIdentifiers)
+  {
+    if (newIdentifiers != identifiers)
+    {
+      NotificationChain msgs = null;
+      if (identifiers != null)
+        msgs = ((InternalEObject)identifiers).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.CONST_SPEC__IDENTIFIERS, null, msgs);
+      if (newIdentifiers != null)
+        msgs = ((InternalEObject)newIdentifiers).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.CONST_SPEC__IDENTIFIERS, null, msgs);
+      msgs = basicSetIdentifiers(newIdentifiers, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.CONST_SPEC__IDENTIFIERS, newIdentifiers, newIdentifiers));
   }
 
   /**
@@ -171,9 +187,9 @@ public class constSpecImpl extends MinimalEObjectImpl.Container implements const
    * <!-- end-user-doc -->
    * @generated
    */
-  public expressionList getExpressionList()
+  public expressionList getExpression()
   {
-    return expressionList;
+    return expression;
   }
 
   /**
@@ -181,13 +197,13 @@ public class constSpecImpl extends MinimalEObjectImpl.Container implements const
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpressionList(expressionList newExpressionList, NotificationChain msgs)
+  public NotificationChain basicSetExpression(expressionList newExpression, NotificationChain msgs)
   {
-    expressionList oldExpressionList = expressionList;
-    expressionList = newExpressionList;
+    expressionList oldExpression = expression;
+    expression = newExpression;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.CONST_SPEC__EXPRESSION_LIST, oldExpressionList, newExpressionList);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.CONST_SPEC__EXPRESSION, oldExpression, newExpression);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -198,20 +214,20 @@ public class constSpecImpl extends MinimalEObjectImpl.Container implements const
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpressionList(expressionList newExpressionList)
+  public void setExpression(expressionList newExpression)
   {
-    if (newExpressionList != expressionList)
+    if (newExpression != expression)
     {
       NotificationChain msgs = null;
-      if (expressionList != null)
-        msgs = ((InternalEObject)expressionList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.CONST_SPEC__EXPRESSION_LIST, null, msgs);
-      if (newExpressionList != null)
-        msgs = ((InternalEObject)newExpressionList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.CONST_SPEC__EXPRESSION_LIST, null, msgs);
-      msgs = basicSetExpressionList(newExpressionList, msgs);
+      if (expression != null)
+        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.CONST_SPEC__EXPRESSION, null, msgs);
+      if (newExpression != null)
+        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.CONST_SPEC__EXPRESSION, null, msgs);
+      msgs = basicSetExpression(newExpression, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.CONST_SPEC__EXPRESSION_LIST, newExpressionList, newExpressionList));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.CONST_SPEC__EXPRESSION, newExpression, newExpression));
   }
 
   /**
@@ -224,10 +240,12 @@ public class constSpecImpl extends MinimalEObjectImpl.Container implements const
   {
     switch (featureID)
     {
+      case GoPackage.CONST_SPEC__IDENTIFIERS:
+        return basicSetIdentifiers(null, msgs);
       case GoPackage.CONST_SPEC__TYPE:
         return basicSetType(null, msgs);
-      case GoPackage.CONST_SPEC__EXPRESSION_LIST:
-        return basicSetExpressionList(null, msgs);
+      case GoPackage.CONST_SPEC__EXPRESSION:
+        return basicSetExpression(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -242,12 +260,12 @@ public class constSpecImpl extends MinimalEObjectImpl.Container implements const
   {
     switch (featureID)
     {
-      case GoPackage.CONST_SPEC__IDENTIFIER_LIST:
-        return getIdentifierList();
+      case GoPackage.CONST_SPEC__IDENTIFIERS:
+        return getIdentifiers();
       case GoPackage.CONST_SPEC__TYPE:
         return getType();
-      case GoPackage.CONST_SPEC__EXPRESSION_LIST:
-        return getExpressionList();
+      case GoPackage.CONST_SPEC__EXPRESSION:
+        return getExpression();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -262,14 +280,14 @@ public class constSpecImpl extends MinimalEObjectImpl.Container implements const
   {
     switch (featureID)
     {
-      case GoPackage.CONST_SPEC__IDENTIFIER_LIST:
-        setIdentifierList((String)newValue);
+      case GoPackage.CONST_SPEC__IDENTIFIERS:
+        setIdentifiers((identifierList)newValue);
         return;
       case GoPackage.CONST_SPEC__TYPE:
         setType((type)newValue);
         return;
-      case GoPackage.CONST_SPEC__EXPRESSION_LIST:
-        setExpressionList((expressionList)newValue);
+      case GoPackage.CONST_SPEC__EXPRESSION:
+        setExpression((expressionList)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -285,14 +303,14 @@ public class constSpecImpl extends MinimalEObjectImpl.Container implements const
   {
     switch (featureID)
     {
-      case GoPackage.CONST_SPEC__IDENTIFIER_LIST:
-        setIdentifierList(IDENTIFIER_LIST_EDEFAULT);
+      case GoPackage.CONST_SPEC__IDENTIFIERS:
+        setIdentifiers((identifierList)null);
         return;
       case GoPackage.CONST_SPEC__TYPE:
         setType((type)null);
         return;
-      case GoPackage.CONST_SPEC__EXPRESSION_LIST:
-        setExpressionList((expressionList)null);
+      case GoPackage.CONST_SPEC__EXPRESSION:
+        setExpression((expressionList)null);
         return;
     }
     super.eUnset(featureID);
@@ -308,31 +326,14 @@ public class constSpecImpl extends MinimalEObjectImpl.Container implements const
   {
     switch (featureID)
     {
-      case GoPackage.CONST_SPEC__IDENTIFIER_LIST:
-        return IDENTIFIER_LIST_EDEFAULT == null ? identifierList != null : !IDENTIFIER_LIST_EDEFAULT.equals(identifierList);
+      case GoPackage.CONST_SPEC__IDENTIFIERS:
+        return identifiers != null;
       case GoPackage.CONST_SPEC__TYPE:
         return type != null;
-      case GoPackage.CONST_SPEC__EXPRESSION_LIST:
-        return expressionList != null;
+      case GoPackage.CONST_SPEC__EXPRESSION:
+        return expression != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (identifierList: ");
-    result.append(identifierList);
-    result.append(')');
-    return result.toString();
   }
 
 } //constSpecImpl

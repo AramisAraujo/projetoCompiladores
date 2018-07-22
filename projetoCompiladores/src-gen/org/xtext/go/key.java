@@ -13,8 +13,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.key#getExpression <em>Expression</em>}</li>
- *   <li>{@link org.xtext.go.key#getLiteralValue <em>Literal Value</em>}</li>
+ *   <li>{@link org.xtext.go.key#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.go.key#getExpr <em>Expr</em>}</li>
+ *   <li>{@link org.xtext.go.key#getLit <em>Lit</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,55 +26,81 @@ import org.eclipse.emf.ecore.EObject;
 public interface key extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Expression</b></em>' containment reference.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Expression</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expression</em>' containment reference.
-   * @see #setExpression(expression)
-   * @see org.xtext.go.GoPackage#getkey_Expression()
-   * @model containment="true"
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.xtext.go.GoPackage#getkey_Name()
+   * @model
    * @generated
    */
-  expression getExpression();
+  String getName();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.key#getExpression <em>Expression</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.key#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expression</em>' containment reference.
-   * @see #getExpression()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setExpression(expression value);
+  void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Literal Value</b></em>' containment reference.
+   * Returns the value of the '<em><b>Expr</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Literal Value</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Expr</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Literal Value</em>' containment reference.
-   * @see #setLiteralValue(literalValue)
-   * @see org.xtext.go.GoPackage#getkey_LiteralValue()
+   * @return the value of the '<em>Expr</em>' containment reference.
+   * @see #setExpr(expression)
+   * @see org.xtext.go.GoPackage#getkey_Expr()
    * @model containment="true"
    * @generated
    */
-  literalValue getLiteralValue();
+  expression getExpr();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.key#getLiteralValue <em>Literal Value</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.key#getExpr <em>Expr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Literal Value</em>' containment reference.
-   * @see #getLiteralValue()
+   * @param value the new value of the '<em>Expr</em>' containment reference.
+   * @see #getExpr()
    * @generated
    */
-  void setLiteralValue(literalValue value);
+  void setExpr(expression value);
+
+  /**
+   * Returns the value of the '<em><b>Lit</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Lit</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Lit</em>' containment reference.
+   * @see #setLit(literalValue)
+   * @see org.xtext.go.GoPackage#getkey_Lit()
+   * @model containment="true"
+   * @generated
+   */
+  literalValue getLit();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.key#getLit <em>Lit</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Lit</em>' containment reference.
+   * @see #getLit()
+   * @generated
+   */
+  void setLit(literalValue value);
 
 } // key

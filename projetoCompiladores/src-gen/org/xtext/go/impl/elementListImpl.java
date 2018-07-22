@@ -3,14 +3,19 @@
  */
 package org.xtext.go.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.go.GoPackage;
 import org.xtext.go.elementList;
@@ -23,7 +28,7 @@ import org.xtext.go.keyedElement;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.elementListImpl#getKeyedElement <em>Keyed Element</em>}</li>
+ *   <li>{@link org.xtext.go.impl.elementListImpl#getKeyedElements <em>Keyed Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,14 +37,14 @@ import org.xtext.go.keyedElement;
 public class elementListImpl extends MinimalEObjectImpl.Container implements elementList
 {
   /**
-   * The cached value of the '{@link #getKeyedElement() <em>Keyed Element</em>}' containment reference.
+   * The cached value of the '{@link #getKeyedElements() <em>Keyed Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getKeyedElement()
+   * @see #getKeyedElements()
    * @generated
    * @ordered
    */
-  protected keyedElement keyedElement;
+  protected EList<keyedElement> keyedElements;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,47 +72,13 @@ public class elementListImpl extends MinimalEObjectImpl.Container implements ele
    * <!-- end-user-doc -->
    * @generated
    */
-  public keyedElement getKeyedElement()
+  public EList<keyedElement> getKeyedElements()
   {
-    return keyedElement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetKeyedElement(keyedElement newKeyedElement, NotificationChain msgs)
-  {
-    keyedElement oldKeyedElement = keyedElement;
-    keyedElement = newKeyedElement;
-    if (eNotificationRequired())
+    if (keyedElements == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.ELEMENT_LIST__KEYED_ELEMENT, oldKeyedElement, newKeyedElement);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      keyedElements = new EObjectContainmentEList<keyedElement>(keyedElement.class, this, GoPackage.ELEMENT_LIST__KEYED_ELEMENTS);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setKeyedElement(keyedElement newKeyedElement)
-  {
-    if (newKeyedElement != keyedElement)
-    {
-      NotificationChain msgs = null;
-      if (keyedElement != null)
-        msgs = ((InternalEObject)keyedElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.ELEMENT_LIST__KEYED_ELEMENT, null, msgs);
-      if (newKeyedElement != null)
-        msgs = ((InternalEObject)newKeyedElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.ELEMENT_LIST__KEYED_ELEMENT, null, msgs);
-      msgs = basicSetKeyedElement(newKeyedElement, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.ELEMENT_LIST__KEYED_ELEMENT, newKeyedElement, newKeyedElement));
+    return keyedElements;
   }
 
   /**
@@ -120,8 +91,8 @@ public class elementListImpl extends MinimalEObjectImpl.Container implements ele
   {
     switch (featureID)
     {
-      case GoPackage.ELEMENT_LIST__KEYED_ELEMENT:
-        return basicSetKeyedElement(null, msgs);
+      case GoPackage.ELEMENT_LIST__KEYED_ELEMENTS:
+        return ((InternalEList<?>)getKeyedElements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +107,8 @@ public class elementListImpl extends MinimalEObjectImpl.Container implements ele
   {
     switch (featureID)
     {
-      case GoPackage.ELEMENT_LIST__KEYED_ELEMENT:
-        return getKeyedElement();
+      case GoPackage.ELEMENT_LIST__KEYED_ELEMENTS:
+        return getKeyedElements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -147,13 +118,15 @@ public class elementListImpl extends MinimalEObjectImpl.Container implements ele
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case GoPackage.ELEMENT_LIST__KEYED_ELEMENT:
-        setKeyedElement((keyedElement)newValue);
+      case GoPackage.ELEMENT_LIST__KEYED_ELEMENTS:
+        getKeyedElements().clear();
+        getKeyedElements().addAll((Collection<? extends keyedElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +142,8 @@ public class elementListImpl extends MinimalEObjectImpl.Container implements ele
   {
     switch (featureID)
     {
-      case GoPackage.ELEMENT_LIST__KEYED_ELEMENT:
-        setKeyedElement((keyedElement)null);
+      case GoPackage.ELEMENT_LIST__KEYED_ELEMENTS:
+        getKeyedElements().clear();
         return;
     }
     super.eUnset(featureID);
@@ -186,8 +159,8 @@ public class elementListImpl extends MinimalEObjectImpl.Container implements ele
   {
     switch (featureID)
     {
-      case GoPackage.ELEMENT_LIST__KEYED_ELEMENT:
-        return keyedElement != null;
+      case GoPackage.ELEMENT_LIST__KEYED_ELEMENTS:
+        return keyedElements != null && !keyedElements.isEmpty();
     }
     return super.eIsSet(featureID);
   }

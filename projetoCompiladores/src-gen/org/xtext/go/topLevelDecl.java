@@ -13,9 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.topLevelDecl#getDeclaration <em>Declaration</em>}</li>
- *   <li>{@link org.xtext.go.topLevelDecl#getFunctionDecl <em>Function Decl</em>}</li>
- *   <li>{@link org.xtext.go.topLevelDecl#getMethodDecl <em>Method Decl</em>}</li>
+ *   <li>{@link org.xtext.go.topLevelDecl#getDecl <em>Decl</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,81 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface topLevelDecl extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Declaration</b></em>' containment reference.
+   * Returns the value of the '<em><b>Decl</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Declaration</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Decl</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Declaration</em>' containment reference.
-   * @see #setDeclaration(declaration)
-   * @see org.xtext.go.GoPackage#gettopLevelDecl_Declaration()
+   * @return the value of the '<em>Decl</em>' containment reference.
+   * @see #setDecl(EObject)
+   * @see org.xtext.go.GoPackage#gettopLevelDecl_Decl()
    * @model containment="true"
    * @generated
    */
-  declaration getDeclaration();
+  EObject getDecl();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.topLevelDecl#getDeclaration <em>Declaration</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.topLevelDecl#getDecl <em>Decl</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Declaration</em>' containment reference.
-   * @see #getDeclaration()
+   * @param value the new value of the '<em>Decl</em>' containment reference.
+   * @see #getDecl()
    * @generated
    */
-  void setDeclaration(declaration value);
-
-  /**
-   * Returns the value of the '<em><b>Function Decl</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Function Decl</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Function Decl</em>' containment reference.
-   * @see #setFunctionDecl(functionDecl)
-   * @see org.xtext.go.GoPackage#gettopLevelDecl_FunctionDecl()
-   * @model containment="true"
-   * @generated
-   */
-  functionDecl getFunctionDecl();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.topLevelDecl#getFunctionDecl <em>Function Decl</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Function Decl</em>' containment reference.
-   * @see #getFunctionDecl()
-   * @generated
-   */
-  void setFunctionDecl(functionDecl value);
-
-  /**
-   * Returns the value of the '<em><b>Method Decl</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Method Decl</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Method Decl</em>' containment reference.
-   * @see #setMethodDecl(methodDecl)
-   * @see org.xtext.go.GoPackage#gettopLevelDecl_MethodDecl()
-   * @model containment="true"
-   * @generated
-   */
-  methodDecl getMethodDecl();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.topLevelDecl#getMethodDecl <em>Method Decl</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Method Decl</em>' containment reference.
-   * @see #getMethodDecl()
-   * @generated
-   */
-  void setMethodDecl(methodDecl value);
+  void setDecl(EObject value);
 
 } // topLevelDecl

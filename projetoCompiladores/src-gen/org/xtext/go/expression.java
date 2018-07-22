@@ -3,6 +3,7 @@
  */
 package org.xtext.go;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +22,7 @@ package org.xtext.go;
  * @model
  * @generated
  */
-public interface expression extends index
+public interface expression extends EObject
 {
   /**
    * Returns the value of the '<em><b>Unary Expr</b></em>' containment reference.

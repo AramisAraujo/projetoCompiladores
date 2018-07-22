@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.go.GoPackage;
 import org.xtext.go.expressionList;
+import org.xtext.go.identifierList;
 import org.xtext.go.shortVarDecl;
 
 /**
@@ -23,8 +24,8 @@ import org.xtext.go.shortVarDecl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.shortVarDeclImpl#getIdentifierList <em>Identifier List</em>}</li>
- *   <li>{@link org.xtext.go.impl.shortVarDeclImpl#getExpressionList <em>Expression List</em>}</li>
+ *   <li>{@link org.xtext.go.impl.shortVarDeclImpl#getIdList <em>Id List</em>}</li>
+ *   <li>{@link org.xtext.go.impl.shortVarDeclImpl#getExprList <em>Expr List</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,34 +34,24 @@ import org.xtext.go.shortVarDecl;
 public class shortVarDeclImpl extends MinimalEObjectImpl.Container implements shortVarDecl
 {
   /**
-   * The default value of the '{@link #getIdentifierList() <em>Identifier List</em>}' attribute.
+   * The cached value of the '{@link #getIdList() <em>Id List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIdentifierList()
+   * @see #getIdList()
    * @generated
    * @ordered
    */
-  protected static final String IDENTIFIER_LIST_EDEFAULT = null;
+  protected identifierList idList;
 
   /**
-   * The cached value of the '{@link #getIdentifierList() <em>Identifier List</em>}' attribute.
+   * The cached value of the '{@link #getExprList() <em>Expr List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIdentifierList()
+   * @see #getExprList()
    * @generated
    * @ordered
    */
-  protected String identifierList = IDENTIFIER_LIST_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getExpressionList() <em>Expression List</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getExpressionList()
-   * @generated
-   * @ordered
-   */
-  protected expressionList expressionList;
+  protected expressionList exprList;
 
   /**
    * <!-- begin-user-doc -->
@@ -88,9 +79,9 @@ public class shortVarDeclImpl extends MinimalEObjectImpl.Container implements sh
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getIdentifierList()
+  public identifierList getIdList()
   {
-    return identifierList;
+    return idList;
   }
 
   /**
@@ -98,36 +89,13 @@ public class shortVarDeclImpl extends MinimalEObjectImpl.Container implements sh
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setIdentifierList(String newIdentifierList)
+  public NotificationChain basicSetIdList(identifierList newIdList, NotificationChain msgs)
   {
-    String oldIdentifierList = identifierList;
-    identifierList = newIdentifierList;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SHORT_VAR_DECL__IDENTIFIER_LIST, oldIdentifierList, identifierList));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public expressionList getExpressionList()
-  {
-    return expressionList;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetExpressionList(expressionList newExpressionList, NotificationChain msgs)
-  {
-    expressionList oldExpressionList = expressionList;
-    expressionList = newExpressionList;
+    identifierList oldIdList = idList;
+    idList = newIdList;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SHORT_VAR_DECL__EXPRESSION_LIST, oldExpressionList, newExpressionList);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SHORT_VAR_DECL__ID_LIST, oldIdList, newIdList);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -138,20 +106,68 @@ public class shortVarDeclImpl extends MinimalEObjectImpl.Container implements sh
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpressionList(expressionList newExpressionList)
+  public void setIdList(identifierList newIdList)
   {
-    if (newExpressionList != expressionList)
+    if (newIdList != idList)
     {
       NotificationChain msgs = null;
-      if (expressionList != null)
-        msgs = ((InternalEObject)expressionList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SHORT_VAR_DECL__EXPRESSION_LIST, null, msgs);
-      if (newExpressionList != null)
-        msgs = ((InternalEObject)newExpressionList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SHORT_VAR_DECL__EXPRESSION_LIST, null, msgs);
-      msgs = basicSetExpressionList(newExpressionList, msgs);
+      if (idList != null)
+        msgs = ((InternalEObject)idList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SHORT_VAR_DECL__ID_LIST, null, msgs);
+      if (newIdList != null)
+        msgs = ((InternalEObject)newIdList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SHORT_VAR_DECL__ID_LIST, null, msgs);
+      msgs = basicSetIdList(newIdList, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SHORT_VAR_DECL__EXPRESSION_LIST, newExpressionList, newExpressionList));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SHORT_VAR_DECL__ID_LIST, newIdList, newIdList));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public expressionList getExprList()
+  {
+    return exprList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExprList(expressionList newExprList, NotificationChain msgs)
+  {
+    expressionList oldExprList = exprList;
+    exprList = newExprList;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SHORT_VAR_DECL__EXPR_LIST, oldExprList, newExprList);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExprList(expressionList newExprList)
+  {
+    if (newExprList != exprList)
+    {
+      NotificationChain msgs = null;
+      if (exprList != null)
+        msgs = ((InternalEObject)exprList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SHORT_VAR_DECL__EXPR_LIST, null, msgs);
+      if (newExprList != null)
+        msgs = ((InternalEObject)newExprList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SHORT_VAR_DECL__EXPR_LIST, null, msgs);
+      msgs = basicSetExprList(newExprList, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SHORT_VAR_DECL__EXPR_LIST, newExprList, newExprList));
   }
 
   /**
@@ -164,8 +180,10 @@ public class shortVarDeclImpl extends MinimalEObjectImpl.Container implements sh
   {
     switch (featureID)
     {
-      case GoPackage.SHORT_VAR_DECL__EXPRESSION_LIST:
-        return basicSetExpressionList(null, msgs);
+      case GoPackage.SHORT_VAR_DECL__ID_LIST:
+        return basicSetIdList(null, msgs);
+      case GoPackage.SHORT_VAR_DECL__EXPR_LIST:
+        return basicSetExprList(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -180,10 +198,10 @@ public class shortVarDeclImpl extends MinimalEObjectImpl.Container implements sh
   {
     switch (featureID)
     {
-      case GoPackage.SHORT_VAR_DECL__IDENTIFIER_LIST:
-        return getIdentifierList();
-      case GoPackage.SHORT_VAR_DECL__EXPRESSION_LIST:
-        return getExpressionList();
+      case GoPackage.SHORT_VAR_DECL__ID_LIST:
+        return getIdList();
+      case GoPackage.SHORT_VAR_DECL__EXPR_LIST:
+        return getExprList();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -198,11 +216,11 @@ public class shortVarDeclImpl extends MinimalEObjectImpl.Container implements sh
   {
     switch (featureID)
     {
-      case GoPackage.SHORT_VAR_DECL__IDENTIFIER_LIST:
-        setIdentifierList((String)newValue);
+      case GoPackage.SHORT_VAR_DECL__ID_LIST:
+        setIdList((identifierList)newValue);
         return;
-      case GoPackage.SHORT_VAR_DECL__EXPRESSION_LIST:
-        setExpressionList((expressionList)newValue);
+      case GoPackage.SHORT_VAR_DECL__EXPR_LIST:
+        setExprList((expressionList)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -218,11 +236,11 @@ public class shortVarDeclImpl extends MinimalEObjectImpl.Container implements sh
   {
     switch (featureID)
     {
-      case GoPackage.SHORT_VAR_DECL__IDENTIFIER_LIST:
-        setIdentifierList(IDENTIFIER_LIST_EDEFAULT);
+      case GoPackage.SHORT_VAR_DECL__ID_LIST:
+        setIdList((identifierList)null);
         return;
-      case GoPackage.SHORT_VAR_DECL__EXPRESSION_LIST:
-        setExpressionList((expressionList)null);
+      case GoPackage.SHORT_VAR_DECL__EXPR_LIST:
+        setExprList((expressionList)null);
         return;
     }
     super.eUnset(featureID);
@@ -238,29 +256,12 @@ public class shortVarDeclImpl extends MinimalEObjectImpl.Container implements sh
   {
     switch (featureID)
     {
-      case GoPackage.SHORT_VAR_DECL__IDENTIFIER_LIST:
-        return IDENTIFIER_LIST_EDEFAULT == null ? identifierList != null : !IDENTIFIER_LIST_EDEFAULT.equals(identifierList);
-      case GoPackage.SHORT_VAR_DECL__EXPRESSION_LIST:
-        return expressionList != null;
+      case GoPackage.SHORT_VAR_DECL__ID_LIST:
+        return idList != null;
+      case GoPackage.SHORT_VAR_DECL__EXPR_LIST:
+        return exprList != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (identifierList: ");
-    result.append(identifierList);
-    result.append(')');
-    return result.toString();
   }
 
 } //shortVarDeclImpl

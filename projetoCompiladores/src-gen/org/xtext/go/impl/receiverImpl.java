@@ -23,7 +23,7 @@ import org.xtext.go.receiver;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.receiverImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link org.xtext.go.impl.receiverImpl#getParams <em>Params</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,14 +32,14 @@ import org.xtext.go.receiver;
 public class receiverImpl extends MinimalEObjectImpl.Container implements receiver
 {
   /**
-   * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference.
+   * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParameters()
+   * @see #getParams()
    * @generated
    * @ordered
    */
-  protected parameters parameters;
+  protected parameters params;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,9 +67,9 @@ public class receiverImpl extends MinimalEObjectImpl.Container implements receiv
    * <!-- end-user-doc -->
    * @generated
    */
-  public parameters getParameters()
+  public parameters getParams()
   {
-    return parameters;
+    return params;
   }
 
   /**
@@ -77,13 +77,13 @@ public class receiverImpl extends MinimalEObjectImpl.Container implements receiv
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetParameters(parameters newParameters, NotificationChain msgs)
+  public NotificationChain basicSetParams(parameters newParams, NotificationChain msgs)
   {
-    parameters oldParameters = parameters;
-    parameters = newParameters;
+    parameters oldParams = params;
+    params = newParams;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.RECEIVER__PARAMETERS, oldParameters, newParameters);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.RECEIVER__PARAMS, oldParams, newParams);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -94,20 +94,20 @@ public class receiverImpl extends MinimalEObjectImpl.Container implements receiv
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setParameters(parameters newParameters)
+  public void setParams(parameters newParams)
   {
-    if (newParameters != parameters)
+    if (newParams != params)
     {
       NotificationChain msgs = null;
-      if (parameters != null)
-        msgs = ((InternalEObject)parameters).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.RECEIVER__PARAMETERS, null, msgs);
-      if (newParameters != null)
-        msgs = ((InternalEObject)newParameters).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.RECEIVER__PARAMETERS, null, msgs);
-      msgs = basicSetParameters(newParameters, msgs);
+      if (params != null)
+        msgs = ((InternalEObject)params).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.RECEIVER__PARAMS, null, msgs);
+      if (newParams != null)
+        msgs = ((InternalEObject)newParams).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.RECEIVER__PARAMS, null, msgs);
+      msgs = basicSetParams(newParams, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.RECEIVER__PARAMETERS, newParameters, newParameters));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.RECEIVER__PARAMS, newParams, newParams));
   }
 
   /**
@@ -120,8 +120,8 @@ public class receiverImpl extends MinimalEObjectImpl.Container implements receiv
   {
     switch (featureID)
     {
-      case GoPackage.RECEIVER__PARAMETERS:
-        return basicSetParameters(null, msgs);
+      case GoPackage.RECEIVER__PARAMS:
+        return basicSetParams(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +136,8 @@ public class receiverImpl extends MinimalEObjectImpl.Container implements receiv
   {
     switch (featureID)
     {
-      case GoPackage.RECEIVER__PARAMETERS:
-        return getParameters();
+      case GoPackage.RECEIVER__PARAMS:
+        return getParams();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -152,8 +152,8 @@ public class receiverImpl extends MinimalEObjectImpl.Container implements receiv
   {
     switch (featureID)
     {
-      case GoPackage.RECEIVER__PARAMETERS:
-        setParameters((parameters)newValue);
+      case GoPackage.RECEIVER__PARAMS:
+        setParams((parameters)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +169,8 @@ public class receiverImpl extends MinimalEObjectImpl.Container implements receiv
   {
     switch (featureID)
     {
-      case GoPackage.RECEIVER__PARAMETERS:
-        setParameters((parameters)null);
+      case GoPackage.RECEIVER__PARAMS:
+        setParams((parameters)null);
         return;
     }
     super.eUnset(featureID);
@@ -186,8 +186,8 @@ public class receiverImpl extends MinimalEObjectImpl.Container implements receiv
   {
     switch (featureID)
     {
-      case GoPackage.RECEIVER__PARAMETERS:
-        return parameters != null;
+      case GoPackage.RECEIVER__PARAMS:
+        return params != null;
     }
     return super.eIsSet(featureID);
   }

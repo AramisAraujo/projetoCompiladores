@@ -3,8 +3,12 @@
  */
 package org.xtext.go.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -12,8 +16,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.xtext.go.GoPackage;
 import org.xtext.go.expressionList;
+import org.xtext.go.identifierList;
 import org.xtext.go.type;
 import org.xtext.go.varSpec;
 
@@ -24,9 +32,9 @@ import org.xtext.go.varSpec;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.varSpecImpl#getIdentifierList <em>Identifier List</em>}</li>
+ *   <li>{@link org.xtext.go.impl.varSpecImpl#getIdList <em>Id List</em>}</li>
  *   <li>{@link org.xtext.go.impl.varSpecImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.xtext.go.impl.varSpecImpl#getExpressionList <em>Expression List</em>}</li>
+ *   <li>{@link org.xtext.go.impl.varSpecImpl#getExprList <em>Expr List</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,24 +43,14 @@ import org.xtext.go.varSpec;
 public class varSpecImpl extends MinimalEObjectImpl.Container implements varSpec
 {
   /**
-   * The default value of the '{@link #getIdentifierList() <em>Identifier List</em>}' attribute.
+   * The cached value of the '{@link #getIdList() <em>Id List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIdentifierList()
+   * @see #getIdList()
    * @generated
    * @ordered
    */
-  protected static final String IDENTIFIER_LIST_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getIdentifierList() <em>Identifier List</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIdentifierList()
-   * @generated
-   * @ordered
-   */
-  protected String identifierList = IDENTIFIER_LIST_EDEFAULT;
+  protected identifierList idList;
 
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
@@ -65,14 +63,14 @@ public class varSpecImpl extends MinimalEObjectImpl.Container implements varSpec
   protected type type;
 
   /**
-   * The cached value of the '{@link #getExpressionList() <em>Expression List</em>}' containment reference.
+   * The cached value of the '{@link #getExprList() <em>Expr List</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExpressionList()
+   * @see #getExprList()
    * @generated
    * @ordered
    */
-  protected expressionList expressionList;
+  protected EList<expressionList> exprList;
 
   /**
    * <!-- begin-user-doc -->
@@ -100,9 +98,9 @@ public class varSpecImpl extends MinimalEObjectImpl.Container implements varSpec
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getIdentifierList()
+  public identifierList getIdList()
   {
-    return identifierList;
+    return idList;
   }
 
   /**
@@ -110,12 +108,37 @@ public class varSpecImpl extends MinimalEObjectImpl.Container implements varSpec
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setIdentifierList(String newIdentifierList)
+  public NotificationChain basicSetIdList(identifierList newIdList, NotificationChain msgs)
   {
-    String oldIdentifierList = identifierList;
-    identifierList = newIdentifierList;
+    identifierList oldIdList = idList;
+    idList = newIdList;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.VAR_SPEC__IDENTIFIER_LIST, oldIdentifierList, identifierList));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.VAR_SPEC__ID_LIST, oldIdList, newIdList);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setIdList(identifierList newIdList)
+  {
+    if (newIdList != idList)
+    {
+      NotificationChain msgs = null;
+      if (idList != null)
+        msgs = ((InternalEObject)idList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.VAR_SPEC__ID_LIST, null, msgs);
+      if (newIdList != null)
+        msgs = ((InternalEObject)newIdList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.VAR_SPEC__ID_LIST, null, msgs);
+      msgs = basicSetIdList(newIdList, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.VAR_SPEC__ID_LIST, newIdList, newIdList));
   }
 
   /**
@@ -171,47 +194,13 @@ public class varSpecImpl extends MinimalEObjectImpl.Container implements varSpec
    * <!-- end-user-doc -->
    * @generated
    */
-  public expressionList getExpressionList()
+  public EList<expressionList> getExprList()
   {
-    return expressionList;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetExpressionList(expressionList newExpressionList, NotificationChain msgs)
-  {
-    expressionList oldExpressionList = expressionList;
-    expressionList = newExpressionList;
-    if (eNotificationRequired())
+    if (exprList == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.VAR_SPEC__EXPRESSION_LIST, oldExpressionList, newExpressionList);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      exprList = new EObjectContainmentEList<expressionList>(expressionList.class, this, GoPackage.VAR_SPEC__EXPR_LIST);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setExpressionList(expressionList newExpressionList)
-  {
-    if (newExpressionList != expressionList)
-    {
-      NotificationChain msgs = null;
-      if (expressionList != null)
-        msgs = ((InternalEObject)expressionList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.VAR_SPEC__EXPRESSION_LIST, null, msgs);
-      if (newExpressionList != null)
-        msgs = ((InternalEObject)newExpressionList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.VAR_SPEC__EXPRESSION_LIST, null, msgs);
-      msgs = basicSetExpressionList(newExpressionList, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.VAR_SPEC__EXPRESSION_LIST, newExpressionList, newExpressionList));
+    return exprList;
   }
 
   /**
@@ -224,10 +213,12 @@ public class varSpecImpl extends MinimalEObjectImpl.Container implements varSpec
   {
     switch (featureID)
     {
+      case GoPackage.VAR_SPEC__ID_LIST:
+        return basicSetIdList(null, msgs);
       case GoPackage.VAR_SPEC__TYPE:
         return basicSetType(null, msgs);
-      case GoPackage.VAR_SPEC__EXPRESSION_LIST:
-        return basicSetExpressionList(null, msgs);
+      case GoPackage.VAR_SPEC__EXPR_LIST:
+        return ((InternalEList<?>)getExprList()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -242,12 +233,12 @@ public class varSpecImpl extends MinimalEObjectImpl.Container implements varSpec
   {
     switch (featureID)
     {
-      case GoPackage.VAR_SPEC__IDENTIFIER_LIST:
-        return getIdentifierList();
+      case GoPackage.VAR_SPEC__ID_LIST:
+        return getIdList();
       case GoPackage.VAR_SPEC__TYPE:
         return getType();
-      case GoPackage.VAR_SPEC__EXPRESSION_LIST:
-        return getExpressionList();
+      case GoPackage.VAR_SPEC__EXPR_LIST:
+        return getExprList();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -257,19 +248,21 @@ public class varSpecImpl extends MinimalEObjectImpl.Container implements varSpec
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case GoPackage.VAR_SPEC__IDENTIFIER_LIST:
-        setIdentifierList((String)newValue);
+      case GoPackage.VAR_SPEC__ID_LIST:
+        setIdList((identifierList)newValue);
         return;
       case GoPackage.VAR_SPEC__TYPE:
         setType((type)newValue);
         return;
-      case GoPackage.VAR_SPEC__EXPRESSION_LIST:
-        setExpressionList((expressionList)newValue);
+      case GoPackage.VAR_SPEC__EXPR_LIST:
+        getExprList().clear();
+        getExprList().addAll((Collection<? extends expressionList>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -285,14 +278,14 @@ public class varSpecImpl extends MinimalEObjectImpl.Container implements varSpec
   {
     switch (featureID)
     {
-      case GoPackage.VAR_SPEC__IDENTIFIER_LIST:
-        setIdentifierList(IDENTIFIER_LIST_EDEFAULT);
+      case GoPackage.VAR_SPEC__ID_LIST:
+        setIdList((identifierList)null);
         return;
       case GoPackage.VAR_SPEC__TYPE:
         setType((type)null);
         return;
-      case GoPackage.VAR_SPEC__EXPRESSION_LIST:
-        setExpressionList((expressionList)null);
+      case GoPackage.VAR_SPEC__EXPR_LIST:
+        getExprList().clear();
         return;
     }
     super.eUnset(featureID);
@@ -308,31 +301,14 @@ public class varSpecImpl extends MinimalEObjectImpl.Container implements varSpec
   {
     switch (featureID)
     {
-      case GoPackage.VAR_SPEC__IDENTIFIER_LIST:
-        return IDENTIFIER_LIST_EDEFAULT == null ? identifierList != null : !IDENTIFIER_LIST_EDEFAULT.equals(identifierList);
+      case GoPackage.VAR_SPEC__ID_LIST:
+        return idList != null;
       case GoPackage.VAR_SPEC__TYPE:
         return type != null;
-      case GoPackage.VAR_SPEC__EXPRESSION_LIST:
-        return expressionList != null;
+      case GoPackage.VAR_SPEC__EXPR_LIST:
+        return exprList != null && !exprList.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (identifierList: ");
-    result.append(identifierList);
-    result.append(')');
-    return result.toString();
   }
 
 } //varSpecImpl

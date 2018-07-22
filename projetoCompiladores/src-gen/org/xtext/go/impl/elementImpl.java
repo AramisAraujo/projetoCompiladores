@@ -7,6 +7,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -14,8 +15,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.go.GoPackage;
 import org.xtext.go.element;
-import org.xtext.go.expression;
-import org.xtext.go.literalValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,8 +23,7 @@ import org.xtext.go.literalValue;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.elementImpl#getExpression <em>Expression</em>}</li>
- *   <li>{@link org.xtext.go.impl.elementImpl#getLiteralValue <em>Literal Value</em>}</li>
+ *   <li>{@link org.xtext.go.impl.elementImpl#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,24 +32,14 @@ import org.xtext.go.literalValue;
 public class elementImpl extends MinimalEObjectImpl.Container implements element
 {
   /**
-   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
+   * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExpression()
+   * @see #getContent()
    * @generated
    * @ordered
    */
-  protected expression expression;
-
-  /**
-   * The cached value of the '{@link #getLiteralValue() <em>Literal Value</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLiteralValue()
-   * @generated
-   * @ordered
-   */
-  protected literalValue literalValue;
+  protected EObject content;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,9 +67,9 @@ public class elementImpl extends MinimalEObjectImpl.Container implements element
    * <!-- end-user-doc -->
    * @generated
    */
-  public expression getExpression()
+  public EObject getContent()
   {
-    return expression;
+    return content;
   }
 
   /**
@@ -89,13 +77,13 @@ public class elementImpl extends MinimalEObjectImpl.Container implements element
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpression(expression newExpression, NotificationChain msgs)
+  public NotificationChain basicSetContent(EObject newContent, NotificationChain msgs)
   {
-    expression oldExpression = expression;
-    expression = newExpression;
+    EObject oldContent = content;
+    content = newContent;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.ELEMENT__EXPRESSION, oldExpression, newExpression);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.ELEMENT__CONTENT, oldContent, newContent);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -106,68 +94,20 @@ public class elementImpl extends MinimalEObjectImpl.Container implements element
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(expression newExpression)
+  public void setContent(EObject newContent)
   {
-    if (newExpression != expression)
+    if (newContent != content)
     {
       NotificationChain msgs = null;
-      if (expression != null)
-        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.ELEMENT__EXPRESSION, null, msgs);
-      if (newExpression != null)
-        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.ELEMENT__EXPRESSION, null, msgs);
-      msgs = basicSetExpression(newExpression, msgs);
+      if (content != null)
+        msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.ELEMENT__CONTENT, null, msgs);
+      if (newContent != null)
+        msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.ELEMENT__CONTENT, null, msgs);
+      msgs = basicSetContent(newContent, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.ELEMENT__EXPRESSION, newExpression, newExpression));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public literalValue getLiteralValue()
-  {
-    return literalValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetLiteralValue(literalValue newLiteralValue, NotificationChain msgs)
-  {
-    literalValue oldLiteralValue = literalValue;
-    literalValue = newLiteralValue;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.ELEMENT__LITERAL_VALUE, oldLiteralValue, newLiteralValue);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setLiteralValue(literalValue newLiteralValue)
-  {
-    if (newLiteralValue != literalValue)
-    {
-      NotificationChain msgs = null;
-      if (literalValue != null)
-        msgs = ((InternalEObject)literalValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.ELEMENT__LITERAL_VALUE, null, msgs);
-      if (newLiteralValue != null)
-        msgs = ((InternalEObject)newLiteralValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.ELEMENT__LITERAL_VALUE, null, msgs);
-      msgs = basicSetLiteralValue(newLiteralValue, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.ELEMENT__LITERAL_VALUE, newLiteralValue, newLiteralValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.ELEMENT__CONTENT, newContent, newContent));
   }
 
   /**
@@ -180,10 +120,8 @@ public class elementImpl extends MinimalEObjectImpl.Container implements element
   {
     switch (featureID)
     {
-      case GoPackage.ELEMENT__EXPRESSION:
-        return basicSetExpression(null, msgs);
-      case GoPackage.ELEMENT__LITERAL_VALUE:
-        return basicSetLiteralValue(null, msgs);
+      case GoPackage.ELEMENT__CONTENT:
+        return basicSetContent(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -198,10 +136,8 @@ public class elementImpl extends MinimalEObjectImpl.Container implements element
   {
     switch (featureID)
     {
-      case GoPackage.ELEMENT__EXPRESSION:
-        return getExpression();
-      case GoPackage.ELEMENT__LITERAL_VALUE:
-        return getLiteralValue();
+      case GoPackage.ELEMENT__CONTENT:
+        return getContent();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -216,11 +152,8 @@ public class elementImpl extends MinimalEObjectImpl.Container implements element
   {
     switch (featureID)
     {
-      case GoPackage.ELEMENT__EXPRESSION:
-        setExpression((expression)newValue);
-        return;
-      case GoPackage.ELEMENT__LITERAL_VALUE:
-        setLiteralValue((literalValue)newValue);
+      case GoPackage.ELEMENT__CONTENT:
+        setContent((EObject)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -236,11 +169,8 @@ public class elementImpl extends MinimalEObjectImpl.Container implements element
   {
     switch (featureID)
     {
-      case GoPackage.ELEMENT__EXPRESSION:
-        setExpression((expression)null);
-        return;
-      case GoPackage.ELEMENT__LITERAL_VALUE:
-        setLiteralValue((literalValue)null);
+      case GoPackage.ELEMENT__CONTENT:
+        setContent((EObject)null);
         return;
     }
     super.eUnset(featureID);
@@ -256,10 +186,8 @@ public class elementImpl extends MinimalEObjectImpl.Container implements element
   {
     switch (featureID)
     {
-      case GoPackage.ELEMENT__EXPRESSION:
-        return expression != null;
-      case GoPackage.ELEMENT__LITERAL_VALUE:
-        return literalValue != null;
+      case GoPackage.ELEMENT__CONTENT:
+        return content != null;
     }
     return super.eIsSet(featureID);
   }

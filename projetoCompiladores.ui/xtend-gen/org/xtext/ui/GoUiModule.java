@@ -3,11 +3,17 @@
  */
 package org.xtext.ui;
 
+import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor;
 import org.xtext.ui.AbstractGoUiModule;
 
 /**
  * Use this class to register components to be used within the Eclipse IDE.
  */
-/* @FinalFieldsConstructor */@SuppressWarnings("all")
+@FinalFieldsConstructor
+@SuppressWarnings("all")
 public class GoUiModule extends AbstractGoUiModule {
+  public GoUiModule(final AbstractUIPlugin plugin) {
+    super(plugin);
+  }
 }

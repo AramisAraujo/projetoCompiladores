@@ -23,7 +23,9 @@ import org.xtext.go.slice;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.sliceImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.xtext.go.impl.sliceImpl#getExpr1 <em>Expr1</em>}</li>
+ *   <li>{@link org.xtext.go.impl.sliceImpl#getExpr2 <em>Expr2</em>}</li>
+ *   <li>{@link org.xtext.go.impl.sliceImpl#getExpr3 <em>Expr3</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,14 +34,34 @@ import org.xtext.go.slice;
 public class sliceImpl extends MinimalEObjectImpl.Container implements slice
 {
   /**
-   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
+   * The cached value of the '{@link #getExpr1() <em>Expr1</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExpression()
+   * @see #getExpr1()
    * @generated
    * @ordered
    */
-  protected expression expression;
+  protected expression expr1;
+
+  /**
+   * The cached value of the '{@link #getExpr2() <em>Expr2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpr2()
+   * @generated
+   * @ordered
+   */
+  protected expression expr2;
+
+  /**
+   * The cached value of the '{@link #getExpr3() <em>Expr3</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpr3()
+   * @generated
+   * @ordered
+   */
+  protected expression expr3;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,9 +89,9 @@ public class sliceImpl extends MinimalEObjectImpl.Container implements slice
    * <!-- end-user-doc -->
    * @generated
    */
-  public expression getExpression()
+  public expression getExpr1()
   {
-    return expression;
+    return expr1;
   }
 
   /**
@@ -77,13 +99,13 @@ public class sliceImpl extends MinimalEObjectImpl.Container implements slice
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpression(expression newExpression, NotificationChain msgs)
+  public NotificationChain basicSetExpr1(expression newExpr1, NotificationChain msgs)
   {
-    expression oldExpression = expression;
-    expression = newExpression;
+    expression oldExpr1 = expr1;
+    expr1 = newExpr1;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SLICE__EXPRESSION, oldExpression, newExpression);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SLICE__EXPR1, oldExpr1, newExpr1);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -94,20 +116,116 @@ public class sliceImpl extends MinimalEObjectImpl.Container implements slice
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(expression newExpression)
+  public void setExpr1(expression newExpr1)
   {
-    if (newExpression != expression)
+    if (newExpr1 != expr1)
     {
       NotificationChain msgs = null;
-      if (expression != null)
-        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SLICE__EXPRESSION, null, msgs);
-      if (newExpression != null)
-        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SLICE__EXPRESSION, null, msgs);
-      msgs = basicSetExpression(newExpression, msgs);
+      if (expr1 != null)
+        msgs = ((InternalEObject)expr1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SLICE__EXPR1, null, msgs);
+      if (newExpr1 != null)
+        msgs = ((InternalEObject)newExpr1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SLICE__EXPR1, null, msgs);
+      msgs = basicSetExpr1(newExpr1, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SLICE__EXPRESSION, newExpression, newExpression));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SLICE__EXPR1, newExpr1, newExpr1));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public expression getExpr2()
+  {
+    return expr2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExpr2(expression newExpr2, NotificationChain msgs)
+  {
+    expression oldExpr2 = expr2;
+    expr2 = newExpr2;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SLICE__EXPR2, oldExpr2, newExpr2);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExpr2(expression newExpr2)
+  {
+    if (newExpr2 != expr2)
+    {
+      NotificationChain msgs = null;
+      if (expr2 != null)
+        msgs = ((InternalEObject)expr2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SLICE__EXPR2, null, msgs);
+      if (newExpr2 != null)
+        msgs = ((InternalEObject)newExpr2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SLICE__EXPR2, null, msgs);
+      msgs = basicSetExpr2(newExpr2, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SLICE__EXPR2, newExpr2, newExpr2));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public expression getExpr3()
+  {
+    return expr3;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExpr3(expression newExpr3, NotificationChain msgs)
+  {
+    expression oldExpr3 = expr3;
+    expr3 = newExpr3;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SLICE__EXPR3, oldExpr3, newExpr3);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExpr3(expression newExpr3)
+  {
+    if (newExpr3 != expr3)
+    {
+      NotificationChain msgs = null;
+      if (expr3 != null)
+        msgs = ((InternalEObject)expr3).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SLICE__EXPR3, null, msgs);
+      if (newExpr3 != null)
+        msgs = ((InternalEObject)newExpr3).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SLICE__EXPR3, null, msgs);
+      msgs = basicSetExpr3(newExpr3, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SLICE__EXPR3, newExpr3, newExpr3));
   }
 
   /**
@@ -120,8 +238,12 @@ public class sliceImpl extends MinimalEObjectImpl.Container implements slice
   {
     switch (featureID)
     {
-      case GoPackage.SLICE__EXPRESSION:
-        return basicSetExpression(null, msgs);
+      case GoPackage.SLICE__EXPR1:
+        return basicSetExpr1(null, msgs);
+      case GoPackage.SLICE__EXPR2:
+        return basicSetExpr2(null, msgs);
+      case GoPackage.SLICE__EXPR3:
+        return basicSetExpr3(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +258,12 @@ public class sliceImpl extends MinimalEObjectImpl.Container implements slice
   {
     switch (featureID)
     {
-      case GoPackage.SLICE__EXPRESSION:
-        return getExpression();
+      case GoPackage.SLICE__EXPR1:
+        return getExpr1();
+      case GoPackage.SLICE__EXPR2:
+        return getExpr2();
+      case GoPackage.SLICE__EXPR3:
+        return getExpr3();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -152,8 +278,14 @@ public class sliceImpl extends MinimalEObjectImpl.Container implements slice
   {
     switch (featureID)
     {
-      case GoPackage.SLICE__EXPRESSION:
-        setExpression((expression)newValue);
+      case GoPackage.SLICE__EXPR1:
+        setExpr1((expression)newValue);
+        return;
+      case GoPackage.SLICE__EXPR2:
+        setExpr2((expression)newValue);
+        return;
+      case GoPackage.SLICE__EXPR3:
+        setExpr3((expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +301,14 @@ public class sliceImpl extends MinimalEObjectImpl.Container implements slice
   {
     switch (featureID)
     {
-      case GoPackage.SLICE__EXPRESSION:
-        setExpression((expression)null);
+      case GoPackage.SLICE__EXPR1:
+        setExpr1((expression)null);
+        return;
+      case GoPackage.SLICE__EXPR2:
+        setExpr2((expression)null);
+        return;
+      case GoPackage.SLICE__EXPR3:
+        setExpr3((expression)null);
         return;
     }
     super.eUnset(featureID);
@@ -186,8 +324,12 @@ public class sliceImpl extends MinimalEObjectImpl.Container implements slice
   {
     switch (featureID)
     {
-      case GoPackage.SLICE__EXPRESSION:
-        return expression != null;
+      case GoPackage.SLICE__EXPR1:
+        return expr1 != null;
+      case GoPackage.SLICE__EXPR2:
+        return expr2 != null;
+      case GoPackage.SLICE__EXPR3:
+        return expr3 != null;
     }
     return super.eIsSet(featureID);
   }

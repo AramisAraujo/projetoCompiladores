@@ -87,6 +87,13 @@ public class GoSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case GoPackage.PACKAGE_CLAUSE:
+      {
+        packageClause packageClause = (packageClause)theEObject;
+        T result = casepackageClause(packageClause);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case GoPackage.IMPORT_DECL:
       {
         importDecl importDecl = (importDecl)theEObject;
@@ -126,6 +133,13 @@ public class GoSwitch<T> extends Switch<T>
       {
         constSpec constSpec = (constSpec)theEObject;
         T result = caseconstSpec(constSpec);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.IDENTIFIER_LIST:
+      {
+        identifierList identifierList = (identifierList)theEObject;
+        T result = caseidentifierList(identifierList);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -255,6 +269,13 @@ public class GoSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case GoPackage.EMPTY_STMT:
+      {
+        emptyStmt emptyStmt = (emptyStmt)theEObject;
+        T result = caseemptyStmt(emptyStmt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case GoPackage.LABELED_STMT:
       {
         labeledStmt labeledStmt = (labeledStmt)theEObject;
@@ -266,6 +287,34 @@ public class GoSwitch<T> extends Switch<T>
       {
         returnStmt returnStmt = (returnStmt)theEObject;
         T result = casereturnStmt(returnStmt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.BREAK_STMT:
+      {
+        breakStmt breakStmt = (breakStmt)theEObject;
+        T result = casebreakStmt(breakStmt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.CONTINUE_STMT:
+      {
+        continueStmt continueStmt = (continueStmt)theEObject;
+        T result = casecontinueStmt(continueStmt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.GOTO_STMT:
+      {
+        gotoStmt gotoStmt = (gotoStmt)theEObject;
+        T result = casegotoStmt(gotoStmt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GoPackage.FALLTHROUGH_STMT:
+      {
+        fallthroughStmt fallthroughStmt = (fallthroughStmt)theEObject;
+        T result = casefallthroughStmt(fallthroughStmt);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -549,6 +598,13 @@ public class GoSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case GoPackage.QUALIFIED_IDENT:
+      {
+        qualifiedIdent qualifiedIdent = (qualifiedIdent)theEObject;
+        T result = casequalifiedIdent(qualifiedIdent);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case GoPackage.COMPOSITE_LIT:
       {
         compositeLit compositeLit = (compositeLit)theEObject;
@@ -675,6 +731,13 @@ public class GoSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case GoPackage.SELECTOR:
+      {
+        selector selector = (selector)theEObject;
+        T result = caseselector(selector);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case GoPackage.INDEX:
       {
         index index = (index)theEObject;
@@ -721,7 +784,6 @@ public class GoSwitch<T> extends Switch<T>
       {
         expression expression = (expression)theEObject;
         T result = caseexpression(expression);
-        if (result == null) result = caseindex(expression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -778,6 +840,22 @@ public class GoSwitch<T> extends Switch<T>
    * @generated
    */
   public T casesourceFile(sourceFile object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>package Clause</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>package Clause</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casepackageClause(packageClause object)
   {
     return null;
   }
@@ -874,6 +952,22 @@ public class GoSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseconstSpec(constSpec object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>identifier List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>identifier List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseidentifierList(identifierList object)
   {
     return null;
   }
@@ -1167,6 +1261,22 @@ public class GoSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>empty Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>empty Stmt</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseemptyStmt(emptyStmt object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>labeled Stmt</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1194,6 +1304,70 @@ public class GoSwitch<T> extends Switch<T>
    * @generated
    */
   public T casereturnStmt(returnStmt object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>break Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>break Stmt</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casebreakStmt(breakStmt object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>continue Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>continue Stmt</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casecontinueStmt(continueStmt object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>goto Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>goto Stmt</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casegotoStmt(gotoStmt object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>fallthrough Stmt</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>fallthrough Stmt</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casefallthroughStmt(fallthroughStmt object)
   {
     return null;
   }
@@ -1839,6 +2013,22 @@ public class GoSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>qualified Ident</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>qualified Ident</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casequalifiedIdent(qualifiedIdent object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>composite Lit</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -2122,6 +2312,22 @@ public class GoSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseprimaryExprArguments(primaryExprArguments object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>selector</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>selector</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseselector(selector object)
   {
     return null;
   }

@@ -13,10 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.ifStmt#getSimpleStmt <em>Simple Stmt</em>}</li>
- *   <li>{@link org.xtext.go.ifStmt#getExpression <em>Expression</em>}</li>
- *   <li>{@link org.xtext.go.ifStmt#getBlock <em>Block</em>}</li>
- *   <li>{@link org.xtext.go.ifStmt#getIfStmt <em>If Stmt</em>}</li>
+ *   <li>{@link org.xtext.go.ifStmt#getSimplStatement <em>Simpl Statement</em>}</li>
+ *   <li>{@link org.xtext.go.ifStmt#getExpr <em>Expr</em>}</li>
+ *   <li>{@link org.xtext.go.ifStmt#getCodeBlock <em>Code Block</em>}</li>
+ *   <li>{@link org.xtext.go.ifStmt#getIfStatement <em>If Statement</em>}</li>
+ *   <li>{@link org.xtext.go.ifStmt#getCodeBlockIf <em>Code Block If</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,107 +28,133 @@ import org.eclipse.emf.ecore.EObject;
 public interface ifStmt extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Simple Stmt</b></em>' containment reference.
+   * Returns the value of the '<em><b>Simpl Statement</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Simple Stmt</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Simpl Statement</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Simple Stmt</em>' containment reference.
-   * @see #setSimpleStmt(simpleStmt)
-   * @see org.xtext.go.GoPackage#getifStmt_SimpleStmt()
+   * @return the value of the '<em>Simpl Statement</em>' containment reference.
+   * @see #setSimplStatement(simpleStmt)
+   * @see org.xtext.go.GoPackage#getifStmt_SimplStatement()
    * @model containment="true"
    * @generated
    */
-  simpleStmt getSimpleStmt();
+  simpleStmt getSimplStatement();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.ifStmt#getSimpleStmt <em>Simple Stmt</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.ifStmt#getSimplStatement <em>Simpl Statement</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Simple Stmt</em>' containment reference.
-   * @see #getSimpleStmt()
+   * @param value the new value of the '<em>Simpl Statement</em>' containment reference.
+   * @see #getSimplStatement()
    * @generated
    */
-  void setSimpleStmt(simpleStmt value);
+  void setSimplStatement(simpleStmt value);
 
   /**
-   * Returns the value of the '<em><b>Expression</b></em>' containment reference.
+   * Returns the value of the '<em><b>Expr</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Expression</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Expr</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expression</em>' containment reference.
-   * @see #setExpression(expression)
-   * @see org.xtext.go.GoPackage#getifStmt_Expression()
+   * @return the value of the '<em>Expr</em>' containment reference.
+   * @see #setExpr(expression)
+   * @see org.xtext.go.GoPackage#getifStmt_Expr()
    * @model containment="true"
    * @generated
    */
-  expression getExpression();
+  expression getExpr();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.ifStmt#getExpression <em>Expression</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.ifStmt#getExpr <em>Expr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expression</em>' containment reference.
-   * @see #getExpression()
+   * @param value the new value of the '<em>Expr</em>' containment reference.
+   * @see #getExpr()
    * @generated
    */
-  void setExpression(expression value);
+  void setExpr(expression value);
 
   /**
-   * Returns the value of the '<em><b>Block</b></em>' containment reference.
+   * Returns the value of the '<em><b>Code Block</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Block</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Code Block</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Block</em>' containment reference.
-   * @see #setBlock(block)
-   * @see org.xtext.go.GoPackage#getifStmt_Block()
+   * @return the value of the '<em>Code Block</em>' containment reference.
+   * @see #setCodeBlock(block)
+   * @see org.xtext.go.GoPackage#getifStmt_CodeBlock()
    * @model containment="true"
    * @generated
    */
-  block getBlock();
+  block getCodeBlock();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.ifStmt#getBlock <em>Block</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.ifStmt#getCodeBlock <em>Code Block</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Block</em>' containment reference.
-   * @see #getBlock()
+   * @param value the new value of the '<em>Code Block</em>' containment reference.
+   * @see #getCodeBlock()
    * @generated
    */
-  void setBlock(block value);
+  void setCodeBlock(block value);
 
   /**
-   * Returns the value of the '<em><b>If Stmt</b></em>' containment reference.
+   * Returns the value of the '<em><b>If Statement</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>If Stmt</em>' containment reference isn't clear,
+   * If the meaning of the '<em>If Statement</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>If Stmt</em>' containment reference.
-   * @see #setIfStmt(ifStmt)
-   * @see org.xtext.go.GoPackage#getifStmt_IfStmt()
+   * @return the value of the '<em>If Statement</em>' containment reference.
+   * @see #setIfStatement(ifStmt)
+   * @see org.xtext.go.GoPackage#getifStmt_IfStatement()
    * @model containment="true"
    * @generated
    */
-  ifStmt getIfStmt();
+  ifStmt getIfStatement();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.ifStmt#getIfStmt <em>If Stmt</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.ifStmt#getIfStatement <em>If Statement</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>If Stmt</em>' containment reference.
-   * @see #getIfStmt()
+   * @param value the new value of the '<em>If Statement</em>' containment reference.
+   * @see #getIfStatement()
    * @generated
    */
-  void setIfStmt(ifStmt value);
+  void setIfStatement(ifStmt value);
+
+  /**
+   * Returns the value of the '<em><b>Code Block If</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Code Block If</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Code Block If</em>' containment reference.
+   * @see #setCodeBlockIf(block)
+   * @see org.xtext.go.GoPackage#getifStmt_CodeBlockIf()
+   * @model containment="true"
+   * @generated
+   */
+  block getCodeBlockIf();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.ifStmt#getCodeBlockIf <em>Code Block If</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Code Block If</em>' containment reference.
+   * @see #getCodeBlockIf()
+   * @generated
+   */
+  void setCodeBlockIf(block value);
 
 } // ifStmt

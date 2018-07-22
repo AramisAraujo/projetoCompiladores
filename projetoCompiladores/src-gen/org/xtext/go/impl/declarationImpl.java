@@ -7,16 +7,14 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.go.GoPackage;
-import org.xtext.go.constDecl;
 import org.xtext.go.declaration;
-import org.xtext.go.typeDecl;
-import org.xtext.go.varDecl;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,9 +23,7 @@ import org.xtext.go.varDecl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.declarationImpl#getConstDecl <em>Const Decl</em>}</li>
- *   <li>{@link org.xtext.go.impl.declarationImpl#getTypeDecl <em>Type Decl</em>}</li>
- *   <li>{@link org.xtext.go.impl.declarationImpl#getVarDecl <em>Var Decl</em>}</li>
+ *   <li>{@link org.xtext.go.impl.declarationImpl#getDecl <em>Decl</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,34 +32,14 @@ import org.xtext.go.varDecl;
 public class declarationImpl extends MinimalEObjectImpl.Container implements declaration
 {
   /**
-   * The cached value of the '{@link #getConstDecl() <em>Const Decl</em>}' containment reference.
+   * The cached value of the '{@link #getDecl() <em>Decl</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConstDecl()
+   * @see #getDecl()
    * @generated
    * @ordered
    */
-  protected constDecl constDecl;
-
-  /**
-   * The cached value of the '{@link #getTypeDecl() <em>Type Decl</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTypeDecl()
-   * @generated
-   * @ordered
-   */
-  protected typeDecl typeDecl;
-
-  /**
-   * The cached value of the '{@link #getVarDecl() <em>Var Decl</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVarDecl()
-   * @generated
-   * @ordered
-   */
-  protected varDecl varDecl;
+  protected EObject decl;
 
   /**
    * <!-- begin-user-doc -->
@@ -91,9 +67,9 @@ public class declarationImpl extends MinimalEObjectImpl.Container implements dec
    * <!-- end-user-doc -->
    * @generated
    */
-  public constDecl getConstDecl()
+  public EObject getDecl()
   {
-    return constDecl;
+    return decl;
   }
 
   /**
@@ -101,13 +77,13 @@ public class declarationImpl extends MinimalEObjectImpl.Container implements dec
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetConstDecl(constDecl newConstDecl, NotificationChain msgs)
+  public NotificationChain basicSetDecl(EObject newDecl, NotificationChain msgs)
   {
-    constDecl oldConstDecl = constDecl;
-    constDecl = newConstDecl;
+    EObject oldDecl = decl;
+    decl = newDecl;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.DECLARATION__CONST_DECL, oldConstDecl, newConstDecl);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.DECLARATION__DECL, oldDecl, newDecl);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -118,116 +94,20 @@ public class declarationImpl extends MinimalEObjectImpl.Container implements dec
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setConstDecl(constDecl newConstDecl)
+  public void setDecl(EObject newDecl)
   {
-    if (newConstDecl != constDecl)
+    if (newDecl != decl)
     {
       NotificationChain msgs = null;
-      if (constDecl != null)
-        msgs = ((InternalEObject)constDecl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.DECLARATION__CONST_DECL, null, msgs);
-      if (newConstDecl != null)
-        msgs = ((InternalEObject)newConstDecl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.DECLARATION__CONST_DECL, null, msgs);
-      msgs = basicSetConstDecl(newConstDecl, msgs);
+      if (decl != null)
+        msgs = ((InternalEObject)decl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.DECLARATION__DECL, null, msgs);
+      if (newDecl != null)
+        msgs = ((InternalEObject)newDecl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.DECLARATION__DECL, null, msgs);
+      msgs = basicSetDecl(newDecl, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.DECLARATION__CONST_DECL, newConstDecl, newConstDecl));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public typeDecl getTypeDecl()
-  {
-    return typeDecl;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetTypeDecl(typeDecl newTypeDecl, NotificationChain msgs)
-  {
-    typeDecl oldTypeDecl = typeDecl;
-    typeDecl = newTypeDecl;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.DECLARATION__TYPE_DECL, oldTypeDecl, newTypeDecl);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setTypeDecl(typeDecl newTypeDecl)
-  {
-    if (newTypeDecl != typeDecl)
-    {
-      NotificationChain msgs = null;
-      if (typeDecl != null)
-        msgs = ((InternalEObject)typeDecl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.DECLARATION__TYPE_DECL, null, msgs);
-      if (newTypeDecl != null)
-        msgs = ((InternalEObject)newTypeDecl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.DECLARATION__TYPE_DECL, null, msgs);
-      msgs = basicSetTypeDecl(newTypeDecl, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.DECLARATION__TYPE_DECL, newTypeDecl, newTypeDecl));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public varDecl getVarDecl()
-  {
-    return varDecl;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetVarDecl(varDecl newVarDecl, NotificationChain msgs)
-  {
-    varDecl oldVarDecl = varDecl;
-    varDecl = newVarDecl;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.DECLARATION__VAR_DECL, oldVarDecl, newVarDecl);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setVarDecl(varDecl newVarDecl)
-  {
-    if (newVarDecl != varDecl)
-    {
-      NotificationChain msgs = null;
-      if (varDecl != null)
-        msgs = ((InternalEObject)varDecl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.DECLARATION__VAR_DECL, null, msgs);
-      if (newVarDecl != null)
-        msgs = ((InternalEObject)newVarDecl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.DECLARATION__VAR_DECL, null, msgs);
-      msgs = basicSetVarDecl(newVarDecl, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.DECLARATION__VAR_DECL, newVarDecl, newVarDecl));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.DECLARATION__DECL, newDecl, newDecl));
   }
 
   /**
@@ -240,12 +120,8 @@ public class declarationImpl extends MinimalEObjectImpl.Container implements dec
   {
     switch (featureID)
     {
-      case GoPackage.DECLARATION__CONST_DECL:
-        return basicSetConstDecl(null, msgs);
-      case GoPackage.DECLARATION__TYPE_DECL:
-        return basicSetTypeDecl(null, msgs);
-      case GoPackage.DECLARATION__VAR_DECL:
-        return basicSetVarDecl(null, msgs);
+      case GoPackage.DECLARATION__DECL:
+        return basicSetDecl(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -260,12 +136,8 @@ public class declarationImpl extends MinimalEObjectImpl.Container implements dec
   {
     switch (featureID)
     {
-      case GoPackage.DECLARATION__CONST_DECL:
-        return getConstDecl();
-      case GoPackage.DECLARATION__TYPE_DECL:
-        return getTypeDecl();
-      case GoPackage.DECLARATION__VAR_DECL:
-        return getVarDecl();
+      case GoPackage.DECLARATION__DECL:
+        return getDecl();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -280,14 +152,8 @@ public class declarationImpl extends MinimalEObjectImpl.Container implements dec
   {
     switch (featureID)
     {
-      case GoPackage.DECLARATION__CONST_DECL:
-        setConstDecl((constDecl)newValue);
-        return;
-      case GoPackage.DECLARATION__TYPE_DECL:
-        setTypeDecl((typeDecl)newValue);
-        return;
-      case GoPackage.DECLARATION__VAR_DECL:
-        setVarDecl((varDecl)newValue);
+      case GoPackage.DECLARATION__DECL:
+        setDecl((EObject)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -303,14 +169,8 @@ public class declarationImpl extends MinimalEObjectImpl.Container implements dec
   {
     switch (featureID)
     {
-      case GoPackage.DECLARATION__CONST_DECL:
-        setConstDecl((constDecl)null);
-        return;
-      case GoPackage.DECLARATION__TYPE_DECL:
-        setTypeDecl((typeDecl)null);
-        return;
-      case GoPackage.DECLARATION__VAR_DECL:
-        setVarDecl((varDecl)null);
+      case GoPackage.DECLARATION__DECL:
+        setDecl((EObject)null);
         return;
     }
     super.eUnset(featureID);
@@ -326,12 +186,8 @@ public class declarationImpl extends MinimalEObjectImpl.Container implements dec
   {
     switch (featureID)
     {
-      case GoPackage.DECLARATION__CONST_DECL:
-        return constDecl != null;
-      case GoPackage.DECLARATION__TYPE_DECL:
-        return typeDecl != null;
-      case GoPackage.DECLARATION__VAR_DECL:
-        return varDecl != null;
+      case GoPackage.DECLARATION__DECL:
+        return decl != null;
     }
     return super.eIsSet(featureID);
   }

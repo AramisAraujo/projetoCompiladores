@@ -10,153 +10,158 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//Model/greetings"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//sourceFile">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//sourceFile/packageClause"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//sourceFile/importDecl"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//sourceFile/topLevelDecl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//sourceFile/package"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//sourceFile/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//sourceFile/topLevelDecls"/>
+    </genClasses>
+    <genClasses ecoreClass="Go.ecore#//packageClause">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//packageClause/packageName"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//importDecl">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//importDecl/importSpec"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//importDecl/specs"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//importSpec">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//importSpec/importPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//importSpec/path"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//topLevelDecl">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//topLevelDecl/declaration"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//topLevelDecl/functionDecl"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//topLevelDecl/methodDecl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//topLevelDecl/decl"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//declaration">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//declaration/constDecl"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//declaration/typeDecl"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//declaration/varDecl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//declaration/decl"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//constDecl">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//constDecl/constSpec"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//constDecl/spec"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//constSpec">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//constSpec/identifierList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//constSpec/identifiers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//constSpec/type"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//constSpec/expressionList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//constSpec/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="Go.ecore#//identifierList">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//identifierList/ids"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//expressionList">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//expressionList/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//expressionList/expr"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//typeDecl">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeDecl/typeSpec"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeDecl/spec"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//typeSpec">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//typeSpec/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeSpec/type"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//functionDecl">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//functionDecl/function"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//functionDecl/signature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//functionDecl/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//functionDecl/func"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//functionDecl/sig"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//function">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//function/signature"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//function/block"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//function/sig"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//function/codeBlock"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//methodDecl">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//methodDecl/receiver"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//methodDecl/function"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//methodDecl/signature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//methodDecl/params"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//methodDecl/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//methodDecl/func"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//methodDecl/sig"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//receiver">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//receiver/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//receiver/params"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//varDecl">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//varDecl/varSpec"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//varDecl/specs"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//varSpec">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//varSpec/identifierList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//varSpec/idList"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//varSpec/type"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//varSpec/expressionList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//varSpec/exprList"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//block">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//block/statementList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//block/statements"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//statementList">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//statementList/statement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//statementList/statements"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//statement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//statement/declaration"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//statement/labeledStmt"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//statement/simpleStmt"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//statement/goStmt"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//statement/returnStmt"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//statement/breakStmt"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//statement/continueStmt"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//statement/gotoStmt"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//statement/fallthroughStmt"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//statement/block"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//statement/ifStmt"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//statement/switchStmt"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//statement/selectStmt"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//statement/forStmt"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//statement/deferStmt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//statement/content"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//simpleStmt">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//simpleStmt/sendStmt"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//simpleStmt/expressionStmt"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//simpleStmt/incDecStmt"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//simpleStmt/assignment"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//simpleStmt/shortVarDecl"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//simpleStmt/emptyStmt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//simpleStmt/content"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//expressionStmt">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//expressionStmt/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//expressionStmt/expr"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//sendStmt">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//sendStmt/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//sendStmt/expr1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//sendStmt/expr2"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//incDecStmt">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//incDecStmt/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//incDecStmt/expr"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//assignment">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//assignment/expressionList"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//assignment/assign_op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//assignment/exprList1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//assignment/operation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//assignment/exprList2"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//shortVarDecl">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//shortVarDecl/identifierList"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//shortVarDecl/expressionList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//shortVarDecl/idList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//shortVarDecl/exprList"/>
+    </genClasses>
+    <genClasses ecoreClass="Go.ecore#//emptyStmt">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//emptyStmt/content"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//labeledStmt">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//labeledStmt/statement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//labeledStmt/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//labeledStmt/stmt"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//returnStmt">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//returnStmt/expressionList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//returnStmt/exprList"/>
+    </genClasses>
+    <genClasses ecoreClass="Go.ecore#//breakStmt">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//breakStmt/label"/>
+    </genClasses>
+    <genClasses ecoreClass="Go.ecore#//continueStmt">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//continueStmt/label"/>
+    </genClasses>
+    <genClasses ecoreClass="Go.ecore#//gotoStmt">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//gotoStmt/label"/>
+    </genClasses>
+    <genClasses ecoreClass="Go.ecore#//fallthroughStmt">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//fallthroughStmt/content"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//deferStmt">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//deferStmt/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//deferStmt/expr"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//ifStmt">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//ifStmt/simpleStmt"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//ifStmt/expression"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//ifStmt/block"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//ifStmt/ifStmt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//ifStmt/simplStatement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//ifStmt/expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//ifStmt/codeBlock"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//ifStmt/ifStatement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//ifStmt/codeBlockIf"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//switchStmt">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//switchStmt/exprSwitchStmt"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//switchStmt/typeSwitchStmt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//switchStmt/statement"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//exprSwitchStmt">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//exprSwitchStmt/simpleStmt"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//exprSwitchStmt/expression"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//exprSwitchStmt/exprCaseClause"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//exprSwitchStmt/expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//exprSwitchStmt/exprCaseClauses"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//exprCaseClause">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//exprCaseClause/exprSwitchCase"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//exprCaseClause/statementList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//exprCaseClause/stmtList"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//exprSwitchCase">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//exprSwitchCase/expressionList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//exprSwitchCase/exprList"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//typeSwitchStmt">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeSwitchStmt/simpleStmt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeSwitchStmt/simpleStatement"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeSwitchStmt/typeSwitchGuard"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeSwitchStmt/typeCaseClause"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeSwitchStmt/typeCaseClauses"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//typeSwitchGuard">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeSwitchGuard/primaryExpr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//typeSwitchGuard/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeSwitchGuard/primaryExpression"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//typeCaseClause">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeCaseClause/typeSwitchCase"/>
@@ -166,66 +171,57 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeSwitchCase/typeList"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//typeList">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeList/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeList/types"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//selectStmt">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//selectStmt/commClause"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//selectStmt/commClauses"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//commClause">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//commClause/commCase"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//commClause/statementList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//commClause/case"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//commClause/stmtList"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//commCase">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//commCase/sendStmt"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//commCase/recvStmt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//commCase/statement"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//recvStmt">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//recvStmt/expressionList"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//recvStmt/identifierList"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//recvStmt/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//recvStmt/exprList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//recvStmt/idList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//recvStmt/expr"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//forStmt">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//forStmt/expression"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//forStmt/forClause"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//forStmt/rangeClause"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//forStmt/block"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//forStmt/expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//forStmt/clause"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//forStmt/codeBlock"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//forClause">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//forClause/simpleStmt"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//forClause/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//forClause/statement1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//forClause/expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//forClause/statement2"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//rangeClause">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//rangeClause/expressionList"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//rangeClause/identifierList"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//rangeClause/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//rangeClause/exprList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//rangeClause/idList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//rangeClause/expr"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//goStmt">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//goStmt/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//goStmt/expr"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//type">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//type/typeName"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//type/typeLit"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//type/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//type/content"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//typeName">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//typeName/qualifiedIdent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//typeName/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeName/qualIdent"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//typeLit">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeLit/arrayType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeLit/structType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeLit/pointerType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeLit/functionType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeLit/interfaceType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeLit/sliceType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeLit/mapType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeLit/channelType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeLit/lit"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//arrayType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//arrayType/arrayLength"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//arrayType/elementType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//arrayType/elemType"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//arrayLength">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//arrayLength/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//arrayLength/expr"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//elementType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//elementType/type"/>
@@ -234,92 +230,90 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//pointerType/type"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//interfaceType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//interfaceType/methodSpec"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//interfaceType/methodSpecs"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//sliceType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//sliceType/elementType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//sliceType/elemType"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//mapType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//mapType/type"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//mapType/elementType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//mapType/elemType"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//channelType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//channelType/elementType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//channelType/elemType"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//methodSpec">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//methodSpec/signature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//methodSpec/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//methodSpec/sig"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//methodSpec/typeName"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//functionType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//functionType/signature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//functionType/sig"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//signature">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//signature/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//signature/params"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//signature/result"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//result">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//result/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//result/params"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//result/type"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//parameters">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//parameters/parameterList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//parameters/paramList"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//parameterList">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//parameterList/parameterDecl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//parameterList/paramsDecl"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//parameterDecl">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//parameterDecl/identifierList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//parameterDecl/identifierList"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//parameterDecl/type"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//operand">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//operand/literal"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//operand/operandName"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//operand/methodExpr"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//operand/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//operand/content"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//literal">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//literal/basicLit"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//literal/compositeLit"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//literal/functionLit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//literal/litBasic"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//literal/litComposite"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//literal/litFunc"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//operandName">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//operandName/qualifiedIdent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//operandName/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//operandName/qualIdent"/>
+    </genClasses>
+    <genClasses ecoreClass="Go.ecore#//qualifiedIdent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//qualifiedIdent/packageName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//qualifiedIdent/name"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//compositeLit">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//compositeLit/literalType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//compositeLit/literalValue"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//literalType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//literalType/structType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//literalType/arrayType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//literalType/elementType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//literalType/sliceType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//literalType/mapType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//literalType/typeName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//literalType/type"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//literalValue">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//literalValue/elementList"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//elementList">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//elementList/keyedElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//elementList/keyedElements"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//keyedElement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//keyedElement/key"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//keyedElement/element"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//key">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//key/expression"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//key/literalValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//key/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//key/expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//key/lit"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//element">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//element/expression"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//element/literalValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//element/content"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//structType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//structType/fieldDecl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//structType/fieldsDecl"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//fieldDecl">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//fieldDecl/identifierList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//fieldDecl/identifierList"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//fieldDecl/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//fieldDecl/anonymousField"/>
     </genClasses>
@@ -330,44 +324,41 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//functionLit/function"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//primaryExpr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExpr/operand"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExpr/conversion"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExpr/primaryExprSelector"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExpr/primaryExprIndex"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExpr/primaryExprSlice"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExpr/primaryExprTypeAssertion"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExpr/primaryExprArguments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExpr/content"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//primaryExprStuff">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//primaryExprStuff/selector"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExprStuff/index"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExprStuff/slice"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExprStuff/typeAssertion"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExprStuff/arguments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExprStuff/content"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//primaryExprSelector">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExprSelector/primaryExprStuff"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExprSelector/content"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExprSelector/primaryExprSelector"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//primaryExprIndex">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExprIndex/primaryExprStuff"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExprIndex/content"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExprIndex/primaryExprIndex"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//primaryExprSlice">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExprSlice/primaryExprStuff"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExprSlice/content"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExprSlice/primaryExprSlice"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//primaryExprTypeAssertion">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExprTypeAssertion/primaryExprStuff"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExprTypeAssertion/content"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExprTypeAssertion/primaryExprTypeAssertion"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//primaryExprArguments">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExprArguments/primaryExprStuff"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExprArguments/content"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//primaryExprArguments/primaryExprArguments"/>
     </genClasses>
-    <genClasses ecoreClass="Go.ecore#//index"/>
+    <genClasses ecoreClass="Go.ecore#//selector">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//selector/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Go.ecore#//index">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//index/expr"/>
+    </genClasses>
     <genClasses ecoreClass="Go.ecore#//slice">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//slice/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//slice/expr1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//slice/expr2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//slice/expr3"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//typeAssertion">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//typeAssertion/type"/>

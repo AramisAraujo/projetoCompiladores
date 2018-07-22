@@ -25,7 +25,7 @@ import org.xtext.go.statementList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.xtext.go.impl.exprCaseClauseImpl#getExprSwitchCase <em>Expr Switch Case</em>}</li>
- *   <li>{@link org.xtext.go.impl.exprCaseClauseImpl#getStatementList <em>Statement List</em>}</li>
+ *   <li>{@link org.xtext.go.impl.exprCaseClauseImpl#getStmtList <em>Stmt List</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,14 +44,14 @@ public class exprCaseClauseImpl extends MinimalEObjectImpl.Container implements 
   protected exprSwitchCase exprSwitchCase;
 
   /**
-   * The cached value of the '{@link #getStatementList() <em>Statement List</em>}' containment reference.
+   * The cached value of the '{@link #getStmtList() <em>Stmt List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStatementList()
+   * @see #getStmtList()
    * @generated
    * @ordered
    */
-  protected statementList statementList;
+  protected statementList stmtList;
 
   /**
    * <!-- begin-user-doc -->
@@ -127,9 +127,9 @@ public class exprCaseClauseImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public statementList getStatementList()
+  public statementList getStmtList()
   {
-    return statementList;
+    return stmtList;
   }
 
   /**
@@ -137,13 +137,13 @@ public class exprCaseClauseImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetStatementList(statementList newStatementList, NotificationChain msgs)
+  public NotificationChain basicSetStmtList(statementList newStmtList, NotificationChain msgs)
   {
-    statementList oldStatementList = statementList;
-    statementList = newStatementList;
+    statementList oldStmtList = stmtList;
+    stmtList = newStmtList;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.EXPR_CASE_CLAUSE__STATEMENT_LIST, oldStatementList, newStatementList);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.EXPR_CASE_CLAUSE__STMT_LIST, oldStmtList, newStmtList);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -154,20 +154,20 @@ public class exprCaseClauseImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setStatementList(statementList newStatementList)
+  public void setStmtList(statementList newStmtList)
   {
-    if (newStatementList != statementList)
+    if (newStmtList != stmtList)
     {
       NotificationChain msgs = null;
-      if (statementList != null)
-        msgs = ((InternalEObject)statementList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.EXPR_CASE_CLAUSE__STATEMENT_LIST, null, msgs);
-      if (newStatementList != null)
-        msgs = ((InternalEObject)newStatementList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.EXPR_CASE_CLAUSE__STATEMENT_LIST, null, msgs);
-      msgs = basicSetStatementList(newStatementList, msgs);
+      if (stmtList != null)
+        msgs = ((InternalEObject)stmtList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.EXPR_CASE_CLAUSE__STMT_LIST, null, msgs);
+      if (newStmtList != null)
+        msgs = ((InternalEObject)newStmtList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.EXPR_CASE_CLAUSE__STMT_LIST, null, msgs);
+      msgs = basicSetStmtList(newStmtList, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.EXPR_CASE_CLAUSE__STATEMENT_LIST, newStatementList, newStatementList));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.EXPR_CASE_CLAUSE__STMT_LIST, newStmtList, newStmtList));
   }
 
   /**
@@ -182,8 +182,8 @@ public class exprCaseClauseImpl extends MinimalEObjectImpl.Container implements 
     {
       case GoPackage.EXPR_CASE_CLAUSE__EXPR_SWITCH_CASE:
         return basicSetExprSwitchCase(null, msgs);
-      case GoPackage.EXPR_CASE_CLAUSE__STATEMENT_LIST:
-        return basicSetStatementList(null, msgs);
+      case GoPackage.EXPR_CASE_CLAUSE__STMT_LIST:
+        return basicSetStmtList(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -200,8 +200,8 @@ public class exprCaseClauseImpl extends MinimalEObjectImpl.Container implements 
     {
       case GoPackage.EXPR_CASE_CLAUSE__EXPR_SWITCH_CASE:
         return getExprSwitchCase();
-      case GoPackage.EXPR_CASE_CLAUSE__STATEMENT_LIST:
-        return getStatementList();
+      case GoPackage.EXPR_CASE_CLAUSE__STMT_LIST:
+        return getStmtList();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -219,8 +219,8 @@ public class exprCaseClauseImpl extends MinimalEObjectImpl.Container implements 
       case GoPackage.EXPR_CASE_CLAUSE__EXPR_SWITCH_CASE:
         setExprSwitchCase((exprSwitchCase)newValue);
         return;
-      case GoPackage.EXPR_CASE_CLAUSE__STATEMENT_LIST:
-        setStatementList((statementList)newValue);
+      case GoPackage.EXPR_CASE_CLAUSE__STMT_LIST:
+        setStmtList((statementList)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -239,8 +239,8 @@ public class exprCaseClauseImpl extends MinimalEObjectImpl.Container implements 
       case GoPackage.EXPR_CASE_CLAUSE__EXPR_SWITCH_CASE:
         setExprSwitchCase((exprSwitchCase)null);
         return;
-      case GoPackage.EXPR_CASE_CLAUSE__STATEMENT_LIST:
-        setStatementList((statementList)null);
+      case GoPackage.EXPR_CASE_CLAUSE__STMT_LIST:
+        setStmtList((statementList)null);
         return;
     }
     super.eUnset(featureID);
@@ -258,8 +258,8 @@ public class exprCaseClauseImpl extends MinimalEObjectImpl.Container implements 
     {
       case GoPackage.EXPR_CASE_CLAUSE__EXPR_SWITCH_CASE:
         return exprSwitchCase != null;
-      case GoPackage.EXPR_CASE_CLAUSE__STATEMENT_LIST:
-        return statementList != null;
+      case GoPackage.EXPR_CASE_CLAUSE__STMT_LIST:
+        return stmtList != null;
     }
     return super.eIsSet(featureID);
   }

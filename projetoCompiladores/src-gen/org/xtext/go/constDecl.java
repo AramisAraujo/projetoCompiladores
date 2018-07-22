@@ -3,6 +3,8 @@
  */
 package org.xtext.go;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.constDecl#getConstSpec <em>Const Spec</em>}</li>
+ *   <li>{@link org.xtext.go.constDecl#getSpec <em>Spec</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,29 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface constDecl extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Const Spec</b></em>' containment reference.
+   * Returns the value of the '<em><b>Spec</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.go.constSpec}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Const Spec</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Spec</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Const Spec</em>' containment reference.
-   * @see #setConstSpec(constSpec)
-   * @see org.xtext.go.GoPackage#getconstDecl_ConstSpec()
+   * @return the value of the '<em>Spec</em>' containment reference list.
+   * @see org.xtext.go.GoPackage#getconstDecl_Spec()
    * @model containment="true"
    * @generated
    */
-  constSpec getConstSpec();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.constDecl#getConstSpec <em>Const Spec</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Const Spec</em>' containment reference.
-   * @see #getConstSpec()
-   * @generated
-   */
-  void setConstSpec(constSpec value);
+  EList<constSpec> getSpec();
 
 } // constDecl

@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.returnStmt#getExpressionList <em>Expression List</em>}</li>
+ *   <li>{@link org.xtext.go.returnStmt#getExprList <em>Expr List</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,29 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface returnStmt extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Expression List</b></em>' containment reference.
+   * Returns the value of the '<em><b>Expr List</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Expression List</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Expr List</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expression List</em>' containment reference.
-   * @see #setExpressionList(expressionList)
-   * @see org.xtext.go.GoPackage#getreturnStmt_ExpressionList()
+   * @return the value of the '<em>Expr List</em>' containment reference.
+   * @see #setExprList(expressionList)
+   * @see org.xtext.go.GoPackage#getreturnStmt_ExprList()
    * @model containment="true"
    * @generated
    */
-  expressionList getExpressionList();
+  expressionList getExprList();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.returnStmt#getExpressionList <em>Expression List</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.returnStmt#getExprList <em>Expr List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expression List</em>' containment reference.
-   * @see #getExpressionList()
+   * @param value the new value of the '<em>Expr List</em>' containment reference.
+   * @see #getExprList()
    * @generated
    */
-  void setExpressionList(expressionList value);
+  void setExprList(expressionList value);
 
 } // returnStmt

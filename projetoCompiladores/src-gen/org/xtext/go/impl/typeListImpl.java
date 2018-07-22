@@ -3,14 +3,19 @@
  */
 package org.xtext.go.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.go.GoPackage;
 import org.xtext.go.type;
@@ -23,7 +28,7 @@ import org.xtext.go.typeList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.typeListImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.xtext.go.impl.typeListImpl#getTypes <em>Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,14 +37,14 @@ import org.xtext.go.typeList;
 public class typeListImpl extends MinimalEObjectImpl.Container implements typeList
 {
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+   * The cached value of the '{@link #getTypes() <em>Types</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
+   * @see #getTypes()
    * @generated
    * @ordered
    */
-  protected type type;
+  protected EList<type> types;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,47 +72,13 @@ public class typeListImpl extends MinimalEObjectImpl.Container implements typeLi
    * <!-- end-user-doc -->
    * @generated
    */
-  public type getType()
+  public EList<type> getTypes()
   {
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetType(type newType, NotificationChain msgs)
-  {
-    type oldType = type;
-    type = newType;
-    if (eNotificationRequired())
+    if (types == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_LIST__TYPE, oldType, newType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      types = new EObjectContainmentEList<type>(type.class, this, GoPackage.TYPE_LIST__TYPES);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setType(type newType)
-  {
-    if (newType != type)
-    {
-      NotificationChain msgs = null;
-      if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_LIST__TYPE, null, msgs);
-      if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_LIST__TYPE, null, msgs);
-      msgs = basicSetType(newType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_LIST__TYPE, newType, newType));
+    return types;
   }
 
   /**
@@ -120,8 +91,8 @@ public class typeListImpl extends MinimalEObjectImpl.Container implements typeLi
   {
     switch (featureID)
     {
-      case GoPackage.TYPE_LIST__TYPE:
-        return basicSetType(null, msgs);
+      case GoPackage.TYPE_LIST__TYPES:
+        return ((InternalEList<?>)getTypes()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +107,8 @@ public class typeListImpl extends MinimalEObjectImpl.Container implements typeLi
   {
     switch (featureID)
     {
-      case GoPackage.TYPE_LIST__TYPE:
-        return getType();
+      case GoPackage.TYPE_LIST__TYPES:
+        return getTypes();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -147,13 +118,15 @@ public class typeListImpl extends MinimalEObjectImpl.Container implements typeLi
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case GoPackage.TYPE_LIST__TYPE:
-        setType((type)newValue);
+      case GoPackage.TYPE_LIST__TYPES:
+        getTypes().clear();
+        getTypes().addAll((Collection<? extends type>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +142,8 @@ public class typeListImpl extends MinimalEObjectImpl.Container implements typeLi
   {
     switch (featureID)
     {
-      case GoPackage.TYPE_LIST__TYPE:
-        setType((type)null);
+      case GoPackage.TYPE_LIST__TYPES:
+        getTypes().clear();
         return;
     }
     super.eUnset(featureID);
@@ -186,8 +159,8 @@ public class typeListImpl extends MinimalEObjectImpl.Container implements typeLi
   {
     switch (featureID)
     {
-      case GoPackage.TYPE_LIST__TYPE:
-        return type != null;
+      case GoPackage.TYPE_LIST__TYPES:
+        return types != null && !types.isEmpty();
     }
     return super.eIsSet(featureID);
   }

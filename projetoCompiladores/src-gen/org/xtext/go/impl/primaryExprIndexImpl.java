@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.go.GoPackage;
 import org.xtext.go.primaryExprIndex;
-import org.xtext.go.primaryExprSelector;
 import org.xtext.go.primaryExprStuff;
 
 /**
@@ -24,7 +23,7 @@ import org.xtext.go.primaryExprStuff;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.primaryExprIndexImpl#getPrimaryExprStuff <em>Primary Expr Stuff</em>}</li>
+ *   <li>{@link org.xtext.go.impl.primaryExprIndexImpl#getContent <em>Content</em>}</li>
  *   <li>{@link org.xtext.go.impl.primaryExprIndexImpl#getPrimaryExprIndex <em>Primary Expr Index</em>}</li>
  * </ul>
  * </p>
@@ -34,14 +33,14 @@ import org.xtext.go.primaryExprStuff;
 public class primaryExprIndexImpl extends MinimalEObjectImpl.Container implements primaryExprIndex
 {
   /**
-   * The cached value of the '{@link #getPrimaryExprStuff() <em>Primary Expr Stuff</em>}' containment reference.
+   * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPrimaryExprStuff()
+   * @see #getContent()
    * @generated
    * @ordered
    */
-  protected primaryExprStuff primaryExprStuff;
+  protected primaryExprStuff content;
 
   /**
    * The cached value of the '{@link #getPrimaryExprIndex() <em>Primary Expr Index</em>}' containment reference.
@@ -51,7 +50,7 @@ public class primaryExprIndexImpl extends MinimalEObjectImpl.Container implement
    * @generated
    * @ordered
    */
-  protected primaryExprSelector primaryExprIndex;
+  protected primaryExprIndex primaryExprIndex;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,9 +78,9 @@ public class primaryExprIndexImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public primaryExprStuff getPrimaryExprStuff()
+  public primaryExprStuff getContent()
   {
-    return primaryExprStuff;
+    return content;
   }
 
   /**
@@ -89,13 +88,13 @@ public class primaryExprIndexImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPrimaryExprStuff(primaryExprStuff newPrimaryExprStuff, NotificationChain msgs)
+  public NotificationChain basicSetContent(primaryExprStuff newContent, NotificationChain msgs)
   {
-    primaryExprStuff oldPrimaryExprStuff = primaryExprStuff;
-    primaryExprStuff = newPrimaryExprStuff;
+    primaryExprStuff oldContent = content;
+    content = newContent;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.PRIMARY_EXPR_INDEX__PRIMARY_EXPR_STUFF, oldPrimaryExprStuff, newPrimaryExprStuff);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.PRIMARY_EXPR_INDEX__CONTENT, oldContent, newContent);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -106,20 +105,20 @@ public class primaryExprIndexImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPrimaryExprStuff(primaryExprStuff newPrimaryExprStuff)
+  public void setContent(primaryExprStuff newContent)
   {
-    if (newPrimaryExprStuff != primaryExprStuff)
+    if (newContent != content)
     {
       NotificationChain msgs = null;
-      if (primaryExprStuff != null)
-        msgs = ((InternalEObject)primaryExprStuff).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.PRIMARY_EXPR_INDEX__PRIMARY_EXPR_STUFF, null, msgs);
-      if (newPrimaryExprStuff != null)
-        msgs = ((InternalEObject)newPrimaryExprStuff).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.PRIMARY_EXPR_INDEX__PRIMARY_EXPR_STUFF, null, msgs);
-      msgs = basicSetPrimaryExprStuff(newPrimaryExprStuff, msgs);
+      if (content != null)
+        msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.PRIMARY_EXPR_INDEX__CONTENT, null, msgs);
+      if (newContent != null)
+        msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.PRIMARY_EXPR_INDEX__CONTENT, null, msgs);
+      msgs = basicSetContent(newContent, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.PRIMARY_EXPR_INDEX__PRIMARY_EXPR_STUFF, newPrimaryExprStuff, newPrimaryExprStuff));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.PRIMARY_EXPR_INDEX__CONTENT, newContent, newContent));
   }
 
   /**
@@ -127,7 +126,7 @@ public class primaryExprIndexImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public primaryExprSelector getPrimaryExprIndex()
+  public primaryExprIndex getPrimaryExprIndex()
   {
     return primaryExprIndex;
   }
@@ -137,9 +136,9 @@ public class primaryExprIndexImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPrimaryExprIndex(primaryExprSelector newPrimaryExprIndex, NotificationChain msgs)
+  public NotificationChain basicSetPrimaryExprIndex(primaryExprIndex newPrimaryExprIndex, NotificationChain msgs)
   {
-    primaryExprSelector oldPrimaryExprIndex = primaryExprIndex;
+    primaryExprIndex oldPrimaryExprIndex = primaryExprIndex;
     primaryExprIndex = newPrimaryExprIndex;
     if (eNotificationRequired())
     {
@@ -154,7 +153,7 @@ public class primaryExprIndexImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPrimaryExprIndex(primaryExprSelector newPrimaryExprIndex)
+  public void setPrimaryExprIndex(primaryExprIndex newPrimaryExprIndex)
   {
     if (newPrimaryExprIndex != primaryExprIndex)
     {
@@ -180,8 +179,8 @@ public class primaryExprIndexImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case GoPackage.PRIMARY_EXPR_INDEX__PRIMARY_EXPR_STUFF:
-        return basicSetPrimaryExprStuff(null, msgs);
+      case GoPackage.PRIMARY_EXPR_INDEX__CONTENT:
+        return basicSetContent(null, msgs);
       case GoPackage.PRIMARY_EXPR_INDEX__PRIMARY_EXPR_INDEX:
         return basicSetPrimaryExprIndex(null, msgs);
     }
@@ -198,8 +197,8 @@ public class primaryExprIndexImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case GoPackage.PRIMARY_EXPR_INDEX__PRIMARY_EXPR_STUFF:
-        return getPrimaryExprStuff();
+      case GoPackage.PRIMARY_EXPR_INDEX__CONTENT:
+        return getContent();
       case GoPackage.PRIMARY_EXPR_INDEX__PRIMARY_EXPR_INDEX:
         return getPrimaryExprIndex();
     }
@@ -216,11 +215,11 @@ public class primaryExprIndexImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case GoPackage.PRIMARY_EXPR_INDEX__PRIMARY_EXPR_STUFF:
-        setPrimaryExprStuff((primaryExprStuff)newValue);
+      case GoPackage.PRIMARY_EXPR_INDEX__CONTENT:
+        setContent((primaryExprStuff)newValue);
         return;
       case GoPackage.PRIMARY_EXPR_INDEX__PRIMARY_EXPR_INDEX:
-        setPrimaryExprIndex((primaryExprSelector)newValue);
+        setPrimaryExprIndex((primaryExprIndex)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -236,11 +235,11 @@ public class primaryExprIndexImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case GoPackage.PRIMARY_EXPR_INDEX__PRIMARY_EXPR_STUFF:
-        setPrimaryExprStuff((primaryExprStuff)null);
+      case GoPackage.PRIMARY_EXPR_INDEX__CONTENT:
+        setContent((primaryExprStuff)null);
         return;
       case GoPackage.PRIMARY_EXPR_INDEX__PRIMARY_EXPR_INDEX:
-        setPrimaryExprIndex((primaryExprSelector)null);
+        setPrimaryExprIndex((primaryExprIndex)null);
         return;
     }
     super.eUnset(featureID);
@@ -256,8 +255,8 @@ public class primaryExprIndexImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case GoPackage.PRIMARY_EXPR_INDEX__PRIMARY_EXPR_STUFF:
-        return primaryExprStuff != null;
+      case GoPackage.PRIMARY_EXPR_INDEX__CONTENT:
+        return content != null;
       case GoPackage.PRIMARY_EXPR_INDEX__PRIMARY_EXPR_INDEX:
         return primaryExprIndex != null;
     }

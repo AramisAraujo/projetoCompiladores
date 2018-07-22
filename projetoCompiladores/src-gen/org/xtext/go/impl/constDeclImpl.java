@@ -3,14 +3,19 @@
  */
 package org.xtext.go.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.go.GoPackage;
 import org.xtext.go.constDecl;
@@ -23,7 +28,7 @@ import org.xtext.go.constSpec;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.constDeclImpl#getConstSpec <em>Const Spec</em>}</li>
+ *   <li>{@link org.xtext.go.impl.constDeclImpl#getSpec <em>Spec</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,14 +37,14 @@ import org.xtext.go.constSpec;
 public class constDeclImpl extends MinimalEObjectImpl.Container implements constDecl
 {
   /**
-   * The cached value of the '{@link #getConstSpec() <em>Const Spec</em>}' containment reference.
+   * The cached value of the '{@link #getSpec() <em>Spec</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConstSpec()
+   * @see #getSpec()
    * @generated
    * @ordered
    */
-  protected constSpec constSpec;
+  protected EList<constSpec> spec;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,47 +72,13 @@ public class constDeclImpl extends MinimalEObjectImpl.Container implements const
    * <!-- end-user-doc -->
    * @generated
    */
-  public constSpec getConstSpec()
+  public EList<constSpec> getSpec()
   {
-    return constSpec;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetConstSpec(constSpec newConstSpec, NotificationChain msgs)
-  {
-    constSpec oldConstSpec = constSpec;
-    constSpec = newConstSpec;
-    if (eNotificationRequired())
+    if (spec == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.CONST_DECL__CONST_SPEC, oldConstSpec, newConstSpec);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      spec = new EObjectContainmentEList<constSpec>(constSpec.class, this, GoPackage.CONST_DECL__SPEC);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setConstSpec(constSpec newConstSpec)
-  {
-    if (newConstSpec != constSpec)
-    {
-      NotificationChain msgs = null;
-      if (constSpec != null)
-        msgs = ((InternalEObject)constSpec).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.CONST_DECL__CONST_SPEC, null, msgs);
-      if (newConstSpec != null)
-        msgs = ((InternalEObject)newConstSpec).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.CONST_DECL__CONST_SPEC, null, msgs);
-      msgs = basicSetConstSpec(newConstSpec, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.CONST_DECL__CONST_SPEC, newConstSpec, newConstSpec));
+    return spec;
   }
 
   /**
@@ -120,8 +91,8 @@ public class constDeclImpl extends MinimalEObjectImpl.Container implements const
   {
     switch (featureID)
     {
-      case GoPackage.CONST_DECL__CONST_SPEC:
-        return basicSetConstSpec(null, msgs);
+      case GoPackage.CONST_DECL__SPEC:
+        return ((InternalEList<?>)getSpec()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +107,8 @@ public class constDeclImpl extends MinimalEObjectImpl.Container implements const
   {
     switch (featureID)
     {
-      case GoPackage.CONST_DECL__CONST_SPEC:
-        return getConstSpec();
+      case GoPackage.CONST_DECL__SPEC:
+        return getSpec();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -147,13 +118,15 @@ public class constDeclImpl extends MinimalEObjectImpl.Container implements const
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case GoPackage.CONST_DECL__CONST_SPEC:
-        setConstSpec((constSpec)newValue);
+      case GoPackage.CONST_DECL__SPEC:
+        getSpec().clear();
+        getSpec().addAll((Collection<? extends constSpec>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +142,8 @@ public class constDeclImpl extends MinimalEObjectImpl.Container implements const
   {
     switch (featureID)
     {
-      case GoPackage.CONST_DECL__CONST_SPEC:
-        setConstSpec((constSpec)null);
+      case GoPackage.CONST_DECL__SPEC:
+        getSpec().clear();
         return;
     }
     super.eUnset(featureID);
@@ -186,8 +159,8 @@ public class constDeclImpl extends MinimalEObjectImpl.Container implements const
   {
     switch (featureID)
     {
-      case GoPackage.CONST_DECL__CONST_SPEC:
-        return constSpec != null;
+      case GoPackage.CONST_DECL__SPEC:
+        return spec != null && !spec.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -13,10 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.operand#getLiteral <em>Literal</em>}</li>
- *   <li>{@link org.xtext.go.operand#getOperandName <em>Operand Name</em>}</li>
- *   <li>{@link org.xtext.go.operand#getMethodExpr <em>Method Expr</em>}</li>
- *   <li>{@link org.xtext.go.operand#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.xtext.go.operand#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,107 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface operand extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Literal</b></em>' containment reference.
+   * Returns the value of the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Literal</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Content</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Literal</em>' containment reference.
-   * @see #setLiteral(literal)
-   * @see org.xtext.go.GoPackage#getoperand_Literal()
+   * @return the value of the '<em>Content</em>' containment reference.
+   * @see #setContent(EObject)
+   * @see org.xtext.go.GoPackage#getoperand_Content()
    * @model containment="true"
    * @generated
    */
-  literal getLiteral();
+  EObject getContent();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.operand#getLiteral <em>Literal</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.operand#getContent <em>Content</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Literal</em>' containment reference.
-   * @see #getLiteral()
+   * @param value the new value of the '<em>Content</em>' containment reference.
+   * @see #getContent()
    * @generated
    */
-  void setLiteral(literal value);
-
-  /**
-   * Returns the value of the '<em><b>Operand Name</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Operand Name</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Operand Name</em>' containment reference.
-   * @see #setOperandName(operandName)
-   * @see org.xtext.go.GoPackage#getoperand_OperandName()
-   * @model containment="true"
-   * @generated
-   */
-  operandName getOperandName();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.operand#getOperandName <em>Operand Name</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Operand Name</em>' containment reference.
-   * @see #getOperandName()
-   * @generated
-   */
-  void setOperandName(operandName value);
-
-  /**
-   * Returns the value of the '<em><b>Method Expr</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Method Expr</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Method Expr</em>' containment reference.
-   * @see #setMethodExpr(methodExpr)
-   * @see org.xtext.go.GoPackage#getoperand_MethodExpr()
-   * @model containment="true"
-   * @generated
-   */
-  methodExpr getMethodExpr();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.operand#getMethodExpr <em>Method Expr</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Method Expr</em>' containment reference.
-   * @see #getMethodExpr()
-   * @generated
-   */
-  void setMethodExpr(methodExpr value);
-
-  /**
-   * Returns the value of the '<em><b>Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Expression</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Expression</em>' containment reference.
-   * @see #setExpression(expression)
-   * @see org.xtext.go.GoPackage#getoperand_Expression()
-   * @model containment="true"
-   * @generated
-   */
-  expression getExpression();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.operand#getExpression <em>Expression</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expression</em>' containment reference.
-   * @see #getExpression()
-   * @generated
-   */
-  void setExpression(expression value);
+  void setContent(EObject value);
 
 } // operand

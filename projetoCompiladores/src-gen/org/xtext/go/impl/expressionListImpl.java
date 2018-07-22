@@ -3,14 +3,19 @@
  */
 package org.xtext.go.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.go.GoPackage;
 import org.xtext.go.expression;
@@ -23,7 +28,7 @@ import org.xtext.go.expressionList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.expressionListImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.xtext.go.impl.expressionListImpl#getExpr <em>Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,14 +37,14 @@ import org.xtext.go.expressionList;
 public class expressionListImpl extends MinimalEObjectImpl.Container implements expressionList
 {
   /**
-   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
+   * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExpression()
+   * @see #getExpr()
    * @generated
    * @ordered
    */
-  protected expression expression;
+  protected EList<expression> expr;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,47 +72,13 @@ public class expressionListImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public expression getExpression()
+  public EList<expression> getExpr()
   {
-    return expression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetExpression(expression newExpression, NotificationChain msgs)
-  {
-    expression oldExpression = expression;
-    expression = newExpression;
-    if (eNotificationRequired())
+    if (expr == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.EXPRESSION_LIST__EXPRESSION, oldExpression, newExpression);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      expr = new EObjectContainmentEList<expression>(expression.class, this, GoPackage.EXPRESSION_LIST__EXPR);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setExpression(expression newExpression)
-  {
-    if (newExpression != expression)
-    {
-      NotificationChain msgs = null;
-      if (expression != null)
-        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.EXPRESSION_LIST__EXPRESSION, null, msgs);
-      if (newExpression != null)
-        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.EXPRESSION_LIST__EXPRESSION, null, msgs);
-      msgs = basicSetExpression(newExpression, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.EXPRESSION_LIST__EXPRESSION, newExpression, newExpression));
+    return expr;
   }
 
   /**
@@ -120,8 +91,8 @@ public class expressionListImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case GoPackage.EXPRESSION_LIST__EXPRESSION:
-        return basicSetExpression(null, msgs);
+      case GoPackage.EXPRESSION_LIST__EXPR:
+        return ((InternalEList<?>)getExpr()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +107,8 @@ public class expressionListImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case GoPackage.EXPRESSION_LIST__EXPRESSION:
-        return getExpression();
+      case GoPackage.EXPRESSION_LIST__EXPR:
+        return getExpr();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -147,13 +118,15 @@ public class expressionListImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case GoPackage.EXPRESSION_LIST__EXPRESSION:
-        setExpression((expression)newValue);
+      case GoPackage.EXPRESSION_LIST__EXPR:
+        getExpr().clear();
+        getExpr().addAll((Collection<? extends expression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +142,8 @@ public class expressionListImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case GoPackage.EXPRESSION_LIST__EXPRESSION:
-        setExpression((expression)null);
+      case GoPackage.EXPRESSION_LIST__EXPR:
+        getExpr().clear();
         return;
     }
     super.eUnset(featureID);
@@ -186,8 +159,8 @@ public class expressionListImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case GoPackage.EXPRESSION_LIST__EXPRESSION:
-        return expression != null;
+      case GoPackage.EXPRESSION_LIST__EXPR:
+        return expr != null && !expr.isEmpty();
     }
     return super.eIsSet(featureID);
   }

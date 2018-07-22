@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.channelType#getElementType <em>Element Type</em>}</li>
+ *   <li>{@link org.xtext.go.channelType#getElemType <em>Elem Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,29 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface channelType extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Element Type</b></em>' containment reference.
+   * Returns the value of the '<em><b>Elem Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Element Type</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Elem Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Element Type</em>' containment reference.
-   * @see #setElementType(elementType)
-   * @see org.xtext.go.GoPackage#getchannelType_ElementType()
+   * @return the value of the '<em>Elem Type</em>' containment reference.
+   * @see #setElemType(elementType)
+   * @see org.xtext.go.GoPackage#getchannelType_ElemType()
    * @model containment="true"
    * @generated
    */
-  elementType getElementType();
+  elementType getElemType();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.channelType#getElementType <em>Element Type</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.channelType#getElemType <em>Elem Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Element Type</em>' containment reference.
-   * @see #getElementType()
+   * @param value the new value of the '<em>Elem Type</em>' containment reference.
+   * @see #getElemType()
    * @generated
    */
-  void setElementType(elementType value);
+  void setElemType(elementType value);
 
 } // channelType

@@ -13,9 +13,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.literal#getBasicLit <em>Basic Lit</em>}</li>
- *   <li>{@link org.xtext.go.literal#getCompositeLit <em>Composite Lit</em>}</li>
- *   <li>{@link org.xtext.go.literal#getFunctionLit <em>Function Lit</em>}</li>
+ *   <li>{@link org.xtext.go.literal#getLitBasic <em>Lit Basic</em>}</li>
+ *   <li>{@link org.xtext.go.literal#getLitComposite <em>Lit Composite</em>}</li>
+ *   <li>{@link org.xtext.go.literal#getLitFunc <em>Lit Func</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,81 +26,81 @@ import org.eclipse.emf.ecore.EObject;
 public interface literal extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Basic Lit</b></em>' attribute.
+   * Returns the value of the '<em><b>Lit Basic</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Basic Lit</em>' attribute isn't clear,
+   * If the meaning of the '<em>Lit Basic</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Basic Lit</em>' attribute.
-   * @see #setBasicLit(String)
-   * @see org.xtext.go.GoPackage#getliteral_BasicLit()
+   * @return the value of the '<em>Lit Basic</em>' attribute.
+   * @see #setLitBasic(String)
+   * @see org.xtext.go.GoPackage#getliteral_LitBasic()
    * @model
    * @generated
    */
-  String getBasicLit();
+  String getLitBasic();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.literal#getBasicLit <em>Basic Lit</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.go.literal#getLitBasic <em>Lit Basic</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Basic Lit</em>' attribute.
-   * @see #getBasicLit()
+   * @param value the new value of the '<em>Lit Basic</em>' attribute.
+   * @see #getLitBasic()
    * @generated
    */
-  void setBasicLit(String value);
+  void setLitBasic(String value);
 
   /**
-   * Returns the value of the '<em><b>Composite Lit</b></em>' containment reference.
+   * Returns the value of the '<em><b>Lit Composite</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Composite Lit</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Lit Composite</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Composite Lit</em>' containment reference.
-   * @see #setCompositeLit(compositeLit)
-   * @see org.xtext.go.GoPackage#getliteral_CompositeLit()
+   * @return the value of the '<em>Lit Composite</em>' containment reference.
+   * @see #setLitComposite(compositeLit)
+   * @see org.xtext.go.GoPackage#getliteral_LitComposite()
    * @model containment="true"
    * @generated
    */
-  compositeLit getCompositeLit();
+  compositeLit getLitComposite();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.literal#getCompositeLit <em>Composite Lit</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.literal#getLitComposite <em>Lit Composite</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Composite Lit</em>' containment reference.
-   * @see #getCompositeLit()
+   * @param value the new value of the '<em>Lit Composite</em>' containment reference.
+   * @see #getLitComposite()
    * @generated
    */
-  void setCompositeLit(compositeLit value);
+  void setLitComposite(compositeLit value);
 
   /**
-   * Returns the value of the '<em><b>Function Lit</b></em>' containment reference.
+   * Returns the value of the '<em><b>Lit Func</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Function Lit</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Lit Func</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Function Lit</em>' containment reference.
-   * @see #setFunctionLit(functionLit)
-   * @see org.xtext.go.GoPackage#getliteral_FunctionLit()
+   * @return the value of the '<em>Lit Func</em>' containment reference.
+   * @see #setLitFunc(functionLit)
+   * @see org.xtext.go.GoPackage#getliteral_LitFunc()
    * @model containment="true"
    * @generated
    */
-  functionLit getFunctionLit();
+  functionLit getLitFunc();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.literal#getFunctionLit <em>Function Lit</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.literal#getLitFunc <em>Lit Func</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Function Lit</em>' containment reference.
-   * @see #getFunctionLit()
+   * @param value the new value of the '<em>Lit Func</em>' containment reference.
+   * @see #getLitFunc()
    * @generated
    */
-  void setFunctionLit(functionLit value);
+  void setLitFunc(functionLit value);
 
 } // literal

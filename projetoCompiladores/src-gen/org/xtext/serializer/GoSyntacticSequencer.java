@@ -33,7 +33,8 @@ public class GoSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_literalValue_CommaKeyword_1_1_q;
 	protected AbstractElementAlias match_parameterDecl_FullStopFullStopFullStopKeyword_1_q;
 	protected AbstractElementAlias match_parameters_CommaKeyword_1_1_q;
-	protected AbstractElementAlias match_typeSwitchGuard___IDENTIFIERTerminalRuleCall_0_0_ColonEqualsSignKeyword_0_1__q;
+	protected AbstractElementAlias match_sourceFile_EosParserRuleCall_1_q;
+	protected AbstractElementAlias match_sourceFile_EosParserRuleCall_2_1_q;
 	protected AbstractElementAlias match_unaryExpr_AmpersandKeyword_1_0_5_or_AsteriskKeyword_1_0_4_or_CircumflexAccentKeyword_1_0_3_or_ExclamationMarkKeyword_1_0_2_or_HyphenMinusKeyword_1_0_1_or_LessThanSignHyphenMinusKeyword_1_0_6_or_PlusSignKeyword_1_0_0;
 	
 	@Inject
@@ -50,7 +51,8 @@ public class GoSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_literalValue_CommaKeyword_1_1_q = new TokenAlias(false, true, grammarAccess.getLiteralValueAccess().getCommaKeyword_1_1());
 		match_parameterDecl_FullStopFullStopFullStopKeyword_1_q = new TokenAlias(false, true, grammarAccess.getParameterDeclAccess().getFullStopFullStopFullStopKeyword_1());
 		match_parameters_CommaKeyword_1_1_q = new TokenAlias(false, true, grammarAccess.getParametersAccess().getCommaKeyword_1_1());
-		match_typeSwitchGuard___IDENTIFIERTerminalRuleCall_0_0_ColonEqualsSignKeyword_0_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getTypeSwitchGuardAccess().getIDENTIFIERTerminalRuleCall_0_0()), new TokenAlias(false, false, grammarAccess.getTypeSwitchGuardAccess().getColonEqualsSignKeyword_0_1()));
+		match_sourceFile_EosParserRuleCall_1_q = new TokenAlias(false, true, grammarAccess.getSourceFileAccess().getEosParserRuleCall_1());
+		match_sourceFile_EosParserRuleCall_2_1_q = new TokenAlias(false, true, grammarAccess.getSourceFileAccess().getEosParserRuleCall_2_1());
 		match_unaryExpr_AmpersandKeyword_1_0_5_or_AsteriskKeyword_1_0_4_or_CircumflexAccentKeyword_1_0_3_or_ExclamationMarkKeyword_1_0_2_or_HyphenMinusKeyword_1_0_1_or_LessThanSignHyphenMinusKeyword_1_0_6_or_PlusSignKeyword_1_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getUnaryExprAccess().getAmpersandKeyword_1_0_5()), new TokenAlias(false, false, grammarAccess.getUnaryExprAccess().getAsteriskKeyword_1_0_4()), new TokenAlias(false, false, grammarAccess.getUnaryExprAccess().getCircumflexAccentKeyword_1_0_3()), new TokenAlias(false, false, grammarAccess.getUnaryExprAccess().getExclamationMarkKeyword_1_0_2()), new TokenAlias(false, false, grammarAccess.getUnaryExprAccess().getHyphenMinusKeyword_1_0_1()), new TokenAlias(false, false, grammarAccess.getUnaryExprAccess().getLessThanSignHyphenMinusKeyword_1_0_6()), new TokenAlias(false, false, grammarAccess.getUnaryExprAccess().getPlusSignKeyword_1_0_0()));
 	}
 	
@@ -62,6 +64,8 @@ public class GoSyntacticSequencer extends AbstractSyntacticSequencer {
 			return getIDENTIFIERToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getSTRING_LITRule())
 			return getSTRING_LITToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getEosRule())
+			return geteosToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
@@ -77,7 +81,7 @@ public class GoSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * terminal IDENTIFIER:
-	 * 	LETTER ( LETTER | UNICODE_DIGIT )*;
+	 * 	LETTER ( LETTER | DECIMAL_DIGIT )*;
 	 */
 	protected String getIDENTIFIERToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -93,6 +97,16 @@ public class GoSyntacticSequencer extends AbstractSyntacticSequencer {
 		if (node != null)
 			return getTokenText(node);
 		return "\'\'";
+	}
+	
+	/**
+	 * eos: 
+	 * 	(';');
+	 */
+	protected String geteosToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return ";";
 	}
 	
 	@Override
@@ -123,8 +137,10 @@ public class GoSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_parameterDecl_FullStopFullStopFullStopKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_parameters_CommaKeyword_1_1_q.equals(syntax))
 				emit_parameters_CommaKeyword_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_typeSwitchGuard___IDENTIFIERTerminalRuleCall_0_0_ColonEqualsSignKeyword_0_1__q.equals(syntax))
-				emit_typeSwitchGuard___IDENTIFIERTerminalRuleCall_0_0_ColonEqualsSignKeyword_0_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_sourceFile_EosParserRuleCall_1_q.equals(syntax))
+				emit_sourceFile_EosParserRuleCall_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_sourceFile_EosParserRuleCall_2_1_q.equals(syntax))
+				emit_sourceFile_EosParserRuleCall_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_unaryExpr_AmpersandKeyword_1_0_5_or_AsteriskKeyword_1_0_4_or_CircumflexAccentKeyword_1_0_3_or_ExclamationMarkKeyword_1_0_2_or_HyphenMinusKeyword_1_0_1_or_LessThanSignHyphenMinusKeyword_1_0_6_or_PlusSignKeyword_1_0_0.equals(syntax))
 				emit_unaryExpr_AmpersandKeyword_1_0_5_or_AsteriskKeyword_1_0_4_or_CircumflexAccentKeyword_1_0_3_or_ExclamationMarkKeyword_1_0_2_or_HyphenMinusKeyword_1_0_1_or_LessThanSignHyphenMinusKeyword_1_0_6_or_PlusSignKeyword_1_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -171,7 +187,7 @@ public class GoSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'chan' | ('chan' '<-') | ('<-' 'chan')
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) elementType=elementType
+	 *     (rule start) (ambiguity) elemType=elementType
 	 */
 	protected void emit_channelType_ChanKeyword_0_0_or___ChanKeyword_0_1_0_LessThanSignHyphenMinusKeyword_0_1_1___or___LessThanSignHyphenMinusKeyword_0_2_0_ChanKeyword_0_2_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -205,7 +221,7 @@ public class GoSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('.' | IDENTIFIER)?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) importPath=importPath
+	 *     (rule start) (ambiguity) path=importPath
 	 */
 	protected void emit_importSpec___FullStopKeyword_0_0_or_IDENTIFIERTerminalRuleCall_0_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -216,7 +232,7 @@ public class GoSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     '++' | '--'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     expression=expression (ambiguity) (rule end)
+	 *     expr=expression (ambiguity) (rule end)
 	 */
 	protected void emit_incDecStmt_HyphenMinusHyphenMinusKeyword_1_1_or_PlusSignPlusSignKeyword_1_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -250,7 +266,7 @@ public class GoSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     parameterList=parameterList (ambiguity) ')' (rule end)
+	 *     paramList+=parameterList (ambiguity) ')' (rule end)
 	 */
 	protected void emit_parameters_CommaKeyword_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -258,12 +274,27 @@ public class GoSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     (IDENTIFIER ':=')?
+	 *     eos?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) primaryExpr=primaryExpr
+	 *     package=packageClause (ambiguity) (rule end)
+	 *     package=packageClause (ambiguity) imports+=importDecl
+	 *     package=packageClause (ambiguity) topLevelDecls+=topLevelDecl
 	 */
-	protected void emit_typeSwitchGuard___IDENTIFIERTerminalRuleCall_0_0_ColonEqualsSignKeyword_0_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_sourceFile_EosParserRuleCall_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     eos?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     imports+=importDecl (ambiguity) (rule end)
+	 *     imports+=importDecl (ambiguity) imports+=importDecl
+	 *     imports+=importDecl (ambiguity) topLevelDecls+=topLevelDecl
+	 */
+	protected void emit_sourceFile_EosParserRuleCall_2_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

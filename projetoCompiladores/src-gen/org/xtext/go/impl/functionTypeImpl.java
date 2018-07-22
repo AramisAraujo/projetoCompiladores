@@ -23,7 +23,7 @@ import org.xtext.go.signature;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.functionTypeImpl#getSignature <em>Signature</em>}</li>
+ *   <li>{@link org.xtext.go.impl.functionTypeImpl#getSig <em>Sig</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,14 +32,14 @@ import org.xtext.go.signature;
 public class functionTypeImpl extends MinimalEObjectImpl.Container implements functionType
 {
   /**
-   * The cached value of the '{@link #getSignature() <em>Signature</em>}' containment reference.
+   * The cached value of the '{@link #getSig() <em>Sig</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSignature()
+   * @see #getSig()
    * @generated
    * @ordered
    */
-  protected signature signature;
+  protected signature sig;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,9 +67,9 @@ public class functionTypeImpl extends MinimalEObjectImpl.Container implements fu
    * <!-- end-user-doc -->
    * @generated
    */
-  public signature getSignature()
+  public signature getSig()
   {
-    return signature;
+    return sig;
   }
 
   /**
@@ -77,13 +77,13 @@ public class functionTypeImpl extends MinimalEObjectImpl.Container implements fu
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetSignature(signature newSignature, NotificationChain msgs)
+  public NotificationChain basicSetSig(signature newSig, NotificationChain msgs)
   {
-    signature oldSignature = signature;
-    signature = newSignature;
+    signature oldSig = sig;
+    sig = newSig;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FUNCTION_TYPE__SIGNATURE, oldSignature, newSignature);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FUNCTION_TYPE__SIG, oldSig, newSig);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -94,20 +94,20 @@ public class functionTypeImpl extends MinimalEObjectImpl.Container implements fu
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSignature(signature newSignature)
+  public void setSig(signature newSig)
   {
-    if (newSignature != signature)
+    if (newSig != sig)
     {
       NotificationChain msgs = null;
-      if (signature != null)
-        msgs = ((InternalEObject)signature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FUNCTION_TYPE__SIGNATURE, null, msgs);
-      if (newSignature != null)
-        msgs = ((InternalEObject)newSignature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FUNCTION_TYPE__SIGNATURE, null, msgs);
-      msgs = basicSetSignature(newSignature, msgs);
+      if (sig != null)
+        msgs = ((InternalEObject)sig).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FUNCTION_TYPE__SIG, null, msgs);
+      if (newSig != null)
+        msgs = ((InternalEObject)newSig).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FUNCTION_TYPE__SIG, null, msgs);
+      msgs = basicSetSig(newSig, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FUNCTION_TYPE__SIGNATURE, newSignature, newSignature));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FUNCTION_TYPE__SIG, newSig, newSig));
   }
 
   /**
@@ -120,8 +120,8 @@ public class functionTypeImpl extends MinimalEObjectImpl.Container implements fu
   {
     switch (featureID)
     {
-      case GoPackage.FUNCTION_TYPE__SIGNATURE:
-        return basicSetSignature(null, msgs);
+      case GoPackage.FUNCTION_TYPE__SIG:
+        return basicSetSig(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +136,8 @@ public class functionTypeImpl extends MinimalEObjectImpl.Container implements fu
   {
     switch (featureID)
     {
-      case GoPackage.FUNCTION_TYPE__SIGNATURE:
-        return getSignature();
+      case GoPackage.FUNCTION_TYPE__SIG:
+        return getSig();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -152,8 +152,8 @@ public class functionTypeImpl extends MinimalEObjectImpl.Container implements fu
   {
     switch (featureID)
     {
-      case GoPackage.FUNCTION_TYPE__SIGNATURE:
-        setSignature((signature)newValue);
+      case GoPackage.FUNCTION_TYPE__SIG:
+        setSig((signature)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +169,8 @@ public class functionTypeImpl extends MinimalEObjectImpl.Container implements fu
   {
     switch (featureID)
     {
-      case GoPackage.FUNCTION_TYPE__SIGNATURE:
-        setSignature((signature)null);
+      case GoPackage.FUNCTION_TYPE__SIG:
+        setSig((signature)null);
         return;
     }
     super.eUnset(featureID);
@@ -186,8 +186,8 @@ public class functionTypeImpl extends MinimalEObjectImpl.Container implements fu
   {
     switch (featureID)
     {
-      case GoPackage.FUNCTION_TYPE__SIGNATURE:
-        return signature != null;
+      case GoPackage.FUNCTION_TYPE__SIG:
+        return sig != null;
     }
     return super.eIsSet(featureID);
   }

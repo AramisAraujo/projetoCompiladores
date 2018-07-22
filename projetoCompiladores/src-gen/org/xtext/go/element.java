@@ -13,8 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.element#getExpression <em>Expression</em>}</li>
- *   <li>{@link org.xtext.go.element#getLiteralValue <em>Literal Value</em>}</li>
+ *   <li>{@link org.xtext.go.element#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,55 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface element extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Expression</b></em>' containment reference.
+   * Returns the value of the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Expression</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Content</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expression</em>' containment reference.
-   * @see #setExpression(expression)
-   * @see org.xtext.go.GoPackage#getelement_Expression()
+   * @return the value of the '<em>Content</em>' containment reference.
+   * @see #setContent(EObject)
+   * @see org.xtext.go.GoPackage#getelement_Content()
    * @model containment="true"
    * @generated
    */
-  expression getExpression();
+  EObject getContent();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.element#getExpression <em>Expression</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.element#getContent <em>Content</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expression</em>' containment reference.
-   * @see #getExpression()
+   * @param value the new value of the '<em>Content</em>' containment reference.
+   * @see #getContent()
    * @generated
    */
-  void setExpression(expression value);
-
-  /**
-   * Returns the value of the '<em><b>Literal Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Literal Value</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Literal Value</em>' containment reference.
-   * @see #setLiteralValue(literalValue)
-   * @see org.xtext.go.GoPackage#getelement_LiteralValue()
-   * @model containment="true"
-   * @generated
-   */
-  literalValue getLiteralValue();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.element#getLiteralValue <em>Literal Value</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Literal Value</em>' containment reference.
-   * @see #getLiteralValue()
-   * @generated
-   */
-  void setLiteralValue(literalValue value);
+  void setContent(EObject value);
 
 } // element

@@ -3,6 +3,8 @@
  */
 package org.xtext.go;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.typeDecl#getTypeSpec <em>Type Spec</em>}</li>
+ *   <li>{@link org.xtext.go.typeDecl#getSpec <em>Spec</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,29 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface typeDecl extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Type Spec</b></em>' containment reference.
+   * Returns the value of the '<em><b>Spec</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.go.typeSpec}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Type Spec</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Spec</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type Spec</em>' containment reference.
-   * @see #setTypeSpec(typeSpec)
-   * @see org.xtext.go.GoPackage#gettypeDecl_TypeSpec()
+   * @return the value of the '<em>Spec</em>' containment reference list.
+   * @see org.xtext.go.GoPackage#gettypeDecl_Spec()
    * @model containment="true"
    * @generated
    */
-  typeSpec getTypeSpec();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.typeDecl#getTypeSpec <em>Type Spec</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type Spec</em>' containment reference.
-   * @see #getTypeSpec()
-   * @generated
-   */
-  void setTypeSpec(typeSpec value);
+  EList<typeSpec> getSpec();
 
 } // typeDecl

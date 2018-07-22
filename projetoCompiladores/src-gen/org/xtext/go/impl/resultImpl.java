@@ -24,7 +24,7 @@ import org.xtext.go.type;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.resultImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link org.xtext.go.impl.resultImpl#getParams <em>Params</em>}</li>
  *   <li>{@link org.xtext.go.impl.resultImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
@@ -34,14 +34,14 @@ import org.xtext.go.type;
 public class resultImpl extends MinimalEObjectImpl.Container implements result
 {
   /**
-   * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference.
+   * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParameters()
+   * @see #getParams()
    * @generated
    * @ordered
    */
-  protected parameters parameters;
+  protected parameters params;
 
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
@@ -79,9 +79,9 @@ public class resultImpl extends MinimalEObjectImpl.Container implements result
    * <!-- end-user-doc -->
    * @generated
    */
-  public parameters getParameters()
+  public parameters getParams()
   {
-    return parameters;
+    return params;
   }
 
   /**
@@ -89,13 +89,13 @@ public class resultImpl extends MinimalEObjectImpl.Container implements result
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetParameters(parameters newParameters, NotificationChain msgs)
+  public NotificationChain basicSetParams(parameters newParams, NotificationChain msgs)
   {
-    parameters oldParameters = parameters;
-    parameters = newParameters;
+    parameters oldParams = params;
+    params = newParams;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.RESULT__PARAMETERS, oldParameters, newParameters);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.RESULT__PARAMS, oldParams, newParams);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -106,20 +106,20 @@ public class resultImpl extends MinimalEObjectImpl.Container implements result
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setParameters(parameters newParameters)
+  public void setParams(parameters newParams)
   {
-    if (newParameters != parameters)
+    if (newParams != params)
     {
       NotificationChain msgs = null;
-      if (parameters != null)
-        msgs = ((InternalEObject)parameters).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.RESULT__PARAMETERS, null, msgs);
-      if (newParameters != null)
-        msgs = ((InternalEObject)newParameters).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.RESULT__PARAMETERS, null, msgs);
-      msgs = basicSetParameters(newParameters, msgs);
+      if (params != null)
+        msgs = ((InternalEObject)params).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.RESULT__PARAMS, null, msgs);
+      if (newParams != null)
+        msgs = ((InternalEObject)newParams).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.RESULT__PARAMS, null, msgs);
+      msgs = basicSetParams(newParams, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.RESULT__PARAMETERS, newParameters, newParameters));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.RESULT__PARAMS, newParams, newParams));
   }
 
   /**
@@ -180,8 +180,8 @@ public class resultImpl extends MinimalEObjectImpl.Container implements result
   {
     switch (featureID)
     {
-      case GoPackage.RESULT__PARAMETERS:
-        return basicSetParameters(null, msgs);
+      case GoPackage.RESULT__PARAMS:
+        return basicSetParams(null, msgs);
       case GoPackage.RESULT__TYPE:
         return basicSetType(null, msgs);
     }
@@ -198,8 +198,8 @@ public class resultImpl extends MinimalEObjectImpl.Container implements result
   {
     switch (featureID)
     {
-      case GoPackage.RESULT__PARAMETERS:
-        return getParameters();
+      case GoPackage.RESULT__PARAMS:
+        return getParams();
       case GoPackage.RESULT__TYPE:
         return getType();
     }
@@ -216,8 +216,8 @@ public class resultImpl extends MinimalEObjectImpl.Container implements result
   {
     switch (featureID)
     {
-      case GoPackage.RESULT__PARAMETERS:
-        setParameters((parameters)newValue);
+      case GoPackage.RESULT__PARAMS:
+        setParams((parameters)newValue);
         return;
       case GoPackage.RESULT__TYPE:
         setType((type)newValue);
@@ -236,8 +236,8 @@ public class resultImpl extends MinimalEObjectImpl.Container implements result
   {
     switch (featureID)
     {
-      case GoPackage.RESULT__PARAMETERS:
-        setParameters((parameters)null);
+      case GoPackage.RESULT__PARAMS:
+        setParams((parameters)null);
         return;
       case GoPackage.RESULT__TYPE:
         setType((type)null);
@@ -256,8 +256,8 @@ public class resultImpl extends MinimalEObjectImpl.Container implements result
   {
     switch (featureID)
     {
-      case GoPackage.RESULT__PARAMETERS:
-        return parameters != null;
+      case GoPackage.RESULT__PARAMS:
+        return params != null;
       case GoPackage.RESULT__TYPE:
         return type != null;
     }

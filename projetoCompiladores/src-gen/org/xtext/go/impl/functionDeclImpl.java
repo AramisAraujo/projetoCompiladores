@@ -24,8 +24,9 @@ import org.xtext.go.signature;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.functionDeclImpl#getFunction <em>Function</em>}</li>
- *   <li>{@link org.xtext.go.impl.functionDeclImpl#getSignature <em>Signature</em>}</li>
+ *   <li>{@link org.xtext.go.impl.functionDeclImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.go.impl.functionDeclImpl#getFunc <em>Func</em>}</li>
+ *   <li>{@link org.xtext.go.impl.functionDeclImpl#getSig <em>Sig</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,24 +35,44 @@ import org.xtext.go.signature;
 public class functionDeclImpl extends MinimalEObjectImpl.Container implements functionDecl
 {
   /**
-   * The cached value of the '{@link #getFunction() <em>Function</em>}' containment reference.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFunction()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected function function;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getSignature() <em>Signature</em>}' containment reference.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSignature()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected signature signature;
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getFunc() <em>Func</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFunc()
+   * @generated
+   * @ordered
+   */
+  protected function func;
+
+  /**
+   * The cached value of the '{@link #getSig() <em>Sig</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSig()
+   * @generated
+   * @ordered
+   */
+  protected signature sig;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,9 +100,9 @@ public class functionDeclImpl extends MinimalEObjectImpl.Container implements fu
    * <!-- end-user-doc -->
    * @generated
    */
-  public function getFunction()
+  public String getName()
   {
-    return function;
+    return name;
   }
 
   /**
@@ -89,13 +110,36 @@ public class functionDeclImpl extends MinimalEObjectImpl.Container implements fu
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetFunction(function newFunction, NotificationChain msgs)
+  public void setName(String newName)
   {
-    function oldFunction = function;
-    function = newFunction;
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FUNCTION_DECL__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public function getFunc()
+  {
+    return func;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetFunc(function newFunc, NotificationChain msgs)
+  {
+    function oldFunc = func;
+    func = newFunc;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FUNCTION_DECL__FUNCTION, oldFunction, newFunction);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FUNCTION_DECL__FUNC, oldFunc, newFunc);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -106,20 +150,20 @@ public class functionDeclImpl extends MinimalEObjectImpl.Container implements fu
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFunction(function newFunction)
+  public void setFunc(function newFunc)
   {
-    if (newFunction != function)
+    if (newFunc != func)
     {
       NotificationChain msgs = null;
-      if (function != null)
-        msgs = ((InternalEObject)function).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FUNCTION_DECL__FUNCTION, null, msgs);
-      if (newFunction != null)
-        msgs = ((InternalEObject)newFunction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FUNCTION_DECL__FUNCTION, null, msgs);
-      msgs = basicSetFunction(newFunction, msgs);
+      if (func != null)
+        msgs = ((InternalEObject)func).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FUNCTION_DECL__FUNC, null, msgs);
+      if (newFunc != null)
+        msgs = ((InternalEObject)newFunc).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FUNCTION_DECL__FUNC, null, msgs);
+      msgs = basicSetFunc(newFunc, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FUNCTION_DECL__FUNCTION, newFunction, newFunction));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FUNCTION_DECL__FUNC, newFunc, newFunc));
   }
 
   /**
@@ -127,9 +171,9 @@ public class functionDeclImpl extends MinimalEObjectImpl.Container implements fu
    * <!-- end-user-doc -->
    * @generated
    */
-  public signature getSignature()
+  public signature getSig()
   {
-    return signature;
+    return sig;
   }
 
   /**
@@ -137,13 +181,13 @@ public class functionDeclImpl extends MinimalEObjectImpl.Container implements fu
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetSignature(signature newSignature, NotificationChain msgs)
+  public NotificationChain basicSetSig(signature newSig, NotificationChain msgs)
   {
-    signature oldSignature = signature;
-    signature = newSignature;
+    signature oldSig = sig;
+    sig = newSig;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FUNCTION_DECL__SIGNATURE, oldSignature, newSignature);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FUNCTION_DECL__SIG, oldSig, newSig);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -154,20 +198,20 @@ public class functionDeclImpl extends MinimalEObjectImpl.Container implements fu
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSignature(signature newSignature)
+  public void setSig(signature newSig)
   {
-    if (newSignature != signature)
+    if (newSig != sig)
     {
       NotificationChain msgs = null;
-      if (signature != null)
-        msgs = ((InternalEObject)signature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FUNCTION_DECL__SIGNATURE, null, msgs);
-      if (newSignature != null)
-        msgs = ((InternalEObject)newSignature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FUNCTION_DECL__SIGNATURE, null, msgs);
-      msgs = basicSetSignature(newSignature, msgs);
+      if (sig != null)
+        msgs = ((InternalEObject)sig).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FUNCTION_DECL__SIG, null, msgs);
+      if (newSig != null)
+        msgs = ((InternalEObject)newSig).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FUNCTION_DECL__SIG, null, msgs);
+      msgs = basicSetSig(newSig, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FUNCTION_DECL__SIGNATURE, newSignature, newSignature));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FUNCTION_DECL__SIG, newSig, newSig));
   }
 
   /**
@@ -180,10 +224,10 @@ public class functionDeclImpl extends MinimalEObjectImpl.Container implements fu
   {
     switch (featureID)
     {
-      case GoPackage.FUNCTION_DECL__FUNCTION:
-        return basicSetFunction(null, msgs);
-      case GoPackage.FUNCTION_DECL__SIGNATURE:
-        return basicSetSignature(null, msgs);
+      case GoPackage.FUNCTION_DECL__FUNC:
+        return basicSetFunc(null, msgs);
+      case GoPackage.FUNCTION_DECL__SIG:
+        return basicSetSig(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -198,10 +242,12 @@ public class functionDeclImpl extends MinimalEObjectImpl.Container implements fu
   {
     switch (featureID)
     {
-      case GoPackage.FUNCTION_DECL__FUNCTION:
-        return getFunction();
-      case GoPackage.FUNCTION_DECL__SIGNATURE:
-        return getSignature();
+      case GoPackage.FUNCTION_DECL__NAME:
+        return getName();
+      case GoPackage.FUNCTION_DECL__FUNC:
+        return getFunc();
+      case GoPackage.FUNCTION_DECL__SIG:
+        return getSig();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -216,11 +262,14 @@ public class functionDeclImpl extends MinimalEObjectImpl.Container implements fu
   {
     switch (featureID)
     {
-      case GoPackage.FUNCTION_DECL__FUNCTION:
-        setFunction((function)newValue);
+      case GoPackage.FUNCTION_DECL__NAME:
+        setName((String)newValue);
         return;
-      case GoPackage.FUNCTION_DECL__SIGNATURE:
-        setSignature((signature)newValue);
+      case GoPackage.FUNCTION_DECL__FUNC:
+        setFunc((function)newValue);
+        return;
+      case GoPackage.FUNCTION_DECL__SIG:
+        setSig((signature)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -236,11 +285,14 @@ public class functionDeclImpl extends MinimalEObjectImpl.Container implements fu
   {
     switch (featureID)
     {
-      case GoPackage.FUNCTION_DECL__FUNCTION:
-        setFunction((function)null);
+      case GoPackage.FUNCTION_DECL__NAME:
+        setName(NAME_EDEFAULT);
         return;
-      case GoPackage.FUNCTION_DECL__SIGNATURE:
-        setSignature((signature)null);
+      case GoPackage.FUNCTION_DECL__FUNC:
+        setFunc((function)null);
+        return;
+      case GoPackage.FUNCTION_DECL__SIG:
+        setSig((signature)null);
         return;
     }
     super.eUnset(featureID);
@@ -256,12 +308,31 @@ public class functionDeclImpl extends MinimalEObjectImpl.Container implements fu
   {
     switch (featureID)
     {
-      case GoPackage.FUNCTION_DECL__FUNCTION:
-        return function != null;
-      case GoPackage.FUNCTION_DECL__SIGNATURE:
-        return signature != null;
+      case GoPackage.FUNCTION_DECL__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case GoPackage.FUNCTION_DECL__FUNC:
+        return func != null;
+      case GoPackage.FUNCTION_DECL__SIG:
+        return sig != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //functionDeclImpl

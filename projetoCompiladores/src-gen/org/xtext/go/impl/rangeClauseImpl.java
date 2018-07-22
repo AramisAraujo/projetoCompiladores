@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.xtext.go.GoPackage;
 import org.xtext.go.expression;
 import org.xtext.go.expressionList;
+import org.xtext.go.identifierList;
 import org.xtext.go.rangeClause;
 
 /**
@@ -24,9 +25,9 @@ import org.xtext.go.rangeClause;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.rangeClauseImpl#getExpressionList <em>Expression List</em>}</li>
- *   <li>{@link org.xtext.go.impl.rangeClauseImpl#getIdentifierList <em>Identifier List</em>}</li>
- *   <li>{@link org.xtext.go.impl.rangeClauseImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.xtext.go.impl.rangeClauseImpl#getExprList <em>Expr List</em>}</li>
+ *   <li>{@link org.xtext.go.impl.rangeClauseImpl#getIdList <em>Id List</em>}</li>
+ *   <li>{@link org.xtext.go.impl.rangeClauseImpl#getExpr <em>Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,44 +36,34 @@ import org.xtext.go.rangeClause;
 public class rangeClauseImpl extends MinimalEObjectImpl.Container implements rangeClause
 {
   /**
-   * The cached value of the '{@link #getExpressionList() <em>Expression List</em>}' containment reference.
+   * The cached value of the '{@link #getExprList() <em>Expr List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExpressionList()
+   * @see #getExprList()
    * @generated
    * @ordered
    */
-  protected expressionList expressionList;
+  protected expressionList exprList;
 
   /**
-   * The default value of the '{@link #getIdentifierList() <em>Identifier List</em>}' attribute.
+   * The cached value of the '{@link #getIdList() <em>Id List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIdentifierList()
+   * @see #getIdList()
    * @generated
    * @ordered
    */
-  protected static final String IDENTIFIER_LIST_EDEFAULT = null;
+  protected identifierList idList;
 
   /**
-   * The cached value of the '{@link #getIdentifierList() <em>Identifier List</em>}' attribute.
+   * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIdentifierList()
+   * @see #getExpr()
    * @generated
    * @ordered
    */
-  protected String identifierList = IDENTIFIER_LIST_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getExpression()
-   * @generated
-   * @ordered
-   */
-  protected expression expression;
+  protected expression expr;
 
   /**
    * <!-- begin-user-doc -->
@@ -100,9 +91,9 @@ public class rangeClauseImpl extends MinimalEObjectImpl.Container implements ran
    * <!-- end-user-doc -->
    * @generated
    */
-  public expressionList getExpressionList()
+  public expressionList getExprList()
   {
-    return expressionList;
+    return exprList;
   }
 
   /**
@@ -110,13 +101,13 @@ public class rangeClauseImpl extends MinimalEObjectImpl.Container implements ran
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpressionList(expressionList newExpressionList, NotificationChain msgs)
+  public NotificationChain basicSetExprList(expressionList newExprList, NotificationChain msgs)
   {
-    expressionList oldExpressionList = expressionList;
-    expressionList = newExpressionList;
+    expressionList oldExprList = exprList;
+    exprList = newExprList;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.RANGE_CLAUSE__EXPRESSION_LIST, oldExpressionList, newExpressionList);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.RANGE_CLAUSE__EXPR_LIST, oldExprList, newExprList);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -127,20 +118,20 @@ public class rangeClauseImpl extends MinimalEObjectImpl.Container implements ran
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpressionList(expressionList newExpressionList)
+  public void setExprList(expressionList newExprList)
   {
-    if (newExpressionList != expressionList)
+    if (newExprList != exprList)
     {
       NotificationChain msgs = null;
-      if (expressionList != null)
-        msgs = ((InternalEObject)expressionList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.RANGE_CLAUSE__EXPRESSION_LIST, null, msgs);
-      if (newExpressionList != null)
-        msgs = ((InternalEObject)newExpressionList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.RANGE_CLAUSE__EXPRESSION_LIST, null, msgs);
-      msgs = basicSetExpressionList(newExpressionList, msgs);
+      if (exprList != null)
+        msgs = ((InternalEObject)exprList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.RANGE_CLAUSE__EXPR_LIST, null, msgs);
+      if (newExprList != null)
+        msgs = ((InternalEObject)newExprList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.RANGE_CLAUSE__EXPR_LIST, null, msgs);
+      msgs = basicSetExprList(newExprList, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.RANGE_CLAUSE__EXPRESSION_LIST, newExpressionList, newExpressionList));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.RANGE_CLAUSE__EXPR_LIST, newExprList, newExprList));
   }
 
   /**
@@ -148,9 +139,9 @@ public class rangeClauseImpl extends MinimalEObjectImpl.Container implements ran
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getIdentifierList()
+  public identifierList getIdList()
   {
-    return identifierList;
+    return idList;
   }
 
   /**
@@ -158,36 +149,13 @@ public class rangeClauseImpl extends MinimalEObjectImpl.Container implements ran
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setIdentifierList(String newIdentifierList)
+  public NotificationChain basicSetIdList(identifierList newIdList, NotificationChain msgs)
   {
-    String oldIdentifierList = identifierList;
-    identifierList = newIdentifierList;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.RANGE_CLAUSE__IDENTIFIER_LIST, oldIdentifierList, identifierList));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public expression getExpression()
-  {
-    return expression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetExpression(expression newExpression, NotificationChain msgs)
-  {
-    expression oldExpression = expression;
-    expression = newExpression;
+    identifierList oldIdList = idList;
+    idList = newIdList;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.RANGE_CLAUSE__EXPRESSION, oldExpression, newExpression);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.RANGE_CLAUSE__ID_LIST, oldIdList, newIdList);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -198,20 +166,68 @@ public class rangeClauseImpl extends MinimalEObjectImpl.Container implements ran
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(expression newExpression)
+  public void setIdList(identifierList newIdList)
   {
-    if (newExpression != expression)
+    if (newIdList != idList)
     {
       NotificationChain msgs = null;
-      if (expression != null)
-        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.RANGE_CLAUSE__EXPRESSION, null, msgs);
-      if (newExpression != null)
-        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.RANGE_CLAUSE__EXPRESSION, null, msgs);
-      msgs = basicSetExpression(newExpression, msgs);
+      if (idList != null)
+        msgs = ((InternalEObject)idList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.RANGE_CLAUSE__ID_LIST, null, msgs);
+      if (newIdList != null)
+        msgs = ((InternalEObject)newIdList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.RANGE_CLAUSE__ID_LIST, null, msgs);
+      msgs = basicSetIdList(newIdList, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.RANGE_CLAUSE__EXPRESSION, newExpression, newExpression));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.RANGE_CLAUSE__ID_LIST, newIdList, newIdList));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public expression getExpr()
+  {
+    return expr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExpr(expression newExpr, NotificationChain msgs)
+  {
+    expression oldExpr = expr;
+    expr = newExpr;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.RANGE_CLAUSE__EXPR, oldExpr, newExpr);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExpr(expression newExpr)
+  {
+    if (newExpr != expr)
+    {
+      NotificationChain msgs = null;
+      if (expr != null)
+        msgs = ((InternalEObject)expr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.RANGE_CLAUSE__EXPR, null, msgs);
+      if (newExpr != null)
+        msgs = ((InternalEObject)newExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.RANGE_CLAUSE__EXPR, null, msgs);
+      msgs = basicSetExpr(newExpr, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.RANGE_CLAUSE__EXPR, newExpr, newExpr));
   }
 
   /**
@@ -224,10 +240,12 @@ public class rangeClauseImpl extends MinimalEObjectImpl.Container implements ran
   {
     switch (featureID)
     {
-      case GoPackage.RANGE_CLAUSE__EXPRESSION_LIST:
-        return basicSetExpressionList(null, msgs);
-      case GoPackage.RANGE_CLAUSE__EXPRESSION:
-        return basicSetExpression(null, msgs);
+      case GoPackage.RANGE_CLAUSE__EXPR_LIST:
+        return basicSetExprList(null, msgs);
+      case GoPackage.RANGE_CLAUSE__ID_LIST:
+        return basicSetIdList(null, msgs);
+      case GoPackage.RANGE_CLAUSE__EXPR:
+        return basicSetExpr(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -242,12 +260,12 @@ public class rangeClauseImpl extends MinimalEObjectImpl.Container implements ran
   {
     switch (featureID)
     {
-      case GoPackage.RANGE_CLAUSE__EXPRESSION_LIST:
-        return getExpressionList();
-      case GoPackage.RANGE_CLAUSE__IDENTIFIER_LIST:
-        return getIdentifierList();
-      case GoPackage.RANGE_CLAUSE__EXPRESSION:
-        return getExpression();
+      case GoPackage.RANGE_CLAUSE__EXPR_LIST:
+        return getExprList();
+      case GoPackage.RANGE_CLAUSE__ID_LIST:
+        return getIdList();
+      case GoPackage.RANGE_CLAUSE__EXPR:
+        return getExpr();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -262,14 +280,14 @@ public class rangeClauseImpl extends MinimalEObjectImpl.Container implements ran
   {
     switch (featureID)
     {
-      case GoPackage.RANGE_CLAUSE__EXPRESSION_LIST:
-        setExpressionList((expressionList)newValue);
+      case GoPackage.RANGE_CLAUSE__EXPR_LIST:
+        setExprList((expressionList)newValue);
         return;
-      case GoPackage.RANGE_CLAUSE__IDENTIFIER_LIST:
-        setIdentifierList((String)newValue);
+      case GoPackage.RANGE_CLAUSE__ID_LIST:
+        setIdList((identifierList)newValue);
         return;
-      case GoPackage.RANGE_CLAUSE__EXPRESSION:
-        setExpression((expression)newValue);
+      case GoPackage.RANGE_CLAUSE__EXPR:
+        setExpr((expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -285,14 +303,14 @@ public class rangeClauseImpl extends MinimalEObjectImpl.Container implements ran
   {
     switch (featureID)
     {
-      case GoPackage.RANGE_CLAUSE__EXPRESSION_LIST:
-        setExpressionList((expressionList)null);
+      case GoPackage.RANGE_CLAUSE__EXPR_LIST:
+        setExprList((expressionList)null);
         return;
-      case GoPackage.RANGE_CLAUSE__IDENTIFIER_LIST:
-        setIdentifierList(IDENTIFIER_LIST_EDEFAULT);
+      case GoPackage.RANGE_CLAUSE__ID_LIST:
+        setIdList((identifierList)null);
         return;
-      case GoPackage.RANGE_CLAUSE__EXPRESSION:
-        setExpression((expression)null);
+      case GoPackage.RANGE_CLAUSE__EXPR:
+        setExpr((expression)null);
         return;
     }
     super.eUnset(featureID);
@@ -308,31 +326,14 @@ public class rangeClauseImpl extends MinimalEObjectImpl.Container implements ran
   {
     switch (featureID)
     {
-      case GoPackage.RANGE_CLAUSE__EXPRESSION_LIST:
-        return expressionList != null;
-      case GoPackage.RANGE_CLAUSE__IDENTIFIER_LIST:
-        return IDENTIFIER_LIST_EDEFAULT == null ? identifierList != null : !IDENTIFIER_LIST_EDEFAULT.equals(identifierList);
-      case GoPackage.RANGE_CLAUSE__EXPRESSION:
-        return expression != null;
+      case GoPackage.RANGE_CLAUSE__EXPR_LIST:
+        return exprList != null;
+      case GoPackage.RANGE_CLAUSE__ID_LIST:
+        return idList != null;
+      case GoPackage.RANGE_CLAUSE__EXPR:
+        return expr != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (identifierList: ");
-    result.append(identifierList);
-    result.append(')');
-    return result.toString();
   }
 
 } //rangeClauseImpl

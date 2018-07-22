@@ -23,7 +23,7 @@ import org.xtext.go.statementList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.blockImpl#getStatementList <em>Statement List</em>}</li>
+ *   <li>{@link org.xtext.go.impl.blockImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,14 +32,14 @@ import org.xtext.go.statementList;
 public class blockImpl extends MinimalEObjectImpl.Container implements block
 {
   /**
-   * The cached value of the '{@link #getStatementList() <em>Statement List</em>}' containment reference.
+   * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStatementList()
+   * @see #getStatements()
    * @generated
    * @ordered
    */
-  protected statementList statementList;
+  protected statementList statements;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,9 +67,9 @@ public class blockImpl extends MinimalEObjectImpl.Container implements block
    * <!-- end-user-doc -->
    * @generated
    */
-  public statementList getStatementList()
+  public statementList getStatements()
   {
-    return statementList;
+    return statements;
   }
 
   /**
@@ -77,13 +77,13 @@ public class blockImpl extends MinimalEObjectImpl.Container implements block
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetStatementList(statementList newStatementList, NotificationChain msgs)
+  public NotificationChain basicSetStatements(statementList newStatements, NotificationChain msgs)
   {
-    statementList oldStatementList = statementList;
-    statementList = newStatementList;
+    statementList oldStatements = statements;
+    statements = newStatements;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.BLOCK__STATEMENT_LIST, oldStatementList, newStatementList);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.BLOCK__STATEMENTS, oldStatements, newStatements);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -94,20 +94,20 @@ public class blockImpl extends MinimalEObjectImpl.Container implements block
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setStatementList(statementList newStatementList)
+  public void setStatements(statementList newStatements)
   {
-    if (newStatementList != statementList)
+    if (newStatements != statements)
     {
       NotificationChain msgs = null;
-      if (statementList != null)
-        msgs = ((InternalEObject)statementList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.BLOCK__STATEMENT_LIST, null, msgs);
-      if (newStatementList != null)
-        msgs = ((InternalEObject)newStatementList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.BLOCK__STATEMENT_LIST, null, msgs);
-      msgs = basicSetStatementList(newStatementList, msgs);
+      if (statements != null)
+        msgs = ((InternalEObject)statements).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.BLOCK__STATEMENTS, null, msgs);
+      if (newStatements != null)
+        msgs = ((InternalEObject)newStatements).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.BLOCK__STATEMENTS, null, msgs);
+      msgs = basicSetStatements(newStatements, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.BLOCK__STATEMENT_LIST, newStatementList, newStatementList));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.BLOCK__STATEMENTS, newStatements, newStatements));
   }
 
   /**
@@ -120,8 +120,8 @@ public class blockImpl extends MinimalEObjectImpl.Container implements block
   {
     switch (featureID)
     {
-      case GoPackage.BLOCK__STATEMENT_LIST:
-        return basicSetStatementList(null, msgs);
+      case GoPackage.BLOCK__STATEMENTS:
+        return basicSetStatements(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +136,8 @@ public class blockImpl extends MinimalEObjectImpl.Container implements block
   {
     switch (featureID)
     {
-      case GoPackage.BLOCK__STATEMENT_LIST:
-        return getStatementList();
+      case GoPackage.BLOCK__STATEMENTS:
+        return getStatements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -152,8 +152,8 @@ public class blockImpl extends MinimalEObjectImpl.Container implements block
   {
     switch (featureID)
     {
-      case GoPackage.BLOCK__STATEMENT_LIST:
-        setStatementList((statementList)newValue);
+      case GoPackage.BLOCK__STATEMENTS:
+        setStatements((statementList)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +169,8 @@ public class blockImpl extends MinimalEObjectImpl.Container implements block
   {
     switch (featureID)
     {
-      case GoPackage.BLOCK__STATEMENT_LIST:
-        setStatementList((statementList)null);
+      case GoPackage.BLOCK__STATEMENTS:
+        setStatements((statementList)null);
         return;
     }
     super.eUnset(featureID);
@@ -186,8 +186,8 @@ public class blockImpl extends MinimalEObjectImpl.Container implements block
   {
     switch (featureID)
     {
-      case GoPackage.BLOCK__STATEMENT_LIST:
-        return statementList != null;
+      case GoPackage.BLOCK__STATEMENTS:
+        return statements != null;
     }
     return super.eIsSet(featureID);
   }

@@ -20,7 +20,7 @@ import org.xtext.go.importSpec;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.importSpecImpl#getImportPath <em>Import Path</em>}</li>
+ *   <li>{@link org.xtext.go.impl.importSpecImpl#getPath <em>Path</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,24 +29,24 @@ import org.xtext.go.importSpec;
 public class importSpecImpl extends MinimalEObjectImpl.Container implements importSpec
 {
   /**
-   * The default value of the '{@link #getImportPath() <em>Import Path</em>}' attribute.
+   * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImportPath()
+   * @see #getPath()
    * @generated
    * @ordered
    */
-  protected static final String IMPORT_PATH_EDEFAULT = null;
+  protected static final String PATH_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getImportPath() <em>Import Path</em>}' attribute.
+   * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImportPath()
+   * @see #getPath()
    * @generated
    * @ordered
    */
-  protected String importPath = IMPORT_PATH_EDEFAULT;
+  protected String path = PATH_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,9 +74,9 @@ public class importSpecImpl extends MinimalEObjectImpl.Container implements impo
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getImportPath()
+  public String getPath()
   {
-    return importPath;
+    return path;
   }
 
   /**
@@ -84,12 +84,12 @@ public class importSpecImpl extends MinimalEObjectImpl.Container implements impo
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setImportPath(String newImportPath)
+  public void setPath(String newPath)
   {
-    String oldImportPath = importPath;
-    importPath = newImportPath;
+    String oldPath = path;
+    path = newPath;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.IMPORT_SPEC__IMPORT_PATH, oldImportPath, importPath));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.IMPORT_SPEC__PATH, oldPath, path));
   }
 
   /**
@@ -102,8 +102,8 @@ public class importSpecImpl extends MinimalEObjectImpl.Container implements impo
   {
     switch (featureID)
     {
-      case GoPackage.IMPORT_SPEC__IMPORT_PATH:
-        return getImportPath();
+      case GoPackage.IMPORT_SPEC__PATH:
+        return getPath();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,8 +118,8 @@ public class importSpecImpl extends MinimalEObjectImpl.Container implements impo
   {
     switch (featureID)
     {
-      case GoPackage.IMPORT_SPEC__IMPORT_PATH:
-        setImportPath((String)newValue);
+      case GoPackage.IMPORT_SPEC__PATH:
+        setPath((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,8 +135,8 @@ public class importSpecImpl extends MinimalEObjectImpl.Container implements impo
   {
     switch (featureID)
     {
-      case GoPackage.IMPORT_SPEC__IMPORT_PATH:
-        setImportPath(IMPORT_PATH_EDEFAULT);
+      case GoPackage.IMPORT_SPEC__PATH:
+        setPath(PATH_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -152,8 +152,8 @@ public class importSpecImpl extends MinimalEObjectImpl.Container implements impo
   {
     switch (featureID)
     {
-      case GoPackage.IMPORT_SPEC__IMPORT_PATH:
-        return IMPORT_PATH_EDEFAULT == null ? importPath != null : !IMPORT_PATH_EDEFAULT.equals(importPath);
+      case GoPackage.IMPORT_SPEC__PATH:
+        return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
     }
     return super.eIsSet(featureID);
   }
@@ -169,8 +169,8 @@ public class importSpecImpl extends MinimalEObjectImpl.Container implements impo
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (importPath: ");
-    result.append(importPath);
+    result.append(" (path: ");
+    result.append(path);
     result.append(')');
     return result.toString();
   }

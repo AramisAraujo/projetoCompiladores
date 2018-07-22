@@ -3,14 +3,19 @@
  */
 package org.xtext.go.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.go.GoPackage;
 import org.xtext.go.parameterList;
@@ -23,7 +28,7 @@ import org.xtext.go.parameters;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.parametersImpl#getParameterList <em>Parameter List</em>}</li>
+ *   <li>{@link org.xtext.go.impl.parametersImpl#getParamList <em>Param List</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,14 +37,14 @@ import org.xtext.go.parameters;
 public class parametersImpl extends MinimalEObjectImpl.Container implements parameters
 {
   /**
-   * The cached value of the '{@link #getParameterList() <em>Parameter List</em>}' containment reference.
+   * The cached value of the '{@link #getParamList() <em>Param List</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParameterList()
+   * @see #getParamList()
    * @generated
    * @ordered
    */
-  protected parameterList parameterList;
+  protected EList<parameterList> paramList;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,47 +72,13 @@ public class parametersImpl extends MinimalEObjectImpl.Container implements para
    * <!-- end-user-doc -->
    * @generated
    */
-  public parameterList getParameterList()
+  public EList<parameterList> getParamList()
   {
-    return parameterList;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetParameterList(parameterList newParameterList, NotificationChain msgs)
-  {
-    parameterList oldParameterList = parameterList;
-    parameterList = newParameterList;
-    if (eNotificationRequired())
+    if (paramList == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.PARAMETERS__PARAMETER_LIST, oldParameterList, newParameterList);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      paramList = new EObjectContainmentEList<parameterList>(parameterList.class, this, GoPackage.PARAMETERS__PARAM_LIST);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setParameterList(parameterList newParameterList)
-  {
-    if (newParameterList != parameterList)
-    {
-      NotificationChain msgs = null;
-      if (parameterList != null)
-        msgs = ((InternalEObject)parameterList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.PARAMETERS__PARAMETER_LIST, null, msgs);
-      if (newParameterList != null)
-        msgs = ((InternalEObject)newParameterList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.PARAMETERS__PARAMETER_LIST, null, msgs);
-      msgs = basicSetParameterList(newParameterList, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.PARAMETERS__PARAMETER_LIST, newParameterList, newParameterList));
+    return paramList;
   }
 
   /**
@@ -120,8 +91,8 @@ public class parametersImpl extends MinimalEObjectImpl.Container implements para
   {
     switch (featureID)
     {
-      case GoPackage.PARAMETERS__PARAMETER_LIST:
-        return basicSetParameterList(null, msgs);
+      case GoPackage.PARAMETERS__PARAM_LIST:
+        return ((InternalEList<?>)getParamList()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +107,8 @@ public class parametersImpl extends MinimalEObjectImpl.Container implements para
   {
     switch (featureID)
     {
-      case GoPackage.PARAMETERS__PARAMETER_LIST:
-        return getParameterList();
+      case GoPackage.PARAMETERS__PARAM_LIST:
+        return getParamList();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -147,13 +118,15 @@ public class parametersImpl extends MinimalEObjectImpl.Container implements para
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case GoPackage.PARAMETERS__PARAMETER_LIST:
-        setParameterList((parameterList)newValue);
+      case GoPackage.PARAMETERS__PARAM_LIST:
+        getParamList().clear();
+        getParamList().addAll((Collection<? extends parameterList>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +142,8 @@ public class parametersImpl extends MinimalEObjectImpl.Container implements para
   {
     switch (featureID)
     {
-      case GoPackage.PARAMETERS__PARAMETER_LIST:
-        setParameterList((parameterList)null);
+      case GoPackage.PARAMETERS__PARAM_LIST:
+        getParamList().clear();
         return;
     }
     super.eUnset(featureID);
@@ -186,8 +159,8 @@ public class parametersImpl extends MinimalEObjectImpl.Container implements para
   {
     switch (featureID)
     {
-      case GoPackage.PARAMETERS__PARAMETER_LIST:
-        return parameterList != null;
+      case GoPackage.PARAMETERS__PARAM_LIST:
+        return paramList != null && !paramList.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -13,8 +13,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.assignment#getExpressionList <em>Expression List</em>}</li>
- *   <li>{@link org.xtext.go.assignment#getAssign_op <em>Assign op</em>}</li>
+ *   <li>{@link org.xtext.go.assignment#getExprList1 <em>Expr List1</em>}</li>
+ *   <li>{@link org.xtext.go.assignment#getOperation <em>Operation</em>}</li>
+ *   <li>{@link org.xtext.go.assignment#getExprList2 <em>Expr List2</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,55 +26,81 @@ import org.eclipse.emf.ecore.EObject;
 public interface assignment extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Expression List</b></em>' containment reference.
+   * Returns the value of the '<em><b>Expr List1</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Expression List</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Expr List1</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expression List</em>' containment reference.
-   * @see #setExpressionList(expressionList)
-   * @see org.xtext.go.GoPackage#getassignment_ExpressionList()
+   * @return the value of the '<em>Expr List1</em>' containment reference.
+   * @see #setExprList1(expressionList)
+   * @see org.xtext.go.GoPackage#getassignment_ExprList1()
    * @model containment="true"
    * @generated
    */
-  expressionList getExpressionList();
+  expressionList getExprList1();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.assignment#getExpressionList <em>Expression List</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.assignment#getExprList1 <em>Expr List1</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expression List</em>' containment reference.
-   * @see #getExpressionList()
+   * @param value the new value of the '<em>Expr List1</em>' containment reference.
+   * @see #getExprList1()
    * @generated
    */
-  void setExpressionList(expressionList value);
+  void setExprList1(expressionList value);
 
   /**
-   * Returns the value of the '<em><b>Assign op</b></em>' attribute.
+   * Returns the value of the '<em><b>Operation</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Assign op</em>' attribute isn't clear,
+   * If the meaning of the '<em>Operation</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Assign op</em>' attribute.
-   * @see #setAssign_op(String)
-   * @see org.xtext.go.GoPackage#getassignment_Assign_op()
+   * @return the value of the '<em>Operation</em>' attribute.
+   * @see #setOperation(String)
+   * @see org.xtext.go.GoPackage#getassignment_Operation()
    * @model
    * @generated
    */
-  String getAssign_op();
+  String getOperation();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.assignment#getAssign_op <em>Assign op</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.go.assignment#getOperation <em>Operation</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Assign op</em>' attribute.
-   * @see #getAssign_op()
+   * @param value the new value of the '<em>Operation</em>' attribute.
+   * @see #getOperation()
    * @generated
    */
-  void setAssign_op(String value);
+  void setOperation(String value);
+
+  /**
+   * Returns the value of the '<em><b>Expr List2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Expr List2</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Expr List2</em>' containment reference.
+   * @see #setExprList2(expressionList)
+   * @see org.xtext.go.GoPackage#getassignment_ExprList2()
+   * @model containment="true"
+   * @generated
+   */
+  expressionList getExprList2();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.assignment#getExprList2 <em>Expr List2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Expr List2</em>' containment reference.
+   * @see #getExprList2()
+   * @generated
+   */
+  void setExprList2(expressionList value);
 
 } // assignment

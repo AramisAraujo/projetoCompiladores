@@ -3,6 +3,8 @@
  */
 package org.xtext.go;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.expressionList#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.xtext.go.expressionList#getExpr <em>Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,29 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface expressionList extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Expression</b></em>' containment reference.
+   * Returns the value of the '<em><b>Expr</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.go.expression}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Expression</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Expr</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expression</em>' containment reference.
-   * @see #setExpression(expression)
-   * @see org.xtext.go.GoPackage#getexpressionList_Expression()
+   * @return the value of the '<em>Expr</em>' containment reference list.
+   * @see org.xtext.go.GoPackage#getexpressionList_Expr()
    * @model containment="true"
    * @generated
    */
-  expression getExpression();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.expressionList#getExpression <em>Expression</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expression</em>' containment reference.
-   * @see #getExpression()
-   * @generated
-   */
-  void setExpression(expression value);
+  EList<expression> getExpr();
 
 } // expressionList

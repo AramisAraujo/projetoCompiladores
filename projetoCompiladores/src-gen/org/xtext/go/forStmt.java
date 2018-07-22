@@ -13,10 +13,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.forStmt#getExpression <em>Expression</em>}</li>
- *   <li>{@link org.xtext.go.forStmt#getForClause <em>For Clause</em>}</li>
- *   <li>{@link org.xtext.go.forStmt#getRangeClause <em>Range Clause</em>}</li>
- *   <li>{@link org.xtext.go.forStmt#getBlock <em>Block</em>}</li>
+ *   <li>{@link org.xtext.go.forStmt#getExpr <em>Expr</em>}</li>
+ *   <li>{@link org.xtext.go.forStmt#getClause <em>Clause</em>}</li>
+ *   <li>{@link org.xtext.go.forStmt#getCodeBlock <em>Code Block</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,107 +26,81 @@ import org.eclipse.emf.ecore.EObject;
 public interface forStmt extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Expression</b></em>' containment reference.
+   * Returns the value of the '<em><b>Expr</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Expression</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Expr</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expression</em>' containment reference.
-   * @see #setExpression(expression)
-   * @see org.xtext.go.GoPackage#getforStmt_Expression()
+   * @return the value of the '<em>Expr</em>' containment reference.
+   * @see #setExpr(expression)
+   * @see org.xtext.go.GoPackage#getforStmt_Expr()
    * @model containment="true"
    * @generated
    */
-  expression getExpression();
+  expression getExpr();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.forStmt#getExpression <em>Expression</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.forStmt#getExpr <em>Expr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expression</em>' containment reference.
-   * @see #getExpression()
+   * @param value the new value of the '<em>Expr</em>' containment reference.
+   * @see #getExpr()
    * @generated
    */
-  void setExpression(expression value);
+  void setExpr(expression value);
 
   /**
-   * Returns the value of the '<em><b>For Clause</b></em>' containment reference.
+   * Returns the value of the '<em><b>Clause</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>For Clause</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Clause</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>For Clause</em>' containment reference.
-   * @see #setForClause(forClause)
-   * @see org.xtext.go.GoPackage#getforStmt_ForClause()
+   * @return the value of the '<em>Clause</em>' containment reference.
+   * @see #setClause(EObject)
+   * @see org.xtext.go.GoPackage#getforStmt_Clause()
    * @model containment="true"
    * @generated
    */
-  forClause getForClause();
+  EObject getClause();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.forStmt#getForClause <em>For Clause</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.forStmt#getClause <em>Clause</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>For Clause</em>' containment reference.
-   * @see #getForClause()
+   * @param value the new value of the '<em>Clause</em>' containment reference.
+   * @see #getClause()
    * @generated
    */
-  void setForClause(forClause value);
+  void setClause(EObject value);
 
   /**
-   * Returns the value of the '<em><b>Range Clause</b></em>' containment reference.
+   * Returns the value of the '<em><b>Code Block</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Range Clause</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Code Block</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Range Clause</em>' containment reference.
-   * @see #setRangeClause(rangeClause)
-   * @see org.xtext.go.GoPackage#getforStmt_RangeClause()
+   * @return the value of the '<em>Code Block</em>' containment reference.
+   * @see #setCodeBlock(block)
+   * @see org.xtext.go.GoPackage#getforStmt_CodeBlock()
    * @model containment="true"
    * @generated
    */
-  rangeClause getRangeClause();
+  block getCodeBlock();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.forStmt#getRangeClause <em>Range Clause</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.forStmt#getCodeBlock <em>Code Block</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Range Clause</em>' containment reference.
-   * @see #getRangeClause()
+   * @param value the new value of the '<em>Code Block</em>' containment reference.
+   * @see #getCodeBlock()
    * @generated
    */
-  void setRangeClause(rangeClause value);
-
-  /**
-   * Returns the value of the '<em><b>Block</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Block</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Block</em>' containment reference.
-   * @see #setBlock(block)
-   * @see org.xtext.go.GoPackage#getforStmt_Block()
-   * @model containment="true"
-   * @generated
-   */
-  block getBlock();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.forStmt#getBlock <em>Block</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Block</em>' containment reference.
-   * @see #getBlock()
-   * @generated
-   */
-  void setBlock(block value);
+  void setCodeBlock(block value);
 
 } // forStmt

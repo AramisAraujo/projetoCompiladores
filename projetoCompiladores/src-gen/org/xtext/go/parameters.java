@@ -3,6 +3,8 @@
  */
 package org.xtext.go;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.parameters#getParameterList <em>Parameter List</em>}</li>
+ *   <li>{@link org.xtext.go.parameters#getParamList <em>Param List</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,29 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface parameters extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Parameter List</b></em>' containment reference.
+   * Returns the value of the '<em><b>Param List</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.go.parameterList}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Parameter List</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Param List</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Parameter List</em>' containment reference.
-   * @see #setParameterList(parameterList)
-   * @see org.xtext.go.GoPackage#getparameters_ParameterList()
+   * @return the value of the '<em>Param List</em>' containment reference list.
+   * @see org.xtext.go.GoPackage#getparameters_ParamList()
    * @model containment="true"
    * @generated
    */
-  parameterList getParameterList();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.parameters#getParameterList <em>Parameter List</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Parameter List</em>' containment reference.
-   * @see #getParameterList()
-   * @generated
-   */
-  void setParameterList(parameterList value);
+  EList<parameterList> getParamList();
 
 } // parameters

@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.block#getStatementList <em>Statement List</em>}</li>
+ *   <li>{@link org.xtext.go.block#getStatements <em>Statements</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,29 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface block extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Statement List</b></em>' containment reference.
+   * Returns the value of the '<em><b>Statements</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Statement List</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Statements</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Statement List</em>' containment reference.
-   * @see #setStatementList(statementList)
-   * @see org.xtext.go.GoPackage#getblock_StatementList()
+   * @return the value of the '<em>Statements</em>' containment reference.
+   * @see #setStatements(statementList)
+   * @see org.xtext.go.GoPackage#getblock_Statements()
    * @model containment="true"
    * @generated
    */
-  statementList getStatementList();
+  statementList getStatements();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.block#getStatementList <em>Statement List</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.block#getStatements <em>Statements</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Statement List</em>' containment reference.
-   * @see #getStatementList()
+   * @param value the new value of the '<em>Statements</em>' containment reference.
+   * @see #getStatements()
    * @generated
    */
-  void setStatementList(statementList value);
+  void setStatements(statementList value);
 
 } // block

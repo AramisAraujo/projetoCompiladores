@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.xtext.go.arrayType#getArrayLength <em>Array Length</em>}</li>
- *   <li>{@link org.xtext.go.arrayType#getElementType <em>Element Type</em>}</li>
+ *   <li>{@link org.xtext.go.arrayType#getElemType <em>Elem Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,29 +51,29 @@ public interface arrayType extends EObject
   void setArrayLength(arrayLength value);
 
   /**
-   * Returns the value of the '<em><b>Element Type</b></em>' containment reference.
+   * Returns the value of the '<em><b>Elem Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Element Type</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Elem Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Element Type</em>' containment reference.
-   * @see #setElementType(elementType)
-   * @see org.xtext.go.GoPackage#getarrayType_ElementType()
+   * @return the value of the '<em>Elem Type</em>' containment reference.
+   * @see #setElemType(elementType)
+   * @see org.xtext.go.GoPackage#getarrayType_ElemType()
    * @model containment="true"
    * @generated
    */
-  elementType getElementType();
+  elementType getElemType();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.arrayType#getElementType <em>Element Type</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.arrayType#getElemType <em>Elem Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Element Type</em>' containment reference.
-   * @see #getElementType()
+   * @param value the new value of the '<em>Elem Type</em>' containment reference.
+   * @see #getElemType()
    * @generated
    */
-  void setElementType(elementType value);
+  void setElemType(elementType value);
 
 } // arrayType

@@ -7,20 +7,13 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.go.GoPackage;
-import org.xtext.go.arrayType;
-import org.xtext.go.channelType;
-import org.xtext.go.functionType;
-import org.xtext.go.interfaceType;
-import org.xtext.go.mapType;
-import org.xtext.go.pointerType;
-import org.xtext.go.sliceType;
-import org.xtext.go.structType;
 import org.xtext.go.typeLit;
 
 /**
@@ -30,14 +23,7 @@ import org.xtext.go.typeLit;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.typeLitImpl#getArrayType <em>Array Type</em>}</li>
- *   <li>{@link org.xtext.go.impl.typeLitImpl#getStructType <em>Struct Type</em>}</li>
- *   <li>{@link org.xtext.go.impl.typeLitImpl#getPointerType <em>Pointer Type</em>}</li>
- *   <li>{@link org.xtext.go.impl.typeLitImpl#getFunctionType <em>Function Type</em>}</li>
- *   <li>{@link org.xtext.go.impl.typeLitImpl#getInterfaceType <em>Interface Type</em>}</li>
- *   <li>{@link org.xtext.go.impl.typeLitImpl#getSliceType <em>Slice Type</em>}</li>
- *   <li>{@link org.xtext.go.impl.typeLitImpl#getMapType <em>Map Type</em>}</li>
- *   <li>{@link org.xtext.go.impl.typeLitImpl#getChannelType <em>Channel Type</em>}</li>
+ *   <li>{@link org.xtext.go.impl.typeLitImpl#getLit <em>Lit</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,84 +32,14 @@ import org.xtext.go.typeLit;
 public class typeLitImpl extends MinimalEObjectImpl.Container implements typeLit
 {
   /**
-   * The cached value of the '{@link #getArrayType() <em>Array Type</em>}' containment reference.
+   * The cached value of the '{@link #getLit() <em>Lit</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArrayType()
+   * @see #getLit()
    * @generated
    * @ordered
    */
-  protected arrayType arrayType;
-
-  /**
-   * The cached value of the '{@link #getStructType() <em>Struct Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getStructType()
-   * @generated
-   * @ordered
-   */
-  protected structType structType;
-
-  /**
-   * The cached value of the '{@link #getPointerType() <em>Pointer Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPointerType()
-   * @generated
-   * @ordered
-   */
-  protected pointerType pointerType;
-
-  /**
-   * The cached value of the '{@link #getFunctionType() <em>Function Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFunctionType()
-   * @generated
-   * @ordered
-   */
-  protected functionType functionType;
-
-  /**
-   * The cached value of the '{@link #getInterfaceType() <em>Interface Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getInterfaceType()
-   * @generated
-   * @ordered
-   */
-  protected interfaceType interfaceType;
-
-  /**
-   * The cached value of the '{@link #getSliceType() <em>Slice Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSliceType()
-   * @generated
-   * @ordered
-   */
-  protected sliceType sliceType;
-
-  /**
-   * The cached value of the '{@link #getMapType() <em>Map Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMapType()
-   * @generated
-   * @ordered
-   */
-  protected mapType mapType;
-
-  /**
-   * The cached value of the '{@link #getChannelType() <em>Channel Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getChannelType()
-   * @generated
-   * @ordered
-   */
-  protected channelType channelType;
+  protected EObject lit;
 
   /**
    * <!-- begin-user-doc -->
@@ -151,9 +67,9 @@ public class typeLitImpl extends MinimalEObjectImpl.Container implements typeLit
    * <!-- end-user-doc -->
    * @generated
    */
-  public arrayType getArrayType()
+  public EObject getLit()
   {
-    return arrayType;
+    return lit;
   }
 
   /**
@@ -161,13 +77,13 @@ public class typeLitImpl extends MinimalEObjectImpl.Container implements typeLit
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetArrayType(arrayType newArrayType, NotificationChain msgs)
+  public NotificationChain basicSetLit(EObject newLit, NotificationChain msgs)
   {
-    arrayType oldArrayType = arrayType;
-    arrayType = newArrayType;
+    EObject oldLit = lit;
+    lit = newLit;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_LIT__ARRAY_TYPE, oldArrayType, newArrayType);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_LIT__LIT, oldLit, newLit);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -178,356 +94,20 @@ public class typeLitImpl extends MinimalEObjectImpl.Container implements typeLit
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setArrayType(arrayType newArrayType)
+  public void setLit(EObject newLit)
   {
-    if (newArrayType != arrayType)
+    if (newLit != lit)
     {
       NotificationChain msgs = null;
-      if (arrayType != null)
-        msgs = ((InternalEObject)arrayType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_LIT__ARRAY_TYPE, null, msgs);
-      if (newArrayType != null)
-        msgs = ((InternalEObject)newArrayType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_LIT__ARRAY_TYPE, null, msgs);
-      msgs = basicSetArrayType(newArrayType, msgs);
+      if (lit != null)
+        msgs = ((InternalEObject)lit).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_LIT__LIT, null, msgs);
+      if (newLit != null)
+        msgs = ((InternalEObject)newLit).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_LIT__LIT, null, msgs);
+      msgs = basicSetLit(newLit, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_LIT__ARRAY_TYPE, newArrayType, newArrayType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public structType getStructType()
-  {
-    return structType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetStructType(structType newStructType, NotificationChain msgs)
-  {
-    structType oldStructType = structType;
-    structType = newStructType;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_LIT__STRUCT_TYPE, oldStructType, newStructType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setStructType(structType newStructType)
-  {
-    if (newStructType != structType)
-    {
-      NotificationChain msgs = null;
-      if (structType != null)
-        msgs = ((InternalEObject)structType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_LIT__STRUCT_TYPE, null, msgs);
-      if (newStructType != null)
-        msgs = ((InternalEObject)newStructType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_LIT__STRUCT_TYPE, null, msgs);
-      msgs = basicSetStructType(newStructType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_LIT__STRUCT_TYPE, newStructType, newStructType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public pointerType getPointerType()
-  {
-    return pointerType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetPointerType(pointerType newPointerType, NotificationChain msgs)
-  {
-    pointerType oldPointerType = pointerType;
-    pointerType = newPointerType;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_LIT__POINTER_TYPE, oldPointerType, newPointerType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setPointerType(pointerType newPointerType)
-  {
-    if (newPointerType != pointerType)
-    {
-      NotificationChain msgs = null;
-      if (pointerType != null)
-        msgs = ((InternalEObject)pointerType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_LIT__POINTER_TYPE, null, msgs);
-      if (newPointerType != null)
-        msgs = ((InternalEObject)newPointerType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_LIT__POINTER_TYPE, null, msgs);
-      msgs = basicSetPointerType(newPointerType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_LIT__POINTER_TYPE, newPointerType, newPointerType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public functionType getFunctionType()
-  {
-    return functionType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetFunctionType(functionType newFunctionType, NotificationChain msgs)
-  {
-    functionType oldFunctionType = functionType;
-    functionType = newFunctionType;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_LIT__FUNCTION_TYPE, oldFunctionType, newFunctionType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setFunctionType(functionType newFunctionType)
-  {
-    if (newFunctionType != functionType)
-    {
-      NotificationChain msgs = null;
-      if (functionType != null)
-        msgs = ((InternalEObject)functionType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_LIT__FUNCTION_TYPE, null, msgs);
-      if (newFunctionType != null)
-        msgs = ((InternalEObject)newFunctionType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_LIT__FUNCTION_TYPE, null, msgs);
-      msgs = basicSetFunctionType(newFunctionType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_LIT__FUNCTION_TYPE, newFunctionType, newFunctionType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public interfaceType getInterfaceType()
-  {
-    return interfaceType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetInterfaceType(interfaceType newInterfaceType, NotificationChain msgs)
-  {
-    interfaceType oldInterfaceType = interfaceType;
-    interfaceType = newInterfaceType;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_LIT__INTERFACE_TYPE, oldInterfaceType, newInterfaceType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setInterfaceType(interfaceType newInterfaceType)
-  {
-    if (newInterfaceType != interfaceType)
-    {
-      NotificationChain msgs = null;
-      if (interfaceType != null)
-        msgs = ((InternalEObject)interfaceType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_LIT__INTERFACE_TYPE, null, msgs);
-      if (newInterfaceType != null)
-        msgs = ((InternalEObject)newInterfaceType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_LIT__INTERFACE_TYPE, null, msgs);
-      msgs = basicSetInterfaceType(newInterfaceType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_LIT__INTERFACE_TYPE, newInterfaceType, newInterfaceType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public sliceType getSliceType()
-  {
-    return sliceType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetSliceType(sliceType newSliceType, NotificationChain msgs)
-  {
-    sliceType oldSliceType = sliceType;
-    sliceType = newSliceType;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_LIT__SLICE_TYPE, oldSliceType, newSliceType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setSliceType(sliceType newSliceType)
-  {
-    if (newSliceType != sliceType)
-    {
-      NotificationChain msgs = null;
-      if (sliceType != null)
-        msgs = ((InternalEObject)sliceType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_LIT__SLICE_TYPE, null, msgs);
-      if (newSliceType != null)
-        msgs = ((InternalEObject)newSliceType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_LIT__SLICE_TYPE, null, msgs);
-      msgs = basicSetSliceType(newSliceType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_LIT__SLICE_TYPE, newSliceType, newSliceType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public mapType getMapType()
-  {
-    return mapType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetMapType(mapType newMapType, NotificationChain msgs)
-  {
-    mapType oldMapType = mapType;
-    mapType = newMapType;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_LIT__MAP_TYPE, oldMapType, newMapType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setMapType(mapType newMapType)
-  {
-    if (newMapType != mapType)
-    {
-      NotificationChain msgs = null;
-      if (mapType != null)
-        msgs = ((InternalEObject)mapType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_LIT__MAP_TYPE, null, msgs);
-      if (newMapType != null)
-        msgs = ((InternalEObject)newMapType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_LIT__MAP_TYPE, null, msgs);
-      msgs = basicSetMapType(newMapType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_LIT__MAP_TYPE, newMapType, newMapType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public channelType getChannelType()
-  {
-    return channelType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetChannelType(channelType newChannelType, NotificationChain msgs)
-  {
-    channelType oldChannelType = channelType;
-    channelType = newChannelType;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_LIT__CHANNEL_TYPE, oldChannelType, newChannelType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setChannelType(channelType newChannelType)
-  {
-    if (newChannelType != channelType)
-    {
-      NotificationChain msgs = null;
-      if (channelType != null)
-        msgs = ((InternalEObject)channelType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_LIT__CHANNEL_TYPE, null, msgs);
-      if (newChannelType != null)
-        msgs = ((InternalEObject)newChannelType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_LIT__CHANNEL_TYPE, null, msgs);
-      msgs = basicSetChannelType(newChannelType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_LIT__CHANNEL_TYPE, newChannelType, newChannelType));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_LIT__LIT, newLit, newLit));
   }
 
   /**
@@ -540,22 +120,8 @@ public class typeLitImpl extends MinimalEObjectImpl.Container implements typeLit
   {
     switch (featureID)
     {
-      case GoPackage.TYPE_LIT__ARRAY_TYPE:
-        return basicSetArrayType(null, msgs);
-      case GoPackage.TYPE_LIT__STRUCT_TYPE:
-        return basicSetStructType(null, msgs);
-      case GoPackage.TYPE_LIT__POINTER_TYPE:
-        return basicSetPointerType(null, msgs);
-      case GoPackage.TYPE_LIT__FUNCTION_TYPE:
-        return basicSetFunctionType(null, msgs);
-      case GoPackage.TYPE_LIT__INTERFACE_TYPE:
-        return basicSetInterfaceType(null, msgs);
-      case GoPackage.TYPE_LIT__SLICE_TYPE:
-        return basicSetSliceType(null, msgs);
-      case GoPackage.TYPE_LIT__MAP_TYPE:
-        return basicSetMapType(null, msgs);
-      case GoPackage.TYPE_LIT__CHANNEL_TYPE:
-        return basicSetChannelType(null, msgs);
+      case GoPackage.TYPE_LIT__LIT:
+        return basicSetLit(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -570,22 +136,8 @@ public class typeLitImpl extends MinimalEObjectImpl.Container implements typeLit
   {
     switch (featureID)
     {
-      case GoPackage.TYPE_LIT__ARRAY_TYPE:
-        return getArrayType();
-      case GoPackage.TYPE_LIT__STRUCT_TYPE:
-        return getStructType();
-      case GoPackage.TYPE_LIT__POINTER_TYPE:
-        return getPointerType();
-      case GoPackage.TYPE_LIT__FUNCTION_TYPE:
-        return getFunctionType();
-      case GoPackage.TYPE_LIT__INTERFACE_TYPE:
-        return getInterfaceType();
-      case GoPackage.TYPE_LIT__SLICE_TYPE:
-        return getSliceType();
-      case GoPackage.TYPE_LIT__MAP_TYPE:
-        return getMapType();
-      case GoPackage.TYPE_LIT__CHANNEL_TYPE:
-        return getChannelType();
+      case GoPackage.TYPE_LIT__LIT:
+        return getLit();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -600,29 +152,8 @@ public class typeLitImpl extends MinimalEObjectImpl.Container implements typeLit
   {
     switch (featureID)
     {
-      case GoPackage.TYPE_LIT__ARRAY_TYPE:
-        setArrayType((arrayType)newValue);
-        return;
-      case GoPackage.TYPE_LIT__STRUCT_TYPE:
-        setStructType((structType)newValue);
-        return;
-      case GoPackage.TYPE_LIT__POINTER_TYPE:
-        setPointerType((pointerType)newValue);
-        return;
-      case GoPackage.TYPE_LIT__FUNCTION_TYPE:
-        setFunctionType((functionType)newValue);
-        return;
-      case GoPackage.TYPE_LIT__INTERFACE_TYPE:
-        setInterfaceType((interfaceType)newValue);
-        return;
-      case GoPackage.TYPE_LIT__SLICE_TYPE:
-        setSliceType((sliceType)newValue);
-        return;
-      case GoPackage.TYPE_LIT__MAP_TYPE:
-        setMapType((mapType)newValue);
-        return;
-      case GoPackage.TYPE_LIT__CHANNEL_TYPE:
-        setChannelType((channelType)newValue);
+      case GoPackage.TYPE_LIT__LIT:
+        setLit((EObject)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -638,29 +169,8 @@ public class typeLitImpl extends MinimalEObjectImpl.Container implements typeLit
   {
     switch (featureID)
     {
-      case GoPackage.TYPE_LIT__ARRAY_TYPE:
-        setArrayType((arrayType)null);
-        return;
-      case GoPackage.TYPE_LIT__STRUCT_TYPE:
-        setStructType((structType)null);
-        return;
-      case GoPackage.TYPE_LIT__POINTER_TYPE:
-        setPointerType((pointerType)null);
-        return;
-      case GoPackage.TYPE_LIT__FUNCTION_TYPE:
-        setFunctionType((functionType)null);
-        return;
-      case GoPackage.TYPE_LIT__INTERFACE_TYPE:
-        setInterfaceType((interfaceType)null);
-        return;
-      case GoPackage.TYPE_LIT__SLICE_TYPE:
-        setSliceType((sliceType)null);
-        return;
-      case GoPackage.TYPE_LIT__MAP_TYPE:
-        setMapType((mapType)null);
-        return;
-      case GoPackage.TYPE_LIT__CHANNEL_TYPE:
-        setChannelType((channelType)null);
+      case GoPackage.TYPE_LIT__LIT:
+        setLit((EObject)null);
         return;
     }
     super.eUnset(featureID);
@@ -676,22 +186,8 @@ public class typeLitImpl extends MinimalEObjectImpl.Container implements typeLit
   {
     switch (featureID)
     {
-      case GoPackage.TYPE_LIT__ARRAY_TYPE:
-        return arrayType != null;
-      case GoPackage.TYPE_LIT__STRUCT_TYPE:
-        return structType != null;
-      case GoPackage.TYPE_LIT__POINTER_TYPE:
-        return pointerType != null;
-      case GoPackage.TYPE_LIT__FUNCTION_TYPE:
-        return functionType != null;
-      case GoPackage.TYPE_LIT__INTERFACE_TYPE:
-        return interfaceType != null;
-      case GoPackage.TYPE_LIT__SLICE_TYPE:
-        return sliceType != null;
-      case GoPackage.TYPE_LIT__MAP_TYPE:
-        return mapType != null;
-      case GoPackage.TYPE_LIT__CHANNEL_TYPE:
-        return channelType != null;
+      case GoPackage.TYPE_LIT__LIT:
+        return lit != null;
     }
     return super.eIsSet(featureID);
   }

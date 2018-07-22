@@ -7,6 +7,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -14,8 +15,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.go.GoPackage;
 import org.xtext.go.type;
-import org.xtext.go.typeLit;
-import org.xtext.go.typeName;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,9 +23,7 @@ import org.xtext.go.typeName;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.typeImpl#getTypeName <em>Type Name</em>}</li>
- *   <li>{@link org.xtext.go.impl.typeImpl#getTypeLit <em>Type Lit</em>}</li>
- *   <li>{@link org.xtext.go.impl.typeImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.xtext.go.impl.typeImpl#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,34 +32,14 @@ import org.xtext.go.typeName;
 public class typeImpl extends MinimalEObjectImpl.Container implements type
 {
   /**
-   * The cached value of the '{@link #getTypeName() <em>Type Name</em>}' containment reference.
+   * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTypeName()
+   * @see #getContent()
    * @generated
    * @ordered
    */
-  protected typeName typeName;
-
-  /**
-   * The cached value of the '{@link #getTypeLit() <em>Type Lit</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTypeLit()
-   * @generated
-   * @ordered
-   */
-  protected typeLit typeLit;
-
-  /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected type type;
+  protected EObject content;
 
   /**
    * <!-- begin-user-doc -->
@@ -90,9 +67,9 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
    * <!-- end-user-doc -->
    * @generated
    */
-  public typeName getTypeName()
+  public EObject getContent()
   {
-    return typeName;
+    return content;
   }
 
   /**
@@ -100,13 +77,13 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetTypeName(typeName newTypeName, NotificationChain msgs)
+  public NotificationChain basicSetContent(EObject newContent, NotificationChain msgs)
   {
-    typeName oldTypeName = typeName;
-    typeName = newTypeName;
+    EObject oldContent = content;
+    content = newContent;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.TYPE__TYPE_NAME, oldTypeName, newTypeName);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.TYPE__CONTENT, oldContent, newContent);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -117,116 +94,20 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTypeName(typeName newTypeName)
+  public void setContent(EObject newContent)
   {
-    if (newTypeName != typeName)
+    if (newContent != content)
     {
       NotificationChain msgs = null;
-      if (typeName != null)
-        msgs = ((InternalEObject)typeName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE__TYPE_NAME, null, msgs);
-      if (newTypeName != null)
-        msgs = ((InternalEObject)newTypeName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE__TYPE_NAME, null, msgs);
-      msgs = basicSetTypeName(newTypeName, msgs);
+      if (content != null)
+        msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE__CONTENT, null, msgs);
+      if (newContent != null)
+        msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE__CONTENT, null, msgs);
+      msgs = basicSetContent(newContent, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE__TYPE_NAME, newTypeName, newTypeName));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public typeLit getTypeLit()
-  {
-    return typeLit;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetTypeLit(typeLit newTypeLit, NotificationChain msgs)
-  {
-    typeLit oldTypeLit = typeLit;
-    typeLit = newTypeLit;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.TYPE__TYPE_LIT, oldTypeLit, newTypeLit);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setTypeLit(typeLit newTypeLit)
-  {
-    if (newTypeLit != typeLit)
-    {
-      NotificationChain msgs = null;
-      if (typeLit != null)
-        msgs = ((InternalEObject)typeLit).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE__TYPE_LIT, null, msgs);
-      if (newTypeLit != null)
-        msgs = ((InternalEObject)newTypeLit).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE__TYPE_LIT, null, msgs);
-      msgs = basicSetTypeLit(newTypeLit, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE__TYPE_LIT, newTypeLit, newTypeLit));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public type getType()
-  {
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetType(type newType, NotificationChain msgs)
-  {
-    type oldType = type;
-    type = newType;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.TYPE__TYPE, oldType, newType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setType(type newType)
-  {
-    if (newType != type)
-    {
-      NotificationChain msgs = null;
-      if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE__TYPE, null, msgs);
-      if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE__TYPE, null, msgs);
-      msgs = basicSetType(newType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE__TYPE, newType, newType));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE__CONTENT, newContent, newContent));
   }
 
   /**
@@ -239,12 +120,8 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
   {
     switch (featureID)
     {
-      case GoPackage.TYPE__TYPE_NAME:
-        return basicSetTypeName(null, msgs);
-      case GoPackage.TYPE__TYPE_LIT:
-        return basicSetTypeLit(null, msgs);
-      case GoPackage.TYPE__TYPE:
-        return basicSetType(null, msgs);
+      case GoPackage.TYPE__CONTENT:
+        return basicSetContent(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -259,12 +136,8 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
   {
     switch (featureID)
     {
-      case GoPackage.TYPE__TYPE_NAME:
-        return getTypeName();
-      case GoPackage.TYPE__TYPE_LIT:
-        return getTypeLit();
-      case GoPackage.TYPE__TYPE:
-        return getType();
+      case GoPackage.TYPE__CONTENT:
+        return getContent();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -279,14 +152,8 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
   {
     switch (featureID)
     {
-      case GoPackage.TYPE__TYPE_NAME:
-        setTypeName((typeName)newValue);
-        return;
-      case GoPackage.TYPE__TYPE_LIT:
-        setTypeLit((typeLit)newValue);
-        return;
-      case GoPackage.TYPE__TYPE:
-        setType((type)newValue);
+      case GoPackage.TYPE__CONTENT:
+        setContent((EObject)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -302,14 +169,8 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
   {
     switch (featureID)
     {
-      case GoPackage.TYPE__TYPE_NAME:
-        setTypeName((typeName)null);
-        return;
-      case GoPackage.TYPE__TYPE_LIT:
-        setTypeLit((typeLit)null);
-        return;
-      case GoPackage.TYPE__TYPE:
-        setType((type)null);
+      case GoPackage.TYPE__CONTENT:
+        setContent((EObject)null);
         return;
     }
     super.eUnset(featureID);
@@ -325,12 +186,8 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
   {
     switch (featureID)
     {
-      case GoPackage.TYPE__TYPE_NAME:
-        return typeName != null;
-      case GoPackage.TYPE__TYPE_LIT:
-        return typeLit != null;
-      case GoPackage.TYPE__TYPE:
-        return type != null;
+      case GoPackage.TYPE__CONTENT:
+        return content != null;
     }
     return super.eIsSet(featureID);
   }

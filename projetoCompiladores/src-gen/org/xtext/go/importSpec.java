@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.importSpec#getImportPath <em>Import Path</em>}</li>
+ *   <li>{@link org.xtext.go.importSpec#getPath <em>Path</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,29 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface importSpec extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Import Path</b></em>' attribute.
+   * Returns the value of the '<em><b>Path</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Import Path</em>' attribute isn't clear,
+   * If the meaning of the '<em>Path</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Import Path</em>' attribute.
-   * @see #setImportPath(String)
-   * @see org.xtext.go.GoPackage#getimportSpec_ImportPath()
+   * @return the value of the '<em>Path</em>' attribute.
+   * @see #setPath(String)
+   * @see org.xtext.go.GoPackage#getimportSpec_Path()
    * @model
    * @generated
    */
-  String getImportPath();
+  String getPath();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.importSpec#getImportPath <em>Import Path</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.go.importSpec#getPath <em>Path</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Import Path</em>' attribute.
-   * @see #getImportPath()
+   * @param value the new value of the '<em>Path</em>' attribute.
+   * @see #getPath()
    * @generated
    */
-  void setImportPath(String value);
+  void setPath(String value);
 
 } // importSpec

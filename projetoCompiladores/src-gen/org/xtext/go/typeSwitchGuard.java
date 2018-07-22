@@ -13,7 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.typeSwitchGuard#getPrimaryExpr <em>Primary Expr</em>}</li>
+ *   <li>{@link org.xtext.go.typeSwitchGuard#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.go.typeSwitchGuard#getPrimaryExpression <em>Primary Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,29 +25,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface typeSwitchGuard extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Primary Expr</b></em>' containment reference.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Primary Expr</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Primary Expr</em>' containment reference.
-   * @see #setPrimaryExpr(primaryExpr)
-   * @see org.xtext.go.GoPackage#gettypeSwitchGuard_PrimaryExpr()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.xtext.go.GoPackage#gettypeSwitchGuard_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.typeSwitchGuard#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Primary Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Primary Expression</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Primary Expression</em>' containment reference.
+   * @see #setPrimaryExpression(primaryExpr)
+   * @see org.xtext.go.GoPackage#gettypeSwitchGuard_PrimaryExpression()
    * @model containment="true"
    * @generated
    */
-  primaryExpr getPrimaryExpr();
+  primaryExpr getPrimaryExpression();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.typeSwitchGuard#getPrimaryExpr <em>Primary Expr</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.typeSwitchGuard#getPrimaryExpression <em>Primary Expression</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Primary Expr</em>' containment reference.
-   * @see #getPrimaryExpr()
+   * @param value the new value of the '<em>Primary Expression</em>' containment reference.
+   * @see #getPrimaryExpression()
    * @generated
    */
-  void setPrimaryExpr(primaryExpr value);
+  void setPrimaryExpression(primaryExpr value);
 
 } // typeSwitchGuard

@@ -3,14 +3,19 @@
  */
 package org.xtext.go.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.go.GoPackage;
 import org.xtext.go.typeDecl;
@@ -23,7 +28,7 @@ import org.xtext.go.typeSpec;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.typeDeclImpl#getTypeSpec <em>Type Spec</em>}</li>
+ *   <li>{@link org.xtext.go.impl.typeDeclImpl#getSpec <em>Spec</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,14 +37,14 @@ import org.xtext.go.typeSpec;
 public class typeDeclImpl extends MinimalEObjectImpl.Container implements typeDecl
 {
   /**
-   * The cached value of the '{@link #getTypeSpec() <em>Type Spec</em>}' containment reference.
+   * The cached value of the '{@link #getSpec() <em>Spec</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTypeSpec()
+   * @see #getSpec()
    * @generated
    * @ordered
    */
-  protected typeSpec typeSpec;
+  protected EList<typeSpec> spec;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,47 +72,13 @@ public class typeDeclImpl extends MinimalEObjectImpl.Container implements typeDe
    * <!-- end-user-doc -->
    * @generated
    */
-  public typeSpec getTypeSpec()
+  public EList<typeSpec> getSpec()
   {
-    return typeSpec;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetTypeSpec(typeSpec newTypeSpec, NotificationChain msgs)
-  {
-    typeSpec oldTypeSpec = typeSpec;
-    typeSpec = newTypeSpec;
-    if (eNotificationRequired())
+    if (spec == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_DECL__TYPE_SPEC, oldTypeSpec, newTypeSpec);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      spec = new EObjectContainmentEList<typeSpec>(typeSpec.class, this, GoPackage.TYPE_DECL__SPEC);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setTypeSpec(typeSpec newTypeSpec)
-  {
-    if (newTypeSpec != typeSpec)
-    {
-      NotificationChain msgs = null;
-      if (typeSpec != null)
-        msgs = ((InternalEObject)typeSpec).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_DECL__TYPE_SPEC, null, msgs);
-      if (newTypeSpec != null)
-        msgs = ((InternalEObject)newTypeSpec).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE_DECL__TYPE_SPEC, null, msgs);
-      msgs = basicSetTypeSpec(newTypeSpec, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_DECL__TYPE_SPEC, newTypeSpec, newTypeSpec));
+    return spec;
   }
 
   /**
@@ -120,8 +91,8 @@ public class typeDeclImpl extends MinimalEObjectImpl.Container implements typeDe
   {
     switch (featureID)
     {
-      case GoPackage.TYPE_DECL__TYPE_SPEC:
-        return basicSetTypeSpec(null, msgs);
+      case GoPackage.TYPE_DECL__SPEC:
+        return ((InternalEList<?>)getSpec()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +107,8 @@ public class typeDeclImpl extends MinimalEObjectImpl.Container implements typeDe
   {
     switch (featureID)
     {
-      case GoPackage.TYPE_DECL__TYPE_SPEC:
-        return getTypeSpec();
+      case GoPackage.TYPE_DECL__SPEC:
+        return getSpec();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -147,13 +118,15 @@ public class typeDeclImpl extends MinimalEObjectImpl.Container implements typeDe
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case GoPackage.TYPE_DECL__TYPE_SPEC:
-        setTypeSpec((typeSpec)newValue);
+      case GoPackage.TYPE_DECL__SPEC:
+        getSpec().clear();
+        getSpec().addAll((Collection<? extends typeSpec>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +142,8 @@ public class typeDeclImpl extends MinimalEObjectImpl.Container implements typeDe
   {
     switch (featureID)
     {
-      case GoPackage.TYPE_DECL__TYPE_SPEC:
-        setTypeSpec((typeSpec)null);
+      case GoPackage.TYPE_DECL__SPEC:
+        getSpec().clear();
         return;
     }
     super.eUnset(featureID);
@@ -186,8 +159,8 @@ public class typeDeclImpl extends MinimalEObjectImpl.Container implements typeDe
   {
     switch (featureID)
     {
-      case GoPackage.TYPE_DECL__TYPE_SPEC:
-        return typeSpec != null;
+      case GoPackage.TYPE_DECL__SPEC:
+        return spec != null && !spec.isEmpty();
     }
     return super.eIsSet(featureID);
   }

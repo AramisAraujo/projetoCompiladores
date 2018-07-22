@@ -24,7 +24,8 @@ import org.xtext.go.typeName;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.methodSpecImpl#getSignature <em>Signature</em>}</li>
+ *   <li>{@link org.xtext.go.impl.methodSpecImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.go.impl.methodSpecImpl#getSig <em>Sig</em>}</li>
  *   <li>{@link org.xtext.go.impl.methodSpecImpl#getTypeName <em>Type Name</em>}</li>
  * </ul>
  * </p>
@@ -34,14 +35,34 @@ import org.xtext.go.typeName;
 public class methodSpecImpl extends MinimalEObjectImpl.Container implements methodSpec
 {
   /**
-   * The cached value of the '{@link #getSignature() <em>Signature</em>}' containment reference.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSignature()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected signature signature;
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getSig() <em>Sig</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSig()
+   * @generated
+   * @ordered
+   */
+  protected signature sig;
 
   /**
    * The cached value of the '{@link #getTypeName() <em>Type Name</em>}' containment reference.
@@ -79,9 +100,9 @@ public class methodSpecImpl extends MinimalEObjectImpl.Container implements meth
    * <!-- end-user-doc -->
    * @generated
    */
-  public signature getSignature()
+  public String getName()
   {
-    return signature;
+    return name;
   }
 
   /**
@@ -89,13 +110,36 @@ public class methodSpecImpl extends MinimalEObjectImpl.Container implements meth
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetSignature(signature newSignature, NotificationChain msgs)
+  public void setName(String newName)
   {
-    signature oldSignature = signature;
-    signature = newSignature;
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.METHOD_SPEC__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public signature getSig()
+  {
+    return sig;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetSig(signature newSig, NotificationChain msgs)
+  {
+    signature oldSig = sig;
+    sig = newSig;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.METHOD_SPEC__SIGNATURE, oldSignature, newSignature);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.METHOD_SPEC__SIG, oldSig, newSig);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -106,20 +150,20 @@ public class methodSpecImpl extends MinimalEObjectImpl.Container implements meth
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSignature(signature newSignature)
+  public void setSig(signature newSig)
   {
-    if (newSignature != signature)
+    if (newSig != sig)
     {
       NotificationChain msgs = null;
-      if (signature != null)
-        msgs = ((InternalEObject)signature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.METHOD_SPEC__SIGNATURE, null, msgs);
-      if (newSignature != null)
-        msgs = ((InternalEObject)newSignature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.METHOD_SPEC__SIGNATURE, null, msgs);
-      msgs = basicSetSignature(newSignature, msgs);
+      if (sig != null)
+        msgs = ((InternalEObject)sig).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.METHOD_SPEC__SIG, null, msgs);
+      if (newSig != null)
+        msgs = ((InternalEObject)newSig).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.METHOD_SPEC__SIG, null, msgs);
+      msgs = basicSetSig(newSig, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.METHOD_SPEC__SIGNATURE, newSignature, newSignature));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.METHOD_SPEC__SIG, newSig, newSig));
   }
 
   /**
@@ -180,8 +224,8 @@ public class methodSpecImpl extends MinimalEObjectImpl.Container implements meth
   {
     switch (featureID)
     {
-      case GoPackage.METHOD_SPEC__SIGNATURE:
-        return basicSetSignature(null, msgs);
+      case GoPackage.METHOD_SPEC__SIG:
+        return basicSetSig(null, msgs);
       case GoPackage.METHOD_SPEC__TYPE_NAME:
         return basicSetTypeName(null, msgs);
     }
@@ -198,8 +242,10 @@ public class methodSpecImpl extends MinimalEObjectImpl.Container implements meth
   {
     switch (featureID)
     {
-      case GoPackage.METHOD_SPEC__SIGNATURE:
-        return getSignature();
+      case GoPackage.METHOD_SPEC__NAME:
+        return getName();
+      case GoPackage.METHOD_SPEC__SIG:
+        return getSig();
       case GoPackage.METHOD_SPEC__TYPE_NAME:
         return getTypeName();
     }
@@ -216,8 +262,11 @@ public class methodSpecImpl extends MinimalEObjectImpl.Container implements meth
   {
     switch (featureID)
     {
-      case GoPackage.METHOD_SPEC__SIGNATURE:
-        setSignature((signature)newValue);
+      case GoPackage.METHOD_SPEC__NAME:
+        setName((String)newValue);
+        return;
+      case GoPackage.METHOD_SPEC__SIG:
+        setSig((signature)newValue);
         return;
       case GoPackage.METHOD_SPEC__TYPE_NAME:
         setTypeName((typeName)newValue);
@@ -236,8 +285,11 @@ public class methodSpecImpl extends MinimalEObjectImpl.Container implements meth
   {
     switch (featureID)
     {
-      case GoPackage.METHOD_SPEC__SIGNATURE:
-        setSignature((signature)null);
+      case GoPackage.METHOD_SPEC__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case GoPackage.METHOD_SPEC__SIG:
+        setSig((signature)null);
         return;
       case GoPackage.METHOD_SPEC__TYPE_NAME:
         setTypeName((typeName)null);
@@ -256,12 +308,31 @@ public class methodSpecImpl extends MinimalEObjectImpl.Container implements meth
   {
     switch (featureID)
     {
-      case GoPackage.METHOD_SPEC__SIGNATURE:
-        return signature != null;
+      case GoPackage.METHOD_SPEC__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case GoPackage.METHOD_SPEC__SIG:
+        return sig != null;
       case GoPackage.METHOD_SPEC__TYPE_NAME:
         return typeName != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //methodSpecImpl

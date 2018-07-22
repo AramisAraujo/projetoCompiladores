@@ -22,18 +22,21 @@ import org.xtext.go.arrayLength;
 import org.xtext.go.arrayType;
 import org.xtext.go.assignment;
 import org.xtext.go.block;
+import org.xtext.go.breakStmt;
 import org.xtext.go.channelType;
 import org.xtext.go.commCase;
 import org.xtext.go.commClause;
 import org.xtext.go.compositeLit;
 import org.xtext.go.constDecl;
 import org.xtext.go.constSpec;
+import org.xtext.go.continueStmt;
 import org.xtext.go.conversion;
 import org.xtext.go.declaration;
 import org.xtext.go.deferStmt;
 import org.xtext.go.element;
 import org.xtext.go.elementList;
 import org.xtext.go.elementType;
+import org.xtext.go.emptyStmt;
 import org.xtext.go.exprCaseClause;
 import org.xtext.go.exprSwitchCase;
 import org.xtext.go.exprSwitchStmt;
@@ -41,6 +44,7 @@ import org.xtext.go.expression;
 import org.xtext.go.expressionList;
 import org.xtext.go.expressionMatched;
 import org.xtext.go.expressionStmt;
+import org.xtext.go.fallthroughStmt;
 import org.xtext.go.fieldDecl;
 import org.xtext.go.forClause;
 import org.xtext.go.forStmt;
@@ -49,10 +53,13 @@ import org.xtext.go.functionDecl;
 import org.xtext.go.functionLit;
 import org.xtext.go.functionType;
 import org.xtext.go.goStmt;
+import org.xtext.go.gotoStmt;
+import org.xtext.go.identifierList;
 import org.xtext.go.ifStmt;
 import org.xtext.go.importDecl;
 import org.xtext.go.importSpec;
 import org.xtext.go.incDecStmt;
+import org.xtext.go.index;
 import org.xtext.go.interfaceType;
 import org.xtext.go.key;
 import org.xtext.go.keyedElement;
@@ -66,6 +73,7 @@ import org.xtext.go.methodExpr;
 import org.xtext.go.methodSpec;
 import org.xtext.go.operand;
 import org.xtext.go.operandName;
+import org.xtext.go.packageClause;
 import org.xtext.go.parameterDecl;
 import org.xtext.go.parameterList;
 import org.xtext.go.parameters;
@@ -77,6 +85,7 @@ import org.xtext.go.primaryExprSelector;
 import org.xtext.go.primaryExprSlice;
 import org.xtext.go.primaryExprStuff;
 import org.xtext.go.primaryExprTypeAssertion;
+import org.xtext.go.qualifiedIdent;
 import org.xtext.go.rangeClause;
 import org.xtext.go.receiver;
 import org.xtext.go.receiverType;
@@ -84,6 +93,7 @@ import org.xtext.go.recvStmt;
 import org.xtext.go.result;
 import org.xtext.go.returnStmt;
 import org.xtext.go.selectStmt;
+import org.xtext.go.selector;
 import org.xtext.go.sendStmt;
 import org.xtext.go.shortVarDecl;
 import org.xtext.go.signature;
@@ -147,6 +157,9 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case GoPackage.BLOCK:
 				sequence_block(context, (block) semanticObject); 
 				return; 
+			case GoPackage.BREAK_STMT:
+				sequence_breakStmt(context, (breakStmt) semanticObject); 
+				return; 
 			case GoPackage.CHANNEL_TYPE:
 				sequence_channelType(context, (channelType) semanticObject); 
 				return; 
@@ -165,6 +178,9 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case GoPackage.CONST_SPEC:
 				sequence_constSpec(context, (constSpec) semanticObject); 
 				return; 
+			case GoPackage.CONTINUE_STMT:
+				sequence_continueStmt(context, (continueStmt) semanticObject); 
+				return; 
 			case GoPackage.CONVERSION:
 				sequence_conversion(context, (conversion) semanticObject); 
 				return; 
@@ -182,6 +198,9 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case GoPackage.ELEMENT_TYPE:
 				sequence_elementType(context, (elementType) semanticObject); 
+				return; 
+			case GoPackage.EMPTY_STMT:
+				sequence_emptyStmt(context, (emptyStmt) semanticObject); 
 				return; 
 			case GoPackage.EXPR_CASE_CLAUSE:
 				sequence_exprCaseClause(context, (exprCaseClause) semanticObject); 
@@ -203,6 +222,9 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case GoPackage.EXPRESSION_STMT:
 				sequence_expressionStmt(context, (expressionStmt) semanticObject); 
+				return; 
+			case GoPackage.FALLTHROUGH_STMT:
+				sequence_fallthroughStmt(context, (fallthroughStmt) semanticObject); 
 				return; 
 			case GoPackage.FIELD_DECL:
 				sequence_fieldDecl(context, (fieldDecl) semanticObject); 
@@ -228,6 +250,12 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case GoPackage.GO_STMT:
 				sequence_goStmt(context, (goStmt) semanticObject); 
 				return; 
+			case GoPackage.GOTO_STMT:
+				sequence_gotoStmt(context, (gotoStmt) semanticObject); 
+				return; 
+			case GoPackage.IDENTIFIER_LIST:
+				sequence_identifierList(context, (identifierList) semanticObject); 
+				return; 
 			case GoPackage.IF_STMT:
 				sequence_ifStmt(context, (ifStmt) semanticObject); 
 				return; 
@@ -239,6 +267,9 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case GoPackage.INC_DEC_STMT:
 				sequence_incDecStmt(context, (incDecStmt) semanticObject); 
+				return; 
+			case GoPackage.INDEX:
+				sequence_index(context, (index) semanticObject); 
 				return; 
 			case GoPackage.INTERFACE_TYPE:
 				sequence_interfaceType(context, (interfaceType) semanticObject); 
@@ -279,6 +310,9 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case GoPackage.OPERAND_NAME:
 				sequence_operandName(context, (operandName) semanticObject); 
 				return; 
+			case GoPackage.PACKAGE_CLAUSE:
+				sequence_packageClause(context, (packageClause) semanticObject); 
+				return; 
 			case GoPackage.PARAMETER_DECL:
 				sequence_parameterDecl(context, (parameterDecl) semanticObject); 
 				return; 
@@ -312,6 +346,9 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case GoPackage.PRIMARY_EXPR_TYPE_ASSERTION:
 				sequence_primaryExprTypeAssertion(context, (primaryExprTypeAssertion) semanticObject); 
 				return; 
+			case GoPackage.QUALIFIED_IDENT:
+				sequence_qualifiedIdent(context, (qualifiedIdent) semanticObject); 
+				return; 
 			case GoPackage.RANGE_CLAUSE:
 				sequence_rangeClause(context, (rangeClause) semanticObject); 
 				return; 
@@ -332,6 +369,9 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case GoPackage.SELECT_STMT:
 				sequence_selectStmt(context, (selectStmt) semanticObject); 
+				return; 
+			case GoPackage.SELECTOR:
+				sequence_selector(context, (selector) semanticObject); 
 				return; 
 			case GoPackage.SEND_STMT:
 				sequence_sendStmt(context, (sendStmt) semanticObject); 
@@ -463,15 +503,15 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     arrayLength returns arrayLength
 	 *
 	 * Constraint:
-	 *     expression=expression
+	 *     expr=expression
 	 */
 	protected void sequence_arrayLength(ISerializationContext context, arrayLength semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.ARRAY_LENGTH__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.ARRAY_LENGTH__EXPRESSION));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.ARRAY_LENGTH__EXPR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.ARRAY_LENGTH__EXPR));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getArrayLengthAccess().getExpressionExpressionParserRuleCall_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getArrayLengthAccess().getExprExpressionParserRuleCall_0(), semanticObject.getExpr());
 		feeder.finish();
 	}
 	
@@ -481,18 +521,18 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     arrayType returns arrayType
 	 *
 	 * Constraint:
-	 *     (arrayLength=arrayLength elementType=elementType)
+	 *     (arrayLength=arrayLength elemType=elementType)
 	 */
 	protected void sequence_arrayType(ISerializationContext context, arrayType semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.ARRAY_TYPE__ARRAY_LENGTH) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.ARRAY_TYPE__ARRAY_LENGTH));
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.ARRAY_TYPE__ELEMENT_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.ARRAY_TYPE__ELEMENT_TYPE));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.ARRAY_TYPE__ELEM_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.ARRAY_TYPE__ELEM_TYPE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getArrayTypeAccess().getArrayLengthArrayLengthParserRuleCall_1_0(), semanticObject.getArrayLength());
-		feeder.accept(grammarAccess.getArrayTypeAccess().getElementTypeElementTypeParserRuleCall_3_0(), semanticObject.getElementType());
+		feeder.accept(grammarAccess.getArrayTypeAccess().getElemTypeElementTypeParserRuleCall_3_0(), semanticObject.getElemType());
 		feeder.finish();
 	}
 	
@@ -502,10 +542,22 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     assignment returns assignment
 	 *
 	 * Constraint:
-	 *     (expressionList=expressionList assign_op=assign_op expressionList=expressionList)
+	 *     (exprList1=expressionList operation=assign_op exprList2=expressionList)
 	 */
 	protected void sequence_assignment(ISerializationContext context, assignment semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.ASSIGNMENT__EXPR_LIST1) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.ASSIGNMENT__EXPR_LIST1));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.ASSIGNMENT__OPERATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.ASSIGNMENT__OPERATION));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.ASSIGNMENT__EXPR_LIST2) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.ASSIGNMENT__EXPR_LIST2));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAssignmentAccess().getExprList1ExpressionListParserRuleCall_0_0(), semanticObject.getExprList1());
+		feeder.accept(grammarAccess.getAssignmentAccess().getOperationAssign_opParserRuleCall_1_0(), semanticObject.getOperation());
+		feeder.accept(grammarAccess.getAssignmentAccess().getExprList2ExpressionListParserRuleCall_2_0(), semanticObject.getExprList2());
+		feeder.finish();
 	}
 	
 	
@@ -514,15 +566,33 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     block returns block
 	 *
 	 * Constraint:
-	 *     statementList=statementList
+	 *     statements=statementList
 	 */
 	protected void sequence_block(ISerializationContext context, block semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.BLOCK__STATEMENT_LIST) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.BLOCK__STATEMENT_LIST));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.BLOCK__STATEMENTS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.BLOCK__STATEMENTS));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBlockAccess().getStatementListStatementListParserRuleCall_1_0(), semanticObject.getStatementList());
+		feeder.accept(grammarAccess.getBlockAccess().getStatementsStatementListParserRuleCall_1_0(), semanticObject.getStatements());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     breakStmt returns breakStmt
+	 *
+	 * Constraint:
+	 *     label=IDENTIFIER
+	 */
+	protected void sequence_breakStmt(ISerializationContext context, breakStmt semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.BREAK_STMT__LABEL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.BREAK_STMT__LABEL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBreakStmtAccess().getLabelIDENTIFIERTerminalRuleCall_1_0(), semanticObject.getLabel());
 		feeder.finish();
 	}
 	
@@ -532,15 +602,15 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     channelType returns channelType
 	 *
 	 * Constraint:
-	 *     elementType=elementType
+	 *     elemType=elementType
 	 */
 	protected void sequence_channelType(ISerializationContext context, channelType semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.CHANNEL_TYPE__ELEMENT_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.CHANNEL_TYPE__ELEMENT_TYPE));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.CHANNEL_TYPE__ELEM_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.CHANNEL_TYPE__ELEM_TYPE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getChannelTypeAccess().getElementTypeElementTypeParserRuleCall_1_0(), semanticObject.getElementType());
+		feeder.accept(grammarAccess.getChannelTypeAccess().getElemTypeElementTypeParserRuleCall_1_0(), semanticObject.getElemType());
 		feeder.finish();
 	}
 	
@@ -550,7 +620,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     commCase returns commCase
 	 *
 	 * Constraint:
-	 *     (sendStmt=sendStmt | recvStmt=recvStmt)
+	 *     (statement=sendStmt | statement=recvStmt)
 	 */
 	protected void sequence_commCase(ISerializationContext context, commCase semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -562,18 +632,18 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     commClause returns commClause
 	 *
 	 * Constraint:
-	 *     (commCase=commCase statementList=statementList)
+	 *     (case=commCase stmtList=statementList)
 	 */
 	protected void sequence_commClause(ISerializationContext context, commClause semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.COMM_CLAUSE__COMM_CASE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.COMM_CLAUSE__COMM_CASE));
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.COMM_CLAUSE__STATEMENT_LIST) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.COMM_CLAUSE__STATEMENT_LIST));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.COMM_CLAUSE__CASE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.COMM_CLAUSE__CASE));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.COMM_CLAUSE__STMT_LIST) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.COMM_CLAUSE__STMT_LIST));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCommClauseAccess().getCommCaseCommCaseParserRuleCall_0_0(), semanticObject.getCommCase());
-		feeder.accept(grammarAccess.getCommClauseAccess().getStatementListStatementListParserRuleCall_2_0(), semanticObject.getStatementList());
+		feeder.accept(grammarAccess.getCommClauseAccess().getCaseCommCaseParserRuleCall_0_0(), semanticObject.getCase());
+		feeder.accept(grammarAccess.getCommClauseAccess().getStmtListStatementListParserRuleCall_2_0(), semanticObject.getStmtList());
 		feeder.finish();
 	}
 	
@@ -604,7 +674,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     constDecl returns constDecl
 	 *
 	 * Constraint:
-	 *     (constSpec=constSpec | constSpec=constSpec+)
+	 *     (spec+=constSpec | spec+=constSpec+)
 	 */
 	protected void sequence_constDecl(ISerializationContext context, constDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -616,10 +686,28 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     constSpec returns constSpec
 	 *
 	 * Constraint:
-	 *     (identifierList=identifierList (type=type? expressionList=expressionList)?)
+	 *     (identifiers=identifierList (type=type? expression=expressionList)?)
 	 */
 	protected void sequence_constSpec(ISerializationContext context, constSpec semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     continueStmt returns continueStmt
+	 *
+	 * Constraint:
+	 *     label=IDENTIFIER
+	 */
+	protected void sequence_continueStmt(ISerializationContext context, continueStmt semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.CONTINUE_STMT__LABEL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.CONTINUE_STMT__LABEL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getContinueStmtAccess().getLabelIDENTIFIERTerminalRuleCall_1_0(), semanticObject.getLabel());
+		feeder.finish();
 	}
 	
 	
@@ -649,7 +737,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     declaration returns declaration
 	 *
 	 * Constraint:
-	 *     (constDecl=constDecl | typeDecl=typeDecl | varDecl=varDecl)
+	 *     (decl=constDecl | decl=typeDecl | decl=varDecl)
 	 */
 	protected void sequence_declaration(ISerializationContext context, declaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -661,15 +749,15 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     deferStmt returns deferStmt
 	 *
 	 * Constraint:
-	 *     expression=expression
+	 *     expr=expression
 	 */
 	protected void sequence_deferStmt(ISerializationContext context, deferStmt semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.DEFER_STMT__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.DEFER_STMT__EXPRESSION));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.DEFER_STMT__EXPR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.DEFER_STMT__EXPR));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDeferStmtAccess().getExpressionExpressionParserRuleCall_1_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getDeferStmtAccess().getExprExpressionParserRuleCall_1_0(), semanticObject.getExpr());
 		feeder.finish();
 	}
 	
@@ -679,7 +767,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     elementList returns elementList
 	 *
 	 * Constraint:
-	 *     (keyedElement=keyedElement keyedElement=keyedElement*)
+	 *     (keyedElements+=keyedElement keyedElements+=keyedElement*)
 	 */
 	protected void sequence_elementList(ISerializationContext context, elementList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -709,7 +797,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     element returns element
 	 *
 	 * Constraint:
-	 *     (expression=expression | literalValue=literalValue)
+	 *     (content=expression | content=literalValue)
 	 */
 	protected void sequence_element(ISerializationContext context, element semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -718,21 +806,39 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     emptyStmt returns emptyStmt
+	 *
+	 * Constraint:
+	 *     content=WS
+	 */
+	protected void sequence_emptyStmt(ISerializationContext context, emptyStmt semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.EMPTY_STMT__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.EMPTY_STMT__CONTENT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEmptyStmtAccess().getContentWSTerminalRuleCall_0(), semanticObject.getContent());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     exprCaseClause returns exprCaseClause
 	 *
 	 * Constraint:
-	 *     (exprSwitchCase=exprSwitchCase statementList=statementList)
+	 *     (exprSwitchCase=exprSwitchCase stmtList=statementList)
 	 */
 	protected void sequence_exprCaseClause(ISerializationContext context, exprCaseClause semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.EXPR_CASE_CLAUSE__EXPR_SWITCH_CASE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.EXPR_CASE_CLAUSE__EXPR_SWITCH_CASE));
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.EXPR_CASE_CLAUSE__STATEMENT_LIST) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.EXPR_CASE_CLAUSE__STATEMENT_LIST));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.EXPR_CASE_CLAUSE__STMT_LIST) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.EXPR_CASE_CLAUSE__STMT_LIST));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getExprCaseClauseAccess().getExprSwitchCaseExprSwitchCaseParserRuleCall_0_0(), semanticObject.getExprSwitchCase());
-		feeder.accept(grammarAccess.getExprCaseClauseAccess().getStatementListStatementListParserRuleCall_2_0(), semanticObject.getStatementList());
+		feeder.accept(grammarAccess.getExprCaseClauseAccess().getStmtListStatementListParserRuleCall_2_0(), semanticObject.getStmtList());
 		feeder.finish();
 	}
 	
@@ -742,15 +848,15 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     exprSwitchCase returns exprSwitchCase
 	 *
 	 * Constraint:
-	 *     expressionList=expressionList
+	 *     exprList=expressionList
 	 */
 	protected void sequence_exprSwitchCase(ISerializationContext context, exprSwitchCase semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.EXPR_SWITCH_CASE__EXPRESSION_LIST) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.EXPR_SWITCH_CASE__EXPRESSION_LIST));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.EXPR_SWITCH_CASE__EXPR_LIST) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.EXPR_SWITCH_CASE__EXPR_LIST));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getExprSwitchCaseAccess().getExpressionListExpressionListParserRuleCall_0_1_0(), semanticObject.getExpressionList());
+		feeder.accept(grammarAccess.getExprSwitchCaseAccess().getExprListExpressionListParserRuleCall_0_1_0(), semanticObject.getExprList());
 		feeder.finish();
 	}
 	
@@ -760,7 +866,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     exprSwitchStmt returns exprSwitchStmt
 	 *
 	 * Constraint:
-	 *     (simpleStmt=simpleStmt? expression=expression? exprCaseClause=exprCaseClause*)
+	 *     (simpleStmt=simpleStmt? expr=expression? exprCaseClauses+=exprCaseClause*)
 	 */
 	protected void sequence_exprSwitchStmt(ISerializationContext context, exprSwitchStmt semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -772,7 +878,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     expressionList returns expressionList
 	 *
 	 * Constraint:
-	 *     (expression=expression expression=expression*)
+	 *     (expr+=expression expr+=expression*)
 	 */
 	protected void sequence_expressionList(ISerializationContext context, expressionList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -802,22 +908,21 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     expressionStmt returns expressionStmt
 	 *
 	 * Constraint:
-	 *     expression=expression
+	 *     expr=expression
 	 */
 	protected void sequence_expressionStmt(ISerializationContext context, expressionStmt semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.EXPRESSION_STMT__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.EXPRESSION_STMT__EXPRESSION));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.EXPRESSION_STMT__EXPR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.EXPRESSION_STMT__EXPR));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getExpressionStmtAccess().getExpressionExpressionParserRuleCall_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getExpressionStmtAccess().getExprExpressionParserRuleCall_0(), semanticObject.getExpr());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     index returns expression
 	 *     expression returns expression
 	 *
 	 * Constraint:
@@ -839,6 +944,24 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     fallthroughStmt returns fallthroughStmt
+	 *
+	 * Constraint:
+	 *     content='fallthrough'
+	 */
+	protected void sequence_fallthroughStmt(ISerializationContext context, fallthroughStmt semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.FALLTHROUGH_STMT__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.FALLTHROUGH_STMT__CONTENT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getFallthroughStmtAccess().getContentFallthroughKeyword_0(), semanticObject.getContent());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     fieldDecl returns fieldDecl
 	 *
 	 * Constraint:
@@ -854,7 +977,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     forClause returns forClause
 	 *
 	 * Constraint:
-	 *     (simpleStmt=simpleStmt? expression=expression? simpleStmt=simpleStmt?)
+	 *     (statement1=simpleStmt? expr=expression? statement2=simpleStmt?)
 	 */
 	protected void sequence_forClause(ISerializationContext context, forClause semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -866,7 +989,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     forStmt returns forStmt
 	 *
 	 * Constraint:
-	 *     ((expression=expression | forClause=forClause | rangeClause=rangeClause)? block=block)
+	 *     ((expr=expression | clause=forClause | clause=rangeClause)? codeBlock=block)
 	 */
 	protected void sequence_forStmt(ISerializationContext context, forStmt semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -878,7 +1001,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     functionDecl returns functionDecl
 	 *
 	 * Constraint:
-	 *     (function=function | signature=signature)
+	 *     (name=IDENTIFIER (func=function | sig=signature))
 	 */
 	protected void sequence_functionDecl(ISerializationContext context, functionDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -908,15 +1031,15 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     functionType returns functionType
 	 *
 	 * Constraint:
-	 *     signature=signature
+	 *     sig=signature
 	 */
 	protected void sequence_functionType(ISerializationContext context, functionType semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.FUNCTION_TYPE__SIGNATURE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.FUNCTION_TYPE__SIGNATURE));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.FUNCTION_TYPE__SIG) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.FUNCTION_TYPE__SIG));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFunctionTypeAccess().getSignatureSignatureParserRuleCall_1_0(), semanticObject.getSignature());
+		feeder.accept(grammarAccess.getFunctionTypeAccess().getSigSignatureParserRuleCall_1_0(), semanticObject.getSig());
 		feeder.finish();
 	}
 	
@@ -926,18 +1049,18 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     function returns function
 	 *
 	 * Constraint:
-	 *     (signature=signature block=block)
+	 *     (sig=signature codeBlock=block)
 	 */
 	protected void sequence_function(ISerializationContext context, function semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.FUNCTION__SIGNATURE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.FUNCTION__SIGNATURE));
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.FUNCTION__BLOCK) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.FUNCTION__BLOCK));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.FUNCTION__SIG) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.FUNCTION__SIG));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.FUNCTION__CODE_BLOCK) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.FUNCTION__CODE_BLOCK));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFunctionAccess().getSignatureSignatureParserRuleCall_0_0(), semanticObject.getSignature());
-		feeder.accept(grammarAccess.getFunctionAccess().getBlockBlockParserRuleCall_1_0(), semanticObject.getBlock());
+		feeder.accept(grammarAccess.getFunctionAccess().getSigSignatureParserRuleCall_0_0(), semanticObject.getSig());
+		feeder.accept(grammarAccess.getFunctionAccess().getCodeBlockBlockParserRuleCall_1_0(), semanticObject.getCodeBlock());
 		feeder.finish();
 	}
 	
@@ -947,16 +1070,46 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     goStmt returns goStmt
 	 *
 	 * Constraint:
-	 *     expression=expression
+	 *     expr=expression
 	 */
 	protected void sequence_goStmt(ISerializationContext context, goStmt semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.GO_STMT__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.GO_STMT__EXPRESSION));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.GO_STMT__EXPR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.GO_STMT__EXPR));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGoStmtAccess().getExpressionExpressionParserRuleCall_1_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getGoStmtAccess().getExprExpressionParserRuleCall_1_0(), semanticObject.getExpr());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     gotoStmt returns gotoStmt
+	 *
+	 * Constraint:
+	 *     label=IDENTIFIER
+	 */
+	protected void sequence_gotoStmt(ISerializationContext context, gotoStmt semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.GOTO_STMT__LABEL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.GOTO_STMT__LABEL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getGotoStmtAccess().getLabelIDENTIFIERTerminalRuleCall_1_0(), semanticObject.getLabel());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     identifierList returns identifierList
+	 *
+	 * Constraint:
+	 *     (ids+=IDENTIFIER ids+=IDENTIFIER*)
+	 */
+	protected void sequence_identifierList(ISerializationContext context, identifierList semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -965,7 +1118,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ifStmt returns ifStmt
 	 *
 	 * Constraint:
-	 *     (simpleStmt=simpleStmt? expression=expression block=block (ifStmt=ifStmt | block=block)?)
+	 *     (simplStatement=simpleStmt? expr=expression codeBlock=block (ifStatement=ifStmt | codeBlockIf=block)?)
 	 */
 	protected void sequence_ifStmt(ISerializationContext context, ifStmt semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -977,7 +1130,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     importDecl returns importDecl
 	 *
 	 * Constraint:
-	 *     (importSpec=importSpec | importSpec=importSpec+)
+	 *     (specs+=importSpec | specs+=importSpec+)
 	 */
 	protected void sequence_importDecl(ISerializationContext context, importDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -989,15 +1142,15 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     importSpec returns importSpec
 	 *
 	 * Constraint:
-	 *     importPath=importPath
+	 *     path=importPath
 	 */
 	protected void sequence_importSpec(ISerializationContext context, importSpec semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.IMPORT_SPEC__IMPORT_PATH) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.IMPORT_SPEC__IMPORT_PATH));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.IMPORT_SPEC__PATH) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.IMPORT_SPEC__PATH));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getImportSpecAccess().getImportPathImportPathParserRuleCall_1_0(), semanticObject.getImportPath());
+		feeder.accept(grammarAccess.getImportSpecAccess().getPathImportPathParserRuleCall_1_0(), semanticObject.getPath());
 		feeder.finish();
 	}
 	
@@ -1007,15 +1160,33 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     incDecStmt returns incDecStmt
 	 *
 	 * Constraint:
-	 *     expression=expression
+	 *     expr=expression
 	 */
 	protected void sequence_incDecStmt(ISerializationContext context, incDecStmt semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.INC_DEC_STMT__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.INC_DEC_STMT__EXPRESSION));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.INC_DEC_STMT__EXPR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.INC_DEC_STMT__EXPR));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getIncDecStmtAccess().getExpressionExpressionParserRuleCall_0_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getIncDecStmtAccess().getExprExpressionParserRuleCall_0_0(), semanticObject.getExpr());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     index returns index
+	 *
+	 * Constraint:
+	 *     expr=expression
+	 */
+	protected void sequence_index(ISerializationContext context, index semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.INDEX__EXPR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.INDEX__EXPR));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getIndexAccess().getExprExpressionParserRuleCall_1_0(), semanticObject.getExpr());
 		feeder.finish();
 	}
 	
@@ -1025,7 +1196,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     interfaceType returns interfaceType
 	 *
 	 * Constraint:
-	 *     methodSpec=methodSpec+
+	 *     methodSpecs+=methodSpec+
 	 */
 	protected void sequence_interfaceType(ISerializationContext context, interfaceType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1037,7 +1208,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     key returns key
 	 *
 	 * Constraint:
-	 *     (expression=expression | literalValue=literalValue)
+	 *     (name=IDENTIFIER | expr=expression | lit=literalValue)
 	 */
 	protected void sequence_key(ISerializationContext context, key semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1061,15 +1232,18 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     labeledStmt returns labeledStmt
 	 *
 	 * Constraint:
-	 *     statement=statement
+	 *     (label=IDENTIFIER stmt=statement)
 	 */
 	protected void sequence_labeledStmt(ISerializationContext context, labeledStmt semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.LABELED_STMT__STATEMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.LABELED_STMT__STATEMENT));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.LABELED_STMT__LABEL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.LABELED_STMT__LABEL));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.LABELED_STMT__STMT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.LABELED_STMT__STMT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLabeledStmtAccess().getStatementStatementParserRuleCall_2_0(), semanticObject.getStatement());
+		feeder.accept(grammarAccess.getLabeledStmtAccess().getLabelIDENTIFIERTerminalRuleCall_0_0(), semanticObject.getLabel());
+		feeder.accept(grammarAccess.getLabeledStmtAccess().getStmtStatementParserRuleCall_2_0(), semanticObject.getStmt());
 		feeder.finish();
 	}
 	
@@ -1080,12 +1254,12 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         structType=structType | 
-	 *         arrayType=arrayType | 
-	 *         elementType=elementType | 
-	 *         sliceType=sliceType | 
-	 *         mapType=mapType | 
-	 *         typeName=typeName
+	 *         type=structType | 
+	 *         type=arrayType | 
+	 *         type=elementType | 
+	 *         type=sliceType | 
+	 *         type=mapType | 
+	 *         type=typeName
 	 *     )
 	 */
 	protected void sequence_literalType(ISerializationContext context, literalType semanticObject) {
@@ -1116,7 +1290,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     literal returns literal
 	 *
 	 * Constraint:
-	 *     (basicLit=basicLit | compositeLit=compositeLit | functionLit=functionLit)
+	 *     (litBasic=basicLit | litComposite=compositeLit | litFunc=functionLit)
 	 */
 	protected void sequence_literal(ISerializationContext context, literal semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1128,18 +1302,18 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     mapType returns mapType
 	 *
 	 * Constraint:
-	 *     (type=type elementType=elementType)
+	 *     (type=type elemType=elementType)
 	 */
 	protected void sequence_mapType(ISerializationContext context, mapType semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.MAP_TYPE__TYPE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.MAP_TYPE__TYPE));
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.MAP_TYPE__ELEMENT_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.MAP_TYPE__ELEMENT_TYPE));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.MAP_TYPE__ELEM_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.MAP_TYPE__ELEM_TYPE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getMapTypeAccess().getTypeTypeParserRuleCall_2_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getMapTypeAccess().getElementTypeElementTypeParserRuleCall_4_0(), semanticObject.getElementType());
+		feeder.accept(grammarAccess.getMapTypeAccess().getElemTypeElementTypeParserRuleCall_4_0(), semanticObject.getElemType());
 		feeder.finish();
 	}
 	
@@ -1149,7 +1323,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     methodDecl returns methodDecl
 	 *
 	 * Constraint:
-	 *     (receiver=receiver (function=function | signature=signature))
+	 *     (params=receiver name=IDENTIFIER (func=function | sig=signature))
 	 */
 	protected void sequence_methodDecl(ISerializationContext context, methodDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1179,7 +1353,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     methodSpec returns methodSpec
 	 *
 	 * Constraint:
-	 *     (signature=signature | typeName=typeName)
+	 *     ((name=IDENTIFIER sig=signature) | typeName=typeName)
 	 */
 	protected void sequence_methodSpec(ISerializationContext context, methodSpec semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1191,16 +1365,10 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     operandName returns operandName
 	 *
 	 * Constraint:
-	 *     qualifiedIdent=qualifiedIdent
+	 *     (name=IDENTIFIER | qualIdent=qualifiedIdent)
 	 */
 	protected void sequence_operandName(ISerializationContext context, operandName semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.OPERAND_NAME__QUALIFIED_IDENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.OPERAND_NAME__QUALIFIED_IDENT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getOperandNameAccess().getQualifiedIdentQualifiedIdentParserRuleCall_1_0(), semanticObject.getQualifiedIdent());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1209,10 +1377,28 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     operand returns operand
 	 *
 	 * Constraint:
-	 *     (literal=literal | operandName=operandName | methodExpr=methodExpr | expression=expression)
+	 *     (content=literal | content=operandName | content=methodExpr | content=expression)
 	 */
 	protected void sequence_operand(ISerializationContext context, operand semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     packageClause returns packageClause
+	 *
+	 * Constraint:
+	 *     packageName=IDENTIFIER
+	 */
+	protected void sequence_packageClause(ISerializationContext context, packageClause semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.PACKAGE_CLAUSE__PACKAGE_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.PACKAGE_CLAUSE__PACKAGE_NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPackageClauseAccess().getPackageNameIDENTIFIERTerminalRuleCall_1_0(), semanticObject.getPackageName());
+		feeder.finish();
 	}
 	
 	
@@ -1233,7 +1419,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     parameterList returns parameterList
 	 *
 	 * Constraint:
-	 *     (parameterDecl=parameterDecl parameterDecl=parameterDecl*)
+	 *     (paramsDecl+=parameterDecl paramsDecl+=parameterDecl*)
 	 */
 	protected void sequence_parameterList(ISerializationContext context, parameterList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1245,16 +1431,10 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     parameters returns parameters
 	 *
 	 * Constraint:
-	 *     parameterList=parameterList
+	 *     paramList+=parameterList
 	 */
 	protected void sequence_parameters(ISerializationContext context, parameters semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.PARAMETERS__PARAMETER_LIST) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.PARAMETERS__PARAMETER_LIST));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getParametersAccess().getParameterListParameterListParserRuleCall_1_0_0(), semanticObject.getParameterList());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1281,17 +1461,17 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     primaryExprArguments returns primaryExprArguments
 	 *
 	 * Constraint:
-	 *     (primaryExprStuff=primaryExprStuff primaryExprArguments=primaryExprArguments)
+	 *     (content=primaryExprStuff primaryExprArguments=primaryExprArguments)
 	 */
 	protected void sequence_primaryExprArguments(ISerializationContext context, primaryExprArguments semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_STUFF) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_STUFF));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.PRIMARY_EXPR_ARGUMENTS__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.PRIMARY_EXPR_ARGUMENTS__CONTENT));
 			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_ARGUMENTS) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.PRIMARY_EXPR_ARGUMENTS__PRIMARY_EXPR_ARGUMENTS));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPrimaryExprArgumentsAccess().getPrimaryExprStuffPrimaryExprStuffParserRuleCall_0_0(), semanticObject.getPrimaryExprStuff());
+		feeder.accept(grammarAccess.getPrimaryExprArgumentsAccess().getContentPrimaryExprStuffParserRuleCall_0_0(), semanticObject.getContent());
 		feeder.accept(grammarAccess.getPrimaryExprArgumentsAccess().getPrimaryExprArgumentsPrimaryExprArgumentsParserRuleCall_1_0(), semanticObject.getPrimaryExprArguments());
 		feeder.finish();
 	}
@@ -1302,18 +1482,18 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     primaryExprIndex returns primaryExprIndex
 	 *
 	 * Constraint:
-	 *     (primaryExprStuff=primaryExprStuff primaryExprIndex=primaryExprSelector)
+	 *     (content=primaryExprStuff primaryExprIndex=primaryExprIndex)
 	 */
 	protected void sequence_primaryExprIndex(ISerializationContext context, primaryExprIndex semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.PRIMARY_EXPR_INDEX__PRIMARY_EXPR_STUFF) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.PRIMARY_EXPR_INDEX__PRIMARY_EXPR_STUFF));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.PRIMARY_EXPR_INDEX__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.PRIMARY_EXPR_INDEX__CONTENT));
 			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.PRIMARY_EXPR_INDEX__PRIMARY_EXPR_INDEX) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.PRIMARY_EXPR_INDEX__PRIMARY_EXPR_INDEX));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPrimaryExprIndexAccess().getPrimaryExprStuffPrimaryExprStuffParserRuleCall_0_0(), semanticObject.getPrimaryExprStuff());
-		feeder.accept(grammarAccess.getPrimaryExprIndexAccess().getPrimaryExprIndexPrimaryExprSelectorParserRuleCall_1_0(), semanticObject.getPrimaryExprIndex());
+		feeder.accept(grammarAccess.getPrimaryExprIndexAccess().getContentPrimaryExprStuffParserRuleCall_0_0(), semanticObject.getContent());
+		feeder.accept(grammarAccess.getPrimaryExprIndexAccess().getPrimaryExprIndexPrimaryExprIndexParserRuleCall_1_0(), semanticObject.getPrimaryExprIndex());
 		feeder.finish();
 	}
 	
@@ -1323,17 +1503,17 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     primaryExprSelector returns primaryExprSelector
 	 *
 	 * Constraint:
-	 *     (primaryExprStuff=primaryExprStuff primaryExprSelector=primaryExprSelector)
+	 *     (content=primaryExprStuff primaryExprSelector=primaryExprSelector)
 	 */
 	protected void sequence_primaryExprSelector(ISerializationContext context, primaryExprSelector semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.PRIMARY_EXPR_SELECTOR__PRIMARY_EXPR_STUFF) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.PRIMARY_EXPR_SELECTOR__PRIMARY_EXPR_STUFF));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.PRIMARY_EXPR_SELECTOR__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.PRIMARY_EXPR_SELECTOR__CONTENT));
 			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.PRIMARY_EXPR_SELECTOR__PRIMARY_EXPR_SELECTOR) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.PRIMARY_EXPR_SELECTOR__PRIMARY_EXPR_SELECTOR));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPrimaryExprSelectorAccess().getPrimaryExprStuffPrimaryExprStuffParserRuleCall_0_0(), semanticObject.getPrimaryExprStuff());
+		feeder.accept(grammarAccess.getPrimaryExprSelectorAccess().getContentPrimaryExprStuffParserRuleCall_0_0(), semanticObject.getContent());
 		feeder.accept(grammarAccess.getPrimaryExprSelectorAccess().getPrimaryExprSelectorPrimaryExprSelectorParserRuleCall_1_0(), semanticObject.getPrimaryExprSelector());
 		feeder.finish();
 	}
@@ -1344,18 +1524,18 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     primaryExprSlice returns primaryExprSlice
 	 *
 	 * Constraint:
-	 *     (primaryExprStuff=primaryExprStuff primaryExprSlice=primaryExprSelector)
+	 *     (content=primaryExprStuff primaryExprSlice=primaryExprSlice)
 	 */
 	protected void sequence_primaryExprSlice(ISerializationContext context, primaryExprSlice semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.PRIMARY_EXPR_SLICE__PRIMARY_EXPR_STUFF) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.PRIMARY_EXPR_SLICE__PRIMARY_EXPR_STUFF));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.PRIMARY_EXPR_SLICE__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.PRIMARY_EXPR_SLICE__CONTENT));
 			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.PRIMARY_EXPR_SLICE__PRIMARY_EXPR_SLICE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.PRIMARY_EXPR_SLICE__PRIMARY_EXPR_SLICE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPrimaryExprSliceAccess().getPrimaryExprStuffPrimaryExprStuffParserRuleCall_0_0(), semanticObject.getPrimaryExprStuff());
-		feeder.accept(grammarAccess.getPrimaryExprSliceAccess().getPrimaryExprSlicePrimaryExprSelectorParserRuleCall_1_0(), semanticObject.getPrimaryExprSlice());
+		feeder.accept(grammarAccess.getPrimaryExprSliceAccess().getContentPrimaryExprStuffParserRuleCall_0_0(), semanticObject.getContent());
+		feeder.accept(grammarAccess.getPrimaryExprSliceAccess().getPrimaryExprSlicePrimaryExprSliceParserRuleCall_1_0(), semanticObject.getPrimaryExprSlice());
 		feeder.finish();
 	}
 	
@@ -1365,7 +1545,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     primaryExprStuff returns primaryExprStuff
 	 *
 	 * Constraint:
-	 *     (selector=selector | index=index | slice=slice | typeAssertion=typeAssertion | arguments=arguments)
+	 *     (content=selector | content=index | content=slice | content=typeAssertion | content=arguments)
 	 */
 	protected void sequence_primaryExprStuff(ISerializationContext context, primaryExprStuff semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1377,18 +1557,18 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     primaryExprTypeAssertion returns primaryExprTypeAssertion
 	 *
 	 * Constraint:
-	 *     (primaryExprStuff=primaryExprStuff primaryExprTypeAssertion=primaryExprSelector)
+	 *     (content=primaryExprStuff primaryExprTypeAssertion=primaryExprTypeAssertion)
 	 */
 	protected void sequence_primaryExprTypeAssertion(ISerializationContext context, primaryExprTypeAssertion semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.PRIMARY_EXPR_TYPE_ASSERTION__PRIMARY_EXPR_STUFF) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.PRIMARY_EXPR_TYPE_ASSERTION__PRIMARY_EXPR_STUFF));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.PRIMARY_EXPR_TYPE_ASSERTION__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.PRIMARY_EXPR_TYPE_ASSERTION__CONTENT));
 			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.PRIMARY_EXPR_TYPE_ASSERTION__PRIMARY_EXPR_TYPE_ASSERTION) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.PRIMARY_EXPR_TYPE_ASSERTION__PRIMARY_EXPR_TYPE_ASSERTION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPrimaryExprTypeAssertionAccess().getPrimaryExprStuffPrimaryExprStuffParserRuleCall_0_0(), semanticObject.getPrimaryExprStuff());
-		feeder.accept(grammarAccess.getPrimaryExprTypeAssertionAccess().getPrimaryExprTypeAssertionPrimaryExprSelectorParserRuleCall_1_0(), semanticObject.getPrimaryExprTypeAssertion());
+		feeder.accept(grammarAccess.getPrimaryExprTypeAssertionAccess().getContentPrimaryExprStuffParserRuleCall_0_0(), semanticObject.getContent());
+		feeder.accept(grammarAccess.getPrimaryExprTypeAssertionAccess().getPrimaryExprTypeAssertionPrimaryExprTypeAssertionParserRuleCall_1_0(), semanticObject.getPrimaryExprTypeAssertion());
 		feeder.finish();
 	}
 	
@@ -1399,13 +1579,13 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         operand=operand | 
-	 *         conversion=conversion | 
-	 *         primaryExprSelector=primaryExprSelector | 
-	 *         primaryExprIndex=primaryExprIndex | 
-	 *         primaryExprSlice=primaryExprSlice | 
-	 *         primaryExprTypeAssertion=primaryExprTypeAssertion | 
-	 *         primaryExprArguments=primaryExprArguments
+	 *         content=operand | 
+	 *         content=conversion | 
+	 *         content=primaryExprSelector | 
+	 *         content=primaryExprIndex | 
+	 *         content=primaryExprSlice | 
+	 *         content=primaryExprTypeAssertion | 
+	 *         content=primaryExprArguments
 	 *     )
 	 */
 	protected void sequence_primaryExpr(ISerializationContext context, primaryExpr semanticObject) {
@@ -1415,10 +1595,31 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     qualifiedIdent returns qualifiedIdent
+	 *
+	 * Constraint:
+	 *     (packageName=IDENTIFIER name=IDENTIFIER)
+	 */
+	protected void sequence_qualifiedIdent(ISerializationContext context, qualifiedIdent semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.QUALIFIED_IDENT__PACKAGE_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.QUALIFIED_IDENT__PACKAGE_NAME));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.QUALIFIED_IDENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.QUALIFIED_IDENT__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getQualifiedIdentAccess().getPackageNameIDENTIFIERTerminalRuleCall_0_0(), semanticObject.getPackageName());
+		feeder.accept(grammarAccess.getQualifiedIdentAccess().getNameIDENTIFIERTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     rangeClause returns rangeClause
 	 *
 	 * Constraint:
-	 *     ((expressionList=expressionList | identifierList=identifierList)? expression=expression)
+	 *     ((exprList=expressionList | idList=identifierList)? expr=expression)
 	 */
 	protected void sequence_rangeClause(ISerializationContext context, rangeClause semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1442,15 +1643,15 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     receiver returns receiver
 	 *
 	 * Constraint:
-	 *     parameters=parameters
+	 *     params=parameters
 	 */
 	protected void sequence_receiver(ISerializationContext context, receiver semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.RECEIVER__PARAMETERS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.RECEIVER__PARAMETERS));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.RECEIVER__PARAMS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.RECEIVER__PARAMS));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getReceiverAccess().getParametersParametersParserRuleCall_0(), semanticObject.getParameters());
+		feeder.accept(grammarAccess.getReceiverAccess().getParamsParametersParserRuleCall_0(), semanticObject.getParams());
 		feeder.finish();
 	}
 	
@@ -1460,7 +1661,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     recvStmt returns recvStmt
 	 *
 	 * Constraint:
-	 *     ((expressionList=expressionList | identifierList=identifierList)? expression=expression)
+	 *     ((exprList=expressionList | idList=identifierList)? expr=expression)
 	 */
 	protected void sequence_recvStmt(ISerializationContext context, recvStmt semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1472,7 +1673,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     result returns result
 	 *
 	 * Constraint:
-	 *     (parameters=parameters | type=type)
+	 *     (params=parameters | type=type)
 	 */
 	protected void sequence_result(ISerializationContext context, result semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1484,15 +1685,15 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     returnStmt returns returnStmt
 	 *
 	 * Constraint:
-	 *     expressionList=expressionList
+	 *     exprList=expressionList
 	 */
 	protected void sequence_returnStmt(ISerializationContext context, returnStmt semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.RETURN_STMT__EXPRESSION_LIST) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.RETURN_STMT__EXPRESSION_LIST));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.RETURN_STMT__EXPR_LIST) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.RETURN_STMT__EXPR_LIST));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getReturnStmtAccess().getExpressionListExpressionListParserRuleCall_1_0(), semanticObject.getExpressionList());
+		feeder.accept(grammarAccess.getReturnStmtAccess().getExprListExpressionListParserRuleCall_1_0(), semanticObject.getExprList());
 		feeder.finish();
 	}
 	
@@ -1502,7 +1703,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     selectStmt returns selectStmt
 	 *
 	 * Constraint:
-	 *     commClause=commClause+
+	 *     commClauses+=commClause+
 	 */
 	protected void sequence_selectStmt(ISerializationContext context, selectStmt semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1511,13 +1712,40 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     selector returns selector
+	 *
+	 * Constraint:
+	 *     name=IDENTIFIER
+	 */
+	protected void sequence_selector(ISerializationContext context, selector semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.SELECTOR__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.SELECTOR__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSelectorAccess().getNameIDENTIFIERTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     sendStmt returns sendStmt
 	 *
 	 * Constraint:
-	 *     (expression=expression expression=expression)
+	 *     (expr1=expression expr2=expression)
 	 */
 	protected void sequence_sendStmt(ISerializationContext context, sendStmt semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.SEND_STMT__EXPR1) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.SEND_STMT__EXPR1));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.SEND_STMT__EXPR2) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.SEND_STMT__EXPR2));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSendStmtAccess().getExpr1ExpressionParserRuleCall_0_0(), semanticObject.getExpr1());
+		feeder.accept(grammarAccess.getSendStmtAccess().getExpr2ExpressionParserRuleCall_2_0(), semanticObject.getExpr2());
+		feeder.finish();
 	}
 	
 	
@@ -1526,18 +1754,18 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     shortVarDecl returns shortVarDecl
 	 *
 	 * Constraint:
-	 *     (identifierList=identifierList expressionList=expressionList)
+	 *     (idList=identifierList exprList=expressionList)
 	 */
 	protected void sequence_shortVarDecl(ISerializationContext context, shortVarDecl semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.SHORT_VAR_DECL__IDENTIFIER_LIST) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.SHORT_VAR_DECL__IDENTIFIER_LIST));
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.SHORT_VAR_DECL__EXPRESSION_LIST) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.SHORT_VAR_DECL__EXPRESSION_LIST));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.SHORT_VAR_DECL__ID_LIST) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.SHORT_VAR_DECL__ID_LIST));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.SHORT_VAR_DECL__EXPR_LIST) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.SHORT_VAR_DECL__EXPR_LIST));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getShortVarDeclAccess().getIdentifierListIdentifierListParserRuleCall_0_0(), semanticObject.getIdentifierList());
-		feeder.accept(grammarAccess.getShortVarDeclAccess().getExpressionListExpressionListParserRuleCall_2_0(), semanticObject.getExpressionList());
+		feeder.accept(grammarAccess.getShortVarDeclAccess().getIdListIdentifierListParserRuleCall_0_0(), semanticObject.getIdList());
+		feeder.accept(grammarAccess.getShortVarDeclAccess().getExprListExpressionListParserRuleCall_2_0(), semanticObject.getExprList());
 		feeder.finish();
 	}
 	
@@ -1547,7 +1775,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     signature returns signature
 	 *
 	 * Constraint:
-	 *     (parameters=parameters result=result?)
+	 *     (params=parameters result=result?)
 	 */
 	protected void sequence_signature(ISerializationContext context, signature semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1560,12 +1788,12 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         sendStmt=sendStmt | 
-	 *         expressionStmt=expressionStmt | 
-	 *         incDecStmt=incDecStmt | 
-	 *         assignment=assignment | 
-	 *         shortVarDecl=shortVarDecl | 
-	 *         emptyStmt=emptyStmt
+	 *         content=sendStmt | 
+	 *         content=expressionStmt | 
+	 *         content=incDecStmt | 
+	 *         content=assignment | 
+	 *         content=shortVarDecl | 
+	 *         content=emptyStmt
 	 *     )
 	 */
 	protected void sequence_simpleStmt(ISerializationContext context, simpleStmt semanticObject) {
@@ -1578,15 +1806,15 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     sliceType returns sliceType
 	 *
 	 * Constraint:
-	 *     elementType=elementType
+	 *     elemType=elementType
 	 */
 	protected void sequence_sliceType(ISerializationContext context, sliceType semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.SLICE_TYPE__ELEMENT_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.SLICE_TYPE__ELEMENT_TYPE));
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.SLICE_TYPE__ELEM_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.SLICE_TYPE__ELEM_TYPE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSliceTypeAccess().getElementTypeElementTypeParserRuleCall_2_0(), semanticObject.getElementType());
+		feeder.accept(grammarAccess.getSliceTypeAccess().getElemTypeElementTypeParserRuleCall_2_0(), semanticObject.getElemType());
 		feeder.finish();
 	}
 	
@@ -1596,7 +1824,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     slice returns slice
 	 *
 	 * Constraint:
-	 *     ((expression=expression? expression=expression?) | (expression=expression? expression=expression expression=expression))
+	 *     ((expr1=expression? expr2=expression?) | (expr1=expression? expr2=expression expr3=expression))
 	 */
 	protected void sequence_slice(ISerializationContext context, slice semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1608,7 +1836,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     sourceFile returns sourceFile
 	 *
 	 * Constraint:
-	 *     (packageClause=packageClause importDecl=importDecl* topLevelDecl=topLevelDecl*)
+	 *     (package=packageClause imports+=importDecl* topLevelDecls+=topLevelDecl*)
 	 */
 	protected void sequence_sourceFile(ISerializationContext context, sourceFile semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1620,7 +1848,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     statementList returns statementList
 	 *
 	 * Constraint:
-	 *     statement=statement+
+	 *     statements+=statement+
 	 */
 	protected void sequence_statementList(ISerializationContext context, statementList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1633,21 +1861,21 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         declaration=declaration | 
-	 *         labeledStmt=labeledStmt | 
-	 *         simpleStmt=simpleStmt | 
-	 *         goStmt=goStmt | 
-	 *         returnStmt=returnStmt | 
-	 *         breakStmt=breakStmt | 
-	 *         continueStmt=continueStmt | 
-	 *         gotoStmt=gotoStmt | 
-	 *         fallthroughStmt=fallthroughStmt | 
-	 *         block=block | 
-	 *         ifStmt=ifStmt | 
-	 *         switchStmt=switchStmt | 
-	 *         selectStmt=selectStmt | 
-	 *         forStmt=forStmt | 
-	 *         deferStmt=deferStmt
+	 *         content=declaration | 
+	 *         content=labeledStmt | 
+	 *         content=simpleStmt | 
+	 *         content=goStmt | 
+	 *         content=returnStmt | 
+	 *         content=breakStmt | 
+	 *         content=continueStmt | 
+	 *         content=gotoStmt | 
+	 *         content=fallthroughStmt | 
+	 *         content=block | 
+	 *         content=ifStmt | 
+	 *         content=switchStmt | 
+	 *         content=selectStmt | 
+	 *         content=forStmt | 
+	 *         content=deferStmt
 	 *     )
 	 */
 	protected void sequence_statement(ISerializationContext context, statement semanticObject) {
@@ -1660,7 +1888,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     structType returns structType
 	 *
 	 * Constraint:
-	 *     fieldDecl=fieldDecl+
+	 *     fieldsDecl+=fieldDecl+
 	 */
 	protected void sequence_structType(ISerializationContext context, structType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1672,7 +1900,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     switchStmt returns switchStmt
 	 *
 	 * Constraint:
-	 *     (exprSwitchStmt=exprSwitchStmt | typeSwitchStmt=typeSwitchStmt)
+	 *     (statement=exprSwitchStmt | statement=typeSwitchStmt)
 	 */
 	protected void sequence_switchStmt(ISerializationContext context, switchStmt semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1684,7 +1912,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     topLevelDecl returns topLevelDecl
 	 *
 	 * Constraint:
-	 *     (declaration=declaration | functionDecl=functionDecl | methodDecl=methodDecl)
+	 *     (decl=declaration | decl=functionDecl | decl=methodDecl)
 	 */
 	protected void sequence_topLevelDecl(ISerializationContext context, topLevelDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1735,7 +1963,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     typeDecl returns typeDecl
 	 *
 	 * Constraint:
-	 *     (typeSpec=typeSpec | typeSpec=typeSpec+)
+	 *     (spec+=typeSpec | spec+=typeSpec+)
 	 */
 	protected void sequence_typeDecl(ISerializationContext context, typeDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1747,7 +1975,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     typeList returns typeList
 	 *
 	 * Constraint:
-	 *     (type=type type=type*)
+	 *     (types+=type types+=type*)
 	 */
 	protected void sequence_typeList(ISerializationContext context, typeList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1760,14 +1988,14 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         arrayType=arrayType | 
-	 *         structType=structType | 
-	 *         pointerType=pointerType | 
-	 *         functionType=functionType | 
-	 *         interfaceType=interfaceType | 
-	 *         sliceType=sliceType | 
-	 *         mapType=mapType | 
-	 *         channelType=channelType
+	 *         lit=arrayType | 
+	 *         lit=structType | 
+	 *         lit=pointerType | 
+	 *         lit=functionType | 
+	 *         lit=interfaceType | 
+	 *         lit=sliceType | 
+	 *         lit=mapType | 
+	 *         lit=channelType
 	 *     )
 	 */
 	protected void sequence_typeLit(ISerializationContext context, typeLit semanticObject) {
@@ -1780,16 +2008,10 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     typeName returns typeName
 	 *
 	 * Constraint:
-	 *     qualifiedIdent=qualifiedIdent
+	 *     (name=IDENTIFIER | qualIdent=qualifiedIdent)
 	 */
 	protected void sequence_typeName(ISerializationContext context, typeName semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.TYPE_NAME__QUALIFIED_IDENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.TYPE_NAME__QUALIFIED_IDENT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTypeNameAccess().getQualifiedIdentQualifiedIdentParserRuleCall_1_0(), semanticObject.getQualifiedIdent());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1798,14 +2020,17 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     typeSpec returns typeSpec
 	 *
 	 * Constraint:
-	 *     type=type
+	 *     (name=IDENTIFIER type=type)
 	 */
 	protected void sequence_typeSpec(ISerializationContext context, typeSpec semanticObject) {
 		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.TYPE_SPEC__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.TYPE_SPEC__NAME));
 			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.TYPE_SPEC__TYPE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.TYPE_SPEC__TYPE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getTypeSpecAccess().getNameIDENTIFIERTerminalRuleCall_0_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getTypeSpecAccess().getTypeTypeParserRuleCall_1_0(), semanticObject.getType());
 		feeder.finish();
 	}
@@ -1834,16 +2059,10 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     typeSwitchGuard returns typeSwitchGuard
 	 *
 	 * Constraint:
-	 *     primaryExpr=primaryExpr
+	 *     (name=IDENTIFIER? primaryExpression=primaryExpr)
 	 */
 	protected void sequence_typeSwitchGuard(ISerializationContext context, typeSwitchGuard semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.TYPE_SWITCH_GUARD__PRIMARY_EXPR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.TYPE_SWITCH_GUARD__PRIMARY_EXPR));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTypeSwitchGuardAccess().getPrimaryExprPrimaryExprParserRuleCall_1_0(), semanticObject.getPrimaryExpr());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1852,7 +2071,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     typeSwitchStmt returns typeSwitchStmt
 	 *
 	 * Constraint:
-	 *     (simpleStmt=simpleStmt? typeSwitchGuard=typeSwitchGuard typeCaseClause=typeCaseClause*)
+	 *     (simpleStatement=simpleStmt? typeSwitchGuard=typeSwitchGuard typeCaseClauses+=typeCaseClause*)
 	 */
 	protected void sequence_typeSwitchStmt(ISerializationContext context, typeSwitchStmt semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1864,7 +2083,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     type returns type
 	 *
 	 * Constraint:
-	 *     (typeName=typeName | typeLit=typeLit | type=type)
+	 *     (content=typeName | content=typeLit | content=type)
 	 */
 	protected void sequence_type(ISerializationContext context, type semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1888,7 +2107,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     varDecl returns varDecl
 	 *
 	 * Constraint:
-	 *     (varSpec=varSpec | varSpec=varSpec+)
+	 *     (specs+=varSpec | specs+=varSpec+)
 	 */
 	protected void sequence_varDecl(ISerializationContext context, varDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1900,7 +2119,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     varSpec returns varSpec
 	 *
 	 * Constraint:
-	 *     (identifierList=identifierList ((type=type expressionList=expressionList?) | expressionList=expressionList))
+	 *     (idList=identifierList ((type=type exprList+=expressionList?) | exprList+=expressionList))
 	 */
 	protected void sequence_varSpec(ISerializationContext context, varSpec semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

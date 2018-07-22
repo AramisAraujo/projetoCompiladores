@@ -25,7 +25,7 @@ import org.xtext.go.elementType;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.xtext.go.impl.arrayTypeImpl#getArrayLength <em>Array Length</em>}</li>
- *   <li>{@link org.xtext.go.impl.arrayTypeImpl#getElementType <em>Element Type</em>}</li>
+ *   <li>{@link org.xtext.go.impl.arrayTypeImpl#getElemType <em>Elem Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,14 +44,14 @@ public class arrayTypeImpl extends MinimalEObjectImpl.Container implements array
   protected arrayLength arrayLength;
 
   /**
-   * The cached value of the '{@link #getElementType() <em>Element Type</em>}' containment reference.
+   * The cached value of the '{@link #getElemType() <em>Elem Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElementType()
+   * @see #getElemType()
    * @generated
    * @ordered
    */
-  protected elementType elementType;
+  protected elementType elemType;
 
   /**
    * <!-- begin-user-doc -->
@@ -127,9 +127,9 @@ public class arrayTypeImpl extends MinimalEObjectImpl.Container implements array
    * <!-- end-user-doc -->
    * @generated
    */
-  public elementType getElementType()
+  public elementType getElemType()
   {
-    return elementType;
+    return elemType;
   }
 
   /**
@@ -137,13 +137,13 @@ public class arrayTypeImpl extends MinimalEObjectImpl.Container implements array
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetElementType(elementType newElementType, NotificationChain msgs)
+  public NotificationChain basicSetElemType(elementType newElemType, NotificationChain msgs)
   {
-    elementType oldElementType = elementType;
-    elementType = newElementType;
+    elementType oldElemType = elemType;
+    elemType = newElemType;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.ARRAY_TYPE__ELEMENT_TYPE, oldElementType, newElementType);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.ARRAY_TYPE__ELEM_TYPE, oldElemType, newElemType);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -154,20 +154,20 @@ public class arrayTypeImpl extends MinimalEObjectImpl.Container implements array
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setElementType(elementType newElementType)
+  public void setElemType(elementType newElemType)
   {
-    if (newElementType != elementType)
+    if (newElemType != elemType)
     {
       NotificationChain msgs = null;
-      if (elementType != null)
-        msgs = ((InternalEObject)elementType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.ARRAY_TYPE__ELEMENT_TYPE, null, msgs);
-      if (newElementType != null)
-        msgs = ((InternalEObject)newElementType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.ARRAY_TYPE__ELEMENT_TYPE, null, msgs);
-      msgs = basicSetElementType(newElementType, msgs);
+      if (elemType != null)
+        msgs = ((InternalEObject)elemType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.ARRAY_TYPE__ELEM_TYPE, null, msgs);
+      if (newElemType != null)
+        msgs = ((InternalEObject)newElemType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.ARRAY_TYPE__ELEM_TYPE, null, msgs);
+      msgs = basicSetElemType(newElemType, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.ARRAY_TYPE__ELEMENT_TYPE, newElementType, newElementType));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.ARRAY_TYPE__ELEM_TYPE, newElemType, newElemType));
   }
 
   /**
@@ -182,8 +182,8 @@ public class arrayTypeImpl extends MinimalEObjectImpl.Container implements array
     {
       case GoPackage.ARRAY_TYPE__ARRAY_LENGTH:
         return basicSetArrayLength(null, msgs);
-      case GoPackage.ARRAY_TYPE__ELEMENT_TYPE:
-        return basicSetElementType(null, msgs);
+      case GoPackage.ARRAY_TYPE__ELEM_TYPE:
+        return basicSetElemType(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -200,8 +200,8 @@ public class arrayTypeImpl extends MinimalEObjectImpl.Container implements array
     {
       case GoPackage.ARRAY_TYPE__ARRAY_LENGTH:
         return getArrayLength();
-      case GoPackage.ARRAY_TYPE__ELEMENT_TYPE:
-        return getElementType();
+      case GoPackage.ARRAY_TYPE__ELEM_TYPE:
+        return getElemType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -219,8 +219,8 @@ public class arrayTypeImpl extends MinimalEObjectImpl.Container implements array
       case GoPackage.ARRAY_TYPE__ARRAY_LENGTH:
         setArrayLength((arrayLength)newValue);
         return;
-      case GoPackage.ARRAY_TYPE__ELEMENT_TYPE:
-        setElementType((elementType)newValue);
+      case GoPackage.ARRAY_TYPE__ELEM_TYPE:
+        setElemType((elementType)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -239,8 +239,8 @@ public class arrayTypeImpl extends MinimalEObjectImpl.Container implements array
       case GoPackage.ARRAY_TYPE__ARRAY_LENGTH:
         setArrayLength((arrayLength)null);
         return;
-      case GoPackage.ARRAY_TYPE__ELEMENT_TYPE:
-        setElementType((elementType)null);
+      case GoPackage.ARRAY_TYPE__ELEM_TYPE:
+        setElemType((elementType)null);
         return;
     }
     super.eUnset(featureID);
@@ -258,8 +258,8 @@ public class arrayTypeImpl extends MinimalEObjectImpl.Container implements array
     {
       case GoPackage.ARRAY_TYPE__ARRAY_LENGTH:
         return arrayLength != null;
-      case GoPackage.ARRAY_TYPE__ELEMENT_TYPE:
-        return elementType != null;
+      case GoPackage.ARRAY_TYPE__ELEM_TYPE:
+        return elemType != null;
     }
     return super.eIsSet(featureID);
   }

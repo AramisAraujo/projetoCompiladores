@@ -24,8 +24,9 @@ import org.xtext.go.simpleStmt;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.forClauseImpl#getSimpleStmt <em>Simple Stmt</em>}</li>
- *   <li>{@link org.xtext.go.impl.forClauseImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.xtext.go.impl.forClauseImpl#getStatement1 <em>Statement1</em>}</li>
+ *   <li>{@link org.xtext.go.impl.forClauseImpl#getExpr <em>Expr</em>}</li>
+ *   <li>{@link org.xtext.go.impl.forClauseImpl#getStatement2 <em>Statement2</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,24 +35,34 @@ import org.xtext.go.simpleStmt;
 public class forClauseImpl extends MinimalEObjectImpl.Container implements forClause
 {
   /**
-   * The cached value of the '{@link #getSimpleStmt() <em>Simple Stmt</em>}' containment reference.
+   * The cached value of the '{@link #getStatement1() <em>Statement1</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSimpleStmt()
+   * @see #getStatement1()
    * @generated
    * @ordered
    */
-  protected simpleStmt simpleStmt;
+  protected simpleStmt statement1;
 
   /**
-   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
+   * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExpression()
+   * @see #getExpr()
    * @generated
    * @ordered
    */
-  protected expression expression;
+  protected expression expr;
+
+  /**
+   * The cached value of the '{@link #getStatement2() <em>Statement2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStatement2()
+   * @generated
+   * @ordered
+   */
+  protected simpleStmt statement2;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,9 +90,9 @@ public class forClauseImpl extends MinimalEObjectImpl.Container implements forCl
    * <!-- end-user-doc -->
    * @generated
    */
-  public simpleStmt getSimpleStmt()
+  public simpleStmt getStatement1()
   {
-    return simpleStmt;
+    return statement1;
   }
 
   /**
@@ -89,13 +100,13 @@ public class forClauseImpl extends MinimalEObjectImpl.Container implements forCl
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetSimpleStmt(simpleStmt newSimpleStmt, NotificationChain msgs)
+  public NotificationChain basicSetStatement1(simpleStmt newStatement1, NotificationChain msgs)
   {
-    simpleStmt oldSimpleStmt = simpleStmt;
-    simpleStmt = newSimpleStmt;
+    simpleStmt oldStatement1 = statement1;
+    statement1 = newStatement1;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FOR_CLAUSE__SIMPLE_STMT, oldSimpleStmt, newSimpleStmt);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FOR_CLAUSE__STATEMENT1, oldStatement1, newStatement1);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -106,20 +117,20 @@ public class forClauseImpl extends MinimalEObjectImpl.Container implements forCl
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSimpleStmt(simpleStmt newSimpleStmt)
+  public void setStatement1(simpleStmt newStatement1)
   {
-    if (newSimpleStmt != simpleStmt)
+    if (newStatement1 != statement1)
     {
       NotificationChain msgs = null;
-      if (simpleStmt != null)
-        msgs = ((InternalEObject)simpleStmt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_CLAUSE__SIMPLE_STMT, null, msgs);
-      if (newSimpleStmt != null)
-        msgs = ((InternalEObject)newSimpleStmt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_CLAUSE__SIMPLE_STMT, null, msgs);
-      msgs = basicSetSimpleStmt(newSimpleStmt, msgs);
+      if (statement1 != null)
+        msgs = ((InternalEObject)statement1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_CLAUSE__STATEMENT1, null, msgs);
+      if (newStatement1 != null)
+        msgs = ((InternalEObject)newStatement1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_CLAUSE__STATEMENT1, null, msgs);
+      msgs = basicSetStatement1(newStatement1, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FOR_CLAUSE__SIMPLE_STMT, newSimpleStmt, newSimpleStmt));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FOR_CLAUSE__STATEMENT1, newStatement1, newStatement1));
   }
 
   /**
@@ -127,9 +138,9 @@ public class forClauseImpl extends MinimalEObjectImpl.Container implements forCl
    * <!-- end-user-doc -->
    * @generated
    */
-  public expression getExpression()
+  public expression getExpr()
   {
-    return expression;
+    return expr;
   }
 
   /**
@@ -137,13 +148,13 @@ public class forClauseImpl extends MinimalEObjectImpl.Container implements forCl
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpression(expression newExpression, NotificationChain msgs)
+  public NotificationChain basicSetExpr(expression newExpr, NotificationChain msgs)
   {
-    expression oldExpression = expression;
-    expression = newExpression;
+    expression oldExpr = expr;
+    expr = newExpr;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FOR_CLAUSE__EXPRESSION, oldExpression, newExpression);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FOR_CLAUSE__EXPR, oldExpr, newExpr);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -154,20 +165,68 @@ public class forClauseImpl extends MinimalEObjectImpl.Container implements forCl
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(expression newExpression)
+  public void setExpr(expression newExpr)
   {
-    if (newExpression != expression)
+    if (newExpr != expr)
     {
       NotificationChain msgs = null;
-      if (expression != null)
-        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_CLAUSE__EXPRESSION, null, msgs);
-      if (newExpression != null)
-        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_CLAUSE__EXPRESSION, null, msgs);
-      msgs = basicSetExpression(newExpression, msgs);
+      if (expr != null)
+        msgs = ((InternalEObject)expr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_CLAUSE__EXPR, null, msgs);
+      if (newExpr != null)
+        msgs = ((InternalEObject)newExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_CLAUSE__EXPR, null, msgs);
+      msgs = basicSetExpr(newExpr, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FOR_CLAUSE__EXPRESSION, newExpression, newExpression));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FOR_CLAUSE__EXPR, newExpr, newExpr));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public simpleStmt getStatement2()
+  {
+    return statement2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetStatement2(simpleStmt newStatement2, NotificationChain msgs)
+  {
+    simpleStmt oldStatement2 = statement2;
+    statement2 = newStatement2;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FOR_CLAUSE__STATEMENT2, oldStatement2, newStatement2);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setStatement2(simpleStmt newStatement2)
+  {
+    if (newStatement2 != statement2)
+    {
+      NotificationChain msgs = null;
+      if (statement2 != null)
+        msgs = ((InternalEObject)statement2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_CLAUSE__STATEMENT2, null, msgs);
+      if (newStatement2 != null)
+        msgs = ((InternalEObject)newStatement2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FOR_CLAUSE__STATEMENT2, null, msgs);
+      msgs = basicSetStatement2(newStatement2, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FOR_CLAUSE__STATEMENT2, newStatement2, newStatement2));
   }
 
   /**
@@ -180,10 +239,12 @@ public class forClauseImpl extends MinimalEObjectImpl.Container implements forCl
   {
     switch (featureID)
     {
-      case GoPackage.FOR_CLAUSE__SIMPLE_STMT:
-        return basicSetSimpleStmt(null, msgs);
-      case GoPackage.FOR_CLAUSE__EXPRESSION:
-        return basicSetExpression(null, msgs);
+      case GoPackage.FOR_CLAUSE__STATEMENT1:
+        return basicSetStatement1(null, msgs);
+      case GoPackage.FOR_CLAUSE__EXPR:
+        return basicSetExpr(null, msgs);
+      case GoPackage.FOR_CLAUSE__STATEMENT2:
+        return basicSetStatement2(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -198,10 +259,12 @@ public class forClauseImpl extends MinimalEObjectImpl.Container implements forCl
   {
     switch (featureID)
     {
-      case GoPackage.FOR_CLAUSE__SIMPLE_STMT:
-        return getSimpleStmt();
-      case GoPackage.FOR_CLAUSE__EXPRESSION:
-        return getExpression();
+      case GoPackage.FOR_CLAUSE__STATEMENT1:
+        return getStatement1();
+      case GoPackage.FOR_CLAUSE__EXPR:
+        return getExpr();
+      case GoPackage.FOR_CLAUSE__STATEMENT2:
+        return getStatement2();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -216,11 +279,14 @@ public class forClauseImpl extends MinimalEObjectImpl.Container implements forCl
   {
     switch (featureID)
     {
-      case GoPackage.FOR_CLAUSE__SIMPLE_STMT:
-        setSimpleStmt((simpleStmt)newValue);
+      case GoPackage.FOR_CLAUSE__STATEMENT1:
+        setStatement1((simpleStmt)newValue);
         return;
-      case GoPackage.FOR_CLAUSE__EXPRESSION:
-        setExpression((expression)newValue);
+      case GoPackage.FOR_CLAUSE__EXPR:
+        setExpr((expression)newValue);
+        return;
+      case GoPackage.FOR_CLAUSE__STATEMENT2:
+        setStatement2((simpleStmt)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -236,11 +302,14 @@ public class forClauseImpl extends MinimalEObjectImpl.Container implements forCl
   {
     switch (featureID)
     {
-      case GoPackage.FOR_CLAUSE__SIMPLE_STMT:
-        setSimpleStmt((simpleStmt)null);
+      case GoPackage.FOR_CLAUSE__STATEMENT1:
+        setStatement1((simpleStmt)null);
         return;
-      case GoPackage.FOR_CLAUSE__EXPRESSION:
-        setExpression((expression)null);
+      case GoPackage.FOR_CLAUSE__EXPR:
+        setExpr((expression)null);
+        return;
+      case GoPackage.FOR_CLAUSE__STATEMENT2:
+        setStatement2((simpleStmt)null);
         return;
     }
     super.eUnset(featureID);
@@ -256,10 +325,12 @@ public class forClauseImpl extends MinimalEObjectImpl.Container implements forCl
   {
     switch (featureID)
     {
-      case GoPackage.FOR_CLAUSE__SIMPLE_STMT:
-        return simpleStmt != null;
-      case GoPackage.FOR_CLAUSE__EXPRESSION:
-        return expression != null;
+      case GoPackage.FOR_CLAUSE__STATEMENT1:
+        return statement1 != null;
+      case GoPackage.FOR_CLAUSE__EXPR:
+        return expr != null;
+      case GoPackage.FOR_CLAUSE__STATEMENT2:
+        return statement2 != null;
     }
     return super.eIsSet(featureID);
   }

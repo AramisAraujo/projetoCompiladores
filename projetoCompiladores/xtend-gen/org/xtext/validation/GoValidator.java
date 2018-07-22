@@ -3,6 +3,7 @@
  */
 package org.xtext.validation;
 
+import org.eclipse.xtext.validation.Check;
 import org.xtext.go.expression;
 import org.xtext.go.expressionMatched;
 import org.xtext.go.ifStmt;
@@ -18,27 +19,63 @@ import org.xtext.validation.AbstractGoValidator;
  */
 @SuppressWarnings("all")
 public class GoValidator extends AbstractGoValidator {
-  /* @Check
-   */public Object checkIf(final ifStmt stmt) {
-    throw new Error("Unresolved compilation problems:"
-      + "\n!== cannot be resolved."
-      + "\n!== cannot be resolved.");
+  @Check
+  public Object checkIf(final ifStmt stmt) {
+    Object _xblockexpression = null;
+    {
+      simpleStmt _simplStatement = stmt.getSimplStatement();
+      boolean _tripleNotEquals = (_simplStatement != null);
+      if (_tripleNotEquals) {
+        this.checkSimple(stmt.getSimplStatement());
+      }
+      Object _xifexpression = null;
+      expression _expr = stmt.getExpr();
+      boolean _tripleNotEquals_1 = (_expr != null);
+      if (_tripleNotEquals_1) {
+        _xifexpression = this.checkExpression(stmt.getExpr());
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
   }
   
   public Object checkExpression(final expression expression) {
-    throw new Error("Unresolved compilation problems:"
-      + "\n!== cannot be resolved."
-      + "\n!== cannot be resolved.");
+    Object _xblockexpression = null;
+    {
+      unaryExpr _unaryExpr = expression.getUnaryExpr();
+      boolean _tripleNotEquals = (_unaryExpr != null);
+      if (_tripleNotEquals) {
+        this.checkUnary(expression.getUnaryExpr());
+      }
+      Object _xifexpression = null;
+      expressionMatched _expressionMatched = expression.getExpressionMatched();
+      boolean _tripleNotEquals_1 = (_expressionMatched != null);
+      if (_tripleNotEquals_1) {
+        _xifexpression = this.checkMatched(expression.getExpressionMatched());
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
   }
   
   public Object checkMatched(final expressionMatched matched) {
-    throw new Error("Unresolved compilation problems:"
-      + "\n!== cannot be resolved.");
+    Object _xifexpression = null;
+    expression _expression = matched.getExpression();
+    boolean _tripleNotEquals = (_expression != null);
+    if (_tripleNotEquals) {
+      _xifexpression = null;
+    }
+    return _xifexpression;
   }
   
   public Object checkUnary(final unaryExpr expr) {
-    throw new Error("Unresolved compilation problems:"
-      + "\n!== cannot be resolved.");
+    Object _xifexpression = null;
+    primaryExpr _primaryExpr = expr.getPrimaryExpr();
+    boolean _tripleNotEquals = (_primaryExpr != null);
+    if (_tripleNotEquals) {
+      _xifexpression = this.checkPrimary(expr.getPrimaryExpr());
+    }
+    return _xifexpression;
   }
   
   public Object checkPrimary(final primaryExpr expr) {

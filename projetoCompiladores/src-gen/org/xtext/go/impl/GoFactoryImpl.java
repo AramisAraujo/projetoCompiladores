@@ -67,12 +67,14 @@ public class GoFactoryImpl extends EFactoryImpl implements GoFactory
     {
       case GoPackage.MODEL: return createModel();
       case GoPackage.SOURCE_FILE: return createsourceFile();
+      case GoPackage.PACKAGE_CLAUSE: return createpackageClause();
       case GoPackage.IMPORT_DECL: return createimportDecl();
       case GoPackage.IMPORT_SPEC: return createimportSpec();
       case GoPackage.TOP_LEVEL_DECL: return createtopLevelDecl();
       case GoPackage.DECLARATION: return createdeclaration();
       case GoPackage.CONST_DECL: return createconstDecl();
       case GoPackage.CONST_SPEC: return createconstSpec();
+      case GoPackage.IDENTIFIER_LIST: return createidentifierList();
       case GoPackage.EXPRESSION_LIST: return createexpressionList();
       case GoPackage.TYPE_DECL: return createtypeDecl();
       case GoPackage.TYPE_SPEC: return createtypeSpec();
@@ -91,8 +93,13 @@ public class GoFactoryImpl extends EFactoryImpl implements GoFactory
       case GoPackage.INC_DEC_STMT: return createincDecStmt();
       case GoPackage.ASSIGNMENT: return createassignment();
       case GoPackage.SHORT_VAR_DECL: return createshortVarDecl();
+      case GoPackage.EMPTY_STMT: return createemptyStmt();
       case GoPackage.LABELED_STMT: return createlabeledStmt();
       case GoPackage.RETURN_STMT: return createreturnStmt();
+      case GoPackage.BREAK_STMT: return createbreakStmt();
+      case GoPackage.CONTINUE_STMT: return createcontinueStmt();
+      case GoPackage.GOTO_STMT: return creategotoStmt();
+      case GoPackage.FALLTHROUGH_STMT: return createfallthroughStmt();
       case GoPackage.DEFER_STMT: return createdeferStmt();
       case GoPackage.IF_STMT: return createifStmt();
       case GoPackage.SWITCH_STMT: return createswitchStmt();
@@ -133,6 +140,7 @@ public class GoFactoryImpl extends EFactoryImpl implements GoFactory
       case GoPackage.OPERAND: return createoperand();
       case GoPackage.LITERAL: return createliteral();
       case GoPackage.OPERAND_NAME: return createoperandName();
+      case GoPackage.QUALIFIED_IDENT: return createqualifiedIdent();
       case GoPackage.COMPOSITE_LIT: return createcompositeLit();
       case GoPackage.LITERAL_TYPE: return createliteralType();
       case GoPackage.LITERAL_VALUE: return createliteralValue();
@@ -151,6 +159,7 @@ public class GoFactoryImpl extends EFactoryImpl implements GoFactory
       case GoPackage.PRIMARY_EXPR_SLICE: return createprimaryExprSlice();
       case GoPackage.PRIMARY_EXPR_TYPE_ASSERTION: return createprimaryExprTypeAssertion();
       case GoPackage.PRIMARY_EXPR_ARGUMENTS: return createprimaryExprArguments();
+      case GoPackage.SELECTOR: return createselector();
       case GoPackage.INDEX: return createindex();
       case GoPackage.SLICE: return createslice();
       case GoPackage.TYPE_ASSERTION: return createtypeAssertion();
@@ -186,6 +195,17 @@ public class GoFactoryImpl extends EFactoryImpl implements GoFactory
   {
     sourceFileImpl sourceFile = new sourceFileImpl();
     return sourceFile;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public packageClause createpackageClause()
+  {
+    packageClauseImpl packageClause = new packageClauseImpl();
+    return packageClause;
   }
 
   /**
@@ -252,6 +272,17 @@ public class GoFactoryImpl extends EFactoryImpl implements GoFactory
   {
     constSpecImpl constSpec = new constSpecImpl();
     return constSpec;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public identifierList createidentifierList()
+  {
+    identifierListImpl identifierList = new identifierListImpl();
+    return identifierList;
   }
 
   /**
@@ -457,6 +488,17 @@ public class GoFactoryImpl extends EFactoryImpl implements GoFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public emptyStmt createemptyStmt()
+  {
+    emptyStmtImpl emptyStmt = new emptyStmtImpl();
+    return emptyStmt;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public labeledStmt createlabeledStmt()
   {
     labeledStmtImpl labeledStmt = new labeledStmtImpl();
@@ -472,6 +514,50 @@ public class GoFactoryImpl extends EFactoryImpl implements GoFactory
   {
     returnStmtImpl returnStmt = new returnStmtImpl();
     return returnStmt;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public breakStmt createbreakStmt()
+  {
+    breakStmtImpl breakStmt = new breakStmtImpl();
+    return breakStmt;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public continueStmt createcontinueStmt()
+  {
+    continueStmtImpl continueStmt = new continueStmtImpl();
+    return continueStmt;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public gotoStmt creategotoStmt()
+  {
+    gotoStmtImpl gotoStmt = new gotoStmtImpl();
+    return gotoStmt;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public fallthroughStmt createfallthroughStmt()
+  {
+    fallthroughStmtImpl fallthroughStmt = new fallthroughStmtImpl();
+    return fallthroughStmt;
   }
 
   /**
@@ -919,6 +1005,17 @@ public class GoFactoryImpl extends EFactoryImpl implements GoFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public qualifiedIdent createqualifiedIdent()
+  {
+    qualifiedIdentImpl qualifiedIdent = new qualifiedIdentImpl();
+    return qualifiedIdent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public compositeLit createcompositeLit()
   {
     compositeLitImpl compositeLit = new compositeLitImpl();
@@ -1110,6 +1207,17 @@ public class GoFactoryImpl extends EFactoryImpl implements GoFactory
   {
     primaryExprArgumentsImpl primaryExprArguments = new primaryExprArgumentsImpl();
     return primaryExprArguments;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public selector createselector()
+  {
+    selectorImpl selector = new selectorImpl();
+    return selector;
   }
 
   /**

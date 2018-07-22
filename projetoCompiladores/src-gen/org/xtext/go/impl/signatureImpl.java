@@ -24,7 +24,7 @@ import org.xtext.go.signature;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.signatureImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link org.xtext.go.impl.signatureImpl#getParams <em>Params</em>}</li>
  *   <li>{@link org.xtext.go.impl.signatureImpl#getResult <em>Result</em>}</li>
  * </ul>
  * </p>
@@ -34,14 +34,14 @@ import org.xtext.go.signature;
 public class signatureImpl extends MinimalEObjectImpl.Container implements signature
 {
   /**
-   * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference.
+   * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParameters()
+   * @see #getParams()
    * @generated
    * @ordered
    */
-  protected parameters parameters;
+  protected parameters params;
 
   /**
    * The cached value of the '{@link #getResult() <em>Result</em>}' containment reference.
@@ -79,9 +79,9 @@ public class signatureImpl extends MinimalEObjectImpl.Container implements signa
    * <!-- end-user-doc -->
    * @generated
    */
-  public parameters getParameters()
+  public parameters getParams()
   {
-    return parameters;
+    return params;
   }
 
   /**
@@ -89,13 +89,13 @@ public class signatureImpl extends MinimalEObjectImpl.Container implements signa
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetParameters(parameters newParameters, NotificationChain msgs)
+  public NotificationChain basicSetParams(parameters newParams, NotificationChain msgs)
   {
-    parameters oldParameters = parameters;
-    parameters = newParameters;
+    parameters oldParams = params;
+    params = newParams;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SIGNATURE__PARAMETERS, oldParameters, newParameters);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SIGNATURE__PARAMS, oldParams, newParams);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -106,20 +106,20 @@ public class signatureImpl extends MinimalEObjectImpl.Container implements signa
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setParameters(parameters newParameters)
+  public void setParams(parameters newParams)
   {
-    if (newParameters != parameters)
+    if (newParams != params)
     {
       NotificationChain msgs = null;
-      if (parameters != null)
-        msgs = ((InternalEObject)parameters).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SIGNATURE__PARAMETERS, null, msgs);
-      if (newParameters != null)
-        msgs = ((InternalEObject)newParameters).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SIGNATURE__PARAMETERS, null, msgs);
-      msgs = basicSetParameters(newParameters, msgs);
+      if (params != null)
+        msgs = ((InternalEObject)params).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SIGNATURE__PARAMS, null, msgs);
+      if (newParams != null)
+        msgs = ((InternalEObject)newParams).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SIGNATURE__PARAMS, null, msgs);
+      msgs = basicSetParams(newParams, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SIGNATURE__PARAMETERS, newParameters, newParameters));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SIGNATURE__PARAMS, newParams, newParams));
   }
 
   /**
@@ -180,8 +180,8 @@ public class signatureImpl extends MinimalEObjectImpl.Container implements signa
   {
     switch (featureID)
     {
-      case GoPackage.SIGNATURE__PARAMETERS:
-        return basicSetParameters(null, msgs);
+      case GoPackage.SIGNATURE__PARAMS:
+        return basicSetParams(null, msgs);
       case GoPackage.SIGNATURE__RESULT:
         return basicSetResult(null, msgs);
     }
@@ -198,8 +198,8 @@ public class signatureImpl extends MinimalEObjectImpl.Container implements signa
   {
     switch (featureID)
     {
-      case GoPackage.SIGNATURE__PARAMETERS:
-        return getParameters();
+      case GoPackage.SIGNATURE__PARAMS:
+        return getParams();
       case GoPackage.SIGNATURE__RESULT:
         return getResult();
     }
@@ -216,8 +216,8 @@ public class signatureImpl extends MinimalEObjectImpl.Container implements signa
   {
     switch (featureID)
     {
-      case GoPackage.SIGNATURE__PARAMETERS:
-        setParameters((parameters)newValue);
+      case GoPackage.SIGNATURE__PARAMS:
+        setParams((parameters)newValue);
         return;
       case GoPackage.SIGNATURE__RESULT:
         setResult((result)newValue);
@@ -236,8 +236,8 @@ public class signatureImpl extends MinimalEObjectImpl.Container implements signa
   {
     switch (featureID)
     {
-      case GoPackage.SIGNATURE__PARAMETERS:
-        setParameters((parameters)null);
+      case GoPackage.SIGNATURE__PARAMS:
+        setParams((parameters)null);
         return;
       case GoPackage.SIGNATURE__RESULT:
         setResult((result)null);
@@ -256,8 +256,8 @@ public class signatureImpl extends MinimalEObjectImpl.Container implements signa
   {
     switch (featureID)
     {
-      case GoPackage.SIGNATURE__PARAMETERS:
-        return parameters != null;
+      case GoPackage.SIGNATURE__PARAMS:
+        return params != null;
       case GoPackage.SIGNATURE__RESULT:
         return result != null;
     }

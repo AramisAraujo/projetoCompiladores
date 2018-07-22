@@ -13,9 +13,10 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.methodDecl#getReceiver <em>Receiver</em>}</li>
- *   <li>{@link org.xtext.go.methodDecl#getFunction <em>Function</em>}</li>
- *   <li>{@link org.xtext.go.methodDecl#getSignature <em>Signature</em>}</li>
+ *   <li>{@link org.xtext.go.methodDecl#getParams <em>Params</em>}</li>
+ *   <li>{@link org.xtext.go.methodDecl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.go.methodDecl#getFunc <em>Func</em>}</li>
+ *   <li>{@link org.xtext.go.methodDecl#getSig <em>Sig</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,81 +27,107 @@ import org.eclipse.emf.ecore.EObject;
 public interface methodDecl extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Receiver</b></em>' containment reference.
+   * Returns the value of the '<em><b>Params</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Receiver</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Params</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Receiver</em>' containment reference.
-   * @see #setReceiver(receiver)
-   * @see org.xtext.go.GoPackage#getmethodDecl_Receiver()
+   * @return the value of the '<em>Params</em>' containment reference.
+   * @see #setParams(receiver)
+   * @see org.xtext.go.GoPackage#getmethodDecl_Params()
    * @model containment="true"
    * @generated
    */
-  receiver getReceiver();
+  receiver getParams();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.methodDecl#getReceiver <em>Receiver</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.methodDecl#getParams <em>Params</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Receiver</em>' containment reference.
-   * @see #getReceiver()
+   * @param value the new value of the '<em>Params</em>' containment reference.
+   * @see #getParams()
    * @generated
    */
-  void setReceiver(receiver value);
+  void setParams(receiver value);
 
   /**
-   * Returns the value of the '<em><b>Function</b></em>' containment reference.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Function</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Function</em>' containment reference.
-   * @see #setFunction(function)
-   * @see org.xtext.go.GoPackage#getmethodDecl_Function()
-   * @model containment="true"
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.xtext.go.GoPackage#getmethodDecl_Name()
+   * @model
    * @generated
    */
-  function getFunction();
+  String getName();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.methodDecl#getFunction <em>Function</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.methodDecl#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Function</em>' containment reference.
-   * @see #getFunction()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setFunction(function value);
+  void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Signature</b></em>' containment reference.
+   * Returns the value of the '<em><b>Func</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Signature</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Func</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Signature</em>' containment reference.
-   * @see #setSignature(signature)
-   * @see org.xtext.go.GoPackage#getmethodDecl_Signature()
+   * @return the value of the '<em>Func</em>' containment reference.
+   * @see #setFunc(function)
+   * @see org.xtext.go.GoPackage#getmethodDecl_Func()
    * @model containment="true"
    * @generated
    */
-  signature getSignature();
+  function getFunc();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.methodDecl#getSignature <em>Signature</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.methodDecl#getFunc <em>Func</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Signature</em>' containment reference.
-   * @see #getSignature()
+   * @param value the new value of the '<em>Func</em>' containment reference.
+   * @see #getFunc()
    * @generated
    */
-  void setSignature(signature value);
+  void setFunc(function value);
+
+  /**
+   * Returns the value of the '<em><b>Sig</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Sig</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Sig</em>' containment reference.
+   * @see #setSig(signature)
+   * @see org.xtext.go.GoPackage#getmethodDecl_Sig()
+   * @model containment="true"
+   * @generated
+   */
+  signature getSig();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.methodDecl#getSig <em>Sig</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Sig</em>' containment reference.
+   * @see #getSig()
+   * @generated
+   */
+  void setSig(signature value);
 
 } // methodDecl

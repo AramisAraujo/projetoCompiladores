@@ -13,7 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.methodSpec#getSignature <em>Signature</em>}</li>
+ *   <li>{@link org.xtext.go.methodSpec#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.go.methodSpec#getSig <em>Sig</em>}</li>
  *   <li>{@link org.xtext.go.methodSpec#getTypeName <em>Type Name</em>}</li>
  * </ul>
  * </p>
@@ -25,30 +26,56 @@ import org.eclipse.emf.ecore.EObject;
 public interface methodSpec extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Signature</b></em>' containment reference.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Signature</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Signature</em>' containment reference.
-   * @see #setSignature(signature)
-   * @see org.xtext.go.GoPackage#getmethodSpec_Signature()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.xtext.go.GoPackage#getmethodSpec_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.methodSpec#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Sig</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Sig</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Sig</em>' containment reference.
+   * @see #setSig(signature)
+   * @see org.xtext.go.GoPackage#getmethodSpec_Sig()
    * @model containment="true"
    * @generated
    */
-  signature getSignature();
+  signature getSig();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.methodSpec#getSignature <em>Signature</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.methodSpec#getSig <em>Sig</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Signature</em>' containment reference.
-   * @see #getSignature()
+   * @param value the new value of the '<em>Sig</em>' containment reference.
+   * @see #getSig()
    * @generated
    */
-  void setSignature(signature value);
+  void setSig(signature value);
 
   /**
    * Returns the value of the '<em><b>Type Name</b></em>' containment reference.

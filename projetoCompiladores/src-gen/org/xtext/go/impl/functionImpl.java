@@ -24,8 +24,8 @@ import org.xtext.go.signature;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.functionImpl#getSignature <em>Signature</em>}</li>
- *   <li>{@link org.xtext.go.impl.functionImpl#getBlock <em>Block</em>}</li>
+ *   <li>{@link org.xtext.go.impl.functionImpl#getSig <em>Sig</em>}</li>
+ *   <li>{@link org.xtext.go.impl.functionImpl#getCodeBlock <em>Code Block</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,24 +34,24 @@ import org.xtext.go.signature;
 public class functionImpl extends MinimalEObjectImpl.Container implements function
 {
   /**
-   * The cached value of the '{@link #getSignature() <em>Signature</em>}' containment reference.
+   * The cached value of the '{@link #getSig() <em>Sig</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSignature()
+   * @see #getSig()
    * @generated
    * @ordered
    */
-  protected signature signature;
+  protected signature sig;
 
   /**
-   * The cached value of the '{@link #getBlock() <em>Block</em>}' containment reference.
+   * The cached value of the '{@link #getCodeBlock() <em>Code Block</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBlock()
+   * @see #getCodeBlock()
    * @generated
    * @ordered
    */
-  protected block block;
+  protected block codeBlock;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,9 +79,9 @@ public class functionImpl extends MinimalEObjectImpl.Container implements functi
    * <!-- end-user-doc -->
    * @generated
    */
-  public signature getSignature()
+  public signature getSig()
   {
-    return signature;
+    return sig;
   }
 
   /**
@@ -89,13 +89,13 @@ public class functionImpl extends MinimalEObjectImpl.Container implements functi
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetSignature(signature newSignature, NotificationChain msgs)
+  public NotificationChain basicSetSig(signature newSig, NotificationChain msgs)
   {
-    signature oldSignature = signature;
-    signature = newSignature;
+    signature oldSig = sig;
+    sig = newSig;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FUNCTION__SIGNATURE, oldSignature, newSignature);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FUNCTION__SIG, oldSig, newSig);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -106,20 +106,20 @@ public class functionImpl extends MinimalEObjectImpl.Container implements functi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSignature(signature newSignature)
+  public void setSig(signature newSig)
   {
-    if (newSignature != signature)
+    if (newSig != sig)
     {
       NotificationChain msgs = null;
-      if (signature != null)
-        msgs = ((InternalEObject)signature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FUNCTION__SIGNATURE, null, msgs);
-      if (newSignature != null)
-        msgs = ((InternalEObject)newSignature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FUNCTION__SIGNATURE, null, msgs);
-      msgs = basicSetSignature(newSignature, msgs);
+      if (sig != null)
+        msgs = ((InternalEObject)sig).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FUNCTION__SIG, null, msgs);
+      if (newSig != null)
+        msgs = ((InternalEObject)newSig).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FUNCTION__SIG, null, msgs);
+      msgs = basicSetSig(newSig, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FUNCTION__SIGNATURE, newSignature, newSignature));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FUNCTION__SIG, newSig, newSig));
   }
 
   /**
@@ -127,9 +127,9 @@ public class functionImpl extends MinimalEObjectImpl.Container implements functi
    * <!-- end-user-doc -->
    * @generated
    */
-  public block getBlock()
+  public block getCodeBlock()
   {
-    return block;
+    return codeBlock;
   }
 
   /**
@@ -137,13 +137,13 @@ public class functionImpl extends MinimalEObjectImpl.Container implements functi
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetBlock(block newBlock, NotificationChain msgs)
+  public NotificationChain basicSetCodeBlock(block newCodeBlock, NotificationChain msgs)
   {
-    block oldBlock = block;
-    block = newBlock;
+    block oldCodeBlock = codeBlock;
+    codeBlock = newCodeBlock;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FUNCTION__BLOCK, oldBlock, newBlock);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.FUNCTION__CODE_BLOCK, oldCodeBlock, newCodeBlock);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -154,20 +154,20 @@ public class functionImpl extends MinimalEObjectImpl.Container implements functi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBlock(block newBlock)
+  public void setCodeBlock(block newCodeBlock)
   {
-    if (newBlock != block)
+    if (newCodeBlock != codeBlock)
     {
       NotificationChain msgs = null;
-      if (block != null)
-        msgs = ((InternalEObject)block).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FUNCTION__BLOCK, null, msgs);
-      if (newBlock != null)
-        msgs = ((InternalEObject)newBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FUNCTION__BLOCK, null, msgs);
-      msgs = basicSetBlock(newBlock, msgs);
+      if (codeBlock != null)
+        msgs = ((InternalEObject)codeBlock).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.FUNCTION__CODE_BLOCK, null, msgs);
+      if (newCodeBlock != null)
+        msgs = ((InternalEObject)newCodeBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.FUNCTION__CODE_BLOCK, null, msgs);
+      msgs = basicSetCodeBlock(newCodeBlock, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FUNCTION__BLOCK, newBlock, newBlock));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.FUNCTION__CODE_BLOCK, newCodeBlock, newCodeBlock));
   }
 
   /**
@@ -180,10 +180,10 @@ public class functionImpl extends MinimalEObjectImpl.Container implements functi
   {
     switch (featureID)
     {
-      case GoPackage.FUNCTION__SIGNATURE:
-        return basicSetSignature(null, msgs);
-      case GoPackage.FUNCTION__BLOCK:
-        return basicSetBlock(null, msgs);
+      case GoPackage.FUNCTION__SIG:
+        return basicSetSig(null, msgs);
+      case GoPackage.FUNCTION__CODE_BLOCK:
+        return basicSetCodeBlock(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -198,10 +198,10 @@ public class functionImpl extends MinimalEObjectImpl.Container implements functi
   {
     switch (featureID)
     {
-      case GoPackage.FUNCTION__SIGNATURE:
-        return getSignature();
-      case GoPackage.FUNCTION__BLOCK:
-        return getBlock();
+      case GoPackage.FUNCTION__SIG:
+        return getSig();
+      case GoPackage.FUNCTION__CODE_BLOCK:
+        return getCodeBlock();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -216,11 +216,11 @@ public class functionImpl extends MinimalEObjectImpl.Container implements functi
   {
     switch (featureID)
     {
-      case GoPackage.FUNCTION__SIGNATURE:
-        setSignature((signature)newValue);
+      case GoPackage.FUNCTION__SIG:
+        setSig((signature)newValue);
         return;
-      case GoPackage.FUNCTION__BLOCK:
-        setBlock((block)newValue);
+      case GoPackage.FUNCTION__CODE_BLOCK:
+        setCodeBlock((block)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -236,11 +236,11 @@ public class functionImpl extends MinimalEObjectImpl.Container implements functi
   {
     switch (featureID)
     {
-      case GoPackage.FUNCTION__SIGNATURE:
-        setSignature((signature)null);
+      case GoPackage.FUNCTION__SIG:
+        setSig((signature)null);
         return;
-      case GoPackage.FUNCTION__BLOCK:
-        setBlock((block)null);
+      case GoPackage.FUNCTION__CODE_BLOCK:
+        setCodeBlock((block)null);
         return;
     }
     super.eUnset(featureID);
@@ -256,10 +256,10 @@ public class functionImpl extends MinimalEObjectImpl.Container implements functi
   {
     switch (featureID)
     {
-      case GoPackage.FUNCTION__SIGNATURE:
-        return signature != null;
-      case GoPackage.FUNCTION__BLOCK:
-        return block != null;
+      case GoPackage.FUNCTION__SIG:
+        return sig != null;
+      case GoPackage.FUNCTION__CODE_BLOCK:
+        return codeBlock != null;
     }
     return super.eIsSet(featureID);
   }

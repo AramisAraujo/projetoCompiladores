@@ -3,8 +3,12 @@
  */
 package org.xtext.go.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -12,8 +16,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.xtext.go.GoPackage;
 import org.xtext.go.importDecl;
+import org.xtext.go.packageClause;
 import org.xtext.go.sourceFile;
 import org.xtext.go.topLevelDecl;
 
@@ -24,9 +32,9 @@ import org.xtext.go.topLevelDecl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.sourceFileImpl#getPackageClause <em>Package Clause</em>}</li>
- *   <li>{@link org.xtext.go.impl.sourceFileImpl#getImportDecl <em>Import Decl</em>}</li>
- *   <li>{@link org.xtext.go.impl.sourceFileImpl#getTopLevelDecl <em>Top Level Decl</em>}</li>
+ *   <li>{@link org.xtext.go.impl.sourceFileImpl#getPackage <em>Package</em>}</li>
+ *   <li>{@link org.xtext.go.impl.sourceFileImpl#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.xtext.go.impl.sourceFileImpl#getTopLevelDecls <em>Top Level Decls</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,44 +43,34 @@ import org.xtext.go.topLevelDecl;
 public class sourceFileImpl extends MinimalEObjectImpl.Container implements sourceFile
 {
   /**
-   * The default value of the '{@link #getPackageClause() <em>Package Clause</em>}' attribute.
+   * The cached value of the '{@link #getPackage() <em>Package</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPackageClause()
+   * @see #getPackage()
    * @generated
    * @ordered
    */
-  protected static final String PACKAGE_CLAUSE_EDEFAULT = null;
+  protected packageClause package_;
 
   /**
-   * The cached value of the '{@link #getPackageClause() <em>Package Clause</em>}' attribute.
+   * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPackageClause()
+   * @see #getImports()
    * @generated
    * @ordered
    */
-  protected String packageClause = PACKAGE_CLAUSE_EDEFAULT;
+  protected EList<importDecl> imports;
 
   /**
-   * The cached value of the '{@link #getImportDecl() <em>Import Decl</em>}' containment reference.
+   * The cached value of the '{@link #getTopLevelDecls() <em>Top Level Decls</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImportDecl()
+   * @see #getTopLevelDecls()
    * @generated
    * @ordered
    */
-  protected importDecl importDecl;
-
-  /**
-   * The cached value of the '{@link #getTopLevelDecl() <em>Top Level Decl</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTopLevelDecl()
-   * @generated
-   * @ordered
-   */
-  protected topLevelDecl topLevelDecl;
+  protected EList<topLevelDecl> topLevelDecls;
 
   /**
    * <!-- begin-user-doc -->
@@ -100,9 +98,9 @@ public class sourceFileImpl extends MinimalEObjectImpl.Container implements sour
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getPackageClause()
+  public packageClause getPackage()
   {
-    return packageClause;
+    return package_;
   }
 
   /**
@@ -110,36 +108,13 @@ public class sourceFileImpl extends MinimalEObjectImpl.Container implements sour
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPackageClause(String newPackageClause)
+  public NotificationChain basicSetPackage(packageClause newPackage, NotificationChain msgs)
   {
-    String oldPackageClause = packageClause;
-    packageClause = newPackageClause;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SOURCE_FILE__PACKAGE_CLAUSE, oldPackageClause, packageClause));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public importDecl getImportDecl()
-  {
-    return importDecl;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetImportDecl(importDecl newImportDecl, NotificationChain msgs)
-  {
-    importDecl oldImportDecl = importDecl;
-    importDecl = newImportDecl;
+    packageClause oldPackage = package_;
+    package_ = newPackage;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SOURCE_FILE__IMPORT_DECL, oldImportDecl, newImportDecl);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SOURCE_FILE__PACKAGE, oldPackage, newPackage);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -150,20 +125,20 @@ public class sourceFileImpl extends MinimalEObjectImpl.Container implements sour
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setImportDecl(importDecl newImportDecl)
+  public void setPackage(packageClause newPackage)
   {
-    if (newImportDecl != importDecl)
+    if (newPackage != package_)
     {
       NotificationChain msgs = null;
-      if (importDecl != null)
-        msgs = ((InternalEObject)importDecl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SOURCE_FILE__IMPORT_DECL, null, msgs);
-      if (newImportDecl != null)
-        msgs = ((InternalEObject)newImportDecl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SOURCE_FILE__IMPORT_DECL, null, msgs);
-      msgs = basicSetImportDecl(newImportDecl, msgs);
+      if (package_ != null)
+        msgs = ((InternalEObject)package_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SOURCE_FILE__PACKAGE, null, msgs);
+      if (newPackage != null)
+        msgs = ((InternalEObject)newPackage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SOURCE_FILE__PACKAGE, null, msgs);
+      msgs = basicSetPackage(newPackage, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SOURCE_FILE__IMPORT_DECL, newImportDecl, newImportDecl));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SOURCE_FILE__PACKAGE, newPackage, newPackage));
   }
 
   /**
@@ -171,26 +146,13 @@ public class sourceFileImpl extends MinimalEObjectImpl.Container implements sour
    * <!-- end-user-doc -->
    * @generated
    */
-  public topLevelDecl getTopLevelDecl()
+  public EList<importDecl> getImports()
   {
-    return topLevelDecl;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetTopLevelDecl(topLevelDecl newTopLevelDecl, NotificationChain msgs)
-  {
-    topLevelDecl oldTopLevelDecl = topLevelDecl;
-    topLevelDecl = newTopLevelDecl;
-    if (eNotificationRequired())
+    if (imports == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.SOURCE_FILE__TOP_LEVEL_DECL, oldTopLevelDecl, newTopLevelDecl);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      imports = new EObjectContainmentEList<importDecl>(importDecl.class, this, GoPackage.SOURCE_FILE__IMPORTS);
     }
-    return msgs;
+    return imports;
   }
 
   /**
@@ -198,20 +160,13 @@ public class sourceFileImpl extends MinimalEObjectImpl.Container implements sour
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTopLevelDecl(topLevelDecl newTopLevelDecl)
+  public EList<topLevelDecl> getTopLevelDecls()
   {
-    if (newTopLevelDecl != topLevelDecl)
+    if (topLevelDecls == null)
     {
-      NotificationChain msgs = null;
-      if (topLevelDecl != null)
-        msgs = ((InternalEObject)topLevelDecl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.SOURCE_FILE__TOP_LEVEL_DECL, null, msgs);
-      if (newTopLevelDecl != null)
-        msgs = ((InternalEObject)newTopLevelDecl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.SOURCE_FILE__TOP_LEVEL_DECL, null, msgs);
-      msgs = basicSetTopLevelDecl(newTopLevelDecl, msgs);
-      if (msgs != null) msgs.dispatch();
+      topLevelDecls = new EObjectContainmentEList<topLevelDecl>(topLevelDecl.class, this, GoPackage.SOURCE_FILE__TOP_LEVEL_DECLS);
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.SOURCE_FILE__TOP_LEVEL_DECL, newTopLevelDecl, newTopLevelDecl));
+    return topLevelDecls;
   }
 
   /**
@@ -224,10 +179,12 @@ public class sourceFileImpl extends MinimalEObjectImpl.Container implements sour
   {
     switch (featureID)
     {
-      case GoPackage.SOURCE_FILE__IMPORT_DECL:
-        return basicSetImportDecl(null, msgs);
-      case GoPackage.SOURCE_FILE__TOP_LEVEL_DECL:
-        return basicSetTopLevelDecl(null, msgs);
+      case GoPackage.SOURCE_FILE__PACKAGE:
+        return basicSetPackage(null, msgs);
+      case GoPackage.SOURCE_FILE__IMPORTS:
+        return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
+      case GoPackage.SOURCE_FILE__TOP_LEVEL_DECLS:
+        return ((InternalEList<?>)getTopLevelDecls()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -242,12 +199,12 @@ public class sourceFileImpl extends MinimalEObjectImpl.Container implements sour
   {
     switch (featureID)
     {
-      case GoPackage.SOURCE_FILE__PACKAGE_CLAUSE:
-        return getPackageClause();
-      case GoPackage.SOURCE_FILE__IMPORT_DECL:
-        return getImportDecl();
-      case GoPackage.SOURCE_FILE__TOP_LEVEL_DECL:
-        return getTopLevelDecl();
+      case GoPackage.SOURCE_FILE__PACKAGE:
+        return getPackage();
+      case GoPackage.SOURCE_FILE__IMPORTS:
+        return getImports();
+      case GoPackage.SOURCE_FILE__TOP_LEVEL_DECLS:
+        return getTopLevelDecls();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -257,19 +214,22 @@ public class sourceFileImpl extends MinimalEObjectImpl.Container implements sour
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case GoPackage.SOURCE_FILE__PACKAGE_CLAUSE:
-        setPackageClause((String)newValue);
+      case GoPackage.SOURCE_FILE__PACKAGE:
+        setPackage((packageClause)newValue);
         return;
-      case GoPackage.SOURCE_FILE__IMPORT_DECL:
-        setImportDecl((importDecl)newValue);
+      case GoPackage.SOURCE_FILE__IMPORTS:
+        getImports().clear();
+        getImports().addAll((Collection<? extends importDecl>)newValue);
         return;
-      case GoPackage.SOURCE_FILE__TOP_LEVEL_DECL:
-        setTopLevelDecl((topLevelDecl)newValue);
+      case GoPackage.SOURCE_FILE__TOP_LEVEL_DECLS:
+        getTopLevelDecls().clear();
+        getTopLevelDecls().addAll((Collection<? extends topLevelDecl>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -285,14 +245,14 @@ public class sourceFileImpl extends MinimalEObjectImpl.Container implements sour
   {
     switch (featureID)
     {
-      case GoPackage.SOURCE_FILE__PACKAGE_CLAUSE:
-        setPackageClause(PACKAGE_CLAUSE_EDEFAULT);
+      case GoPackage.SOURCE_FILE__PACKAGE:
+        setPackage((packageClause)null);
         return;
-      case GoPackage.SOURCE_FILE__IMPORT_DECL:
-        setImportDecl((importDecl)null);
+      case GoPackage.SOURCE_FILE__IMPORTS:
+        getImports().clear();
         return;
-      case GoPackage.SOURCE_FILE__TOP_LEVEL_DECL:
-        setTopLevelDecl((topLevelDecl)null);
+      case GoPackage.SOURCE_FILE__TOP_LEVEL_DECLS:
+        getTopLevelDecls().clear();
         return;
     }
     super.eUnset(featureID);
@@ -308,31 +268,14 @@ public class sourceFileImpl extends MinimalEObjectImpl.Container implements sour
   {
     switch (featureID)
     {
-      case GoPackage.SOURCE_FILE__PACKAGE_CLAUSE:
-        return PACKAGE_CLAUSE_EDEFAULT == null ? packageClause != null : !PACKAGE_CLAUSE_EDEFAULT.equals(packageClause);
-      case GoPackage.SOURCE_FILE__IMPORT_DECL:
-        return importDecl != null;
-      case GoPackage.SOURCE_FILE__TOP_LEVEL_DECL:
-        return topLevelDecl != null;
+      case GoPackage.SOURCE_FILE__PACKAGE:
+        return package_ != null;
+      case GoPackage.SOURCE_FILE__IMPORTS:
+        return imports != null && !imports.isEmpty();
+      case GoPackage.SOURCE_FILE__TOP_LEVEL_DECLS:
+        return topLevelDecls != null && !topLevelDecls.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (packageClause: ");
-    result.append(packageClause);
-    result.append(')');
-    return result.toString();
   }
 
 } //sourceFileImpl

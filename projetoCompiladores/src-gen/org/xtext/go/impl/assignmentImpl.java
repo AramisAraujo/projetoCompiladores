@@ -23,8 +23,9 @@ import org.xtext.go.expressionList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.assignmentImpl#getExpressionList <em>Expression List</em>}</li>
- *   <li>{@link org.xtext.go.impl.assignmentImpl#getAssign_op <em>Assign op</em>}</li>
+ *   <li>{@link org.xtext.go.impl.assignmentImpl#getExprList1 <em>Expr List1</em>}</li>
+ *   <li>{@link org.xtext.go.impl.assignmentImpl#getOperation <em>Operation</em>}</li>
+ *   <li>{@link org.xtext.go.impl.assignmentImpl#getExprList2 <em>Expr List2</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,34 +34,44 @@ import org.xtext.go.expressionList;
 public class assignmentImpl extends MinimalEObjectImpl.Container implements assignment
 {
   /**
-   * The cached value of the '{@link #getExpressionList() <em>Expression List</em>}' containment reference.
+   * The cached value of the '{@link #getExprList1() <em>Expr List1</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExpressionList()
+   * @see #getExprList1()
    * @generated
    * @ordered
    */
-  protected expressionList expressionList;
+  protected expressionList exprList1;
 
   /**
-   * The default value of the '{@link #getAssign_op() <em>Assign op</em>}' attribute.
+   * The default value of the '{@link #getOperation() <em>Operation</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAssign_op()
+   * @see #getOperation()
    * @generated
    * @ordered
    */
-  protected static final String ASSIGN_OP_EDEFAULT = null;
+  protected static final String OPERATION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getAssign_op() <em>Assign op</em>}' attribute.
+   * The cached value of the '{@link #getOperation() <em>Operation</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAssign_op()
+   * @see #getOperation()
    * @generated
    * @ordered
    */
-  protected String assign_op = ASSIGN_OP_EDEFAULT;
+  protected String operation = OPERATION_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getExprList2() <em>Expr List2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExprList2()
+   * @generated
+   * @ordered
+   */
+  protected expressionList exprList2;
 
   /**
    * <!-- begin-user-doc -->
@@ -88,9 +99,9 @@ public class assignmentImpl extends MinimalEObjectImpl.Container implements assi
    * <!-- end-user-doc -->
    * @generated
    */
-  public expressionList getExpressionList()
+  public expressionList getExprList1()
   {
-    return expressionList;
+    return exprList1;
   }
 
   /**
@@ -98,13 +109,13 @@ public class assignmentImpl extends MinimalEObjectImpl.Container implements assi
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpressionList(expressionList newExpressionList, NotificationChain msgs)
+  public NotificationChain basicSetExprList1(expressionList newExprList1, NotificationChain msgs)
   {
-    expressionList oldExpressionList = expressionList;
-    expressionList = newExpressionList;
+    expressionList oldExprList1 = exprList1;
+    exprList1 = newExprList1;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.ASSIGNMENT__EXPRESSION_LIST, oldExpressionList, newExpressionList);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.ASSIGNMENT__EXPR_LIST1, oldExprList1, newExprList1);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -115,20 +126,20 @@ public class assignmentImpl extends MinimalEObjectImpl.Container implements assi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpressionList(expressionList newExpressionList)
+  public void setExprList1(expressionList newExprList1)
   {
-    if (newExpressionList != expressionList)
+    if (newExprList1 != exprList1)
     {
       NotificationChain msgs = null;
-      if (expressionList != null)
-        msgs = ((InternalEObject)expressionList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.ASSIGNMENT__EXPRESSION_LIST, null, msgs);
-      if (newExpressionList != null)
-        msgs = ((InternalEObject)newExpressionList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.ASSIGNMENT__EXPRESSION_LIST, null, msgs);
-      msgs = basicSetExpressionList(newExpressionList, msgs);
+      if (exprList1 != null)
+        msgs = ((InternalEObject)exprList1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.ASSIGNMENT__EXPR_LIST1, null, msgs);
+      if (newExprList1 != null)
+        msgs = ((InternalEObject)newExprList1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.ASSIGNMENT__EXPR_LIST1, null, msgs);
+      msgs = basicSetExprList1(newExprList1, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.ASSIGNMENT__EXPRESSION_LIST, newExpressionList, newExpressionList));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.ASSIGNMENT__EXPR_LIST1, newExprList1, newExprList1));
   }
 
   /**
@@ -136,9 +147,9 @@ public class assignmentImpl extends MinimalEObjectImpl.Container implements assi
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getAssign_op()
+  public String getOperation()
   {
-    return assign_op;
+    return operation;
   }
 
   /**
@@ -146,12 +157,60 @@ public class assignmentImpl extends MinimalEObjectImpl.Container implements assi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAssign_op(String newAssign_op)
+  public void setOperation(String newOperation)
   {
-    String oldAssign_op = assign_op;
-    assign_op = newAssign_op;
+    String oldOperation = operation;
+    operation = newOperation;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.ASSIGNMENT__ASSIGN_OP, oldAssign_op, assign_op));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.ASSIGNMENT__OPERATION, oldOperation, operation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public expressionList getExprList2()
+  {
+    return exprList2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExprList2(expressionList newExprList2, NotificationChain msgs)
+  {
+    expressionList oldExprList2 = exprList2;
+    exprList2 = newExprList2;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.ASSIGNMENT__EXPR_LIST2, oldExprList2, newExprList2);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExprList2(expressionList newExprList2)
+  {
+    if (newExprList2 != exprList2)
+    {
+      NotificationChain msgs = null;
+      if (exprList2 != null)
+        msgs = ((InternalEObject)exprList2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.ASSIGNMENT__EXPR_LIST2, null, msgs);
+      if (newExprList2 != null)
+        msgs = ((InternalEObject)newExprList2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.ASSIGNMENT__EXPR_LIST2, null, msgs);
+      msgs = basicSetExprList2(newExprList2, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.ASSIGNMENT__EXPR_LIST2, newExprList2, newExprList2));
   }
 
   /**
@@ -164,8 +223,10 @@ public class assignmentImpl extends MinimalEObjectImpl.Container implements assi
   {
     switch (featureID)
     {
-      case GoPackage.ASSIGNMENT__EXPRESSION_LIST:
-        return basicSetExpressionList(null, msgs);
+      case GoPackage.ASSIGNMENT__EXPR_LIST1:
+        return basicSetExprList1(null, msgs);
+      case GoPackage.ASSIGNMENT__EXPR_LIST2:
+        return basicSetExprList2(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -180,10 +241,12 @@ public class assignmentImpl extends MinimalEObjectImpl.Container implements assi
   {
     switch (featureID)
     {
-      case GoPackage.ASSIGNMENT__EXPRESSION_LIST:
-        return getExpressionList();
-      case GoPackage.ASSIGNMENT__ASSIGN_OP:
-        return getAssign_op();
+      case GoPackage.ASSIGNMENT__EXPR_LIST1:
+        return getExprList1();
+      case GoPackage.ASSIGNMENT__OPERATION:
+        return getOperation();
+      case GoPackage.ASSIGNMENT__EXPR_LIST2:
+        return getExprList2();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -198,11 +261,14 @@ public class assignmentImpl extends MinimalEObjectImpl.Container implements assi
   {
     switch (featureID)
     {
-      case GoPackage.ASSIGNMENT__EXPRESSION_LIST:
-        setExpressionList((expressionList)newValue);
+      case GoPackage.ASSIGNMENT__EXPR_LIST1:
+        setExprList1((expressionList)newValue);
         return;
-      case GoPackage.ASSIGNMENT__ASSIGN_OP:
-        setAssign_op((String)newValue);
+      case GoPackage.ASSIGNMENT__OPERATION:
+        setOperation((String)newValue);
+        return;
+      case GoPackage.ASSIGNMENT__EXPR_LIST2:
+        setExprList2((expressionList)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -218,11 +284,14 @@ public class assignmentImpl extends MinimalEObjectImpl.Container implements assi
   {
     switch (featureID)
     {
-      case GoPackage.ASSIGNMENT__EXPRESSION_LIST:
-        setExpressionList((expressionList)null);
+      case GoPackage.ASSIGNMENT__EXPR_LIST1:
+        setExprList1((expressionList)null);
         return;
-      case GoPackage.ASSIGNMENT__ASSIGN_OP:
-        setAssign_op(ASSIGN_OP_EDEFAULT);
+      case GoPackage.ASSIGNMENT__OPERATION:
+        setOperation(OPERATION_EDEFAULT);
+        return;
+      case GoPackage.ASSIGNMENT__EXPR_LIST2:
+        setExprList2((expressionList)null);
         return;
     }
     super.eUnset(featureID);
@@ -238,10 +307,12 @@ public class assignmentImpl extends MinimalEObjectImpl.Container implements assi
   {
     switch (featureID)
     {
-      case GoPackage.ASSIGNMENT__EXPRESSION_LIST:
-        return expressionList != null;
-      case GoPackage.ASSIGNMENT__ASSIGN_OP:
-        return ASSIGN_OP_EDEFAULT == null ? assign_op != null : !ASSIGN_OP_EDEFAULT.equals(assign_op);
+      case GoPackage.ASSIGNMENT__EXPR_LIST1:
+        return exprList1 != null;
+      case GoPackage.ASSIGNMENT__OPERATION:
+        return OPERATION_EDEFAULT == null ? operation != null : !OPERATION_EDEFAULT.equals(operation);
+      case GoPackage.ASSIGNMENT__EXPR_LIST2:
+        return exprList2 != null;
     }
     return super.eIsSet(featureID);
   }
@@ -257,8 +328,8 @@ public class assignmentImpl extends MinimalEObjectImpl.Container implements assi
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (assign_op: ");
-    result.append(assign_op);
+    result.append(" (operation: ");
+    result.append(operation);
     result.append(')');
     return result.toString();
   }

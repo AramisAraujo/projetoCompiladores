@@ -13,7 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.operandName#getQualifiedIdent <em>Qualified Ident</em>}</li>
+ *   <li>{@link org.xtext.go.operandName#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.go.operandName#getQualIdent <em>Qual Ident</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,29 +25,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface operandName extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Qualified Ident</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Qualified Ident</em>' attribute isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Qualified Ident</em>' attribute.
-   * @see #setQualifiedIdent(String)
-   * @see org.xtext.go.GoPackage#getoperandName_QualifiedIdent()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.xtext.go.GoPackage#getoperandName_Name()
    * @model
    * @generated
    */
-  String getQualifiedIdent();
+  String getName();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.operandName#getQualifiedIdent <em>Qualified Ident</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.go.operandName#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Qualified Ident</em>' attribute.
-   * @see #getQualifiedIdent()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setQualifiedIdent(String value);
+  void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Qual Ident</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Qual Ident</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Qual Ident</em>' containment reference.
+   * @see #setQualIdent(qualifiedIdent)
+   * @see org.xtext.go.GoPackage#getoperandName_QualIdent()
+   * @model containment="true"
+   * @generated
+   */
+  qualifiedIdent getQualIdent();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.operandName#getQualIdent <em>Qual Ident</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Qual Ident</em>' containment reference.
+   * @see #getQualIdent()
+   * @generated
+   */
+  void setQualIdent(qualifiedIdent value);
 
 } // operandName

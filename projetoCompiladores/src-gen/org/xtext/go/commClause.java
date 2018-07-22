@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.commClause#getCommCase <em>Comm Case</em>}</li>
- *   <li>{@link org.xtext.go.commClause#getStatementList <em>Statement List</em>}</li>
+ *   <li>{@link org.xtext.go.commClause#getCase <em>Case</em>}</li>
+ *   <li>{@link org.xtext.go.commClause#getStmtList <em>Stmt List</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,55 +25,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface commClause extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Comm Case</b></em>' containment reference.
+   * Returns the value of the '<em><b>Case</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Comm Case</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Case</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Comm Case</em>' containment reference.
-   * @see #setCommCase(commCase)
-   * @see org.xtext.go.GoPackage#getcommClause_CommCase()
+   * @return the value of the '<em>Case</em>' containment reference.
+   * @see #setCase(commCase)
+   * @see org.xtext.go.GoPackage#getcommClause_Case()
    * @model containment="true"
    * @generated
    */
-  commCase getCommCase();
+  commCase getCase();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.commClause#getCommCase <em>Comm Case</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.commClause#getCase <em>Case</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Comm Case</em>' containment reference.
-   * @see #getCommCase()
+   * @param value the new value of the '<em>Case</em>' containment reference.
+   * @see #getCase()
    * @generated
    */
-  void setCommCase(commCase value);
+  void setCase(commCase value);
 
   /**
-   * Returns the value of the '<em><b>Statement List</b></em>' containment reference.
+   * Returns the value of the '<em><b>Stmt List</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Statement List</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Stmt List</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Statement List</em>' containment reference.
-   * @see #setStatementList(statementList)
-   * @see org.xtext.go.GoPackage#getcommClause_StatementList()
+   * @return the value of the '<em>Stmt List</em>' containment reference.
+   * @see #setStmtList(statementList)
+   * @see org.xtext.go.GoPackage#getcommClause_StmtList()
    * @model containment="true"
    * @generated
    */
-  statementList getStatementList();
+  statementList getStmtList();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.commClause#getStatementList <em>Statement List</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.commClause#getStmtList <em>Stmt List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Statement List</em>' containment reference.
-   * @see #getStatementList()
+   * @param value the new value of the '<em>Stmt List</em>' containment reference.
+   * @see #getStmtList()
    * @generated
    */
-  void setStatementList(statementList value);
+  void setStmtList(statementList value);
 
 } // commClause

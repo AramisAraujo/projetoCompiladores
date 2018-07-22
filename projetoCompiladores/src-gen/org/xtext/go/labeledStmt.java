@@ -13,7 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.labeledStmt#getStatement <em>Statement</em>}</li>
+ *   <li>{@link org.xtext.go.labeledStmt#getLabel <em>Label</em>}</li>
+ *   <li>{@link org.xtext.go.labeledStmt#getStmt <em>Stmt</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,29 +25,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface labeledStmt extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Statement</b></em>' containment reference.
+   * Returns the value of the '<em><b>Label</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Statement</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Label</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Statement</em>' containment reference.
-   * @see #setStatement(statement)
-   * @see org.xtext.go.GoPackage#getlabeledStmt_Statement()
+   * @return the value of the '<em>Label</em>' attribute.
+   * @see #setLabel(String)
+   * @see org.xtext.go.GoPackage#getlabeledStmt_Label()
+   * @model
+   * @generated
+   */
+  String getLabel();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.labeledStmt#getLabel <em>Label</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Label</em>' attribute.
+   * @see #getLabel()
+   * @generated
+   */
+  void setLabel(String value);
+
+  /**
+   * Returns the value of the '<em><b>Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Stmt</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Stmt</em>' containment reference.
+   * @see #setStmt(statement)
+   * @see org.xtext.go.GoPackage#getlabeledStmt_Stmt()
    * @model containment="true"
    * @generated
    */
-  statement getStatement();
+  statement getStmt();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.labeledStmt#getStatement <em>Statement</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.labeledStmt#getStmt <em>Stmt</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Statement</em>' containment reference.
-   * @see #getStatement()
+   * @param value the new value of the '<em>Stmt</em>' containment reference.
+   * @see #getStmt()
    * @generated
    */
-  void setStatement(statement value);
+  void setStmt(statement value);
 
 } // labeledStmt

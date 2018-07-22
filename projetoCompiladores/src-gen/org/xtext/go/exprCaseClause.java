@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.xtext.go.exprCaseClause#getExprSwitchCase <em>Expr Switch Case</em>}</li>
- *   <li>{@link org.xtext.go.exprCaseClause#getStatementList <em>Statement List</em>}</li>
+ *   <li>{@link org.xtext.go.exprCaseClause#getStmtList <em>Stmt List</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,29 +51,29 @@ public interface exprCaseClause extends EObject
   void setExprSwitchCase(exprSwitchCase value);
 
   /**
-   * Returns the value of the '<em><b>Statement List</b></em>' containment reference.
+   * Returns the value of the '<em><b>Stmt List</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Statement List</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Stmt List</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Statement List</em>' containment reference.
-   * @see #setStatementList(statementList)
-   * @see org.xtext.go.GoPackage#getexprCaseClause_StatementList()
+   * @return the value of the '<em>Stmt List</em>' containment reference.
+   * @see #setStmtList(statementList)
+   * @see org.xtext.go.GoPackage#getexprCaseClause_StmtList()
    * @model containment="true"
    * @generated
    */
-  statementList getStatementList();
+  statementList getStmtList();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.exprCaseClause#getStatementList <em>Statement List</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.exprCaseClause#getStmtList <em>Stmt List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Statement List</em>' containment reference.
-   * @see #getStatementList()
+   * @param value the new value of the '<em>Stmt List</em>' containment reference.
+   * @see #getStmtList()
    * @generated
    */
-  void setStatementList(statementList value);
+  void setStmtList(statementList value);
 
 } // exprCaseClause

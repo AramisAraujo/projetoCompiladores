@@ -13,8 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.commCase#getSendStmt <em>Send Stmt</em>}</li>
- *   <li>{@link org.xtext.go.commCase#getRecvStmt <em>Recv Stmt</em>}</li>
+ *   <li>{@link org.xtext.go.commCase#getStatement <em>Statement</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,55 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface commCase extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Send Stmt</b></em>' containment reference.
+   * Returns the value of the '<em><b>Statement</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Send Stmt</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Statement</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Send Stmt</em>' containment reference.
-   * @see #setSendStmt(sendStmt)
-   * @see org.xtext.go.GoPackage#getcommCase_SendStmt()
+   * @return the value of the '<em>Statement</em>' containment reference.
+   * @see #setStatement(EObject)
+   * @see org.xtext.go.GoPackage#getcommCase_Statement()
    * @model containment="true"
    * @generated
    */
-  sendStmt getSendStmt();
+  EObject getStatement();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.commCase#getSendStmt <em>Send Stmt</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.commCase#getStatement <em>Statement</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Send Stmt</em>' containment reference.
-   * @see #getSendStmt()
+   * @param value the new value of the '<em>Statement</em>' containment reference.
+   * @see #getStatement()
    * @generated
    */
-  void setSendStmt(sendStmt value);
-
-  /**
-   * Returns the value of the '<em><b>Recv Stmt</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Recv Stmt</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Recv Stmt</em>' containment reference.
-   * @see #setRecvStmt(recvStmt)
-   * @see org.xtext.go.GoPackage#getcommCase_RecvStmt()
-   * @model containment="true"
-   * @generated
-   */
-  recvStmt getRecvStmt();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.commCase#getRecvStmt <em>Recv Stmt</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Recv Stmt</em>' containment reference.
-   * @see #getRecvStmt()
-   * @generated
-   */
-  void setRecvStmt(recvStmt value);
+  void setStatement(EObject value);
 
 } // commCase

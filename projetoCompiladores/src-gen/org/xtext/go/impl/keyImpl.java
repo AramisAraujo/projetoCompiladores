@@ -24,8 +24,9 @@ import org.xtext.go.literalValue;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.keyImpl#getExpression <em>Expression</em>}</li>
- *   <li>{@link org.xtext.go.impl.keyImpl#getLiteralValue <em>Literal Value</em>}</li>
+ *   <li>{@link org.xtext.go.impl.keyImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.go.impl.keyImpl#getExpr <em>Expr</em>}</li>
+ *   <li>{@link org.xtext.go.impl.keyImpl#getLit <em>Lit</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,24 +35,44 @@ import org.xtext.go.literalValue;
 public class keyImpl extends MinimalEObjectImpl.Container implements key
 {
   /**
-   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExpression()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected expression expression;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getLiteralValue() <em>Literal Value</em>}' containment reference.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLiteralValue()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected literalValue literalValue;
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpr()
+   * @generated
+   * @ordered
+   */
+  protected expression expr;
+
+  /**
+   * The cached value of the '{@link #getLit() <em>Lit</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLit()
+   * @generated
+   * @ordered
+   */
+  protected literalValue lit;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,9 +100,9 @@ public class keyImpl extends MinimalEObjectImpl.Container implements key
    * <!-- end-user-doc -->
    * @generated
    */
-  public expression getExpression()
+  public String getName()
   {
-    return expression;
+    return name;
   }
 
   /**
@@ -89,13 +110,36 @@ public class keyImpl extends MinimalEObjectImpl.Container implements key
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpression(expression newExpression, NotificationChain msgs)
+  public void setName(String newName)
   {
-    expression oldExpression = expression;
-    expression = newExpression;
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.KEY__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public expression getExpr()
+  {
+    return expr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExpr(expression newExpr, NotificationChain msgs)
+  {
+    expression oldExpr = expr;
+    expr = newExpr;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.KEY__EXPRESSION, oldExpression, newExpression);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.KEY__EXPR, oldExpr, newExpr);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -106,20 +150,20 @@ public class keyImpl extends MinimalEObjectImpl.Container implements key
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(expression newExpression)
+  public void setExpr(expression newExpr)
   {
-    if (newExpression != expression)
+    if (newExpr != expr)
     {
       NotificationChain msgs = null;
-      if (expression != null)
-        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.KEY__EXPRESSION, null, msgs);
-      if (newExpression != null)
-        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.KEY__EXPRESSION, null, msgs);
-      msgs = basicSetExpression(newExpression, msgs);
+      if (expr != null)
+        msgs = ((InternalEObject)expr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.KEY__EXPR, null, msgs);
+      if (newExpr != null)
+        msgs = ((InternalEObject)newExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.KEY__EXPR, null, msgs);
+      msgs = basicSetExpr(newExpr, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.KEY__EXPRESSION, newExpression, newExpression));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.KEY__EXPR, newExpr, newExpr));
   }
 
   /**
@@ -127,9 +171,9 @@ public class keyImpl extends MinimalEObjectImpl.Container implements key
    * <!-- end-user-doc -->
    * @generated
    */
-  public literalValue getLiteralValue()
+  public literalValue getLit()
   {
-    return literalValue;
+    return lit;
   }
 
   /**
@@ -137,13 +181,13 @@ public class keyImpl extends MinimalEObjectImpl.Container implements key
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLiteralValue(literalValue newLiteralValue, NotificationChain msgs)
+  public NotificationChain basicSetLit(literalValue newLit, NotificationChain msgs)
   {
-    literalValue oldLiteralValue = literalValue;
-    literalValue = newLiteralValue;
+    literalValue oldLit = lit;
+    lit = newLit;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.KEY__LITERAL_VALUE, oldLiteralValue, newLiteralValue);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.KEY__LIT, oldLit, newLit);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -154,20 +198,20 @@ public class keyImpl extends MinimalEObjectImpl.Container implements key
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLiteralValue(literalValue newLiteralValue)
+  public void setLit(literalValue newLit)
   {
-    if (newLiteralValue != literalValue)
+    if (newLit != lit)
     {
       NotificationChain msgs = null;
-      if (literalValue != null)
-        msgs = ((InternalEObject)literalValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.KEY__LITERAL_VALUE, null, msgs);
-      if (newLiteralValue != null)
-        msgs = ((InternalEObject)newLiteralValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.KEY__LITERAL_VALUE, null, msgs);
-      msgs = basicSetLiteralValue(newLiteralValue, msgs);
+      if (lit != null)
+        msgs = ((InternalEObject)lit).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.KEY__LIT, null, msgs);
+      if (newLit != null)
+        msgs = ((InternalEObject)newLit).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.KEY__LIT, null, msgs);
+      msgs = basicSetLit(newLit, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.KEY__LITERAL_VALUE, newLiteralValue, newLiteralValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.KEY__LIT, newLit, newLit));
   }
 
   /**
@@ -180,10 +224,10 @@ public class keyImpl extends MinimalEObjectImpl.Container implements key
   {
     switch (featureID)
     {
-      case GoPackage.KEY__EXPRESSION:
-        return basicSetExpression(null, msgs);
-      case GoPackage.KEY__LITERAL_VALUE:
-        return basicSetLiteralValue(null, msgs);
+      case GoPackage.KEY__EXPR:
+        return basicSetExpr(null, msgs);
+      case GoPackage.KEY__LIT:
+        return basicSetLit(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -198,10 +242,12 @@ public class keyImpl extends MinimalEObjectImpl.Container implements key
   {
     switch (featureID)
     {
-      case GoPackage.KEY__EXPRESSION:
-        return getExpression();
-      case GoPackage.KEY__LITERAL_VALUE:
-        return getLiteralValue();
+      case GoPackage.KEY__NAME:
+        return getName();
+      case GoPackage.KEY__EXPR:
+        return getExpr();
+      case GoPackage.KEY__LIT:
+        return getLit();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -216,11 +262,14 @@ public class keyImpl extends MinimalEObjectImpl.Container implements key
   {
     switch (featureID)
     {
-      case GoPackage.KEY__EXPRESSION:
-        setExpression((expression)newValue);
+      case GoPackage.KEY__NAME:
+        setName((String)newValue);
         return;
-      case GoPackage.KEY__LITERAL_VALUE:
-        setLiteralValue((literalValue)newValue);
+      case GoPackage.KEY__EXPR:
+        setExpr((expression)newValue);
+        return;
+      case GoPackage.KEY__LIT:
+        setLit((literalValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -236,11 +285,14 @@ public class keyImpl extends MinimalEObjectImpl.Container implements key
   {
     switch (featureID)
     {
-      case GoPackage.KEY__EXPRESSION:
-        setExpression((expression)null);
+      case GoPackage.KEY__NAME:
+        setName(NAME_EDEFAULT);
         return;
-      case GoPackage.KEY__LITERAL_VALUE:
-        setLiteralValue((literalValue)null);
+      case GoPackage.KEY__EXPR:
+        setExpr((expression)null);
+        return;
+      case GoPackage.KEY__LIT:
+        setLit((literalValue)null);
         return;
     }
     super.eUnset(featureID);
@@ -256,12 +308,31 @@ public class keyImpl extends MinimalEObjectImpl.Container implements key
   {
     switch (featureID)
     {
-      case GoPackage.KEY__EXPRESSION:
-        return expression != null;
-      case GoPackage.KEY__LITERAL_VALUE:
-        return literalValue != null;
+      case GoPackage.KEY__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case GoPackage.KEY__EXPR:
+        return expr != null;
+      case GoPackage.KEY__LIT:
+        return lit != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //keyImpl

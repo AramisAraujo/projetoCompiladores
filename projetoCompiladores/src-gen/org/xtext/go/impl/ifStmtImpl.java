@@ -25,10 +25,11 @@ import org.xtext.go.simpleStmt;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.ifStmtImpl#getSimpleStmt <em>Simple Stmt</em>}</li>
- *   <li>{@link org.xtext.go.impl.ifStmtImpl#getExpression <em>Expression</em>}</li>
- *   <li>{@link org.xtext.go.impl.ifStmtImpl#getBlock <em>Block</em>}</li>
- *   <li>{@link org.xtext.go.impl.ifStmtImpl#getIfStmt <em>If Stmt</em>}</li>
+ *   <li>{@link org.xtext.go.impl.ifStmtImpl#getSimplStatement <em>Simpl Statement</em>}</li>
+ *   <li>{@link org.xtext.go.impl.ifStmtImpl#getExpr <em>Expr</em>}</li>
+ *   <li>{@link org.xtext.go.impl.ifStmtImpl#getCodeBlock <em>Code Block</em>}</li>
+ *   <li>{@link org.xtext.go.impl.ifStmtImpl#getIfStatement <em>If Statement</em>}</li>
+ *   <li>{@link org.xtext.go.impl.ifStmtImpl#getCodeBlockIf <em>Code Block If</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,44 +38,54 @@ import org.xtext.go.simpleStmt;
 public class ifStmtImpl extends MinimalEObjectImpl.Container implements ifStmt
 {
   /**
-   * The cached value of the '{@link #getSimpleStmt() <em>Simple Stmt</em>}' containment reference.
+   * The cached value of the '{@link #getSimplStatement() <em>Simpl Statement</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSimpleStmt()
+   * @see #getSimplStatement()
    * @generated
    * @ordered
    */
-  protected simpleStmt simpleStmt;
+  protected simpleStmt simplStatement;
 
   /**
-   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
+   * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExpression()
+   * @see #getExpr()
    * @generated
    * @ordered
    */
-  protected expression expression;
+  protected expression expr;
 
   /**
-   * The cached value of the '{@link #getBlock() <em>Block</em>}' containment reference.
+   * The cached value of the '{@link #getCodeBlock() <em>Code Block</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBlock()
+   * @see #getCodeBlock()
    * @generated
    * @ordered
    */
-  protected block block;
+  protected block codeBlock;
 
   /**
-   * The cached value of the '{@link #getIfStmt() <em>If Stmt</em>}' containment reference.
+   * The cached value of the '{@link #getIfStatement() <em>If Statement</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIfStmt()
+   * @see #getIfStatement()
    * @generated
    * @ordered
    */
-  protected ifStmt ifStmt;
+  protected ifStmt ifStatement;
+
+  /**
+   * The cached value of the '{@link #getCodeBlockIf() <em>Code Block If</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCodeBlockIf()
+   * @generated
+   * @ordered
+   */
+  protected block codeBlockIf;
 
   /**
    * <!-- begin-user-doc -->
@@ -102,9 +113,9 @@ public class ifStmtImpl extends MinimalEObjectImpl.Container implements ifStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public simpleStmt getSimpleStmt()
+  public simpleStmt getSimplStatement()
   {
-    return simpleStmt;
+    return simplStatement;
   }
 
   /**
@@ -112,13 +123,13 @@ public class ifStmtImpl extends MinimalEObjectImpl.Container implements ifStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetSimpleStmt(simpleStmt newSimpleStmt, NotificationChain msgs)
+  public NotificationChain basicSetSimplStatement(simpleStmt newSimplStatement, NotificationChain msgs)
   {
-    simpleStmt oldSimpleStmt = simpleStmt;
-    simpleStmt = newSimpleStmt;
+    simpleStmt oldSimplStatement = simplStatement;
+    simplStatement = newSimplStatement;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.IF_STMT__SIMPLE_STMT, oldSimpleStmt, newSimpleStmt);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.IF_STMT__SIMPL_STATEMENT, oldSimplStatement, newSimplStatement);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -129,20 +140,20 @@ public class ifStmtImpl extends MinimalEObjectImpl.Container implements ifStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSimpleStmt(simpleStmt newSimpleStmt)
+  public void setSimplStatement(simpleStmt newSimplStatement)
   {
-    if (newSimpleStmt != simpleStmt)
+    if (newSimplStatement != simplStatement)
     {
       NotificationChain msgs = null;
-      if (simpleStmt != null)
-        msgs = ((InternalEObject)simpleStmt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.IF_STMT__SIMPLE_STMT, null, msgs);
-      if (newSimpleStmt != null)
-        msgs = ((InternalEObject)newSimpleStmt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.IF_STMT__SIMPLE_STMT, null, msgs);
-      msgs = basicSetSimpleStmt(newSimpleStmt, msgs);
+      if (simplStatement != null)
+        msgs = ((InternalEObject)simplStatement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.IF_STMT__SIMPL_STATEMENT, null, msgs);
+      if (newSimplStatement != null)
+        msgs = ((InternalEObject)newSimplStatement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.IF_STMT__SIMPL_STATEMENT, null, msgs);
+      msgs = basicSetSimplStatement(newSimplStatement, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.IF_STMT__SIMPLE_STMT, newSimpleStmt, newSimpleStmt));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.IF_STMT__SIMPL_STATEMENT, newSimplStatement, newSimplStatement));
   }
 
   /**
@@ -150,9 +161,9 @@ public class ifStmtImpl extends MinimalEObjectImpl.Container implements ifStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public expression getExpression()
+  public expression getExpr()
   {
-    return expression;
+    return expr;
   }
 
   /**
@@ -160,13 +171,13 @@ public class ifStmtImpl extends MinimalEObjectImpl.Container implements ifStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpression(expression newExpression, NotificationChain msgs)
+  public NotificationChain basicSetExpr(expression newExpr, NotificationChain msgs)
   {
-    expression oldExpression = expression;
-    expression = newExpression;
+    expression oldExpr = expr;
+    expr = newExpr;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.IF_STMT__EXPRESSION, oldExpression, newExpression);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.IF_STMT__EXPR, oldExpr, newExpr);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -177,20 +188,20 @@ public class ifStmtImpl extends MinimalEObjectImpl.Container implements ifStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(expression newExpression)
+  public void setExpr(expression newExpr)
   {
-    if (newExpression != expression)
+    if (newExpr != expr)
     {
       NotificationChain msgs = null;
-      if (expression != null)
-        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.IF_STMT__EXPRESSION, null, msgs);
-      if (newExpression != null)
-        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.IF_STMT__EXPRESSION, null, msgs);
-      msgs = basicSetExpression(newExpression, msgs);
+      if (expr != null)
+        msgs = ((InternalEObject)expr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.IF_STMT__EXPR, null, msgs);
+      if (newExpr != null)
+        msgs = ((InternalEObject)newExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.IF_STMT__EXPR, null, msgs);
+      msgs = basicSetExpr(newExpr, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.IF_STMT__EXPRESSION, newExpression, newExpression));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.IF_STMT__EXPR, newExpr, newExpr));
   }
 
   /**
@@ -198,9 +209,9 @@ public class ifStmtImpl extends MinimalEObjectImpl.Container implements ifStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public block getBlock()
+  public block getCodeBlock()
   {
-    return block;
+    return codeBlock;
   }
 
   /**
@@ -208,13 +219,13 @@ public class ifStmtImpl extends MinimalEObjectImpl.Container implements ifStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetBlock(block newBlock, NotificationChain msgs)
+  public NotificationChain basicSetCodeBlock(block newCodeBlock, NotificationChain msgs)
   {
-    block oldBlock = block;
-    block = newBlock;
+    block oldCodeBlock = codeBlock;
+    codeBlock = newCodeBlock;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.IF_STMT__BLOCK, oldBlock, newBlock);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.IF_STMT__CODE_BLOCK, oldCodeBlock, newCodeBlock);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -225,20 +236,20 @@ public class ifStmtImpl extends MinimalEObjectImpl.Container implements ifStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBlock(block newBlock)
+  public void setCodeBlock(block newCodeBlock)
   {
-    if (newBlock != block)
+    if (newCodeBlock != codeBlock)
     {
       NotificationChain msgs = null;
-      if (block != null)
-        msgs = ((InternalEObject)block).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.IF_STMT__BLOCK, null, msgs);
-      if (newBlock != null)
-        msgs = ((InternalEObject)newBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.IF_STMT__BLOCK, null, msgs);
-      msgs = basicSetBlock(newBlock, msgs);
+      if (codeBlock != null)
+        msgs = ((InternalEObject)codeBlock).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.IF_STMT__CODE_BLOCK, null, msgs);
+      if (newCodeBlock != null)
+        msgs = ((InternalEObject)newCodeBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.IF_STMT__CODE_BLOCK, null, msgs);
+      msgs = basicSetCodeBlock(newCodeBlock, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.IF_STMT__BLOCK, newBlock, newBlock));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.IF_STMT__CODE_BLOCK, newCodeBlock, newCodeBlock));
   }
 
   /**
@@ -246,9 +257,9 @@ public class ifStmtImpl extends MinimalEObjectImpl.Container implements ifStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public ifStmt getIfStmt()
+  public ifStmt getIfStatement()
   {
-    return ifStmt;
+    return ifStatement;
   }
 
   /**
@@ -256,13 +267,13 @@ public class ifStmtImpl extends MinimalEObjectImpl.Container implements ifStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetIfStmt(ifStmt newIfStmt, NotificationChain msgs)
+  public NotificationChain basicSetIfStatement(ifStmt newIfStatement, NotificationChain msgs)
   {
-    ifStmt oldIfStmt = ifStmt;
-    ifStmt = newIfStmt;
+    ifStmt oldIfStatement = ifStatement;
+    ifStatement = newIfStatement;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.IF_STMT__IF_STMT, oldIfStmt, newIfStmt);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.IF_STMT__IF_STATEMENT, oldIfStatement, newIfStatement);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -273,20 +284,68 @@ public class ifStmtImpl extends MinimalEObjectImpl.Container implements ifStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setIfStmt(ifStmt newIfStmt)
+  public void setIfStatement(ifStmt newIfStatement)
   {
-    if (newIfStmt != ifStmt)
+    if (newIfStatement != ifStatement)
     {
       NotificationChain msgs = null;
-      if (ifStmt != null)
-        msgs = ((InternalEObject)ifStmt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.IF_STMT__IF_STMT, null, msgs);
-      if (newIfStmt != null)
-        msgs = ((InternalEObject)newIfStmt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.IF_STMT__IF_STMT, null, msgs);
-      msgs = basicSetIfStmt(newIfStmt, msgs);
+      if (ifStatement != null)
+        msgs = ((InternalEObject)ifStatement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.IF_STMT__IF_STATEMENT, null, msgs);
+      if (newIfStatement != null)
+        msgs = ((InternalEObject)newIfStatement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.IF_STMT__IF_STATEMENT, null, msgs);
+      msgs = basicSetIfStatement(newIfStatement, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.IF_STMT__IF_STMT, newIfStmt, newIfStmt));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.IF_STMT__IF_STATEMENT, newIfStatement, newIfStatement));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public block getCodeBlockIf()
+  {
+    return codeBlockIf;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetCodeBlockIf(block newCodeBlockIf, NotificationChain msgs)
+  {
+    block oldCodeBlockIf = codeBlockIf;
+    codeBlockIf = newCodeBlockIf;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.IF_STMT__CODE_BLOCK_IF, oldCodeBlockIf, newCodeBlockIf);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCodeBlockIf(block newCodeBlockIf)
+  {
+    if (newCodeBlockIf != codeBlockIf)
+    {
+      NotificationChain msgs = null;
+      if (codeBlockIf != null)
+        msgs = ((InternalEObject)codeBlockIf).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.IF_STMT__CODE_BLOCK_IF, null, msgs);
+      if (newCodeBlockIf != null)
+        msgs = ((InternalEObject)newCodeBlockIf).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.IF_STMT__CODE_BLOCK_IF, null, msgs);
+      msgs = basicSetCodeBlockIf(newCodeBlockIf, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.IF_STMT__CODE_BLOCK_IF, newCodeBlockIf, newCodeBlockIf));
   }
 
   /**
@@ -299,14 +358,16 @@ public class ifStmtImpl extends MinimalEObjectImpl.Container implements ifStmt
   {
     switch (featureID)
     {
-      case GoPackage.IF_STMT__SIMPLE_STMT:
-        return basicSetSimpleStmt(null, msgs);
-      case GoPackage.IF_STMT__EXPRESSION:
-        return basicSetExpression(null, msgs);
-      case GoPackage.IF_STMT__BLOCK:
-        return basicSetBlock(null, msgs);
-      case GoPackage.IF_STMT__IF_STMT:
-        return basicSetIfStmt(null, msgs);
+      case GoPackage.IF_STMT__SIMPL_STATEMENT:
+        return basicSetSimplStatement(null, msgs);
+      case GoPackage.IF_STMT__EXPR:
+        return basicSetExpr(null, msgs);
+      case GoPackage.IF_STMT__CODE_BLOCK:
+        return basicSetCodeBlock(null, msgs);
+      case GoPackage.IF_STMT__IF_STATEMENT:
+        return basicSetIfStatement(null, msgs);
+      case GoPackage.IF_STMT__CODE_BLOCK_IF:
+        return basicSetCodeBlockIf(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -321,14 +382,16 @@ public class ifStmtImpl extends MinimalEObjectImpl.Container implements ifStmt
   {
     switch (featureID)
     {
-      case GoPackage.IF_STMT__SIMPLE_STMT:
-        return getSimpleStmt();
-      case GoPackage.IF_STMT__EXPRESSION:
-        return getExpression();
-      case GoPackage.IF_STMT__BLOCK:
-        return getBlock();
-      case GoPackage.IF_STMT__IF_STMT:
-        return getIfStmt();
+      case GoPackage.IF_STMT__SIMPL_STATEMENT:
+        return getSimplStatement();
+      case GoPackage.IF_STMT__EXPR:
+        return getExpr();
+      case GoPackage.IF_STMT__CODE_BLOCK:
+        return getCodeBlock();
+      case GoPackage.IF_STMT__IF_STATEMENT:
+        return getIfStatement();
+      case GoPackage.IF_STMT__CODE_BLOCK_IF:
+        return getCodeBlockIf();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -343,17 +406,20 @@ public class ifStmtImpl extends MinimalEObjectImpl.Container implements ifStmt
   {
     switch (featureID)
     {
-      case GoPackage.IF_STMT__SIMPLE_STMT:
-        setSimpleStmt((simpleStmt)newValue);
+      case GoPackage.IF_STMT__SIMPL_STATEMENT:
+        setSimplStatement((simpleStmt)newValue);
         return;
-      case GoPackage.IF_STMT__EXPRESSION:
-        setExpression((expression)newValue);
+      case GoPackage.IF_STMT__EXPR:
+        setExpr((expression)newValue);
         return;
-      case GoPackage.IF_STMT__BLOCK:
-        setBlock((block)newValue);
+      case GoPackage.IF_STMT__CODE_BLOCK:
+        setCodeBlock((block)newValue);
         return;
-      case GoPackage.IF_STMT__IF_STMT:
-        setIfStmt((ifStmt)newValue);
+      case GoPackage.IF_STMT__IF_STATEMENT:
+        setIfStatement((ifStmt)newValue);
+        return;
+      case GoPackage.IF_STMT__CODE_BLOCK_IF:
+        setCodeBlockIf((block)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -369,17 +435,20 @@ public class ifStmtImpl extends MinimalEObjectImpl.Container implements ifStmt
   {
     switch (featureID)
     {
-      case GoPackage.IF_STMT__SIMPLE_STMT:
-        setSimpleStmt((simpleStmt)null);
+      case GoPackage.IF_STMT__SIMPL_STATEMENT:
+        setSimplStatement((simpleStmt)null);
         return;
-      case GoPackage.IF_STMT__EXPRESSION:
-        setExpression((expression)null);
+      case GoPackage.IF_STMT__EXPR:
+        setExpr((expression)null);
         return;
-      case GoPackage.IF_STMT__BLOCK:
-        setBlock((block)null);
+      case GoPackage.IF_STMT__CODE_BLOCK:
+        setCodeBlock((block)null);
         return;
-      case GoPackage.IF_STMT__IF_STMT:
-        setIfStmt((ifStmt)null);
+      case GoPackage.IF_STMT__IF_STATEMENT:
+        setIfStatement((ifStmt)null);
+        return;
+      case GoPackage.IF_STMT__CODE_BLOCK_IF:
+        setCodeBlockIf((block)null);
         return;
     }
     super.eUnset(featureID);
@@ -395,14 +464,16 @@ public class ifStmtImpl extends MinimalEObjectImpl.Container implements ifStmt
   {
     switch (featureID)
     {
-      case GoPackage.IF_STMT__SIMPLE_STMT:
-        return simpleStmt != null;
-      case GoPackage.IF_STMT__EXPRESSION:
-        return expression != null;
-      case GoPackage.IF_STMT__BLOCK:
-        return block != null;
-      case GoPackage.IF_STMT__IF_STMT:
-        return ifStmt != null;
+      case GoPackage.IF_STMT__SIMPL_STATEMENT:
+        return simplStatement != null;
+      case GoPackage.IF_STMT__EXPR:
+        return expr != null;
+      case GoPackage.IF_STMT__CODE_BLOCK:
+        return codeBlock != null;
+      case GoPackage.IF_STMT__IF_STATEMENT:
+        return ifStatement != null;
+      case GoPackage.IF_STMT__CODE_BLOCK_IF:
+        return codeBlockIf != null;
     }
     return super.eIsSet(featureID);
   }

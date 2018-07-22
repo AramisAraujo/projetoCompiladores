@@ -23,7 +23,8 @@ import org.xtext.go.statement;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.labeledStmtImpl#getStatement <em>Statement</em>}</li>
+ *   <li>{@link org.xtext.go.impl.labeledStmtImpl#getLabel <em>Label</em>}</li>
+ *   <li>{@link org.xtext.go.impl.labeledStmtImpl#getStmt <em>Stmt</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,14 +33,34 @@ import org.xtext.go.statement;
 public class labeledStmtImpl extends MinimalEObjectImpl.Container implements labeledStmt
 {
   /**
-   * The cached value of the '{@link #getStatement() <em>Statement</em>}' containment reference.
+   * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStatement()
+   * @see #getLabel()
    * @generated
    * @ordered
    */
-  protected statement statement;
+  protected static final String LABEL_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLabel()
+   * @generated
+   * @ordered
+   */
+  protected String label = LABEL_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getStmt() <em>Stmt</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStmt()
+   * @generated
+   * @ordered
+   */
+  protected statement stmt;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,9 +88,9 @@ public class labeledStmtImpl extends MinimalEObjectImpl.Container implements lab
    * <!-- end-user-doc -->
    * @generated
    */
-  public statement getStatement()
+  public String getLabel()
   {
-    return statement;
+    return label;
   }
 
   /**
@@ -77,13 +98,36 @@ public class labeledStmtImpl extends MinimalEObjectImpl.Container implements lab
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetStatement(statement newStatement, NotificationChain msgs)
+  public void setLabel(String newLabel)
   {
-    statement oldStatement = statement;
-    statement = newStatement;
+    String oldLabel = label;
+    label = newLabel;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.LABELED_STMT__LABEL, oldLabel, label));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public statement getStmt()
+  {
+    return stmt;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetStmt(statement newStmt, NotificationChain msgs)
+  {
+    statement oldStmt = stmt;
+    stmt = newStmt;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.LABELED_STMT__STATEMENT, oldStatement, newStatement);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.LABELED_STMT__STMT, oldStmt, newStmt);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -94,20 +138,20 @@ public class labeledStmtImpl extends MinimalEObjectImpl.Container implements lab
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setStatement(statement newStatement)
+  public void setStmt(statement newStmt)
   {
-    if (newStatement != statement)
+    if (newStmt != stmt)
     {
       NotificationChain msgs = null;
-      if (statement != null)
-        msgs = ((InternalEObject)statement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.LABELED_STMT__STATEMENT, null, msgs);
-      if (newStatement != null)
-        msgs = ((InternalEObject)newStatement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.LABELED_STMT__STATEMENT, null, msgs);
-      msgs = basicSetStatement(newStatement, msgs);
+      if (stmt != null)
+        msgs = ((InternalEObject)stmt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.LABELED_STMT__STMT, null, msgs);
+      if (newStmt != null)
+        msgs = ((InternalEObject)newStmt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.LABELED_STMT__STMT, null, msgs);
+      msgs = basicSetStmt(newStmt, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.LABELED_STMT__STATEMENT, newStatement, newStatement));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.LABELED_STMT__STMT, newStmt, newStmt));
   }
 
   /**
@@ -120,8 +164,8 @@ public class labeledStmtImpl extends MinimalEObjectImpl.Container implements lab
   {
     switch (featureID)
     {
-      case GoPackage.LABELED_STMT__STATEMENT:
-        return basicSetStatement(null, msgs);
+      case GoPackage.LABELED_STMT__STMT:
+        return basicSetStmt(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +180,10 @@ public class labeledStmtImpl extends MinimalEObjectImpl.Container implements lab
   {
     switch (featureID)
     {
-      case GoPackage.LABELED_STMT__STATEMENT:
-        return getStatement();
+      case GoPackage.LABELED_STMT__LABEL:
+        return getLabel();
+      case GoPackage.LABELED_STMT__STMT:
+        return getStmt();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -152,8 +198,11 @@ public class labeledStmtImpl extends MinimalEObjectImpl.Container implements lab
   {
     switch (featureID)
     {
-      case GoPackage.LABELED_STMT__STATEMENT:
-        setStatement((statement)newValue);
+      case GoPackage.LABELED_STMT__LABEL:
+        setLabel((String)newValue);
+        return;
+      case GoPackage.LABELED_STMT__STMT:
+        setStmt((statement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +218,11 @@ public class labeledStmtImpl extends MinimalEObjectImpl.Container implements lab
   {
     switch (featureID)
     {
-      case GoPackage.LABELED_STMT__STATEMENT:
-        setStatement((statement)null);
+      case GoPackage.LABELED_STMT__LABEL:
+        setLabel(LABEL_EDEFAULT);
+        return;
+      case GoPackage.LABELED_STMT__STMT:
+        setStmt((statement)null);
         return;
     }
     super.eUnset(featureID);
@@ -186,10 +238,29 @@ public class labeledStmtImpl extends MinimalEObjectImpl.Container implements lab
   {
     switch (featureID)
     {
-      case GoPackage.LABELED_STMT__STATEMENT:
-        return statement != null;
+      case GoPackage.LABELED_STMT__LABEL:
+        return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
+      case GoPackage.LABELED_STMT__STMT:
+        return stmt != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (label: ");
+    result.append(label);
+    result.append(')');
+    return result.toString();
   }
 
 } //labeledStmtImpl

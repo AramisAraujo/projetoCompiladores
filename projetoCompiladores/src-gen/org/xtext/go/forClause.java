@@ -13,8 +13,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.forClause#getSimpleStmt <em>Simple Stmt</em>}</li>
- *   <li>{@link org.xtext.go.forClause#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.xtext.go.forClause#getStatement1 <em>Statement1</em>}</li>
+ *   <li>{@link org.xtext.go.forClause#getExpr <em>Expr</em>}</li>
+ *   <li>{@link org.xtext.go.forClause#getStatement2 <em>Statement2</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,55 +26,81 @@ import org.eclipse.emf.ecore.EObject;
 public interface forClause extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Simple Stmt</b></em>' containment reference.
+   * Returns the value of the '<em><b>Statement1</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Simple Stmt</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Statement1</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Simple Stmt</em>' containment reference.
-   * @see #setSimpleStmt(simpleStmt)
-   * @see org.xtext.go.GoPackage#getforClause_SimpleStmt()
+   * @return the value of the '<em>Statement1</em>' containment reference.
+   * @see #setStatement1(simpleStmt)
+   * @see org.xtext.go.GoPackage#getforClause_Statement1()
    * @model containment="true"
    * @generated
    */
-  simpleStmt getSimpleStmt();
+  simpleStmt getStatement1();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.forClause#getSimpleStmt <em>Simple Stmt</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.forClause#getStatement1 <em>Statement1</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Simple Stmt</em>' containment reference.
-   * @see #getSimpleStmt()
+   * @param value the new value of the '<em>Statement1</em>' containment reference.
+   * @see #getStatement1()
    * @generated
    */
-  void setSimpleStmt(simpleStmt value);
+  void setStatement1(simpleStmt value);
 
   /**
-   * Returns the value of the '<em><b>Expression</b></em>' containment reference.
+   * Returns the value of the '<em><b>Expr</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Expression</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Expr</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expression</em>' containment reference.
-   * @see #setExpression(expression)
-   * @see org.xtext.go.GoPackage#getforClause_Expression()
+   * @return the value of the '<em>Expr</em>' containment reference.
+   * @see #setExpr(expression)
+   * @see org.xtext.go.GoPackage#getforClause_Expr()
    * @model containment="true"
    * @generated
    */
-  expression getExpression();
+  expression getExpr();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.forClause#getExpression <em>Expression</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.forClause#getExpr <em>Expr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expression</em>' containment reference.
-   * @see #getExpression()
+   * @param value the new value of the '<em>Expr</em>' containment reference.
+   * @see #getExpr()
    * @generated
    */
-  void setExpression(expression value);
+  void setExpr(expression value);
+
+  /**
+   * Returns the value of the '<em><b>Statement2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Statement2</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Statement2</em>' containment reference.
+   * @see #setStatement2(simpleStmt)
+   * @see org.xtext.go.GoPackage#getforClause_Statement2()
+   * @model containment="true"
+   * @generated
+   */
+  simpleStmt getStatement2();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.forClause#getStatement2 <em>Statement2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Statement2</em>' containment reference.
+   * @see #getStatement2()
+   * @generated
+   */
+  void setStatement2(simpleStmt value);
 
 } // forClause

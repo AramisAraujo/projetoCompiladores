@@ -3,6 +3,8 @@
  */
 package org.xtext.go;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.varDecl#getVarSpec <em>Var Spec</em>}</li>
+ *   <li>{@link org.xtext.go.varDecl#getSpecs <em>Specs</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,29 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface varDecl extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Var Spec</b></em>' containment reference.
+   * Returns the value of the '<em><b>Specs</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.go.varSpec}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Var Spec</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Specs</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Var Spec</em>' containment reference.
-   * @see #setVarSpec(varSpec)
-   * @see org.xtext.go.GoPackage#getvarDecl_VarSpec()
+   * @return the value of the '<em>Specs</em>' containment reference list.
+   * @see org.xtext.go.GoPackage#getvarDecl_Specs()
    * @model containment="true"
    * @generated
    */
-  varSpec getVarSpec();
-
-  /**
-   * Sets the value of the '{@link org.xtext.go.varDecl#getVarSpec <em>Var Spec</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var Spec</em>' containment reference.
-   * @see #getVarSpec()
-   * @generated
-   */
-  void setVarSpec(varSpec value);
+  EList<varSpec> getSpecs();
 
 } // varDecl

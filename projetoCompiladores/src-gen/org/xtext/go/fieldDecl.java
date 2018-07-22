@@ -26,30 +26,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface fieldDecl extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Identifier List</b></em>' attribute.
+   * Returns the value of the '<em><b>Identifier List</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Identifier List</em>' attribute isn't clear,
+   * If the meaning of the '<em>Identifier List</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Identifier List</em>' attribute.
-   * @see #setIdentifierList(String)
+   * @return the value of the '<em>Identifier List</em>' containment reference.
+   * @see #setIdentifierList(identifierList)
    * @see org.xtext.go.GoPackage#getfieldDecl_IdentifierList()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getIdentifierList();
+  identifierList getIdentifierList();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.fieldDecl#getIdentifierList <em>Identifier List</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.go.fieldDecl#getIdentifierList <em>Identifier List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Identifier List</em>' attribute.
+   * @param value the new value of the '<em>Identifier List</em>' containment reference.
    * @see #getIdentifierList()
    * @generated
    */
-  void setIdentifierList(String value);
+  void setIdentifierList(identifierList value);
 
   /**
    * Returns the value of the '<em><b>Type</b></em>' containment reference.

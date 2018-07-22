@@ -86,6 +86,11 @@ public class GoAdapterFactory extends AdapterFactoryImpl
         return createsourceFileAdapter();
       }
       @Override
+      public Adapter casepackageClause(packageClause object)
+      {
+        return createpackageClauseAdapter();
+      }
+      @Override
       public Adapter caseimportDecl(importDecl object)
       {
         return createimportDeclAdapter();
@@ -114,6 +119,11 @@ public class GoAdapterFactory extends AdapterFactoryImpl
       public Adapter caseconstSpec(constSpec object)
       {
         return createconstSpecAdapter();
+      }
+      @Override
+      public Adapter caseidentifierList(identifierList object)
+      {
+        return createidentifierListAdapter();
       }
       @Override
       public Adapter caseexpressionList(expressionList object)
@@ -206,6 +216,11 @@ public class GoAdapterFactory extends AdapterFactoryImpl
         return createshortVarDeclAdapter();
       }
       @Override
+      public Adapter caseemptyStmt(emptyStmt object)
+      {
+        return createemptyStmtAdapter();
+      }
+      @Override
       public Adapter caselabeledStmt(labeledStmt object)
       {
         return createlabeledStmtAdapter();
@@ -214,6 +229,26 @@ public class GoAdapterFactory extends AdapterFactoryImpl
       public Adapter casereturnStmt(returnStmt object)
       {
         return createreturnStmtAdapter();
+      }
+      @Override
+      public Adapter casebreakStmt(breakStmt object)
+      {
+        return createbreakStmtAdapter();
+      }
+      @Override
+      public Adapter casecontinueStmt(continueStmt object)
+      {
+        return createcontinueStmtAdapter();
+      }
+      @Override
+      public Adapter casegotoStmt(gotoStmt object)
+      {
+        return creategotoStmtAdapter();
+      }
+      @Override
+      public Adapter casefallthroughStmt(fallthroughStmt object)
+      {
+        return createfallthroughStmtAdapter();
       }
       @Override
       public Adapter casedeferStmt(deferStmt object)
@@ -416,6 +451,11 @@ public class GoAdapterFactory extends AdapterFactoryImpl
         return createoperandNameAdapter();
       }
       @Override
+      public Adapter casequalifiedIdent(qualifiedIdent object)
+      {
+        return createqualifiedIdentAdapter();
+      }
+      @Override
       public Adapter casecompositeLit(compositeLit object)
       {
         return createcompositeLitAdapter();
@@ -504,6 +544,11 @@ public class GoAdapterFactory extends AdapterFactoryImpl
       public Adapter caseprimaryExprArguments(primaryExprArguments object)
       {
         return createprimaryExprArgumentsAdapter();
+      }
+      @Override
+      public Adapter caseselector(selector object)
+      {
+        return createselectorAdapter();
       }
       @Override
       public Adapter caseindex(index object)
@@ -608,6 +653,21 @@ public class GoAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.packageClause <em>package Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.packageClause
+   * @generated
+   */
+  public Adapter createpackageClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.go.importDecl <em>import Decl</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -693,6 +753,21 @@ public class GoAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createconstSpecAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.identifierList <em>identifier List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.identifierList
+   * @generated
+   */
+  public Adapter createidentifierListAdapter()
   {
     return null;
   }
@@ -968,6 +1043,21 @@ public class GoAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.emptyStmt <em>empty Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.emptyStmt
+   * @generated
+   */
+  public Adapter createemptyStmtAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.go.labeledStmt <em>labeled Stmt</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -993,6 +1083,66 @@ public class GoAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createreturnStmtAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.breakStmt <em>break Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.breakStmt
+   * @generated
+   */
+  public Adapter createbreakStmtAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.continueStmt <em>continue Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.continueStmt
+   * @generated
+   */
+  public Adapter createcontinueStmtAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.gotoStmt <em>goto Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.gotoStmt
+   * @generated
+   */
+  public Adapter creategotoStmtAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.fallthroughStmt <em>fallthrough Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.fallthroughStmt
+   * @generated
+   */
+  public Adapter createfallthroughStmtAdapter()
   {
     return null;
   }
@@ -1598,6 +1748,21 @@ public class GoAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.qualifiedIdent <em>qualified Ident</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.qualifiedIdent
+   * @generated
+   */
+  public Adapter createqualifiedIdentAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.go.compositeLit <em>composite Lit</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1863,6 +2028,21 @@ public class GoAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createprimaryExprArgumentsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.go.selector <em>selector</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.go.selector
+   * @generated
+   */
+  public Adapter createselectorAdapter()
   {
     return null;
   }
