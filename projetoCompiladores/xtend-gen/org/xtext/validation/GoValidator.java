@@ -3,6 +3,12 @@
  */
 package org.xtext.validation;
 
+import org.xtext.go.expression;
+import org.xtext.go.expressionMatched;
+import org.xtext.go.ifStmt;
+import org.xtext.go.primaryExpr;
+import org.xtext.go.simpleStmt;
+import org.xtext.go.unaryExpr;
 import org.xtext.validation.AbstractGoValidator;
 
 /**
@@ -12,4 +18,34 @@ import org.xtext.validation.AbstractGoValidator;
  */
 @SuppressWarnings("all")
 public class GoValidator extends AbstractGoValidator {
+  /* @Check
+   */public Object checkIf(final ifStmt stmt) {
+    throw new Error("Unresolved compilation problems:"
+      + "\n!== cannot be resolved."
+      + "\n!== cannot be resolved.");
+  }
+  
+  public Object checkExpression(final expression expression) {
+    throw new Error("Unresolved compilation problems:"
+      + "\n!== cannot be resolved."
+      + "\n!== cannot be resolved.");
+  }
+  
+  public Object checkMatched(final expressionMatched matched) {
+    throw new Error("Unresolved compilation problems:"
+      + "\n!== cannot be resolved.");
+  }
+  
+  public Object checkUnary(final unaryExpr expr) {
+    throw new Error("Unresolved compilation problems:"
+      + "\n!== cannot be resolved.");
+  }
+  
+  public Object checkPrimary(final primaryExpr expr) {
+    return null;
+  }
+  
+  public Object checkSimple(final simpleStmt stmt) {
+    return null;
+  }
 }
