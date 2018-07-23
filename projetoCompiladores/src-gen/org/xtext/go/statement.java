@@ -13,7 +13,21 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.statement#getContent <em>Content</em>}</li>
+ *   <li>{@link org.xtext.go.statement#getDeclaration <em>Declaration</em>}</li>
+ *   <li>{@link org.xtext.go.statement#getLabeledStmt <em>Labeled Stmt</em>}</li>
+ *   <li>{@link org.xtext.go.statement#getSimpleStmt <em>Simple Stmt</em>}</li>
+ *   <li>{@link org.xtext.go.statement#getGoStmt <em>Go Stmt</em>}</li>
+ *   <li>{@link org.xtext.go.statement#getReturnStmt <em>Return Stmt</em>}</li>
+ *   <li>{@link org.xtext.go.statement#getBreakStmt <em>Break Stmt</em>}</li>
+ *   <li>{@link org.xtext.go.statement#getContinueStmt <em>Continue Stmt</em>}</li>
+ *   <li>{@link org.xtext.go.statement#getGotoStmt <em>Goto Stmt</em>}</li>
+ *   <li>{@link org.xtext.go.statement#getFallthroughStmt <em>Fallthrough Stmt</em>}</li>
+ *   <li>{@link org.xtext.go.statement#getBlock <em>Block</em>}</li>
+ *   <li>{@link org.xtext.go.statement#getIfStmt <em>If Stmt</em>}</li>
+ *   <li>{@link org.xtext.go.statement#getSwitchStmt <em>Switch Stmt</em>}</li>
+ *   <li>{@link org.xtext.go.statement#getSelectStmt <em>Select Stmt</em>}</li>
+ *   <li>{@link org.xtext.go.statement#getForStmt <em>For Stmt</em>}</li>
+ *   <li>{@link org.xtext.go.statement#getDeferStmt <em>Defer Stmt</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,29 +38,393 @@ import org.eclipse.emf.ecore.EObject;
 public interface statement extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Content</b></em>' containment reference.
+   * Returns the value of the '<em><b>Declaration</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Content</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Declaration</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Content</em>' containment reference.
-   * @see #setContent(EObject)
-   * @see org.xtext.go.GoPackage#getstatement_Content()
+   * @return the value of the '<em>Declaration</em>' containment reference.
+   * @see #setDeclaration(declaration)
+   * @see org.xtext.go.GoPackage#getstatement_Declaration()
    * @model containment="true"
    * @generated
    */
-  EObject getContent();
+  declaration getDeclaration();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.statement#getContent <em>Content</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.statement#getDeclaration <em>Declaration</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Content</em>' containment reference.
-   * @see #getContent()
+   * @param value the new value of the '<em>Declaration</em>' containment reference.
+   * @see #getDeclaration()
    * @generated
    */
-  void setContent(EObject value);
+  void setDeclaration(declaration value);
+
+  /**
+   * Returns the value of the '<em><b>Labeled Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Labeled Stmt</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Labeled Stmt</em>' containment reference.
+   * @see #setLabeledStmt(labeledStmt)
+   * @see org.xtext.go.GoPackage#getstatement_LabeledStmt()
+   * @model containment="true"
+   * @generated
+   */
+  labeledStmt getLabeledStmt();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.statement#getLabeledStmt <em>Labeled Stmt</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Labeled Stmt</em>' containment reference.
+   * @see #getLabeledStmt()
+   * @generated
+   */
+  void setLabeledStmt(labeledStmt value);
+
+  /**
+   * Returns the value of the '<em><b>Simple Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Simple Stmt</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Simple Stmt</em>' containment reference.
+   * @see #setSimpleStmt(simpleStmt)
+   * @see org.xtext.go.GoPackage#getstatement_SimpleStmt()
+   * @model containment="true"
+   * @generated
+   */
+  simpleStmt getSimpleStmt();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.statement#getSimpleStmt <em>Simple Stmt</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Simple Stmt</em>' containment reference.
+   * @see #getSimpleStmt()
+   * @generated
+   */
+  void setSimpleStmt(simpleStmt value);
+
+  /**
+   * Returns the value of the '<em><b>Go Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Go Stmt</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Go Stmt</em>' containment reference.
+   * @see #setGoStmt(goStmt)
+   * @see org.xtext.go.GoPackage#getstatement_GoStmt()
+   * @model containment="true"
+   * @generated
+   */
+  goStmt getGoStmt();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.statement#getGoStmt <em>Go Stmt</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Go Stmt</em>' containment reference.
+   * @see #getGoStmt()
+   * @generated
+   */
+  void setGoStmt(goStmt value);
+
+  /**
+   * Returns the value of the '<em><b>Return Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Return Stmt</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Return Stmt</em>' containment reference.
+   * @see #setReturnStmt(returnStmt)
+   * @see org.xtext.go.GoPackage#getstatement_ReturnStmt()
+   * @model containment="true"
+   * @generated
+   */
+  returnStmt getReturnStmt();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.statement#getReturnStmt <em>Return Stmt</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Return Stmt</em>' containment reference.
+   * @see #getReturnStmt()
+   * @generated
+   */
+  void setReturnStmt(returnStmt value);
+
+  /**
+   * Returns the value of the '<em><b>Break Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Break Stmt</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Break Stmt</em>' containment reference.
+   * @see #setBreakStmt(breakStmt)
+   * @see org.xtext.go.GoPackage#getstatement_BreakStmt()
+   * @model containment="true"
+   * @generated
+   */
+  breakStmt getBreakStmt();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.statement#getBreakStmt <em>Break Stmt</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Break Stmt</em>' containment reference.
+   * @see #getBreakStmt()
+   * @generated
+   */
+  void setBreakStmt(breakStmt value);
+
+  /**
+   * Returns the value of the '<em><b>Continue Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Continue Stmt</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Continue Stmt</em>' containment reference.
+   * @see #setContinueStmt(continueStmt)
+   * @see org.xtext.go.GoPackage#getstatement_ContinueStmt()
+   * @model containment="true"
+   * @generated
+   */
+  continueStmt getContinueStmt();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.statement#getContinueStmt <em>Continue Stmt</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Continue Stmt</em>' containment reference.
+   * @see #getContinueStmt()
+   * @generated
+   */
+  void setContinueStmt(continueStmt value);
+
+  /**
+   * Returns the value of the '<em><b>Goto Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Goto Stmt</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Goto Stmt</em>' containment reference.
+   * @see #setGotoStmt(gotoStmt)
+   * @see org.xtext.go.GoPackage#getstatement_GotoStmt()
+   * @model containment="true"
+   * @generated
+   */
+  gotoStmt getGotoStmt();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.statement#getGotoStmt <em>Goto Stmt</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Goto Stmt</em>' containment reference.
+   * @see #getGotoStmt()
+   * @generated
+   */
+  void setGotoStmt(gotoStmt value);
+
+  /**
+   * Returns the value of the '<em><b>Fallthrough Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Fallthrough Stmt</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Fallthrough Stmt</em>' containment reference.
+   * @see #setFallthroughStmt(fallthroughStmt)
+   * @see org.xtext.go.GoPackage#getstatement_FallthroughStmt()
+   * @model containment="true"
+   * @generated
+   */
+  fallthroughStmt getFallthroughStmt();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.statement#getFallthroughStmt <em>Fallthrough Stmt</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Fallthrough Stmt</em>' containment reference.
+   * @see #getFallthroughStmt()
+   * @generated
+   */
+  void setFallthroughStmt(fallthroughStmt value);
+
+  /**
+   * Returns the value of the '<em><b>Block</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Block</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Block</em>' containment reference.
+   * @see #setBlock(block)
+   * @see org.xtext.go.GoPackage#getstatement_Block()
+   * @model containment="true"
+   * @generated
+   */
+  block getBlock();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.statement#getBlock <em>Block</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Block</em>' containment reference.
+   * @see #getBlock()
+   * @generated
+   */
+  void setBlock(block value);
+
+  /**
+   * Returns the value of the '<em><b>If Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>If Stmt</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>If Stmt</em>' containment reference.
+   * @see #setIfStmt(ifStmt)
+   * @see org.xtext.go.GoPackage#getstatement_IfStmt()
+   * @model containment="true"
+   * @generated
+   */
+  ifStmt getIfStmt();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.statement#getIfStmt <em>If Stmt</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>If Stmt</em>' containment reference.
+   * @see #getIfStmt()
+   * @generated
+   */
+  void setIfStmt(ifStmt value);
+
+  /**
+   * Returns the value of the '<em><b>Switch Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Switch Stmt</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Switch Stmt</em>' containment reference.
+   * @see #setSwitchStmt(switchStmt)
+   * @see org.xtext.go.GoPackage#getstatement_SwitchStmt()
+   * @model containment="true"
+   * @generated
+   */
+  switchStmt getSwitchStmt();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.statement#getSwitchStmt <em>Switch Stmt</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Switch Stmt</em>' containment reference.
+   * @see #getSwitchStmt()
+   * @generated
+   */
+  void setSwitchStmt(switchStmt value);
+
+  /**
+   * Returns the value of the '<em><b>Select Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Select Stmt</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Select Stmt</em>' containment reference.
+   * @see #setSelectStmt(selectStmt)
+   * @see org.xtext.go.GoPackage#getstatement_SelectStmt()
+   * @model containment="true"
+   * @generated
+   */
+  selectStmt getSelectStmt();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.statement#getSelectStmt <em>Select Stmt</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Select Stmt</em>' containment reference.
+   * @see #getSelectStmt()
+   * @generated
+   */
+  void setSelectStmt(selectStmt value);
+
+  /**
+   * Returns the value of the '<em><b>For Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>For Stmt</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>For Stmt</em>' containment reference.
+   * @see #setForStmt(forStmt)
+   * @see org.xtext.go.GoPackage#getstatement_ForStmt()
+   * @model containment="true"
+   * @generated
+   */
+  forStmt getForStmt();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.statement#getForStmt <em>For Stmt</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>For Stmt</em>' containment reference.
+   * @see #getForStmt()
+   * @generated
+   */
+  void setForStmt(forStmt value);
+
+  /**
+   * Returns the value of the '<em><b>Defer Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Defer Stmt</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Defer Stmt</em>' containment reference.
+   * @see #setDeferStmt(deferStmt)
+   * @see org.xtext.go.GoPackage#getstatement_DeferStmt()
+   * @model containment="true"
+   * @generated
+   */
+  deferStmt getDeferStmt();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.statement#getDeferStmt <em>Defer Stmt</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Defer Stmt</em>' containment reference.
+   * @see #getDeferStmt()
+   * @generated
+   */
+  void setDeferStmt(deferStmt value);
 
 } // statement

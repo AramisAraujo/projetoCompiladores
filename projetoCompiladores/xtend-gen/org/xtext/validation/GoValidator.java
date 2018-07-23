@@ -63,7 +63,7 @@ public class GoValidator extends AbstractGoValidator {
     expression _expression = matched.getExpression();
     boolean _tripleNotEquals = (_expression != null);
     if (_tripleNotEquals) {
-      _xifexpression = null;
+      _xifexpression = this.checkExpression(matched.getExpression());
     }
     return _xifexpression;
   }
@@ -79,7 +79,9 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   public Object checkPrimary(final primaryExpr expr) {
-    return null;
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method getContent() is undefined for the type primaryExpr"
+      + "\n!== cannot be resolved");
   }
   
   public Object checkSimple(final simpleStmt stmt) {

@@ -13,7 +13,13 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.go.primaryExpr#getContent <em>Content</em>}</li>
+ *   <li>{@link org.xtext.go.primaryExpr#getOperand <em>Operand</em>}</li>
+ *   <li>{@link org.xtext.go.primaryExpr#getConversion <em>Conversion</em>}</li>
+ *   <li>{@link org.xtext.go.primaryExpr#getPrimaryExprSelector <em>Primary Expr Selector</em>}</li>
+ *   <li>{@link org.xtext.go.primaryExpr#getPrimaryExprIndex <em>Primary Expr Index</em>}</li>
+ *   <li>{@link org.xtext.go.primaryExpr#getPrimaryExprSlice <em>Primary Expr Slice</em>}</li>
+ *   <li>{@link org.xtext.go.primaryExpr#getPrimaryExprTypeAssertion <em>Primary Expr Type Assertion</em>}</li>
+ *   <li>{@link org.xtext.go.primaryExpr#getPrimaryExprArguments <em>Primary Expr Arguments</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,29 +30,185 @@ import org.eclipse.emf.ecore.EObject;
 public interface primaryExpr extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Content</b></em>' containment reference.
+   * Returns the value of the '<em><b>Operand</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Content</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Operand</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Content</em>' containment reference.
-   * @see #setContent(EObject)
-   * @see org.xtext.go.GoPackage#getprimaryExpr_Content()
+   * @return the value of the '<em>Operand</em>' containment reference.
+   * @see #setOperand(operand)
+   * @see org.xtext.go.GoPackage#getprimaryExpr_Operand()
    * @model containment="true"
    * @generated
    */
-  EObject getContent();
+  operand getOperand();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.primaryExpr#getContent <em>Content</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.go.primaryExpr#getOperand <em>Operand</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Content</em>' containment reference.
-   * @see #getContent()
+   * @param value the new value of the '<em>Operand</em>' containment reference.
+   * @see #getOperand()
    * @generated
    */
-  void setContent(EObject value);
+  void setOperand(operand value);
+
+  /**
+   * Returns the value of the '<em><b>Conversion</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Conversion</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Conversion</em>' containment reference.
+   * @see #setConversion(conversion)
+   * @see org.xtext.go.GoPackage#getprimaryExpr_Conversion()
+   * @model containment="true"
+   * @generated
+   */
+  conversion getConversion();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.primaryExpr#getConversion <em>Conversion</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Conversion</em>' containment reference.
+   * @see #getConversion()
+   * @generated
+   */
+  void setConversion(conversion value);
+
+  /**
+   * Returns the value of the '<em><b>Primary Expr Selector</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Primary Expr Selector</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Primary Expr Selector</em>' containment reference.
+   * @see #setPrimaryExprSelector(primaryExprSelector)
+   * @see org.xtext.go.GoPackage#getprimaryExpr_PrimaryExprSelector()
+   * @model containment="true"
+   * @generated
+   */
+  primaryExprSelector getPrimaryExprSelector();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.primaryExpr#getPrimaryExprSelector <em>Primary Expr Selector</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Primary Expr Selector</em>' containment reference.
+   * @see #getPrimaryExprSelector()
+   * @generated
+   */
+  void setPrimaryExprSelector(primaryExprSelector value);
+
+  /**
+   * Returns the value of the '<em><b>Primary Expr Index</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Primary Expr Index</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Primary Expr Index</em>' containment reference.
+   * @see #setPrimaryExprIndex(primaryExprIndex)
+   * @see org.xtext.go.GoPackage#getprimaryExpr_PrimaryExprIndex()
+   * @model containment="true"
+   * @generated
+   */
+  primaryExprIndex getPrimaryExprIndex();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.primaryExpr#getPrimaryExprIndex <em>Primary Expr Index</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Primary Expr Index</em>' containment reference.
+   * @see #getPrimaryExprIndex()
+   * @generated
+   */
+  void setPrimaryExprIndex(primaryExprIndex value);
+
+  /**
+   * Returns the value of the '<em><b>Primary Expr Slice</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Primary Expr Slice</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Primary Expr Slice</em>' containment reference.
+   * @see #setPrimaryExprSlice(primaryExprSlice)
+   * @see org.xtext.go.GoPackage#getprimaryExpr_PrimaryExprSlice()
+   * @model containment="true"
+   * @generated
+   */
+  primaryExprSlice getPrimaryExprSlice();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.primaryExpr#getPrimaryExprSlice <em>Primary Expr Slice</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Primary Expr Slice</em>' containment reference.
+   * @see #getPrimaryExprSlice()
+   * @generated
+   */
+  void setPrimaryExprSlice(primaryExprSlice value);
+
+  /**
+   * Returns the value of the '<em><b>Primary Expr Type Assertion</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Primary Expr Type Assertion</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Primary Expr Type Assertion</em>' containment reference.
+   * @see #setPrimaryExprTypeAssertion(primaryExprTypeAssertion)
+   * @see org.xtext.go.GoPackage#getprimaryExpr_PrimaryExprTypeAssertion()
+   * @model containment="true"
+   * @generated
+   */
+  primaryExprTypeAssertion getPrimaryExprTypeAssertion();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.primaryExpr#getPrimaryExprTypeAssertion <em>Primary Expr Type Assertion</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Primary Expr Type Assertion</em>' containment reference.
+   * @see #getPrimaryExprTypeAssertion()
+   * @generated
+   */
+  void setPrimaryExprTypeAssertion(primaryExprTypeAssertion value);
+
+  /**
+   * Returns the value of the '<em><b>Primary Expr Arguments</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Primary Expr Arguments</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Primary Expr Arguments</em>' containment reference.
+   * @see #setPrimaryExprArguments(primaryExprArguments)
+   * @see org.xtext.go.GoPackage#getprimaryExpr_PrimaryExprArguments()
+   * @model containment="true"
+   * @generated
+   */
+  primaryExprArguments getPrimaryExprArguments();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.primaryExpr#getPrimaryExprArguments <em>Primary Expr Arguments</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Primary Expr Arguments</em>' containment reference.
+   * @see #getPrimaryExprArguments()
+   * @generated
+   */
+  void setPrimaryExprArguments(primaryExprArguments value);
 
 } // primaryExpr

@@ -105,21 +105,21 @@ statementList:
 	( statements+=statement eos )*;
 
 statement: 
-	content=declaration
-    | content=labeledStmt
-    | content=simpleStmt
-    | content=goStmt
-    | content=returnStmt
-    | content=breakStmt
-    | content=continueStmt
-    | content=gotoStmt
-    | content=fallthroughStmt
-    | content=block
-    | content=ifStmt
-    | content=switchStmt
-    | content=selectStmt
-    | content=forStmt
-    | content=deferStmt;
+	declaration=declaration
+    | labeledStmt=labeledStmt
+    | simpleStmt=simpleStmt
+    | goStmt=goStmt
+    | returnStmt=returnStmt
+    | breakStmt=breakStmt
+    | continueStmt=continueStmt
+    | gotoStmt=gotoStmt
+    | fallthroughStmt=fallthroughStmt
+    | block=block
+    | ifStmt=ifStmt
+    | switchStmt=switchStmt
+    | selectStmt=selectStmt
+    | forStmt=forStmt
+    | deferStmt=deferStmt;
 
 //SimpleStmt = EmptyStmt | ExpressionStmt | SendStmt | IncDecStmt | Assignment | ShortVarDecl .
 simpleStmt:

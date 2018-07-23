@@ -773,13 +773,139 @@ public interface GoPackage extends EPackage
   int STATEMENT = 21;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' containment reference.
+   * The feature id for the '<em><b>Declaration</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATEMENT__CONTENT = 0;
+  int STATEMENT__DECLARATION = 0;
+
+  /**
+   * The feature id for the '<em><b>Labeled Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__LABELED_STMT = 1;
+
+  /**
+   * The feature id for the '<em><b>Simple Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__SIMPLE_STMT = 2;
+
+  /**
+   * The feature id for the '<em><b>Go Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__GO_STMT = 3;
+
+  /**
+   * The feature id for the '<em><b>Return Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__RETURN_STMT = 4;
+
+  /**
+   * The feature id for the '<em><b>Break Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__BREAK_STMT = 5;
+
+  /**
+   * The feature id for the '<em><b>Continue Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__CONTINUE_STMT = 6;
+
+  /**
+   * The feature id for the '<em><b>Goto Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__GOTO_STMT = 7;
+
+  /**
+   * The feature id for the '<em><b>Fallthrough Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__FALLTHROUGH_STMT = 8;
+
+  /**
+   * The feature id for the '<em><b>Block</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__BLOCK = 9;
+
+  /**
+   * The feature id for the '<em><b>If Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__IF_STMT = 10;
+
+  /**
+   * The feature id for the '<em><b>Switch Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__SWITCH_STMT = 11;
+
+  /**
+   * The feature id for the '<em><b>Select Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__SELECT_STMT = 12;
+
+  /**
+   * The feature id for the '<em><b>For Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__FOR_STMT = 13;
+
+  /**
+   * The feature id for the '<em><b>Defer Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__DEFER_STMT = 14;
 
   /**
    * The number of structural features of the '<em>statement</em>' class.
@@ -788,7 +914,7 @@ public interface GoPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT_FEATURE_COUNT = 1;
+  int STATEMENT_FEATURE_COUNT = 15;
 
   /**
    * The meta object id for the '{@link org.xtext.go.impl.simpleStmtImpl <em>simple Stmt</em>}' class.
@@ -1996,13 +2122,22 @@ public interface GoPackage extends EPackage
   int TYPE_LIT__LIT = 0;
 
   /**
+   * The feature id for the '<em><b>Content Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_LIT__CONTENT_TYPE = 1;
+
+  /**
    * The number of structural features of the '<em>type Lit</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_LIT_FEATURE_COUNT = 1;
+  int TYPE_LIT_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.go.impl.arrayTypeImpl <em>array Type</em>}' class.
@@ -3008,13 +3143,67 @@ public interface GoPackage extends EPackage
   int PRIMARY_EXPR = 87;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' containment reference.
+   * The feature id for the '<em><b>Operand</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRIMARY_EXPR__CONTENT = 0;
+  int PRIMARY_EXPR__OPERAND = 0;
+
+  /**
+   * The feature id for the '<em><b>Conversion</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR__CONVERSION = 1;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr Selector</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR__PRIMARY_EXPR_SELECTOR = 2;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr Index</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR__PRIMARY_EXPR_INDEX = 3;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr Slice</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR__PRIMARY_EXPR_SLICE = 4;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr Type Assertion</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR__PRIMARY_EXPR_TYPE_ASSERTION = 5;
+
+  /**
+   * The feature id for the '<em><b>Primary Expr Arguments</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR__PRIMARY_EXPR_ARGUMENTS = 6;
 
   /**
    * The number of structural features of the '<em>primary Expr</em>' class.
@@ -3023,7 +3212,7 @@ public interface GoPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PRIMARY_EXPR_FEATURE_COUNT = 1;
+  int PRIMARY_EXPR_FEATURE_COUNT = 7;
 
   /**
    * The meta object id for the '{@link org.xtext.go.impl.primaryExprStuffImpl <em>primary Expr Stuff</em>}' class.
@@ -3036,13 +3225,49 @@ public interface GoPackage extends EPackage
   int PRIMARY_EXPR_STUFF = 88;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' containment reference.
+   * The feature id for the '<em><b>Selector</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRIMARY_EXPR_STUFF__CONTENT = 0;
+  int PRIMARY_EXPR_STUFF__SELECTOR = 0;
+
+  /**
+   * The feature id for the '<em><b>Index</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_STUFF__INDEX = 1;
+
+  /**
+   * The feature id for the '<em><b>Slice</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_STUFF__SLICE = 2;
+
+  /**
+   * The feature id for the '<em><b>Type Assertion</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_STUFF__TYPE_ASSERTION = 3;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPR_STUFF__ARGUMENTS = 4;
 
   /**
    * The number of structural features of the '<em>primary Expr Stuff</em>' class.
@@ -3051,7 +3276,7 @@ public interface GoPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PRIMARY_EXPR_STUFF_FEATURE_COUNT = 1;
+  int PRIMARY_EXPR_STUFF_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link org.xtext.go.impl.primaryExprSelectorImpl <em>primary Expr Selector</em>}' class.
@@ -4205,15 +4430,169 @@ public interface GoPackage extends EPackage
   EClass getstatement();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getDeclaration <em>Declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Content</em>'.
-   * @see org.xtext.go.statement#getContent()
+   * @return the meta object for the containment reference '<em>Declaration</em>'.
+   * @see org.xtext.go.statement#getDeclaration()
    * @see #getstatement()
    * @generated
    */
-  EReference getstatement_Content();
+  EReference getstatement_Declaration();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getLabeledStmt <em>Labeled Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Labeled Stmt</em>'.
+   * @see org.xtext.go.statement#getLabeledStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_LabeledStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getSimpleStmt <em>Simple Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Simple Stmt</em>'.
+   * @see org.xtext.go.statement#getSimpleStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_SimpleStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getGoStmt <em>Go Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Go Stmt</em>'.
+   * @see org.xtext.go.statement#getGoStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_GoStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getReturnStmt <em>Return Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Return Stmt</em>'.
+   * @see org.xtext.go.statement#getReturnStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_ReturnStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getBreakStmt <em>Break Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Break Stmt</em>'.
+   * @see org.xtext.go.statement#getBreakStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_BreakStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getContinueStmt <em>Continue Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Continue Stmt</em>'.
+   * @see org.xtext.go.statement#getContinueStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_ContinueStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getGotoStmt <em>Goto Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Goto Stmt</em>'.
+   * @see org.xtext.go.statement#getGotoStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_GotoStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getFallthroughStmt <em>Fallthrough Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Fallthrough Stmt</em>'.
+   * @see org.xtext.go.statement#getFallthroughStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_FallthroughStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getBlock <em>Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Block</em>'.
+   * @see org.xtext.go.statement#getBlock()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_Block();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getIfStmt <em>If Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>If Stmt</em>'.
+   * @see org.xtext.go.statement#getIfStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_IfStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getSwitchStmt <em>Switch Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Switch Stmt</em>'.
+   * @see org.xtext.go.statement#getSwitchStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_SwitchStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getSelectStmt <em>Select Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Select Stmt</em>'.
+   * @see org.xtext.go.statement#getSelectStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_SelectStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getForStmt <em>For Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>For Stmt</em>'.
+   * @see org.xtext.go.statement#getForStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_ForStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.statement#getDeferStmt <em>Defer Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Defer Stmt</em>'.
+   * @see org.xtext.go.statement#getDeferStmt()
+   * @see #getstatement()
+   * @generated
+   */
+  EReference getstatement_DeferStmt();
 
   /**
    * Returns the meta object for class '{@link org.xtext.go.simpleStmt <em>simple Stmt</em>}'.
@@ -5237,6 +5616,17 @@ public interface GoPackage extends EPackage
   EReference gettypeLit_Lit();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.typeLit#getContentType <em>Content Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Content Type</em>'.
+   * @see org.xtext.go.typeLit#getContentType()
+   * @see #gettypeLit()
+   * @generated
+   */
+  EAttribute gettypeLit_ContentType();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.go.arrayType <em>array Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -6064,15 +6454,81 @@ public interface GoPackage extends EPackage
   EClass getprimaryExpr();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExpr#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExpr#getOperand <em>Operand</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Content</em>'.
-   * @see org.xtext.go.primaryExpr#getContent()
+   * @return the meta object for the containment reference '<em>Operand</em>'.
+   * @see org.xtext.go.primaryExpr#getOperand()
    * @see #getprimaryExpr()
    * @generated
    */
-  EReference getprimaryExpr_Content();
+  EReference getprimaryExpr_Operand();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExpr#getConversion <em>Conversion</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Conversion</em>'.
+   * @see org.xtext.go.primaryExpr#getConversion()
+   * @see #getprimaryExpr()
+   * @generated
+   */
+  EReference getprimaryExpr_Conversion();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExpr#getPrimaryExprSelector <em>Primary Expr Selector</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr Selector</em>'.
+   * @see org.xtext.go.primaryExpr#getPrimaryExprSelector()
+   * @see #getprimaryExpr()
+   * @generated
+   */
+  EReference getprimaryExpr_PrimaryExprSelector();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExpr#getPrimaryExprIndex <em>Primary Expr Index</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr Index</em>'.
+   * @see org.xtext.go.primaryExpr#getPrimaryExprIndex()
+   * @see #getprimaryExpr()
+   * @generated
+   */
+  EReference getprimaryExpr_PrimaryExprIndex();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExpr#getPrimaryExprSlice <em>Primary Expr Slice</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr Slice</em>'.
+   * @see org.xtext.go.primaryExpr#getPrimaryExprSlice()
+   * @see #getprimaryExpr()
+   * @generated
+   */
+  EReference getprimaryExpr_PrimaryExprSlice();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExpr#getPrimaryExprTypeAssertion <em>Primary Expr Type Assertion</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr Type Assertion</em>'.
+   * @see org.xtext.go.primaryExpr#getPrimaryExprTypeAssertion()
+   * @see #getprimaryExpr()
+   * @generated
+   */
+  EReference getprimaryExpr_PrimaryExprTypeAssertion();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExpr#getPrimaryExprArguments <em>Primary Expr Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Primary Expr Arguments</em>'.
+   * @see org.xtext.go.primaryExpr#getPrimaryExprArguments()
+   * @see #getprimaryExpr()
+   * @generated
+   */
+  EReference getprimaryExpr_PrimaryExprArguments();
 
   /**
    * Returns the meta object for class '{@link org.xtext.go.primaryExprStuff <em>primary Expr Stuff</em>}'.
@@ -6085,15 +6541,59 @@ public interface GoPackage extends EPackage
   EClass getprimaryExprStuff();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExprStuff#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExprStuff#getSelector <em>Selector</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Content</em>'.
-   * @see org.xtext.go.primaryExprStuff#getContent()
+   * @return the meta object for the containment reference '<em>Selector</em>'.
+   * @see org.xtext.go.primaryExprStuff#getSelector()
    * @see #getprimaryExprStuff()
    * @generated
    */
-  EReference getprimaryExprStuff_Content();
+  EReference getprimaryExprStuff_Selector();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExprStuff#getIndex <em>Index</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Index</em>'.
+   * @see org.xtext.go.primaryExprStuff#getIndex()
+   * @see #getprimaryExprStuff()
+   * @generated
+   */
+  EReference getprimaryExprStuff_Index();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExprStuff#getSlice <em>Slice</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Slice</em>'.
+   * @see org.xtext.go.primaryExprStuff#getSlice()
+   * @see #getprimaryExprStuff()
+   * @generated
+   */
+  EReference getprimaryExprStuff_Slice();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExprStuff#getTypeAssertion <em>Type Assertion</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type Assertion</em>'.
+   * @see org.xtext.go.primaryExprStuff#getTypeAssertion()
+   * @see #getprimaryExprStuff()
+   * @generated
+   */
+  EReference getprimaryExprStuff_TypeAssertion();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.primaryExprStuff#getArguments <em>Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Arguments</em>'.
+   * @see org.xtext.go.primaryExprStuff#getArguments()
+   * @see #getprimaryExprStuff()
+   * @generated
+   */
+  EReference getprimaryExprStuff_Arguments();
 
   /**
    * Returns the meta object for class '{@link org.xtext.go.primaryExprSelector <em>primary Expr Selector</em>}'.
@@ -7079,12 +7579,124 @@ public interface GoPackage extends EPackage
     EClass STATEMENT = eINSTANCE.getstatement();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Declaration</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STATEMENT__CONTENT = eINSTANCE.getstatement_Content();
+    EReference STATEMENT__DECLARATION = eINSTANCE.getstatement_Declaration();
+
+    /**
+     * The meta object literal for the '<em><b>Labeled Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__LABELED_STMT = eINSTANCE.getstatement_LabeledStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Simple Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__SIMPLE_STMT = eINSTANCE.getstatement_SimpleStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Go Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__GO_STMT = eINSTANCE.getstatement_GoStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Return Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__RETURN_STMT = eINSTANCE.getstatement_ReturnStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Break Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__BREAK_STMT = eINSTANCE.getstatement_BreakStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Continue Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__CONTINUE_STMT = eINSTANCE.getstatement_ContinueStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Goto Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__GOTO_STMT = eINSTANCE.getstatement_GotoStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Fallthrough Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__FALLTHROUGH_STMT = eINSTANCE.getstatement_FallthroughStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Block</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__BLOCK = eINSTANCE.getstatement_Block();
+
+    /**
+     * The meta object literal for the '<em><b>If Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__IF_STMT = eINSTANCE.getstatement_IfStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Switch Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__SWITCH_STMT = eINSTANCE.getstatement_SwitchStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Select Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__SELECT_STMT = eINSTANCE.getstatement_SelectStmt();
+
+    /**
+     * The meta object literal for the '<em><b>For Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__FOR_STMT = eINSTANCE.getstatement_ForStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Defer Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__DEFER_STMT = eINSTANCE.getstatement_DeferStmt();
 
     /**
      * The meta object literal for the '{@link org.xtext.go.impl.simpleStmtImpl <em>simple Stmt</em>}' class.
@@ -7925,6 +8537,14 @@ public interface GoPackage extends EPackage
     EReference TYPE_LIT__LIT = eINSTANCE.gettypeLit_Lit();
 
     /**
+     * The meta object literal for the '<em><b>Content Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TYPE_LIT__CONTENT_TYPE = eINSTANCE.gettypeLit_ContentType();
+
+    /**
      * The meta object literal for the '{@link org.xtext.go.impl.arrayTypeImpl <em>array Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8611,12 +9231,60 @@ public interface GoPackage extends EPackage
     EClass PRIMARY_EXPR = eINSTANCE.getprimaryExpr();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Operand</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PRIMARY_EXPR__CONTENT = eINSTANCE.getprimaryExpr_Content();
+    EReference PRIMARY_EXPR__OPERAND = eINSTANCE.getprimaryExpr_Operand();
+
+    /**
+     * The meta object literal for the '<em><b>Conversion</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR__CONVERSION = eINSTANCE.getprimaryExpr_Conversion();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr Selector</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR__PRIMARY_EXPR_SELECTOR = eINSTANCE.getprimaryExpr_PrimaryExprSelector();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr Index</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR__PRIMARY_EXPR_INDEX = eINSTANCE.getprimaryExpr_PrimaryExprIndex();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr Slice</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR__PRIMARY_EXPR_SLICE = eINSTANCE.getprimaryExpr_PrimaryExprSlice();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr Type Assertion</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR__PRIMARY_EXPR_TYPE_ASSERTION = eINSTANCE.getprimaryExpr_PrimaryExprTypeAssertion();
+
+    /**
+     * The meta object literal for the '<em><b>Primary Expr Arguments</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR__PRIMARY_EXPR_ARGUMENTS = eINSTANCE.getprimaryExpr_PrimaryExprArguments();
 
     /**
      * The meta object literal for the '{@link org.xtext.go.impl.primaryExprStuffImpl <em>primary Expr Stuff</em>}' class.
@@ -8629,12 +9297,44 @@ public interface GoPackage extends EPackage
     EClass PRIMARY_EXPR_STUFF = eINSTANCE.getprimaryExprStuff();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Selector</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PRIMARY_EXPR_STUFF__CONTENT = eINSTANCE.getprimaryExprStuff_Content();
+    EReference PRIMARY_EXPR_STUFF__SELECTOR = eINSTANCE.getprimaryExprStuff_Selector();
+
+    /**
+     * The meta object literal for the '<em><b>Index</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR_STUFF__INDEX = eINSTANCE.getprimaryExprStuff_Index();
+
+    /**
+     * The meta object literal for the '<em><b>Slice</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR_STUFF__SLICE = eINSTANCE.getprimaryExprStuff_Slice();
+
+    /**
+     * The meta object literal for the '<em><b>Type Assertion</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR_STUFF__TYPE_ASSERTION = eINSTANCE.getprimaryExprStuff_TypeAssertion();
+
+    /**
+     * The meta object literal for the '<em><b>Arguments</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPR_STUFF__ARGUMENTS = eINSTANCE.getprimaryExprStuff_Arguments();
 
     /**
      * The meta object literal for the '{@link org.xtext.go.impl.primaryExprSelectorImpl <em>primary Expr Selector</em>}' class.

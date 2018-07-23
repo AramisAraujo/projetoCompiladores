@@ -871,149 +871,149 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	public class StatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.statement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cContentAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cContentDeclarationParserRuleCall_0_0 = (RuleCall)cContentAssignment_0.eContents().get(0);
-		private final Assignment cContentAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cContentLabeledStmtParserRuleCall_1_0 = (RuleCall)cContentAssignment_1.eContents().get(0);
-		private final Assignment cContentAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final RuleCall cContentSimpleStmtParserRuleCall_2_0 = (RuleCall)cContentAssignment_2.eContents().get(0);
-		private final Assignment cContentAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
-		private final RuleCall cContentGoStmtParserRuleCall_3_0 = (RuleCall)cContentAssignment_3.eContents().get(0);
-		private final Assignment cContentAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
-		private final RuleCall cContentReturnStmtParserRuleCall_4_0 = (RuleCall)cContentAssignment_4.eContents().get(0);
-		private final Assignment cContentAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
-		private final RuleCall cContentBreakStmtParserRuleCall_5_0 = (RuleCall)cContentAssignment_5.eContents().get(0);
-		private final Assignment cContentAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
-		private final RuleCall cContentContinueStmtParserRuleCall_6_0 = (RuleCall)cContentAssignment_6.eContents().get(0);
-		private final Assignment cContentAssignment_7 = (Assignment)cAlternatives.eContents().get(7);
-		private final RuleCall cContentGotoStmtParserRuleCall_7_0 = (RuleCall)cContentAssignment_7.eContents().get(0);
-		private final Assignment cContentAssignment_8 = (Assignment)cAlternatives.eContents().get(8);
-		private final RuleCall cContentFallthroughStmtParserRuleCall_8_0 = (RuleCall)cContentAssignment_8.eContents().get(0);
-		private final Assignment cContentAssignment_9 = (Assignment)cAlternatives.eContents().get(9);
-		private final RuleCall cContentBlockParserRuleCall_9_0 = (RuleCall)cContentAssignment_9.eContents().get(0);
-		private final Assignment cContentAssignment_10 = (Assignment)cAlternatives.eContents().get(10);
-		private final RuleCall cContentIfStmtParserRuleCall_10_0 = (RuleCall)cContentAssignment_10.eContents().get(0);
-		private final Assignment cContentAssignment_11 = (Assignment)cAlternatives.eContents().get(11);
-		private final RuleCall cContentSwitchStmtParserRuleCall_11_0 = (RuleCall)cContentAssignment_11.eContents().get(0);
-		private final Assignment cContentAssignment_12 = (Assignment)cAlternatives.eContents().get(12);
-		private final RuleCall cContentSelectStmtParserRuleCall_12_0 = (RuleCall)cContentAssignment_12.eContents().get(0);
-		private final Assignment cContentAssignment_13 = (Assignment)cAlternatives.eContents().get(13);
-		private final RuleCall cContentForStmtParserRuleCall_13_0 = (RuleCall)cContentAssignment_13.eContents().get(0);
-		private final Assignment cContentAssignment_14 = (Assignment)cAlternatives.eContents().get(14);
-		private final RuleCall cContentDeferStmtParserRuleCall_14_0 = (RuleCall)cContentAssignment_14.eContents().get(0);
+		private final Assignment cDeclarationAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cDeclarationDeclarationParserRuleCall_0_0 = (RuleCall)cDeclarationAssignment_0.eContents().get(0);
+		private final Assignment cLabeledStmtAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cLabeledStmtLabeledStmtParserRuleCall_1_0 = (RuleCall)cLabeledStmtAssignment_1.eContents().get(0);
+		private final Assignment cSimpleStmtAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cSimpleStmtSimpleStmtParserRuleCall_2_0 = (RuleCall)cSimpleStmtAssignment_2.eContents().get(0);
+		private final Assignment cGoStmtAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cGoStmtGoStmtParserRuleCall_3_0 = (RuleCall)cGoStmtAssignment_3.eContents().get(0);
+		private final Assignment cReturnStmtAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
+		private final RuleCall cReturnStmtReturnStmtParserRuleCall_4_0 = (RuleCall)cReturnStmtAssignment_4.eContents().get(0);
+		private final Assignment cBreakStmtAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
+		private final RuleCall cBreakStmtBreakStmtParserRuleCall_5_0 = (RuleCall)cBreakStmtAssignment_5.eContents().get(0);
+		private final Assignment cContinueStmtAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
+		private final RuleCall cContinueStmtContinueStmtParserRuleCall_6_0 = (RuleCall)cContinueStmtAssignment_6.eContents().get(0);
+		private final Assignment cGotoStmtAssignment_7 = (Assignment)cAlternatives.eContents().get(7);
+		private final RuleCall cGotoStmtGotoStmtParserRuleCall_7_0 = (RuleCall)cGotoStmtAssignment_7.eContents().get(0);
+		private final Assignment cFallthroughStmtAssignment_8 = (Assignment)cAlternatives.eContents().get(8);
+		private final RuleCall cFallthroughStmtFallthroughStmtParserRuleCall_8_0 = (RuleCall)cFallthroughStmtAssignment_8.eContents().get(0);
+		private final Assignment cBlockAssignment_9 = (Assignment)cAlternatives.eContents().get(9);
+		private final RuleCall cBlockBlockParserRuleCall_9_0 = (RuleCall)cBlockAssignment_9.eContents().get(0);
+		private final Assignment cIfStmtAssignment_10 = (Assignment)cAlternatives.eContents().get(10);
+		private final RuleCall cIfStmtIfStmtParserRuleCall_10_0 = (RuleCall)cIfStmtAssignment_10.eContents().get(0);
+		private final Assignment cSwitchStmtAssignment_11 = (Assignment)cAlternatives.eContents().get(11);
+		private final RuleCall cSwitchStmtSwitchStmtParserRuleCall_11_0 = (RuleCall)cSwitchStmtAssignment_11.eContents().get(0);
+		private final Assignment cSelectStmtAssignment_12 = (Assignment)cAlternatives.eContents().get(12);
+		private final RuleCall cSelectStmtSelectStmtParserRuleCall_12_0 = (RuleCall)cSelectStmtAssignment_12.eContents().get(0);
+		private final Assignment cForStmtAssignment_13 = (Assignment)cAlternatives.eContents().get(13);
+		private final RuleCall cForStmtForStmtParserRuleCall_13_0 = (RuleCall)cForStmtAssignment_13.eContents().get(0);
+		private final Assignment cDeferStmtAssignment_14 = (Assignment)cAlternatives.eContents().get(14);
+		private final RuleCall cDeferStmtDeferStmtParserRuleCall_14_0 = (RuleCall)cDeferStmtAssignment_14.eContents().get(0);
 		
 		//statement:
-		//	content=declaration
-		//	| content=labeledStmt
-		//	| content=simpleStmt
-		//	| content=goStmt
-		//	| content=returnStmt
-		//	| content=breakStmt
-		//	| content=continueStmt
-		//	| content=gotoStmt
-		//	| content=fallthroughStmt
-		//	| content=block
-		//	| content=ifStmt
-		//	| content=switchStmt
-		//	| content=selectStmt
-		//	| content=forStmt
-		//	| content=deferStmt;
+		//	declaration=declaration
+		//	| labeledStmt=labeledStmt
+		//	| simpleStmt=simpleStmt
+		//	| goStmt=goStmt
+		//	| returnStmt=returnStmt
+		//	| breakStmt=breakStmt
+		//	| continueStmt=continueStmt
+		//	| gotoStmt=gotoStmt
+		//	| fallthroughStmt=fallthroughStmt
+		//	| block=block
+		//	| ifStmt=ifStmt
+		//	| switchStmt=switchStmt
+		//	| selectStmt=selectStmt
+		//	| forStmt=forStmt
+		//	| deferStmt=deferStmt;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//content=declaration | content=labeledStmt | content=simpleStmt | content=goStmt | content=returnStmt | content=breakStmt
-		//| content=continueStmt | content=gotoStmt | content=fallthroughStmt | content=block | content=ifStmt |
-		//content=switchStmt | content=selectStmt | content=forStmt | content=deferStmt
+		//declaration=declaration | labeledStmt=labeledStmt | simpleStmt=simpleStmt | goStmt=goStmt | returnStmt=returnStmt |
+		//breakStmt=breakStmt | continueStmt=continueStmt | gotoStmt=gotoStmt | fallthroughStmt=fallthroughStmt | block=block |
+		//ifStmt=ifStmt | switchStmt=switchStmt | selectStmt=selectStmt | forStmt=forStmt | deferStmt=deferStmt
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//content=declaration
-		public Assignment getContentAssignment_0() { return cContentAssignment_0; }
+		//declaration=declaration
+		public Assignment getDeclarationAssignment_0() { return cDeclarationAssignment_0; }
 		
 		//declaration
-		public RuleCall getContentDeclarationParserRuleCall_0_0() { return cContentDeclarationParserRuleCall_0_0; }
+		public RuleCall getDeclarationDeclarationParserRuleCall_0_0() { return cDeclarationDeclarationParserRuleCall_0_0; }
 		
-		//content=labeledStmt
-		public Assignment getContentAssignment_1() { return cContentAssignment_1; }
+		//labeledStmt=labeledStmt
+		public Assignment getLabeledStmtAssignment_1() { return cLabeledStmtAssignment_1; }
 		
 		//labeledStmt
-		public RuleCall getContentLabeledStmtParserRuleCall_1_0() { return cContentLabeledStmtParserRuleCall_1_0; }
+		public RuleCall getLabeledStmtLabeledStmtParserRuleCall_1_0() { return cLabeledStmtLabeledStmtParserRuleCall_1_0; }
 		
-		//content=simpleStmt
-		public Assignment getContentAssignment_2() { return cContentAssignment_2; }
+		//simpleStmt=simpleStmt
+		public Assignment getSimpleStmtAssignment_2() { return cSimpleStmtAssignment_2; }
 		
 		//simpleStmt
-		public RuleCall getContentSimpleStmtParserRuleCall_2_0() { return cContentSimpleStmtParserRuleCall_2_0; }
+		public RuleCall getSimpleStmtSimpleStmtParserRuleCall_2_0() { return cSimpleStmtSimpleStmtParserRuleCall_2_0; }
 		
-		//content=goStmt
-		public Assignment getContentAssignment_3() { return cContentAssignment_3; }
+		//goStmt=goStmt
+		public Assignment getGoStmtAssignment_3() { return cGoStmtAssignment_3; }
 		
 		//goStmt
-		public RuleCall getContentGoStmtParserRuleCall_3_0() { return cContentGoStmtParserRuleCall_3_0; }
+		public RuleCall getGoStmtGoStmtParserRuleCall_3_0() { return cGoStmtGoStmtParserRuleCall_3_0; }
 		
-		//content=returnStmt
-		public Assignment getContentAssignment_4() { return cContentAssignment_4; }
+		//returnStmt=returnStmt
+		public Assignment getReturnStmtAssignment_4() { return cReturnStmtAssignment_4; }
 		
 		//returnStmt
-		public RuleCall getContentReturnStmtParserRuleCall_4_0() { return cContentReturnStmtParserRuleCall_4_0; }
+		public RuleCall getReturnStmtReturnStmtParserRuleCall_4_0() { return cReturnStmtReturnStmtParserRuleCall_4_0; }
 		
-		//content=breakStmt
-		public Assignment getContentAssignment_5() { return cContentAssignment_5; }
+		//breakStmt=breakStmt
+		public Assignment getBreakStmtAssignment_5() { return cBreakStmtAssignment_5; }
 		
 		//breakStmt
-		public RuleCall getContentBreakStmtParserRuleCall_5_0() { return cContentBreakStmtParserRuleCall_5_0; }
+		public RuleCall getBreakStmtBreakStmtParserRuleCall_5_0() { return cBreakStmtBreakStmtParserRuleCall_5_0; }
 		
-		//content=continueStmt
-		public Assignment getContentAssignment_6() { return cContentAssignment_6; }
+		//continueStmt=continueStmt
+		public Assignment getContinueStmtAssignment_6() { return cContinueStmtAssignment_6; }
 		
 		//continueStmt
-		public RuleCall getContentContinueStmtParserRuleCall_6_0() { return cContentContinueStmtParserRuleCall_6_0; }
+		public RuleCall getContinueStmtContinueStmtParserRuleCall_6_0() { return cContinueStmtContinueStmtParserRuleCall_6_0; }
 		
-		//content=gotoStmt
-		public Assignment getContentAssignment_7() { return cContentAssignment_7; }
+		//gotoStmt=gotoStmt
+		public Assignment getGotoStmtAssignment_7() { return cGotoStmtAssignment_7; }
 		
 		//gotoStmt
-		public RuleCall getContentGotoStmtParserRuleCall_7_0() { return cContentGotoStmtParserRuleCall_7_0; }
+		public RuleCall getGotoStmtGotoStmtParserRuleCall_7_0() { return cGotoStmtGotoStmtParserRuleCall_7_0; }
 		
-		//content=fallthroughStmt
-		public Assignment getContentAssignment_8() { return cContentAssignment_8; }
+		//fallthroughStmt=fallthroughStmt
+		public Assignment getFallthroughStmtAssignment_8() { return cFallthroughStmtAssignment_8; }
 		
 		//fallthroughStmt
-		public RuleCall getContentFallthroughStmtParserRuleCall_8_0() { return cContentFallthroughStmtParserRuleCall_8_0; }
+		public RuleCall getFallthroughStmtFallthroughStmtParserRuleCall_8_0() { return cFallthroughStmtFallthroughStmtParserRuleCall_8_0; }
 		
-		//content=block
-		public Assignment getContentAssignment_9() { return cContentAssignment_9; }
+		//block=block
+		public Assignment getBlockAssignment_9() { return cBlockAssignment_9; }
 		
 		//block
-		public RuleCall getContentBlockParserRuleCall_9_0() { return cContentBlockParserRuleCall_9_0; }
+		public RuleCall getBlockBlockParserRuleCall_9_0() { return cBlockBlockParserRuleCall_9_0; }
 		
-		//content=ifStmt
-		public Assignment getContentAssignment_10() { return cContentAssignment_10; }
+		//ifStmt=ifStmt
+		public Assignment getIfStmtAssignment_10() { return cIfStmtAssignment_10; }
 		
 		//ifStmt
-		public RuleCall getContentIfStmtParserRuleCall_10_0() { return cContentIfStmtParserRuleCall_10_0; }
+		public RuleCall getIfStmtIfStmtParserRuleCall_10_0() { return cIfStmtIfStmtParserRuleCall_10_0; }
 		
-		//content=switchStmt
-		public Assignment getContentAssignment_11() { return cContentAssignment_11; }
+		//switchStmt=switchStmt
+		public Assignment getSwitchStmtAssignment_11() { return cSwitchStmtAssignment_11; }
 		
 		//switchStmt
-		public RuleCall getContentSwitchStmtParserRuleCall_11_0() { return cContentSwitchStmtParserRuleCall_11_0; }
+		public RuleCall getSwitchStmtSwitchStmtParserRuleCall_11_0() { return cSwitchStmtSwitchStmtParserRuleCall_11_0; }
 		
-		//content=selectStmt
-		public Assignment getContentAssignment_12() { return cContentAssignment_12; }
+		//selectStmt=selectStmt
+		public Assignment getSelectStmtAssignment_12() { return cSelectStmtAssignment_12; }
 		
 		//selectStmt
-		public RuleCall getContentSelectStmtParserRuleCall_12_0() { return cContentSelectStmtParserRuleCall_12_0; }
+		public RuleCall getSelectStmtSelectStmtParserRuleCall_12_0() { return cSelectStmtSelectStmtParserRuleCall_12_0; }
 		
-		//content=forStmt
-		public Assignment getContentAssignment_13() { return cContentAssignment_13; }
+		//forStmt=forStmt
+		public Assignment getForStmtAssignment_13() { return cForStmtAssignment_13; }
 		
 		//forStmt
-		public RuleCall getContentForStmtParserRuleCall_13_0() { return cContentForStmtParserRuleCall_13_0; }
+		public RuleCall getForStmtForStmtParserRuleCall_13_0() { return cForStmtForStmtParserRuleCall_13_0; }
 		
-		//content=deferStmt
-		public Assignment getContentAssignment_14() { return cContentAssignment_14; }
+		//deferStmt=deferStmt
+		public Assignment getDeferStmtAssignment_14() { return cDeferStmtAssignment_14; }
 		
 		//deferStmt
-		public RuleCall getContentDeferStmtParserRuleCall_14_0() { return cContentDeferStmtParserRuleCall_14_0; }
+		public RuleCall getDeferStmtDeferStmtParserRuleCall_14_0() { return cDeferStmtDeferStmtParserRuleCall_14_0; }
 	}
 	public class SimpleStmtElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.simpleStmt");
@@ -2344,87 +2344,184 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	public class TypeLitElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.typeLit");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cLitAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cLitArrayTypeParserRuleCall_0_0 = (RuleCall)cLitAssignment_0.eContents().get(0);
-		private final Assignment cLitAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cLitStructTypeParserRuleCall_1_0 = (RuleCall)cLitAssignment_1.eContents().get(0);
-		private final Assignment cLitAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final RuleCall cLitPointerTypeParserRuleCall_2_0 = (RuleCall)cLitAssignment_2.eContents().get(0);
-		private final Assignment cLitAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
-		private final RuleCall cLitFunctionTypeParserRuleCall_3_0 = (RuleCall)cLitAssignment_3.eContents().get(0);
-		private final Assignment cLitAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
-		private final RuleCall cLitInterfaceTypeParserRuleCall_4_0 = (RuleCall)cLitAssignment_4.eContents().get(0);
-		private final Assignment cLitAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
-		private final RuleCall cLitSliceTypeParserRuleCall_5_0 = (RuleCall)cLitAssignment_5.eContents().get(0);
-		private final Assignment cLitAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
-		private final RuleCall cLitMapTypeParserRuleCall_6_0 = (RuleCall)cLitAssignment_6.eContents().get(0);
-		private final Assignment cLitAssignment_7 = (Assignment)cAlternatives.eContents().get(7);
-		private final RuleCall cLitChannelTypeParserRuleCall_7_0 = (RuleCall)cLitAssignment_7.eContents().get(0);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Assignment cLitAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cLitArrayTypeParserRuleCall_0_0_0 = (RuleCall)cLitAssignment_0_0.eContents().get(0);
+		private final Assignment cContentTypeAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final Keyword cContentTypeArrayKeyword_0_1_0 = (Keyword)cContentTypeAssignment_0_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Assignment cLitAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cLitStructTypeParserRuleCall_1_0_0 = (RuleCall)cLitAssignment_1_0.eContents().get(0);
+		private final Assignment cContentTypeAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final Keyword cContentTypeStructTypeKeyword_1_1_0 = (Keyword)cContentTypeAssignment_1_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Assignment cLitAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cLitPointerTypeParserRuleCall_2_0_0 = (RuleCall)cLitAssignment_2_0.eContents().get(0);
+		private final Assignment cContentTypeAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final Keyword cContentTypePointerKeyword_2_1_0 = (Keyword)cContentTypeAssignment_2_1.eContents().get(0);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Assignment cLitAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cLitFunctionTypeParserRuleCall_3_0_0 = (RuleCall)cLitAssignment_3_0.eContents().get(0);
+		private final Assignment cContentTypeAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final Keyword cContentTypeFunctionKeyword_3_1_0 = (Keyword)cContentTypeAssignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final Assignment cLitAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
+		private final RuleCall cLitInterfaceTypeParserRuleCall_4_0_0 = (RuleCall)cLitAssignment_4_0.eContents().get(0);
+		private final Assignment cContentTypeAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final Keyword cContentTypeInterfaceKeyword_4_1_0 = (Keyword)cContentTypeAssignment_4_1.eContents().get(0);
+		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
+		private final Assignment cLitAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
+		private final RuleCall cLitSliceTypeParserRuleCall_5_0_0 = (RuleCall)cLitAssignment_5_0.eContents().get(0);
+		private final Assignment cContentTypeAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final Keyword cContentTypeSliceKeyword_5_1_0 = (Keyword)cContentTypeAssignment_5_1.eContents().get(0);
+		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
+		private final Assignment cLitAssignment_6_0 = (Assignment)cGroup_6.eContents().get(0);
+		private final RuleCall cLitMapTypeParserRuleCall_6_0_0 = (RuleCall)cLitAssignment_6_0.eContents().get(0);
+		private final Assignment cContentTypeAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final Keyword cContentTypeMapKeyword_6_1_0 = (Keyword)cContentTypeAssignment_6_1.eContents().get(0);
+		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
+		private final Assignment cLitAssignment_7_0 = (Assignment)cGroup_7.eContents().get(0);
+		private final RuleCall cLitChannelTypeParserRuleCall_7_0_0 = (RuleCall)cLitAssignment_7_0.eContents().get(0);
+		private final Assignment cContentTypeAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final Keyword cContentTypeChannelKeyword_7_1_0 = (Keyword)cContentTypeAssignment_7_1.eContents().get(0);
 		
 		////TypeLit   = ArrayType | StructType | PointerType | FunctionType | InterfaceType |
 		////	    SliceType | MapType | ChannelType .
 		//typeLit:
-		//	lit=arrayType
-		//	| lit=structType
-		//	| lit=pointerType
-		//	| lit=functionType
-		//	| lit=interfaceType
-		//	| lit=sliceType
-		//	| lit=mapType
-		//	| lit=channelType;
+		//	lit=arrayType contentType="Array"
+		//	| lit=structType contentType="StructType"
+		//	| lit=pointerType contentType="Pointer"
+		//	| lit=functionType contentType="Function"
+		//	| lit=interfaceType contentType="Interface"
+		//	| lit=sliceType contentType="Slice"
+		//	| lit=mapType contentType="Map"
+		//	| lit=channelType contentType="Channel";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//lit=arrayType | lit=structType | lit=pointerType | lit=functionType | lit=interfaceType | lit=sliceType | lit=mapType |
-		//lit=channelType
+		//lit=arrayType contentType="Array" | lit=structType contentType="StructType" | lit=pointerType contentType="Pointer" |
+		//lit=functionType contentType="Function" | lit=interfaceType contentType="Interface" | lit=sliceType contentType="Slice"
+		//| lit=mapType contentType="Map" | lit=channelType contentType="Channel"
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
+		//lit=arrayType contentType="Array"
+		public Group getGroup_0() { return cGroup_0; }
+		
 		//lit=arrayType
-		public Assignment getLitAssignment_0() { return cLitAssignment_0; }
+		public Assignment getLitAssignment_0_0() { return cLitAssignment_0_0; }
 		
 		//arrayType
-		public RuleCall getLitArrayTypeParserRuleCall_0_0() { return cLitArrayTypeParserRuleCall_0_0; }
+		public RuleCall getLitArrayTypeParserRuleCall_0_0_0() { return cLitArrayTypeParserRuleCall_0_0_0; }
+		
+		//contentType="Array"
+		public Assignment getContentTypeAssignment_0_1() { return cContentTypeAssignment_0_1; }
+		
+		//"Array"
+		public Keyword getContentTypeArrayKeyword_0_1_0() { return cContentTypeArrayKeyword_0_1_0; }
+		
+		//lit=structType contentType="StructType"
+		public Group getGroup_1() { return cGroup_1; }
 		
 		//lit=structType
-		public Assignment getLitAssignment_1() { return cLitAssignment_1; }
+		public Assignment getLitAssignment_1_0() { return cLitAssignment_1_0; }
 		
 		//structType
-		public RuleCall getLitStructTypeParserRuleCall_1_0() { return cLitStructTypeParserRuleCall_1_0; }
+		public RuleCall getLitStructTypeParserRuleCall_1_0_0() { return cLitStructTypeParserRuleCall_1_0_0; }
+		
+		//contentType="StructType"
+		public Assignment getContentTypeAssignment_1_1() { return cContentTypeAssignment_1_1; }
+		
+		//"StructType"
+		public Keyword getContentTypeStructTypeKeyword_1_1_0() { return cContentTypeStructTypeKeyword_1_1_0; }
+		
+		//lit=pointerType contentType="Pointer"
+		public Group getGroup_2() { return cGroup_2; }
 		
 		//lit=pointerType
-		public Assignment getLitAssignment_2() { return cLitAssignment_2; }
+		public Assignment getLitAssignment_2_0() { return cLitAssignment_2_0; }
 		
 		//pointerType
-		public RuleCall getLitPointerTypeParserRuleCall_2_0() { return cLitPointerTypeParserRuleCall_2_0; }
+		public RuleCall getLitPointerTypeParserRuleCall_2_0_0() { return cLitPointerTypeParserRuleCall_2_0_0; }
+		
+		//contentType="Pointer"
+		public Assignment getContentTypeAssignment_2_1() { return cContentTypeAssignment_2_1; }
+		
+		//"Pointer"
+		public Keyword getContentTypePointerKeyword_2_1_0() { return cContentTypePointerKeyword_2_1_0; }
+		
+		//lit=functionType contentType="Function"
+		public Group getGroup_3() { return cGroup_3; }
 		
 		//lit=functionType
-		public Assignment getLitAssignment_3() { return cLitAssignment_3; }
+		public Assignment getLitAssignment_3_0() { return cLitAssignment_3_0; }
 		
 		//functionType
-		public RuleCall getLitFunctionTypeParserRuleCall_3_0() { return cLitFunctionTypeParserRuleCall_3_0; }
+		public RuleCall getLitFunctionTypeParserRuleCall_3_0_0() { return cLitFunctionTypeParserRuleCall_3_0_0; }
+		
+		//contentType="Function"
+		public Assignment getContentTypeAssignment_3_1() { return cContentTypeAssignment_3_1; }
+		
+		//"Function"
+		public Keyword getContentTypeFunctionKeyword_3_1_0() { return cContentTypeFunctionKeyword_3_1_0; }
+		
+		//lit=interfaceType contentType="Interface"
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//lit=interfaceType
-		public Assignment getLitAssignment_4() { return cLitAssignment_4; }
+		public Assignment getLitAssignment_4_0() { return cLitAssignment_4_0; }
 		
 		//interfaceType
-		public RuleCall getLitInterfaceTypeParserRuleCall_4_0() { return cLitInterfaceTypeParserRuleCall_4_0; }
+		public RuleCall getLitInterfaceTypeParserRuleCall_4_0_0() { return cLitInterfaceTypeParserRuleCall_4_0_0; }
+		
+		//contentType="Interface"
+		public Assignment getContentTypeAssignment_4_1() { return cContentTypeAssignment_4_1; }
+		
+		//"Interface"
+		public Keyword getContentTypeInterfaceKeyword_4_1_0() { return cContentTypeInterfaceKeyword_4_1_0; }
+		
+		//lit=sliceType contentType="Slice"
+		public Group getGroup_5() { return cGroup_5; }
 		
 		//lit=sliceType
-		public Assignment getLitAssignment_5() { return cLitAssignment_5; }
+		public Assignment getLitAssignment_5_0() { return cLitAssignment_5_0; }
 		
 		//sliceType
-		public RuleCall getLitSliceTypeParserRuleCall_5_0() { return cLitSliceTypeParserRuleCall_5_0; }
+		public RuleCall getLitSliceTypeParserRuleCall_5_0_0() { return cLitSliceTypeParserRuleCall_5_0_0; }
+		
+		//contentType="Slice"
+		public Assignment getContentTypeAssignment_5_1() { return cContentTypeAssignment_5_1; }
+		
+		//"Slice"
+		public Keyword getContentTypeSliceKeyword_5_1_0() { return cContentTypeSliceKeyword_5_1_0; }
+		
+		//lit=mapType contentType="Map"
+		public Group getGroup_6() { return cGroup_6; }
 		
 		//lit=mapType
-		public Assignment getLitAssignment_6() { return cLitAssignment_6; }
+		public Assignment getLitAssignment_6_0() { return cLitAssignment_6_0; }
 		
 		//mapType
-		public RuleCall getLitMapTypeParserRuleCall_6_0() { return cLitMapTypeParserRuleCall_6_0; }
+		public RuleCall getLitMapTypeParserRuleCall_6_0_0() { return cLitMapTypeParserRuleCall_6_0_0; }
+		
+		//contentType="Map"
+		public Assignment getContentTypeAssignment_6_1() { return cContentTypeAssignment_6_1; }
+		
+		//"Map"
+		public Keyword getContentTypeMapKeyword_6_1_0() { return cContentTypeMapKeyword_6_1_0; }
+		
+		//lit=channelType contentType="Channel"
+		public Group getGroup_7() { return cGroup_7; }
 		
 		//lit=channelType
-		public Assignment getLitAssignment_7() { return cLitAssignment_7; }
+		public Assignment getLitAssignment_7_0() { return cLitAssignment_7_0; }
 		
 		//channelType
-		public RuleCall getLitChannelTypeParserRuleCall_7_0() { return cLitChannelTypeParserRuleCall_7_0; }
+		public RuleCall getLitChannelTypeParserRuleCall_7_0_0() { return cLitChannelTypeParserRuleCall_7_0_0; }
+		
+		//contentType="Channel"
+		public Assignment getContentTypeAssignment_7_1() { return cContentTypeAssignment_7_1; }
+		
+		//"Channel"
+		public Keyword getContentTypeChannelKeyword_7_1_0() { return cContentTypeChannelKeyword_7_1_0; }
 	}
 	public class ArrayTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.arrayType");
@@ -3514,20 +3611,20 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.primaryExpr");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Alternatives cAlternatives_0 = (Alternatives)cAlternatives.eContents().get(0);
-		private final Assignment cContentAssignment_0_0 = (Assignment)cAlternatives_0.eContents().get(0);
-		private final RuleCall cContentOperandParserRuleCall_0_0_0 = (RuleCall)cContentAssignment_0_0.eContents().get(0);
-		private final Assignment cContentAssignment_0_1 = (Assignment)cAlternatives_0.eContents().get(1);
-		private final RuleCall cContentConversionParserRuleCall_0_1_0 = (RuleCall)cContentAssignment_0_1.eContents().get(0);
-		private final Assignment cContentAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cContentPrimaryExprSelectorParserRuleCall_1_0 = (RuleCall)cContentAssignment_1.eContents().get(0);
-		private final Assignment cContentAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final RuleCall cContentPrimaryExprIndexParserRuleCall_2_0 = (RuleCall)cContentAssignment_2.eContents().get(0);
-		private final Assignment cContentAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
-		private final RuleCall cContentPrimaryExprSliceParserRuleCall_3_0 = (RuleCall)cContentAssignment_3.eContents().get(0);
-		private final Assignment cContentAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
-		private final RuleCall cContentPrimaryExprTypeAssertionParserRuleCall_4_0 = (RuleCall)cContentAssignment_4.eContents().get(0);
-		private final Assignment cContentAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
-		private final RuleCall cContentPrimaryExprArgumentsParserRuleCall_5_0 = (RuleCall)cContentAssignment_5.eContents().get(0);
+		private final Assignment cOperandAssignment_0_0 = (Assignment)cAlternatives_0.eContents().get(0);
+		private final RuleCall cOperandOperandParserRuleCall_0_0_0 = (RuleCall)cOperandAssignment_0_0.eContents().get(0);
+		private final Assignment cConversionAssignment_0_1 = (Assignment)cAlternatives_0.eContents().get(1);
+		private final RuleCall cConversionConversionParserRuleCall_0_1_0 = (RuleCall)cConversionAssignment_0_1.eContents().get(0);
+		private final Assignment cPrimaryExprSelectorAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cPrimaryExprSelectorPrimaryExprSelectorParserRuleCall_1_0 = (RuleCall)cPrimaryExprSelectorAssignment_1.eContents().get(0);
+		private final Assignment cPrimaryExprIndexAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cPrimaryExprIndexPrimaryExprIndexParserRuleCall_2_0 = (RuleCall)cPrimaryExprIndexAssignment_2.eContents().get(0);
+		private final Assignment cPrimaryExprSliceAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cPrimaryExprSlicePrimaryExprSliceParserRuleCall_3_0 = (RuleCall)cPrimaryExprSliceAssignment_3.eContents().get(0);
+		private final Assignment cPrimaryExprTypeAssertionAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
+		private final RuleCall cPrimaryExprTypeAssertionPrimaryExprTypeAssertionParserRuleCall_4_0 = (RuleCall)cPrimaryExprTypeAssertionAssignment_4.eContents().get(0);
+		private final Assignment cPrimaryExprArgumentsAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
+		private final RuleCall cPrimaryExprArgumentsPrimaryExprArgumentsParserRuleCall_5_0 = (RuleCall)cPrimaryExprArgumentsAssignment_5.eContents().get(0);
 		
 		////PrimaryExpr =
 		////	Operand |
@@ -3546,109 +3643,111 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		////TypeAssertion  = "." "(" Type ")" .
 		////Arguments      = "(" [ ( ExpressionList | Type [ "," ExpressionList ] ) [ "..." ] [ "," ] ] ")" .
 		//primaryExpr:
-		//	(content=operand | content=conversion) | content=primaryExprSelector | content=primaryExprIndex |
-		//	content=primaryExprSlice | content=primaryExprTypeAssertion | content=primaryExprArguments;
+		//	(operand=operand | conversion=conversion) | primaryExprSelector=primaryExprSelector |
+		//	primaryExprIndex=primaryExprIndex | primaryExprSlice=primaryExprSlice |
+		//	primaryExprTypeAssertion=primaryExprTypeAssertion | primaryExprArguments=primaryExprArguments;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(content=operand | content=conversion) | content=primaryExprSelector | content=primaryExprIndex |
-		//content=primaryExprSlice | content=primaryExprTypeAssertion | content=primaryExprArguments
+		//(operand=operand | conversion=conversion) | primaryExprSelector=primaryExprSelector | primaryExprIndex=primaryExprIndex
+		//| primaryExprSlice=primaryExprSlice | primaryExprTypeAssertion=primaryExprTypeAssertion |
+		//primaryExprArguments=primaryExprArguments
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//(content=operand | content=conversion)
+		//(operand=operand | conversion=conversion)
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 		
-		//content=operand
-		public Assignment getContentAssignment_0_0() { return cContentAssignment_0_0; }
+		//operand=operand
+		public Assignment getOperandAssignment_0_0() { return cOperandAssignment_0_0; }
 		
 		//operand
-		public RuleCall getContentOperandParserRuleCall_0_0_0() { return cContentOperandParserRuleCall_0_0_0; }
+		public RuleCall getOperandOperandParserRuleCall_0_0_0() { return cOperandOperandParserRuleCall_0_0_0; }
 		
-		//content=conversion
-		public Assignment getContentAssignment_0_1() { return cContentAssignment_0_1; }
+		//conversion=conversion
+		public Assignment getConversionAssignment_0_1() { return cConversionAssignment_0_1; }
 		
 		//conversion
-		public RuleCall getContentConversionParserRuleCall_0_1_0() { return cContentConversionParserRuleCall_0_1_0; }
+		public RuleCall getConversionConversionParserRuleCall_0_1_0() { return cConversionConversionParserRuleCall_0_1_0; }
 		
-		//content=primaryExprSelector
-		public Assignment getContentAssignment_1() { return cContentAssignment_1; }
+		//primaryExprSelector=primaryExprSelector
+		public Assignment getPrimaryExprSelectorAssignment_1() { return cPrimaryExprSelectorAssignment_1; }
 		
 		//primaryExprSelector
-		public RuleCall getContentPrimaryExprSelectorParserRuleCall_1_0() { return cContentPrimaryExprSelectorParserRuleCall_1_0; }
+		public RuleCall getPrimaryExprSelectorPrimaryExprSelectorParserRuleCall_1_0() { return cPrimaryExprSelectorPrimaryExprSelectorParserRuleCall_1_0; }
 		
-		//content=primaryExprIndex
-		public Assignment getContentAssignment_2() { return cContentAssignment_2; }
+		//primaryExprIndex=primaryExprIndex
+		public Assignment getPrimaryExprIndexAssignment_2() { return cPrimaryExprIndexAssignment_2; }
 		
 		//primaryExprIndex
-		public RuleCall getContentPrimaryExprIndexParserRuleCall_2_0() { return cContentPrimaryExprIndexParserRuleCall_2_0; }
+		public RuleCall getPrimaryExprIndexPrimaryExprIndexParserRuleCall_2_0() { return cPrimaryExprIndexPrimaryExprIndexParserRuleCall_2_0; }
 		
-		//content=primaryExprSlice
-		public Assignment getContentAssignment_3() { return cContentAssignment_3; }
+		//primaryExprSlice=primaryExprSlice
+		public Assignment getPrimaryExprSliceAssignment_3() { return cPrimaryExprSliceAssignment_3; }
 		
 		//primaryExprSlice
-		public RuleCall getContentPrimaryExprSliceParserRuleCall_3_0() { return cContentPrimaryExprSliceParserRuleCall_3_0; }
+		public RuleCall getPrimaryExprSlicePrimaryExprSliceParserRuleCall_3_0() { return cPrimaryExprSlicePrimaryExprSliceParserRuleCall_3_0; }
 		
-		//content=primaryExprTypeAssertion
-		public Assignment getContentAssignment_4() { return cContentAssignment_4; }
+		//primaryExprTypeAssertion=primaryExprTypeAssertion
+		public Assignment getPrimaryExprTypeAssertionAssignment_4() { return cPrimaryExprTypeAssertionAssignment_4; }
 		
 		//primaryExprTypeAssertion
-		public RuleCall getContentPrimaryExprTypeAssertionParserRuleCall_4_0() { return cContentPrimaryExprTypeAssertionParserRuleCall_4_0; }
+		public RuleCall getPrimaryExprTypeAssertionPrimaryExprTypeAssertionParserRuleCall_4_0() { return cPrimaryExprTypeAssertionPrimaryExprTypeAssertionParserRuleCall_4_0; }
 		
-		//content=primaryExprArguments
-		public Assignment getContentAssignment_5() { return cContentAssignment_5; }
+		//primaryExprArguments=primaryExprArguments
+		public Assignment getPrimaryExprArgumentsAssignment_5() { return cPrimaryExprArgumentsAssignment_5; }
 		
 		//primaryExprArguments
-		public RuleCall getContentPrimaryExprArgumentsParserRuleCall_5_0() { return cContentPrimaryExprArgumentsParserRuleCall_5_0; }
+		public RuleCall getPrimaryExprArgumentsPrimaryExprArgumentsParserRuleCall_5_0() { return cPrimaryExprArgumentsPrimaryExprArgumentsParserRuleCall_5_0; }
 	}
 	public class PrimaryExprStuffElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.primaryExprStuff");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cContentAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cContentSelectorParserRuleCall_0_0 = (RuleCall)cContentAssignment_0.eContents().get(0);
-		private final Assignment cContentAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cContentIndexParserRuleCall_1_0 = (RuleCall)cContentAssignment_1.eContents().get(0);
-		private final Assignment cContentAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final RuleCall cContentSliceParserRuleCall_2_0 = (RuleCall)cContentAssignment_2.eContents().get(0);
-		private final Assignment cContentAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
-		private final RuleCall cContentTypeAssertionParserRuleCall_3_0 = (RuleCall)cContentAssignment_3.eContents().get(0);
-		private final Assignment cContentAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
-		private final RuleCall cContentArgumentsParserRuleCall_4_0 = (RuleCall)cContentAssignment_4.eContents().get(0);
+		private final Assignment cSelectorAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cSelectorSelectorParserRuleCall_0_0 = (RuleCall)cSelectorAssignment_0.eContents().get(0);
+		private final Assignment cIndexAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cIndexIndexParserRuleCall_1_0 = (RuleCall)cIndexAssignment_1.eContents().get(0);
+		private final Assignment cSliceAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cSliceSliceParserRuleCall_2_0 = (RuleCall)cSliceAssignment_2.eContents().get(0);
+		private final Assignment cTypeAssertionAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cTypeAssertionTypeAssertionParserRuleCall_3_0 = (RuleCall)cTypeAssertionAssignment_3.eContents().get(0);
+		private final Assignment cArgumentsAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
+		private final RuleCall cArgumentsArgumentsParserRuleCall_4_0 = (RuleCall)cArgumentsAssignment_4.eContents().get(0);
 		
 		//primaryExprStuff:
-		//	content=selector | content=index | content=slice | content=typeAssertion | content=arguments;
+		//	selector=selector | index=index | slice=slice | typeAssertion=typeAssertion | arguments=arguments;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//content=selector | content=index | content=slice | content=typeAssertion | content=arguments
+		//selector=selector | index=index | slice=slice | typeAssertion=typeAssertion | arguments=arguments
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//content=selector
-		public Assignment getContentAssignment_0() { return cContentAssignment_0; }
+		//selector=selector
+		public Assignment getSelectorAssignment_0() { return cSelectorAssignment_0; }
 		
 		//selector
-		public RuleCall getContentSelectorParserRuleCall_0_0() { return cContentSelectorParserRuleCall_0_0; }
+		public RuleCall getSelectorSelectorParserRuleCall_0_0() { return cSelectorSelectorParserRuleCall_0_0; }
 		
-		//content=index
-		public Assignment getContentAssignment_1() { return cContentAssignment_1; }
+		//index=index
+		public Assignment getIndexAssignment_1() { return cIndexAssignment_1; }
 		
 		//index
-		public RuleCall getContentIndexParserRuleCall_1_0() { return cContentIndexParserRuleCall_1_0; }
+		public RuleCall getIndexIndexParserRuleCall_1_0() { return cIndexIndexParserRuleCall_1_0; }
 		
-		//content=slice
-		public Assignment getContentAssignment_2() { return cContentAssignment_2; }
+		//slice=slice
+		public Assignment getSliceAssignment_2() { return cSliceAssignment_2; }
 		
 		//slice
-		public RuleCall getContentSliceParserRuleCall_2_0() { return cContentSliceParserRuleCall_2_0; }
+		public RuleCall getSliceSliceParserRuleCall_2_0() { return cSliceSliceParserRuleCall_2_0; }
 		
-		//content=typeAssertion
-		public Assignment getContentAssignment_3() { return cContentAssignment_3; }
+		//typeAssertion=typeAssertion
+		public Assignment getTypeAssertionAssignment_3() { return cTypeAssertionAssignment_3; }
 		
 		//typeAssertion
-		public RuleCall getContentTypeAssertionParserRuleCall_3_0() { return cContentTypeAssertionParserRuleCall_3_0; }
+		public RuleCall getTypeAssertionTypeAssertionParserRuleCall_3_0() { return cTypeAssertionTypeAssertionParserRuleCall_3_0; }
 		
-		//content=arguments
-		public Assignment getContentAssignment_4() { return cContentAssignment_4; }
+		//arguments=arguments
+		public Assignment getArgumentsAssignment_4() { return cArgumentsAssignment_4; }
 		
 		//arguments
-		public RuleCall getContentArgumentsParserRuleCall_4_0() { return cContentArgumentsParserRuleCall_4_0; }
+		public RuleCall getArgumentsArgumentsParserRuleCall_4_0() { return cArgumentsArgumentsParserRuleCall_4_0; }
 	}
 	public class PrimaryExprSelectorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.primaryExprSelector");
@@ -4860,21 +4959,21 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//statement:
-	//	content=declaration
-	//	| content=labeledStmt
-	//	| content=simpleStmt
-	//	| content=goStmt
-	//	| content=returnStmt
-	//	| content=breakStmt
-	//	| content=continueStmt
-	//	| content=gotoStmt
-	//	| content=fallthroughStmt
-	//	| content=block
-	//	| content=ifStmt
-	//	| content=switchStmt
-	//	| content=selectStmt
-	//	| content=forStmt
-	//	| content=deferStmt;
+	//	declaration=declaration
+	//	| labeledStmt=labeledStmt
+	//	| simpleStmt=simpleStmt
+	//	| goStmt=goStmt
+	//	| returnStmt=returnStmt
+	//	| breakStmt=breakStmt
+	//	| continueStmt=continueStmt
+	//	| gotoStmt=gotoStmt
+	//	| fallthroughStmt=fallthroughStmt
+	//	| block=block
+	//	| ifStmt=ifStmt
+	//	| switchStmt=switchStmt
+	//	| selectStmt=selectStmt
+	//	| forStmt=forStmt
+	//	| deferStmt=deferStmt;
 	public StatementElements getStatementAccess() {
 		return pStatement;
 	}
@@ -5288,14 +5387,14 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	////TypeLit   = ArrayType | StructType | PointerType | FunctionType | InterfaceType |
 	////	    SliceType | MapType | ChannelType .
 	//typeLit:
-	//	lit=arrayType
-	//	| lit=structType
-	//	| lit=pointerType
-	//	| lit=functionType
-	//	| lit=interfaceType
-	//	| lit=sliceType
-	//	| lit=mapType
-	//	| lit=channelType;
+	//	lit=arrayType contentType="Array"
+	//	| lit=structType contentType="StructType"
+	//	| lit=pointerType contentType="Pointer"
+	//	| lit=functionType contentType="Function"
+	//	| lit=interfaceType contentType="Interface"
+	//	| lit=sliceType contentType="Slice"
+	//	| lit=mapType contentType="Map"
+	//	| lit=channelType contentType="Channel";
 	public TypeLitElements getTypeLitAccess() {
 		return pTypeLit;
 	}
@@ -5674,8 +5773,9 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	////TypeAssertion  = "." "(" Type ")" .
 	////Arguments      = "(" [ ( ExpressionList | Type [ "," ExpressionList ] ) [ "..." ] [ "," ] ] ")" .
 	//primaryExpr:
-	//	(content=operand | content=conversion) | content=primaryExprSelector | content=primaryExprIndex |
-	//	content=primaryExprSlice | content=primaryExprTypeAssertion | content=primaryExprArguments;
+	//	(operand=operand | conversion=conversion) | primaryExprSelector=primaryExprSelector |
+	//	primaryExprIndex=primaryExprIndex | primaryExprSlice=primaryExprSlice |
+	//	primaryExprTypeAssertion=primaryExprTypeAssertion | primaryExprArguments=primaryExprArguments;
 	public PrimaryExprElements getPrimaryExprAccess() {
 		return pPrimaryExpr;
 	}
@@ -5685,7 +5785,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//primaryExprStuff:
-	//	content=selector | content=index | content=slice | content=typeAssertion | content=arguments;
+	//	selector=selector | index=index | slice=slice | typeAssertion=typeAssertion | arguments=arguments;
 	public PrimaryExprStuffElements getPrimaryExprStuffAccess() {
 		return pPrimaryExprStuff;
 	}

@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.xtext.go.typeLit#getLit <em>Lit</em>}</li>
+ *   <li>{@link org.xtext.go.typeLit#getContentType <em>Content Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,5 +49,31 @@ public interface typeLit extends EObject
    * @generated
    */
   void setLit(EObject value);
+
+  /**
+   * Returns the value of the '<em><b>Content Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Content Type</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Content Type</em>' attribute.
+   * @see #setContentType(String)
+   * @see org.xtext.go.GoPackage#gettypeLit_ContentType()
+   * @model
+   * @generated
+   */
+  String getContentType();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.typeLit#getContentType <em>Content Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Content Type</em>' attribute.
+   * @see #getContentType()
+   * @generated
+   */
+  void setContentType(String value);
 
 } // typeLit

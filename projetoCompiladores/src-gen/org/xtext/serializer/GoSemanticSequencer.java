@@ -1545,7 +1545,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     primaryExprStuff returns primaryExprStuff
 	 *
 	 * Constraint:
-	 *     (content=selector | content=index | content=slice | content=typeAssertion | content=arguments)
+	 *     (selector=selector | index=index | slice=slice | typeAssertion=typeAssertion | arguments=arguments)
 	 */
 	protected void sequence_primaryExprStuff(ISerializationContext context, primaryExprStuff semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1579,13 +1579,13 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         content=operand | 
-	 *         content=conversion | 
-	 *         content=primaryExprSelector | 
-	 *         content=primaryExprIndex | 
-	 *         content=primaryExprSlice | 
-	 *         content=primaryExprTypeAssertion | 
-	 *         content=primaryExprArguments
+	 *         operand=operand | 
+	 *         conversion=conversion | 
+	 *         primaryExprSelector=primaryExprSelector | 
+	 *         primaryExprIndex=primaryExprIndex | 
+	 *         primaryExprSlice=primaryExprSlice | 
+	 *         primaryExprTypeAssertion=primaryExprTypeAssertion | 
+	 *         primaryExprArguments=primaryExprArguments
 	 *     )
 	 */
 	protected void sequence_primaryExpr(ISerializationContext context, primaryExpr semanticObject) {
@@ -1861,21 +1861,21 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         content=declaration | 
-	 *         content=labeledStmt | 
-	 *         content=simpleStmt | 
-	 *         content=goStmt | 
-	 *         content=returnStmt | 
-	 *         content=breakStmt | 
-	 *         content=continueStmt | 
-	 *         content=gotoStmt | 
-	 *         content=fallthroughStmt | 
-	 *         content=block | 
-	 *         content=ifStmt | 
-	 *         content=switchStmt | 
-	 *         content=selectStmt | 
-	 *         content=forStmt | 
-	 *         content=deferStmt
+	 *         declaration=declaration | 
+	 *         labeledStmt=labeledStmt | 
+	 *         simpleStmt=simpleStmt | 
+	 *         goStmt=goStmt | 
+	 *         returnStmt=returnStmt | 
+	 *         breakStmt=breakStmt | 
+	 *         continueStmt=continueStmt | 
+	 *         gotoStmt=gotoStmt | 
+	 *         fallthroughStmt=fallthroughStmt | 
+	 *         block=block | 
+	 *         ifStmt=ifStmt | 
+	 *         switchStmt=switchStmt | 
+	 *         selectStmt=selectStmt | 
+	 *         forStmt=forStmt | 
+	 *         deferStmt=deferStmt
 	 *     )
 	 */
 	protected void sequence_statement(ISerializationContext context, statement semanticObject) {
@@ -1988,14 +1988,14 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         lit=arrayType | 
-	 *         lit=structType | 
-	 *         lit=pointerType | 
-	 *         lit=functionType | 
-	 *         lit=interfaceType | 
-	 *         lit=sliceType | 
-	 *         lit=mapType | 
-	 *         lit=channelType
+	 *         (lit=arrayType contentType='Array') | 
+	 *         (lit=structType contentType='StructType') | 
+	 *         (lit=pointerType contentType='Pointer') | 
+	 *         (lit=functionType contentType='Function') | 
+	 *         (lit=interfaceType contentType='Interface') | 
+	 *         (lit=sliceType contentType='Slice') | 
+	 *         (lit=mapType contentType='Map') | 
+	 *         (lit=channelType contentType='Channel')
 	 *     )
 	 */
 	protected void sequence_typeLit(ISerializationContext context, typeLit semanticObject) {

@@ -104,7 +104,35 @@
         eType="#//statement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="statement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declaration" eType="#//declaration"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="labeledStmt" eType="#//labeledStmt"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="simpleStmt" eType="#//simpleStmt"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goStmt" eType="#//goStmt"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="returnStmt" eType="#//returnStmt"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="breakStmt" eType="#//breakStmt"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="continueStmt" eType="#//continueStmt"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gotoStmt" eType="#//gotoStmt"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fallthroughStmt" eType="#//fallthroughStmt"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="block" eType="#//block"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ifStmt" eType="#//ifStmt"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="switchStmt" eType="#//switchStmt"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selectStmt" eType="#//selectStmt"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="forStmt" eType="#//forStmt"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deferStmt" eType="#//deferStmt"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="simpleStmt">
@@ -289,6 +317,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="typeLit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="lit" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="arrayType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="arrayLength" eType="#//arrayLength"
@@ -432,11 +461,31 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="primaryExpr">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operand" eType="#//operand"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conversion" eType="#//conversion"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primaryExprSelector" eType="#//primaryExprSelector"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primaryExprIndex" eType="#//primaryExprIndex"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primaryExprSlice" eType="#//primaryExprSlice"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primaryExprTypeAssertion"
+        eType="#//primaryExprTypeAssertion" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primaryExprArguments" eType="#//primaryExprArguments"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="primaryExprStuff">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selector" eType="#//selector"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="index" eType="#//index"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="slice" eType="#//slice"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typeAssertion" eType="#//typeAssertion"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" eType="#//arguments"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="primaryExprSelector">

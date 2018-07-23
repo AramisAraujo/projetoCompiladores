@@ -105,21 +105,21 @@ statementList:
 	( statements+=statement eos )*;
 
 statement: 
-	content=declaration
-    | content=labeledStmt
-    | content=simpleStmt
-    | content=goStmt
-    | content=returnStmt
-    | content=breakStmt
-    | content=continueStmt
-    | content=gotoStmt
-    | content=fallthroughStmt
-    | content=block
-    | content=ifStmt
-    | content=switchStmt
-    | content=selectStmt
-    | content=forStmt
-    | content=deferStmt;
+	declaration=declaration
+    | labeledStmt=labeledStmt
+    | simpleStmt=simpleStmt
+    | goStmt=goStmt
+    | returnStmt=returnStmt
+    | breakStmt=breakStmt
+    | continueStmt=continueStmt
+    | gotoStmt=gotoStmt
+    | fallthroughStmt=fallthroughStmt
+    | block=block
+    | ifStmt=ifStmt
+    | switchStmt=switchStmt
+    | selectStmt=selectStmt
+    | forStmt=forStmt
+    | deferStmt=deferStmt;
 
 //SimpleStmt = EmptyStmt | ExpressionStmt | SendStmt | IncDecStmt | Assignment | ShortVarDecl .
 simpleStmt:
@@ -289,14 +289,14 @@ typeName:
 //TypeLit   = ArrayType | StructType | PointerType | FunctionType | InterfaceType |
 //	    SliceType | MapType | ChannelType .
 typeLit: 
-	lit=arrayType
-    | lit=structType
-    | lit=pointerType
-    | lit=functionType
-    | lit=interfaceType
-    | lit=sliceType
-    | lit=mapType
-    | lit=channelType;
+	lit=arrayType contentType ="Array"
+    | lit=structType contentType ="StructType"
+    | lit=pointerType contentType ="Pointer"
+    | lit=functionType contentType ="Function"
+    | lit=interfaceType contentType ="Interface"
+    | lit=sliceType contentType ="Slice"
+    | lit=mapType contentType ="Map"
+    | lit=channelType contentType ="Channel";
 
 
 arrayType: 
@@ -473,16 +473,19 @@ functionLit:
 //Arguments      = "(" [ ( ExpressionList | Type [ "," ExpressionList ] ) [ "..." ] [ "," ] ] ")" .
 
 primaryExpr: 
-	(content=operand | content=conversion) |
-    content=primaryExprSelector |
-    content=primaryExprIndex |
-    content=primaryExprSlice |
-    content=primaryExprTypeAssertion |
-	content=primaryExprArguments;
+	(operand=operand | conversion=conversion) |
+    primaryExprSelector=primaryExprSelector  |
+    primaryExprIndex=primaryExprIndex |
+    primaryExprSlice=primaryExprSlice |
+    primaryExprTypeAssertion=primaryExprTypeAssertion |
+	primaryExprArguments=primaryExprArguments;
 
 primaryExprStuff:
-	content=selector | content=index |
-	 content=slice | content=typeAssertion | content=arguments;
+	selector=selector |
+	index=index |
+	slice=slice | 
+	typeAssertion=typeAssertion |
+	arguments=arguments;
 
 
 ////Left Rec removal for primaryExpr

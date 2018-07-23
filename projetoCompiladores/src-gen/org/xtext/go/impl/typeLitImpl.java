@@ -24,6 +24,7 @@ import org.xtext.go.typeLit;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.xtext.go.impl.typeLitImpl#getLit <em>Lit</em>}</li>
+ *   <li>{@link org.xtext.go.impl.typeLitImpl#getContentType <em>Content Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +41,26 @@ public class typeLitImpl extends MinimalEObjectImpl.Container implements typeLit
    * @ordered
    */
   protected EObject lit;
+
+  /**
+   * The default value of the '{@link #getContentType() <em>Content Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getContentType()
+   * @generated
+   * @ordered
+   */
+  protected static final String CONTENT_TYPE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getContentType() <em>Content Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getContentType()
+   * @generated
+   * @ordered
+   */
+  protected String contentType = CONTENT_TYPE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -115,6 +136,29 @@ public class typeLitImpl extends MinimalEObjectImpl.Container implements typeLit
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getContentType()
+  {
+    return contentType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setContentType(String newContentType)
+  {
+    String oldContentType = contentType;
+    contentType = newContentType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE_LIT__CONTENT_TYPE, oldContentType, contentType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -138,6 +182,8 @@ public class typeLitImpl extends MinimalEObjectImpl.Container implements typeLit
     {
       case GoPackage.TYPE_LIT__LIT:
         return getLit();
+      case GoPackage.TYPE_LIT__CONTENT_TYPE:
+        return getContentType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -154,6 +200,9 @@ public class typeLitImpl extends MinimalEObjectImpl.Container implements typeLit
     {
       case GoPackage.TYPE_LIT__LIT:
         setLit((EObject)newValue);
+        return;
+      case GoPackage.TYPE_LIT__CONTENT_TYPE:
+        setContentType((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -172,6 +221,9 @@ public class typeLitImpl extends MinimalEObjectImpl.Container implements typeLit
       case GoPackage.TYPE_LIT__LIT:
         setLit((EObject)null);
         return;
+      case GoPackage.TYPE_LIT__CONTENT_TYPE:
+        setContentType(CONTENT_TYPE_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -188,8 +240,27 @@ public class typeLitImpl extends MinimalEObjectImpl.Container implements typeLit
     {
       case GoPackage.TYPE_LIT__LIT:
         return lit != null;
+      case GoPackage.TYPE_LIT__CONTENT_TYPE:
+        return CONTENT_TYPE_EDEFAULT == null ? contentType != null : !CONTENT_TYPE_EDEFAULT.equals(contentType);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (contentType: ");
+    result.append(contentType);
+    result.append(')');
+    return result.toString();
   }
 
 } //typeLitImpl
