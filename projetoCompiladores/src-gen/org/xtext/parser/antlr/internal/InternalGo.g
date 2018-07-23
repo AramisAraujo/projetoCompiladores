@@ -323,16 +323,18 @@ ruleimportDecl returns [EObject current=null]
 							}
 						)
 					)
-					{
-						/* */
-					}
-					{
-						newCompositeNode(grammarAccess.getImportDeclAccess().getEosParserRuleCall_1_1_1_1());
-					}
-					ruleeos
-					{
-						afterParserOrEnumRuleCall();
-					}
+					(
+						{
+							/* */
+						}
+						{
+							newCompositeNode(grammarAccess.getImportDeclAccess().getEosParserRuleCall_1_1_1_1());
+						}
+						ruleeos
+						{
+							afterParserOrEnumRuleCall();
+						}
+					)?
 				)*
 				otherlv_5=')'
 				{

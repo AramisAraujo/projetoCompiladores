@@ -28,6 +28,7 @@ public class GoSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_channelType_ChanKeyword_0_0_or___ChanKeyword_0_1_0_LessThanSignHyphenMinusKeyword_0_1_1___or___LessThanSignHyphenMinusKeyword_0_2_0_ChanKeyword_0_2_1__;
 	protected AbstractElementAlias match_conversion_CommaKeyword_3_q;
 	protected AbstractElementAlias match_fieldDecl_STRING_LITTerminalRuleCall_1_q;
+	protected AbstractElementAlias match_importDecl_EosParserRuleCall_1_1_1_1_q;
 	protected AbstractElementAlias match_importSpec___FullStopKeyword_0_0_or_IDENTIFIERTerminalRuleCall_0_1__q;
 	protected AbstractElementAlias match_incDecStmt_HyphenMinusHyphenMinusKeyword_1_1_or_PlusSignPlusSignKeyword_1_0;
 	protected AbstractElementAlias match_literalValue_CommaKeyword_1_1_q;
@@ -46,6 +47,7 @@ public class GoSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_channelType_ChanKeyword_0_0_or___ChanKeyword_0_1_0_LessThanSignHyphenMinusKeyword_0_1_1___or___LessThanSignHyphenMinusKeyword_0_2_0_ChanKeyword_0_2_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getChannelTypeAccess().getChanKeyword_0_1_0()), new TokenAlias(false, false, grammarAccess.getChannelTypeAccess().getLessThanSignHyphenMinusKeyword_0_1_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getChannelTypeAccess().getLessThanSignHyphenMinusKeyword_0_2_0()), new TokenAlias(false, false, grammarAccess.getChannelTypeAccess().getChanKeyword_0_2_1())), new TokenAlias(false, false, grammarAccess.getChannelTypeAccess().getChanKeyword_0_0()));
 		match_conversion_CommaKeyword_3_q = new TokenAlias(false, true, grammarAccess.getConversionAccess().getCommaKeyword_3());
 		match_fieldDecl_STRING_LITTerminalRuleCall_1_q = new TokenAlias(false, true, grammarAccess.getFieldDeclAccess().getSTRING_LITTerminalRuleCall_1());
+		match_importDecl_EosParserRuleCall_1_1_1_1_q = new TokenAlias(false, true, grammarAccess.getImportDeclAccess().getEosParserRuleCall_1_1_1_1());
 		match_importSpec___FullStopKeyword_0_0_or_IDENTIFIERTerminalRuleCall_0_1__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getImportSpecAccess().getFullStopKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getImportSpecAccess().getIDENTIFIERTerminalRuleCall_0_1()));
 		match_incDecStmt_HyphenMinusHyphenMinusKeyword_1_1_or_PlusSignPlusSignKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getIncDecStmtAccess().getHyphenMinusHyphenMinusKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getIncDecStmtAccess().getPlusSignPlusSignKeyword_1_0()));
 		match_literalValue_CommaKeyword_1_1_q = new TokenAlias(false, true, grammarAccess.getLiteralValueAccess().getCommaKeyword_1_1());
@@ -127,6 +129,8 @@ public class GoSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_conversion_CommaKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_fieldDecl_STRING_LITTerminalRuleCall_1_q.equals(syntax))
 				emit_fieldDecl_STRING_LITTerminalRuleCall_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_importDecl_EosParserRuleCall_1_1_1_1_q.equals(syntax))
+				emit_importDecl_EosParserRuleCall_1_1_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_importSpec___FullStopKeyword_0_0_or_IDENTIFIERTerminalRuleCall_0_1__q.equals(syntax))
 				emit_importSpec___FullStopKeyword_0_0_or_IDENTIFIERTerminalRuleCall_0_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_incDecStmt_HyphenMinusHyphenMinusKeyword_1_1_or_PlusSignPlusSignKeyword_1_0.equals(syntax))
@@ -213,6 +217,18 @@ public class GoSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     type=type (ambiguity) (rule end)
 	 */
 	protected void emit_fieldDecl_STRING_LITTerminalRuleCall_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     eos?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     specs+=importSpec (ambiguity) ')' (rule end)
+	 *     specs+=importSpec (ambiguity) specs+=importSpec
+	 */
+	protected void emit_importDecl_EosParserRuleCall_1_1_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -134,16 +134,16 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_1_1_2 = (Keyword)cGroup_1_1.eContents().get(2);
 		
 		//importDecl:
-		//	'import' (specs+=importSpec | '(' (specs+=importSpec eos)* ')');
+		//	'import' (specs+=importSpec | '(' (specs+=importSpec eos?)* ')');
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'import' (specs+=importSpec | '(' (specs+=importSpec eos)* ')')
+		//'import' (specs+=importSpec | '(' (specs+=importSpec eos?)* ')')
 		public Group getGroup() { return cGroup; }
 		
 		//'import'
 		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
 		
-		//specs+=importSpec | '(' (specs+=importSpec eos)* ')'
+		//specs+=importSpec | '(' (specs+=importSpec eos?)* ')'
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
 		//specs+=importSpec
@@ -152,13 +152,13 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//importSpec
 		public RuleCall getSpecsImportSpecParserRuleCall_1_0_0() { return cSpecsImportSpecParserRuleCall_1_0_0; }
 		
-		//'(' (specs+=importSpec eos)* ')'
+		//'(' (specs+=importSpec eos?)* ')'
 		public Group getGroup_1_1() { return cGroup_1_1; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1_1_0() { return cLeftParenthesisKeyword_1_1_0; }
 		
-		//(specs+=importSpec eos)*
+		//(specs+=importSpec eos?)*
 		public Group getGroup_1_1_1() { return cGroup_1_1_1; }
 		
 		//specs+=importSpec
@@ -167,7 +167,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//importSpec
 		public RuleCall getSpecsImportSpecParserRuleCall_1_1_1_0_0() { return cSpecsImportSpecParserRuleCall_1_1_1_0_0; }
 		
-		//eos
+		//eos?
 		public RuleCall getEosParserRuleCall_1_1_1_1() { return cEosParserRuleCall_1_1_1_1; }
 		
 		//')'
@@ -4744,7 +4744,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//importDecl:
-	//	'import' (specs+=importSpec | '(' (specs+=importSpec eos)* ')');
+	//	'import' (specs+=importSpec | '(' (specs+=importSpec eos?)* ')');
 	public ImportDeclElements getImportDeclAccess() {
 		return pImportDecl;
 	}

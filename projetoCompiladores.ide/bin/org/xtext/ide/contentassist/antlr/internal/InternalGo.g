@@ -4536,7 +4536,7 @@ rule__ImportDecl__Group_1_1_1__1__Impl
 :
 (
 	{ before(grammarAccess.getImportDeclAccess().getEosParserRuleCall_1_1_1_1()); }
-	ruleeos
+	(ruleeos)?
 	{ after(grammarAccess.getImportDeclAccess().getEosParserRuleCall_1_1_1_1()); }
 )
 ;

@@ -18,7 +18,7 @@ packageClause :
 	'package' packageName=IDENTIFIER;
 
 importDecl: 
-	'import' ( specs+=importSpec | '(' ( specs+=importSpec eos
+	'import' ( specs+=importSpec | '(' ( specs+=importSpec eos?
 	 )* ')' );
 
 importSpec: 
