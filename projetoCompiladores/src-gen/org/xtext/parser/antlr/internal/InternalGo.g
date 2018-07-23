@@ -1911,17 +1911,17 @@ rulesimpleStmt returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSimpleStmtAccess().getContentSendStmtParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getSimpleStmtAccess().getSendStmtSendStmtParserRuleCall_0_0());
 				}
-				lv_content_0_0=rulesendStmt
+				lv_sendStmt_0_0=rulesendStmt
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSimpleStmtRule());
 					}
 					set(
 						$current,
-						"content",
-						lv_content_0_0,
+						"sendStmt",
+						lv_sendStmt_0_0,
 						"org.xtext.Go.sendStmt");
 					afterParserOrEnumRuleCall();
 				}
@@ -1931,17 +1931,17 @@ rulesimpleStmt returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSimpleStmtAccess().getContentExpressionStmtParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getSimpleStmtAccess().getExpressionStmtExpressionStmtParserRuleCall_1_0());
 				}
-				lv_content_1_0=ruleexpressionStmt
+				lv_expressionStmt_1_0=ruleexpressionStmt
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSimpleStmtRule());
 					}
 					set(
 						$current,
-						"content",
-						lv_content_1_0,
+						"expressionStmt",
+						lv_expressionStmt_1_0,
 						"org.xtext.Go.expressionStmt");
 					afterParserOrEnumRuleCall();
 				}
@@ -1951,17 +1951,17 @@ rulesimpleStmt returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSimpleStmtAccess().getContentIncDecStmtParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getSimpleStmtAccess().getIncDecStmtIncDecStmtParserRuleCall_2_0());
 				}
-				lv_content_2_0=ruleincDecStmt
+				lv_incDecStmt_2_0=ruleincDecStmt
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSimpleStmtRule());
 					}
 					set(
 						$current,
-						"content",
-						lv_content_2_0,
+						"incDecStmt",
+						lv_incDecStmt_2_0,
 						"org.xtext.Go.incDecStmt");
 					afterParserOrEnumRuleCall();
 				}
@@ -1971,17 +1971,17 @@ rulesimpleStmt returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSimpleStmtAccess().getContentAssignmentParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getSimpleStmtAccess().getAssignmentAssignmentParserRuleCall_3_0());
 				}
-				lv_content_3_0=ruleassignment
+				lv_assignment_3_0=ruleassignment
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSimpleStmtRule());
 					}
 					set(
 						$current,
-						"content",
-						lv_content_3_0,
+						"assignment",
+						lv_assignment_3_0,
 						"org.xtext.Go.assignment");
 					afterParserOrEnumRuleCall();
 				}
@@ -1991,17 +1991,17 @@ rulesimpleStmt returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSimpleStmtAccess().getContentShortVarDeclParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getSimpleStmtAccess().getShortVarDeclShortVarDeclParserRuleCall_4_0());
 				}
-				lv_content_4_0=ruleshortVarDecl
+				lv_shortVarDecl_4_0=ruleshortVarDecl
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSimpleStmtRule());
 					}
 					set(
 						$current,
-						"content",
-						lv_content_4_0,
+						"shortVarDecl",
+						lv_shortVarDecl_4_0,
 						"org.xtext.Go.shortVarDecl");
 					afterParserOrEnumRuleCall();
 				}
@@ -2011,17 +2011,17 @@ rulesimpleStmt returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSimpleStmtAccess().getContentEmptyStmtParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getSimpleStmtAccess().getEmptyStmtEmptyStmtParserRuleCall_5_0());
 				}
-				lv_content_5_0=ruleemptyStmt
+				lv_emptyStmt_5_0=ruleemptyStmt
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSimpleStmtRule());
 					}
 					set(
 						$current,
-						"content",
-						lv_content_5_0,
+						"emptyStmt",
+						lv_emptyStmt_5_0,
 						"org.xtext.Go.emptyStmt");
 					afterParserOrEnumRuleCall();
 				}

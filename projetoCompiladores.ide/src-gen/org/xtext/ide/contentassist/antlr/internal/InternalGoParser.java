@@ -11108,30 +11108,30 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SimpleStmt__Alternatives"
-    // InternalGo.g:3099:1: rule__SimpleStmt__Alternatives : ( ( ( rule__SimpleStmt__ContentAssignment_0 ) ) | ( ( rule__SimpleStmt__ContentAssignment_1 ) ) | ( ( rule__SimpleStmt__ContentAssignment_2 ) ) | ( ( rule__SimpleStmt__ContentAssignment_3 ) ) | ( ( rule__SimpleStmt__ContentAssignment_4 ) ) | ( ( rule__SimpleStmt__ContentAssignment_5 ) ) );
+    // InternalGo.g:3099:1: rule__SimpleStmt__Alternatives : ( ( ( rule__SimpleStmt__SendStmtAssignment_0 ) ) | ( ( rule__SimpleStmt__ExpressionStmtAssignment_1 ) ) | ( ( rule__SimpleStmt__IncDecStmtAssignment_2 ) ) | ( ( rule__SimpleStmt__AssignmentAssignment_3 ) ) | ( ( rule__SimpleStmt__ShortVarDeclAssignment_4 ) ) | ( ( rule__SimpleStmt__EmptyStmtAssignment_5 ) ) );
     public final void rule__SimpleStmt__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGo.g:3103:1: ( ( ( rule__SimpleStmt__ContentAssignment_0 ) ) | ( ( rule__SimpleStmt__ContentAssignment_1 ) ) | ( ( rule__SimpleStmt__ContentAssignment_2 ) ) | ( ( rule__SimpleStmt__ContentAssignment_3 ) ) | ( ( rule__SimpleStmt__ContentAssignment_4 ) ) | ( ( rule__SimpleStmt__ContentAssignment_5 ) ) )
+            // InternalGo.g:3103:1: ( ( ( rule__SimpleStmt__SendStmtAssignment_0 ) ) | ( ( rule__SimpleStmt__ExpressionStmtAssignment_1 ) ) | ( ( rule__SimpleStmt__IncDecStmtAssignment_2 ) ) | ( ( rule__SimpleStmt__AssignmentAssignment_3 ) ) | ( ( rule__SimpleStmt__ShortVarDeclAssignment_4 ) ) | ( ( rule__SimpleStmt__EmptyStmtAssignment_5 ) ) )
             int alt19=6;
             alt19 = dfa19.predict(input);
             switch (alt19) {
                 case 1 :
-                    // InternalGo.g:3104:2: ( ( rule__SimpleStmt__ContentAssignment_0 ) )
+                    // InternalGo.g:3104:2: ( ( rule__SimpleStmt__SendStmtAssignment_0 ) )
                     {
-                    // InternalGo.g:3104:2: ( ( rule__SimpleStmt__ContentAssignment_0 ) )
-                    // InternalGo.g:3105:3: ( rule__SimpleStmt__ContentAssignment_0 )
+                    // InternalGo.g:3104:2: ( ( rule__SimpleStmt__SendStmtAssignment_0 ) )
+                    // InternalGo.g:3105:3: ( rule__SimpleStmt__SendStmtAssignment_0 )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getSimpleStmtAccess().getContentAssignment_0()); 
+                       before(grammarAccess.getSimpleStmtAccess().getSendStmtAssignment_0()); 
                     }
-                    // InternalGo.g:3106:3: ( rule__SimpleStmt__ContentAssignment_0 )
-                    // InternalGo.g:3106:4: rule__SimpleStmt__ContentAssignment_0
+                    // InternalGo.g:3106:3: ( rule__SimpleStmt__SendStmtAssignment_0 )
+                    // InternalGo.g:3106:4: rule__SimpleStmt__SendStmtAssignment_0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__SimpleStmt__ContentAssignment_0();
+                    rule__SimpleStmt__SendStmtAssignment_0();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -11139,7 +11139,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getSimpleStmtAccess().getContentAssignment_0()); 
+                       after(grammarAccess.getSimpleStmtAccess().getSendStmtAssignment_0()); 
                     }
 
                     }
@@ -11148,19 +11148,19 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalGo.g:3110:2: ( ( rule__SimpleStmt__ContentAssignment_1 ) )
+                    // InternalGo.g:3110:2: ( ( rule__SimpleStmt__ExpressionStmtAssignment_1 ) )
                     {
-                    // InternalGo.g:3110:2: ( ( rule__SimpleStmt__ContentAssignment_1 ) )
-                    // InternalGo.g:3111:3: ( rule__SimpleStmt__ContentAssignment_1 )
+                    // InternalGo.g:3110:2: ( ( rule__SimpleStmt__ExpressionStmtAssignment_1 ) )
+                    // InternalGo.g:3111:3: ( rule__SimpleStmt__ExpressionStmtAssignment_1 )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getSimpleStmtAccess().getContentAssignment_1()); 
+                       before(grammarAccess.getSimpleStmtAccess().getExpressionStmtAssignment_1()); 
                     }
-                    // InternalGo.g:3112:3: ( rule__SimpleStmt__ContentAssignment_1 )
-                    // InternalGo.g:3112:4: rule__SimpleStmt__ContentAssignment_1
+                    // InternalGo.g:3112:3: ( rule__SimpleStmt__ExpressionStmtAssignment_1 )
+                    // InternalGo.g:3112:4: rule__SimpleStmt__ExpressionStmtAssignment_1
                     {
                     pushFollow(FOLLOW_2);
-                    rule__SimpleStmt__ContentAssignment_1();
+                    rule__SimpleStmt__ExpressionStmtAssignment_1();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -11168,7 +11168,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getSimpleStmtAccess().getContentAssignment_1()); 
+                       after(grammarAccess.getSimpleStmtAccess().getExpressionStmtAssignment_1()); 
                     }
 
                     }
@@ -11177,19 +11177,19 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalGo.g:3116:2: ( ( rule__SimpleStmt__ContentAssignment_2 ) )
+                    // InternalGo.g:3116:2: ( ( rule__SimpleStmt__IncDecStmtAssignment_2 ) )
                     {
-                    // InternalGo.g:3116:2: ( ( rule__SimpleStmt__ContentAssignment_2 ) )
-                    // InternalGo.g:3117:3: ( rule__SimpleStmt__ContentAssignment_2 )
+                    // InternalGo.g:3116:2: ( ( rule__SimpleStmt__IncDecStmtAssignment_2 ) )
+                    // InternalGo.g:3117:3: ( rule__SimpleStmt__IncDecStmtAssignment_2 )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getSimpleStmtAccess().getContentAssignment_2()); 
+                       before(grammarAccess.getSimpleStmtAccess().getIncDecStmtAssignment_2()); 
                     }
-                    // InternalGo.g:3118:3: ( rule__SimpleStmt__ContentAssignment_2 )
-                    // InternalGo.g:3118:4: rule__SimpleStmt__ContentAssignment_2
+                    // InternalGo.g:3118:3: ( rule__SimpleStmt__IncDecStmtAssignment_2 )
+                    // InternalGo.g:3118:4: rule__SimpleStmt__IncDecStmtAssignment_2
                     {
                     pushFollow(FOLLOW_2);
-                    rule__SimpleStmt__ContentAssignment_2();
+                    rule__SimpleStmt__IncDecStmtAssignment_2();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -11197,7 +11197,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getSimpleStmtAccess().getContentAssignment_2()); 
+                       after(grammarAccess.getSimpleStmtAccess().getIncDecStmtAssignment_2()); 
                     }
 
                     }
@@ -11206,19 +11206,19 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalGo.g:3122:2: ( ( rule__SimpleStmt__ContentAssignment_3 ) )
+                    // InternalGo.g:3122:2: ( ( rule__SimpleStmt__AssignmentAssignment_3 ) )
                     {
-                    // InternalGo.g:3122:2: ( ( rule__SimpleStmt__ContentAssignment_3 ) )
-                    // InternalGo.g:3123:3: ( rule__SimpleStmt__ContentAssignment_3 )
+                    // InternalGo.g:3122:2: ( ( rule__SimpleStmt__AssignmentAssignment_3 ) )
+                    // InternalGo.g:3123:3: ( rule__SimpleStmt__AssignmentAssignment_3 )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getSimpleStmtAccess().getContentAssignment_3()); 
+                       before(grammarAccess.getSimpleStmtAccess().getAssignmentAssignment_3()); 
                     }
-                    // InternalGo.g:3124:3: ( rule__SimpleStmt__ContentAssignment_3 )
-                    // InternalGo.g:3124:4: rule__SimpleStmt__ContentAssignment_3
+                    // InternalGo.g:3124:3: ( rule__SimpleStmt__AssignmentAssignment_3 )
+                    // InternalGo.g:3124:4: rule__SimpleStmt__AssignmentAssignment_3
                     {
                     pushFollow(FOLLOW_2);
-                    rule__SimpleStmt__ContentAssignment_3();
+                    rule__SimpleStmt__AssignmentAssignment_3();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -11226,7 +11226,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getSimpleStmtAccess().getContentAssignment_3()); 
+                       after(grammarAccess.getSimpleStmtAccess().getAssignmentAssignment_3()); 
                     }
 
                     }
@@ -11235,19 +11235,19 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalGo.g:3128:2: ( ( rule__SimpleStmt__ContentAssignment_4 ) )
+                    // InternalGo.g:3128:2: ( ( rule__SimpleStmt__ShortVarDeclAssignment_4 ) )
                     {
-                    // InternalGo.g:3128:2: ( ( rule__SimpleStmt__ContentAssignment_4 ) )
-                    // InternalGo.g:3129:3: ( rule__SimpleStmt__ContentAssignment_4 )
+                    // InternalGo.g:3128:2: ( ( rule__SimpleStmt__ShortVarDeclAssignment_4 ) )
+                    // InternalGo.g:3129:3: ( rule__SimpleStmt__ShortVarDeclAssignment_4 )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getSimpleStmtAccess().getContentAssignment_4()); 
+                       before(grammarAccess.getSimpleStmtAccess().getShortVarDeclAssignment_4()); 
                     }
-                    // InternalGo.g:3130:3: ( rule__SimpleStmt__ContentAssignment_4 )
-                    // InternalGo.g:3130:4: rule__SimpleStmt__ContentAssignment_4
+                    // InternalGo.g:3130:3: ( rule__SimpleStmt__ShortVarDeclAssignment_4 )
+                    // InternalGo.g:3130:4: rule__SimpleStmt__ShortVarDeclAssignment_4
                     {
                     pushFollow(FOLLOW_2);
-                    rule__SimpleStmt__ContentAssignment_4();
+                    rule__SimpleStmt__ShortVarDeclAssignment_4();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -11255,7 +11255,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getSimpleStmtAccess().getContentAssignment_4()); 
+                       after(grammarAccess.getSimpleStmtAccess().getShortVarDeclAssignment_4()); 
                     }
 
                     }
@@ -11264,19 +11264,19 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // InternalGo.g:3134:2: ( ( rule__SimpleStmt__ContentAssignment_5 ) )
+                    // InternalGo.g:3134:2: ( ( rule__SimpleStmt__EmptyStmtAssignment_5 ) )
                     {
-                    // InternalGo.g:3134:2: ( ( rule__SimpleStmt__ContentAssignment_5 ) )
-                    // InternalGo.g:3135:3: ( rule__SimpleStmt__ContentAssignment_5 )
+                    // InternalGo.g:3134:2: ( ( rule__SimpleStmt__EmptyStmtAssignment_5 ) )
+                    // InternalGo.g:3135:3: ( rule__SimpleStmt__EmptyStmtAssignment_5 )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getSimpleStmtAccess().getContentAssignment_5()); 
+                       before(grammarAccess.getSimpleStmtAccess().getEmptyStmtAssignment_5()); 
                     }
-                    // InternalGo.g:3136:3: ( rule__SimpleStmt__ContentAssignment_5 )
-                    // InternalGo.g:3136:4: rule__SimpleStmt__ContentAssignment_5
+                    // InternalGo.g:3136:3: ( rule__SimpleStmt__EmptyStmtAssignment_5 )
+                    // InternalGo.g:3136:4: rule__SimpleStmt__EmptyStmtAssignment_5
                     {
                     pushFollow(FOLLOW_2);
-                    rule__SimpleStmt__ContentAssignment_5();
+                    rule__SimpleStmt__EmptyStmtAssignment_5();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -11284,7 +11284,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getSimpleStmtAccess().getContentAssignment_5()); 
+                       after(grammarAccess.getSimpleStmtAccess().getEmptyStmtAssignment_5()); 
                     }
 
                     }
@@ -48007,9 +48007,9 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Statement__DeferStmtAssignment_14"
 
 
-    // $ANTLR start "rule__SimpleStmt__ContentAssignment_0"
-    // InternalGo.g:14304:1: rule__SimpleStmt__ContentAssignment_0 : ( rulesendStmt ) ;
-    public final void rule__SimpleStmt__ContentAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__SimpleStmt__SendStmtAssignment_0"
+    // InternalGo.g:14304:1: rule__SimpleStmt__SendStmtAssignment_0 : ( rulesendStmt ) ;
+    public final void rule__SimpleStmt__SendStmtAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -48021,7 +48021,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             // InternalGo.g:14310:3: rulesendStmt
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSimpleStmtAccess().getContentSendStmtParserRuleCall_0_0()); 
+               before(grammarAccess.getSimpleStmtAccess().getSendStmtSendStmtParserRuleCall_0_0()); 
             }
             pushFollow(FOLLOW_2);
             rulesendStmt();
@@ -48029,7 +48029,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSimpleStmtAccess().getContentSendStmtParserRuleCall_0_0()); 
+               after(grammarAccess.getSimpleStmtAccess().getSendStmtSendStmtParserRuleCall_0_0()); 
             }
 
             }
@@ -48049,12 +48049,12 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SimpleStmt__ContentAssignment_0"
+    // $ANTLR end "rule__SimpleStmt__SendStmtAssignment_0"
 
 
-    // $ANTLR start "rule__SimpleStmt__ContentAssignment_1"
-    // InternalGo.g:14319:1: rule__SimpleStmt__ContentAssignment_1 : ( ruleexpressionStmt ) ;
-    public final void rule__SimpleStmt__ContentAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__SimpleStmt__ExpressionStmtAssignment_1"
+    // InternalGo.g:14319:1: rule__SimpleStmt__ExpressionStmtAssignment_1 : ( ruleexpressionStmt ) ;
+    public final void rule__SimpleStmt__ExpressionStmtAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -48066,7 +48066,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             // InternalGo.g:14325:3: ruleexpressionStmt
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSimpleStmtAccess().getContentExpressionStmtParserRuleCall_1_0()); 
+               before(grammarAccess.getSimpleStmtAccess().getExpressionStmtExpressionStmtParserRuleCall_1_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleexpressionStmt();
@@ -48074,7 +48074,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSimpleStmtAccess().getContentExpressionStmtParserRuleCall_1_0()); 
+               after(grammarAccess.getSimpleStmtAccess().getExpressionStmtExpressionStmtParserRuleCall_1_0()); 
             }
 
             }
@@ -48094,12 +48094,12 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SimpleStmt__ContentAssignment_1"
+    // $ANTLR end "rule__SimpleStmt__ExpressionStmtAssignment_1"
 
 
-    // $ANTLR start "rule__SimpleStmt__ContentAssignment_2"
-    // InternalGo.g:14334:1: rule__SimpleStmt__ContentAssignment_2 : ( ruleincDecStmt ) ;
-    public final void rule__SimpleStmt__ContentAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__SimpleStmt__IncDecStmtAssignment_2"
+    // InternalGo.g:14334:1: rule__SimpleStmt__IncDecStmtAssignment_2 : ( ruleincDecStmt ) ;
+    public final void rule__SimpleStmt__IncDecStmtAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -48111,7 +48111,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             // InternalGo.g:14340:3: ruleincDecStmt
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSimpleStmtAccess().getContentIncDecStmtParserRuleCall_2_0()); 
+               before(grammarAccess.getSimpleStmtAccess().getIncDecStmtIncDecStmtParserRuleCall_2_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleincDecStmt();
@@ -48119,7 +48119,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSimpleStmtAccess().getContentIncDecStmtParserRuleCall_2_0()); 
+               after(grammarAccess.getSimpleStmtAccess().getIncDecStmtIncDecStmtParserRuleCall_2_0()); 
             }
 
             }
@@ -48139,12 +48139,12 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SimpleStmt__ContentAssignment_2"
+    // $ANTLR end "rule__SimpleStmt__IncDecStmtAssignment_2"
 
 
-    // $ANTLR start "rule__SimpleStmt__ContentAssignment_3"
-    // InternalGo.g:14349:1: rule__SimpleStmt__ContentAssignment_3 : ( ruleassignment ) ;
-    public final void rule__SimpleStmt__ContentAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__SimpleStmt__AssignmentAssignment_3"
+    // InternalGo.g:14349:1: rule__SimpleStmt__AssignmentAssignment_3 : ( ruleassignment ) ;
+    public final void rule__SimpleStmt__AssignmentAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -48156,7 +48156,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             // InternalGo.g:14355:3: ruleassignment
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSimpleStmtAccess().getContentAssignmentParserRuleCall_3_0()); 
+               before(grammarAccess.getSimpleStmtAccess().getAssignmentAssignmentParserRuleCall_3_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleassignment();
@@ -48164,7 +48164,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSimpleStmtAccess().getContentAssignmentParserRuleCall_3_0()); 
+               after(grammarAccess.getSimpleStmtAccess().getAssignmentAssignmentParserRuleCall_3_0()); 
             }
 
             }
@@ -48184,12 +48184,12 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SimpleStmt__ContentAssignment_3"
+    // $ANTLR end "rule__SimpleStmt__AssignmentAssignment_3"
 
 
-    // $ANTLR start "rule__SimpleStmt__ContentAssignment_4"
-    // InternalGo.g:14364:1: rule__SimpleStmt__ContentAssignment_4 : ( ruleshortVarDecl ) ;
-    public final void rule__SimpleStmt__ContentAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__SimpleStmt__ShortVarDeclAssignment_4"
+    // InternalGo.g:14364:1: rule__SimpleStmt__ShortVarDeclAssignment_4 : ( ruleshortVarDecl ) ;
+    public final void rule__SimpleStmt__ShortVarDeclAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -48201,7 +48201,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             // InternalGo.g:14370:3: ruleshortVarDecl
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSimpleStmtAccess().getContentShortVarDeclParserRuleCall_4_0()); 
+               before(grammarAccess.getSimpleStmtAccess().getShortVarDeclShortVarDeclParserRuleCall_4_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleshortVarDecl();
@@ -48209,7 +48209,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSimpleStmtAccess().getContentShortVarDeclParserRuleCall_4_0()); 
+               after(grammarAccess.getSimpleStmtAccess().getShortVarDeclShortVarDeclParserRuleCall_4_0()); 
             }
 
             }
@@ -48229,12 +48229,12 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SimpleStmt__ContentAssignment_4"
+    // $ANTLR end "rule__SimpleStmt__ShortVarDeclAssignment_4"
 
 
-    // $ANTLR start "rule__SimpleStmt__ContentAssignment_5"
-    // InternalGo.g:14379:1: rule__SimpleStmt__ContentAssignment_5 : ( ruleemptyStmt ) ;
-    public final void rule__SimpleStmt__ContentAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__SimpleStmt__EmptyStmtAssignment_5"
+    // InternalGo.g:14379:1: rule__SimpleStmt__EmptyStmtAssignment_5 : ( ruleemptyStmt ) ;
+    public final void rule__SimpleStmt__EmptyStmtAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -48246,7 +48246,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             // InternalGo.g:14385:3: ruleemptyStmt
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSimpleStmtAccess().getContentEmptyStmtParserRuleCall_5_0()); 
+               before(grammarAccess.getSimpleStmtAccess().getEmptyStmtEmptyStmtParserRuleCall_5_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleemptyStmt();
@@ -48254,7 +48254,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSimpleStmtAccess().getContentEmptyStmtParserRuleCall_5_0()); 
+               after(grammarAccess.getSimpleStmtAccess().getEmptyStmtEmptyStmtParserRuleCall_5_0()); 
             }
 
             }
@@ -48274,7 +48274,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SimpleStmt__ContentAssignment_5"
+    // $ANTLR end "rule__SimpleStmt__EmptyStmtAssignment_5"
 
 
     // $ANTLR start "rule__ExpressionStmt__ExprAssignment"
@@ -56593,20 +56593,20 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
 
     // $ANTLR start synpred34_InternalGo
     public final void synpred34_InternalGo_fragment() throws RecognitionException {   
-        // InternalGo.g:3104:2: ( ( ( rule__SimpleStmt__ContentAssignment_0 ) ) )
-        // InternalGo.g:3104:2: ( ( rule__SimpleStmt__ContentAssignment_0 ) )
+        // InternalGo.g:3104:2: ( ( ( rule__SimpleStmt__SendStmtAssignment_0 ) ) )
+        // InternalGo.g:3104:2: ( ( rule__SimpleStmt__SendStmtAssignment_0 ) )
         {
-        // InternalGo.g:3104:2: ( ( rule__SimpleStmt__ContentAssignment_0 ) )
-        // InternalGo.g:3105:3: ( rule__SimpleStmt__ContentAssignment_0 )
+        // InternalGo.g:3104:2: ( ( rule__SimpleStmt__SendStmtAssignment_0 ) )
+        // InternalGo.g:3105:3: ( rule__SimpleStmt__SendStmtAssignment_0 )
         {
         if ( state.backtracking==0 ) {
-           before(grammarAccess.getSimpleStmtAccess().getContentAssignment_0()); 
+           before(grammarAccess.getSimpleStmtAccess().getSendStmtAssignment_0()); 
         }
-        // InternalGo.g:3106:3: ( rule__SimpleStmt__ContentAssignment_0 )
-        // InternalGo.g:3106:4: rule__SimpleStmt__ContentAssignment_0
+        // InternalGo.g:3106:3: ( rule__SimpleStmt__SendStmtAssignment_0 )
+        // InternalGo.g:3106:4: rule__SimpleStmt__SendStmtAssignment_0
         {
         pushFollow(FOLLOW_2);
-        rule__SimpleStmt__ContentAssignment_0();
+        rule__SimpleStmt__SendStmtAssignment_0();
 
         state._fsp--;
         if (state.failed) return ;
@@ -56623,20 +56623,20 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
 
     // $ANTLR start synpred35_InternalGo
     public final void synpred35_InternalGo_fragment() throws RecognitionException {   
-        // InternalGo.g:3110:2: ( ( ( rule__SimpleStmt__ContentAssignment_1 ) ) )
-        // InternalGo.g:3110:2: ( ( rule__SimpleStmt__ContentAssignment_1 ) )
+        // InternalGo.g:3110:2: ( ( ( rule__SimpleStmt__ExpressionStmtAssignment_1 ) ) )
+        // InternalGo.g:3110:2: ( ( rule__SimpleStmt__ExpressionStmtAssignment_1 ) )
         {
-        // InternalGo.g:3110:2: ( ( rule__SimpleStmt__ContentAssignment_1 ) )
-        // InternalGo.g:3111:3: ( rule__SimpleStmt__ContentAssignment_1 )
+        // InternalGo.g:3110:2: ( ( rule__SimpleStmt__ExpressionStmtAssignment_1 ) )
+        // InternalGo.g:3111:3: ( rule__SimpleStmt__ExpressionStmtAssignment_1 )
         {
         if ( state.backtracking==0 ) {
-           before(grammarAccess.getSimpleStmtAccess().getContentAssignment_1()); 
+           before(grammarAccess.getSimpleStmtAccess().getExpressionStmtAssignment_1()); 
         }
-        // InternalGo.g:3112:3: ( rule__SimpleStmt__ContentAssignment_1 )
-        // InternalGo.g:3112:4: rule__SimpleStmt__ContentAssignment_1
+        // InternalGo.g:3112:3: ( rule__SimpleStmt__ExpressionStmtAssignment_1 )
+        // InternalGo.g:3112:4: rule__SimpleStmt__ExpressionStmtAssignment_1
         {
         pushFollow(FOLLOW_2);
-        rule__SimpleStmt__ContentAssignment_1();
+        rule__SimpleStmt__ExpressionStmtAssignment_1();
 
         state._fsp--;
         if (state.failed) return ;
@@ -56653,20 +56653,20 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
 
     // $ANTLR start synpred36_InternalGo
     public final void synpred36_InternalGo_fragment() throws RecognitionException {   
-        // InternalGo.g:3116:2: ( ( ( rule__SimpleStmt__ContentAssignment_2 ) ) )
-        // InternalGo.g:3116:2: ( ( rule__SimpleStmt__ContentAssignment_2 ) )
+        // InternalGo.g:3116:2: ( ( ( rule__SimpleStmt__IncDecStmtAssignment_2 ) ) )
+        // InternalGo.g:3116:2: ( ( rule__SimpleStmt__IncDecStmtAssignment_2 ) )
         {
-        // InternalGo.g:3116:2: ( ( rule__SimpleStmt__ContentAssignment_2 ) )
-        // InternalGo.g:3117:3: ( rule__SimpleStmt__ContentAssignment_2 )
+        // InternalGo.g:3116:2: ( ( rule__SimpleStmt__IncDecStmtAssignment_2 ) )
+        // InternalGo.g:3117:3: ( rule__SimpleStmt__IncDecStmtAssignment_2 )
         {
         if ( state.backtracking==0 ) {
-           before(grammarAccess.getSimpleStmtAccess().getContentAssignment_2()); 
+           before(grammarAccess.getSimpleStmtAccess().getIncDecStmtAssignment_2()); 
         }
-        // InternalGo.g:3118:3: ( rule__SimpleStmt__ContentAssignment_2 )
-        // InternalGo.g:3118:4: rule__SimpleStmt__ContentAssignment_2
+        // InternalGo.g:3118:3: ( rule__SimpleStmt__IncDecStmtAssignment_2 )
+        // InternalGo.g:3118:4: rule__SimpleStmt__IncDecStmtAssignment_2
         {
         pushFollow(FOLLOW_2);
-        rule__SimpleStmt__ContentAssignment_2();
+        rule__SimpleStmt__IncDecStmtAssignment_2();
 
         state._fsp--;
         if (state.failed) return ;
@@ -56683,20 +56683,20 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
 
     // $ANTLR start synpred37_InternalGo
     public final void synpred37_InternalGo_fragment() throws RecognitionException {   
-        // InternalGo.g:3122:2: ( ( ( rule__SimpleStmt__ContentAssignment_3 ) ) )
-        // InternalGo.g:3122:2: ( ( rule__SimpleStmt__ContentAssignment_3 ) )
+        // InternalGo.g:3122:2: ( ( ( rule__SimpleStmt__AssignmentAssignment_3 ) ) )
+        // InternalGo.g:3122:2: ( ( rule__SimpleStmt__AssignmentAssignment_3 ) )
         {
-        // InternalGo.g:3122:2: ( ( rule__SimpleStmt__ContentAssignment_3 ) )
-        // InternalGo.g:3123:3: ( rule__SimpleStmt__ContentAssignment_3 )
+        // InternalGo.g:3122:2: ( ( rule__SimpleStmt__AssignmentAssignment_3 ) )
+        // InternalGo.g:3123:3: ( rule__SimpleStmt__AssignmentAssignment_3 )
         {
         if ( state.backtracking==0 ) {
-           before(grammarAccess.getSimpleStmtAccess().getContentAssignment_3()); 
+           before(grammarAccess.getSimpleStmtAccess().getAssignmentAssignment_3()); 
         }
-        // InternalGo.g:3124:3: ( rule__SimpleStmt__ContentAssignment_3 )
-        // InternalGo.g:3124:4: rule__SimpleStmt__ContentAssignment_3
+        // InternalGo.g:3124:3: ( rule__SimpleStmt__AssignmentAssignment_3 )
+        // InternalGo.g:3124:4: rule__SimpleStmt__AssignmentAssignment_3
         {
         pushFollow(FOLLOW_2);
-        rule__SimpleStmt__ContentAssignment_3();
+        rule__SimpleStmt__AssignmentAssignment_3();
 
         state._fsp--;
         if (state.failed) return ;
@@ -56713,20 +56713,20 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
 
     // $ANTLR start synpred38_InternalGo
     public final void synpred38_InternalGo_fragment() throws RecognitionException {   
-        // InternalGo.g:3128:2: ( ( ( rule__SimpleStmt__ContentAssignment_4 ) ) )
-        // InternalGo.g:3128:2: ( ( rule__SimpleStmt__ContentAssignment_4 ) )
+        // InternalGo.g:3128:2: ( ( ( rule__SimpleStmt__ShortVarDeclAssignment_4 ) ) )
+        // InternalGo.g:3128:2: ( ( rule__SimpleStmt__ShortVarDeclAssignment_4 ) )
         {
-        // InternalGo.g:3128:2: ( ( rule__SimpleStmt__ContentAssignment_4 ) )
-        // InternalGo.g:3129:3: ( rule__SimpleStmt__ContentAssignment_4 )
+        // InternalGo.g:3128:2: ( ( rule__SimpleStmt__ShortVarDeclAssignment_4 ) )
+        // InternalGo.g:3129:3: ( rule__SimpleStmt__ShortVarDeclAssignment_4 )
         {
         if ( state.backtracking==0 ) {
-           before(grammarAccess.getSimpleStmtAccess().getContentAssignment_4()); 
+           before(grammarAccess.getSimpleStmtAccess().getShortVarDeclAssignment_4()); 
         }
-        // InternalGo.g:3130:3: ( rule__SimpleStmt__ContentAssignment_4 )
-        // InternalGo.g:3130:4: rule__SimpleStmt__ContentAssignment_4
+        // InternalGo.g:3130:3: ( rule__SimpleStmt__ShortVarDeclAssignment_4 )
+        // InternalGo.g:3130:4: rule__SimpleStmt__ShortVarDeclAssignment_4
         {
         pushFollow(FOLLOW_2);
-        rule__SimpleStmt__ContentAssignment_4();
+        rule__SimpleStmt__ShortVarDeclAssignment_4();
 
         state._fsp--;
         if (state.failed) return ;
@@ -58919,7 +58919,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             this.transition = dfa_14;
         }
         public String getDescription() {
-            return "3099:1: rule__SimpleStmt__Alternatives : ( ( ( rule__SimpleStmt__ContentAssignment_0 ) ) | ( ( rule__SimpleStmt__ContentAssignment_1 ) ) | ( ( rule__SimpleStmt__ContentAssignment_2 ) ) | ( ( rule__SimpleStmt__ContentAssignment_3 ) ) | ( ( rule__SimpleStmt__ContentAssignment_4 ) ) | ( ( rule__SimpleStmt__ContentAssignment_5 ) ) );";
+            return "3099:1: rule__SimpleStmt__Alternatives : ( ( ( rule__SimpleStmt__SendStmtAssignment_0 ) ) | ( ( rule__SimpleStmt__ExpressionStmtAssignment_1 ) ) | ( ( rule__SimpleStmt__IncDecStmtAssignment_2 ) ) | ( ( rule__SimpleStmt__AssignmentAssignment_3 ) ) | ( ( rule__SimpleStmt__ShortVarDeclAssignment_4 ) ) | ( ( rule__SimpleStmt__EmptyStmtAssignment_5 ) ) );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;

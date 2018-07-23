@@ -4,10 +4,15 @@
 package org.xtext.validation;
 
 import org.eclipse.xtext.validation.Check;
+import org.xtext.go.assignment;
 import org.xtext.go.expression;
 import org.xtext.go.expressionMatched;
+import org.xtext.go.expressionStmt;
 import org.xtext.go.ifStmt;
+import org.xtext.go.incDecStmt;
 import org.xtext.go.primaryExpr;
+import org.xtext.go.sendStmt;
+import org.xtext.go.shortVarDecl;
 import org.xtext.go.simpleStmt;
 import org.xtext.go.unaryExpr;
 import org.xtext.validation.AbstractGoValidator;
@@ -37,6 +42,79 @@ public class GoValidator extends AbstractGoValidator {
       _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
+  }
+  
+  public Object checkPrimary(final primaryExpr expr) {
+    return null;
+  }
+  
+  public Object checkSimple(final simpleStmt stmt) {
+    Object _xblockexpression = null;
+    {
+      sendStmt _sendStmt = stmt.getSendStmt();
+      boolean _tripleNotEquals = (_sendStmt != null);
+      if (_tripleNotEquals) {
+        this.checkSendStmt(stmt.getSendStmt());
+      }
+      expressionStmt _expressionStmt = stmt.getExpressionStmt();
+      boolean _tripleNotEquals_1 = (_expressionStmt != null);
+      if (_tripleNotEquals_1) {
+        this.checkExpression(stmt.getExpressionStmt().getExpr());
+      }
+      incDecStmt _incDecStmt = stmt.getIncDecStmt();
+      boolean _tripleNotEquals_2 = (_incDecStmt != null);
+      if (_tripleNotEquals_2) {
+        this.checkDcStmt(stmt.getIncDecStmt());
+      }
+      assignment _assignment = stmt.getAssignment();
+      boolean _tripleNotEquals_3 = (_assignment != null);
+      if (_tripleNotEquals_3) {
+        this.checkAssignment(stmt.getAssignment());
+      }
+      Object _xifexpression = null;
+      shortVarDecl _shortVarDecl = stmt.getShortVarDecl();
+      boolean _tripleNotEquals_4 = (_shortVarDecl != null);
+      if (_tripleNotEquals_4) {
+        _xifexpression = this.checkShortVar(stmt.getShortVarDecl());
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
+  }
+  
+  public Object checkSendStmt(final sendStmt stmt) {
+    Object _xifexpression = null;
+    expression _expr1 = stmt.getExpr1();
+    boolean _tripleNotEquals = (_expr1 != null);
+    if (_tripleNotEquals) {
+      Object _xifexpression_1 = null;
+      expression _expr2 = stmt.getExpr2();
+      boolean _tripleNotEquals_1 = (_expr2 != null);
+      if (_tripleNotEquals_1) {
+        Object _xblockexpression = null;
+        {
+          this.checkExpression(stmt.getExpr1());
+          _xblockexpression = this.checkExpression(stmt.getExpr2());
+        }
+        _xifexpression_1 = _xblockexpression;
+      } else {
+        _xifexpression_1 = null;
+      }
+      _xifexpression = _xifexpression_1;
+    }
+    return _xifexpression;
+  }
+  
+  public Object checkDcStmt(final incDecStmt stmt) {
+    return null;
+  }
+  
+  public Object checkAssignment(final assignment assignment) {
+    return null;
+  }
+  
+  public Object checkShortVar(final shortVarDecl decl) {
+    return null;
   }
   
   public Object checkExpression(final expression expression) {
@@ -76,15 +154,5 @@ public class GoValidator extends AbstractGoValidator {
       _xifexpression = this.checkPrimary(expr.getPrimaryExpr());
     }
     return _xifexpression;
-  }
-  
-  public Object checkPrimary(final primaryExpr expr) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method getContent() is undefined for the type primaryExpr"
-      + "\n!== cannot be resolved");
-  }
-  
-  public Object checkSimple(final simpleStmt stmt) {
-    return null;
   }
 }

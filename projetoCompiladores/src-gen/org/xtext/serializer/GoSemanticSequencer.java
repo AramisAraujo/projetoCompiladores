@@ -1788,12 +1788,12 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         content=sendStmt | 
-	 *         content=expressionStmt | 
-	 *         content=incDecStmt | 
-	 *         content=assignment | 
-	 *         content=shortVarDecl | 
-	 *         content=emptyStmt
+	 *         sendStmt=sendStmt | 
+	 *         expressionStmt=expressionStmt | 
+	 *         incDecStmt=incDecStmt | 
+	 *         assignment=assignment | 
+	 *         shortVarDecl=shortVarDecl | 
+	 *         emptyStmt=emptyStmt
 	 *     )
 	 */
 	protected void sequence_simpleStmt(ISerializationContext context, simpleStmt semanticObject) {

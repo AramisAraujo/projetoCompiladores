@@ -1649,9 +1649,59 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getsimpleStmt_Content()
+  public EReference getsimpleStmt_SendStmt()
   {
     return (EReference)simpleStmtEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getsimpleStmt_ExpressionStmt()
+  {
+    return (EReference)simpleStmtEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getsimpleStmt_IncDecStmt()
+  {
+    return (EReference)simpleStmtEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getsimpleStmt_Assignment()
+  {
+    return (EReference)simpleStmtEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getsimpleStmt_ShortVarDecl()
+  {
+    return (EReference)simpleStmtEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getsimpleStmt_EmptyStmt()
+  {
+    return (EReference)simpleStmtEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -4078,7 +4128,12 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
     createEReference(statementEClass, STATEMENT__DEFER_STMT);
 
     simpleStmtEClass = createEClass(SIMPLE_STMT);
-    createEReference(simpleStmtEClass, SIMPLE_STMT__CONTENT);
+    createEReference(simpleStmtEClass, SIMPLE_STMT__SEND_STMT);
+    createEReference(simpleStmtEClass, SIMPLE_STMT__EXPRESSION_STMT);
+    createEReference(simpleStmtEClass, SIMPLE_STMT__INC_DEC_STMT);
+    createEReference(simpleStmtEClass, SIMPLE_STMT__ASSIGNMENT);
+    createEReference(simpleStmtEClass, SIMPLE_STMT__SHORT_VAR_DECL);
+    createEReference(simpleStmtEClass, SIMPLE_STMT__EMPTY_STMT);
 
     expressionStmtEClass = createEClass(EXPRESSION_STMT);
     createEReference(expressionStmtEClass, EXPRESSION_STMT__EXPR);
@@ -4518,7 +4573,12 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
     initEReference(getstatement_DeferStmt(), this.getdeferStmt(), null, "deferStmt", null, 0, 1, statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(simpleStmtEClass, simpleStmt.class, "simpleStmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getsimpleStmt_Content(), ecorePackage.getEObject(), null, "content", null, 0, 1, simpleStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getsimpleStmt_SendStmt(), this.getsendStmt(), null, "sendStmt", null, 0, 1, simpleStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getsimpleStmt_ExpressionStmt(), this.getexpressionStmt(), null, "expressionStmt", null, 0, 1, simpleStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getsimpleStmt_IncDecStmt(), this.getincDecStmt(), null, "incDecStmt", null, 0, 1, simpleStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getsimpleStmt_Assignment(), this.getassignment(), null, "assignment", null, 0, 1, simpleStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getsimpleStmt_ShortVarDecl(), this.getshortVarDecl(), null, "shortVarDecl", null, 0, 1, simpleStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getsimpleStmt_EmptyStmt(), this.getemptyStmt(), null, "emptyStmt", null, 0, 1, simpleStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionStmtEClass, expressionStmt.class, "expressionStmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getexpressionStmt_Expr(), this.getexpression(), null, "expr", null, 0, 1, expressionStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

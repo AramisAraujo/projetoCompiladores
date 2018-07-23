@@ -927,13 +927,58 @@ public interface GoPackage extends EPackage
   int SIMPLE_STMT = 22;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' containment reference.
+   * The feature id for the '<em><b>Send Stmt</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SIMPLE_STMT__CONTENT = 0;
+  int SIMPLE_STMT__SEND_STMT = 0;
+
+  /**
+   * The feature id for the '<em><b>Expression Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_STMT__EXPRESSION_STMT = 1;
+
+  /**
+   * The feature id for the '<em><b>Inc Dec Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_STMT__INC_DEC_STMT = 2;
+
+  /**
+   * The feature id for the '<em><b>Assignment</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_STMT__ASSIGNMENT = 3;
+
+  /**
+   * The feature id for the '<em><b>Short Var Decl</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_STMT__SHORT_VAR_DECL = 4;
+
+  /**
+   * The feature id for the '<em><b>Empty Stmt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_STMT__EMPTY_STMT = 5;
 
   /**
    * The number of structural features of the '<em>simple Stmt</em>' class.
@@ -942,7 +987,7 @@ public interface GoPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SIMPLE_STMT_FEATURE_COUNT = 1;
+  int SIMPLE_STMT_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link org.xtext.go.impl.expressionStmtImpl <em>expression Stmt</em>}' class.
@@ -4605,15 +4650,70 @@ public interface GoPackage extends EPackage
   EClass getsimpleStmt();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.go.simpleStmt#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.go.simpleStmt#getSendStmt <em>Send Stmt</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Content</em>'.
-   * @see org.xtext.go.simpleStmt#getContent()
+   * @return the meta object for the containment reference '<em>Send Stmt</em>'.
+   * @see org.xtext.go.simpleStmt#getSendStmt()
    * @see #getsimpleStmt()
    * @generated
    */
-  EReference getsimpleStmt_Content();
+  EReference getsimpleStmt_SendStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.simpleStmt#getExpressionStmt <em>Expression Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression Stmt</em>'.
+   * @see org.xtext.go.simpleStmt#getExpressionStmt()
+   * @see #getsimpleStmt()
+   * @generated
+   */
+  EReference getsimpleStmt_ExpressionStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.simpleStmt#getIncDecStmt <em>Inc Dec Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Inc Dec Stmt</em>'.
+   * @see org.xtext.go.simpleStmt#getIncDecStmt()
+   * @see #getsimpleStmt()
+   * @generated
+   */
+  EReference getsimpleStmt_IncDecStmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.simpleStmt#getAssignment <em>Assignment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Assignment</em>'.
+   * @see org.xtext.go.simpleStmt#getAssignment()
+   * @see #getsimpleStmt()
+   * @generated
+   */
+  EReference getsimpleStmt_Assignment();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.simpleStmt#getShortVarDecl <em>Short Var Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Short Var Decl</em>'.
+   * @see org.xtext.go.simpleStmt#getShortVarDecl()
+   * @see #getsimpleStmt()
+   * @generated
+   */
+  EReference getsimpleStmt_ShortVarDecl();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.simpleStmt#getEmptyStmt <em>Empty Stmt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Empty Stmt</em>'.
+   * @see org.xtext.go.simpleStmt#getEmptyStmt()
+   * @see #getsimpleStmt()
+   * @generated
+   */
+  EReference getsimpleStmt_EmptyStmt();
 
   /**
    * Returns the meta object for class '{@link org.xtext.go.expressionStmt <em>expression Stmt</em>}'.
@@ -7709,12 +7809,52 @@ public interface GoPackage extends EPackage
     EClass SIMPLE_STMT = eINSTANCE.getsimpleStmt();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Send Stmt</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SIMPLE_STMT__CONTENT = eINSTANCE.getsimpleStmt_Content();
+    EReference SIMPLE_STMT__SEND_STMT = eINSTANCE.getsimpleStmt_SendStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Expression Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIMPLE_STMT__EXPRESSION_STMT = eINSTANCE.getsimpleStmt_ExpressionStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Inc Dec Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIMPLE_STMT__INC_DEC_STMT = eINSTANCE.getsimpleStmt_IncDecStmt();
+
+    /**
+     * The meta object literal for the '<em><b>Assignment</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIMPLE_STMT__ASSIGNMENT = eINSTANCE.getsimpleStmt_Assignment();
+
+    /**
+     * The meta object literal for the '<em><b>Short Var Decl</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIMPLE_STMT__SHORT_VAR_DECL = eINSTANCE.getsimpleStmt_ShortVarDecl();
+
+    /**
+     * The meta object literal for the '<em><b>Empty Stmt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIMPLE_STMT__EMPTY_STMT = eINSTANCE.getsimpleStmt_EmptyStmt();
 
     /**
      * The meta object literal for the '{@link org.xtext.go.impl.expressionStmtImpl <em>expression Stmt</em>}' class.

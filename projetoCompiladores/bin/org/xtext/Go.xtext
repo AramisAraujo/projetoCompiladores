@@ -123,12 +123,12 @@ statement:
 
 //SimpleStmt = EmptyStmt | ExpressionStmt | SendStmt | IncDecStmt | Assignment | ShortVarDecl .
 simpleStmt:
-	content=sendStmt
-    | content=expressionStmt
-    | content=incDecStmt
-    | content=assignment
-    | content=shortVarDecl
-    | content=emptyStmt;
+	sendStmt=sendStmt
+    | expressionStmt=expressionStmt
+    | incDecStmt=incDecStmt
+    | assignment=assignment
+    | shortVarDecl=shortVarDecl
+    | emptyStmt=emptyStmt;
 
 //ExpressionStmt = Expression .
 expressionStmt: 

@@ -136,7 +136,17 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="simpleStmt">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sendStmt" eType="#//sendStmt"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expressionStmt" eType="#//expressionStmt"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incDecStmt" eType="#//incDecStmt"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignment" eType="#//assignment"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="shortVarDecl" eType="#//shortVarDecl"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="emptyStmt" eType="#//emptyStmt"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="expressionStmt">

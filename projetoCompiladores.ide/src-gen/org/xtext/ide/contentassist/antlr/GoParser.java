@@ -271,12 +271,12 @@ public class GoParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getStatementAccess().getSelectStmtAssignment_12(), "rule__Statement__SelectStmtAssignment_12");
 			builder.put(grammarAccess.getStatementAccess().getForStmtAssignment_13(), "rule__Statement__ForStmtAssignment_13");
 			builder.put(grammarAccess.getStatementAccess().getDeferStmtAssignment_14(), "rule__Statement__DeferStmtAssignment_14");
-			builder.put(grammarAccess.getSimpleStmtAccess().getContentAssignment_0(), "rule__SimpleStmt__ContentAssignment_0");
-			builder.put(grammarAccess.getSimpleStmtAccess().getContentAssignment_1(), "rule__SimpleStmt__ContentAssignment_1");
-			builder.put(grammarAccess.getSimpleStmtAccess().getContentAssignment_2(), "rule__SimpleStmt__ContentAssignment_2");
-			builder.put(grammarAccess.getSimpleStmtAccess().getContentAssignment_3(), "rule__SimpleStmt__ContentAssignment_3");
-			builder.put(grammarAccess.getSimpleStmtAccess().getContentAssignment_4(), "rule__SimpleStmt__ContentAssignment_4");
-			builder.put(grammarAccess.getSimpleStmtAccess().getContentAssignment_5(), "rule__SimpleStmt__ContentAssignment_5");
+			builder.put(grammarAccess.getSimpleStmtAccess().getSendStmtAssignment_0(), "rule__SimpleStmt__SendStmtAssignment_0");
+			builder.put(grammarAccess.getSimpleStmtAccess().getExpressionStmtAssignment_1(), "rule__SimpleStmt__ExpressionStmtAssignment_1");
+			builder.put(grammarAccess.getSimpleStmtAccess().getIncDecStmtAssignment_2(), "rule__SimpleStmt__IncDecStmtAssignment_2");
+			builder.put(grammarAccess.getSimpleStmtAccess().getAssignmentAssignment_3(), "rule__SimpleStmt__AssignmentAssignment_3");
+			builder.put(grammarAccess.getSimpleStmtAccess().getShortVarDeclAssignment_4(), "rule__SimpleStmt__ShortVarDeclAssignment_4");
+			builder.put(grammarAccess.getSimpleStmtAccess().getEmptyStmtAssignment_5(), "rule__SimpleStmt__EmptyStmtAssignment_5");
 			builder.put(grammarAccess.getExpressionStmtAccess().getExprAssignment(), "rule__ExpressionStmt__ExprAssignment");
 			builder.put(grammarAccess.getSendStmtAccess().getExpr1Assignment_0(), "rule__SendStmt__Expr1Assignment_0");
 			builder.put(grammarAccess.getSendStmtAccess().getExpr2Assignment_2(), "rule__SendStmt__Expr2Assignment_2");
