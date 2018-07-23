@@ -41,7 +41,7 @@ class GoValidator extends AbstractGoValidator {
 		
 	def checkMatched(expressionMatched matched) {
 		if(matched.getExpression() !== null) {
-//			checkExpression(matched.expression);
+			checkExpression(matched.getExpression());
 		}
 	}
 	
@@ -52,7 +52,8 @@ class GoValidator extends AbstractGoValidator {
 	}
 		
 	def checkPrimary(primaryExpr expr) {
-		//TODO:
+		if(expr.getContent() !== null){			
+		}
 	}
 	
 	def checkSimple(simpleStmt stmt) {
