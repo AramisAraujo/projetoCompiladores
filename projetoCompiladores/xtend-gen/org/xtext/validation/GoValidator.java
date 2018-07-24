@@ -6,11 +6,13 @@ package org.xtext.validation;
 import org.eclipse.xtext.validation.Check;
 import org.xtext.go.GoPackage;
 import org.xtext.go.assignment;
+import org.xtext.go.compositeLit;
 import org.xtext.go.conversion;
 import org.xtext.go.expression;
 import org.xtext.go.expressionList;
 import org.xtext.go.expressionMatched;
 import org.xtext.go.expressionStmt;
+import org.xtext.go.functionLit;
 import org.xtext.go.identifierList;
 import org.xtext.go.ifStmt;
 import org.xtext.go.incDecStmt;
@@ -190,6 +192,38 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   public Object checkLiteral(final literal literal) {
+    Object _xblockexpression = null;
+    {
+      String _litBasic = literal.getLitBasic();
+      boolean _tripleNotEquals = (_litBasic != null);
+      if (_tripleNotEquals) {
+        this.checkBasicLit(literal.getLitBasic());
+      }
+      compositeLit _litComposite = literal.getLitComposite();
+      boolean _tripleNotEquals_1 = (_litComposite != null);
+      if (_tripleNotEquals_1) {
+        this.checkCompLit(literal.getLitComposite());
+      }
+      Object _xifexpression = null;
+      functionLit _litFunc = literal.getLitFunc();
+      boolean _tripleNotEquals_2 = (_litFunc != null);
+      if (_tripleNotEquals_2) {
+        _xifexpression = this.checkLitFunc(literal.getLitFunc());
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
+  }
+  
+  public Object checkLitFunc(final functionLit lit) {
+    return null;
+  }
+  
+  public Object checkCompLit(final compositeLit lit) {
+    return null;
+  }
+  
+  public Object checkBasicLit(final String string) {
     return null;
   }
   
@@ -231,7 +265,8 @@ public class GoValidator extends AbstractGoValidator {
         this.checkExpression(stmt.getExpr1());
         this.checkExpression(stmt.getExpr2());
       } else {
-        this.error("expression value can not be empty", 
+        this.error(
+          "expression value can not be empty", 
           GoPackage.Literals.MODEL__GREETINGS, 
           stmt.toString());
       }
@@ -242,8 +277,9 @@ public class GoValidator extends AbstractGoValidator {
     return null;
   }
   
-  public Object checkAssignment(final assignment assignment) {
-    return null;
+  public void checkAssignment(final assignment assignment) {
+    this.checkExpList(assignment.getExprList1());
+    this.checkExpList(assignment.getExprList2());
   }
   
   public void checkShortVar(final shortVarDecl decl) {
@@ -253,10 +289,14 @@ public class GoValidator extends AbstractGoValidator {
       expressionList _exprList = decl.getExprList();
       boolean _tripleNotEquals_1 = (_exprList != null);
       if (_tripleNotEquals_1) {
-        for (int i = 0; (i < decl.getExprList().getExpr().size()); i++) {
-          this.checkExpression(decl.getExprList().getExpr().get(i));
-        }
+        this.checkExpList(decl.getExprList());
       }
+    }
+  }
+  
+  public void checkExpList(final expressionList list) {
+    for (int i = 0; (i < list.getExpr().size()); i++) {
+      this.checkExpression(list.getExpr().get(i));
     }
   }
   
@@ -288,18 +328,11 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   public String getOperatorType(final String operator) {
-    if ((((operator.equals("+") || 
-      operator.equals("-")) || 
-      operator.equals("/")) || 
-      operator.equals("*"))) {
+    if ((((operator.equals("+") || operator.equals("-")) || operator.equals("/")) || operator.equals("*"))) {
       return "ari";
     } else {
-      if ((((((operator.equals(">") || 
-        operator.equals("<")) || 
-        operator.equals(">=")) || 
-        operator.equals("<=")) || 
-        operator.equals("==")) || 
-        operator.equals("!="))) {
+      if ((((((operator.equals(">") || operator.equals("<")) || operator.equals(">=")) || operator.equals("<=")) || 
+        operator.equals("==")) || operator.equals("!="))) {
         return "rel";
       }
     }

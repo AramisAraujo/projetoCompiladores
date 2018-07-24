@@ -4,10 +4,13 @@
 package org.xtext.validation
 
 import org.eclipse.xtext.validation.Check
+import org.xtext.go.GoPackage
 import org.xtext.go.assignment
+import org.xtext.go.compositeLit
 import org.xtext.go.conversion
 import org.xtext.go.expression
 import org.xtext.go.expressionMatched
+import org.xtext.go.functionLit
 import org.xtext.go.ifStmt
 import org.xtext.go.incDecStmt
 import org.xtext.go.literal
@@ -25,8 +28,7 @@ import org.xtext.go.sendStmt
 import org.xtext.go.shortVarDecl
 import org.xtext.go.simpleStmt
 import org.xtext.go.unaryExpr
-import java.beans.Beans
-import org.xtext.go.GoPackage
+import org.xtext.go.expressionList
 
 /**
  * This class contains custom validation rules. 
@@ -94,44 +96,64 @@ class GoValidator extends AbstractGoValidator {
 	}
 
 	def checkOperand(operand operand) {
-		if(operand.getLiteral() !== null){
+		if (operand.getLiteral() !== null) {
 			checkLiteral(operand.getLiteral());
 		}
-		if(operand.getMethodExpr() !== null){
+		if (operand.getMethodExpr() !== null) {
 			checkMethodExpr(operand.getMethodExpr());
 		}
-		if(operand.getOperandName() !== null){
+		if (operand.getOperandName() !== null) {
 			checkOperandName(operand.getOperandName());
 		}
-		if(operand.getExpr() !== null){
+		if (operand.getExpr() !== null) {
 			// checkExpression(operand.getExpr()); TODO: fix this
 		}
 	}
-		
+
 	def checkOperandName(operandName name) {
-		if(name.getName !== null){//This is a string
-			//TODO: do something to the string
+		if (name.getName !== null) { // This is a string
+			// TODO: do something to the string
 		}
-		if(name.getQualIdent() !== null){
+		if (name.getQualIdent() !== null) {
 			checkQualIdent(name.getQualIdent());
 		}
 	}
-	
+
 	def checkQualIdent(qualifiedIdent ident) {
-		if(ident.getPackageName() !== null){
-			//TODO: check this string(what should we do?)
+		if (ident.getPackageName() !== null) {
+			// TODO: check this string(what should we do?)
 		}
-		if(ident.getName() !== null){
-			//TODO: what to do with this string?
+		if (ident.getName() !== null) {
+			// TODO: what to do with this string?
 		}
 	}
-	
+
 	def checkMethodExpr(methodExpr expr) {
-		//TODO: auto-generated method stub"
+		// TODO: auto-generated method stub"
 	}
-	
+
 	def checkLiteral(literal literal) {
-		//TODO: auto-generated method stub"
+		if (literal.getLitBasic() !== null) {
+			checkBasicLit(literal.getLitBasic());
+		}
+		if (literal.getLitComposite() !== null) {
+			checkCompLit(literal.getLitComposite());
+		}
+		if (literal.getLitFunc() !== null) {
+			checkLitFunc(literal.getLitFunc());
+		}
+	}
+
+	def checkLitFunc(functionLit lit) {
+		// TODO:			
+	}
+
+	def checkCompLit(compositeLit lit) {
+		// TODO:
+	}
+
+	def checkBasicLit(String string) {
+		// TODO:		
 	}
 
 	def checkSimple(simpleStmt stmt) {
@@ -158,7 +180,8 @@ class GoValidator extends AbstractGoValidator {
 				checkExpression(stmt.getExpr1());
 				checkExpression(stmt.getExpr2());
 			} else {
-				error("expression value can not be empty",
+				error(
+					"expression value can not be empty",
 					GoPackage.Literals.MODEL__GREETINGS,
 					stmt.toString()
 				)
@@ -171,19 +194,25 @@ class GoValidator extends AbstractGoValidator {
 	}
 
 	def checkAssignment(assignment assignment) {
-		// TODO:	
+		checkExpList(assignment.getExprList1);
+		checkExpList(assignment.getExprList2);
 	}
 
 	def checkShortVar(shortVarDecl decl) {
-		if(decl.getIdList() !== null) {
-			if(decl.getExprList() !== null) {
-				for(var i = 0; i < decl.getExprList().getExpr().size(); i++){
-					checkExpression(decl.getExprList().getExpr().get(i));
-				} 
+		if (decl.getIdList() !== null) {
+			if (decl.getExprList() !== null) {
+				checkExpList(decl.getExprList());
 			}
-			// TODO: check declaration
+		// TODO: check declaration
 		}
 	}
+		
+	def checkExpList(expressionList list) {
+		for (var i = 0; i < list.getExpr().size(); i++) {
+			checkExpression(list.getExpr().get(i));
+		}
+	}
+
 
 	def checkExpression(expression expression) {
 		if (expression.getUnaryExpr() !== null) {
@@ -203,23 +232,12 @@ class GoValidator extends AbstractGoValidator {
 			var type = getOperatorType(operator);
 		}
 	}
-		
+
 	def getOperatorType(String operator) {
-		if(
-			operator.equals("+") ||
-			operator.equals("-") ||
-			operator.equals("/") ||
-			operator.equals("*")
-		) {
+		if (operator.equals("+") || operator.equals("-") || operator.equals("/") || operator.equals("*")) {
 			return "ari";
-		} else if(
-			operator.equals(">") ||
-			operator.equals("<") ||
-			operator.equals(">=") ||
-			operator.equals("<=") ||
-			operator.equals("==") ||
-			operator.equals("!=")
-		){
+		} else if (operator.equals(">") || operator.equals("<") || operator.equals(">=") || operator.equals("<=") ||
+			operator.equals("==") || operator.equals("!=")) {
 			return "rel";
 		}
 		return null;
