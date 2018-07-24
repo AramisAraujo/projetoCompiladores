@@ -371,10 +371,10 @@ parameterDecl:
 //BasicLit    = int_lit | float_lit | imaginary_lit | rune_lit | string_lit .
 //OperandName = identifier | QualifiedIdent.
 
-operand: content=literal | 
-	content=operandName | 
-	content=methodExpr | 
-	'(' content=expression ')';
+operand: literal=literal | 
+	operandName=operandName | 
+	methodExpr=methodExpr | 
+	'(' expr=expression ')';
 
 literal: 
 	litBasic=basicLit | 

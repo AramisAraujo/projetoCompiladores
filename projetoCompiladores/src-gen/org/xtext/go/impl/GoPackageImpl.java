@@ -3039,9 +3039,39 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getoperand_Content()
+  public EReference getoperand_Literal()
   {
     return (EReference)operandEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getoperand_OperandName()
+  {
+    return (EReference)operandEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getoperand_MethodExpr()
+  {
+    return (EReference)operandEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getoperand_Expr()
+  {
+    return (EReference)operandEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -4317,7 +4347,10 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
     createEReference(parameterDeclEClass, PARAMETER_DECL__TYPE);
 
     operandEClass = createEClass(OPERAND);
-    createEReference(operandEClass, OPERAND__CONTENT);
+    createEReference(operandEClass, OPERAND__LITERAL);
+    createEReference(operandEClass, OPERAND__OPERAND_NAME);
+    createEReference(operandEClass, OPERAND__METHOD_EXPR);
+    createEReference(operandEClass, OPERAND__EXPR);
 
     literalEClass = createEClass(LITERAL);
     createEAttribute(literalEClass, LITERAL__LIT_BASIC);
@@ -4762,7 +4795,10 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
     initEReference(getparameterDecl_Type(), this.gettype(), null, "type", null, 0, 1, parameterDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(operandEClass, operand.class, "operand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getoperand_Content(), ecorePackage.getEObject(), null, "content", null, 0, 1, operand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getoperand_Literal(), this.getliteral(), null, "literal", null, 0, 1, operand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getoperand_OperandName(), this.getoperandName(), null, "operandName", null, 0, 1, operand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getoperand_MethodExpr(), this.getmethodExpr(), null, "methodExpr", null, 0, 1, operand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getoperand_Expr(), this.getexpression(), null, "expr", null, 0, 1, operand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(literalEClass, literal.class, "literal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getliteral_LitBasic(), ecorePackage.getEString(), "litBasic", null, 0, 1, literal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

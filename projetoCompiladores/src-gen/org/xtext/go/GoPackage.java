@@ -2678,13 +2678,40 @@ public interface GoPackage extends EPackage
   int OPERAND = 72;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' containment reference.
+   * The feature id for the '<em><b>Literal</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OPERAND__CONTENT = 0;
+  int OPERAND__LITERAL = 0;
+
+  /**
+   * The feature id for the '<em><b>Operand Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND__OPERAND_NAME = 1;
+
+  /**
+   * The feature id for the '<em><b>Method Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND__METHOD_EXPR = 2;
+
+  /**
+   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND__EXPR = 3;
 
   /**
    * The number of structural features of the '<em>operand</em>' class.
@@ -2693,7 +2720,7 @@ public interface GoPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OPERAND_FEATURE_COUNT = 1;
+  int OPERAND_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link org.xtext.go.impl.literalImpl <em>literal</em>}' class.
@@ -6129,15 +6156,48 @@ public interface GoPackage extends EPackage
   EClass getoperand();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.go.operand#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.go.operand#getLiteral <em>Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Content</em>'.
-   * @see org.xtext.go.operand#getContent()
+   * @return the meta object for the containment reference '<em>Literal</em>'.
+   * @see org.xtext.go.operand#getLiteral()
    * @see #getoperand()
    * @generated
    */
-  EReference getoperand_Content();
+  EReference getoperand_Literal();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.operand#getOperandName <em>Operand Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Operand Name</em>'.
+   * @see org.xtext.go.operand#getOperandName()
+   * @see #getoperand()
+   * @generated
+   */
+  EReference getoperand_OperandName();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.operand#getMethodExpr <em>Method Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Method Expr</em>'.
+   * @see org.xtext.go.operand#getMethodExpr()
+   * @see #getoperand()
+   * @generated
+   */
+  EReference getoperand_MethodExpr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.operand#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see org.xtext.go.operand#getExpr()
+   * @see #getoperand()
+   * @generated
+   */
+  EReference getoperand_Expr();
 
   /**
    * Returns the meta object for class '{@link org.xtext.go.literal <em>literal</em>}'.
@@ -9021,12 +9081,36 @@ public interface GoPackage extends EPackage
     EClass OPERAND = eINSTANCE.getoperand();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Literal</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference OPERAND__CONTENT = eINSTANCE.getoperand_Content();
+    EReference OPERAND__LITERAL = eINSTANCE.getoperand_Literal();
+
+    /**
+     * The meta object literal for the '<em><b>Operand Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERAND__OPERAND_NAME = eINSTANCE.getoperand_OperandName();
+
+    /**
+     * The meta object literal for the '<em><b>Method Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERAND__METHOD_EXPR = eINSTANCE.getoperand_MethodExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERAND__EXPR = eINSTANCE.getoperand_Expr();
 
     /**
      * The meta object literal for the '{@link org.xtext.go.impl.literalImpl <em>literal</em>}' class.

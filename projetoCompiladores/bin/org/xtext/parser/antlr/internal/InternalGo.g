@@ -5413,17 +5413,17 @@ ruleoperand returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getOperandAccess().getContentLiteralParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getOperandAccess().getLiteralLiteralParserRuleCall_0_0());
 				}
-				lv_content_0_0=ruleliteral
+				lv_literal_0_0=ruleliteral
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getOperandRule());
 					}
 					set(
 						$current,
-						"content",
-						lv_content_0_0,
+						"literal",
+						lv_literal_0_0,
 						"org.xtext.Go.literal");
 					afterParserOrEnumRuleCall();
 				}
@@ -5433,17 +5433,17 @@ ruleoperand returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getOperandAccess().getContentOperandNameParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getOperandAccess().getOperandNameOperandNameParserRuleCall_1_0());
 				}
-				lv_content_1_0=ruleoperandName
+				lv_operandName_1_0=ruleoperandName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getOperandRule());
 					}
 					set(
 						$current,
-						"content",
-						lv_content_1_0,
+						"operandName",
+						lv_operandName_1_0,
 						"org.xtext.Go.operandName");
 					afterParserOrEnumRuleCall();
 				}
@@ -5453,17 +5453,17 @@ ruleoperand returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getOperandAccess().getContentMethodExprParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getOperandAccess().getMethodExprMethodExprParserRuleCall_2_0());
 				}
-				lv_content_2_0=rulemethodExpr
+				lv_methodExpr_2_0=rulemethodExpr
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getOperandRule());
 					}
 					set(
 						$current,
-						"content",
-						lv_content_2_0,
+						"methodExpr",
+						lv_methodExpr_2_0,
 						"org.xtext.Go.methodExpr");
 					afterParserOrEnumRuleCall();
 				}
@@ -5478,17 +5478,17 @@ ruleoperand returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getOperandAccess().getContentExpressionParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getOperandAccess().getExprExpressionParserRuleCall_3_1_0());
 					}
-					lv_content_4_0=ruleexpression
+					lv_expr_4_0=ruleexpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getOperandRule());
 						}
 						set(
 							$current,
-							"content",
-							lv_content_4_0,
+							"expr",
+							lv_expr_4_0,
 							"org.xtext.Go.expression");
 						afterParserOrEnumRuleCall();
 					}

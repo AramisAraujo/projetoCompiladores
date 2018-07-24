@@ -14,28 +14,124 @@ import org.xtext.go.sendStmt
 import org.xtext.go.incDecStmt
 import org.xtext.go.assignment
 import org.xtext.go.shortVarDecl
+import org.xtext.go.operand
+import org.xtext.go.conversion
+import org.xtext.go.primaryExprArguments
+import org.xtext.go.primaryExprIndex
+import org.xtext.go.primaryExprSelector
+import org.xtext.go.primaryExprSlice
+import org.xtext.go.primaryExprTypeAssertion
+import org.xtext.go.literal
+import org.xtext.go.methodExpr
+import org.xtext.go.operandName
+import org.xtext.go.qualifiedIdent
 
 /**
  * This class contains custom validation rules. 
- *
+ * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class GoValidator extends AbstractGoValidator {
-	
+
 	@Check
 	def checkIf(ifStmt stmt) {
-		if(stmt.getSimplStatement() !== null) {
+		if (stmt.getSimplStatement() !== null) {
 			checkSimple(stmt.getSimplStatement());
 		}
-		if(stmt.getExpr() !== null) {
+		if (stmt.getExpr() !== null) {
 			checkExpression(stmt.getExpr());
 		}
 	}
-		
+
 	def checkPrimary(primaryExpr expr) {
-		// TODO: 
+		if (expr.getOperand() !== null) {
+			checkOperand(expr.getOperand());
+		}
+		if (expr.getConversion() !== null) {
+			checkConversion(expr.getConversion());
+		}
+		if (expr.getPrimaryExprArguments() !== null) {
+			checkPrimaryExprArguments(expr.getPrimaryExprArguments());
+		}
+		if (expr.getPrimaryExprIndex() !== null) {
+			checkPrimaryExprIndex(expr.getPrimaryExprIndex());
+		}
+		if (expr.getPrimaryExprSelector() !== null) {
+			checkPrimaryExprSelector(expr.getPrimaryExprSelector());
+		}
+		if (expr.getPrimaryExprSlice() !== null) {
+			checkPrimaryExprSlice(expr.getPrimaryExprSlice());
+		}
+		if (expr.getPrimaryExprTypeAssertion() !== null) {
+			checkPrimaryExprTypeAssertion(expr.getPrimaryExprTypeAssertion());
+		}
 	}
-	
+
+	def checkPrimaryExprTypeAssertion(primaryExprTypeAssertion assertion) {
+		// TODO: auto-generated method stub"
+	}
+
+	def checkPrimaryExprSlice(primaryExprSlice slice) {
+		// TODO: auto-generated method stub"
+	}
+
+	def checkPrimaryExprSelector(primaryExprSelector selector) {
+		// TODO: auto-generated method stub"
+	}
+
+	def checkPrimaryExprIndex(primaryExprIndex index) {
+		// TODO: auto-generated method stub"
+	}
+
+	def checkPrimaryExprArguments(primaryExprArguments arguments) {
+		// TODO: auto-generated method stub"
+	}
+
+	def checkConversion(conversion conversion) {
+		// TODO: auto-generated method stub"
+	}
+
+	def checkOperand(operand operand) {
+		if(operand.getLiteral() !== null){
+			checkLiteral(operand.getLiteral());
+		}
+		if(operand.getMethodExpr() !== null){
+			checkMethodExpr(operand.getMethodExpr());
+		}
+		if(operand.getOperandName() !== null){
+			checkOperandName(operand.getOperandName());
+		}
+		if(operand.getExpr() !== null){
+			checkExpression(operand.getExpr());
+		}
+	}
+		
+		def checkOperandName(operandName name) {
+			if(name.getName !== null){//This is a string
+				//TODO: do something to the string
+			}
+			if(name.getQualIdent() !== null){
+				checkQualIdent(name.getQualIdent());
+			}
+		}
+		
+		def checkQualIdent(qualifiedIdent ident) {
+			if(ident.getPackageName() !== null){
+				//TODO: check this string(what should we do?)
+			}
+			if(ident.getName() !== null){
+				//TODO: what to do with this string?
+			}
+		}
+		
+		def checkMethodExpr(methodExpr expr) {
+			//TODO: auto-generated method stub"
+		}
+		
+		def checkLiteral(literal literal) {
+			//TODO: auto-generated method stub"
+		}
+
 	def checkSimple(simpleStmt stmt) {
 		if (stmt.getSendStmt() !== null) {
 			checkSendStmt(stmt.getSendStmt());
@@ -49,29 +145,26 @@ class GoValidator extends AbstractGoValidator {
 		if (stmt.getAssignment() !== null) {
 			checkAssignment(stmt.getAssignment());
 		}
-		if(stmt.getShortVarDecl() !== null) {
-			checkShortVar(stmt.getShortVarDecl());	
+		if (stmt.getShortVarDecl() !== null) {
+			checkShortVar(stmt.getShortVarDecl());
 		}
 	}
-		
-		
-		
-		
+
 	def checkSendStmt(sendStmt stmt) {
-		if(stmt.getExpr1() !== null) {
-			if(stmt.getExpr2() !== null) {
+		if (stmt.getExpr1() !== null) {
+			if (stmt.getExpr2() !== null) {
 				checkExpression(stmt.getExpr1());
 				checkExpression(stmt.getExpr2());
-			}else {
+			} else {
 				// TODO: error
 			}
-		}		
+		}
 	}
-	
+
 	def checkDcStmt(incDecStmt stmt) {
 		// TODO:		
 	}
-	
+
 	def checkAssignment(assignment assignment) {
 		// TODO:	
 	}
@@ -79,26 +172,26 @@ class GoValidator extends AbstractGoValidator {
 	def checkShortVar(shortVarDecl decl) {
 		// TODO:
 	}
-	
+
 	def checkExpression(expression expression) {
-		if(expression.getUnaryExpr() !== null) {
+		if (expression.getUnaryExpr() !== null) {
 			checkUnary(expression.getUnaryExpr());
 		}
-		if(expression.getExpressionMatched() !== null) {
+		if (expression.getExpressionMatched() !== null) {
 			checkMatched(expression.getExpressionMatched());
 		}
 	}
-		
+
 	def checkMatched(expressionMatched matched) {
-		if(matched.getExpression() !== null) {
+		if (matched.getExpression() !== null) {
 			checkExpression(matched.getExpression());
 		}
 	}
-	
+
 	def checkUnary(unaryExpr expr) {
-		if(expr.getPrimaryExpr() !== null) {
+		if (expr.getPrimaryExpr() !== null) {
 			checkPrimary(expr.getPrimaryExpr());
 		}
 	}
-		
+
 }

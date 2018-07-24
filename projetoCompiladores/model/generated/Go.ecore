@@ -398,7 +398,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//type" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="operand">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="literal" eType="#//literal"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operandName" eType="#//operandName"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="methodExpr" eType="#//methodExpr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//expression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="literal">

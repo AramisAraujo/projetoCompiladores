@@ -289,7 +289,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//parameterDecl/type"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//operand">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//operand/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//operand/literal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//operand/operandName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//operand/methodExpr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//operand/expr"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//literal">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//literal/litBasic"/>

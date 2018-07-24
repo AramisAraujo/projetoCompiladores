@@ -3003,16 +3003,16 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	public class OperandElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.operand");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cContentAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cContentLiteralParserRuleCall_0_0 = (RuleCall)cContentAssignment_0.eContents().get(0);
-		private final Assignment cContentAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cContentOperandNameParserRuleCall_1_0 = (RuleCall)cContentAssignment_1.eContents().get(0);
-		private final Assignment cContentAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final RuleCall cContentMethodExprParserRuleCall_2_0 = (RuleCall)cContentAssignment_2.eContents().get(0);
+		private final Assignment cLiteralAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cLiteralLiteralParserRuleCall_0_0 = (RuleCall)cLiteralAssignment_0.eContents().get(0);
+		private final Assignment cOperandNameAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cOperandNameOperandNameParserRuleCall_1_0 = (RuleCall)cOperandNameAssignment_1.eContents().get(0);
+		private final Assignment cMethodExprAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cMethodExprMethodExprParserRuleCall_2_0 = (RuleCall)cMethodExprAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
 		private final Keyword cLeftParenthesisKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cContentAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cContentExpressionParserRuleCall_3_1_0 = (RuleCall)cContentAssignment_3_1.eContents().get(0);
+		private final Assignment cExprAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cExprExpressionParserRuleCall_3_1_0 = (RuleCall)cExprAssignment_3_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
 		
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3022,42 +3022,42 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		////BasicLit    = int_lit | float_lit | imaginary_lit | rune_lit | string_lit .
 		////OperandName = identifier | QualifiedIdent.
 		//operand:
-		//	content=literal | content=operandName | content=methodExpr |
-		//	'(' content=expression ')';
+		//	literal=literal | operandName=operandName | methodExpr=methodExpr |
+		//	'(' expr=expression ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//content=literal | content=operandName | content=methodExpr | '(' content=expression ')'
+		//literal=literal | operandName=operandName | methodExpr=methodExpr | '(' expr=expression ')'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//content=literal
-		public Assignment getContentAssignment_0() { return cContentAssignment_0; }
+		//literal=literal
+		public Assignment getLiteralAssignment_0() { return cLiteralAssignment_0; }
 		
 		//literal
-		public RuleCall getContentLiteralParserRuleCall_0_0() { return cContentLiteralParserRuleCall_0_0; }
+		public RuleCall getLiteralLiteralParserRuleCall_0_0() { return cLiteralLiteralParserRuleCall_0_0; }
 		
-		//content=operandName
-		public Assignment getContentAssignment_1() { return cContentAssignment_1; }
+		//operandName=operandName
+		public Assignment getOperandNameAssignment_1() { return cOperandNameAssignment_1; }
 		
 		//operandName
-		public RuleCall getContentOperandNameParserRuleCall_1_0() { return cContentOperandNameParserRuleCall_1_0; }
+		public RuleCall getOperandNameOperandNameParserRuleCall_1_0() { return cOperandNameOperandNameParserRuleCall_1_0; }
 		
-		//content=methodExpr
-		public Assignment getContentAssignment_2() { return cContentAssignment_2; }
+		//methodExpr=methodExpr
+		public Assignment getMethodExprAssignment_2() { return cMethodExprAssignment_2; }
 		
 		//methodExpr
-		public RuleCall getContentMethodExprParserRuleCall_2_0() { return cContentMethodExprParserRuleCall_2_0; }
+		public RuleCall getMethodExprMethodExprParserRuleCall_2_0() { return cMethodExprMethodExprParserRuleCall_2_0; }
 		
-		//'(' content=expression ')'
+		//'(' expr=expression ')'
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_3_0() { return cLeftParenthesisKeyword_3_0; }
 		
-		//content=expression
-		public Assignment getContentAssignment_3_1() { return cContentAssignment_3_1; }
+		//expr=expression
+		public Assignment getExprAssignment_3_1() { return cExprAssignment_3_1; }
 		
 		//expression
-		public RuleCall getContentExpressionParserRuleCall_3_1_0() { return cContentExpressionParserRuleCall_3_1_0; }
+		public RuleCall getExprExpressionParserRuleCall_3_1_0() { return cExprExpressionParserRuleCall_3_1_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_3_2() { return cRightParenthesisKeyword_3_2; }
@@ -5576,8 +5576,8 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	////BasicLit    = int_lit | float_lit | imaginary_lit | rune_lit | string_lit .
 	////OperandName = identifier | QualifiedIdent.
 	//operand:
-	//	content=literal | content=operandName | content=methodExpr |
-	//	'(' content=expression ')';
+	//	literal=literal | operandName=operandName | methodExpr=methodExpr |
+	//	'(' expr=expression ')';
 	public OperandElements getOperandAccess() {
 		return pOperand;
 	}
@@ -6094,6 +6094,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal LITTLE_U_VALUE:
+	//	'\\\u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT;
 	public TerminalRule getLITTLE_U_VALUERule() {
 		return tLITTLE_U_VALUE;
 	}

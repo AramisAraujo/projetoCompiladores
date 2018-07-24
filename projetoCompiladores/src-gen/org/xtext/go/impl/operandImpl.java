@@ -7,14 +7,17 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.go.GoPackage;
+import org.xtext.go.expression;
+import org.xtext.go.literal;
+import org.xtext.go.methodExpr;
 import org.xtext.go.operand;
+import org.xtext.go.operandName;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +26,10 @@ import org.xtext.go.operand;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.go.impl.operandImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link org.xtext.go.impl.operandImpl#getLiteral <em>Literal</em>}</li>
+ *   <li>{@link org.xtext.go.impl.operandImpl#getOperandName <em>Operand Name</em>}</li>
+ *   <li>{@link org.xtext.go.impl.operandImpl#getMethodExpr <em>Method Expr</em>}</li>
+ *   <li>{@link org.xtext.go.impl.operandImpl#getExpr <em>Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,14 +38,44 @@ import org.xtext.go.operand;
 public class operandImpl extends MinimalEObjectImpl.Container implements operand
 {
   /**
-   * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
+   * The cached value of the '{@link #getLiteral() <em>Literal</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getContent()
+   * @see #getLiteral()
    * @generated
    * @ordered
    */
-  protected EObject content;
+  protected literal literal;
+
+  /**
+   * The cached value of the '{@link #getOperandName() <em>Operand Name</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOperandName()
+   * @generated
+   * @ordered
+   */
+  protected operandName operandName;
+
+  /**
+   * The cached value of the '{@link #getMethodExpr() <em>Method Expr</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMethodExpr()
+   * @generated
+   * @ordered
+   */
+  protected methodExpr methodExpr;
+
+  /**
+   * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpr()
+   * @generated
+   * @ordered
+   */
+  protected expression expr;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,9 +103,9 @@ public class operandImpl extends MinimalEObjectImpl.Container implements operand
    * <!-- end-user-doc -->
    * @generated
    */
-  public EObject getContent()
+  public literal getLiteral()
   {
-    return content;
+    return literal;
   }
 
   /**
@@ -77,13 +113,13 @@ public class operandImpl extends MinimalEObjectImpl.Container implements operand
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetContent(EObject newContent, NotificationChain msgs)
+  public NotificationChain basicSetLiteral(literal newLiteral, NotificationChain msgs)
   {
-    EObject oldContent = content;
-    content = newContent;
+    literal oldLiteral = literal;
+    literal = newLiteral;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.OPERAND__CONTENT, oldContent, newContent);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.OPERAND__LITERAL, oldLiteral, newLiteral);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -94,20 +130,164 @@ public class operandImpl extends MinimalEObjectImpl.Container implements operand
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setContent(EObject newContent)
+  public void setLiteral(literal newLiteral)
   {
-    if (newContent != content)
+    if (newLiteral != literal)
     {
       NotificationChain msgs = null;
-      if (content != null)
-        msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.OPERAND__CONTENT, null, msgs);
-      if (newContent != null)
-        msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.OPERAND__CONTENT, null, msgs);
-      msgs = basicSetContent(newContent, msgs);
+      if (literal != null)
+        msgs = ((InternalEObject)literal).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.OPERAND__LITERAL, null, msgs);
+      if (newLiteral != null)
+        msgs = ((InternalEObject)newLiteral).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.OPERAND__LITERAL, null, msgs);
+      msgs = basicSetLiteral(newLiteral, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.OPERAND__CONTENT, newContent, newContent));
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.OPERAND__LITERAL, newLiteral, newLiteral));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public operandName getOperandName()
+  {
+    return operandName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetOperandName(operandName newOperandName, NotificationChain msgs)
+  {
+    operandName oldOperandName = operandName;
+    operandName = newOperandName;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.OPERAND__OPERAND_NAME, oldOperandName, newOperandName);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOperandName(operandName newOperandName)
+  {
+    if (newOperandName != operandName)
+    {
+      NotificationChain msgs = null;
+      if (operandName != null)
+        msgs = ((InternalEObject)operandName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.OPERAND__OPERAND_NAME, null, msgs);
+      if (newOperandName != null)
+        msgs = ((InternalEObject)newOperandName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.OPERAND__OPERAND_NAME, null, msgs);
+      msgs = basicSetOperandName(newOperandName, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.OPERAND__OPERAND_NAME, newOperandName, newOperandName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public methodExpr getMethodExpr()
+  {
+    return methodExpr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetMethodExpr(methodExpr newMethodExpr, NotificationChain msgs)
+  {
+    methodExpr oldMethodExpr = methodExpr;
+    methodExpr = newMethodExpr;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.OPERAND__METHOD_EXPR, oldMethodExpr, newMethodExpr);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMethodExpr(methodExpr newMethodExpr)
+  {
+    if (newMethodExpr != methodExpr)
+    {
+      NotificationChain msgs = null;
+      if (methodExpr != null)
+        msgs = ((InternalEObject)methodExpr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.OPERAND__METHOD_EXPR, null, msgs);
+      if (newMethodExpr != null)
+        msgs = ((InternalEObject)newMethodExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.OPERAND__METHOD_EXPR, null, msgs);
+      msgs = basicSetMethodExpr(newMethodExpr, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.OPERAND__METHOD_EXPR, newMethodExpr, newMethodExpr));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public expression getExpr()
+  {
+    return expr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExpr(expression newExpr, NotificationChain msgs)
+  {
+    expression oldExpr = expr;
+    expr = newExpr;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.OPERAND__EXPR, oldExpr, newExpr);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExpr(expression newExpr)
+  {
+    if (newExpr != expr)
+    {
+      NotificationChain msgs = null;
+      if (expr != null)
+        msgs = ((InternalEObject)expr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.OPERAND__EXPR, null, msgs);
+      if (newExpr != null)
+        msgs = ((InternalEObject)newExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.OPERAND__EXPR, null, msgs);
+      msgs = basicSetExpr(newExpr, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.OPERAND__EXPR, newExpr, newExpr));
   }
 
   /**
@@ -120,8 +300,14 @@ public class operandImpl extends MinimalEObjectImpl.Container implements operand
   {
     switch (featureID)
     {
-      case GoPackage.OPERAND__CONTENT:
-        return basicSetContent(null, msgs);
+      case GoPackage.OPERAND__LITERAL:
+        return basicSetLiteral(null, msgs);
+      case GoPackage.OPERAND__OPERAND_NAME:
+        return basicSetOperandName(null, msgs);
+      case GoPackage.OPERAND__METHOD_EXPR:
+        return basicSetMethodExpr(null, msgs);
+      case GoPackage.OPERAND__EXPR:
+        return basicSetExpr(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +322,14 @@ public class operandImpl extends MinimalEObjectImpl.Container implements operand
   {
     switch (featureID)
     {
-      case GoPackage.OPERAND__CONTENT:
-        return getContent();
+      case GoPackage.OPERAND__LITERAL:
+        return getLiteral();
+      case GoPackage.OPERAND__OPERAND_NAME:
+        return getOperandName();
+      case GoPackage.OPERAND__METHOD_EXPR:
+        return getMethodExpr();
+      case GoPackage.OPERAND__EXPR:
+        return getExpr();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -152,8 +344,17 @@ public class operandImpl extends MinimalEObjectImpl.Container implements operand
   {
     switch (featureID)
     {
-      case GoPackage.OPERAND__CONTENT:
-        setContent((EObject)newValue);
+      case GoPackage.OPERAND__LITERAL:
+        setLiteral((literal)newValue);
+        return;
+      case GoPackage.OPERAND__OPERAND_NAME:
+        setOperandName((operandName)newValue);
+        return;
+      case GoPackage.OPERAND__METHOD_EXPR:
+        setMethodExpr((methodExpr)newValue);
+        return;
+      case GoPackage.OPERAND__EXPR:
+        setExpr((expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +370,17 @@ public class operandImpl extends MinimalEObjectImpl.Container implements operand
   {
     switch (featureID)
     {
-      case GoPackage.OPERAND__CONTENT:
-        setContent((EObject)null);
+      case GoPackage.OPERAND__LITERAL:
+        setLiteral((literal)null);
+        return;
+      case GoPackage.OPERAND__OPERAND_NAME:
+        setOperandName((operandName)null);
+        return;
+      case GoPackage.OPERAND__METHOD_EXPR:
+        setMethodExpr((methodExpr)null);
+        return;
+      case GoPackage.OPERAND__EXPR:
+        setExpr((expression)null);
         return;
     }
     super.eUnset(featureID);
@@ -186,8 +396,14 @@ public class operandImpl extends MinimalEObjectImpl.Container implements operand
   {
     switch (featureID)
     {
-      case GoPackage.OPERAND__CONTENT:
-        return content != null;
+      case GoPackage.OPERAND__LITERAL:
+        return literal != null;
+      case GoPackage.OPERAND__OPERAND_NAME:
+        return operandName != null;
+      case GoPackage.OPERAND__METHOD_EXPR:
+        return methodExpr != null;
+      case GoPackage.OPERAND__EXPR:
+        return expr != null;
     }
     return super.eIsSet(featureID);
   }
