@@ -36,23 +36,17 @@ import org.xtext.validation.AbstractGoValidator;
 @SuppressWarnings("all")
 public class GoValidator extends AbstractGoValidator {
   @Check
-  public Object checkIf(final ifStmt stmt) {
-    Object _xblockexpression = null;
-    {
-      simpleStmt _simplStatement = stmt.getSimplStatement();
-      boolean _tripleNotEquals = (_simplStatement != null);
-      if (_tripleNotEquals) {
-        this.checkSimple(stmt.getSimplStatement());
-      }
-      Object _xifexpression = null;
-      expression _expr = stmt.getExpr();
-      boolean _tripleNotEquals_1 = (_expr != null);
-      if (_tripleNotEquals_1) {
-        _xifexpression = this.checkExpression(stmt.getExpr());
-      }
-      _xblockexpression = _xifexpression;
+  public void checkIf(final ifStmt stmt) {
+    simpleStmt _simplStatement = stmt.getSimplStatement();
+    boolean _tripleNotEquals = (_simplStatement != null);
+    if (_tripleNotEquals) {
+      this.checkSimple(stmt.getSimplStatement());
     }
-    return _xblockexpression;
+    expression _expr = stmt.getExpr();
+    boolean _tripleNotEquals_1 = (_expr != null);
+    if (_tripleNotEquals_1) {
+      this.checkExpression(stmt.getExpr());
+    }
   }
   
   public Object checkPrimary(final primaryExpr expr) {
@@ -145,7 +139,7 @@ public class GoValidator extends AbstractGoValidator {
       expression _expr = operand.getExpr();
       boolean _tripleNotEquals_3 = (_expr != null);
       if (_tripleNotEquals_3) {
-        _xifexpression = this.checkExpression(operand.getExpr());
+        _xifexpression = null;
       }
       _xblockexpression = _xifexpression;
     }
@@ -239,12 +233,8 @@ public class GoValidator extends AbstractGoValidator {
       expression _expr2 = stmt.getExpr2();
       boolean _tripleNotEquals_1 = (_expr2 != null);
       if (_tripleNotEquals_1) {
-        Object _xblockexpression = null;
-        {
-          this.checkExpression(stmt.getExpr1());
-          _xblockexpression = this.checkExpression(stmt.getExpr2());
-        }
-        _xifexpression_1 = _xblockexpression;
+        this.checkExpression(stmt.getExpr1());
+        this.checkExpression(stmt.getExpr2());
       } else {
         _xifexpression_1 = null;
       }
@@ -265,42 +255,50 @@ public class GoValidator extends AbstractGoValidator {
     return null;
   }
   
-  public Object checkExpression(final expression expression) {
-    Object _xblockexpression = null;
-    {
-      unaryExpr _unaryExpr = expression.getUnaryExpr();
-      boolean _tripleNotEquals = (_unaryExpr != null);
-      if (_tripleNotEquals) {
-        this.checkUnary(expression.getUnaryExpr());
-      }
-      Object _xifexpression = null;
-      expressionMatched _expressionMatched = expression.getExpressionMatched();
-      boolean _tripleNotEquals_1 = (_expressionMatched != null);
-      if (_tripleNotEquals_1) {
-        _xifexpression = this.checkMatched(expression.getExpressionMatched());
-      }
-      _xblockexpression = _xifexpression;
+  public void checkExpression(final expression expression) {
+    unaryExpr _unaryExpr = expression.getUnaryExpr();
+    boolean _tripleNotEquals = (_unaryExpr != null);
+    if (_tripleNotEquals) {
+      this.checkUnary(expression.getUnaryExpr());
     }
-    return _xblockexpression;
+    expressionMatched _expressionMatched = expression.getExpressionMatched();
+    boolean _tripleNotEquals_1 = (_expressionMatched != null);
+    if (_tripleNotEquals_1) {
+      this.checkMatched(expression.getExpressionMatched());
+    }
   }
   
-  public Object checkMatched(final expressionMatched matched) {
-    Object _xblockexpression = null;
-    {
-      expression _expression = matched.getExpression();
-      boolean _tripleNotEquals = (_expression != null);
-      if (_tripleNotEquals) {
-        this.checkExpression(matched.getExpression());
-      }
-      Object _xifexpression = null;
-      String _operator = matched.getOperator();
-      boolean _tripleNotEquals_1 = (_operator != null);
-      if (_tripleNotEquals_1) {
-        _xifexpression = null;
-      }
-      _xblockexpression = _xifexpression;
+  public void checkMatched(final expressionMatched matched) {
+    expression _expression = matched.getExpression();
+    boolean _tripleNotEquals = (_expression != null);
+    if (_tripleNotEquals) {
+      this.checkExpression(matched.getExpression());
     }
-    return _xblockexpression;
+    String _operator = matched.getOperator();
+    boolean _tripleNotEquals_1 = (_operator != null);
+    if (_tripleNotEquals_1) {
+      String operator = matched.getOperator();
+      String type = this.getOperatorType(operator);
+    }
+  }
+  
+  public String getOperatorType(final String operator) {
+    if ((((operator.equals("+") || 
+      operator.equals("-")) || 
+      operator.equals("/")) || 
+      operator.equals("*"))) {
+      return "ari";
+    } else {
+      if ((((((operator.equals(">") || 
+        operator.equals("<")) || 
+        operator.equals(">=")) || 
+        operator.equals("<=")) || 
+        operator.equals("==")) || 
+        operator.equals("!="))) {
+        return "rel";
+      }
+    }
+    return null;
   }
   
   public Object checkUnary(final unaryExpr expr) {

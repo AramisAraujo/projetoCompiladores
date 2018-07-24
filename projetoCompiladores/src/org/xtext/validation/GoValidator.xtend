@@ -3,29 +3,28 @@
  */
 package org.xtext.validation
 
-import org.xtext.go.expression
-import org.xtext.go.unaryExpr
-import org.xtext.go.expressionMatched
 import org.eclipse.xtext.validation.Check
-import org.xtext.go.primaryExpr
-import org.xtext.go.ifStmt
-import org.xtext.go.simpleStmt
-import org.xtext.go.sendStmt
-import org.xtext.go.incDecStmt
 import org.xtext.go.assignment
-import org.xtext.go.shortVarDecl
-import org.xtext.go.operand
 import org.xtext.go.conversion
+import org.xtext.go.expression
+import org.xtext.go.expressionMatched
+import org.xtext.go.ifStmt
+import org.xtext.go.incDecStmt
+import org.xtext.go.literal
+import org.xtext.go.methodExpr
+import org.xtext.go.operand
+import org.xtext.go.operandName
+import org.xtext.go.primaryExpr
 import org.xtext.go.primaryExprArguments
 import org.xtext.go.primaryExprIndex
 import org.xtext.go.primaryExprSelector
 import org.xtext.go.primaryExprSlice
 import org.xtext.go.primaryExprTypeAssertion
-import org.xtext.go.literal
-import org.xtext.go.methodExpr
-import org.xtext.go.operandName
 import org.xtext.go.qualifiedIdent
-import java.util.ArrayList
+import org.xtext.go.sendStmt
+import org.xtext.go.shortVarDecl
+import org.xtext.go.simpleStmt
+import org.xtext.go.unaryExpr
 
 /**
  * This class contains custom validation rules. 
@@ -103,7 +102,7 @@ class GoValidator extends AbstractGoValidator {
 			checkOperandName(operand.getOperandName());
 		}
 		if(operand.getExpr() !== null){
-			checkExpression(operand.getExpr());
+			// checkExpression(operand.getExpr()); TODO: fix this
 		}
 	}
 		
@@ -188,8 +187,30 @@ class GoValidator extends AbstractGoValidator {
 			checkExpression(matched.getExpression());
 		}
 		if (matched.getOperator() !== null) {
-			
+			var operator = matched.getOperator();
+			var type = getOperatorType(operator);
 		}
+	}
+		
+	def getOperatorType(String operator) {
+		if(
+			operator.equals("+") ||
+			operator.equals("-") ||
+			operator.equals("/") ||
+			operator.equals("*")
+		) {
+			return "ari";
+		} else if(
+			operator.equals(">") ||
+			operator.equals("<") ||
+			operator.equals(">=") ||
+			operator.equals("<=") ||
+			operator.equals("==") ||
+			operator.equals("!=")
+		){
+			return "rel";
+		}
+		return null;
 	}
 
 	def checkUnary(unaryExpr expr) {
