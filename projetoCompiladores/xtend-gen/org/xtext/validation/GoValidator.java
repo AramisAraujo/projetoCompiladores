@@ -59,59 +59,32 @@ public class GoValidator extends AbstractGoValidator {
     return null;
   }
   
-  @Check
-  public Object checkAssignment(final assignment assignment) {
-    Object _xblockexpression = null;
-    {
-      expressionList _exprList1 = assignment.getExprList1();
-      boolean _tripleNotEquals = (_exprList1 != null);
-      if (_tripleNotEquals) {
-        for (int i = 0; (i < assignment.getExprList1().getExpr().size()); i++) {
-          this.checkExpression(assignment.getExprList1().getExpr().get(i));
-        }
-      }
-      expressionList _exprList2 = assignment.getExprList2();
-      boolean _tripleNotEquals_1 = (_exprList2 != null);
-      if (_tripleNotEquals_1) {
-        for (int i = 0; (i < assignment.getExprList2().getExpr().size()); i++) {
-          this.checkExpression(assignment.getExprList2().getExpr().get(i));
-        }
-      }
-      Object _xifexpression = null;
-      String _operation = assignment.getOperation();
-      boolean _tripleNotEquals_2 = (_operation != null);
-      if (_tripleNotEquals_2) {
-        _xifexpression = this.checkOperation(assignment.getOperation());
-      }
-      _xblockexpression = _xifexpression;
-    }
-    return _xblockexpression;
-  }
-  
   public Object checkOperation(final String string) {
     return null;
   }
   
-  public void checkLiteral(final literal literal) {
-    String _litBasic = literal.getLitBasic();
-    boolean _tripleNotEquals = (_litBasic != null);
-    if (_tripleNotEquals) {
-      this.checkLitBasic(literal.getLitBasic());
+  public Object checkLiteral(final literal literal) {
+    Object _xblockexpression = null;
+    {
+      String _litBasic = literal.getLitBasic();
+      boolean _tripleNotEquals = (_litBasic != null);
+      if (_tripleNotEquals) {
+        this.checkLitBasic(literal.getLitBasic());
+      }
+      compositeLit _litComposite = literal.getLitComposite();
+      boolean _tripleNotEquals_1 = (_litComposite != null);
+      if (_tripleNotEquals_1) {
+        this.checkLitComposite(literal.getLitComposite());
+      }
+      Object _xifexpression = null;
+      functionLit _litFunc = literal.getLitFunc();
+      boolean _tripleNotEquals_2 = (_litFunc != null);
+      if (_tripleNotEquals_2) {
+        _xifexpression = this.checkLitFunc(literal.getLitFunc());
+      }
+      _xblockexpression = _xifexpression;
     }
-    compositeLit _litComposite = literal.getLitComposite();
-    boolean _tripleNotEquals_1 = (_litComposite != null);
-    if (_tripleNotEquals_1) {
-      this.checkLitComposite(literal.getLitComposite());
-    }
-    functionLit _litFunc = literal.getLitFunc();
-    boolean _tripleNotEquals_2 = (_litFunc != null);
-    if (_tripleNotEquals_2) {
-      this.checkLitFunc(literal.getLitFunc());
-    }
-  }
-  
-  public void checkLitFunc(final functionLit lit) {
-    throw new UnsupportedOperationException("TODO: auto-generated method stub");
+    return _xblockexpression;
   }
   
   public void checkLitComposite(final compositeLit lit) {
@@ -259,6 +232,18 @@ public class GoValidator extends AbstractGoValidator {
     return null;
   }
   
+  public Object checkLitFunc(final functionLit lit) {
+    return null;
+  }
+  
+  public Object checkCompLit(final compositeLit lit) {
+    return null;
+  }
+  
+  public Object checkBasicLit(final String string) {
+    return null;
+  }
+  
   public void checkSimple(final simpleStmt stmt) {
     sendStmt _sendStmt = stmt.getSendStmt();
     boolean _tripleNotEquals = (_sendStmt != null);
@@ -309,6 +294,11 @@ public class GoValidator extends AbstractGoValidator {
     return null;
   }
   
+  public void checkAssignment(final assignment assignment) {
+    this.checkExpList(assignment.getExprList1());
+    this.checkExpList(assignment.getExprList2());
+  }
+  
   public void checkShortVar(final shortVarDecl decl) {
     identifierList _idList = decl.getIdList();
     boolean _tripleNotEquals = (_idList != null);
@@ -316,10 +306,14 @@ public class GoValidator extends AbstractGoValidator {
       expressionList _exprList = decl.getExprList();
       boolean _tripleNotEquals_1 = (_exprList != null);
       if (_tripleNotEquals_1) {
-        for (int i = 0; (i < decl.getExprList().getExpr().size()); i++) {
-          this.checkExpression(decl.getExprList().getExpr().get(i));
-        }
+        this.checkExpList(decl.getExprList());
       }
+    }
+  }
+  
+  public void checkExpList(final expressionList list) {
+    for (int i = 0; (i < list.getExpr().size()); i++) {
+      this.checkExpression(list.getExpr().get(i));
     }
   }
   

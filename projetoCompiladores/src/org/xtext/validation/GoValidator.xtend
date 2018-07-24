@@ -4,10 +4,13 @@
 package org.xtext.validation
 
 import org.eclipse.xtext.validation.Check
+import org.xtext.go.GoPackage
 import org.xtext.go.assignment
+import org.xtext.go.compositeLit
 import org.xtext.go.conversion
 import org.xtext.go.expression
 import org.xtext.go.expressionMatched
+import org.xtext.go.functionLit
 import org.xtext.go.ifStmt
 import org.xtext.go.incDecStmt
 import org.xtext.go.literal
@@ -29,6 +32,8 @@ import java.beans.Beans
 import org.xtext.go.GoPackage
 import org.xtext.go.compositeLit
 import org.xtext.go.functionLit
+import org.xtext.go.expressionList
+
 
 /**
  * This class contains custom validation rules. 
@@ -51,23 +56,6 @@ class GoValidator extends AbstractGoValidator {
 	def checkDeclaration() {
 	}
 
-	@Check
-	def checkAssignment(assignment assignment) {
-		if (assignment.getExprList1() !== null) {
-			for (var i = 0; i < assignment.getExprList1().getExpr().size(); i++) {
-				checkExpression(assignment.getExprList1().getExpr().get(i));
-			}
-		}
-		if (assignment.getExprList2() !== null) {
-			for (var i = 0; i < assignment.getExprList2().getExpr().size(); i++) {
-				checkExpression(assignment.getExprList2().getExpr().get(i));
-			}
-		}
-		if (assignment.getOperation() !== null) {
-			checkOperation(assignment.getOperation());
-		}
-	}
-
 	def checkOperation(String string) {
 		//TODO: auto-generated method stub"
 	}
@@ -84,9 +72,7 @@ class GoValidator extends AbstractGoValidator {
 		}
 	}
 
-	def checkLitFunc(functionLit lit) {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
-	}
+
 
 	def checkLitComposite(compositeLit lit) {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
@@ -179,6 +165,20 @@ class GoValidator extends AbstractGoValidator {
 
 	def checkMethodExpr(methodExpr expr) {
 		// TODO: auto-generated method stub"
+
+	}
+
+	def checkLitFunc(functionLit lit) {
+		// TODO:			
+	}
+
+	def checkCompLit(compositeLit lit) {
+		// TODO:
+	}
+
+	def checkBasicLit(String string) {
+		// TODO:		
+
 	}
 
 	def checkSimple(simpleStmt stmt) {
@@ -218,16 +218,29 @@ class GoValidator extends AbstractGoValidator {
 		// TODO:		
 	}
 
+
+
+	def checkAssignment(assignment assignment) {
+		checkExpList(assignment.getExprList1);
+		checkExpList(assignment.getExprList2);
+	}
+
 	def checkShortVar(shortVarDecl decl) {
 		if (decl.getIdList() !== null) {
 			if (decl.getExprList() !== null) {
-				for (var i = 0; i < decl.getExprList().getExpr().size(); i++) {
-					checkExpression(decl.getExprList().getExpr().get(i));
-				}
+				checkExpList(decl.getExprList());
 			}
 		// TODO: check declaration
 		}
 	}
+		
+	def checkExpList(expressionList list) {
+		for (var i = 0; i < list.getExpr().size(); i++) {
+			checkExpression(list.getExpr().get(i));
+
+		}
+	}
+
 
 	def checkExpression(expression expression) {
 		if (expression.getUnaryExpr() !== null) {
