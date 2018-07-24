@@ -412,6 +412,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//expression/expressionMatched"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//expressionMatched">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//expressionMatched/operator"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//expressionMatched/expression"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//unaryExpr">

@@ -285,22 +285,40 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   public Object checkMatched(final expressionMatched matched) {
-    Object _xifexpression = null;
-    expression _expression = matched.getExpression();
-    boolean _tripleNotEquals = (_expression != null);
-    if (_tripleNotEquals) {
-      _xifexpression = this.checkExpression(matched.getExpression());
+    Object _xblockexpression = null;
+    {
+      expression _expression = matched.getExpression();
+      boolean _tripleNotEquals = (_expression != null);
+      if (_tripleNotEquals) {
+        this.checkExpression(matched.getExpression());
+      }
+      Object _xifexpression = null;
+      String _operator = matched.getOperator();
+      boolean _tripleNotEquals_1 = (_operator != null);
+      if (_tripleNotEquals_1) {
+        _xifexpression = null;
+      }
+      _xblockexpression = _xifexpression;
     }
-    return _xifexpression;
+    return _xblockexpression;
   }
   
   public Object checkUnary(final unaryExpr expr) {
-    Object _xifexpression = null;
-    primaryExpr _primaryExpr = expr.getPrimaryExpr();
-    boolean _tripleNotEquals = (_primaryExpr != null);
-    if (_tripleNotEquals) {
-      _xifexpression = this.checkPrimary(expr.getPrimaryExpr());
+    Object _xblockexpression = null;
+    {
+      primaryExpr _primaryExpr = expr.getPrimaryExpr();
+      boolean _tripleNotEquals = (_primaryExpr != null);
+      if (_tripleNotEquals) {
+        this.checkPrimary(expr.getPrimaryExpr());
+      }
+      Object _xifexpression = null;
+      unaryExpr _unaryExpr = expr.getUnaryExpr();
+      boolean _tripleNotEquals_1 = (_unaryExpr != null);
+      if (_tripleNotEquals_1) {
+        _xifexpression = this.checkUnary(expr.getUnaryExpr());
+      }
+      _xblockexpression = _xifexpression;
     }
-    return _xifexpression;
+    return _xblockexpression;
   }
 }

@@ -890,14 +890,17 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     expressionMatched returns expressionMatched
 	 *
 	 * Constraint:
-	 *     expression=expression
+	 *     (operator=BINARY_OP expression=expression)
 	 */
 	protected void sequence_expressionMatched(ISerializationContext context, expressionMatched semanticObject) {
 		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.EXPRESSION_MATCHED__OPERATOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.EXPRESSION_MATCHED__OPERATOR));
 			if (transientValues.isValueTransient(semanticObject, GoPackage.Literals.EXPRESSION_MATCHED__EXPRESSION) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GoPackage.Literals.EXPRESSION_MATCHED__EXPRESSION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getExpressionMatchedAccess().getOperatorBINARY_OPTerminalRuleCall_0_0(), semanticObject.getOperator());
 		feeder.accept(grammarAccess.getExpressionMatchedAccess().getExpressionExpressionParserRuleCall_1_0(), semanticObject.getExpression());
 		feeder.finish();
 	}

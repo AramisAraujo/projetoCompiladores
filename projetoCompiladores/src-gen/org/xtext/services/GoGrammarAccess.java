@@ -4251,20 +4251,24 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	public class ExpressionMatchedElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.expressionMatched");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cBINARY_OPTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Assignment cOperatorAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cOperatorBINARY_OPTerminalRuleCall_0_0 = (RuleCall)cOperatorAssignment_0.eContents().get(0);
 		private final Assignment cExpressionAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cExpressionExpressionParserRuleCall_1_0 = (RuleCall)cExpressionAssignment_1.eContents().get(0);
 		
 		////// attempt to remove left recursion of rule expression
 		//expressionMatched:
-		//	(BINARY_OP expression=expression)?;
+		//	(operator=BINARY_OP expression=expression)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(BINARY_OP expression=expression)?
+		//(operator=BINARY_OP expression=expression)?
 		public Group getGroup() { return cGroup; }
 		
+		//operator=BINARY_OP
+		public Assignment getOperatorAssignment_0() { return cOperatorAssignment_0; }
+		
 		//BINARY_OP
-		public RuleCall getBINARY_OPTerminalRuleCall_0() { return cBINARY_OPTerminalRuleCall_0; }
+		public RuleCall getOperatorBINARY_OPTerminalRuleCall_0_0() { return cOperatorBINARY_OPTerminalRuleCall_0_0; }
 		
 		//expression=expression
 		public Assignment getExpressionAssignment_1() { return cExpressionAssignment_1; }
@@ -5936,7 +5940,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////// attempt to remove left recursion of rule expression
 	//expressionMatched:
-	//	(BINARY_OP expression=expression)?;
+	//	(operator=BINARY_OP expression=expression)?;
 	public ExpressionMatchedElements getExpressionMatchedAccess() {
 		return pExpressionMatched;
 	}

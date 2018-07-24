@@ -25,6 +25,7 @@ import org.xtext.go.literal
 import org.xtext.go.methodExpr
 import org.xtext.go.operandName
 import org.xtext.go.qualifiedIdent
+import java.util.ArrayList
 
 /**
  * This class contains custom validation rules. 
@@ -106,31 +107,31 @@ class GoValidator extends AbstractGoValidator {
 		}
 	}
 		
-		def checkOperandName(operandName name) {
-			if(name.getName !== null){//This is a string
-				//TODO: do something to the string
-			}
-			if(name.getQualIdent() !== null){
-				checkQualIdent(name.getQualIdent());
-			}
+	def checkOperandName(operandName name) {
+		if(name.getName !== null){//This is a string
+			//TODO: do something to the string
 		}
-		
-		def checkQualIdent(qualifiedIdent ident) {
-			if(ident.getPackageName() !== null){
-				//TODO: check this string(what should we do?)
-			}
-			if(ident.getName() !== null){
-				//TODO: what to do with this string?
-			}
+		if(name.getQualIdent() !== null){
+			checkQualIdent(name.getQualIdent());
 		}
-		
-		def checkMethodExpr(methodExpr expr) {
-			//TODO: auto-generated method stub"
+	}
+	
+	def checkQualIdent(qualifiedIdent ident) {
+		if(ident.getPackageName() !== null){
+			//TODO: check this string(what should we do?)
 		}
-		
-		def checkLiteral(literal literal) {
-			//TODO: auto-generated method stub"
+		if(ident.getName() !== null){
+			//TODO: what to do with this string?
 		}
+	}
+	
+	def checkMethodExpr(methodExpr expr) {
+		//TODO: auto-generated method stub"
+	}
+	
+	def checkLiteral(literal literal) {
+		//TODO: auto-generated method stub"
+	}
 
 	def checkSimple(simpleStmt stmt) {
 		if (stmt.getSendStmt() !== null) {
@@ -186,11 +187,17 @@ class GoValidator extends AbstractGoValidator {
 		if (matched.getExpression() !== null) {
 			checkExpression(matched.getExpression());
 		}
+		if (matched.getOperator() !== null) {
+			
+		}
 	}
 
 	def checkUnary(unaryExpr expr) {
 		if (expr.getPrimaryExpr() !== null) {
 			checkPrimary(expr.getPrimaryExpr());
+		}
+		if (expr.getUnaryExpr() !== null) {
+			checkUnary(expr.getUnaryExpr());
 		}
 	}
 

@@ -546,7 +546,7 @@ expression:
 //// attempt to remove left recursion of rule expression
 
 expressionMatched:
-	(BINARY_OP expression=expression)?;
+	(operator=BINARY_OP expression=expression)?;
 
 
 ////

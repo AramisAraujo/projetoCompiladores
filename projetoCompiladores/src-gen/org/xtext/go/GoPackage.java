@@ -3815,13 +3815,22 @@ public interface GoPackage extends EPackage
   int EXPRESSION_MATCHED = 102;
 
   /**
+   * The feature id for the '<em><b>Operator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_MATCHED__OPERATOR = 0;
+
+  /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION_MATCHED__EXPRESSION = 0;
+  int EXPRESSION_MATCHED__EXPRESSION = 1;
 
   /**
    * The number of structural features of the '<em>expression Matched</em>' class.
@@ -3830,7 +3839,7 @@ public interface GoPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION_MATCHED_FEATURE_COUNT = 1;
+  int EXPRESSION_MATCHED_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.go.impl.unaryExprImpl <em>unary Expr</em>}' class.
@@ -7149,6 +7158,17 @@ public interface GoPackage extends EPackage
   EClass getexpressionMatched();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.expressionMatched#getOperator <em>Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Operator</em>'.
+   * @see org.xtext.go.expressionMatched#getOperator()
+   * @see #getexpressionMatched()
+   * @generated
+   */
+  EAttribute getexpressionMatched_Operator();
+
+  /**
    * Returns the meta object for the containment reference '{@link org.xtext.go.expressionMatched#getExpression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -9883,6 +9903,14 @@ public interface GoPackage extends EPackage
      * @generated
      */
     EClass EXPRESSION_MATCHED = eINSTANCE.getexpressionMatched();
+
+    /**
+     * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSION_MATCHED__OPERATOR = eINSTANCE.getexpressionMatched_Operator();
 
     /**
      * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.

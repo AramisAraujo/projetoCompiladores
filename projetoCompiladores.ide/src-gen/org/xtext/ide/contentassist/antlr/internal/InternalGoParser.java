@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalGoParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING_LIT", "RULE_IDENTIFIER", "RULE_INT_LIT", "RULE_FLOAT_LIT", "RULE_IMAGINARY_LIT", "RULE_RUNE_LIT", "RULE_BINARY_OP", "RULE_WS", "RULE_LETTER", "RULE_DECIMAL_DIGIT", "RULE_REL_OP", "RULE_ADD_OP", "RULE_MUL_OP", "RULE_UNARY_OP", "RULE_DECIMAL_LIT", "RULE_OCTAL_LIT", "RULE_HEX_LIT", "RULE_OCTAL_DIGIT", "RULE_HEX_DIGIT", "RULE_DECIMALS", "RULE_EXPONENT", "RULE_UNICODE_VALUE", "RULE_BYTE_VALUE", "RULE_UNICODE_CHAR", "RULE_LITTLE_U_VALUE", "RULE_BIG_U_VALUE", "RULE_ESCAPED_CHAR", "RULE_OCTAL_BYTE_VALUE", "RULE_HEX_BYTE_VALUE", "RULE_RAW_STRING_LIT", "RULE_INTERPRETED_STRING_LIT", "RULE_NEWLINE", "RULE_UNICODE_LETTER", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_ANY_OTHER", "';'", "'.'", "'++'", "'--'", "'+'", "'-'", "'|'", "'^'", "'*'", "'/'", "'%'", "'<<'", "'>>'", "'&'", "'&^'", "'default'", "'chan'", "'!'", "'<-'", "'package'", "'import'", "'('", "')'", "'const'", "'='", "','", "'type'", "'func'", "'var'", "'{'", "'}'", "':='", "':'", "'return'", "'break'", "'continue'", "'goto'", "'defer'", "'if'", "'else'", "'switch'", "'case'", "'select'", "'for'", "'range'", "'go'", "'['", "']'", "'interface'", "'map'", "'...'", "'struct'", "'fallthrough'", "'Array'", "'StructType'", "'Pointer'", "'Function'", "'Interface'", "'Slice'", "'Map'", "'Channel'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING_LIT", "RULE_IDENTIFIER", "RULE_INT_LIT", "RULE_FLOAT_LIT", "RULE_IMAGINARY_LIT", "RULE_RUNE_LIT", "RULE_WS", "RULE_BINARY_OP", "RULE_LETTER", "RULE_DECIMAL_DIGIT", "RULE_REL_OP", "RULE_ADD_OP", "RULE_MUL_OP", "RULE_UNARY_OP", "RULE_DECIMAL_LIT", "RULE_OCTAL_LIT", "RULE_HEX_LIT", "RULE_OCTAL_DIGIT", "RULE_HEX_DIGIT", "RULE_DECIMALS", "RULE_EXPONENT", "RULE_UNICODE_VALUE", "RULE_BYTE_VALUE", "RULE_UNICODE_CHAR", "RULE_LITTLE_U_VALUE", "RULE_BIG_U_VALUE", "RULE_ESCAPED_CHAR", "RULE_OCTAL_BYTE_VALUE", "RULE_HEX_BYTE_VALUE", "RULE_RAW_STRING_LIT", "RULE_INTERPRETED_STRING_LIT", "RULE_NEWLINE", "RULE_UNICODE_LETTER", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_ANY_OTHER", "';'", "'.'", "'++'", "'--'", "'+'", "'-'", "'|'", "'^'", "'*'", "'/'", "'%'", "'<<'", "'>>'", "'&'", "'&^'", "'default'", "'chan'", "'!'", "'<-'", "'package'", "'import'", "'('", "')'", "'const'", "'='", "','", "'type'", "'func'", "'var'", "'{'", "'}'", "':='", "':'", "'return'", "'break'", "'continue'", "'goto'", "'defer'", "'if'", "'else'", "'switch'", "'case'", "'select'", "'for'", "'range'", "'go'", "'['", "']'", "'interface'", "'map'", "'...'", "'struct'", "'fallthrough'", "'Array'", "'StructType'", "'Pointer'", "'Function'", "'Interface'", "'Slice'", "'Map'", "'Channel'"
     };
     public static final int T__50=50;
     public static final int RULE_DECIMAL_DIGIT=13;
@@ -80,7 +80,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
     public static final int T__101=101;
     public static final int T__90=90;
     public static final int T__99=99;
-    public static final int RULE_BINARY_OP=10;
+    public static final int RULE_BINARY_OP=11;
     public static final int T__95=95;
     public static final int T__96=96;
     public static final int T__97=97;
@@ -113,7 +113,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
     public static final int T__81=81;
     public static final int T__82=82;
     public static final int T__83=83;
-    public static final int RULE_WS=11;
+    public static final int RULE_WS=10;
     public static final int RULE_ANY_OTHER=42;
     public static final int RULE_OCTAL_LIT=19;
     public static final int RULE_FLOAT_LIT=7;
@@ -1993,7 +1993,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0>=RULE_STRING_LIT && LA1_0<=RULE_WS)||(LA1_0>=43 && LA1_0<=57)||(LA1_0>=59 && LA1_0<=61)||LA1_0==64||(LA1_0>=66 && LA1_0<=72)||(LA1_0>=76 && LA1_0<=81)||LA1_0==83||(LA1_0>=85 && LA1_0<=86)||(LA1_0>=88 && LA1_0<=89)||(LA1_0>=91 && LA1_0<=92)||(LA1_0>=94 && LA1_0<=95)) ) {
+                if ( ((LA1_0>=RULE_STRING_LIT && LA1_0<=RULE_BINARY_OP)||(LA1_0>=43 && LA1_0<=57)||(LA1_0>=59 && LA1_0<=61)||LA1_0==64||(LA1_0>=66 && LA1_0<=72)||(LA1_0>=76 && LA1_0<=81)||LA1_0==83||(LA1_0>=85 && LA1_0<=86)||(LA1_0>=88 && LA1_0<=89)||(LA1_0>=91 && LA1_0<=92)||(LA1_0>=94 && LA1_0<=95)) ) {
                     alt1=1;
                 }
 
@@ -8047,15 +8047,15 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             if ( (LA2_0==44) ) {
                 int LA2_1 = input.LA(2);
 
-                if ( (LA2_1==RULE_IDENTIFIER) ) {
-                    alt2=1;
-                }
-                else if ( (LA2_1==64) ) {
+                if ( (LA2_1==64) ) {
                     int LA2_4 = input.LA(3);
 
                     if ( (LA2_4==RULE_IDENTIFIER||LA2_4==51||LA2_4==59||LA2_4==61||LA2_4==64||LA2_4==70||LA2_4==89||(LA2_4>=91 && LA2_4<=92)||LA2_4==94) ) {
                         alt2=1;
                     }
+                }
+                else if ( (LA2_1==RULE_IDENTIFIER) ) {
+                    alt2=1;
                 }
             }
             else if ( (LA2_0==64||LA2_0==89) ) {
@@ -8157,15 +8157,15 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             if ( (LA3_0==44) ) {
                 int LA3_1 = input.LA(2);
 
-                if ( (LA3_1==64) ) {
+                if ( (LA3_1==RULE_IDENTIFIER) ) {
+                    alt3=1;
+                }
+                else if ( (LA3_1==64) ) {
                     int LA3_4 = input.LA(3);
 
                     if ( (LA3_4==RULE_IDENTIFIER||LA3_4==51||LA3_4==59||LA3_4==61||LA3_4==64||LA3_4==70||LA3_4==89||(LA3_4>=91 && LA3_4<=92)||LA3_4==94) ) {
                         alt3=1;
                     }
-                }
-                else if ( (LA3_1==RULE_IDENTIFIER) ) {
-                    alt3=1;
                 }
             }
             else if ( (LA3_0==64||LA3_0==89) ) {
@@ -8377,15 +8377,15 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             if ( (LA5_0==44) ) {
                 int LA5_1 = input.LA(2);
 
-                if ( (LA5_1==RULE_IDENTIFIER) ) {
-                    alt5=1;
-                }
-                else if ( (LA5_1==64) ) {
+                if ( (LA5_1==64) ) {
                     int LA5_4 = input.LA(3);
 
                     if ( (LA5_4==RULE_IDENTIFIER||LA5_4==51||LA5_4==59||LA5_4==61||LA5_4==64||LA5_4==70||LA5_4==89||(LA5_4>=91 && LA5_4<=92)||LA5_4==94) ) {
                         alt5=1;
                     }
+                }
+                else if ( (LA5_1==RULE_IDENTIFIER) ) {
+                    alt5=1;
                 }
             }
             else if ( (LA5_0==64||LA5_0==89) ) {
@@ -8487,15 +8487,15 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             if ( (LA6_0==44) ) {
                 int LA6_1 = input.LA(2);
 
-                if ( (LA6_1==RULE_IDENTIFIER) ) {
-                    alt6=1;
-                }
-                else if ( (LA6_1==64) ) {
+                if ( (LA6_1==64) ) {
                     int LA6_4 = input.LA(3);
 
                     if ( (LA6_4==RULE_IDENTIFIER||LA6_4==51||LA6_4==59||LA6_4==61||LA6_4==64||LA6_4==70||LA6_4==89||(LA6_4>=91 && LA6_4<=92)||LA6_4==94) ) {
                         alt6=1;
                     }
+                }
+                else if ( (LA6_1==RULE_IDENTIFIER) ) {
+                    alt6=1;
                 }
             }
             else if ( (LA6_0==64||LA6_0==89) ) {
@@ -9758,11 +9758,11 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             else if ( (LA10_0==70) ) {
                 int LA10_2 = input.LA(2);
 
-                if ( (LA10_2==RULE_IDENTIFIER) ) {
-                    alt10=2;
-                }
-                else if ( (LA10_2==64) ) {
+                if ( (LA10_2==64) ) {
                     alt10=3;
+                }
+                else if ( (LA10_2==RULE_IDENTIFIER) ) {
+                    alt10=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -12702,13 +12702,10 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             if ( (LA32_0==RULE_IDENTIFIER) ) {
                 int LA32_1 = input.LA(2);
 
-                if ( (LA32_1==EOF||LA32_1==RULE_STRING_LIT||LA32_1==43||(LA32_1>=64 && LA32_1<=65)||(LA32_1>=67 && LA32_1<=68)||LA32_1==72||LA32_1==75||LA32_1==90||LA32_1==93||LA32_1==96||(LA32_1>=98 && LA32_1<=99)||(LA32_1>=101 && LA32_1<=103)) ) {
-                    alt32=1;
-                }
-                else if ( (LA32_1==44) ) {
-                    int LA32_3 = input.LA(3);
+                if ( (LA32_1==44) ) {
+                    int LA32_2 = input.LA(3);
 
-                    if ( (LA32_3==RULE_IDENTIFIER) ) {
+                    if ( (LA32_2==RULE_IDENTIFIER) ) {
                         int LA32_4 = input.LA(4);
 
                         if ( (synpred62_InternalGo()) ) {
@@ -12728,10 +12725,13 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
                     else {
                         if (state.backtracking>0) {state.failed=true; return ;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 32, 3, input);
+                            new NoViableAltException("", 32, 2, input);
 
                         throw nvae;
                     }
+                }
+                else if ( (LA32_1==EOF||LA32_1==RULE_STRING_LIT||LA32_1==43||(LA32_1>=64 && LA32_1<=65)||(LA32_1>=67 && LA32_1<=68)||LA32_1==72||LA32_1==75||LA32_1==90||LA32_1==93||LA32_1==96||(LA32_1>=98 && LA32_1<=99)||(LA32_1>=101 && LA32_1<=103)) ) {
+                    alt32=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -13873,25 +13873,25 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             if ( (LA40_0==RULE_IDENTIFIER) ) {
                 int LA40_1 = input.LA(2);
 
-                if ( (LA40_1==EOF||LA40_1==RULE_BINARY_OP||LA40_1==43||(LA40_1>=45 && LA40_1<=57)||LA40_1==61||LA40_1==65||(LA40_1>=67 && LA40_1<=68)||(LA40_1>=72 && LA40_1<=73)||LA40_1==75||LA40_1==90||LA40_1==93) ) {
-                    alt40=1;
-                }
-                else if ( (LA40_1==44) ) {
-                    int LA40_3 = input.LA(3);
+                if ( (LA40_1==44) ) {
+                    int LA40_2 = input.LA(3);
 
-                    if ( (LA40_3==RULE_IDENTIFIER) ) {
+                    if ( (LA40_2==RULE_IDENTIFIER) ) {
                         alt40=2;
                     }
-                    else if ( (LA40_3==64) ) {
+                    else if ( (LA40_2==64) ) {
                         alt40=1;
                     }
                     else {
                         if (state.backtracking>0) {state.failed=true; return ;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 40, 3, input);
+                            new NoViableAltException("", 40, 2, input);
 
                         throw nvae;
                     }
+                }
+                else if ( (LA40_1==EOF||LA40_1==RULE_BINARY_OP||LA40_1==43||(LA40_1>=45 && LA40_1<=57)||LA40_1==61||LA40_1==65||(LA40_1>=67 && LA40_1<=68)||(LA40_1>=72 && LA40_1<=73)||LA40_1==75||LA40_1==90||LA40_1==93) ) {
+                    alt40=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -14416,7 +14416,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             int alt43=2;
             int LA43_0 = input.LA(1);
 
-            if ( (LA43_0==EOF||(LA43_0>=RULE_STRING_LIT && LA43_0<=RULE_BINARY_OP)||LA43_0==44||(LA43_0>=47 && LA43_0<=48)||(LA43_0>=50 && LA43_0<=51)||LA43_0==56||(LA43_0>=59 && LA43_0<=61)||LA43_0==64||LA43_0==68||LA43_0==70||LA43_0==73||LA43_0==89||(LA43_0>=91 && LA43_0<=92)||LA43_0==94) ) {
+            if ( (LA43_0==EOF||(LA43_0>=RULE_STRING_LIT && LA43_0<=RULE_RUNE_LIT)||LA43_0==RULE_BINARY_OP||LA43_0==44||(LA43_0>=47 && LA43_0<=48)||(LA43_0>=50 && LA43_0<=51)||LA43_0==56||(LA43_0>=59 && LA43_0<=61)||LA43_0==64||LA43_0==68||LA43_0==70||LA43_0==73||LA43_0==89||(LA43_0>=91 && LA43_0<=92)||LA43_0==94) ) {
                 alt43=1;
             }
             else if ( (LA43_0==72) ) {
@@ -14519,11 +14519,11 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             if ( (LA44_0==RULE_IDENTIFIER) ) {
                 int LA44_1 = input.LA(2);
 
-                if ( (LA44_1==EOF||LA44_1==RULE_STRING_LIT||(LA44_1>=43 && LA44_1<=44)) ) {
-                    alt44=2;
-                }
-                else if ( (LA44_1==RULE_IDENTIFIER||LA44_1==51||LA44_1==59||LA44_1==61||LA44_1==64||LA44_1==68||LA44_1==70||LA44_1==89||(LA44_1>=91 && LA44_1<=92)||LA44_1==94) ) {
+                if ( (LA44_1==RULE_IDENTIFIER||LA44_1==51||LA44_1==59||LA44_1==61||LA44_1==64||LA44_1==68||LA44_1==70||LA44_1==89||(LA44_1>=91 && LA44_1<=92)||LA44_1==94) ) {
                     alt44=1;
+                }
+                else if ( (LA44_1==EOF||LA44_1==RULE_STRING_LIT||(LA44_1>=43 && LA44_1<=44)) ) {
+                    alt44=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -25668,7 +25668,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             int alt75=2;
             int LA75_0 = input.LA(1);
 
-            if ( ((LA75_0>=RULE_STRING_LIT && LA75_0<=RULE_BINARY_OP)||LA75_0==44||(LA75_0>=47 && LA75_0<=48)||(LA75_0>=50 && LA75_0<=51)||LA75_0==56||(LA75_0>=59 && LA75_0<=61)||LA75_0==64||LA75_0==70||LA75_0==89||(LA75_0>=91 && LA75_0<=92)||LA75_0==94) ) {
+            if ( ((LA75_0>=RULE_STRING_LIT && LA75_0<=RULE_RUNE_LIT)||LA75_0==RULE_BINARY_OP||LA75_0==44||(LA75_0>=47 && LA75_0<=48)||(LA75_0>=50 && LA75_0<=51)||LA75_0==56||(LA75_0>=59 && LA75_0<=61)||LA75_0==64||LA75_0==70||LA75_0==89||(LA75_0>=91 && LA75_0<=92)||LA75_0==94) ) {
                 alt75=1;
             }
             else if ( (LA75_0==72) ) {
@@ -30263,7 +30263,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             int alt84=2;
             int LA84_0 = input.LA(1);
 
-            if ( ((LA84_0>=RULE_STRING_LIT && LA84_0<=RULE_WS)||(LA84_0>=44 && LA84_0<=57)||(LA84_0>=59 && LA84_0<=61)||LA84_0==64||(LA84_0>=67 && LA84_0<=68)||LA84_0==70||LA84_0==89||(LA84_0>=91 && LA84_0<=92)||LA84_0==94) ) {
+            if ( ((LA84_0>=RULE_STRING_LIT && LA84_0<=RULE_BINARY_OP)||(LA84_0>=44 && LA84_0<=57)||(LA84_0>=59 && LA84_0<=61)||LA84_0==64||(LA84_0>=67 && LA84_0<=68)||LA84_0==70||LA84_0==89||(LA84_0>=91 && LA84_0<=92)||LA84_0==94) ) {
                 alt84=1;
             }
             else if ( (LA84_0==43) ) {
@@ -30453,7 +30453,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             int alt85=2;
             int LA85_0 = input.LA(1);
 
-            if ( ((LA85_0>=RULE_STRING_LIT && LA85_0<=RULE_BINARY_OP)||LA85_0==44||(LA85_0>=47 && LA85_0<=48)||(LA85_0>=50 && LA85_0<=51)||LA85_0==56||(LA85_0>=59 && LA85_0<=61)||LA85_0==64||LA85_0==70||LA85_0==89||(LA85_0>=91 && LA85_0<=92)||LA85_0==94) ) {
+            if ( ((LA85_0>=RULE_STRING_LIT && LA85_0<=RULE_RUNE_LIT)||LA85_0==RULE_BINARY_OP||LA85_0==44||(LA85_0>=47 && LA85_0<=48)||(LA85_0>=50 && LA85_0<=51)||LA85_0==56||(LA85_0>=59 && LA85_0<=61)||LA85_0==64||LA85_0==70||LA85_0==89||(LA85_0>=91 && LA85_0<=92)||LA85_0==94) ) {
                 alt85=1;
             }
             else if ( (LA85_0==43) ) {
@@ -30734,7 +30734,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             int alt87=2;
             int LA87_0 = input.LA(1);
 
-            if ( (LA87_0==EOF||(LA87_0>=RULE_STRING_LIT && LA87_0<=RULE_BINARY_OP)||(LA87_0>=43 && LA87_0<=57)||(LA87_0>=59 && LA87_0<=61)||(LA87_0>=64 && LA87_0<=65)||(LA87_0>=67 && LA87_0<=68)||LA87_0==70||(LA87_0>=72 && LA87_0<=73)||LA87_0==75||(LA87_0>=89 && LA87_0<=94)) ) {
+            if ( (LA87_0==EOF||(LA87_0>=RULE_STRING_LIT && LA87_0<=RULE_RUNE_LIT)||LA87_0==RULE_BINARY_OP||(LA87_0>=43 && LA87_0<=57)||(LA87_0>=59 && LA87_0<=61)||(LA87_0>=64 && LA87_0<=65)||(LA87_0>=67 && LA87_0<=68)||LA87_0==70||(LA87_0>=72 && LA87_0<=73)||LA87_0==75||(LA87_0>=89 && LA87_0<=94)) ) {
                 alt87=1;
             }
             switch (alt87) {
@@ -37918,7 +37918,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             int alt95=2;
             int LA95_0 = input.LA(1);
 
-            if ( ((LA95_0>=RULE_STRING_LIT && LA95_0<=RULE_BINARY_OP)||LA95_0==44||(LA95_0>=47 && LA95_0<=48)||(LA95_0>=50 && LA95_0<=51)||LA95_0==56||(LA95_0>=59 && LA95_0<=61)||LA95_0==64||LA95_0==68||LA95_0==70||LA95_0==72||LA95_0==75||LA95_0==89||(LA95_0>=91 && LA95_0<=92)||LA95_0==94) ) {
+            if ( ((LA95_0>=RULE_STRING_LIT && LA95_0<=RULE_RUNE_LIT)||LA95_0==RULE_BINARY_OP||LA95_0==44||(LA95_0>=47 && LA95_0<=48)||(LA95_0>=50 && LA95_0<=51)||LA95_0==56||(LA95_0>=59 && LA95_0<=61)||LA95_0==64||LA95_0==68||LA95_0==70||LA95_0==72||LA95_0==75||LA95_0==89||(LA95_0>=91 && LA95_0<=92)||LA95_0==94) ) {
                 alt95=1;
             }
             else if ( (LA95_0==73) ) {
@@ -41696,7 +41696,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             int alt102=2;
             int LA102_0 = input.LA(1);
 
-            if ( ((LA102_0>=RULE_STRING_LIT && LA102_0<=RULE_BINARY_OP)||LA102_0==44||(LA102_0>=47 && LA102_0<=48)||(LA102_0>=50 && LA102_0<=51)||LA102_0==56||(LA102_0>=59 && LA102_0<=61)||LA102_0==64||LA102_0==70||LA102_0==89||(LA102_0>=91 && LA102_0<=92)||LA102_0==94) ) {
+            if ( ((LA102_0>=RULE_STRING_LIT && LA102_0<=RULE_RUNE_LIT)||LA102_0==RULE_BINARY_OP||LA102_0==44||(LA102_0>=47 && LA102_0<=48)||(LA102_0>=50 && LA102_0<=51)||LA102_0==56||(LA102_0>=59 && LA102_0<=61)||LA102_0==64||LA102_0==70||LA102_0==89||(LA102_0>=91 && LA102_0<=92)||LA102_0==94) ) {
                 alt102=1;
             }
             else if ( (LA102_0==75) ) {
@@ -42019,7 +42019,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             int alt104=2;
             int LA104_0 = input.LA(1);
 
-            if ( ((LA104_0>=RULE_STRING_LIT && LA104_0<=RULE_BINARY_OP)||LA104_0==44||(LA104_0>=47 && LA104_0<=48)||(LA104_0>=50 && LA104_0<=51)||LA104_0==56||(LA104_0>=59 && LA104_0<=61)||LA104_0==64||LA104_0==70||LA104_0==89||(LA104_0>=91 && LA104_0<=92)||LA104_0==94) ) {
+            if ( ((LA104_0>=RULE_STRING_LIT && LA104_0<=RULE_RUNE_LIT)||LA104_0==RULE_BINARY_OP||LA104_0==44||(LA104_0>=47 && LA104_0<=48)||(LA104_0>=50 && LA104_0<=51)||LA104_0==56||(LA104_0>=59 && LA104_0<=61)||LA104_0==64||LA104_0==70||LA104_0==89||(LA104_0>=91 && LA104_0<=92)||LA104_0==94) ) {
                 alt104=1;
             }
             else if ( (LA104_0==75) ) {
@@ -42857,7 +42857,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             int alt105=2;
             int LA105_0 = input.LA(1);
 
-            if ( ((LA105_0>=RULE_STRING_LIT && LA105_0<=RULE_BINARY_OP)||LA105_0==44||(LA105_0>=47 && LA105_0<=48)||(LA105_0>=50 && LA105_0<=51)||LA105_0==56||(LA105_0>=59 && LA105_0<=61)||LA105_0==64||LA105_0==68||LA105_0==70||LA105_0==89||(LA105_0>=91 && LA105_0<=94)) ) {
+            if ( ((LA105_0>=RULE_STRING_LIT && LA105_0<=RULE_RUNE_LIT)||LA105_0==RULE_BINARY_OP||LA105_0==44||(LA105_0>=47 && LA105_0<=48)||(LA105_0>=50 && LA105_0<=51)||LA105_0==56||(LA105_0>=59 && LA105_0<=61)||LA105_0==64||LA105_0==68||LA105_0==70||LA105_0==89||(LA105_0>=91 && LA105_0<=94)) ) {
                 alt105=1;
             }
             else if ( (LA105_0==65) ) {
@@ -44624,24 +44624,34 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExpressionMatched__Group__0__Impl"
-    // InternalGo.g:13173:1: rule__ExpressionMatched__Group__0__Impl : ( RULE_BINARY_OP ) ;
+    // InternalGo.g:13173:1: rule__ExpressionMatched__Group__0__Impl : ( ( rule__ExpressionMatched__OperatorAssignment_0 ) ) ;
     public final void rule__ExpressionMatched__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGo.g:13177:1: ( ( RULE_BINARY_OP ) )
-            // InternalGo.g:13178:1: ( RULE_BINARY_OP )
+            // InternalGo.g:13177:1: ( ( ( rule__ExpressionMatched__OperatorAssignment_0 ) ) )
+            // InternalGo.g:13178:1: ( ( rule__ExpressionMatched__OperatorAssignment_0 ) )
             {
-            // InternalGo.g:13178:1: ( RULE_BINARY_OP )
-            // InternalGo.g:13179:2: RULE_BINARY_OP
+            // InternalGo.g:13178:1: ( ( rule__ExpressionMatched__OperatorAssignment_0 ) )
+            // InternalGo.g:13179:2: ( rule__ExpressionMatched__OperatorAssignment_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getExpressionMatchedAccess().getBINARY_OPTerminalRuleCall_0()); 
+               before(grammarAccess.getExpressionMatchedAccess().getOperatorAssignment_0()); 
             }
-            match(input,RULE_BINARY_OP,FOLLOW_2); if (state.failed) return ;
+            // InternalGo.g:13180:2: ( rule__ExpressionMatched__OperatorAssignment_0 )
+            // InternalGo.g:13180:3: rule__ExpressionMatched__OperatorAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__ExpressionMatched__OperatorAssignment_0();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getExpressionMatchedAccess().getBINARY_OPTerminalRuleCall_0()); 
+               after(grammarAccess.getExpressionMatchedAccess().getOperatorAssignment_0()); 
             }
 
             }
@@ -56324,18 +56334,59 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Expression__ExpressionMatchedAssignment_1"
 
 
+    // $ANTLR start "rule__ExpressionMatched__OperatorAssignment_0"
+    // InternalGo.g:17100:1: rule__ExpressionMatched__OperatorAssignment_0 : ( RULE_BINARY_OP ) ;
+    public final void rule__ExpressionMatched__OperatorAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGo.g:17104:1: ( ( RULE_BINARY_OP ) )
+            // InternalGo.g:17105:2: ( RULE_BINARY_OP )
+            {
+            // InternalGo.g:17105:2: ( RULE_BINARY_OP )
+            // InternalGo.g:17106:3: RULE_BINARY_OP
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getExpressionMatchedAccess().getOperatorBINARY_OPTerminalRuleCall_0_0()); 
+            }
+            match(input,RULE_BINARY_OP,FOLLOW_2); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getExpressionMatchedAccess().getOperatorBINARY_OPTerminalRuleCall_0_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ExpressionMatched__OperatorAssignment_0"
+
+
     // $ANTLR start "rule__ExpressionMatched__ExpressionAssignment_1"
-    // InternalGo.g:17100:1: rule__ExpressionMatched__ExpressionAssignment_1 : ( ruleexpression ) ;
+    // InternalGo.g:17115:1: rule__ExpressionMatched__ExpressionAssignment_1 : ( ruleexpression ) ;
     public final void rule__ExpressionMatched__ExpressionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGo.g:17104:1: ( ( ruleexpression ) )
-            // InternalGo.g:17105:2: ( ruleexpression )
+            // InternalGo.g:17119:1: ( ( ruleexpression ) )
+            // InternalGo.g:17120:2: ( ruleexpression )
             {
-            // InternalGo.g:17105:2: ( ruleexpression )
-            // InternalGo.g:17106:3: ruleexpression
+            // InternalGo.g:17120:2: ( ruleexpression )
+            // InternalGo.g:17121:3: ruleexpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExpressionMatchedAccess().getExpressionExpressionParserRuleCall_1_0()); 
@@ -56370,17 +56421,17 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnaryExpr__PrimaryExprAssignment_0"
-    // InternalGo.g:17115:1: rule__UnaryExpr__PrimaryExprAssignment_0 : ( ruleprimaryExpr ) ;
+    // InternalGo.g:17130:1: rule__UnaryExpr__PrimaryExprAssignment_0 : ( ruleprimaryExpr ) ;
     public final void rule__UnaryExpr__PrimaryExprAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGo.g:17119:1: ( ( ruleprimaryExpr ) )
-            // InternalGo.g:17120:2: ( ruleprimaryExpr )
+            // InternalGo.g:17134:1: ( ( ruleprimaryExpr ) )
+            // InternalGo.g:17135:2: ( ruleprimaryExpr )
             {
-            // InternalGo.g:17120:2: ( ruleprimaryExpr )
-            // InternalGo.g:17121:3: ruleprimaryExpr
+            // InternalGo.g:17135:2: ( ruleprimaryExpr )
+            // InternalGo.g:17136:3: ruleprimaryExpr
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUnaryExprAccess().getPrimaryExprPrimaryExprParserRuleCall_0_0()); 
@@ -56415,17 +56466,17 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnaryExpr__UnaryExprAssignment_1_1"
-    // InternalGo.g:17130:1: rule__UnaryExpr__UnaryExprAssignment_1_1 : ( ruleunaryExpr ) ;
+    // InternalGo.g:17145:1: rule__UnaryExpr__UnaryExprAssignment_1_1 : ( ruleunaryExpr ) ;
     public final void rule__UnaryExpr__UnaryExprAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGo.g:17134:1: ( ( ruleunaryExpr ) )
-            // InternalGo.g:17135:2: ( ruleunaryExpr )
+            // InternalGo.g:17149:1: ( ( ruleunaryExpr ) )
+            // InternalGo.g:17150:2: ( ruleunaryExpr )
             {
-            // InternalGo.g:17135:2: ( ruleunaryExpr )
-            // InternalGo.g:17136:3: ruleunaryExpr
+            // InternalGo.g:17150:2: ( ruleunaryExpr )
+            // InternalGo.g:17151:3: ruleunaryExpr
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUnaryExprAccess().getUnaryExprUnaryExprParserRuleCall_1_1_0()); 
@@ -56460,17 +56511,17 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Conversion__TypeAssignment_0"
-    // InternalGo.g:17145:1: rule__Conversion__TypeAssignment_0 : ( ruletype ) ;
+    // InternalGo.g:17160:1: rule__Conversion__TypeAssignment_0 : ( ruletype ) ;
     public final void rule__Conversion__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGo.g:17149:1: ( ( ruletype ) )
-            // InternalGo.g:17150:2: ( ruletype )
+            // InternalGo.g:17164:1: ( ( ruletype ) )
+            // InternalGo.g:17165:2: ( ruletype )
             {
-            // InternalGo.g:17150:2: ( ruletype )
-            // InternalGo.g:17151:3: ruletype
+            // InternalGo.g:17165:2: ( ruletype )
+            // InternalGo.g:17166:3: ruletype
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConversionAccess().getTypeTypeParserRuleCall_0_0()); 
@@ -56505,17 +56556,17 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Conversion__ExpressionAssignment_2"
-    // InternalGo.g:17160:1: rule__Conversion__ExpressionAssignment_2 : ( ruleexpression ) ;
+    // InternalGo.g:17175:1: rule__Conversion__ExpressionAssignment_2 : ( ruleexpression ) ;
     public final void rule__Conversion__ExpressionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGo.g:17164:1: ( ( ruleexpression ) )
-            // InternalGo.g:17165:2: ( ruleexpression )
+            // InternalGo.g:17179:1: ( ( ruleexpression ) )
+            // InternalGo.g:17180:2: ( ruleexpression )
             {
-            // InternalGo.g:17165:2: ( ruleexpression )
-            // InternalGo.g:17166:3: ruleexpression
+            // InternalGo.g:17180:2: ( ruleexpression )
+            // InternalGo.g:17181:3: ruleexpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConversionAccess().getExpressionExpressionParserRuleCall_2_0()); 
@@ -58817,14 +58868,14 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
     protected DFA98 dfa98 = new DFA98(this);
     static final String dfa_1s = "\21\uffff";
     static final String dfa_2s = "\1\3\1\uffff\1\3\16\uffff";
-    static final String dfa_3s = "\1\4\1\uffff\1\12\16\uffff";
+    static final String dfa_3s = "\1\4\1\uffff\1\13\16\uffff";
     static final String dfa_4s = "\1\137\1\uffff\1\113\16\uffff";
     static final String dfa_5s = "\1\uffff\1\1\1\uffff\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\2";
     static final String dfa_6s = "\21\uffff}>";
     static final String[] dfa_7s = {
             "\1\3\1\2\6\3\37\uffff\17\3\1\uffff\3\3\2\uffff\1\3\1\uffff\1\1\2\3\1\1\1\3\1\1\1\12\3\uffff\1\5\1\6\1\7\1\10\1\17\1\13\1\uffff\1\14\1\uffff\1\15\1\16\1\uffff\1\4\1\3\1\uffff\2\3\1\uffff\1\3\1\11",
             "",
-            "\1\3\40\uffff\17\3\3\uffff\1\3\2\uffff\1\3\2\uffff\2\3\3\uffff\1\3\1\uffff\1\3\1\20",
+            "\1\3\37\uffff\17\3\3\uffff\1\3\2\uffff\1\3\2\uffff\2\3\3\uffff\1\3\1\uffff\1\3\1\20",
             "",
             "",
             "",
@@ -58873,7 +58924,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
     static final String dfa_12s = "\27\uffff\1\2\2\uffff\1\3\1\uffff\1\4\7\uffff\1\6\1\1\1\5";
     static final String dfa_13s = "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\20\uffff}>";
     static final String[] dfa_14s = {
-            "\1\5\1\11\1\1\1\2\1\3\1\4\1\21\1\44\37\uffff\1\27\1\20\2\32\1\22\1\23\1\34\1\25\1\14\4\34\1\26\1\34\1\uffff\1\16\1\24\1\17\2\uffff\1\13\2\uffff\2\34\1\uffff\1\12\1\uffff\1\27\20\uffff\1\7\1\uffff\1\15\1\10\1\uffff\1\6",
+            "\1\5\1\11\1\1\1\2\1\3\1\4\1\44\1\21\37\uffff\1\27\1\20\2\32\1\22\1\23\1\34\1\25\1\14\4\34\1\26\1\34\1\uffff\1\16\1\24\1\17\2\uffff\1\13\2\uffff\2\34\1\uffff\1\12\1\uffff\1\27\20\uffff\1\7\1\uffff\1\15\1\10\1\uffff\1\6",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -59377,7 +59428,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
     static final String dfa_19s = "\27\uffff\1\2\3\uffff\1\1";
     static final String dfa_20s = "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\5\uffff}>";
     static final String[] dfa_21s = {
-            "\1\5\1\11\1\1\1\2\1\3\1\4\1\21\41\uffff\1\20\2\uffff\1\22\1\23\1\uffff\1\25\1\14\4\uffff\1\26\2\uffff\1\16\1\24\1\17\2\uffff\1\13\2\uffff\2\27\1\uffff\1\12\4\uffff\1\27\15\uffff\1\7\1\uffff\1\15\1\10\1\uffff\1\6",
+            "\1\5\1\11\1\1\1\2\1\3\1\4\1\uffff\1\21\40\uffff\1\20\2\uffff\1\22\1\23\1\uffff\1\25\1\14\4\uffff\1\26\2\uffff\1\16\1\24\1\17\2\uffff\1\13\2\uffff\2\27\1\uffff\1\12\4\uffff\1\27\15\uffff\1\7\1\uffff\1\15\1\10\1\uffff\1\6",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -59774,17 +59825,17 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
         }
     }
     static final String dfa_22s = "\6\uffff";
-    static final String dfa_23s = "\1\4\1\uffff\1\12\1\4\1\uffff\1\12";
+    static final String dfa_23s = "\1\4\1\uffff\1\13\1\4\1\uffff\1\13";
     static final String dfa_24s = "\1\136\1\uffff\1\112\1\136\1\uffff\1\112";
     static final String dfa_25s = "\1\uffff\1\1\2\uffff\1\2\1\uffff";
     static final String dfa_26s = "\6\uffff}>";
     static final String[] dfa_27s = {
-            "\1\1\1\2\5\1\41\uffff\1\1\2\uffff\2\1\1\uffff\2\1\4\uffff\1\1\2\uffff\3\1\2\uffff\1\1\2\uffff\2\1\1\uffff\1\1\22\uffff\1\1\1\uffff\2\1\1\uffff\1\1",
+            "\1\1\1\2\4\1\1\uffff\1\1\40\uffff\1\1\2\uffff\2\1\1\uffff\2\1\4\uffff\1\1\2\uffff\3\1\2\uffff\1\1\2\uffff\2\1\1\uffff\1\1\22\uffff\1\1\1\uffff\2\1\1\uffff\1\1",
             "",
-            "\1\1\41\uffff\1\1\23\uffff\1\1\2\uffff\1\1\1\3\3\uffff\1\1\1\uffff\1\4",
-            "\1\1\1\5\5\1\41\uffff\1\1\2\uffff\2\1\1\uffff\2\1\4\uffff\1\1\2\uffff\3\1\2\uffff\1\1\2\uffff\2\1\1\uffff\1\1\22\uffff\1\1\1\uffff\2\1\1\uffff\1\1",
+            "\1\1\40\uffff\1\1\23\uffff\1\1\2\uffff\1\1\1\3\3\uffff\1\1\1\uffff\1\4",
+            "\1\1\1\5\4\1\1\uffff\1\1\40\uffff\1\1\2\uffff\2\1\1\uffff\2\1\4\uffff\1\1\2\uffff\3\1\2\uffff\1\1\2\uffff\2\1\1\uffff\1\1\22\uffff\1\1\1\uffff\2\1\1\uffff\1\1",
             "",
-            "\1\1\41\uffff\1\1\23\uffff\1\1\2\uffff\1\1\1\3\3\uffff\1\1\1\uffff\1\4"
+            "\1\1\40\uffff\1\1\23\uffff\1\1\2\uffff\1\1\1\3\3\uffff\1\1\1\uffff\1\4"
     };
 
     static final short[] dfa_22 = DFA.unpackEncodedString(dfa_22s);
@@ -59818,7 +59869,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
     static final String dfa_32s = "\22\uffff\1\1\6\uffff\1\2\13\uffff\1\3";
     static final String dfa_33s = "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\2\uffff\1\21\1\22\1\23\1\24\1\25\3\uffff\1\26\6\uffff\1\27\2\uffff}>";
     static final String[] dfa_34s = {
-            "\1\5\1\11\1\1\1\2\1\3\1\4\1\21\1\31\37\uffff\1\31\1\20\2\31\1\24\1\25\1\31\1\27\1\14\4\31\1\30\1\31\1\uffff\1\16\1\26\1\17\2\uffff\1\13\2\uffff\1\43\1\34\1\uffff\1\12\1\uffff\1\22\16\uffff\1\45\1\uffff\1\7\1\uffff\1\15\1\10\1\uffff\1\6",
+            "\1\5\1\11\1\1\1\2\1\3\1\4\1\31\1\21\37\uffff\1\31\1\20\2\31\1\24\1\25\1\31\1\27\1\14\4\31\1\30\1\31\1\uffff\1\16\1\26\1\17\2\uffff\1\13\2\uffff\1\43\1\34\1\uffff\1\12\1\uffff\1\22\16\uffff\1\45\1\uffff\1\7\1\uffff\1\15\1\10\1\uffff\1\6",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -60552,7 +60603,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
     static final String dfa_57s = "\1\uffff\1\1\46\uffff\1\2\1\3\1\4\1\5\1\6";
     static final String dfa_58s = "\7\uffff\1\0\3\uffff\1\1\1\2\2\uffff\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31\1\32\1\33\5\uffff}>";
     static final String[] dfa_59s = {
-            "\6\1\1\22\40\uffff\1\24\1\20\1\44\1\45\1\25\1\26\1\27\1\30\1\14\1\31\1\32\1\33\1\34\1\35\1\36\1\uffff\1\1\1\uffff\1\17\2\uffff\1\13\1\43\1\uffff\1\37\1\23\1\uffff\1\1\1\uffff\1\40\1\47\1\uffff\1\41\15\uffff\1\7\1\46\2\1\1\42\1\1",
+            "\6\1\1\uffff\1\22\37\uffff\1\24\1\20\1\44\1\45\1\25\1\26\1\27\1\30\1\14\1\31\1\32\1\33\1\34\1\35\1\36\1\uffff\1\1\1\uffff\1\17\2\uffff\1\13\1\43\1\uffff\1\37\1\23\1\uffff\1\1\1\uffff\1\40\1\47\1\uffff\1\41\15\uffff\1\7\1\46\2\1\1\42\1\1",
             "",
             "",
             "",
@@ -61386,7 +61437,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
     static final String dfa_69s = "\30\uffff\1\1\1\2";
     static final String dfa_70s = "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\2\uffff}>";
     static final String[] dfa_71s = {
-            "\1\5\1\11\1\1\1\2\1\3\1\4\1\21\41\uffff\1\20\2\uffff\1\23\1\24\1\uffff\1\26\1\14\4\uffff\1\27\2\uffff\1\16\1\25\1\17\2\uffff\1\13\5\uffff\1\12\4\uffff\1\22\15\uffff\1\7\1\uffff\1\15\1\10\1\uffff\1\6",
+            "\1\5\1\11\1\1\1\2\1\3\1\4\1\uffff\1\21\40\uffff\1\20\2\uffff\1\23\1\24\1\uffff\1\26\1\14\4\uffff\1\27\2\uffff\1\16\1\25\1\17\2\uffff\1\13\5\uffff\1\12\4\uffff\1\22\15\uffff\1\7\1\uffff\1\15\1\10\1\uffff\1\6",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -61800,7 +61851,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
     static final String dfa_75s = "\1\uffff\1\1\31\uffff\1\2";
     static final String dfa_76s = "\6\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\14\uffff}>";
     static final String[] dfa_77s = {
-            "\1\1\1\11\5\1\41\uffff\1\1\2\uffff\2\1\1\uffff\1\1\1\14\4\uffff\1\1\2\uffff\1\16\1\1\1\17\2\uffff\1\13\1\1\2\uffff\1\1\1\uffff\1\12\22\uffff\1\7\1\uffff\1\15\1\10\1\1\1\6",
+            "\1\1\1\11\4\1\1\uffff\1\1\40\uffff\1\1\2\uffff\2\1\1\uffff\1\1\1\14\4\uffff\1\1\2\uffff\1\16\1\1\1\17\2\uffff\1\13\1\1\2\uffff\1\1\1\uffff\1\12\22\uffff\1\7\1\uffff\1\15\1\10\1\1\1\6",
             "",
             "",
             "",
@@ -62021,7 +62072,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
     static final String dfa_82s = "\1\uffff\1\1\46\uffff\1\2";
     static final String dfa_83s = "\14\uffff\1\0\2\uffff\1\1\5\uffff\1\2\1\3\1\uffff\1\4\4\uffff\1\5\13\uffff}>";
     static final String[] dfa_84s = {
-            "\7\1\40\uffff\4\1\1\25\1\26\1\1\1\30\1\14\4\1\1\35\1\1\1\uffff\1\1\1\50\1\17\2\uffff\2\1\1\uffff\2\1\1\uffff\1\1\1\uffff\2\1\1\uffff\1\1\15\uffff\6\1",
+            "\6\1\1\uffff\1\1\37\uffff\4\1\1\25\1\26\1\1\1\30\1\14\4\1\1\35\1\1\1\uffff\1\1\1\50\1\17\2\uffff\2\1\1\uffff\2\1\1\uffff\1\1\1\uffff\2\1\1\uffff\1\1\15\uffff\6\1",
             "",
             "",
             "",
@@ -62196,7 +62247,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
     static final String dfa_88s = "\27\uffff\1\1\13\uffff\1\2";
     static final String dfa_89s = "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\15\uffff}>";
     static final String[] dfa_90s = {
-            "\1\5\1\11\1\1\1\2\1\3\1\4\1\21\1\27\37\uffff\1\27\1\20\2\27\1\22\1\23\1\27\1\25\1\14\4\27\1\26\1\27\1\uffff\1\16\1\24\1\17\2\uffff\1\13\2\uffff\2\27\1\uffff\1\12\1\uffff\1\43\20\uffff\1\7\1\uffff\1\15\1\10\1\uffff\1\6",
+            "\1\5\1\11\1\1\1\2\1\3\1\4\1\27\1\21\37\uffff\1\27\1\20\2\27\1\22\1\23\1\27\1\25\1\14\4\27\1\26\1\27\1\uffff\1\16\1\24\1\17\2\uffff\1\13\2\uffff\2\27\1\uffff\1\12\1\uffff\1\43\20\uffff\1\7\1\uffff\1\15\1\10\1\uffff\1\6",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -63281,7 +63332,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
     static final String dfa_100s = "\22\uffff\1\1\6\uffff\1\2\1\uffff";
     static final String dfa_101s = "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\2\uffff\1\21\1\22\1\23\1\24\1\25\2\uffff}>";
     static final String[] dfa_102s = {
-            "\1\5\1\11\1\1\1\2\1\3\1\4\1\21\41\uffff\1\20\2\uffff\1\24\1\25\1\uffff\1\27\1\14\4\uffff\1\30\2\uffff\1\16\1\26\1\17\2\uffff\1\13\2\uffff\2\22\1\uffff\1\12\4\uffff\1\31\15\uffff\1\7\1\uffff\1\15\1\10\1\uffff\1\6",
+            "\1\5\1\11\1\1\1\2\1\3\1\4\1\uffff\1\21\40\uffff\1\20\2\uffff\1\24\1\25\1\uffff\1\27\1\14\4\uffff\1\30\2\uffff\1\16\1\26\1\17\2\uffff\1\13\2\uffff\2\22\1\uffff\1\12\4\uffff\1\31\15\uffff\1\7\1\uffff\1\15\1\10\1\uffff\1\6",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -63887,7 +63938,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
     static final String dfa_118s = "\22\uffff\1\1\6\uffff\1\2\2\uffff";
     static final String dfa_119s = "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\uffff\1\21\1\22\1\23\1\24\1\25\1\26\3\uffff}>";
     static final String[] dfa_120s = {
-            "\1\6\1\1\1\2\1\3\1\4\1\5\1\21\41\uffff\1\20\2\uffff\1\23\1\24\1\uffff\1\26\1\14\4\uffff\1\27\2\uffff\1\16\1\25\1\17\2\uffff\1\13\3\uffff\1\31\1\uffff\1\12\1\uffff\1\30\1\31\1\uffff\1\22\15\uffff\1\10\1\uffff\1\15\1\11\1\uffff\1\7",
+            "\1\6\1\1\1\2\1\3\1\4\1\5\1\uffff\1\21\40\uffff\1\20\2\uffff\1\23\1\24\1\uffff\1\26\1\14\4\uffff\1\27\2\uffff\1\16\1\25\1\17\2\uffff\1\13\3\uffff\1\31\1\uffff\1\12\1\uffff\1\30\1\31\1\uffff\1\22\15\uffff\1\10\1\uffff\1\15\1\11\1\uffff\1\7",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -64300,7 +64351,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x390D900000000BF2L,0x00000000DB6BF1E5L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x390D9000000007F2L,0x00000000DB6BF1E5L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x8000080000000000L,0x00000000000000E4L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x8000000000000002L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000002L,0x00000000000000E4L});
@@ -64321,26 +64372,26 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x390D900000000BF0L,0x00000000DB6BF1E5L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x390D9000000007F0L,0x00000000DB6BF1E5L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x2000000000000000L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000600000000000L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x03FF800000000000L,0x0000000000000008L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x390D900000000BF0L,0x000000005A000041L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x390D9000000007F0L,0x000000005A000041L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000000L,0x0000000000020100L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x390D900000000BF0L,0x000000005A000141L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x390D9000000007F0L,0x000000005A000141L});
     public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0400000000000000L,0x0000000000100200L});
     public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0400000000000002L,0x0000000000100000L});
     public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000100000000000L});
     public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
     public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x390D980000000BF0L,0x000000005A800141L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x390D980000000BF0L,0x000000005A000041L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x390D9800000007F0L,0x000000005A800141L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x390D9800000007F0L,0x000000005A000041L});
     public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x390D9800000003F0L,0x000000005A000041L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x390D980000000BF0L,0x000000005A800041L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x390D9800000007F0L,0x000000005A800041L});
     public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000000000L,0x0000000100000000L});
     public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000000000000L,0x0000000200000000L});
     public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000000000L,0x0000000400000000L});
@@ -64370,7 +64421,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x0008000000000000L});
     public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x0000000000000020L,0x0000000052000000L});
     public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000000000000020L,0x0000000052000001L});
-    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x0000000000000800L});
     public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000012L});
 
 }

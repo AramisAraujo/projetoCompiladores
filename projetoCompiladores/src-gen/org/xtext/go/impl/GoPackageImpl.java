@@ -3969,9 +3969,19 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getexpressionMatched_Operator()
+  {
+    return (EAttribute)expressionMatchedEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getexpressionMatched_Expression()
   {
-    return (EReference)expressionMatchedEClass.getEStructuralFeatures().get(0);
+    return (EReference)expressionMatchedEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -4470,6 +4480,7 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
     createEReference(expressionEClass, EXPRESSION__EXPRESSION_MATCHED);
 
     expressionMatchedEClass = createEClass(EXPRESSION_MATCHED);
+    createEAttribute(expressionMatchedEClass, EXPRESSION_MATCHED__OPERATOR);
     createEReference(expressionMatchedEClass, EXPRESSION_MATCHED__EXPRESSION);
 
     unaryExprEClass = createEClass(UNARY_EXPR);
@@ -4918,6 +4929,7 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
     initEReference(getexpression_ExpressionMatched(), this.getexpressionMatched(), null, "expressionMatched", null, 0, 1, expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionMatchedEClass, expressionMatched.class, "expressionMatched", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getexpressionMatched_Operator(), ecorePackage.getEString(), "operator", null, 0, 1, expressionMatched.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getexpressionMatched_Expression(), this.getexpression(), null, "expression", null, 0, 1, expressionMatched.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(unaryExprEClass, unaryExpr.class, "unaryExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

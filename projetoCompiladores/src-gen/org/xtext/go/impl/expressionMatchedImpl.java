@@ -23,6 +23,7 @@ import org.xtext.go.expressionMatched;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.xtext.go.impl.expressionMatchedImpl#getOperator <em>Operator</em>}</li>
  *   <li>{@link org.xtext.go.impl.expressionMatchedImpl#getExpression <em>Expression</em>}</li>
  * </ul>
  * </p>
@@ -31,6 +32,26 @@ import org.xtext.go.expressionMatched;
  */
 public class expressionMatchedImpl extends MinimalEObjectImpl.Container implements expressionMatched
 {
+  /**
+   * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOperator()
+   * @generated
+   * @ordered
+   */
+  protected static final String OPERATOR_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOperator()
+   * @generated
+   * @ordered
+   */
+  protected String operator = OPERATOR_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -60,6 +81,29 @@ public class expressionMatchedImpl extends MinimalEObjectImpl.Container implemen
   protected EClass eStaticClass()
   {
     return GoPackage.Literals.EXPRESSION_MATCHED;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getOperator()
+  {
+    return operator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOperator(String newOperator)
+  {
+    String oldOperator = operator;
+    operator = newOperator;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.EXPRESSION_MATCHED__OPERATOR, oldOperator, operator));
   }
 
   /**
@@ -136,6 +180,8 @@ public class expressionMatchedImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
+      case GoPackage.EXPRESSION_MATCHED__OPERATOR:
+        return getOperator();
       case GoPackage.EXPRESSION_MATCHED__EXPRESSION:
         return getExpression();
     }
@@ -152,6 +198,9 @@ public class expressionMatchedImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
+      case GoPackage.EXPRESSION_MATCHED__OPERATOR:
+        setOperator((String)newValue);
+        return;
       case GoPackage.EXPRESSION_MATCHED__EXPRESSION:
         setExpression((expression)newValue);
         return;
@@ -169,6 +218,9 @@ public class expressionMatchedImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
+      case GoPackage.EXPRESSION_MATCHED__OPERATOR:
+        setOperator(OPERATOR_EDEFAULT);
+        return;
       case GoPackage.EXPRESSION_MATCHED__EXPRESSION:
         setExpression((expression)null);
         return;
@@ -186,10 +238,29 @@ public class expressionMatchedImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
+      case GoPackage.EXPRESSION_MATCHED__OPERATOR:
+        return OPERATOR_EDEFAULT == null ? operator != null : !OPERATOR_EDEFAULT.equals(operator);
       case GoPackage.EXPRESSION_MATCHED__EXPRESSION:
         return expression != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (operator: ");
+    result.append(operator);
+    result.append(')');
+    return result.toString();
   }
 
 } //expressionMatchedImpl

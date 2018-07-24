@@ -7684,10 +7684,24 @@ ruleexpressionMatched returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		this_BINARY_OP_0=RULE_BINARY_OP
-		{
-			newLeafNode(this_BINARY_OP_0, grammarAccess.getExpressionMatchedAccess().getBINARY_OPTerminalRuleCall_0());
-		}
+		(
+			(
+				lv_operator_0_0=RULE_BINARY_OP
+				{
+					newLeafNode(lv_operator_0_0, grammarAccess.getExpressionMatchedAccess().getOperatorBINARY_OPTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getExpressionMatchedRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"operator",
+						lv_operator_0_0,
+						"org.xtext.Go.BINARY_OP");
+				}
+			)
+		)
 		(
 			(
 				{

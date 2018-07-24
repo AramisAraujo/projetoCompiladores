@@ -455,6 +455,7 @@ public class GoParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getReceiverTypeAccess().getReceiverTypeAssignment_2_1(), "rule__ReceiverType__ReceiverTypeAssignment_2_1");
 			builder.put(grammarAccess.getExpressionAccess().getUnaryExprAssignment_0(), "rule__Expression__UnaryExprAssignment_0");
 			builder.put(grammarAccess.getExpressionAccess().getExpressionMatchedAssignment_1(), "rule__Expression__ExpressionMatchedAssignment_1");
+			builder.put(grammarAccess.getExpressionMatchedAccess().getOperatorAssignment_0(), "rule__ExpressionMatched__OperatorAssignment_0");
 			builder.put(grammarAccess.getExpressionMatchedAccess().getExpressionAssignment_1(), "rule__ExpressionMatched__ExpressionAssignment_1");
 			builder.put(grammarAccess.getUnaryExprAccess().getPrimaryExprAssignment_0(), "rule__UnaryExpr__PrimaryExprAssignment_0");
 			builder.put(grammarAccess.getUnaryExprAccess().getUnaryExprAssignment_1_1(), "rule__UnaryExpr__UnaryExprAssignment_1_1");

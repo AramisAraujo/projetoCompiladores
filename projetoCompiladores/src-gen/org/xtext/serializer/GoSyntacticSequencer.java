@@ -60,25 +60,13 @@ public class GoSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getBINARY_OPRule())
-			return getBINARY_OPToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getIDENTIFIERRule())
+		if (ruleCall.getRule() == grammarAccess.getIDENTIFIERRule())
 			return getIDENTIFIERToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getSTRING_LITRule())
 			return getSTRING_LITToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getEosRule())
 			return geteosToken(semanticObject, ruleCall, node);
 		return "";
-	}
-	
-	/**
-	 * terminal BINARY_OP:
-	 * 	'||' | '&&' | REL_OP | ADD_OP | MUL_OP;
-	 */
-	protected String getBINARY_OPToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "||";
 	}
 	
 	/**
