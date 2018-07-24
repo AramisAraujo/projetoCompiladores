@@ -4,6 +4,7 @@
 package org.xtext.validation;
 
 import org.eclipse.xtext.validation.Check;
+import org.xtext.go.GoPackage;
 import org.xtext.go.assignment;
 import org.xtext.go.conversion;
 import org.xtext.go.expression;
@@ -224,23 +225,21 @@ public class GoValidator extends AbstractGoValidator {
     return _xblockexpression;
   }
   
-  public Object checkSendStmt(final sendStmt stmt) {
-    Object _xifexpression = null;
+  public void checkSendStmt(final sendStmt stmt) {
     expression _expr1 = stmt.getExpr1();
     boolean _tripleNotEquals = (_expr1 != null);
     if (_tripleNotEquals) {
-      Object _xifexpression_1 = null;
       expression _expr2 = stmt.getExpr2();
       boolean _tripleNotEquals_1 = (_expr2 != null);
       if (_tripleNotEquals_1) {
         this.checkExpression(stmt.getExpr1());
         this.checkExpression(stmt.getExpr2());
       } else {
-        _xifexpression_1 = null;
+        this.error("expression value can not be empty", 
+          GoPackage.Literals.MODEL__GREETINGS, 
+          stmt.toString());
       }
-      _xifexpression = _xifexpression_1;
     }
-    return _xifexpression;
   }
   
   public Object checkDcStmt(final incDecStmt stmt) {

@@ -25,6 +25,8 @@ import org.xtext.go.sendStmt
 import org.xtext.go.shortVarDecl
 import org.xtext.go.simpleStmt
 import org.xtext.go.unaryExpr
+import java.beans.Beans
+import org.xtext.go.GoPackage
 
 /**
  * This class contains custom validation rules. 
@@ -156,7 +158,10 @@ class GoValidator extends AbstractGoValidator {
 				checkExpression(stmt.getExpr1());
 				checkExpression(stmt.getExpr2());
 			} else {
-				// TODO: error
+				error("expression value can not be empty",
+					GoPackage.Literals.MODEL__GREETINGS,
+					stmt.toString()
+				)
 			}
 		}
 	}
