@@ -8,8 +8,10 @@ import org.xtext.go.GoPackage;
 import org.xtext.go.assignment;
 import org.xtext.go.conversion;
 import org.xtext.go.expression;
+import org.xtext.go.expressionList;
 import org.xtext.go.expressionMatched;
 import org.xtext.go.expressionStmt;
+import org.xtext.go.identifierList;
 import org.xtext.go.ifStmt;
 import org.xtext.go.incDecStmt;
 import org.xtext.go.literal;
@@ -191,38 +193,32 @@ public class GoValidator extends AbstractGoValidator {
     return null;
   }
   
-  public Object checkSimple(final simpleStmt stmt) {
-    Object _xblockexpression = null;
-    {
-      sendStmt _sendStmt = stmt.getSendStmt();
-      boolean _tripleNotEquals = (_sendStmt != null);
-      if (_tripleNotEquals) {
-        this.checkSendStmt(stmt.getSendStmt());
-      }
-      expressionStmt _expressionStmt = stmt.getExpressionStmt();
-      boolean _tripleNotEquals_1 = (_expressionStmt != null);
-      if (_tripleNotEquals_1) {
-        this.checkExpression(stmt.getExpressionStmt().getExpr());
-      }
-      incDecStmt _incDecStmt = stmt.getIncDecStmt();
-      boolean _tripleNotEquals_2 = (_incDecStmt != null);
-      if (_tripleNotEquals_2) {
-        this.checkDcStmt(stmt.getIncDecStmt());
-      }
-      assignment _assignment = stmt.getAssignment();
-      boolean _tripleNotEquals_3 = (_assignment != null);
-      if (_tripleNotEquals_3) {
-        this.checkAssignment(stmt.getAssignment());
-      }
-      Object _xifexpression = null;
-      shortVarDecl _shortVarDecl = stmt.getShortVarDecl();
-      boolean _tripleNotEquals_4 = (_shortVarDecl != null);
-      if (_tripleNotEquals_4) {
-        _xifexpression = this.checkShortVar(stmt.getShortVarDecl());
-      }
-      _xblockexpression = _xifexpression;
+  public void checkSimple(final simpleStmt stmt) {
+    sendStmt _sendStmt = stmt.getSendStmt();
+    boolean _tripleNotEquals = (_sendStmt != null);
+    if (_tripleNotEquals) {
+      this.checkSendStmt(stmt.getSendStmt());
     }
-    return _xblockexpression;
+    expressionStmt _expressionStmt = stmt.getExpressionStmt();
+    boolean _tripleNotEquals_1 = (_expressionStmt != null);
+    if (_tripleNotEquals_1) {
+      this.checkExpression(stmt.getExpressionStmt().getExpr());
+    }
+    incDecStmt _incDecStmt = stmt.getIncDecStmt();
+    boolean _tripleNotEquals_2 = (_incDecStmt != null);
+    if (_tripleNotEquals_2) {
+      this.checkDcStmt(stmt.getIncDecStmt());
+    }
+    assignment _assignment = stmt.getAssignment();
+    boolean _tripleNotEquals_3 = (_assignment != null);
+    if (_tripleNotEquals_3) {
+      this.checkAssignment(stmt.getAssignment());
+    }
+    shortVarDecl _shortVarDecl = stmt.getShortVarDecl();
+    boolean _tripleNotEquals_4 = (_shortVarDecl != null);
+    if (_tripleNotEquals_4) {
+      this.checkShortVar(stmt.getShortVarDecl());
+    }
   }
   
   public void checkSendStmt(final sendStmt stmt) {
@@ -250,8 +246,18 @@ public class GoValidator extends AbstractGoValidator {
     return null;
   }
   
-  public Object checkShortVar(final shortVarDecl decl) {
-    return null;
+  public void checkShortVar(final shortVarDecl decl) {
+    identifierList _idList = decl.getIdList();
+    boolean _tripleNotEquals = (_idList != null);
+    if (_tripleNotEquals) {
+      expressionList _exprList = decl.getExprList();
+      boolean _tripleNotEquals_1 = (_exprList != null);
+      if (_tripleNotEquals_1) {
+        for (int i = 0; (i < decl.getExprList().getExpr().size()); i++) {
+          this.checkExpression(decl.getExprList().getExpr().get(i));
+        }
+      }
+    }
   }
   
   public void checkExpression(final expression expression) {

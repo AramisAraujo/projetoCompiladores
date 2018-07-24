@@ -175,7 +175,14 @@ class GoValidator extends AbstractGoValidator {
 	}
 
 	def checkShortVar(shortVarDecl decl) {
-		// TODO:
+		if(decl.getIdList() !== null) {
+			if(decl.getExprList() !== null) {
+				for(var i = 0; i < decl.getExprList().getExpr().size(); i++){
+					checkExpression(decl.getExprList().getExpr().get(i));
+				} 
+			}
+			// TODO: check declaration
+		}
 	}
 
 	def checkExpression(expression expression) {
