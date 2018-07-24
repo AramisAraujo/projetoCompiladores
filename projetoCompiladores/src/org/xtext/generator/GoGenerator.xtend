@@ -4,22 +4,98 @@
 package org.xtext.generator
 
 import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.xtext.generator.AbstractGenerator
-import org.eclipse.xtext.generator.IFileSystemAccess2
-import org.eclipse.xtext.generator.IGeneratorContext
+import org.eclipse.xtext.generator.IFileSystemAccess
+import org.eclipse.xtext.generator.IGenerator
+import org.xtext.go.ifStmt
+import org.xtext.go.simpleStmt
+import org.xtext.go.sendStmt
+import org.xtext.go.expressionStmt
+import org.xtext.go.incDecStmt
+import org.xtext.go.assignment
+import org.xtext.go.shortVarDecl
+import org.xtext.go.expression
 
 /**
  * Generates code from your model files on save.
  * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
-class GoGenerator extends AbstractGenerator {
-
-	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+class GoGenerator implements IGenerator {
+	Integer counter = 1;
+	Integer variables = 1;
+	
+	Integer address = 0;
+	
+	override doGenerate(Resource input, IFileSystemAccess fsa) {
+		counter = 1;
+		for(e : input.allContents.toIterable.filter(ifStmt)) {
+			fsa.generateFile("stmt" + counter + ".txt", e.compileIf)
+			counter++
+		}
+	}
+		
+	def CharSequence compileIf(ifStmt stmt) '''
+		«address»: LD SP, 1000
+		«nextAddress»
+		«(stmt.simplStatement).compileSimple»
+	'''
+		
+	def compileSimple(simpleStmt stmt) '''
+		«IF stmt.sendStmt !== null»
+			«compileSendStmt(stmt.sendStmt)»
+		«ELSEIF stmt.expressionStmt !== null»
+			«compileExpressionStmt(stmt.expressionStmt)»
+		«ELSEIF stmt.incDecStmt !== null»
+			«compileIncDecStmt(stmt.incDecStmt)»
+		«ELSEIF stmt.assignment !== null»
+			«compileAssignment(stmt.assignment)»
+		«ELSEIF stmt.shortVarDecl !== null»
+			«compileShortVarDecl(stmt.shortVarDecl)»
+		«ENDIF»
+	'''
+		
+	def compileShortVarDecl(shortVarDecl decl) {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+	
+	def compileAssignment(assignment assignment){
+		for (i : 0 ..< assignment.exprList1.expr.size) {
+			compileSingleAssignment(assignment.exprList1.expr.get(i), assignment.operation, assignment.exprList2.expr.get(i))
+		}
+	}
+		
+	def compileSingleAssignment(expression expression, String operator, expression expression2) '''
+		«IF operator.equals("=")»
+			«address.toString()»: LD R«variables.toString» «(expression).compileExpression»
+			«nextAddress»
+			«address.toString()»: LD R«variables.toString» «(expression2).compileExpression»
+			«nextAddress»
+			«address.toString()»: LD R«(variables-2).toString» R«(variables-2).toString»
+			«nextAddress» // TODO: need create ST
+		«ENDIF»
+	'''
+		
+	def void compileExpression(expression expression) {
+		// TODO:
+	}
+	
+	def compileIncDecStmt(incDecStmt stmt) {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+	
+	def compileExpressionStmt(expressionStmt stmt) {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+	
+	def compileSendStmt(sendStmt stmt) {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+	
+	def void nextAddress() {
+		address = address + 8;
+	}
+	
+	def void increment() {
+		variables++;
 	}
 }

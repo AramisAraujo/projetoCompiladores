@@ -3,10 +3,22 @@
  */
 package org.xtext.generator;
 
+import com.google.common.collect.Iterables;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.xtext.generator.AbstractGenerator;
-import org.eclipse.xtext.generator.IFileSystemAccess2;
-import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.generator.IFileSystemAccess;
+import org.eclipse.xtext.generator.IGenerator;
+import org.eclipse.xtext.xbase.lib.ExclusiveRange;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import org.xtext.go.assignment;
+import org.xtext.go.expression;
+import org.xtext.go.expressionStmt;
+import org.xtext.go.ifStmt;
+import org.xtext.go.incDecStmt;
+import org.xtext.go.sendStmt;
+import org.xtext.go.shortVarDecl;
+import org.xtext.go.simpleStmt;
 
 /**
  * Generates code from your model files on save.
@@ -14,8 +26,153 @@ import org.eclipse.xtext.generator.IGeneratorContext;
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 @SuppressWarnings("all")
-public class GoGenerator extends AbstractGenerator {
+public class GoGenerator implements IGenerator {
+  private Integer counter = Integer.valueOf(1);
+  
+  private Integer variables = Integer.valueOf(1);
+  
+  private Integer address = Integer.valueOf(0);
+  
   @Override
-  public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+  public void doGenerate(final Resource input, final IFileSystemAccess fsa) {
+    this.counter = Integer.valueOf(1);
+    Iterable<ifStmt> _filter = Iterables.<ifStmt>filter(IteratorExtensions.<EObject>toIterable(input.getAllContents()), ifStmt.class);
+    for (final ifStmt e : _filter) {
+      {
+        fsa.generateFile((("stmt" + this.counter) + ".txt"), this.compileIf(e));
+        this.counter++;
+      }
+    }
+  }
+  
+  public CharSequence compileIf(final ifStmt stmt) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append(this.address);
+    _builder.append(": LD SP, 1000");
+    _builder.newLineIfNotEmpty();
+    this.nextAddress();
+    _builder.newLineIfNotEmpty();
+    CharSequence _compileSimple = this.compileSimple(stmt.getSimplStatement());
+    _builder.append(_compileSimple);
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  public CharSequence compileSimple(final simpleStmt stmt) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      sendStmt _sendStmt = stmt.getSendStmt();
+      boolean _tripleNotEquals = (_sendStmt != null);
+      if (_tripleNotEquals) {
+        this.compileSendStmt(stmt.getSendStmt());
+        _builder.newLineIfNotEmpty();
+      } else {
+        expressionStmt _expressionStmt = stmt.getExpressionStmt();
+        boolean _tripleNotEquals_1 = (_expressionStmt != null);
+        if (_tripleNotEquals_1) {
+          this.compileExpressionStmt(stmt.getExpressionStmt());
+          _builder.newLineIfNotEmpty();
+        } else {
+          incDecStmt _incDecStmt = stmt.getIncDecStmt();
+          boolean _tripleNotEquals_2 = (_incDecStmt != null);
+          if (_tripleNotEquals_2) {
+            this.compileIncDecStmt(stmt.getIncDecStmt());
+            _builder.newLineIfNotEmpty();
+          } else {
+            assignment _assignment = stmt.getAssignment();
+            boolean _tripleNotEquals_3 = (_assignment != null);
+            if (_tripleNotEquals_3) {
+              this.compileAssignment(stmt.getAssignment());
+              _builder.newLineIfNotEmpty();
+            } else {
+              shortVarDecl _shortVarDecl = stmt.getShortVarDecl();
+              boolean _tripleNotEquals_4 = (_shortVarDecl != null);
+              if (_tripleNotEquals_4) {
+                this.compileShortVarDecl(stmt.getShortVarDecl());
+                _builder.newLineIfNotEmpty();
+              }
+            }
+          }
+        }
+      }
+    }
+    return _builder;
+  }
+  
+  public void compileShortVarDecl(final shortVarDecl decl) {
+    throw new UnsupportedOperationException("TODO: auto-generated method stub");
+  }
+  
+  public void compileAssignment(final assignment assignment) {
+    int _size = assignment.getExprList1().getExpr().size();
+    ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _size, true);
+    for (final Integer i : _doubleDotLessThan) {
+      this.compileSingleAssignment(assignment.getExprList1().getExpr().get((i).intValue()), assignment.getOperation(), assignment.getExprList2().getExpr().get((i).intValue()));
+    }
+  }
+  
+  public CharSequence compileSingleAssignment(final expression expression, final String operator, final org.xtext.go.expression expression2) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      boolean _equals = operator.equals("=");
+      if (_equals) {
+        String _string = this.address.toString();
+        _builder.append(_string);
+        _builder.append(": LD R");
+        String _string_1 = this.variables.toString();
+        _builder.append(_string_1);
+        _builder.append(" ");
+        this.compileExpression(expression);
+        _builder.newLineIfNotEmpty();
+        this.nextAddress();
+        _builder.newLineIfNotEmpty();
+        String _string_2 = this.address.toString();
+        _builder.append(_string_2);
+        _builder.append(": LD R");
+        String _string_3 = this.variables.toString();
+        _builder.append(_string_3);
+        _builder.append(" ");
+        this.compileExpression(expression2);
+        _builder.newLineIfNotEmpty();
+        this.nextAddress();
+        _builder.newLineIfNotEmpty();
+        String _string_4 = this.address.toString();
+        _builder.append(_string_4);
+        _builder.append(": LD R");
+        String _string_5 = Integer.valueOf(((this.variables).intValue() - 2)).toString();
+        _builder.append(_string_5);
+        _builder.append(" R");
+        String _string_6 = Integer.valueOf(((this.variables).intValue() - 2)).toString();
+        _builder.append(_string_6);
+        _builder.newLineIfNotEmpty();
+        this.nextAddress();
+        _builder.append(" // TODO: need create ST");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    return _builder;
+  }
+  
+  public void compileExpression(final expression expression) {
+  }
+  
+  public void compileIncDecStmt(final incDecStmt stmt) {
+    throw new UnsupportedOperationException("TODO: auto-generated method stub");
+  }
+  
+  public void compileExpressionStmt(final expressionStmt stmt) {
+    throw new UnsupportedOperationException("TODO: auto-generated method stub");
+  }
+  
+  public void compileSendStmt(final sendStmt stmt) {
+    throw new UnsupportedOperationException("TODO: auto-generated method stub");
+  }
+  
+  public void nextAddress() {
+    this.address = Integer.valueOf(((this.address).intValue() + 8));
+  }
+  
+  public void increment() {
+    this.variables++;
   }
 }
