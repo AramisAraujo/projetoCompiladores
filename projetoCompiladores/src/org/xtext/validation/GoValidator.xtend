@@ -27,6 +27,8 @@ import org.xtext.go.simpleStmt
 import org.xtext.go.unaryExpr
 import java.beans.Beans
 import org.xtext.go.GoPackage
+import org.xtext.go.compositeLit
+import org.xtext.go.functionLit
 
 /**
  * This class contains custom validation rules. 
@@ -43,6 +45,55 @@ class GoValidator extends AbstractGoValidator {
 		if (stmt.getExpr() !== null) {
 			checkExpression(stmt.getExpr());
 		}
+	}
+
+	@Check
+	def checkDeclaration() {
+	}
+
+	@Check
+	def checkAssignment(assignment assignment) {
+		if (assignment.getExprList1() !== null) {
+			for (var i = 0; i < assignment.getExprList1().getExpr().size(); i++) {
+				checkExpression(assignment.getExprList1().getExpr().get(i));
+			}
+		}
+		if (assignment.getExprList2() !== null) {
+			for (var i = 0; i < assignment.getExprList2().getExpr().size(); i++) {
+				checkExpression(assignment.getExprList2().getExpr().get(i));
+			}
+		}
+		if (assignment.getOperation() !== null) {
+			checkOperation(assignment.getOperation());
+		}
+	}
+
+	def checkOperation(String string) {
+		//TODO: auto-generated method stub"
+	}
+
+	def checkLiteral(literal literal) {
+		if (literal.getLitBasic() !== null) {
+			checkLitBasic(literal.getLitBasic());
+		}
+		if (literal.getLitComposite() !== null) {
+			checkLitComposite(literal.getLitComposite());
+		}
+		if (literal.getLitFunc() !== null) {
+			checkLitFunc(literal.getLitFunc());
+		}
+	}
+
+	def checkLitFunc(functionLit lit) {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+
+	def checkLitComposite(compositeLit lit) {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+
+	def checkLitBasic(String string) {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
 
 	def checkPrimary(primaryExpr expr) {
@@ -94,44 +145,40 @@ class GoValidator extends AbstractGoValidator {
 	}
 
 	def checkOperand(operand operand) {
-		if(operand.getLiteral() !== null){
+		if (operand.getLiteral() !== null) {
 			checkLiteral(operand.getLiteral());
 		}
-		if(operand.getMethodExpr() !== null){
+		if (operand.getMethodExpr() !== null) {
 			checkMethodExpr(operand.getMethodExpr());
 		}
-		if(operand.getOperandName() !== null){
+		if (operand.getOperandName() !== null) {
 			checkOperandName(operand.getOperandName());
 		}
-		if(operand.getExpr() !== null){
+		if (operand.getExpr() !== null) {
 			// checkExpression(operand.getExpr()); TODO: fix this
 		}
 	}
-		
+
 	def checkOperandName(operandName name) {
-		if(name.getName !== null){//This is a string
-			//TODO: do something to the string
+		if (name.getName !== null) { // This is a string
+			// TODO: do something to the string
 		}
-		if(name.getQualIdent() !== null){
+		if (name.getQualIdent() !== null) {
 			checkQualIdent(name.getQualIdent());
 		}
 	}
-	
+
 	def checkQualIdent(qualifiedIdent ident) {
-		if(ident.getPackageName() !== null){
-			//TODO: check this string(what should we do?)
+		if (ident.getPackageName() !== null) {
+			// TODO: check this string(what should we do?)
 		}
-		if(ident.getName() !== null){
-			//TODO: what to do with this string?
+		if (ident.getName() !== null) {
+			// TODO: what to do with this string?
 		}
 	}
-	
+
 	def checkMethodExpr(methodExpr expr) {
-		//TODO: auto-generated method stub"
-	}
-	
-	def checkLiteral(literal literal) {
-		//TODO: auto-generated method stub"
+		// TODO: auto-generated method stub"
 	}
 
 	def checkSimple(simpleStmt stmt) {
@@ -158,7 +205,8 @@ class GoValidator extends AbstractGoValidator {
 				checkExpression(stmt.getExpr1());
 				checkExpression(stmt.getExpr2());
 			} else {
-				error("expression value can not be empty",
+				error(
+					"expression value can not be empty",
 					GoPackage.Literals.MODEL__GREETINGS,
 					stmt.toString()
 				)
@@ -170,18 +218,14 @@ class GoValidator extends AbstractGoValidator {
 		// TODO:		
 	}
 
-	def checkAssignment(assignment assignment) {
-		// TODO:	
-	}
-
 	def checkShortVar(shortVarDecl decl) {
-		if(decl.getIdList() !== null) {
-			if(decl.getExprList() !== null) {
-				for(var i = 0; i < decl.getExprList().getExpr().size(); i++){
+		if (decl.getIdList() !== null) {
+			if (decl.getExprList() !== null) {
+				for (var i = 0; i < decl.getExprList().getExpr().size(); i++) {
 					checkExpression(decl.getExprList().getExpr().get(i));
-				} 
+				}
 			}
-			// TODO: check declaration
+		// TODO: check declaration
 		}
 	}
 
@@ -203,23 +247,12 @@ class GoValidator extends AbstractGoValidator {
 			var type = getOperatorType(operator);
 		}
 	}
-		
+
 	def getOperatorType(String operator) {
-		if(
-			operator.equals("+") ||
-			operator.equals("-") ||
-			operator.equals("/") ||
-			operator.equals("*")
-		) {
+		if (operator.equals("+") || operator.equals("-") || operator.equals("/") || operator.equals("*")) {
 			return "ari";
-		} else if(
-			operator.equals(">") ||
-			operator.equals("<") ||
-			operator.equals(">=") ||
-			operator.equals("<=") ||
-			operator.equals("==") ||
-			operator.equals("!=")
-		){
+		} else if (operator.equals(">") || operator.equals("<") || operator.equals(">=") || operator.equals("<=") ||
+			operator.equals("==") || operator.equals("!=")) {
 			return "rel";
 		}
 		return null;
