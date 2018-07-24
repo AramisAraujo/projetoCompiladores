@@ -54,6 +54,47 @@ public class GoValidator extends AbstractGoValidator {
     }
   }
   
+  @Check
+  public Object checkDeclaration() {
+    return null;
+  }
+  
+  public Object checkOperation(final String string) {
+    return null;
+  }
+  
+  public Object checkLiteral(final literal literal) {
+    Object _xblockexpression = null;
+    {
+      String _litBasic = literal.getLitBasic();
+      boolean _tripleNotEquals = (_litBasic != null);
+      if (_tripleNotEquals) {
+        this.checkLitBasic(literal.getLitBasic());
+      }
+      compositeLit _litComposite = literal.getLitComposite();
+      boolean _tripleNotEquals_1 = (_litComposite != null);
+      if (_tripleNotEquals_1) {
+        this.checkLitComposite(literal.getLitComposite());
+      }
+      Object _xifexpression = null;
+      functionLit _litFunc = literal.getLitFunc();
+      boolean _tripleNotEquals_2 = (_litFunc != null);
+      if (_tripleNotEquals_2) {
+        _xifexpression = this.checkLitFunc(literal.getLitFunc());
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
+  }
+  
+  public void checkLitComposite(final compositeLit lit) {
+    throw new UnsupportedOperationException("TODO: auto-generated method stub");
+  }
+  
+  public void checkLitBasic(final String string) {
+    throw new UnsupportedOperationException("TODO: auto-generated method stub");
+  }
+  
   public Object checkPrimary(final primaryExpr expr) {
     Object _xblockexpression = null;
     {
@@ -189,30 +230,6 @@ public class GoValidator extends AbstractGoValidator {
   
   public Object checkMethodExpr(final methodExpr expr) {
     return null;
-  }
-  
-  public Object checkLiteral(final literal literal) {
-    Object _xblockexpression = null;
-    {
-      String _litBasic = literal.getLitBasic();
-      boolean _tripleNotEquals = (_litBasic != null);
-      if (_tripleNotEquals) {
-        this.checkBasicLit(literal.getLitBasic());
-      }
-      compositeLit _litComposite = literal.getLitComposite();
-      boolean _tripleNotEquals_1 = (_litComposite != null);
-      if (_tripleNotEquals_1) {
-        this.checkCompLit(literal.getLitComposite());
-      }
-      Object _xifexpression = null;
-      functionLit _litFunc = literal.getLitFunc();
-      boolean _tripleNotEquals_2 = (_litFunc != null);
-      if (_tripleNotEquals_2) {
-        _xifexpression = this.checkLitFunc(literal.getLitFunc());
-      }
-      _xblockexpression = _xifexpression;
-    }
-    return _xblockexpression;
   }
   
   public Object checkLitFunc(final functionLit lit) {
