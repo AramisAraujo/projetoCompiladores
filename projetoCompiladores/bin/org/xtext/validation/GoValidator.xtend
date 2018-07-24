@@ -147,7 +147,15 @@ class GoValidator extends AbstractGoValidator {
 
 	def checkOperandName(operandName name) {
 		if (name.getName !== null) { // This is a string
-			// TODO: do something to the string
+			//Identifier first char must be a letter
+			var idFirstChar = name.getName().charAt(0);
+			if(!Character.isLetter(idFirstChar)){
+				error(
+					"First char of operand name must be a letter",
+					GoPackage.Literals.MODEL__GREETINGS
+				)
+			}
+			
 		}
 		if (name.getQualIdent() !== null) {
 			checkQualIdent(name.getQualIdent());

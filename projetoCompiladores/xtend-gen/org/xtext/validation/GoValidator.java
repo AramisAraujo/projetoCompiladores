@@ -198,6 +198,14 @@ public class GoValidator extends AbstractGoValidator {
       String _name = name.getName();
       boolean _tripleNotEquals = (_name != null);
       if (_tripleNotEquals) {
+        char idFirstChar = name.getName().charAt(0);
+        boolean _isLetter = Character.isLetter(idFirstChar);
+        boolean _not = (!_isLetter);
+        if (_not) {
+          this.error(
+            "First char of operand name must be a letter", 
+            GoPackage.Literals.MODEL__GREETINGS);
+        }
       }
       Object _xifexpression = null;
       qualifiedIdent _qualIdent = name.getQualIdent();
