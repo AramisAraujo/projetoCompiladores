@@ -5,9 +5,9 @@ package org.xtext.validation;
 
 import com.google.common.base.Objects;
 import org.eclipse.xtext.validation.Check;
-import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.xtext.go.GoPackage;
 import org.xtext.go.assignment;
+import org.xtext.go.basicLit;
 import org.xtext.go.compositeLit;
 import org.xtext.go.conversion;
 import org.xtext.go.expression;
@@ -72,34 +72,48 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   public Object checkLiteral(final literal literal) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nType mismatch: cannot convert from basicLit to String");
+    Object _xblockexpression = null;
+    {
+      basicLit _litBasic = literal.getLitBasic();
+      boolean _tripleNotEquals = (_litBasic != null);
+      if (_tripleNotEquals) {
+        return this.checkLitBasic(literal.getLitBasic());
+      }
+      compositeLit _litComposite = literal.getLitComposite();
+      boolean _tripleNotEquals_1 = (_litComposite != null);
+      if (_tripleNotEquals_1) {
+        this.checkLitComposite(literal.getLitComposite());
+      }
+      Object _xifexpression = null;
+      functionLit _litFunc = literal.getLitFunc();
+      boolean _tripleNotEquals_2 = (_litFunc != null);
+      if (_tripleNotEquals_2) {
+        _xifexpression = this.checkLitFunc(literal.getLitFunc());
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
   }
   
-  public String checkLitBasic(final String string) {
-    try {
-      Float value = Float.valueOf(string);
-      if ((((value).floatValue() % 1) == 0)) {
+  public String checkLitBasic(final basicLit lit) {
+    String _floatLit = lit.getFloatLit();
+    boolean _tripleNotEquals = (_floatLit != null);
+    if (_tripleNotEquals) {
+      return "float";
+    } else {
+      String _intLit = lit.getIntLit();
+      boolean _tripleNotEquals_1 = (_intLit != null);
+      if (_tripleNotEquals_1) {
         return "int";
       } else {
-        return "float";
-      }
-    } catch (final Throwable _t) {
-      if (_t instanceof Exception) {
-        try {
-          Boolean value_1 = Boolean.valueOf(string);
-          return "boolean";
-        } catch (final Throwable _t_1) {
-          if (_t_1 instanceof Exception) {
-            return "string";
-          } else {
-            throw Exceptions.sneakyThrow(_t_1);
-          }
+        String _stringLit = lit.getStringLit();
+        boolean _tripleNotEquals_2 = (_stringLit != null);
+        if (_tripleNotEquals_2) {
+          return "string";
         }
-      } else {
-        throw Exceptions.sneakyThrow(_t);
       }
     }
+    return null;
   }
   
   public void checkLitComposite(final compositeLit lit) {

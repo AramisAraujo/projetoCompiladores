@@ -29,6 +29,7 @@ import org.xtext.go.sendStmt
 import org.xtext.go.shortVarDecl
 import org.xtext.go.simpleStmt
 import org.xtext.go.unaryExpr
+import org.xtext.go.basicLit
 
 /**
  * This class contains custom validation rules. 
@@ -67,24 +68,36 @@ class GoValidator extends AbstractGoValidator {
 		}
 	}
 		
-	def checkLitBasic(String string) {
-		try {
-			var value = Float.valueOf(string);
-			if(value % 1 == 0){
-				return "int";
-			} else {
+		def checkLitBasic(basicLit lit) {
+			if(lit.getFloatLit !== null) {
 				return "float";
-			}
-		} catch (Exception exception) {
-			try {
-				var value = Boolean.valueOf(string);
-				return "boolean";
-			} catch (Exception exception2) {
+			} else
+			if(lit.getIntLit !== null) {
+				return "int";
+			} else
+			if(lit.getStringLit !== null) {
 				return "string";
 			}
-			
 		}
-	}
+		
+//	def checkLitBasic(String string) {
+//		try {
+//			var value = Float.valueOf(string);
+//			if(value % 1 == 0){
+//				return "int";
+//			} else {
+//				return "float";
+//			}
+//		} catch (Exception exception) {
+//			try {
+//				var value = Boolean.valueOf(string);
+//				return "boolean";
+//			} catch (Exception exception2) {
+//				return "string";
+//			}
+//			
+//		}
+//	}
 
 
 
