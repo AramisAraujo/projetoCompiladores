@@ -253,8 +253,20 @@ class GoValidator extends AbstractGoValidator {
 	def checkSendStmt(sendStmt stmt) {
 		if (stmt.getExpr1() !== null) {
 			if (stmt.getExpr2() !== null) {
-				checkExpression(stmt.getExpr1());
-				checkExpression(stmt.getExpr2());
+				var type1 = checkExpression(stmt.getExpr1());
+				var type2 = checkExpression(stmt.getExpr2());
+				
+				if(type1 !== type2) {
+					if (type1 === "float" && type2 === "int"){
+						// ITS OK
+					}else {
+						error(
+							"Incompatible types in send stmt",
+							GoPackage.Literals.MODEL__GREETINGS,
+							type1.toString() + type2
+						)
+					}
+				}
 			} else {
 				error(
 					"expression value can not be empty",

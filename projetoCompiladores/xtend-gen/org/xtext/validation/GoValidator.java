@@ -317,8 +317,23 @@ public class GoValidator extends AbstractGoValidator {
       if (_tripleNotEquals_1) {
         Object _xblockexpression = null;
         {
-          this.checkExpression(stmt.getExpr1());
-          _xblockexpression = this.checkExpression(stmt.getExpr2());
+          Object type1 = this.checkExpression(stmt.getExpr1());
+          Object type2 = this.checkExpression(stmt.getExpr2());
+          Object _xifexpression_2 = null;
+          if ((type1 != type2)) {
+            Object _xifexpression_3 = null;
+            if (((type1 == "float") && (type2 == "int"))) {
+              _xifexpression_3 = null;
+            } else {
+              String _string = type1.toString();
+              String _plus = (_string + type2);
+              this.error(
+                "Incompatible types in send stmt", 
+                GoPackage.Literals.MODEL__GREETINGS, _plus);
+            }
+            _xifexpression_2 = _xifexpression_3;
+          }
+          _xblockexpression = _xifexpression_2;
         }
         _xifexpression_1 = _xblockexpression;
       } else {
