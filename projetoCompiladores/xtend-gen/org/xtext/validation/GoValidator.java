@@ -347,8 +347,19 @@ public class GoValidator extends AbstractGoValidator {
     return _xifexpression;
   }
   
-  public Object checkDcStmt(final incDecStmt stmt) {
-    return null;
+  public void checkDcStmt(final incDecStmt stmt) {
+    expression _expr = stmt.getExpr();
+    boolean _tripleNotEquals = (_expr != null);
+    if (_tripleNotEquals) {
+      Object type = this.checkExpression(stmt.getExpr());
+      boolean _not = (!((type == "int") || Objects.equal(type, "float")));
+      if (_not) {
+        this.error(
+          "only number can be incremented/decremented", 
+          GoPackage.Literals.MODEL__GREETINGS, 
+          stmt.toString());
+      }
+    }
   }
   
   public void checkAssignment(final assignment assignment) {

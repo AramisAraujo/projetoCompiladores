@@ -278,7 +278,16 @@ class GoValidator extends AbstractGoValidator {
 	}
 
 	def checkDcStmt(incDecStmt stmt) {
-		// TODO:		
+		if(stmt.getExpr() !== null) {
+			var type = checkExpression(stmt.getExpr());
+			if(!(type === "int" || type == "float")){
+				error(
+					"only number can be incremented/decremented",
+					GoPackage.Literals.MODEL__GREETINGS,
+					stmt.toString()
+				)
+			}
+		}		
 	}
 
 
