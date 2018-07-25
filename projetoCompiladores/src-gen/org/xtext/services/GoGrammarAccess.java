@@ -6098,7 +6098,6 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal LITTLE_U_VALUE:
-	//	'\\\u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT;
 	public TerminalRule getLITTLE_U_VALUERule() {
 		return tLITTLE_U_VALUE;
 	}

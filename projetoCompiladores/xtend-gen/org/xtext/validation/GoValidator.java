@@ -3,6 +3,7 @@
  */
 package org.xtext.validation;
 
+import com.google.common.base.Objects;
 import org.eclipse.xtext.validation.Check;
 import org.xtext.go.GoPackage;
 import org.xtext.go.assignment;
@@ -192,40 +193,63 @@ public class GoValidator extends AbstractGoValidator {
     return _xblockexpression;
   }
   
-  public Object checkOperandName(final operandName name) {
-    Object _xblockexpression = null;
-    {
-      String _name = name.getName();
-      boolean _tripleNotEquals = (_name != null);
-      if (_tripleNotEquals) {
+  public void checkOperandName(final operandName name) {
+    String _name = name.getName();
+    boolean _tripleNotEquals = (_name != null);
+    if (_tripleNotEquals) {
+      char idFirstChar = name.getName().charAt(0);
+      boolean _isLetter = Character.isLetter(idFirstChar);
+      boolean _not = (!_isLetter);
+      if (_not) {
+        this.error(
+          "First char of operand name must be a letter", 
+          GoPackage.Literals.MODEL__GREETINGS);
       }
-      Object _xifexpression = null;
-      qualifiedIdent _qualIdent = name.getQualIdent();
-      boolean _tripleNotEquals_1 = (_qualIdent != null);
-      if (_tripleNotEquals_1) {
-        _xifexpression = this.checkQualIdent(name.getQualIdent());
-      }
-      _xblockexpression = _xifexpression;
     }
-    return _xblockexpression;
+    qualifiedIdent _qualIdent = name.getQualIdent();
+    boolean _tripleNotEquals_1 = (_qualIdent != null);
+    if (_tripleNotEquals_1) {
+      this.checkQualIdent(name.getQualIdent());
+    }
   }
   
-  public Object checkQualIdent(final qualifiedIdent ident) {
-    Object _xblockexpression = null;
-    {
-      String _packageName = ident.getPackageName();
-      boolean _tripleNotEquals = (_packageName != null);
-      if (_tripleNotEquals) {
+  public void checkQualIdent(final qualifiedIdent ident) {
+    String _packageName = ident.getPackageName();
+    boolean _tripleNotEquals = (_packageName != null);
+    if (_tripleNotEquals) {
+      String name = ident.getPackageName();
+      boolean _equals = Objects.equal(name, "_");
+      if (_equals) {
+        this.error(
+          "PackageName cannot be blank", 
+          GoPackage.Literals.MODEL__GREETINGS);
       }
-      Object _xifexpression = null;
-      String _name = ident.getName();
-      boolean _tripleNotEquals_1 = (_name != null);
-      if (_tripleNotEquals_1) {
-        _xifexpression = null;
+      boolean _isLetter = Character.isLetter(name.charAt(0));
+      boolean _not = (!_isLetter);
+      if (_not) {
+        this.error(
+          "First char of package name must be a letter", 
+          GoPackage.Literals.MODEL__GREETINGS);
       }
-      _xblockexpression = _xifexpression;
     }
-    return _xblockexpression;
+    String _name = ident.getName();
+    boolean _tripleNotEquals_1 = (_name != null);
+    if (_tripleNotEquals_1) {
+      String name_1 = ident.getName();
+      boolean _equals_1 = Objects.equal(name_1, "_");
+      if (_equals_1) {
+        this.error(
+          "Identifier cannot be blank", 
+          GoPackage.Literals.MODEL__GREETINGS);
+      }
+      boolean _isLetter_1 = Character.isLetter(name_1.charAt(0));
+      boolean _not_1 = (!_isLetter_1);
+      if (_not_1) {
+        this.error(
+          "First char of identifier name must be a letter", 
+          GoPackage.Literals.MODEL__GREETINGS);
+      }
+    }
   }
   
   public Object checkMethodExpr(final methodExpr expr) {

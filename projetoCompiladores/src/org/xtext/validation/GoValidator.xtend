@@ -147,19 +147,60 @@ class GoValidator extends AbstractGoValidator {
 
 	def checkOperandName(operandName name) {
 		if (name.getName !== null) { // This is a string
-			// TODO: do something to the string
+			//Identifier first char must be a letter
+			var idFirstChar = name.getName().charAt(0);
+			if(!Character.isLetter(idFirstChar)){
+				error(
+					"First char of operand name must be a letter",
+					GoPackage.Literals.MODEL__GREETINGS
+				)
+			}
+			
 		}
 		if (name.getQualIdent() !== null) {
 			checkQualIdent(name.getQualIdent());
 		}
 	}
-
+	
 	def checkQualIdent(qualifiedIdent ident) {
 		if (ident.getPackageName() !== null) {
-			// TODO: check this string(what should we do?)
+			var name = ident.getPackageName()
+			
+			//PackageName cannot be blank
+			if(name == '_'){
+				error(
+					"PackageName cannot be blank",
+					GoPackage.Literals.MODEL__GREETINGS
+				)
+			}
+			
+			//Package name must start with a letter
+			if(!Character.isLetter(name.charAt(0))){
+				error(
+					"First char of package name must be a letter",
+					GoPackage.Literals.MODEL__GREETINGS
+				)
+			}
 		}
+		
 		if (ident.getName() !== null) {
-			// TODO: what to do with this string?
+			
+			var name = ident.getName();
+			//Identifier's name cannot be blank
+			if(name == '_'){
+				error(
+					"Identifier cannot be blank",
+					GoPackage.Literals.MODEL__GREETINGS
+				)
+			}
+			
+			//Identifier's name must start with a letter
+			if(!Character.isLetter(name.charAt(0))){
+				error(
+					"First char of identifier name must be a letter",
+					GoPackage.Literals.MODEL__GREETINGS
+				)
+			}
 		}
 	}
 
