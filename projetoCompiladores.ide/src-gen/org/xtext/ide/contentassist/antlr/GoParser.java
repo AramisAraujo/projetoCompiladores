@@ -388,6 +388,11 @@ public class GoParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLiteralAccess().getLitBasicAssignment_0(), "rule__Literal__LitBasicAssignment_0");
 			builder.put(grammarAccess.getLiteralAccess().getLitCompositeAssignment_1(), "rule__Literal__LitCompositeAssignment_1");
 			builder.put(grammarAccess.getLiteralAccess().getLitFuncAssignment_2(), "rule__Literal__LitFuncAssignment_2");
+			builder.put(grammarAccess.getBasicLitAccess().getIntLitAssignment_0(), "rule__BasicLit__IntLitAssignment_0");
+			builder.put(grammarAccess.getBasicLitAccess().getFloatLitAssignment_1(), "rule__BasicLit__FloatLitAssignment_1");
+			builder.put(grammarAccess.getBasicLitAccess().getImaginaryLitAssignment_2(), "rule__BasicLit__ImaginaryLitAssignment_2");
+			builder.put(grammarAccess.getBasicLitAccess().getRuneLitAssignment_3(), "rule__BasicLit__RuneLitAssignment_3");
+			builder.put(grammarAccess.getBasicLitAccess().getStringLitAssignment_4(), "rule__BasicLit__StringLitAssignment_4");
 			builder.put(grammarAccess.getOperandNameAccess().getNameAssignment_0(), "rule__OperandName__NameAssignment_0");
 			builder.put(grammarAccess.getOperandNameAccess().getQualIdentAssignment_1(), "rule__OperandName__QualIdentAssignment_1");
 			builder.put(grammarAccess.getQualifiedIdentAccess().getPackageNameAssignment_0(), "rule__QualifiedIdent__PackageNameAssignment_0");

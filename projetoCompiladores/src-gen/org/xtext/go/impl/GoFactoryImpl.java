@@ -139,6 +139,7 @@ public class GoFactoryImpl extends EFactoryImpl implements GoFactory
       case GoPackage.PARAMETER_DECL: return createparameterDecl();
       case GoPackage.OPERAND: return createoperand();
       case GoPackage.LITERAL: return createliteral();
+      case GoPackage.BASIC_LIT: return createbasicLit();
       case GoPackage.OPERAND_NAME: return createoperandName();
       case GoPackage.QUALIFIED_IDENT: return createqualifiedIdent();
       case GoPackage.COMPOSITE_LIT: return createcompositeLit();
@@ -987,6 +988,17 @@ public class GoFactoryImpl extends EFactoryImpl implements GoFactory
   {
     literalImpl literal = new literalImpl();
     return literal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public basicLit createbasicLit()
+  {
+    basicLitImpl basicLit = new basicLitImpl();
+    return basicLit;
   }
 
   /**

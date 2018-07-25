@@ -5,6 +5,7 @@ package org.xtext.validation;
 
 import com.google.common.base.Objects;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.xtext.go.GoPackage;
 import org.xtext.go.assignment;
 import org.xtext.go.compositeLit;
@@ -42,17 +43,23 @@ import org.xtext.validation.AbstractGoValidator;
 @SuppressWarnings("all")
 public class GoValidator extends AbstractGoValidator {
   @Check
-  public void checkIf(final ifStmt stmt) {
-    simpleStmt _simplStatement = stmt.getSimplStatement();
-    boolean _tripleNotEquals = (_simplStatement != null);
-    if (_tripleNotEquals) {
-      this.checkSimple(stmt.getSimplStatement());
+  public Object checkIf(final ifStmt stmt) {
+    Object _xblockexpression = null;
+    {
+      simpleStmt _simplStatement = stmt.getSimplStatement();
+      boolean _tripleNotEquals = (_simplStatement != null);
+      if (_tripleNotEquals) {
+        this.checkSimple(stmt.getSimplStatement());
+      }
+      Object _xifexpression = null;
+      expression _expr = stmt.getExpr();
+      boolean _tripleNotEquals_1 = (_expr != null);
+      if (_tripleNotEquals_1) {
+        _xifexpression = this.checkExpression(stmt.getExpr());
+      }
+      _xblockexpression = _xifexpression;
     }
-    expression _expr = stmt.getExpr();
-    boolean _tripleNotEquals_1 = (_expr != null);
-    if (_tripleNotEquals_1) {
-      this.checkExpression(stmt.getExpr());
-    }
+    return _xblockexpression;
   }
   
   @Check
@@ -65,34 +72,37 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   public Object checkLiteral(final literal literal) {
-    Object _xblockexpression = null;
-    {
-      String _litBasic = literal.getLitBasic();
-      boolean _tripleNotEquals = (_litBasic != null);
-      if (_tripleNotEquals) {
-        this.checkLitBasic(literal.getLitBasic());
+    throw new Error("Unresolved compilation problems:"
+      + "\nType mismatch: cannot convert from basicLit to String");
+  }
+  
+  public String checkLitBasic(final String string) {
+    try {
+      Float value = Float.valueOf(string);
+      if ((((value).floatValue() % 1) == 0)) {
+        return "int";
+      } else {
+        return "float";
       }
-      compositeLit _litComposite = literal.getLitComposite();
-      boolean _tripleNotEquals_1 = (_litComposite != null);
-      if (_tripleNotEquals_1) {
-        this.checkLitComposite(literal.getLitComposite());
+    } catch (final Throwable _t) {
+      if (_t instanceof Exception) {
+        try {
+          Boolean value_1 = Boolean.valueOf(string);
+          return "boolean";
+        } catch (final Throwable _t_1) {
+          if (_t_1 instanceof Exception) {
+            return "string";
+          } else {
+            throw Exceptions.sneakyThrow(_t_1);
+          }
+        }
+      } else {
+        throw Exceptions.sneakyThrow(_t);
       }
-      Object _xifexpression = null;
-      functionLit _litFunc = literal.getLitFunc();
-      boolean _tripleNotEquals_2 = (_litFunc != null);
-      if (_tripleNotEquals_2) {
-        _xifexpression = this.checkLitFunc(literal.getLitFunc());
-      }
-      _xblockexpression = _xifexpression;
     }
-    return _xblockexpression;
   }
   
   public void checkLitComposite(final compositeLit lit) {
-    throw new UnsupportedOperationException("TODO: auto-generated method stub");
-  }
-  
-  public void checkLitBasic(final String string) {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
@@ -102,7 +112,7 @@ public class GoValidator extends AbstractGoValidator {
       operand _operand = expr.getOperand();
       boolean _tripleNotEquals = (_operand != null);
       if (_tripleNotEquals) {
-        this.checkOperand(expr.getOperand());
+        return this.checkOperand(expr.getOperand());
       }
       conversion _conversion = expr.getConversion();
       boolean _tripleNotEquals_1 = (_conversion != null);
@@ -170,7 +180,7 @@ public class GoValidator extends AbstractGoValidator {
       literal _literal = operand.getLiteral();
       boolean _tripleNotEquals = (_literal != null);
       if (_tripleNotEquals) {
-        this.checkLiteral(operand.getLiteral());
+        return this.checkLiteral(operand.getLiteral());
       }
       methodExpr _methodExpr = operand.getMethodExpr();
       boolean _tripleNotEquals_1 = (_methodExpr != null);
@@ -296,22 +306,30 @@ public class GoValidator extends AbstractGoValidator {
     }
   }
   
-  public void checkSendStmt(final sendStmt stmt) {
+  public Object checkSendStmt(final sendStmt stmt) {
+    Object _xifexpression = null;
     expression _expr1 = stmt.getExpr1();
     boolean _tripleNotEquals = (_expr1 != null);
     if (_tripleNotEquals) {
+      Object _xifexpression_1 = null;
       expression _expr2 = stmt.getExpr2();
       boolean _tripleNotEquals_1 = (_expr2 != null);
       if (_tripleNotEquals_1) {
-        this.checkExpression(stmt.getExpr1());
-        this.checkExpression(stmt.getExpr2());
+        Object _xblockexpression = null;
+        {
+          this.checkExpression(stmt.getExpr1());
+          _xblockexpression = this.checkExpression(stmt.getExpr2());
+        }
+        _xifexpression_1 = _xblockexpression;
       } else {
         this.error(
           "expression value can not be empty", 
           GoPackage.Literals.MODEL__GREETINGS, 
           stmt.toString());
       }
+      _xifexpression = _xifexpression_1;
     }
+    return _xifexpression;
   }
   
   public Object checkDcStmt(final incDecStmt stmt) {
@@ -336,22 +354,34 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   public void checkExpList(final expressionList list) {
+    String type = "";
     for (int i = 0; (i < list.getExpr().size()); i++) {
-      this.checkExpression(list.getExpr().get(i));
+      {
+        Object nextType = this.checkExpression(list.getExpr().get(i));
+        if ((type != "")) {
+          if ((type != nextType)) {
+            this.error(
+              "Incompatible types in assignment", 
+              GoPackage.Literals.MODEL__GREETINGS, 
+              list.toString());
+          }
+        }
+      }
     }
   }
   
-  public void checkExpression(final expression expression) {
+  public Object checkExpression(final expression expression) {
     unaryExpr _unaryExpr = expression.getUnaryExpr();
     boolean _tripleNotEquals = (_unaryExpr != null);
     if (_tripleNotEquals) {
-      this.checkUnary(expression.getUnaryExpr());
+      return this.checkUnary(expression.getUnaryExpr());
     }
     expressionMatched _expressionMatched = expression.getExpressionMatched();
     boolean _tripleNotEquals_1 = (_expressionMatched != null);
     if (_tripleNotEquals_1) {
       this.checkMatched(expression.getExpressionMatched());
     }
+    return null;
   }
   
   public void checkMatched(final expressionMatched matched) {
@@ -386,7 +416,7 @@ public class GoValidator extends AbstractGoValidator {
       primaryExpr _primaryExpr = expr.getPrimaryExpr();
       boolean _tripleNotEquals = (_primaryExpr != null);
       if (_tripleNotEquals) {
-        this.checkPrimary(expr.getPrimaryExpr());
+        return this.checkPrimary(expr.getPrimaryExpr());
       }
       Object _xifexpression = null;
       unaryExpr _unaryExpr = expr.getUnaryExpr();

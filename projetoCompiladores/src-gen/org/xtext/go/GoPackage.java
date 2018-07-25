@@ -2733,7 +2733,7 @@ public interface GoPackage extends EPackage
   int LITERAL = 73;
 
   /**
-   * The feature id for the '<em><b>Lit Basic</b></em>' attribute.
+   * The feature id for the '<em><b>Lit Basic</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2769,6 +2769,70 @@ public interface GoPackage extends EPackage
   int LITERAL_FEATURE_COUNT = 3;
 
   /**
+   * The meta object id for the '{@link org.xtext.go.impl.basicLitImpl <em>basic Lit</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.go.impl.basicLitImpl
+   * @see org.xtext.go.impl.GoPackageImpl#getbasicLit()
+   * @generated
+   */
+  int BASIC_LIT = 74;
+
+  /**
+   * The feature id for the '<em><b>Int Lit</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASIC_LIT__INT_LIT = 0;
+
+  /**
+   * The feature id for the '<em><b>Float Lit</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASIC_LIT__FLOAT_LIT = 1;
+
+  /**
+   * The feature id for the '<em><b>Imaginary Lit</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASIC_LIT__IMAGINARY_LIT = 2;
+
+  /**
+   * The feature id for the '<em><b>Rune Lit</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASIC_LIT__RUNE_LIT = 3;
+
+  /**
+   * The feature id for the '<em><b>String Lit</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASIC_LIT__STRING_LIT = 4;
+
+  /**
+   * The number of structural features of the '<em>basic Lit</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASIC_LIT_FEATURE_COUNT = 5;
+
+  /**
    * The meta object id for the '{@link org.xtext.go.impl.operandNameImpl <em>operand Name</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2776,7 +2840,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getoperandName()
    * @generated
    */
-  int OPERAND_NAME = 74;
+  int OPERAND_NAME = 75;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2813,7 +2877,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getqualifiedIdent()
    * @generated
    */
-  int QUALIFIED_IDENT = 75;
+  int QUALIFIED_IDENT = 76;
 
   /**
    * The feature id for the '<em><b>Package Name</b></em>' attribute.
@@ -2850,7 +2914,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getcompositeLit()
    * @generated
    */
-  int COMPOSITE_LIT = 76;
+  int COMPOSITE_LIT = 77;
 
   /**
    * The feature id for the '<em><b>Literal Type</b></em>' containment reference.
@@ -2887,7 +2951,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getliteralType()
    * @generated
    */
-  int LITERAL_TYPE = 77;
+  int LITERAL_TYPE = 78;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -2915,7 +2979,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getliteralValue()
    * @generated
    */
-  int LITERAL_VALUE = 78;
+  int LITERAL_VALUE = 79;
 
   /**
    * The feature id for the '<em><b>Element List</b></em>' containment reference.
@@ -2943,7 +3007,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getelementList()
    * @generated
    */
-  int ELEMENT_LIST = 79;
+  int ELEMENT_LIST = 80;
 
   /**
    * The feature id for the '<em><b>Keyed Elements</b></em>' containment reference list.
@@ -2971,7 +3035,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getkeyedElement()
    * @generated
    */
-  int KEYED_ELEMENT = 80;
+  int KEYED_ELEMENT = 81;
 
   /**
    * The feature id for the '<em><b>Key</b></em>' containment reference.
@@ -3008,7 +3072,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getkey()
    * @generated
    */
-  int KEY = 81;
+  int KEY = 82;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3054,7 +3118,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getelement()
    * @generated
    */
-  int ELEMENT = 82;
+  int ELEMENT = 83;
 
   /**
    * The feature id for the '<em><b>Content</b></em>' containment reference.
@@ -3082,7 +3146,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getstructType()
    * @generated
    */
-  int STRUCT_TYPE = 83;
+  int STRUCT_TYPE = 84;
 
   /**
    * The feature id for the '<em><b>Fields Decl</b></em>' containment reference list.
@@ -3110,7 +3174,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getfieldDecl()
    * @generated
    */
-  int FIELD_DECL = 84;
+  int FIELD_DECL = 85;
 
   /**
    * The feature id for the '<em><b>Identifier List</b></em>' containment reference.
@@ -3156,7 +3220,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getanonymousField()
    * @generated
    */
-  int ANONYMOUS_FIELD = 85;
+  int ANONYMOUS_FIELD = 86;
 
   /**
    * The feature id for the '<em><b>Type Name</b></em>' containment reference.
@@ -3184,7 +3248,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getfunctionLit()
    * @generated
    */
-  int FUNCTION_LIT = 86;
+  int FUNCTION_LIT = 87;
 
   /**
    * The feature id for the '<em><b>Function</b></em>' containment reference.
@@ -3212,7 +3276,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getprimaryExpr()
    * @generated
    */
-  int PRIMARY_EXPR = 87;
+  int PRIMARY_EXPR = 88;
 
   /**
    * The feature id for the '<em><b>Operand</b></em>' containment reference.
@@ -3294,7 +3358,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getprimaryExprStuff()
    * @generated
    */
-  int PRIMARY_EXPR_STUFF = 88;
+  int PRIMARY_EXPR_STUFF = 89;
 
   /**
    * The feature id for the '<em><b>Selector</b></em>' containment reference.
@@ -3358,7 +3422,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getprimaryExprSelector()
    * @generated
    */
-  int PRIMARY_EXPR_SELECTOR = 89;
+  int PRIMARY_EXPR_SELECTOR = 90;
 
   /**
    * The feature id for the '<em><b>Content</b></em>' containment reference.
@@ -3395,7 +3459,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getprimaryExprIndex()
    * @generated
    */
-  int PRIMARY_EXPR_INDEX = 90;
+  int PRIMARY_EXPR_INDEX = 91;
 
   /**
    * The feature id for the '<em><b>Content</b></em>' containment reference.
@@ -3432,7 +3496,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getprimaryExprSlice()
    * @generated
    */
-  int PRIMARY_EXPR_SLICE = 91;
+  int PRIMARY_EXPR_SLICE = 92;
 
   /**
    * The feature id for the '<em><b>Content</b></em>' containment reference.
@@ -3469,7 +3533,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getprimaryExprTypeAssertion()
    * @generated
    */
-  int PRIMARY_EXPR_TYPE_ASSERTION = 92;
+  int PRIMARY_EXPR_TYPE_ASSERTION = 93;
 
   /**
    * The feature id for the '<em><b>Content</b></em>' containment reference.
@@ -3506,7 +3570,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getprimaryExprArguments()
    * @generated
    */
-  int PRIMARY_EXPR_ARGUMENTS = 93;
+  int PRIMARY_EXPR_ARGUMENTS = 94;
 
   /**
    * The feature id for the '<em><b>Content</b></em>' containment reference.
@@ -3543,7 +3607,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getselector()
    * @generated
    */
-  int SELECTOR = 94;
+  int SELECTOR = 95;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3571,7 +3635,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getindex()
    * @generated
    */
-  int INDEX = 95;
+  int INDEX = 96;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -3599,7 +3663,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getslice()
    * @generated
    */
-  int SLICE = 96;
+  int SLICE = 97;
 
   /**
    * The feature id for the '<em><b>Expr1</b></em>' containment reference.
@@ -3645,7 +3709,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#gettypeAssertion()
    * @generated
    */
-  int TYPE_ASSERTION = 97;
+  int TYPE_ASSERTION = 98;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -3673,7 +3737,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getarguments()
    * @generated
    */
-  int ARGUMENTS = 98;
+  int ARGUMENTS = 99;
 
   /**
    * The feature id for the '<em><b>Expression List</b></em>' containment reference.
@@ -3710,7 +3774,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getmethodExpr()
    * @generated
    */
-  int METHOD_EXPR = 99;
+  int METHOD_EXPR = 100;
 
   /**
    * The feature id for the '<em><b>Receiver Type</b></em>' containment reference.
@@ -3738,7 +3802,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getreceiverType()
    * @generated
    */
-  int RECEIVER_TYPE = 100;
+  int RECEIVER_TYPE = 101;
 
   /**
    * The feature id for the '<em><b>Type Name</b></em>' containment reference.
@@ -3775,7 +3839,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getexpression()
    * @generated
    */
-  int EXPRESSION = 101;
+  int EXPRESSION = 102;
 
   /**
    * The feature id for the '<em><b>Unary Expr</b></em>' containment reference.
@@ -3812,7 +3876,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getexpressionMatched()
    * @generated
    */
-  int EXPRESSION_MATCHED = 102;
+  int EXPRESSION_MATCHED = 103;
 
   /**
    * The feature id for the '<em><b>Operator</b></em>' attribute.
@@ -3849,7 +3913,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getunaryExpr()
    * @generated
    */
-  int UNARY_EXPR = 103;
+  int UNARY_EXPR = 104;
 
   /**
    * The feature id for the '<em><b>Primary Expr</b></em>' containment reference.
@@ -3886,7 +3950,7 @@ public interface GoPackage extends EPackage
    * @see org.xtext.go.impl.GoPackageImpl#getconversion()
    * @generated
    */
-  int CONVERSION = 104;
+  int CONVERSION = 105;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -6219,15 +6283,15 @@ public interface GoPackage extends EPackage
   EClass getliteral();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.go.literal#getLitBasic <em>Lit Basic</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.go.literal#getLitBasic <em>Lit Basic</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Lit Basic</em>'.
+   * @return the meta object for the containment reference '<em>Lit Basic</em>'.
    * @see org.xtext.go.literal#getLitBasic()
    * @see #getliteral()
    * @generated
    */
-  EAttribute getliteral_LitBasic();
+  EReference getliteral_LitBasic();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.go.literal#getLitComposite <em>Lit Composite</em>}'.
@@ -6250,6 +6314,71 @@ public interface GoPackage extends EPackage
    * @generated
    */
   EReference getliteral_LitFunc();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.go.basicLit <em>basic Lit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>basic Lit</em>'.
+   * @see org.xtext.go.basicLit
+   * @generated
+   */
+  EClass getbasicLit();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.basicLit#getIntLit <em>Int Lit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Int Lit</em>'.
+   * @see org.xtext.go.basicLit#getIntLit()
+   * @see #getbasicLit()
+   * @generated
+   */
+  EAttribute getbasicLit_IntLit();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.basicLit#getFloatLit <em>Float Lit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Float Lit</em>'.
+   * @see org.xtext.go.basicLit#getFloatLit()
+   * @see #getbasicLit()
+   * @generated
+   */
+  EAttribute getbasicLit_FloatLit();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.basicLit#getImaginaryLit <em>Imaginary Lit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Imaginary Lit</em>'.
+   * @see org.xtext.go.basicLit#getImaginaryLit()
+   * @see #getbasicLit()
+   * @generated
+   */
+  EAttribute getbasicLit_ImaginaryLit();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.basicLit#getRuneLit <em>Rune Lit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Rune Lit</em>'.
+   * @see org.xtext.go.basicLit#getRuneLit()
+   * @see #getbasicLit()
+   * @generated
+   */
+  EAttribute getbasicLit_RuneLit();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.basicLit#getStringLit <em>String Lit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>String Lit</em>'.
+   * @see org.xtext.go.basicLit#getStringLit()
+   * @see #getbasicLit()
+   * @generated
+   */
+  EAttribute getbasicLit_StringLit();
 
   /**
    * Returns the meta object for class '{@link org.xtext.go.operandName <em>operand Name</em>}'.
@@ -9143,12 +9272,12 @@ public interface GoPackage extends EPackage
     EClass LITERAL = eINSTANCE.getliteral();
 
     /**
-     * The meta object literal for the '<em><b>Lit Basic</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Lit Basic</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LITERAL__LIT_BASIC = eINSTANCE.getliteral_LitBasic();
+    EReference LITERAL__LIT_BASIC = eINSTANCE.getliteral_LitBasic();
 
     /**
      * The meta object literal for the '<em><b>Lit Composite</b></em>' containment reference feature.
@@ -9165,6 +9294,56 @@ public interface GoPackage extends EPackage
      * @generated
      */
     EReference LITERAL__LIT_FUNC = eINSTANCE.getliteral_LitFunc();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.go.impl.basicLitImpl <em>basic Lit</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.go.impl.basicLitImpl
+     * @see org.xtext.go.impl.GoPackageImpl#getbasicLit()
+     * @generated
+     */
+    EClass BASIC_LIT = eINSTANCE.getbasicLit();
+
+    /**
+     * The meta object literal for the '<em><b>Int Lit</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BASIC_LIT__INT_LIT = eINSTANCE.getbasicLit_IntLit();
+
+    /**
+     * The meta object literal for the '<em><b>Float Lit</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BASIC_LIT__FLOAT_LIT = eINSTANCE.getbasicLit_FloatLit();
+
+    /**
+     * The meta object literal for the '<em><b>Imaginary Lit</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BASIC_LIT__IMAGINARY_LIT = eINSTANCE.getbasicLit_ImaginaryLit();
+
+    /**
+     * The meta object literal for the '<em><b>Rune Lit</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BASIC_LIT__RUNE_LIT = eINSTANCE.getbasicLit_RuneLit();
+
+    /**
+     * The meta object literal for the '<em><b>String Lit</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BASIC_LIT__STRING_LIT = eINSTANCE.getbasicLit_StringLit();
 
     /**
      * The meta object literal for the '{@link org.xtext.go.impl.operandNameImpl <em>operand Name</em>}' class.

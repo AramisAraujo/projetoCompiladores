@@ -9,6 +9,7 @@ import org.xtext.go.assignment
 import org.xtext.go.compositeLit
 import org.xtext.go.conversion
 import org.xtext.go.expression
+import org.xtext.go.expressionList
 import org.xtext.go.expressionMatched
 import org.xtext.go.functionLit
 import org.xtext.go.ifStmt
@@ -28,12 +29,6 @@ import org.xtext.go.sendStmt
 import org.xtext.go.shortVarDecl
 import org.xtext.go.simpleStmt
 import org.xtext.go.unaryExpr
-import java.beans.Beans
-import org.xtext.go.GoPackage
-import org.xtext.go.compositeLit
-import org.xtext.go.functionLit
-import org.xtext.go.expressionList
-
 
 /**
  * This class contains custom validation rules. 
@@ -62,13 +57,32 @@ class GoValidator extends AbstractGoValidator {
 
 	def checkLiteral(literal literal) {
 		if (literal.getLitBasic() !== null) {
-			checkLitBasic(literal.getLitBasic());
+			return checkLitBasic(literal.getLitBasic());
 		}
 		if (literal.getLitComposite() !== null) {
 			checkLitComposite(literal.getLitComposite());
 		}
 		if (literal.getLitFunc() !== null) {
 			checkLitFunc(literal.getLitFunc());
+		}
+	}
+		
+	def checkLitBasic(String string) {
+		try {
+			var value = Float.valueOf(string);
+			if(value % 1 == 0){
+				return "int";
+			} else {
+				return "float";
+			}
+		} catch (Exception exception) {
+			try {
+				var value = Boolean.valueOf(string);
+				return "boolean";
+			} catch (Exception exception2) {
+				return "string";
+			}
+			
 		}
 	}
 
@@ -78,13 +92,9 @@ class GoValidator extends AbstractGoValidator {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
 
-	def checkLitBasic(String string) {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
-	}
-
 	def checkPrimary(primaryExpr expr) {
 		if (expr.getOperand() !== null) {
-			checkOperand(expr.getOperand());
+			return checkOperand(expr.getOperand());
 		}
 		if (expr.getConversion() !== null) {
 			checkConversion(expr.getConversion());
@@ -132,7 +142,7 @@ class GoValidator extends AbstractGoValidator {
 
 	def checkOperand(operand operand) {
 		if (operand.getLiteral() !== null) {
-			checkLiteral(operand.getLiteral());
+			 return checkLiteral(operand.getLiteral());
 		}
 		if (operand.getMethodExpr() !== null) {
 			checkMethodExpr(operand.getMethodExpr());
@@ -276,8 +286,18 @@ class GoValidator extends AbstractGoValidator {
 	}
 		
 	def checkExpList(expressionList list) {
+		var type = "";
 		for (var i = 0; i < list.getExpr().size(); i++) {
-			checkExpression(list.getExpr().get(i));
+			var nextType = checkExpression(list.getExpr().get(i));
+			if(type !== ""){
+				if (type !== nextType) {
+					error(
+						"Incompatible types in assignment",
+						GoPackage.Literals.MODEL__GREETINGS,
+						list.toString()
+					)
+				}
+			}
 
 		}
 	}
@@ -285,7 +305,7 @@ class GoValidator extends AbstractGoValidator {
 
 	def checkExpression(expression expression) {
 		if (expression.getUnaryExpr() !== null) {
-			checkUnary(expression.getUnaryExpr());
+			return checkUnary(expression.getUnaryExpr());
 		}
 		if (expression.getExpressionMatched() !== null) {
 			checkMatched(expression.getExpressionMatched());
@@ -314,7 +334,7 @@ class GoValidator extends AbstractGoValidator {
 
 	def checkUnary(unaryExpr expr) {
 		if (expr.getPrimaryExpr() !== null) {
-			checkPrimary(expr.getPrimaryExpr());
+			return checkPrimary(expr.getPrimaryExpr());
 		}
 		if (expr.getUnaryExpr() !== null) {
 			checkUnary(expr.getUnaryExpr());

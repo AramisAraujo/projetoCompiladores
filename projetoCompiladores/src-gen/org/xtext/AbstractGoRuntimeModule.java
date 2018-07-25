@@ -195,7 +195,7 @@ public abstract class AbstractGoRuntimeModule extends DefaultRuntimeModule {
 	
 	// contributed by org.eclipse.xtext.xtext.generator.generator.GeneratorFragment2
 	public Class<? extends IGenerator2> bindIGenerator2() {
-		return GoGenerator.class;
+		return (Class<? extends IGenerator2>) GoGenerator.class;
 	}
 	
 }

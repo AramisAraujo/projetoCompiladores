@@ -3100,33 +3100,108 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	public class BasicLitElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.basicLit");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cINT_LITTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cFLOAT_LITTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cIMAGINARY_LITTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cRUNE_LITTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cSTRING_LITTerminalRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final Assignment cIntLitAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cIntLitIntLitParserRuleCall_0_0 = (RuleCall)cIntLitAssignment_0.eContents().get(0);
+		private final Assignment cFloatLitAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cFloatLitFloatLitParserRuleCall_1_0 = (RuleCall)cFloatLitAssignment_1.eContents().get(0);
+		private final Assignment cImaginaryLitAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cImaginaryLitImaginaryLitParserRuleCall_2_0 = (RuleCall)cImaginaryLitAssignment_2.eContents().get(0);
+		private final Assignment cRuneLitAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cRuneLitRuneLitParserRuleCall_3_0 = (RuleCall)cRuneLitAssignment_3.eContents().get(0);
+		private final Assignment cStringLitAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
+		private final RuleCall cStringLitStringLitParserRuleCall_4_0 = (RuleCall)cStringLitAssignment_4.eContents().get(0);
 		
 		//basicLit:
-		//	INT_LIT | FLOAT_LIT | IMAGINARY_LIT | RUNE_LIT | STRING_LIT;
+		//	intLit=intLit | floatLit=floatLit | imaginaryLit=imaginaryLit | runeLit=runeLit | stringLit=stringLit;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//INT_LIT | FLOAT_LIT | IMAGINARY_LIT | RUNE_LIT | STRING_LIT
+		//intLit=intLit | floatLit=floatLit | imaginaryLit=imaginaryLit | runeLit=runeLit | stringLit=stringLit
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
+		//intLit=intLit
+		public Assignment getIntLitAssignment_0() { return cIntLitAssignment_0; }
+		
+		//intLit
+		public RuleCall getIntLitIntLitParserRuleCall_0_0() { return cIntLitIntLitParserRuleCall_0_0; }
+		
+		//floatLit=floatLit
+		public Assignment getFloatLitAssignment_1() { return cFloatLitAssignment_1; }
+		
+		//floatLit
+		public RuleCall getFloatLitFloatLitParserRuleCall_1_0() { return cFloatLitFloatLitParserRuleCall_1_0; }
+		
+		//imaginaryLit=imaginaryLit
+		public Assignment getImaginaryLitAssignment_2() { return cImaginaryLitAssignment_2; }
+		
+		//imaginaryLit
+		public RuleCall getImaginaryLitImaginaryLitParserRuleCall_2_0() { return cImaginaryLitImaginaryLitParserRuleCall_2_0; }
+		
+		//runeLit=runeLit
+		public Assignment getRuneLitAssignment_3() { return cRuneLitAssignment_3; }
+		
+		//runeLit
+		public RuleCall getRuneLitRuneLitParserRuleCall_3_0() { return cRuneLitRuneLitParserRuleCall_3_0; }
+		
+		//stringLit=stringLit
+		public Assignment getStringLitAssignment_4() { return cStringLitAssignment_4; }
+		
+		//stringLit
+		public RuleCall getStringLitStringLitParserRuleCall_4_0() { return cStringLitStringLitParserRuleCall_4_0; }
+	}
+	public class IntLitElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.intLit");
+		private final RuleCall cINT_LITTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//intLit:
+		//	INT_LIT;
+		@Override public ParserRule getRule() { return rule; }
+		
 		//INT_LIT
-		public RuleCall getINT_LITTerminalRuleCall_0() { return cINT_LITTerminalRuleCall_0; }
+		public RuleCall getINT_LITTerminalRuleCall() { return cINT_LITTerminalRuleCall; }
+	}
+	public class FloatLitElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.floatLit");
+		private final RuleCall cFLOAT_LITTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//floatLit:
+		//	FLOAT_LIT;
+		@Override public ParserRule getRule() { return rule; }
 		
 		//FLOAT_LIT
-		public RuleCall getFLOAT_LITTerminalRuleCall_1() { return cFLOAT_LITTerminalRuleCall_1; }
+		public RuleCall getFLOAT_LITTerminalRuleCall() { return cFLOAT_LITTerminalRuleCall; }
+	}
+	public class ImaginaryLitElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.imaginaryLit");
+		private final RuleCall cIMAGINARY_LITTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//imaginaryLit:
+		//	IMAGINARY_LIT;
+		@Override public ParserRule getRule() { return rule; }
 		
 		//IMAGINARY_LIT
-		public RuleCall getIMAGINARY_LITTerminalRuleCall_2() { return cIMAGINARY_LITTerminalRuleCall_2; }
+		public RuleCall getIMAGINARY_LITTerminalRuleCall() { return cIMAGINARY_LITTerminalRuleCall; }
+	}
+	public class RuneLitElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.runeLit");
+		private final RuleCall cRUNE_LITTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//runeLit:
+		//	RUNE_LIT;
+		@Override public ParserRule getRule() { return rule; }
 		
 		//RUNE_LIT
-		public RuleCall getRUNE_LITTerminalRuleCall_3() { return cRUNE_LITTerminalRuleCall_3; }
+		public RuleCall getRUNE_LITTerminalRuleCall() { return cRUNE_LITTerminalRuleCall; }
+	}
+	public class StringLitElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.stringLit");
+		private final RuleCall cSTRING_LITTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//stringLit:
+		//	STRING_LIT;
+		@Override public ParserRule getRule() { return rule; }
 		
 		//STRING_LIT
-		public RuleCall getSTRING_LITTerminalRuleCall_4() { return cSTRING_LITTerminalRuleCall_4; }
+		public RuleCall getSTRING_LITTerminalRuleCall() { return cSTRING_LITTerminalRuleCall; }
 	}
 	public class OperandNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.operandName");
@@ -4470,6 +4545,11 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	private final OperandElements pOperand;
 	private final LiteralElements pLiteral;
 	private final BasicLitElements pBasicLit;
+	private final IntLitElements pIntLit;
+	private final FloatLitElements pFloatLit;
+	private final ImaginaryLitElements pImaginaryLit;
+	private final RuneLitElements pRuneLit;
+	private final StringLitElements pStringLit;
 	private final OperandNameElements pOperandName;
 	private final QualifiedIdentElements pQualifiedIdent;
 	private final CompositeLitElements pCompositeLit;
@@ -4621,6 +4701,11 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		this.pOperand = new OperandElements();
 		this.pLiteral = new LiteralElements();
 		this.pBasicLit = new BasicLitElements();
+		this.pIntLit = new IntLitElements();
+		this.pFloatLit = new FloatLitElements();
+		this.pImaginaryLit = new ImaginaryLitElements();
+		this.pRuneLit = new RuneLitElements();
+		this.pStringLit = new StringLitElements();
 		this.pOperandName = new OperandNameElements();
 		this.pQualifiedIdent = new QualifiedIdentElements();
 		this.pCompositeLit = new CompositeLitElements();
@@ -5601,13 +5686,63 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//basicLit:
-	//	INT_LIT | FLOAT_LIT | IMAGINARY_LIT | RUNE_LIT | STRING_LIT;
+	//	intLit=intLit | floatLit=floatLit | imaginaryLit=imaginaryLit | runeLit=runeLit | stringLit=stringLit;
 	public BasicLitElements getBasicLitAccess() {
 		return pBasicLit;
 	}
 	
 	public ParserRule getBasicLitRule() {
 		return getBasicLitAccess().getRule();
+	}
+	
+	//intLit:
+	//	INT_LIT;
+	public IntLitElements getIntLitAccess() {
+		return pIntLit;
+	}
+	
+	public ParserRule getIntLitRule() {
+		return getIntLitAccess().getRule();
+	}
+	
+	//floatLit:
+	//	FLOAT_LIT;
+	public FloatLitElements getFloatLitAccess() {
+		return pFloatLit;
+	}
+	
+	public ParserRule getFloatLitRule() {
+		return getFloatLitAccess().getRule();
+	}
+	
+	//imaginaryLit:
+	//	IMAGINARY_LIT;
+	public ImaginaryLitElements getImaginaryLitAccess() {
+		return pImaginaryLit;
+	}
+	
+	public ParserRule getImaginaryLitRule() {
+		return getImaginaryLitAccess().getRule();
+	}
+	
+	//runeLit:
+	//	RUNE_LIT;
+	public RuneLitElements getRuneLitAccess() {
+		return pRuneLit;
+	}
+	
+	public ParserRule getRuneLitRule() {
+		return getRuneLitAccess().getRule();
+	}
+	
+	//stringLit:
+	//	STRING_LIT;
+	public StringLitElements getStringLitAccess() {
+		return pStringLit;
+	}
+	
+	public ParserRule getStringLitRule() {
+		return getStringLitAccess().getRule();
 	}
 	
 	//operandName:

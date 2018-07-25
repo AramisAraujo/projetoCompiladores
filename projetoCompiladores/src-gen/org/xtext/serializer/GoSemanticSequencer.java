@@ -21,6 +21,7 @@ import org.xtext.go.arguments;
 import org.xtext.go.arrayLength;
 import org.xtext.go.arrayType;
 import org.xtext.go.assignment;
+import org.xtext.go.basicLit;
 import org.xtext.go.block;
 import org.xtext.go.breakStmt;
 import org.xtext.go.channelType;
@@ -153,6 +154,9 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case GoPackage.ASSIGNMENT:
 				sequence_assignment(context, (assignment) semanticObject); 
+				return; 
+			case GoPackage.BASIC_LIT:
+				sequence_basicLit(context, (basicLit) semanticObject); 
 				return; 
 			case GoPackage.BLOCK:
 				sequence_block(context, (block) semanticObject); 
@@ -558,6 +562,18 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		feeder.accept(grammarAccess.getAssignmentAccess().getOperationAssign_opParserRuleCall_1_0(), semanticObject.getOperation());
 		feeder.accept(grammarAccess.getAssignmentAccess().getExprList2ExpressionListParserRuleCall_2_0(), semanticObject.getExprList2());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     basicLit returns basicLit
+	 *
+	 * Constraint:
+	 *     (intLit=intLit | floatLit=floatLit | imaginaryLit=imaginaryLit | runeLit=runeLit | stringLit=stringLit)
+	 */
+	protected void sequence_basicLit(ISerializationContext context, basicLit semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

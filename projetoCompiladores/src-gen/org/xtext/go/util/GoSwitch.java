@@ -591,6 +591,13 @@ public class GoSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case GoPackage.BASIC_LIT:
+      {
+        basicLit basicLit = (basicLit)theEObject;
+        T result = casebasicLit(basicLit);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case GoPackage.OPERAND_NAME:
       {
         operandName operandName = (operandName)theEObject;
@@ -1992,6 +1999,22 @@ public class GoSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseliteral(literal object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>basic Lit</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>basic Lit</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casebasicLit(basicLit object)
   {
     return null;
   }

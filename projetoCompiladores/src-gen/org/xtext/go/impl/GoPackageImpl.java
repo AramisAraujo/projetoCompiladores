@@ -18,6 +18,7 @@ import org.xtext.go.arguments;
 import org.xtext.go.arrayLength;
 import org.xtext.go.arrayType;
 import org.xtext.go.assignment;
+import org.xtext.go.basicLit;
 import org.xtext.go.block;
 import org.xtext.go.breakStmt;
 import org.xtext.go.channelType;
@@ -643,6 +644,13 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
    * @generated
    */
   private EClass literalEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass basicLitEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -3089,9 +3097,9 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getliteral_LitBasic()
+  public EReference getliteral_LitBasic()
   {
-    return (EAttribute)literalEClass.getEStructuralFeatures().get(0);
+    return (EReference)literalEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3112,6 +3120,66 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
   public EReference getliteral_LitFunc()
   {
     return (EReference)literalEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getbasicLit()
+  {
+    return basicLitEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getbasicLit_IntLit()
+  {
+    return (EAttribute)basicLitEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getbasicLit_FloatLit()
+  {
+    return (EAttribute)basicLitEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getbasicLit_ImaginaryLit()
+  {
+    return (EAttribute)basicLitEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getbasicLit_RuneLit()
+  {
+    return (EAttribute)basicLitEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getbasicLit_StringLit()
+  {
+    return (EAttribute)basicLitEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -4363,9 +4431,16 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
     createEReference(operandEClass, OPERAND__EXPR);
 
     literalEClass = createEClass(LITERAL);
-    createEAttribute(literalEClass, LITERAL__LIT_BASIC);
+    createEReference(literalEClass, LITERAL__LIT_BASIC);
     createEReference(literalEClass, LITERAL__LIT_COMPOSITE);
     createEReference(literalEClass, LITERAL__LIT_FUNC);
+
+    basicLitEClass = createEClass(BASIC_LIT);
+    createEAttribute(basicLitEClass, BASIC_LIT__INT_LIT);
+    createEAttribute(basicLitEClass, BASIC_LIT__FLOAT_LIT);
+    createEAttribute(basicLitEClass, BASIC_LIT__IMAGINARY_LIT);
+    createEAttribute(basicLitEClass, BASIC_LIT__RUNE_LIT);
+    createEAttribute(basicLitEClass, BASIC_LIT__STRING_LIT);
 
     operandNameEClass = createEClass(OPERAND_NAME);
     createEAttribute(operandNameEClass, OPERAND_NAME__NAME);
@@ -4812,9 +4887,16 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
     initEReference(getoperand_Expr(), this.getexpression(), null, "expr", null, 0, 1, operand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(literalEClass, literal.class, "literal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getliteral_LitBasic(), ecorePackage.getEString(), "litBasic", null, 0, 1, literal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getliteral_LitBasic(), this.getbasicLit(), null, "litBasic", null, 0, 1, literal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getliteral_LitComposite(), this.getcompositeLit(), null, "litComposite", null, 0, 1, literal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getliteral_LitFunc(), this.getfunctionLit(), null, "litFunc", null, 0, 1, literal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(basicLitEClass, basicLit.class, "basicLit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getbasicLit_IntLit(), ecorePackage.getEString(), "intLit", null, 0, 1, basicLit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getbasicLit_FloatLit(), ecorePackage.getEString(), "floatLit", null, 0, 1, basicLit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getbasicLit_ImaginaryLit(), ecorePackage.getEString(), "imaginaryLit", null, 0, 1, basicLit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getbasicLit_RuneLit(), ecorePackage.getEString(), "runeLit", null, 0, 1, basicLit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getbasicLit_StringLit(), ecorePackage.getEString(), "stringLit", null, 0, 1, basicLit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(operandNameEClass, operandName.class, "operandName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getoperandName_Name(), ecorePackage.getEString(), "name", null, 0, 1, operandName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

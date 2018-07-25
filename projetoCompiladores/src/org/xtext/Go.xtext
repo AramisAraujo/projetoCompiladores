@@ -382,11 +382,34 @@ literal:
 	litFunc=functionLit;
 
 basicLit: 
-	INT_LIT |
-	FLOAT_LIT | 
-	IMAGINARY_LIT | 
-	RUNE_LIT |
-	STRING_LIT;
+	intLit=intLit |
+	floatLit=floatLit | 
+	imaginaryLit=imaginaryLit | 
+	runeLit=runeLit |
+	stringLit=stringLit;
+	
+
+intLit:
+	INT_LIT
+;
+
+
+
+floatLit:
+	FLOAT_LIT
+;
+
+imaginaryLit:
+	IMAGINARY_LIT
+;
+
+runeLit:
+	RUNE_LIT
+;
+
+stringLit:
+	STRING_LIT
+;
 
 operandName: 
 	name=IDENTIFIER |

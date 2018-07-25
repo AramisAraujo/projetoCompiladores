@@ -26,30 +26,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface literal extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Lit Basic</b></em>' attribute.
+   * Returns the value of the '<em><b>Lit Basic</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Lit Basic</em>' attribute isn't clear,
+   * If the meaning of the '<em>Lit Basic</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Lit Basic</em>' attribute.
-   * @see #setLitBasic(String)
+   * @return the value of the '<em>Lit Basic</em>' containment reference.
+   * @see #setLitBasic(basicLit)
    * @see org.xtext.go.GoPackage#getliteral_LitBasic()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getLitBasic();
+  basicLit getLitBasic();
 
   /**
-   * Sets the value of the '{@link org.xtext.go.literal#getLitBasic <em>Lit Basic</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.go.literal#getLitBasic <em>Lit Basic</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Lit Basic</em>' attribute.
+   * @param value the new value of the '<em>Lit Basic</em>' containment reference.
    * @see #getLitBasic()
    * @generated
    */
-  void setLitBasic(String value);
+  void setLitBasic(basicLit value);
 
   /**
    * Returns the value of the '<em><b>Lit Composite</b></em>' containment reference.

@@ -295,9 +295,16 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//operand/expr"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//literal">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//literal/litBasic"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//literal/litBasic"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//literal/litComposite"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//literal/litFunc"/>
+    </genClasses>
+    <genClasses ecoreClass="Go.ecore#//basicLit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//basicLit/intLit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//basicLit/floatLit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//basicLit/imaginaryLit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//basicLit/runeLit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//basicLit/stringLit"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//operandName">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//operandName/name"/>

@@ -690,6 +690,15 @@ public interface GoFactory extends EFactory
   literal createliteral();
 
   /**
+   * Returns a new object of class '<em>basic Lit</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>basic Lit</em>'.
+   * @generated
+   */
+  basicLit createbasicLit();
+
+  /**
    * Returns a new object of class '<em>operand Name</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

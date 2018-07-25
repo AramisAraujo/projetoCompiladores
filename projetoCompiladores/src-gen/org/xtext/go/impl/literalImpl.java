@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.go.GoPackage;
+import org.xtext.go.basicLit;
 import org.xtext.go.compositeLit;
 import org.xtext.go.functionLit;
 import org.xtext.go.literal;
@@ -35,24 +36,14 @@ import org.xtext.go.literal;
 public class literalImpl extends MinimalEObjectImpl.Container implements literal
 {
   /**
-   * The default value of the '{@link #getLitBasic() <em>Lit Basic</em>}' attribute.
+   * The cached value of the '{@link #getLitBasic() <em>Lit Basic</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getLitBasic()
    * @generated
    * @ordered
    */
-  protected static final String LIT_BASIC_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getLitBasic() <em>Lit Basic</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLitBasic()
-   * @generated
-   * @ordered
-   */
-  protected String litBasic = LIT_BASIC_EDEFAULT;
+  protected basicLit litBasic;
 
   /**
    * The cached value of the '{@link #getLitComposite() <em>Lit Composite</em>}' containment reference.
@@ -100,7 +91,7 @@ public class literalImpl extends MinimalEObjectImpl.Container implements literal
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getLitBasic()
+  public basicLit getLitBasic()
   {
     return litBasic;
   }
@@ -110,12 +101,37 @@ public class literalImpl extends MinimalEObjectImpl.Container implements literal
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLitBasic(String newLitBasic)
+  public NotificationChain basicSetLitBasic(basicLit newLitBasic, NotificationChain msgs)
   {
-    String oldLitBasic = litBasic;
+    basicLit oldLitBasic = litBasic;
     litBasic = newLitBasic;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.LITERAL__LIT_BASIC, oldLitBasic, litBasic));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.LITERAL__LIT_BASIC, oldLitBasic, newLitBasic);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLitBasic(basicLit newLitBasic)
+  {
+    if (newLitBasic != litBasic)
+    {
+      NotificationChain msgs = null;
+      if (litBasic != null)
+        msgs = ((InternalEObject)litBasic).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.LITERAL__LIT_BASIC, null, msgs);
+      if (newLitBasic != null)
+        msgs = ((InternalEObject)newLitBasic).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.LITERAL__LIT_BASIC, null, msgs);
+      msgs = basicSetLitBasic(newLitBasic, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.LITERAL__LIT_BASIC, newLitBasic, newLitBasic));
   }
 
   /**
@@ -224,6 +240,8 @@ public class literalImpl extends MinimalEObjectImpl.Container implements literal
   {
     switch (featureID)
     {
+      case GoPackage.LITERAL__LIT_BASIC:
+        return basicSetLitBasic(null, msgs);
       case GoPackage.LITERAL__LIT_COMPOSITE:
         return basicSetLitComposite(null, msgs);
       case GoPackage.LITERAL__LIT_FUNC:
@@ -263,7 +281,7 @@ public class literalImpl extends MinimalEObjectImpl.Container implements literal
     switch (featureID)
     {
       case GoPackage.LITERAL__LIT_BASIC:
-        setLitBasic((String)newValue);
+        setLitBasic((basicLit)newValue);
         return;
       case GoPackage.LITERAL__LIT_COMPOSITE:
         setLitComposite((compositeLit)newValue);
@@ -286,7 +304,7 @@ public class literalImpl extends MinimalEObjectImpl.Container implements literal
     switch (featureID)
     {
       case GoPackage.LITERAL__LIT_BASIC:
-        setLitBasic(LIT_BASIC_EDEFAULT);
+        setLitBasic((basicLit)null);
         return;
       case GoPackage.LITERAL__LIT_COMPOSITE:
         setLitComposite((compositeLit)null);
@@ -309,30 +327,13 @@ public class literalImpl extends MinimalEObjectImpl.Container implements literal
     switch (featureID)
     {
       case GoPackage.LITERAL__LIT_BASIC:
-        return LIT_BASIC_EDEFAULT == null ? litBasic != null : !LIT_BASIC_EDEFAULT.equals(litBasic);
+        return litBasic != null;
       case GoPackage.LITERAL__LIT_COMPOSITE:
         return litComposite != null;
       case GoPackage.LITERAL__LIT_FUNC:
         return litFunc != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (litBasic: ");
-    result.append(litBasic);
-    result.append(')');
-    return result.toString();
   }
 
 } //literalImpl
