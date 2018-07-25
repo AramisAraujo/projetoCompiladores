@@ -161,7 +161,7 @@ emptyStmt:
 	content=WS;
 
 //LabeledStmt = Label ":" Statement .
-//Label       = identifier .
+//Label       = identier .
 labeledStmt: 
 	label=IDENTIFIER ':' stmt=statement;
 
@@ -189,7 +189,7 @@ fallthroughStmt:
 deferStmt: 
 	'defer' expr=expression;
 
-//IfStmt = "if" [ SimpleStmt ";" ] Expression Block [ "else" ( IfStmt | Block ) ] .
+//IfStmt = "" [ SimpleStmt ";" ] Expression Block [ "else" ( IfStmt | Block ) ] .
 ifStmt: 
 	'if' (simplStatement=simpleStmt eos)? expr=expression
 	 codeBlock=block ( 'else' ( ifStatement=ifStmt | codeBlockIf=block ) )?;

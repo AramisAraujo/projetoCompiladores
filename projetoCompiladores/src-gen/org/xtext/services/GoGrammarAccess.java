@@ -1320,7 +1320,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cStmtStatementParserRuleCall_2_0 = (RuleCall)cStmtAssignment_2.eContents().get(0);
 		
 		////LabeledStmt = Label ":" Statement .
-		////Label       = identifier .
+		////Label       = identier .
 		//labeledStmt:
 		//	label=IDENTIFIER ':' stmt=statement;
 		@Override public ParserRule getRule() { return rule; }
@@ -1499,7 +1499,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cCodeBlockIfAssignment_4_1_1 = (Assignment)cAlternatives_4_1.eContents().get(1);
 		private final RuleCall cCodeBlockIfBlockParserRuleCall_4_1_1_0 = (RuleCall)cCodeBlockIfAssignment_4_1_1.eContents().get(0);
 		
-		////IfStmt = "if" [ SimpleStmt ";" ] Expression Block [ "else" ( IfStmt | Block ) ] .
+		////IfStmt = "" [ SimpleStmt ";" ] Expression Block [ "else" ( IfStmt | Block ) ] .
 		//ifStmt:
 		//	'if' (simplStatement=simpleStmt eos)? expr=expression
 		//	codeBlock=block ('else' (ifStatement=ifStmt | codeBlockIf=block))?;
@@ -5081,7 +5081,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	////LabeledStmt = Label ":" Statement .
-	////Label       = identifier .
+	////Label       = identier .
 	//labeledStmt:
 	//	label=IDENTIFIER ':' stmt=statement;
 	public LabeledStmtElements getLabeledStmtAccess() {
@@ -5158,7 +5158,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		return getDeferStmtAccess().getRule();
 	}
 	
-	////IfStmt = "if" [ SimpleStmt ";" ] Expression Block [ "else" ( IfStmt | Block ) ] .
+	////IfStmt = "" [ SimpleStmt ";" ] Expression Block [ "else" ( IfStmt | Block ) ] .
 	//ifStmt:
 	//	'if' (simplStatement=simpleStmt eos)? expr=expression
 	//	codeBlock=block ('else' (ifStatement=ifStmt | codeBlockIf=block))?;
