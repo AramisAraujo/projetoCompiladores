@@ -7,7 +7,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -15,6 +14,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.go.GoPackage;
 import org.xtext.go.type;
+import org.xtext.go.typeLit;
+import org.xtext.go.typeName;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +24,8 @@ import org.xtext.go.type;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.xtext.go.impl.typeImpl#getContentT <em>Content T</em>}</li>
+ *   <li>{@link org.xtext.go.impl.typeImpl#getContentL <em>Content L</em>}</li>
  *   <li>{@link org.xtext.go.impl.typeImpl#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
@@ -32,6 +35,26 @@ import org.xtext.go.type;
 public class typeImpl extends MinimalEObjectImpl.Container implements type
 {
   /**
+   * The cached value of the '{@link #getContentT() <em>Content T</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getContentT()
+   * @generated
+   * @ordered
+   */
+  protected typeName contentT;
+
+  /**
+   * The cached value of the '{@link #getContentL() <em>Content L</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getContentL()
+   * @generated
+   * @ordered
+   */
+  protected typeLit contentL;
+
+  /**
    * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -39,7 +62,7 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
    * @generated
    * @ordered
    */
-  protected EObject content;
+  protected type content;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,7 +90,103 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
    * <!-- end-user-doc -->
    * @generated
    */
-  public EObject getContent()
+  public typeName getContentT()
+  {
+    return contentT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetContentT(typeName newContentT, NotificationChain msgs)
+  {
+    typeName oldContentT = contentT;
+    contentT = newContentT;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.TYPE__CONTENT_T, oldContentT, newContentT);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setContentT(typeName newContentT)
+  {
+    if (newContentT != contentT)
+    {
+      NotificationChain msgs = null;
+      if (contentT != null)
+        msgs = ((InternalEObject)contentT).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE__CONTENT_T, null, msgs);
+      if (newContentT != null)
+        msgs = ((InternalEObject)newContentT).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE__CONTENT_T, null, msgs);
+      msgs = basicSetContentT(newContentT, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE__CONTENT_T, newContentT, newContentT));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public typeLit getContentL()
+  {
+    return contentL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetContentL(typeLit newContentL, NotificationChain msgs)
+  {
+    typeLit oldContentL = contentL;
+    contentL = newContentL;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GoPackage.TYPE__CONTENT_L, oldContentL, newContentL);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setContentL(typeLit newContentL)
+  {
+    if (newContentL != contentL)
+    {
+      NotificationChain msgs = null;
+      if (contentL != null)
+        msgs = ((InternalEObject)contentL).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE__CONTENT_L, null, msgs);
+      if (newContentL != null)
+        msgs = ((InternalEObject)newContentL).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GoPackage.TYPE__CONTENT_L, null, msgs);
+      msgs = basicSetContentL(newContentL, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.TYPE__CONTENT_L, newContentL, newContentL));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public type getContent()
   {
     return content;
   }
@@ -77,9 +196,9 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetContent(EObject newContent, NotificationChain msgs)
+  public NotificationChain basicSetContent(type newContent, NotificationChain msgs)
   {
-    EObject oldContent = content;
+    type oldContent = content;
     content = newContent;
     if (eNotificationRequired())
     {
@@ -94,7 +213,7 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setContent(EObject newContent)
+  public void setContent(type newContent)
   {
     if (newContent != content)
     {
@@ -120,6 +239,10 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
   {
     switch (featureID)
     {
+      case GoPackage.TYPE__CONTENT_T:
+        return basicSetContentT(null, msgs);
+      case GoPackage.TYPE__CONTENT_L:
+        return basicSetContentL(null, msgs);
       case GoPackage.TYPE__CONTENT:
         return basicSetContent(null, msgs);
     }
@@ -136,6 +259,10 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
   {
     switch (featureID)
     {
+      case GoPackage.TYPE__CONTENT_T:
+        return getContentT();
+      case GoPackage.TYPE__CONTENT_L:
+        return getContentL();
       case GoPackage.TYPE__CONTENT:
         return getContent();
     }
@@ -152,8 +279,14 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
   {
     switch (featureID)
     {
+      case GoPackage.TYPE__CONTENT_T:
+        setContentT((typeName)newValue);
+        return;
+      case GoPackage.TYPE__CONTENT_L:
+        setContentL((typeLit)newValue);
+        return;
       case GoPackage.TYPE__CONTENT:
-        setContent((EObject)newValue);
+        setContent((type)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +302,14 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
   {
     switch (featureID)
     {
+      case GoPackage.TYPE__CONTENT_T:
+        setContentT((typeName)null);
+        return;
+      case GoPackage.TYPE__CONTENT_L:
+        setContentL((typeLit)null);
+        return;
       case GoPackage.TYPE__CONTENT:
-        setContent((EObject)null);
+        setContent((type)null);
         return;
     }
     super.eUnset(featureID);
@@ -186,6 +325,10 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
   {
     switch (featureID)
     {
+      case GoPackage.TYPE__CONTENT_T:
+        return contentT != null;
+      case GoPackage.TYPE__CONTENT_L:
+        return contentL != null;
       case GoPackage.TYPE__CONTENT:
         return content != null;
     }

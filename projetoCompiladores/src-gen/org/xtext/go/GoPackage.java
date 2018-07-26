@@ -2093,13 +2093,31 @@ public interface GoPackage extends EPackage
   int TYPE = 54;
 
   /**
+   * The feature id for the '<em><b>Content T</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__CONTENT_T = 0;
+
+  /**
+   * The feature id for the '<em><b>Content L</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__CONTENT_L = 1;
+
+  /**
    * The feature id for the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE__CONTENT = 0;
+  int TYPE__CONTENT = 2;
 
   /**
    * The number of structural features of the '<em>type</em>' class.
@@ -2108,7 +2126,7 @@ public interface GoPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_FEATURE_COUNT = 1;
+  int TYPE_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.go.impl.typeNameImpl <em>type Name</em>}' class.
@@ -5761,6 +5779,28 @@ public interface GoPackage extends EPackage
   EClass gettype();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.type#getContentT <em>Content T</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Content T</em>'.
+   * @see org.xtext.go.type#getContentT()
+   * @see #gettype()
+   * @generated
+   */
+  EReference gettype_ContentT();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.go.type#getContentL <em>Content L</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Content L</em>'.
+   * @see org.xtext.go.type#getContentL()
+   * @see #gettype()
+   * @generated
+   */
+  EReference gettype_ContentL();
+
+  /**
    * Returns the meta object for the containment reference '{@link org.xtext.go.type#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -8852,6 +8892,22 @@ public interface GoPackage extends EPackage
      * @generated
      */
     EClass TYPE = eINSTANCE.gettype();
+
+    /**
+     * The meta object literal for the '<em><b>Content T</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE__CONTENT_T = eINSTANCE.gettype_ContentT();
+
+    /**
+     * The meta object literal for the '<em><b>Content L</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE__CONTENT_L = eINSTANCE.gettype_ContentL();
 
     /**
      * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.

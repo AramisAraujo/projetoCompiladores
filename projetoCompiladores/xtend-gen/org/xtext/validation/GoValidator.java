@@ -22,7 +22,10 @@ import org.xtext.go.parameterDecl;
 import org.xtext.go.parameterList;
 import org.xtext.go.shortVarDecl;
 import org.xtext.go.type;
+import org.xtext.go.typeLit;
+import org.xtext.go.typeName;
 import org.xtext.go.varDecl;
+import org.xtext.go.varSpec;
 import org.xtext.validation.AbstractGoValidator;
 import org.xtext.validation.NullObj;
 
@@ -59,47 +62,64 @@ public class GoValidator extends AbstractGoValidator {
   
   @Check
   public void checkVarDecl(final varDecl vd) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field id is undefined for the type varSpec"
-      + "\nThe method or field tp2 is undefined for the type varSpec"
-      + "\nThe method or field expressionlist is undefined for the type varSpec"
-      + "\nThe method or field varspec is undefined for the type varDecl"
-      + "\nThe method or field varspec is undefined for the type varDecl"
-      + "\nThe method or field varspec is undefined for the type varDecl"
-      + "\nType mismatch: cannot convert from Object to String"
-      + "\nType mismatch: cannot convert from Object to basicLit"
-      + "\nType mismatch: cannot convert from Object to String"
-      + "\nid cannot be resolved"
-      + "\nexp cannot be resolved"
-      + "\nup cannot be resolved"
-      + "\npr cannot be resolved"
-      + "\nop cannot be resolved"
-      + "\nliteral cannot be resolved"
-      + "\nbasic cannot be resolved"
-      + "\n!== cannot be resolved"
-      + "\n&& cannot be resolved"
-      + "\n!== cannot be resolved"
-      + "\ntp cannot be resolved"
-      + "\n!== cannot be resolved"
-      + "\ncharAt cannot be resolved"
-      + "\n!== cannot be resolved"
-      + "\ntoLowerCase cannot be resolved"
-      + "\ncharAt cannot be resolved"
-      + "\n&& cannot be resolved"
-      + "\nid cannot be resolved"
-      + "\nid2 cannot be resolved"
-      + "\nexpressionlist cannot be resolved"
-      + "\nexpression2 cannot be resolved"
-      + "\n!== cannot be resolved"
-      + "\nexpressionlist cannot be resolved"
-      + "\nexpression2 cannot be resolved"
-      + "\nup cannot be resolved"
-      + "\npr cannot be resolved"
-      + "\nop cannot be resolved"
-      + "\nliteral cannot be resolved"
-      + "\nbasic cannot be resolved"
-      + "\n!== cannot be resolved"
-      + "\ntp cannot be resolved");
+    for (int i = 0; (i < ((Object[])Conversions.unwrapArray(vd.getSpecs(), Object.class)).length); i++) {
+      {
+        varSpec varspec = vd.getSpecs().get(i);
+        int _length = ((Object[])Conversions.unwrapArray(varspec.getIdList().getIds(), Object.class)).length;
+        int _length_1 = ((Object[])Conversions.unwrapArray(varspec.getExprList(), Object.class)).length;
+        boolean _equals = (_length == _length_1);
+        if (_equals) {
+          int index = 0;
+          type type = varspec.getType();
+          EList<String> _ids = varspec.getIdList().getIds();
+          for (final String id : _ids) {
+            if ((type != null)) {
+            } else {
+              this.nullDeclaration(id);
+            }
+          }
+        } else {
+          this.error("Semantic Error: Wrong number of atributes", null);
+        }
+        for (int j = 0; (j < ((Object[])Conversions.unwrapArray(varspec.getIdList().getIds(), Object.class)).length); j++) {
+          {
+            String varId = varspec.getIdList().getIds().get(j);
+            this.nullDeclaration(varId);
+            org.xtext.go.type type_1 = varspec.getType();
+            for (int k = 0; (k < ((Object[])Conversions.unwrapArray(varspec.getExprList().get(j).getExpr(), Object.class)).length); k++) {
+              {
+                expression exp = varspec.getExprList().get(j).getExpr().get(k);
+                basicLit varExp = exp.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral().getLitBasic();
+                if (((type_1 != null) && (varExp != null))) {
+                  String varType = this.extractType(type_1);
+                  if ((varType != null)) {
+                    boolean error = this.checkAndMakeDecl(varId, varType, varExp);
+                    if (((varId.charAt(0) != varId.toLowerCase().charAt(0)) && (!error))) {
+                      this.warning("Variables usually starts with Lower Case", null);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  public String extractType(final type type) {
+    typeLit _contentL = type.getContentL();
+    boolean _tripleNotEquals = (_contentL != null);
+    if (_tripleNotEquals) {
+      return type.getContentL().getContentType();
+    } else {
+      typeName _contentT = type.getContentT();
+      boolean _tripleNotEquals_1 = (_contentT != null);
+      if (_tripleNotEquals_1) {
+        return type.getContentT().getName();
+      }
+    }
+    return this.extractType(type.getContent());
   }
   
   @Check

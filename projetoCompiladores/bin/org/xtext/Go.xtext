@@ -278,8 +278,8 @@ goStmt:
 
 //Type      = TypeName | TypeLit | "(" Type ")" .
 type: 
-	content=typeName
-    | content=typeLit
+	contentT=typeName
+    | contentL=typeLit
     | '(' content=type ')';
 
 //TypeName  = identifier | QualifiedIdent .

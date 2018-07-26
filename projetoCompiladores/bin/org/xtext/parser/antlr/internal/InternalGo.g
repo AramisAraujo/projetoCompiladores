@@ -4127,17 +4127,17 @@ ruletype returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getTypeAccess().getContentTypeNameParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getTypeAccess().getContentTTypeNameParserRuleCall_0_0());
 				}
-				lv_content_0_0=ruletypeName
+				lv_contentT_0_0=ruletypeName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getTypeRule());
 					}
 					set(
 						$current,
-						"content",
-						lv_content_0_0,
+						"contentT",
+						lv_contentT_0_0,
 						"org.xtext.Go.typeName");
 					afterParserOrEnumRuleCall();
 				}
@@ -4147,17 +4147,17 @@ ruletype returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getTypeAccess().getContentTypeLitParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getTypeAccess().getContentLTypeLitParserRuleCall_1_0());
 				}
-				lv_content_1_0=ruletypeLit
+				lv_contentL_1_0=ruletypeLit
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getTypeRule());
 					}
 					set(
 						$current,
-						"content",
-						lv_content_1_0,
+						"contentL",
+						lv_contentL_1_0,
 						"org.xtext.Go.typeLit");
 					afterParserOrEnumRuleCall();
 				}

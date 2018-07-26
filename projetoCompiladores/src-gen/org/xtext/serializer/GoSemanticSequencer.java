@@ -2109,7 +2109,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     type returns type
 	 *
 	 * Constraint:
-	 *     (content=typeName | content=typeLit | content=type)
+	 *     (contentT=typeName | contentL=typeLit | content=type)
 	 */
 	protected void sequence_type(ISerializationContext context, type semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

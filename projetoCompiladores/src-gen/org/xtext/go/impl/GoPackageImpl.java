@@ -2597,9 +2597,29 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference gettype_Content()
+  public EReference gettype_ContentT()
   {
     return (EReference)typeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference gettype_ContentL()
+  {
+    return (EReference)typeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference gettype_Content()
+  {
+    return (EReference)typeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -4372,6 +4392,8 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
     createEReference(goStmtEClass, GO_STMT__EXPR);
 
     typeEClass = createEClass(TYPE);
+    createEReference(typeEClass, TYPE__CONTENT_T);
+    createEReference(typeEClass, TYPE__CONTENT_L);
     createEReference(typeEClass, TYPE__CONTENT);
 
     typeNameEClass = createEClass(TYPE_NAME);
@@ -4829,7 +4851,9 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
     initEReference(getgoStmt_Expr(), this.getexpression(), null, "expr", null, 0, 1, goStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeEClass, type.class, "type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(gettype_Content(), ecorePackage.getEObject(), null, "content", null, 0, 1, type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(gettype_ContentT(), this.gettypeName(), null, "contentT", null, 0, 1, type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(gettype_ContentL(), this.gettypeLit(), null, "contentL", null, 0, 1, type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(gettype_Content(), this.gettype(), null, "content", null, 0, 1, type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeNameEClass, typeName.class, "typeName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(gettypeName_Name(), ecorePackage.getEString(), "name", null, 0, 1, typeName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

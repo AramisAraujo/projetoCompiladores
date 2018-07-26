@@ -2265,10 +2265,10 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	public class TypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.type");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cContentAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cContentTypeNameParserRuleCall_0_0 = (RuleCall)cContentAssignment_0.eContents().get(0);
-		private final Assignment cContentAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cContentTypeLitParserRuleCall_1_0 = (RuleCall)cContentAssignment_1.eContents().get(0);
+		private final Assignment cContentTAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cContentTTypeNameParserRuleCall_0_0 = (RuleCall)cContentTAssignment_0.eContents().get(0);
+		private final Assignment cContentLAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cContentLTypeLitParserRuleCall_1_0 = (RuleCall)cContentLAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final Keyword cLeftParenthesisKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cContentAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
@@ -2277,25 +2277,25 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		
 		////Type      = TypeName | TypeLit | "(" Type ")" .
 		//type:
-		//	content=typeName
-		//	| content=typeLit
+		//	contentT=typeName
+		//	| contentL=typeLit
 		//	| '(' content=type ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//content=typeName | content=typeLit | '(' content=type ')'
+		//contentT=typeName | contentL=typeLit | '(' content=type ')'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//content=typeName
-		public Assignment getContentAssignment_0() { return cContentAssignment_0; }
+		//contentT=typeName
+		public Assignment getContentTAssignment_0() { return cContentTAssignment_0; }
 		
 		//typeName
-		public RuleCall getContentTypeNameParserRuleCall_0_0() { return cContentTypeNameParserRuleCall_0_0; }
+		public RuleCall getContentTTypeNameParserRuleCall_0_0() { return cContentTTypeNameParserRuleCall_0_0; }
 		
-		//content=typeLit
-		public Assignment getContentAssignment_1() { return cContentAssignment_1; }
+		//contentL=typeLit
+		public Assignment getContentLAssignment_1() { return cContentLAssignment_1; }
 		
 		//typeLit
-		public RuleCall getContentTypeLitParserRuleCall_1_0() { return cContentTypeLitParserRuleCall_1_0; }
+		public RuleCall getContentLTypeLitParserRuleCall_1_0() { return cContentLTypeLitParserRuleCall_1_0; }
 		
 		//'(' content=type ')'
 		public Group getGroup_2() { return cGroup_2; }
@@ -5474,8 +5474,8 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////Type      = TypeName | TypeLit | "(" Type ")" .
 	//type:
-	//	content=typeName
-	//	| content=typeLit
+	//	contentT=typeName
+	//	| contentL=typeLit
 	//	| '(' content=type ')';
 	public TypeElements getTypeAccess() {
 		return pType;

@@ -12995,13 +12995,13 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Type__Alternatives"
-    // InternalGo.g:3585:1: rule__Type__Alternatives : ( ( ( rule__Type__ContentAssignment_0 ) ) | ( ( rule__Type__ContentAssignment_1 ) ) | ( ( rule__Type__Group_2__0 ) ) );
+    // InternalGo.g:3585:1: rule__Type__Alternatives : ( ( ( rule__Type__ContentTAssignment_0 ) ) | ( ( rule__Type__ContentLAssignment_1 ) ) | ( ( rule__Type__Group_2__0 ) ) );
     public final void rule__Type__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGo.g:3589:1: ( ( ( rule__Type__ContentAssignment_0 ) ) | ( ( rule__Type__ContentAssignment_1 ) ) | ( ( rule__Type__Group_2__0 ) ) )
+            // InternalGo.g:3589:1: ( ( ( rule__Type__ContentTAssignment_0 ) ) | ( ( rule__Type__ContentLAssignment_1 ) ) | ( ( rule__Type__Group_2__0 ) ) )
             int alt31=3;
             switch ( input.LA(1) ) {
             case RULE_IDENTIFIER:
@@ -13036,19 +13036,19 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
 
             switch (alt31) {
                 case 1 :
-                    // InternalGo.g:3590:2: ( ( rule__Type__ContentAssignment_0 ) )
+                    // InternalGo.g:3590:2: ( ( rule__Type__ContentTAssignment_0 ) )
                     {
-                    // InternalGo.g:3590:2: ( ( rule__Type__ContentAssignment_0 ) )
-                    // InternalGo.g:3591:3: ( rule__Type__ContentAssignment_0 )
+                    // InternalGo.g:3590:2: ( ( rule__Type__ContentTAssignment_0 ) )
+                    // InternalGo.g:3591:3: ( rule__Type__ContentTAssignment_0 )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getTypeAccess().getContentAssignment_0()); 
+                       before(grammarAccess.getTypeAccess().getContentTAssignment_0()); 
                     }
-                    // InternalGo.g:3592:3: ( rule__Type__ContentAssignment_0 )
-                    // InternalGo.g:3592:4: rule__Type__ContentAssignment_0
+                    // InternalGo.g:3592:3: ( rule__Type__ContentTAssignment_0 )
+                    // InternalGo.g:3592:4: rule__Type__ContentTAssignment_0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Type__ContentAssignment_0();
+                    rule__Type__ContentTAssignment_0();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -13056,7 +13056,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getTypeAccess().getContentAssignment_0()); 
+                       after(grammarAccess.getTypeAccess().getContentTAssignment_0()); 
                     }
 
                     }
@@ -13065,19 +13065,19 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalGo.g:3596:2: ( ( rule__Type__ContentAssignment_1 ) )
+                    // InternalGo.g:3596:2: ( ( rule__Type__ContentLAssignment_1 ) )
                     {
-                    // InternalGo.g:3596:2: ( ( rule__Type__ContentAssignment_1 ) )
-                    // InternalGo.g:3597:3: ( rule__Type__ContentAssignment_1 )
+                    // InternalGo.g:3596:2: ( ( rule__Type__ContentLAssignment_1 ) )
+                    // InternalGo.g:3597:3: ( rule__Type__ContentLAssignment_1 )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getTypeAccess().getContentAssignment_1()); 
+                       before(grammarAccess.getTypeAccess().getContentLAssignment_1()); 
                     }
-                    // InternalGo.g:3598:3: ( rule__Type__ContentAssignment_1 )
-                    // InternalGo.g:3598:4: rule__Type__ContentAssignment_1
+                    // InternalGo.g:3598:3: ( rule__Type__ContentLAssignment_1 )
+                    // InternalGo.g:3598:4: rule__Type__ContentLAssignment_1
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Type__ContentAssignment_1();
+                    rule__Type__ContentLAssignment_1();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -13085,7 +13085,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getTypeAccess().getContentAssignment_1()); 
+                       after(grammarAccess.getTypeAccess().getContentLAssignment_1()); 
                     }
 
                     }
@@ -51551,9 +51551,9 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__GoStmt__ExprAssignment_1"
 
 
-    // $ANTLR start "rule__Type__ContentAssignment_0"
-    // InternalGo.g:15454:1: rule__Type__ContentAssignment_0 : ( ruletypeName ) ;
-    public final void rule__Type__ContentAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__Type__ContentTAssignment_0"
+    // InternalGo.g:15454:1: rule__Type__ContentTAssignment_0 : ( ruletypeName ) ;
+    public final void rule__Type__ContentTAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -51565,7 +51565,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             // InternalGo.g:15460:3: ruletypeName
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTypeAccess().getContentTypeNameParserRuleCall_0_0()); 
+               before(grammarAccess.getTypeAccess().getContentTTypeNameParserRuleCall_0_0()); 
             }
             pushFollow(FOLLOW_2);
             ruletypeName();
@@ -51573,7 +51573,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTypeAccess().getContentTypeNameParserRuleCall_0_0()); 
+               after(grammarAccess.getTypeAccess().getContentTTypeNameParserRuleCall_0_0()); 
             }
 
             }
@@ -51593,12 +51593,12 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Type__ContentAssignment_0"
+    // $ANTLR end "rule__Type__ContentTAssignment_0"
 
 
-    // $ANTLR start "rule__Type__ContentAssignment_1"
-    // InternalGo.g:15469:1: rule__Type__ContentAssignment_1 : ( ruletypeLit ) ;
-    public final void rule__Type__ContentAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Type__ContentLAssignment_1"
+    // InternalGo.g:15469:1: rule__Type__ContentLAssignment_1 : ( ruletypeLit ) ;
+    public final void rule__Type__ContentLAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -51610,7 +51610,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             // InternalGo.g:15475:3: ruletypeLit
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTypeAccess().getContentTypeLitParserRuleCall_1_0()); 
+               before(grammarAccess.getTypeAccess().getContentLTypeLitParserRuleCall_1_0()); 
             }
             pushFollow(FOLLOW_2);
             ruletypeLit();
@@ -51618,7 +51618,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTypeAccess().getContentTypeLitParserRuleCall_1_0()); 
+               after(grammarAccess.getTypeAccess().getContentLTypeLitParserRuleCall_1_0()); 
             }
 
             }
@@ -51638,7 +51638,7 @@ public class InternalGoParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Type__ContentAssignment_1"
+    // $ANTLR end "rule__Type__ContentLAssignment_1"
 
 
     // $ANTLR start "rule__Type__ContentAssignment_2_1"

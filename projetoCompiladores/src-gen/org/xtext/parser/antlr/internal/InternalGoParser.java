@@ -11720,15 +11720,15 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruletype"
-    // InternalGo.g:4119:1: ruletype returns [EObject current=null] : ( ( (lv_content_0_0= ruletypeName ) ) | ( (lv_content_1_0= ruletypeLit ) ) | (otherlv_2= '(' ( (lv_content_3_0= ruletype ) ) otherlv_4= ')' ) ) ;
+    // InternalGo.g:4119:1: ruletype returns [EObject current=null] : ( ( (lv_contentT_0_0= ruletypeName ) ) | ( (lv_contentL_1_0= ruletypeLit ) ) | (otherlv_2= '(' ( (lv_content_3_0= ruletype ) ) otherlv_4= ')' ) ) ;
     public final EObject ruletype() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
         Token otherlv_4=null;
-        EObject lv_content_0_0 = null;
+        EObject lv_contentT_0_0 = null;
 
-        EObject lv_content_1_0 = null;
+        EObject lv_contentL_1_0 = null;
 
         EObject lv_content_3_0 = null;
 
@@ -11737,10 +11737,10 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGo.g:4125:2: ( ( ( (lv_content_0_0= ruletypeName ) ) | ( (lv_content_1_0= ruletypeLit ) ) | (otherlv_2= '(' ( (lv_content_3_0= ruletype ) ) otherlv_4= ')' ) ) )
-            // InternalGo.g:4126:2: ( ( (lv_content_0_0= ruletypeName ) ) | ( (lv_content_1_0= ruletypeLit ) ) | (otherlv_2= '(' ( (lv_content_3_0= ruletype ) ) otherlv_4= ')' ) )
+            // InternalGo.g:4125:2: ( ( ( (lv_contentT_0_0= ruletypeName ) ) | ( (lv_contentL_1_0= ruletypeLit ) ) | (otherlv_2= '(' ( (lv_content_3_0= ruletype ) ) otherlv_4= ')' ) ) )
+            // InternalGo.g:4126:2: ( ( (lv_contentT_0_0= ruletypeName ) ) | ( (lv_contentL_1_0= ruletypeLit ) ) | (otherlv_2= '(' ( (lv_content_3_0= ruletype ) ) otherlv_4= ')' ) )
             {
-            // InternalGo.g:4126:2: ( ( (lv_content_0_0= ruletypeName ) ) | ( (lv_content_1_0= ruletypeLit ) ) | (otherlv_2= '(' ( (lv_content_3_0= ruletype ) ) otherlv_4= ')' ) )
+            // InternalGo.g:4126:2: ( ( (lv_contentT_0_0= ruletypeName ) ) | ( (lv_contentL_1_0= ruletypeLit ) ) | (otherlv_2= '(' ( (lv_content_3_0= ruletype ) ) otherlv_4= ')' ) )
             int alt56=3;
             switch ( input.LA(1) ) {
             case RULE_IDENTIFIER:
@@ -11775,21 +11775,21 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
 
             switch (alt56) {
                 case 1 :
-                    // InternalGo.g:4127:3: ( (lv_content_0_0= ruletypeName ) )
+                    // InternalGo.g:4127:3: ( (lv_contentT_0_0= ruletypeName ) )
                     {
-                    // InternalGo.g:4127:3: ( (lv_content_0_0= ruletypeName ) )
-                    // InternalGo.g:4128:4: (lv_content_0_0= ruletypeName )
+                    // InternalGo.g:4127:3: ( (lv_contentT_0_0= ruletypeName ) )
+                    // InternalGo.g:4128:4: (lv_contentT_0_0= ruletypeName )
                     {
-                    // InternalGo.g:4128:4: (lv_content_0_0= ruletypeName )
-                    // InternalGo.g:4129:5: lv_content_0_0= ruletypeName
+                    // InternalGo.g:4128:4: (lv_contentT_0_0= ruletypeName )
+                    // InternalGo.g:4129:5: lv_contentT_0_0= ruletypeName
                     {
                     if ( state.backtracking==0 ) {
 
-                      					newCompositeNode(grammarAccess.getTypeAccess().getContentTypeNameParserRuleCall_0_0());
+                      					newCompositeNode(grammarAccess.getTypeAccess().getContentTTypeNameParserRuleCall_0_0());
                       				
                     }
                     pushFollow(FOLLOW_2);
-                    lv_content_0_0=ruletypeName();
+                    lv_contentT_0_0=ruletypeName();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -11800,8 +11800,8 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
                       					}
                       					set(
                       						current,
-                      						"content",
-                      						lv_content_0_0,
+                      						"contentT",
+                      						lv_contentT_0_0,
                       						"org.xtext.Go.typeName");
                       					afterParserOrEnumRuleCall();
                       				
@@ -11816,21 +11816,21 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalGo.g:4147:3: ( (lv_content_1_0= ruletypeLit ) )
+                    // InternalGo.g:4147:3: ( (lv_contentL_1_0= ruletypeLit ) )
                     {
-                    // InternalGo.g:4147:3: ( (lv_content_1_0= ruletypeLit ) )
-                    // InternalGo.g:4148:4: (lv_content_1_0= ruletypeLit )
+                    // InternalGo.g:4147:3: ( (lv_contentL_1_0= ruletypeLit ) )
+                    // InternalGo.g:4148:4: (lv_contentL_1_0= ruletypeLit )
                     {
-                    // InternalGo.g:4148:4: (lv_content_1_0= ruletypeLit )
-                    // InternalGo.g:4149:5: lv_content_1_0= ruletypeLit
+                    // InternalGo.g:4148:4: (lv_contentL_1_0= ruletypeLit )
+                    // InternalGo.g:4149:5: lv_contentL_1_0= ruletypeLit
                     {
                     if ( state.backtracking==0 ) {
 
-                      					newCompositeNode(grammarAccess.getTypeAccess().getContentTypeLitParserRuleCall_1_0());
+                      					newCompositeNode(grammarAccess.getTypeAccess().getContentLTypeLitParserRuleCall_1_0());
                       				
                     }
                     pushFollow(FOLLOW_2);
-                    lv_content_1_0=ruletypeLit();
+                    lv_contentL_1_0=ruletypeLit();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -11841,8 +11841,8 @@ public class InternalGoParser extends AbstractInternalAntlrParser {
                       					}
                       					set(
                       						current,
-                      						"content",
-                      						lv_content_1_0,
+                      						"contentL",
+                      						lv_contentL_1_0,
                       						"org.xtext.Go.typeLit");
                       					afterParserOrEnumRuleCall();
                       				

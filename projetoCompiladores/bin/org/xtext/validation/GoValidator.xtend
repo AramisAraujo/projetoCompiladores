@@ -13,7 +13,10 @@ import org.xtext.go.functionDecl
 import org.xtext.go.operand
 import org.xtext.go.shortVarDecl
 import org.xtext.go.expressionList
+
+import org.xtext.go.typeName
 import java.util.ArrayList
+import org.xtext.go.type
 
 /**
  * This class contains custom validation rules. 
@@ -59,41 +62,17 @@ class GoValidator extends AbstractGoValidator {
 //	}
 	@Check
 	def checkVarDecl(varDecl vd) {
-
-		for (varspec : vd.specs) {
-			var varId = varspec.id.id;
-			nullDeclaration(varId);
-
-			var type = varspec.tp2;
-			var varExp = varspec.expressionlist.exp.up.pr.op.literal.basic;
-
-			if (type !== null && varExp !== null) {
-				var varType = type.tp;
-				if (varType !== null) {
-					var error = checkAndMakeDecl(varId, varType, varExp);
-					if (varId.charAt(0) !== varId.toLowerCase().charAt(0) && !error) {
-						warning("Variables usually starts with Lower Case", null);
-					}
-				}
-			}
-
-			var varIds = newLinkedList;
-			for (id : vd.varspec.id.id2) {
-				varIds.add(id)
-			}
-
-			var exps = newLinkedList;
-			if (vd.varspec.expressionlist.expression2 !== null) {
-				for (expr : vd.varspec.expressionlist.expression2) {
-					exps.add(expr.up.pr.op.literal.basic)
-				}
-			}
-
-			if (varIds.size == exps.size) {
+		for (var i = 0; i < vd.specs.length; i++) {
+			var varspec = vd.specs.get(i);
+			
+			
+			if (varspec.idList.ids.length == varspec.exprList.length) {
 				var index = 0
-				for (id : varIds) {
+				var type = varspec.type;
+				for (id : varspec.idList.ids) {
 					if (type !== null) {
-						checkAndMakeDecl(id, type.tp, exps.get(index));
+//						checkAndMakeDecl(id, extractType(type), varspec.exprList.get(index));
+						// TODO: FIX ME
 					} else {
 						nullDeclaration(id)
 					}
@@ -101,7 +80,40 @@ class GoValidator extends AbstractGoValidator {
 			} else {
 				error('Semantic Error: Wrong number of atributes', null)
 			}
+			
+			for (var j = 0; j < varspec.idList.ids.length; j++) {
+				
+				var varId = varspec.idList.ids.get(j);
+				nullDeclaration(varId);
+				var type = varspec.type;
+				
+				for (var k = 0; k < varspec.exprList.get(j).expr.length; k++) {
+					var exp = varspec.exprList.get(j).expr.get(k);
+					
+					var varExp = exp.unaryExpr.primaryExpr.operand.literal.litBasic;
+					
+					if (type !== null && varExp !== null) {
+						var varType = extractType(type);
+						
+						if (varType !== null) {
+							var error = checkAndMakeDecl(varId, varType, varExp);
+							if (varId.charAt(0) !== varId.toLowerCase().charAt(0) && !error) {
+								warning("Variables usually starts with Lower Case", null);
+							}
+						}
+					}
+				}
+			}
 		}
+	}
+		
+	def String extractType(type type) {
+		if(type.contentL !== null) {
+			return type.contentL.contentType;
+		} else if(type.contentT !== null) {
+			return type.contentT.name;
+		}
+		return extractType(type.content);
 	}
 
 	@Check

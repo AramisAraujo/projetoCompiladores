@@ -226,6 +226,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//goStmt/expr"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//type">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//type/contentT"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//type/contentL"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Go.ecore#//type/content"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//typeName">
