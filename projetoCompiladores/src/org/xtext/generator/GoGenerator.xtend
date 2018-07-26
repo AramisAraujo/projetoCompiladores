@@ -49,7 +49,7 @@ class GoGenerator extends AbstractGenerator {
 	
 	def genDeclaration(declaration d)'''
 		«IF d instanceof varDecl»
-			«(d as varDecl).genVarDecl»
+			«(d as varDecl).genVarDecl» 
 		«ELSEIF d instanceof constDecl»
 			«(d as constDecl).genConstDecl»
 		«ELSEIF d instanceof typeDecl»
@@ -58,7 +58,16 @@ class GoGenerator extends AbstractGenerator {
 	'''
 	
 	def genVarDecl(varDecl vd)'''
-		TODO
+		«FOR spec : vd.getSpecs()»
+			«spec.genVarSpec»
+		«ENDFOR»
+	'''
+	
+	def genVarSpec(varSpec vs)'''
+		«address»: ST vs.
+		«FOR i : vs.getIdList().getIds()»
+			«address.toString()» ST «i»
+		«ENDFOR»
 	'''
 	
 	def genConstDecl(constDecl cd)'''

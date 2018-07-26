@@ -41,6 +41,7 @@ import org.xtext.go.switchStmt;
 import org.xtext.go.topLevelDecl;
 import org.xtext.go.typeDecl;
 import org.xtext.go.varDecl;
+import org.xtext.go.varSpec;
 
 /**
  * Generates code from your model files on save.
@@ -111,6 +112,7 @@ public class GoGenerator extends AbstractGenerator {
       if ((d instanceof varDecl)) {
         CharSequence _genVarDecl = this.genVarDecl(((varDecl) d));
         _builder.append(_genVarDecl);
+        _builder.append(" ");
         _builder.newLineIfNotEmpty();
       } else {
         if ((d instanceof constDecl)) {
@@ -131,8 +133,32 @@ public class GoGenerator extends AbstractGenerator {
   
   public CharSequence genVarDecl(final varDecl vd) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("TODO");
-    _builder.newLine();
+    {
+      EList<varSpec> _specs = vd.getSpecs();
+      for(final varSpec spec : _specs) {
+        CharSequence _genVarSpec = this.genVarSpec(spec);
+        _builder.append(_genVarSpec);
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    return _builder;
+  }
+  
+  public CharSequence genVarSpec(final varSpec vs) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append(this.address);
+    _builder.append(": ST vs.");
+    _builder.newLineIfNotEmpty();
+    {
+      EList<String> _ids = vs.getIdList().getIds();
+      for(final String i : _ids) {
+        String _string = this.address.toString();
+        _builder.append(_string);
+        _builder.append(" ST ");
+        _builder.append(i);
+        _builder.newLineIfNotEmpty();
+      }
+    }
     return _builder;
   }
   
