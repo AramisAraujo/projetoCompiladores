@@ -576,6 +576,12 @@ eos:
 ///
 
 
+//
+//	Boolean type
+//
+terminal BOOL:
+	'true' | 'false'
+;
 
 //
 // Identifiers
@@ -755,6 +761,7 @@ terminal fragment INTERPRETED_STRING_LIT:
 //
 //Source code representation
 //
+
 
 //letter        = unicode_letter | "_" .
 terminal fragment LETTER:

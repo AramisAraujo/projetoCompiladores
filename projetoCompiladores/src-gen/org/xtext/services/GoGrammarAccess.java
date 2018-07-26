@@ -4502,6 +4502,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	private final UnaryExprElements pUnaryExpr;
 	private final ConversionElements pConversion;
 	private final EosElements pEos;
+	private final TerminalRule tBOOL;
 	private final TerminalRule tIDENTIFIER;
 	private final TerminalRule tBINARY_OP;
 	private final TerminalRule tREL_OP;
@@ -4653,6 +4654,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		this.pUnaryExpr = new UnaryExprElements();
 		this.pConversion = new ConversionElements();
 		this.pEos = new EosElements();
+		this.tBOOL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.BOOL");
 		this.tIDENTIFIER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.IDENTIFIER");
 		this.tBINARY_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.BINARY_OP");
 		this.tREL_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.REL_OP");
@@ -5981,6 +5983,12 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		return getEosAccess().getRule();
 	}
 	
+	//terminal BOOL:
+	//	'true' | 'false';
+	public TerminalRule getBOOLRule() {
+		return tBOOL;
+	}
+	
 	//terminal IDENTIFIER:
 	//	LETTER (LETTER | DECIMAL_DIGIT)*;
 	public TerminalRule getIDENTIFIERRule() {
@@ -6098,6 +6106,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal LITTLE_U_VALUE:
+	//	'\\\u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT;
 	public TerminalRule getLITTLE_U_VALUERule() {
 		return tLITTLE_U_VALUE;
 	}

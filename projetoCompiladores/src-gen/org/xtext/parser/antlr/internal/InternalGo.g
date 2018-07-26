@@ -7913,6 +7913,8 @@ ruleeos returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 	}
 ;
 
+RULE_BOOL : ('true'|'false');
+
 RULE_IDENTIFIER : RULE_LETTER (RULE_LETTER|RULE_DECIMAL_DIGIT)*;
 
 RULE_BINARY_OP : ('||'|'&&'|RULE_REL_OP|RULE_ADD_OP|RULE_MUL_OP);
