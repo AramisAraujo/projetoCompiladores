@@ -12,6 +12,7 @@ import org.xtext.go.importDecl
 import org.xtext.go.functionDecl
 import org.xtext.go.operand
 import org.xtext.go.shortVarDecl
+import org.xtext.go.expressionList
 
 /**
  * This class contains custom validation rules. 
@@ -40,23 +41,23 @@ class GoValidator extends AbstractGoValidator {
 		}
 	}
 	
-	@Check
-	def checkConstDecl(constDecl cd) {
-		
-		var constId   = cd.constspec.id.id;
-		nullDeclaration(constId);
-		
-		var constType = cd.constspec.tp.tp;
-		var constExp  = cd.constspec.expressionlist.exp.up.pr.op.literal.basic;
-				
-				
-		if(constType !== null && constExp !== null) {
-			var error = checkAndMakeDecl(constId, constType, constExp);
-			if(constId !== constId.toUpperCase() && !error) {
-				warning ("Constants usually be declared with Upper Case", null);
-			}
-		}
-	}
+//	@Check
+//	def checkConstDecl(constDecl cd) {
+//		
+//		var constId   = cd.constspec.id.id;
+//		nullDeclaration(constId);
+//		
+//		var constType = cd.constspec.tp.tp;
+//		var constExp  = cd.constspec.expressionlist.exp.up.pr.op.literal.basic;
+//				
+//				
+//		if(constType !== null && constExp !== null) {
+//			var error = checkAndMakeDecl(constId, constType, constExp);
+//			if(constId !== constId.toUpperCase() && !error) {
+//				warning ("Constants usually be declared with Upper Case", null);
+//			}
+//		}
+//	}
 	
 	@Check
 	def checkVarDecl(varDecl vd) {
@@ -107,14 +108,14 @@ class GoValidator extends AbstractGoValidator {
 	
 	@Check
 	def imporDeclCheck(importDecl id) {
-		var imports = id.imports
+		var imports = id.specs
 		for(import:imports) {
-			nullDeclaration(import.ip.replaceAll("\"", ""))
+			nullDeclaration(import.path.replaceAll("\"", ""))
 		}
 	}
 	
 	@Check
-	def idDclrCheck() {
+	def ifDclrCheck() {
 		//TODO: GOD PLEASE HELP ME
 	}
 	

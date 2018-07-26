@@ -5,18 +5,21 @@ package org.xtext.validation;
 
 import com.google.common.base.Objects;
 import java.util.LinkedHashMap;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.xtext.go.basicLit;
-import org.xtext.go.constDecl;
 import org.xtext.go.expression;
+import org.xtext.go.expressionList;
 import org.xtext.go.functionDecl;
 import org.xtext.go.importDecl;
+import org.xtext.go.importSpec;
 import org.xtext.go.literal;
 import org.xtext.go.operand;
 import org.xtext.go.shortVarDecl;
 import org.xtext.go.varDecl;
 import org.xtext.validation.AbstractGoValidator;
+import org.xtext.validation.NullObj;
 
 /**
  * This class contains custom validation rules.
@@ -47,31 +50,6 @@ public class GoValidator extends AbstractGoValidator {
         }
       }
     }
-  }
-  
-  @Check
-  public void checkConstDecl(final constDecl cd) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field constspec is undefined for the type constDecl"
-      + "\nThe method or field constspec is undefined for the type constDecl"
-      + "\nThe method or field constspec is undefined for the type constDecl"
-      + "\nid cannot be resolved"
-      + "\nid cannot be resolved"
-      + "\ntp cannot be resolved"
-      + "\ntp cannot be resolved"
-      + "\nexpressionlist cannot be resolved"
-      + "\nexp cannot be resolved"
-      + "\nup cannot be resolved"
-      + "\npr cannot be resolved"
-      + "\nop cannot be resolved"
-      + "\nliteral cannot be resolved"
-      + "\nbasic cannot be resolved"
-      + "\n!== cannot be resolved"
-      + "\n&& cannot be resolved"
-      + "\n!== cannot be resolved"
-      + "\n!== cannot be resolved"
-      + "\ntoUpperCase cannot be resolved"
-      + "\n&& cannot be resolved");
   }
   
   @Check
@@ -124,14 +102,14 @@ public class GoValidator extends AbstractGoValidator {
   
   @Check
   public void imporDeclCheck(final importDecl id) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field imports is undefined for the type importDecl"
-      + "\nip cannot be resolved"
-      + "\nreplaceAll cannot be resolved");
+    EList<importSpec> imports = id.getSpecs();
+    for (final importSpec import_ : imports) {
+      this.nullDeclaration(import_.getPath().replaceAll("\"", ""));
+    }
   }
   
   @Check
-  public Object idDclrCheck() {
+  public Object ifDclrCheck() {
     return null;
   }
   
@@ -140,9 +118,6 @@ public class GoValidator extends AbstractGoValidator {
     throw new Error("Unresolved compilation problems:"
       + "\nThe method or field functionn is undefined for the type functionDecl"
       + "\nThe method or field signature is undefined for the type functionDecl"
-      + "\nNullObj cannot be resolved."
-      + "\nNullObj cannot be resolved."
-      + "\nNullObj cannot be resolved."
       + "\nparameters cannot be resolved"
       + "\nparameterlist cannot be resolved"
       + "\nparameterDecl1 cannot be resolved"
@@ -179,7 +154,6 @@ public class GoValidator extends AbstractGoValidator {
       + "\nThe method or field operandn is undefined for the type operand"
       + "\nThe method or field operandn is undefined for the type operand"
       + "\nThe method or field exp is undefined for the type operand"
-      + "\nThe method callMethodCheck(expressionList, String[], operand) from the type GoValidator refers to the missing type expressionList"
       + "\nid cannot be resolved"
       + "\nid cannot be resolved"
       + "\nid cannot be resolved"
@@ -366,8 +340,8 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   public Object nullDeclaration(final String id) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nNullObj cannot be resolved.");
+    NullObj _nullObj = new NullObj();
+    return this.ids.put(id, _nullObj);
   }
   
   public boolean checkAndMakeDecl(final String id, final String constType, final basicLit literal) {
@@ -438,39 +412,56 @@ public class GoValidator extends AbstractGoValidator {
     return error;
   }
   
-  protected void callMethodCheck(final /* expressionList */Object expList, final String[] elements, final operand op) {
+  protected void callMethodCheck(final expressionList expList, final String[] elements, final operand op) {
     throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field exp is undefined for the type expressionList"
+      + "\nThe method or field exp is undefined for the type expressionList"
+      + "\nThe method or field exp is undefined for the type expressionList"
+      + "\nThe method or field expression2 is undefined for the type expressionList"
+      + "\nThe method or field expression2 is undefined for the type expressionList"
       + "\nThe method or field operandn is undefined for the type operand"
-      + "\nexp cannot be resolved"
       + "\nup cannot be resolved"
       + "\npr cannot be resolved"
       + "\nop cannot be resolved"
       + "\noperandn cannot be resolved"
       + "\n!== cannot be resolved"
-      + "\nexp cannot be resolved"
       + "\nup cannot be resolved"
       + "\npr cannot be resolved"
       + "\nop cannot be resolved"
       + "\noperandn cannot be resolved"
       + "\nid cannot be resolved"
       + "\n!== cannot be resolved"
-      + "\nexp cannot be resolved"
       + "\nup cannot be resolved"
       + "\npr cannot be resolved"
       + "\nop cannot be resolved"
       + "\nliteral cannot be resolved"
       + "\nbasic cannot be resolved"
       + "\n!== cannot be resolved"
-      + "\nexpression2 cannot be resolved"
       + "\n!== cannot be resolved"
-      + "\nexpression2 cannot be resolved"
       + "\nid cannot be resolved");
   }
   
   public String getType(final Object obj) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nNullObj cannot be resolved to a type."
-      + "\nUnreachable code: The if condition can never match. It is already handled by a previous condition.");
+    if ((obj instanceof Integer)) {
+      return "int";
+    } else {
+      if ((obj instanceof Double)) {
+        return "float";
+      } else {
+        if ((obj instanceof Boolean)) {
+          return "bool";
+        } else {
+          if ((obj instanceof String)) {
+            return "string";
+          } else {
+            if ((obj instanceof NullObj)) {
+              return "null";
+            }
+          }
+        }
+      }
+    }
+    return null;
   }
   
   public void checkTypesInAritimeticOp(final String binaryOp, final String type1, final String type2) {
