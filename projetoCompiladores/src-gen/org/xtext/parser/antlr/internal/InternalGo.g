@@ -640,16 +640,18 @@ ruleconstDecl returns [EObject current=null]
 							}
 						)
 					)
-					{
-						/* */
-					}
-					{
-						newCompositeNode(grammarAccess.getConstDeclAccess().getEosParserRuleCall_1_1_1_1());
-					}
-					ruleeos
-					{
-						afterParserOrEnumRuleCall();
-					}
+					(
+						{
+							/* */
+						}
+						{
+							newCompositeNode(grammarAccess.getConstDeclAccess().getEosParserRuleCall_1_1_1_1());
+						}
+						ruleeos
+						{
+							afterParserOrEnumRuleCall();
+						}
+					)?
 				)*
 				otherlv_5=')'
 				{

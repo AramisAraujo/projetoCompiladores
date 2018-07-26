@@ -26,6 +26,7 @@ public class GoSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_arguments_CommaKeyword_1_2_q;
 	protected AbstractElementAlias match_arguments_FullStopFullStopFullStopKeyword_1_1_q;
 	protected AbstractElementAlias match_channelType_ChanKeyword_0_0_or___ChanKeyword_0_1_0_LessThanSignHyphenMinusKeyword_0_1_1___or___LessThanSignHyphenMinusKeyword_0_2_0_ChanKeyword_0_2_1__;
+	protected AbstractElementAlias match_constDecl_EosParserRuleCall_1_1_1_1_q;
 	protected AbstractElementAlias match_conversion_CommaKeyword_3_q;
 	protected AbstractElementAlias match_fieldDecl_STRING_LITTerminalRuleCall_1_q;
 	protected AbstractElementAlias match_importDecl_EosParserRuleCall_1_1_1_1_q;
@@ -45,6 +46,7 @@ public class GoSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_arguments_CommaKeyword_1_2_q = new TokenAlias(false, true, grammarAccess.getArgumentsAccess().getCommaKeyword_1_2());
 		match_arguments_FullStopFullStopFullStopKeyword_1_1_q = new TokenAlias(false, true, grammarAccess.getArgumentsAccess().getFullStopFullStopFullStopKeyword_1_1());
 		match_channelType_ChanKeyword_0_0_or___ChanKeyword_0_1_0_LessThanSignHyphenMinusKeyword_0_1_1___or___LessThanSignHyphenMinusKeyword_0_2_0_ChanKeyword_0_2_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getChannelTypeAccess().getChanKeyword_0_1_0()), new TokenAlias(false, false, grammarAccess.getChannelTypeAccess().getLessThanSignHyphenMinusKeyword_0_1_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getChannelTypeAccess().getLessThanSignHyphenMinusKeyword_0_2_0()), new TokenAlias(false, false, grammarAccess.getChannelTypeAccess().getChanKeyword_0_2_1())), new TokenAlias(false, false, grammarAccess.getChannelTypeAccess().getChanKeyword_0_0()));
+		match_constDecl_EosParserRuleCall_1_1_1_1_q = new TokenAlias(false, true, grammarAccess.getConstDeclAccess().getEosParserRuleCall_1_1_1_1());
 		match_conversion_CommaKeyword_3_q = new TokenAlias(false, true, grammarAccess.getConversionAccess().getCommaKeyword_3());
 		match_fieldDecl_STRING_LITTerminalRuleCall_1_q = new TokenAlias(false, true, grammarAccess.getFieldDeclAccess().getSTRING_LITTerminalRuleCall_1());
 		match_importDecl_EosParserRuleCall_1_1_1_1_q = new TokenAlias(false, true, grammarAccess.getImportDeclAccess().getEosParserRuleCall_1_1_1_1());
@@ -113,6 +115,8 @@ public class GoSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_arguments_FullStopFullStopFullStopKeyword_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_channelType_ChanKeyword_0_0_or___ChanKeyword_0_1_0_LessThanSignHyphenMinusKeyword_0_1_1___or___LessThanSignHyphenMinusKeyword_0_2_0_ChanKeyword_0_2_1__.equals(syntax))
 				emit_channelType_ChanKeyword_0_0_or___ChanKeyword_0_1_0_LessThanSignHyphenMinusKeyword_0_1_1___or___LessThanSignHyphenMinusKeyword_0_2_0_ChanKeyword_0_2_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_constDecl_EosParserRuleCall_1_1_1_1_q.equals(syntax))
+				emit_constDecl_EosParserRuleCall_1_1_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_conversion_CommaKeyword_3_q.equals(syntax))
 				emit_conversion_CommaKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_fieldDecl_STRING_LITTerminalRuleCall_1_q.equals(syntax))
@@ -182,6 +186,18 @@ public class GoSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) elemType=elementType
 	 */
 	protected void emit_channelType_ChanKeyword_0_0_or___ChanKeyword_0_1_0_LessThanSignHyphenMinusKeyword_0_1_1___or___LessThanSignHyphenMinusKeyword_0_2_0_ChanKeyword_0_2_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     eos?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     spec+=constSpec (ambiguity) ')' (rule end)
+	 *     spec+=constSpec (ambiguity) spec+=constSpec
+	 */
+	protected void emit_constDecl_EosParserRuleCall_1_1_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

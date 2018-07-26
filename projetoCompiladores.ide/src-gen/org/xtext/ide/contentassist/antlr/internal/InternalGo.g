@@ -4935,7 +4935,7 @@ rule__ConstDecl__Group_1_1_1__1__Impl
 :
 (
 	{ before(grammarAccess.getConstDeclAccess().getEosParserRuleCall_1_1_1_1()); }
-	ruleeos
+	(ruleeos)?
 	{ after(grammarAccess.getConstDeclAccess().getEosParserRuleCall_1_1_1_1()); }
 )
 ;

@@ -42,7 +42,8 @@ declaration:
 
 //ConstDecl      = "const" ( ConstSpec | "(" { ConstSpec ";" } ")" ) .
 constDecl: 
-	'const' ( spec+=constSpec | '(' ( spec+=constSpec eos )* ')' );
+	'const' ( spec+=constSpec | '(' ( spec+=constSpec eos?
+	)* ')' );
 
 //ConstSpec      = IdentifierList [ [ Type ] "=" ExpressionList ] .
 constSpec: 

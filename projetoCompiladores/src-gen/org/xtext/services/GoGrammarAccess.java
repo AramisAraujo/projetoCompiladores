@@ -308,16 +308,16 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		
 		////ConstDecl      = "const" ( ConstSpec | "(" { ConstSpec ";" } ")" ) .
 		//constDecl:
-		//	'const' (spec+=constSpec | '(' (spec+=constSpec eos)* ')');
+		//	'const' (spec+=constSpec | '(' (spec+=constSpec eos?)* ')');
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'const' (spec+=constSpec | '(' (spec+=constSpec eos)* ')')
+		//'const' (spec+=constSpec | '(' (spec+=constSpec eos?)* ')')
 		public Group getGroup() { return cGroup; }
 		
 		//'const'
 		public Keyword getConstKeyword_0() { return cConstKeyword_0; }
 		
-		//spec+=constSpec | '(' (spec+=constSpec eos)* ')'
+		//spec+=constSpec | '(' (spec+=constSpec eos?)* ')'
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
 		//spec+=constSpec
@@ -326,13 +326,13 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//constSpec
 		public RuleCall getSpecConstSpecParserRuleCall_1_0_0() { return cSpecConstSpecParserRuleCall_1_0_0; }
 		
-		//'(' (spec+=constSpec eos)* ')'
+		//'(' (spec+=constSpec eos?)* ')'
 		public Group getGroup_1_1() { return cGroup_1_1; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1_1_0() { return cLeftParenthesisKeyword_1_1_0; }
 		
-		//(spec+=constSpec eos)*
+		//(spec+=constSpec eos?)*
 		public Group getGroup_1_1_1() { return cGroup_1_1_1; }
 		
 		//spec+=constSpec
@@ -341,7 +341,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//constSpec
 		public RuleCall getSpecConstSpecParserRuleCall_1_1_1_0_0() { return cSpecConstSpecParserRuleCall_1_1_1_0_0; }
 		
-		//eos
+		//eos?
 		public RuleCall getEosParserRuleCall_1_1_1_1() { return cEosParserRuleCall_1_1_1_1; }
 		
 		//')'
@@ -4914,7 +4914,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////ConstDecl      = "const" ( ConstSpec | "(" { ConstSpec ";" } ")" ) .
 	//constDecl:
-	//	'const' (spec+=constSpec | '(' (spec+=constSpec eos)* ')');
+	//	'const' (spec+=constSpec | '(' (spec+=constSpec eos?)* ')');
 	public ConstDeclElements getConstDeclAccess() {
 		return pConstDecl;
 	}
