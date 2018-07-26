@@ -13,6 +13,7 @@ import org.xtext.go.basicLit;
 import org.xtext.go.expression;
 import org.xtext.go.expressionList;
 import org.xtext.go.functionDecl;
+import org.xtext.go.ifStmt;
 import org.xtext.go.importDecl;
 import org.xtext.go.importSpec;
 import org.xtext.go.literal;
@@ -133,8 +134,10 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   @Check
-  public Object ifDclrCheck() {
-    return null;
+  public void ifDclrCheck(final ifStmt stmt) {
+    if (((stmt.getExpr() == null) && (stmt.getSimplStatement() == null))) {
+      this.error("Semantic Error: Invalid declaration", null);
+    }
   }
   
   @Check

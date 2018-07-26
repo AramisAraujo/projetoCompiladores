@@ -4,19 +4,16 @@
 package org.xtext.validation
 
 import org.eclipse.xtext.validation.Check
-import org.xtext.go.expression
 import org.xtext.go.basicLit
-import org.xtext.go.constDecl
-import org.xtext.go.varDecl
-import org.xtext.go.importDecl
+import org.xtext.go.expression
+import org.xtext.go.expressionList
 import org.xtext.go.functionDecl
+import org.xtext.go.ifStmt
+import org.xtext.go.importDecl
 import org.xtext.go.operand
 import org.xtext.go.shortVarDecl
-import org.xtext.go.expressionList
-
-import org.xtext.go.typeName
-import java.util.ArrayList
 import org.xtext.go.type
+import org.xtext.go.varDecl
 
 /**
  * This class contains custom validation rules. 
@@ -125,8 +122,10 @@ class GoValidator extends AbstractGoValidator {
 	}
 
 	@Check
-	def ifDclrCheck() {
-		// TODO: GOD PLEASE HELP ME
+	def ifDclrCheck(ifStmt stmt) {
+		if(stmt.expr === null && stmt.simplStatement === null) {
+			error("Semantic Error: Invalid declaration", null);
+		}
 	}
 
 	@Check
