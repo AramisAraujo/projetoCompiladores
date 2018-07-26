@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.compositeLit#getLiteralType <em>Literal Type</em>}</li>
  *   <li>{@link org.xtext.go.compositeLit#getLiteralValue <em>Literal Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getcompositeLit()
  * @model

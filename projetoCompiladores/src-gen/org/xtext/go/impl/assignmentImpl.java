@@ -22,12 +22,12 @@ import org.xtext.go.expressionList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.assignmentImpl#getExprList1 <em>Expr List1</em>}</li>
  *   <li>{@link org.xtext.go.impl.assignmentImpl#getOperation <em>Operation</em>}</li>
  *   <li>{@link org.xtext.go.impl.assignmentImpl#getExprList2 <em>Expr List2</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -327,7 +327,7 @@ public class assignmentImpl extends MinimalEObjectImpl.Container implements assi
   {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (operation: ");
     result.append(operation);
     result.append(')');

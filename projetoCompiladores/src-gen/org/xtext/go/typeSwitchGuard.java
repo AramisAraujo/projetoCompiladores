@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.typeSwitchGuard#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.go.typeSwitchGuard#getPrimaryExpression <em>Primary Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#gettypeSwitchGuard()
  * @model

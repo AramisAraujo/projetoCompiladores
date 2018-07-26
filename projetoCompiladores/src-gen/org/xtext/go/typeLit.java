@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.typeLit#getLit <em>Lit</em>}</li>
  *   <li>{@link org.xtext.go.typeLit#getContentType <em>Content Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#gettypeLit()
  * @model

@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.unaryExpr#getPrimaryExpr <em>Primary Expr</em>}</li>
  *   <li>{@link org.xtext.go.unaryExpr#getUnaryExpr <em>Unary Expr</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getunaryExpr()
  * @model

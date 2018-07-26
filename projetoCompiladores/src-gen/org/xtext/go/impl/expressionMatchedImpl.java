@@ -22,11 +22,11 @@ import org.xtext.go.expressionMatched;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.expressionMatchedImpl#getOperator <em>Operator</em>}</li>
  *   <li>{@link org.xtext.go.impl.expressionMatchedImpl#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -256,7 +256,7 @@ public class expressionMatchedImpl extends MinimalEObjectImpl.Container implemen
   {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (operator: ");
     result.append(operator);
     result.append(')');

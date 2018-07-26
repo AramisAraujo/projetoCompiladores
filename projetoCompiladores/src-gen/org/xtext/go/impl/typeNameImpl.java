@@ -22,11 +22,11 @@ import org.xtext.go.typeName;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.typeNameImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.go.impl.typeNameImpl#getQualIdent <em>Qual Ident</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -256,7 +256,7 @@ public class typeNameImpl extends MinimalEObjectImpl.Container implements typeNa
   {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
     result.append(')');

@@ -22,12 +22,12 @@ import org.xtext.go.slice;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.sliceImpl#getExpr1 <em>Expr1</em>}</li>
  *   <li>{@link org.xtext.go.impl.sliceImpl#getExpr2 <em>Expr2</em>}</li>
  *   <li>{@link org.xtext.go.impl.sliceImpl#getExpr3 <em>Expr3</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

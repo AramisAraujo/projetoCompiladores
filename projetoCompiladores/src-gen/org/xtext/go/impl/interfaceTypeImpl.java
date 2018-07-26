@@ -27,10 +27,10 @@ import org.xtext.go.methodSpec;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.interfaceTypeImpl#getMethodSpecs <em>Method Specs</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

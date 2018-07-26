@@ -12,13 +12,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.methodDecl#getParams <em>Params</em>}</li>
  *   <li>{@link org.xtext.go.methodDecl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.go.methodDecl#getFunc <em>Func</em>}</li>
  *   <li>{@link org.xtext.go.methodDecl#getSig <em>Sig</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getmethodDecl()
  * @model

@@ -12,12 +12,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.literal#getLitBasic <em>Lit Basic</em>}</li>
  *   <li>{@link org.xtext.go.literal#getLitComposite <em>Lit Composite</em>}</li>
  *   <li>{@link org.xtext.go.literal#getLitFunc <em>Lit Func</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getliteral()
  * @model

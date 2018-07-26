@@ -12,10 +12,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.methodExpr#getReceiverType <em>Receiver Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getmethodExpr()
  * @model

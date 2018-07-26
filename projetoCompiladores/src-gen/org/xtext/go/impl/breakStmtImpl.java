@@ -19,10 +19,10 @@ import org.xtext.go.breakStmt;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.breakStmtImpl#getLabel <em>Label</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -168,7 +168,7 @@ public class breakStmtImpl extends MinimalEObjectImpl.Container implements break
   {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (label: ");
     result.append(label);
     result.append(')');

@@ -23,11 +23,11 @@ import org.xtext.go.signature;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.signatureImpl#getParams <em>Params</em>}</li>
  *   <li>{@link org.xtext.go.impl.signatureImpl#getResult <em>Result</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

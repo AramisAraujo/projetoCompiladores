@@ -3,15 +3,13 @@
  */
 package org.xtext.generator;
 
-import com.google.common.collect.Iterables;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.generator.IFileSystemAccess;
-import org.eclipse.xtext.generator.IGenerator;
+import org.eclipse.xtext.generator.AbstractGenerator;
+import org.eclipse.xtext.generator.IFileSystemAccess2;
+import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.xbase.lib.ExclusiveRange;
-import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.xtext.go.assignment;
 import org.xtext.go.block;
 import org.xtext.go.breakStmt;
@@ -42,7 +40,7 @@ import org.xtext.go.switchStmt;
  * «»
  */
 @SuppressWarnings("all")
-public class GoGenerator implements IGenerator {
+public class GoGenerator extends AbstractGenerator {
   private Integer counter = Integer.valueOf(1);
   
   private Integer variables = Integer.valueOf(1);
@@ -50,17 +48,16 @@ public class GoGenerator implements IGenerator {
   private Integer address = Integer.valueOf(0);
   
   @Override
-  public void doGenerate(final Resource input, final IFileSystemAccess fsa) {
-    this.counter = Integer.valueOf(1);
-    Iterable<ifStmt> _filter = Iterables.<ifStmt>filter(IteratorExtensions.<EObject>toIterable(input.getAllContents()), ifStmt.class);
-    for (final ifStmt e : _filter) {
-      {
-        fsa.generateFile((("stmt" + this.counter) + ".txt"), this.compileIfStatement(e));
-        this.counter++;
-      }
-    }
+  public void doGenerate(final Resource input, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    fsa.generateFile("file.txt", "TESTE GO");
   }
   
+  /**
+   * for(e : input.allContents.toIterable.filter(ifStmt)) {
+   * fsa.generateFile("stmt" + counter + ".txt", e.compileIfStatement());
+   * counter++;
+   * }
+   */
   public CharSequence compileIfStatement(final ifStmt stmt) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append(this.address);

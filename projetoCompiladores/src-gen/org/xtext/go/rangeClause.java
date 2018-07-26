@@ -12,12 +12,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.rangeClause#getExprList <em>Expr List</em>}</li>
  *   <li>{@link org.xtext.go.rangeClause#getIdList <em>Id List</em>}</li>
  *   <li>{@link org.xtext.go.rangeClause#getExpr <em>Expr</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getrangeClause()
  * @model

@@ -31,12 +31,12 @@ import org.xtext.go.varSpec;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.varSpecImpl#getIdList <em>Id List</em>}</li>
  *   <li>{@link org.xtext.go.impl.varSpecImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.go.impl.varSpecImpl#getExprList <em>Expr List</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.basicLit#getIntLit <em>Int Lit</em>}</li>
  *   <li>{@link org.xtext.go.basicLit#getFloatLit <em>Float Lit</em>}</li>
@@ -19,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.go.basicLit#getRuneLit <em>Rune Lit</em>}</li>
  *   <li>{@link org.xtext.go.basicLit#getStringLit <em>String Lit</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getbasicLit()
  * @model

@@ -24,13 +24,13 @@ import org.xtext.go.signature;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.methodDeclImpl#getParams <em>Params</em>}</li>
  *   <li>{@link org.xtext.go.impl.methodDeclImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.go.impl.methodDeclImpl#getFunc <em>Func</em>}</li>
  *   <li>{@link org.xtext.go.impl.methodDeclImpl#getSig <em>Sig</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -400,7 +400,7 @@ public class methodDeclImpl extends MinimalEObjectImpl.Container implements meth
   {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
     result.append(')');

@@ -22,10 +22,10 @@ import org.xtext.go.declaration;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.declarationImpl#getDecl <em>Decl</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

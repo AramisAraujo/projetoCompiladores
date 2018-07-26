@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.primaryExprIndex#getContent <em>Content</em>}</li>
  *   <li>{@link org.xtext.go.primaryExprIndex#getPrimaryExprIndex <em>Primary Expr Index</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getprimaryExprIndex()
  * @model

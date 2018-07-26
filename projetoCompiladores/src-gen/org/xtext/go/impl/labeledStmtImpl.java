@@ -22,11 +22,11 @@ import org.xtext.go.statement;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.labeledStmtImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link org.xtext.go.impl.labeledStmtImpl#getStmt <em>Stmt</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -256,7 +256,7 @@ public class labeledStmtImpl extends MinimalEObjectImpl.Container implements lab
   {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (label: ");
     result.append(label);
     result.append(')');

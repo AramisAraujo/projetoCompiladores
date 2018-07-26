@@ -12,12 +12,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.assignment#getExprList1 <em>Expr List1</em>}</li>
  *   <li>{@link org.xtext.go.assignment#getOperation <em>Operation</em>}</li>
  *   <li>{@link org.xtext.go.assignment#getExprList2 <em>Expr List2</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getassignment()
  * @model

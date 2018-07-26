@@ -23,11 +23,11 @@ import org.xtext.go.shortVarDecl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.shortVarDeclImpl#getIdList <em>Id List</em>}</li>
  *   <li>{@link org.xtext.go.impl.shortVarDeclImpl#getExprList <em>Expr List</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

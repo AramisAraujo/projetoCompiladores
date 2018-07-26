@@ -14,10 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.parameterList#getParamsDecl <em>Params Decl</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getparameterList()
  * @model

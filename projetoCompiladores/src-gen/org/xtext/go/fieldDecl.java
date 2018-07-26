@@ -12,12 +12,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.fieldDecl#getIdentifierList <em>Identifier List</em>}</li>
  *   <li>{@link org.xtext.go.fieldDecl#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.go.fieldDecl#getAnonymousField <em>Anonymous Field</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getfieldDecl()
  * @model

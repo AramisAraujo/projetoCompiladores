@@ -23,11 +23,11 @@ import org.xtext.go.signature;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.functionImpl#getSig <em>Sig</em>}</li>
  *   <li>{@link org.xtext.go.impl.functionImpl#getCodeBlock <em>Code Block</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

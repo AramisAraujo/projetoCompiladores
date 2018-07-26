@@ -31,12 +31,12 @@ import org.xtext.go.typeSwitchStmt;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.typeSwitchStmtImpl#getSimpleStatement <em>Simple Statement</em>}</li>
  *   <li>{@link org.xtext.go.impl.typeSwitchStmtImpl#getTypeSwitchGuard <em>Type Switch Guard</em>}</li>
  *   <li>{@link org.xtext.go.impl.typeSwitchStmtImpl#getTypeCaseClauses <em>Type Case Clauses</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

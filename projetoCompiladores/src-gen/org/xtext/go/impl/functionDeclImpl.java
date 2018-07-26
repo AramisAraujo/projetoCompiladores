@@ -23,12 +23,12 @@ import org.xtext.go.signature;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.functionDeclImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.go.impl.functionDeclImpl#getFunc <em>Func</em>}</li>
  *   <li>{@link org.xtext.go.impl.functionDeclImpl#getSig <em>Sig</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -328,7 +328,7 @@ public class functionDeclImpl extends MinimalEObjectImpl.Container implements fu
   {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
     result.append(')');

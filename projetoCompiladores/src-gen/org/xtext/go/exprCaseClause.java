@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.exprCaseClause#getExprSwitchCase <em>Expr Switch Case</em>}</li>
  *   <li>{@link org.xtext.go.exprCaseClause#getStmtList <em>Stmt List</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getexprCaseClause()
  * @model

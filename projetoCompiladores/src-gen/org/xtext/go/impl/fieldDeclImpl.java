@@ -24,12 +24,12 @@ import org.xtext.go.type;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.fieldDeclImpl#getIdentifierList <em>Identifier List</em>}</li>
  *   <li>{@link org.xtext.go.impl.fieldDeclImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.go.impl.fieldDeclImpl#getAnonymousField <em>Anonymous Field</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -14,12 +14,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.typeSwitchStmt#getSimpleStatement <em>Simple Statement</em>}</li>
  *   <li>{@link org.xtext.go.typeSwitchStmt#getTypeSwitchGuard <em>Type Switch Guard</em>}</li>
  *   <li>{@link org.xtext.go.typeSwitchStmt#getTypeCaseClauses <em>Type Case Clauses</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#gettypeSwitchStmt()
  * @model

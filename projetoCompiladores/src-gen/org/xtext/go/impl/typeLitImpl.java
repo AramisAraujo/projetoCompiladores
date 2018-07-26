@@ -22,11 +22,11 @@ import org.xtext.go.typeLit;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.typeLitImpl#getLit <em>Lit</em>}</li>
  *   <li>{@link org.xtext.go.impl.typeLitImpl#getContentType <em>Content Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -256,7 +256,7 @@ public class typeLitImpl extends MinimalEObjectImpl.Container implements typeLit
   {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (contentType: ");
     result.append(contentType);
     result.append(')');

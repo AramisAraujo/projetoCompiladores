@@ -23,12 +23,12 @@ import org.xtext.go.typeName;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.methodSpecImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.go.impl.methodSpecImpl#getSig <em>Sig</em>}</li>
  *   <li>{@link org.xtext.go.impl.methodSpecImpl#getTypeName <em>Type Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -328,7 +328,7 @@ public class methodSpecImpl extends MinimalEObjectImpl.Container implements meth
   {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
     result.append(')');

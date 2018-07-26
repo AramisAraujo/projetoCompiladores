@@ -24,12 +24,12 @@ import org.xtext.go.literal;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.literalImpl#getLitBasic <em>Lit Basic</em>}</li>
  *   <li>{@link org.xtext.go.impl.literalImpl#getLitComposite <em>Lit Composite</em>}</li>
  *   <li>{@link org.xtext.go.impl.literalImpl#getLitFunc <em>Lit Func</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

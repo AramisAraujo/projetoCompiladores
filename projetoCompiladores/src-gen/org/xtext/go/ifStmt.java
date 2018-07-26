@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.ifStmt#getSimplStatement <em>Simpl Statement</em>}</li>
  *   <li>{@link org.xtext.go.ifStmt#getExpr <em>Expr</em>}</li>
@@ -19,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.go.ifStmt#getIfStatement <em>If Statement</em>}</li>
  *   <li>{@link org.xtext.go.ifStmt#getCodeBlockIf <em>Code Block If</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getifStmt()
  * @model

@@ -23,11 +23,11 @@ import org.xtext.go.elementType;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.arrayTypeImpl#getArrayLength <em>Array Length</em>}</li>
  *   <li>{@link org.xtext.go.impl.arrayTypeImpl#getElemType <em>Elem Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

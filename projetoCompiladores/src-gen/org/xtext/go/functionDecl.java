@@ -12,12 +12,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.functionDecl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.go.functionDecl#getFunc <em>Func</em>}</li>
  *   <li>{@link org.xtext.go.functionDecl#getSig <em>Sig</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getfunctionDecl()
  * @model

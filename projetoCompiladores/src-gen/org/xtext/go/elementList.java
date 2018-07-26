@@ -14,10 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.elementList#getKeyedElements <em>Keyed Elements</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getelementList()
  * @model

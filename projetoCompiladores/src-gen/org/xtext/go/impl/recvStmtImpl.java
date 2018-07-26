@@ -24,12 +24,12 @@ import org.xtext.go.recvStmt;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.recvStmtImpl#getExprList <em>Expr List</em>}</li>
  *   <li>{@link org.xtext.go.impl.recvStmtImpl#getIdList <em>Id List</em>}</li>
  *   <li>{@link org.xtext.go.impl.recvStmtImpl#getExpr <em>Expr</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

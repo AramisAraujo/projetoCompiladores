@@ -22,10 +22,10 @@ import org.xtext.go.receiverType;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.methodExprImpl#getReceiverType <em>Receiver Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

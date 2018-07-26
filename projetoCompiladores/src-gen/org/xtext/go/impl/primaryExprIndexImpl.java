@@ -22,11 +22,11 @@ import org.xtext.go.primaryExprStuff;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.primaryExprIndexImpl#getContent <em>Content</em>}</li>
  *   <li>{@link org.xtext.go.impl.primaryExprIndexImpl#getPrimaryExprIndex <em>Primary Expr Index</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

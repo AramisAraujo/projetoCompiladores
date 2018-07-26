@@ -22,11 +22,11 @@ import org.xtext.go.typeSwitchGuard;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.typeSwitchGuardImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.go.impl.typeSwitchGuardImpl#getPrimaryExpression <em>Primary Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -256,7 +256,7 @@ public class typeSwitchGuardImpl extends MinimalEObjectImpl.Container implements
   {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
     result.append(')');

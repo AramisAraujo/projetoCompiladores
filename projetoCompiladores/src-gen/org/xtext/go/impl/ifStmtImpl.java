@@ -24,6 +24,7 @@ import org.xtext.go.simpleStmt;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.ifStmtImpl#getSimplStatement <em>Simpl Statement</em>}</li>
  *   <li>{@link org.xtext.go.impl.ifStmtImpl#getExpr <em>Expr</em>}</li>
@@ -31,7 +32,6 @@ import org.xtext.go.simpleStmt;
  *   <li>{@link org.xtext.go.impl.ifStmtImpl#getIfStatement <em>If Statement</em>}</li>
  *   <li>{@link org.xtext.go.impl.ifStmtImpl#getCodeBlockIf <em>Code Block If</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

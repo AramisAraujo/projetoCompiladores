@@ -898,7 +898,7 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
 
   /**
    * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-   * 
+   *
    * <p>This method is used to initialize {@link GoPackage#eINSTANCE} when that field is accessed.
    * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
    * <!-- begin-user-doc -->
@@ -913,7 +913,8 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
     if (isInited) return (GoPackage)EPackage.Registry.INSTANCE.getEPackage(GoPackage.eNS_URI);
 
     // Obtain or create and register package
-    GoPackageImpl theGoPackage = (GoPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof GoPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new GoPackageImpl());
+    Object registeredGoPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+    GoPackageImpl theGoPackage = registeredGoPackage instanceof GoPackageImpl ? (GoPackageImpl)registeredGoPackage : new GoPackageImpl();
 
     isInited = true;
 
@@ -926,7 +927,6 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
     // Mark meta-data to indicate it can't be changed
     theGoPackage.freeze();
 
-  
     // Update the registry and return the package
     EPackage.Registry.INSTANCE.put(GoPackage.eNS_URI, theGoPackage);
     return theGoPackage;

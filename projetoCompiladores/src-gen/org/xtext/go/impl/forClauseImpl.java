@@ -23,12 +23,12 @@ import org.xtext.go.simpleStmt;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.forClauseImpl#getStatement1 <em>Statement1</em>}</li>
  *   <li>{@link org.xtext.go.impl.forClauseImpl#getExpr <em>Expr</em>}</li>
  *   <li>{@link org.xtext.go.impl.forClauseImpl#getStatement2 <em>Statement2</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

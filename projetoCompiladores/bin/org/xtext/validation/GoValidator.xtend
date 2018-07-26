@@ -57,7 +57,7 @@ class GoValidator extends AbstractGoValidator {
 
 	def checkLiteral(literal literal) {
 		if (literal.getLitBasic() !== null) {
-			return checkLitBasic(literal.getLitBasic());
+			return checkLitBasic(literal.getLitBasic().toString());
 		}
 		if (literal.getLitComposite() !== null) {
 			checkLitComposite(literal.getLitComposite());

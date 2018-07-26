@@ -22,11 +22,11 @@ import org.xtext.go.unaryExpr;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.unaryExprImpl#getPrimaryExpr <em>Primary Expr</em>}</li>
  *   <li>{@link org.xtext.go.impl.unaryExprImpl#getUnaryExpr <em>Unary Expr</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

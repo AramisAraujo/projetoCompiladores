@@ -25,13 +25,13 @@ import org.xtext.go.operandName;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.operandImpl#getLiteral <em>Literal</em>}</li>
  *   <li>{@link org.xtext.go.impl.operandImpl#getOperandName <em>Operand Name</em>}</li>
  *   <li>{@link org.xtext.go.impl.operandImpl#getMethodExpr <em>Method Expr</em>}</li>
  *   <li>{@link org.xtext.go.impl.operandImpl#getExpr <em>Expr</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

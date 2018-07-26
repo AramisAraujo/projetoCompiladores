@@ -14,12 +14,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.exprSwitchStmt#getSimpleStmt <em>Simple Stmt</em>}</li>
  *   <li>{@link org.xtext.go.exprSwitchStmt#getExpr <em>Expr</em>}</li>
  *   <li>{@link org.xtext.go.exprSwitchStmt#getExprCaseClauses <em>Expr Case Clauses</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getexprSwitchStmt()
  * @model

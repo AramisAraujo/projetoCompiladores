@@ -27,10 +27,10 @@ import org.xtext.go.importSpec;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.importDeclImpl#getSpecs <em>Specs</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

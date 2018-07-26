@@ -22,10 +22,10 @@ import org.xtext.go.sliceType;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.sliceTypeImpl#getElemType <em>Elem Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

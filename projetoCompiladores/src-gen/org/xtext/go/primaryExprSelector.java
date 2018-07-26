@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.primaryExprSelector#getContent <em>Content</em>}</li>
  *   <li>{@link org.xtext.go.primaryExprSelector#getPrimaryExprSelector <em>Primary Expr Selector</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getprimaryExprSelector()
  * @model

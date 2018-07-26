@@ -19,10 +19,10 @@ import org.xtext.go.gotoStmt;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.gotoStmtImpl#getLabel <em>Label</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -168,7 +168,7 @@ public class gotoStmtImpl extends MinimalEObjectImpl.Container implements gotoSt
   {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (label: ");
     result.append(label);
     result.append(')');

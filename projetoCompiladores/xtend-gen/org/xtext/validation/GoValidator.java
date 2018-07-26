@@ -8,6 +8,7 @@ import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.xtext.go.GoPackage;
 import org.xtext.go.assignment;
+import org.xtext.go.basicLit;
 import org.xtext.go.compositeLit;
 import org.xtext.go.conversion;
 import org.xtext.go.expression;
@@ -72,8 +73,27 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   public Object checkLiteral(final literal literal) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nType mismatch: cannot convert from basicLit to String");
+    Object _xblockexpression = null;
+    {
+      basicLit _litBasic = literal.getLitBasic();
+      boolean _tripleNotEquals = (_litBasic != null);
+      if (_tripleNotEquals) {
+        return this.checkLitBasic(literal.getLitBasic().toString());
+      }
+      compositeLit _litComposite = literal.getLitComposite();
+      boolean _tripleNotEquals_1 = (_litComposite != null);
+      if (_tripleNotEquals_1) {
+        this.checkLitComposite(literal.getLitComposite());
+      }
+      Object _xifexpression = null;
+      functionLit _litFunc = literal.getLitFunc();
+      boolean _tripleNotEquals_2 = (_litFunc != null);
+      if (_tripleNotEquals_2) {
+        _xifexpression = this.checkLitFunc(literal.getLitFunc());
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
   }
   
   public String checkLitBasic(final String string) {

@@ -24,12 +24,12 @@ import org.xtext.go.type;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.constSpecImpl#getIdentifiers <em>Identifiers</em>}</li>
  *   <li>{@link org.xtext.go.impl.constSpecImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.go.impl.constSpecImpl#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

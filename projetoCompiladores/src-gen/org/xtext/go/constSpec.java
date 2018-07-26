@@ -12,12 +12,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.constSpec#getIdentifiers <em>Identifiers</em>}</li>
  *   <li>{@link org.xtext.go.constSpec#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.go.constSpec#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getconstSpec()
  * @model

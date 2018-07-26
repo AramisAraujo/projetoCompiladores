@@ -27,10 +27,10 @@ import org.xtext.go.selectStmt;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.selectStmtImpl#getCommClauses <em>Comm Clauses</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

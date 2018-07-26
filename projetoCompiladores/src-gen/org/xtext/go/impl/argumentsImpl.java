@@ -23,11 +23,11 @@ import org.xtext.go.type;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.argumentsImpl#getExpressionList <em>Expression List</em>}</li>
  *   <li>{@link org.xtext.go.impl.argumentsImpl#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

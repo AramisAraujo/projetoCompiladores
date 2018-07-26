@@ -27,6 +27,7 @@ import org.xtext.go.simpleStmt;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.simpleStmtImpl#getSendStmt <em>Send Stmt</em>}</li>
  *   <li>{@link org.xtext.go.impl.simpleStmtImpl#getExpressionStmt <em>Expression Stmt</em>}</li>
@@ -35,7 +36,6 @@ import org.xtext.go.simpleStmt;
  *   <li>{@link org.xtext.go.impl.simpleStmtImpl#getShortVarDecl <em>Short Var Decl</em>}</li>
  *   <li>{@link org.xtext.go.impl.simpleStmtImpl#getEmptyStmt <em>Empty Stmt</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

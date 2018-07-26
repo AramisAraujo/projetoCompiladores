@@ -12,13 +12,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.operand#getLiteral <em>Literal</em>}</li>
  *   <li>{@link org.xtext.go.operand#getOperandName <em>Operand Name</em>}</li>
  *   <li>{@link org.xtext.go.operand#getMethodExpr <em>Method Expr</em>}</li>
  *   <li>{@link org.xtext.go.operand#getExpr <em>Expr</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getoperand()
  * @model

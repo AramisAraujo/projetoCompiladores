@@ -7,6 +7,9 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
 import org.xtext.go.*
+import org.eclipse.xtext.generator.AbstractGenerator
+import org.eclipse.xtext.generator.IFileSystemAccess2
+import org.eclipse.xtext.generator.IGeneratorContext
 
 /**
  * Generates code from your model files on save.
@@ -15,19 +18,24 @@ import org.xtext.go.*
  * «»
  */
  
-class GoGenerator implements IGenerator {
+class GoGenerator extends AbstractGenerator {
 	Integer counter = 1;
 	Integer variables = 1;
 	
 	Integer address = 0;
 	
-	override doGenerate(Resource input, IFileSystemAccess fsa) {
-		counter = 1;
-		for(e : input.allContents.toIterable.filter(ifStmt)) {
+	override doGenerate(Resource input, IFileSystemAccess2 fsa, IGeneratorContext context) {
+		fsa.generateFile("file.txt", "TESTE GO");
+	}
+	
+	//override void doGenerate(Resource input, IFileSystemAccess fsa) {
+		//counter = 1;
+		//fsa.generateFile("file.txt", "TESTE GO");
+		/*for(e : input.allContents.toIterable.filter(ifStmt)) {
 			fsa.generateFile("stmt" + counter + ".txt", e.compileIfStatement());
 			counter++;
-		}
-	}
+		}*/
+	//}
 		
 	def CharSequence compileIfStatement(ifStmt stmt) '''
 		«address»: LD SP, 1000
@@ -213,4 +221,5 @@ class GoGenerator implements IGenerator {
 	def void increment() {
 		variables++;
 	}
+	
 }

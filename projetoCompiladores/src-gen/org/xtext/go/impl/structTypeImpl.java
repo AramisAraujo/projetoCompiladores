@@ -27,10 +27,10 @@ import org.xtext.go.structType;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.structTypeImpl#getFieldsDecl <em>Fields Decl</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

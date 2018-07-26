@@ -27,10 +27,10 @@ import org.xtext.go.typeSpec;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.typeDeclImpl#getSpec <em>Spec</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

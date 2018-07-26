@@ -19,11 +19,11 @@ import org.xtext.go.qualifiedIdent;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.qualifiedIdentImpl#getPackageName <em>Package Name</em>}</li>
  *   <li>{@link org.xtext.go.impl.qualifiedIdentImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -222,7 +222,7 @@ public class qualifiedIdentImpl extends MinimalEObjectImpl.Container implements 
   {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (packageName: ");
     result.append(packageName);
     result.append(", name: ");

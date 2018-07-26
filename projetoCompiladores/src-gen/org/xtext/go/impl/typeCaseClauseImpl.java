@@ -23,11 +23,11 @@ import org.xtext.go.typeSwitchCase;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.typeCaseClauseImpl#getTypeSwitchCase <em>Type Switch Case</em>}</li>
  *   <li>{@link org.xtext.go.impl.typeCaseClauseImpl#getStatementList <em>Statement List</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

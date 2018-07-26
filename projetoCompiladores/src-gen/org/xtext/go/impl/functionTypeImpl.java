@@ -22,10 +22,10 @@ import org.xtext.go.signature;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.functionTypeImpl#getSig <em>Sig</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

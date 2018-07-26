@@ -12,12 +12,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.slice#getExpr1 <em>Expr1</em>}</li>
  *   <li>{@link org.xtext.go.slice#getExpr2 <em>Expr2</em>}</li>
  *   <li>{@link org.xtext.go.slice#getExpr3 <em>Expr3</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getslice()
  * @model

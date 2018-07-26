@@ -22,10 +22,10 @@ import org.xtext.go.identifierList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.identifierListImpl#getIds <em>Ids</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -154,7 +154,7 @@ public class identifierListImpl extends MinimalEObjectImpl.Container implements 
   {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (ids: ");
     result.append(ids);
     result.append(')');

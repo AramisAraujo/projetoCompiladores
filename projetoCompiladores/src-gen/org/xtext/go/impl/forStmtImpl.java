@@ -24,12 +24,12 @@ import org.xtext.go.forStmt;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.forStmtImpl#getExpr <em>Expr</em>}</li>
  *   <li>{@link org.xtext.go.impl.forStmtImpl#getClause <em>Clause</em>}</li>
  *   <li>{@link org.xtext.go.impl.forStmtImpl#getCodeBlock <em>Code Block</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

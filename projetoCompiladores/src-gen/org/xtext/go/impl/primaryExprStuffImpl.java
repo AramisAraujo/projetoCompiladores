@@ -26,6 +26,7 @@ import org.xtext.go.typeAssertion;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.primaryExprStuffImpl#getSelector <em>Selector</em>}</li>
  *   <li>{@link org.xtext.go.impl.primaryExprStuffImpl#getIndex <em>Index</em>}</li>
@@ -33,7 +34,6 @@ import org.xtext.go.typeAssertion;
  *   <li>{@link org.xtext.go.impl.primaryExprStuffImpl#getTypeAssertion <em>Type Assertion</em>}</li>
  *   <li>{@link org.xtext.go.impl.primaryExprStuffImpl#getArguments <em>Arguments</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

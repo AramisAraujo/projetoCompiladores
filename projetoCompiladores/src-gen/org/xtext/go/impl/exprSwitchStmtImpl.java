@@ -31,12 +31,12 @@ import org.xtext.go.simpleStmt;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.exprSwitchStmtImpl#getSimpleStmt <em>Simple Stmt</em>}</li>
  *   <li>{@link org.xtext.go.impl.exprSwitchStmtImpl#getExpr <em>Expr</em>}</li>
  *   <li>{@link org.xtext.go.impl.exprSwitchStmtImpl#getExprCaseClauses <em>Expr Case Clauses</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

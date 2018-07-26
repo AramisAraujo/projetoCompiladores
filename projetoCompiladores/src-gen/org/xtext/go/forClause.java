@@ -12,12 +12,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.forClause#getStatement1 <em>Statement1</em>}</li>
  *   <li>{@link org.xtext.go.forClause#getExpr <em>Expr</em>}</li>
  *   <li>{@link org.xtext.go.forClause#getStatement2 <em>Statement2</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getforClause()
  * @model

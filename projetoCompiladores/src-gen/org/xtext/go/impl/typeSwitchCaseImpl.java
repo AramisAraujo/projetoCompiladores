@@ -22,10 +22,10 @@ import org.xtext.go.typeSwitchCase;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.typeSwitchCaseImpl#getTypeList <em>Type List</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

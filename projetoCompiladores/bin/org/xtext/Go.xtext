@@ -18,7 +18,7 @@ packageClause :
 	'package' packageName=IDENTIFIER;
 
 importDecl: 
-	'import' ( specs+=importSpec | '(' ( specs+=importSpec eos?
+	{importDecl} 'import' ( specs+=importSpec | '(' ( specs+=importSpec eos?
 	 )* ')' );
 
 importSpec: 
@@ -42,7 +42,7 @@ declaration:
 
 //ConstDecl      = "const" ( ConstSpec | "(" { ConstSpec ";" } ")" ) .
 constDecl: 
-	'const' ( spec+=constSpec | '(' ( spec+=constSpec eos )* ')' );
+	{constDecl} 'const' ( spec+=constSpec | '(' ( spec+=constSpec eos )* ')' );
 
 //ConstSpec      = IdentifierList [ [ Type ] "=" ExpressionList ] .
 constSpec: 
@@ -59,7 +59,7 @@ expressionList:
 
 //TypeDecl     = "type" ( TypeSpec | "(" { TypeSpec ";" } ")" ) .
 typeDecl: 
-	'type' ( spec+=typeSpec | '(' ( spec+=typeSpec eos )* ')' );
+	{typeDecl} 'type' ( spec+=typeSpec | '(' ( spec+=typeSpec eos )* ')' );
 
 //TypeSpec     = identifier Type .
 typeSpec: 
@@ -89,7 +89,7 @@ receiver:
 //VarDecl     = "var" ( VarSpec | "(" { VarSpec ";" } ")" ) .
 //VarSpec     = IdentifierList ( Type [ "=" ExpressionList ] | "=" ExpressionList ) .
 varDecl: 
-	'var' ( specs+=varSpec | '(' ( specs+=varSpec eos )* ')' );
+	{varDecl} 'var' ( specs+=varSpec | '(' ( specs+=varSpec eos )* ')' );
 
 varSpec: 
 	idList=identifierList ( type=type ( '=' exprList+=expressionList )? |
@@ -102,7 +102,7 @@ block:
 
 //StatementList = { Statement ";" } .
 statementList: 
-	( statements+=statement eos )*;
+	{statementList} ( statements+=statement eos )*;
 
 statement: 
 	declaration=declaration
@@ -167,15 +167,15 @@ labeledStmt:
 
 //ReturnStmt = "return" [ ExpressionList ] .
 returnStmt: 
-	'return' exprList=expressionList?;
+	{returnStmt} 'return' exprList=expressionList?;
 
 //BreakStmt = "break" [ Label ] .
 breakStmt: 
-	'break' label=IDENTIFIER?;
+	{breakStmt} 'break' label=IDENTIFIER?;
 
 //ContinueStmt = "continue" [ Label ] .
 continueStmt: 
-	'continue' label=IDENTIFIER?;
+	{continueStmt} 'continue' label=IDENTIFIER?;
 
 //GotoStmt = "goto" Label .
 gotoStmt: 
@@ -202,14 +202,14 @@ switchStmt:
 //ExprCaseClause = ExprSwitchCase ":" StatementList .
 //ExprSwitchCase = "case" ExpressionList | "default" .
 exprSwitchStmt: 
-	'switch' ( simpleStmt=simpleStmt eos )? expr=expression?
+	{exprSwitchStmt} 'switch' ( simpleStmt=simpleStmt eos )? expr=expression?
 	 '{' exprCaseClauses+=exprCaseClause* '}';
 
 exprCaseClause: 
 	exprSwitchCase=exprSwitchCase ':' stmtList=statementList;
 
 exprSwitchCase: 
-	'case' exprList=expressionList | 'default';
+	'case' exprList=expressionList | {exprSwitchCase} 'default';
 
 //TypeSwitchStmt  = "switch" [ SimpleStmt ";" ] TypeSwitchGuard "{" { TypeCaseClause } "}" .
 //TypeSwitchGuard = [ identifier ":=" ] PrimaryExpr "." "(" "type" ")" .
@@ -227,7 +227,7 @@ typeCaseClause:
 	typeSwitchCase=typeSwitchCase ':' statementList=statementList;
     
 typeSwitchCase: 
-	'case' typeList=typeList | 'default';
+	'case' typeList=typeList | {typeSwitchCase} 'default';
     
 typeList: 
 	types+=type ( ',' types+=type )*;
@@ -239,13 +239,13 @@ typeList:
 //RecvStmt   = [ ExpressionList "=" | IdentifierList ":=" ] RecvExpr .
 //RecvExpr   = Expression .
 selectStmt: 
-	'select' '{' commClauses+=commClause* '}';
+	{selectStmt} 'select' '{' commClauses+=commClause* '}';
     
 commClause: 
 	case=commCase ':' stmtList=statementList;
     
 commCase: 
-	'case' ( statement=sendStmt | statement=recvStmt ) | 'default';
+	'case' ( statement=sendStmt | statement=recvStmt ) | {commCase} 'default';
 	
 recvStmt: 
 	( exprList=expressionList '=' |
@@ -263,7 +263,7 @@ forStmt:
 //InitStmt = SimpleStmt .
 //PostStmt = SimpleStmt .
 forClause: 
-	statement1=simpleStmt? eos expr=expression? eos statement2=simpleStmt?;
+	{forClause} statement1=simpleStmt? eos expr=expression? eos statement2=simpleStmt?;
 
 
 //RangeClause = [ ExpressionList "=" | IdentifierList ":=" ] "range" Expression .
@@ -318,7 +318,7 @@ pointerType:
 //MethodName         = identifier .
 //InterfaceTypeName  = TypeName .
 interfaceType: 
-	'interface' '{' ( methodSpecs+=methodSpec eos )* '}';
+	{interfaceType} 'interface' '{' ( methodSpecs+=methodSpec eos )* '}';
 
 //SliceType = "[" "]" ElementType .
 sliceType: 
@@ -355,7 +355,7 @@ result:
 	type=type;
 
 parameters: 
-	'(' ( paramList+=parameterList ','? )? ')';
+	{parameters} '(' ( paramList+=parameterList ','? )? ')';
 
 parameterList: 
 	paramsDecl+=parameterDecl ( ',' paramsDecl+=parameterDecl )*;
@@ -442,7 +442,7 @@ literalType:
     | type=typeName;
 
 literalValue:
-	'{' ( elementList=elementList ','? )? '}';
+	{literalValue} '{' ( elementList=elementList ','? )? '}';
 
 elementList:
 	keyedElements+=keyedElement (',' keyedElements+=keyedElement)*;
@@ -464,7 +464,7 @@ element:
 //AnonymousField = [ "*" ] TypeName .
 //Tag            = string_lit .
 structType: 
-	'struct' '{' ( fieldsDecl+=fieldDecl eos )* '}';
+	{structType} 'struct' '{' ( fieldsDecl+=fieldDecl eos )* '}';
 
 fieldDecl: 
 	(identifierList=identifierList type=type |
@@ -513,19 +513,19 @@ primaryExprStuff:
 
 ////Left Rec removal for primaryExpr
 primaryExprSelector:
-	(content=primaryExprStuff primaryExprSelector=primaryExprSelector)?;
+	{primaryExprSelector} (content=primaryExprStuff primaryExprSelector=primaryExprSelector)?;
 	
 primaryExprIndex:
-	(content=primaryExprStuff primaryExprIndex=primaryExprIndex)?;
+	{primaryExprIndex} (content=primaryExprStuff primaryExprIndex=primaryExprIndex)?;
 
 primaryExprSlice:
-	(content=primaryExprStuff primaryExprSlice=primaryExprSlice)?;
+	{primaryExprSlice} (content=primaryExprStuff primaryExprSlice=primaryExprSlice)?;
 
 primaryExprTypeAssertion:
-	(content=primaryExprStuff primaryExprTypeAssertion=primaryExprTypeAssertion)?;
+	{primaryExprTypeAssertion} (content=primaryExprStuff primaryExprTypeAssertion=primaryExprTypeAssertion)?;
 
 primaryExprArguments:
-	(content=primaryExprStuff primaryExprArguments=primaryExprArguments)?;
+	{primaryExprArguments} (content=primaryExprStuff primaryExprArguments=primaryExprArguments)?;
 
 
 ////
@@ -537,14 +537,14 @@ index:
 '[' expr=expression ']';
 
 slice: 
-'[' (( expr1=expression? ':' expr2=expression? ) |
+{slice} '[' (( expr1=expression? ':' expr2=expression? ) |
 	( expr1=expression? ':' expr2=expression ':' expr3=expression )) ']';
 
 typeAssertion:
 	 '.' '(' type=type ')';
 
 arguments:
-	 '(' ( ( expressionList=expressionList |
+	 {arguments} '(' ( ( expressionList=expressionList |
 	 	type=type ( ',' expressionList=expressionList )?
 	 ) '...'? ','? )? ')';
 
@@ -569,7 +569,7 @@ expression:
 //// attempt to remove left recursion of rule expression
 
 expressionMatched:
-	(operator=BINARY_OP expression=expression)?;
+	{expressionMatched} (operator=BINARY_OP expression=expression)?;
 
 
 ////

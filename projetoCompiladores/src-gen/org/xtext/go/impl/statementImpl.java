@@ -36,6 +36,7 @@ import org.xtext.go.switchStmt;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.statementImpl#getDeclaration <em>Declaration</em>}</li>
  *   <li>{@link org.xtext.go.impl.statementImpl#getLabeledStmt <em>Labeled Stmt</em>}</li>
@@ -53,7 +54,6 @@ import org.xtext.go.switchStmt;
  *   <li>{@link org.xtext.go.impl.statementImpl#getForStmt <em>For Stmt</em>}</li>
  *   <li>{@link org.xtext.go.impl.statementImpl#getDeferStmt <em>Defer Stmt</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

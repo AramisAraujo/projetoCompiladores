@@ -19,10 +19,10 @@ import org.xtext.go.emptyStmt;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.emptyStmtImpl#getContent <em>Content</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -168,7 +168,7 @@ public class emptyStmtImpl extends MinimalEObjectImpl.Container implements empty
   {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (content: ");
     result.append(content);
     result.append(')');

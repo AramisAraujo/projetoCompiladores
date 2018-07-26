@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.sendStmt#getExpr1 <em>Expr1</em>}</li>
  *   <li>{@link org.xtext.go.sendStmt#getExpr2 <em>Expr2</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.go.GoPackage#getsendStmt()
  * @model

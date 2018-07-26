@@ -23,11 +23,11 @@ import org.xtext.go.literalValue;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.go.impl.compositeLitImpl#getLiteralType <em>Literal Type</em>}</li>
  *   <li>{@link org.xtext.go.impl.compositeLitImpl#getLiteralValue <em>Literal Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
