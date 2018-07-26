@@ -4,15 +4,19 @@
 package org.xtext.generator;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.xbase.lib.ExclusiveRange;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.xtext.go.Model;
 import org.xtext.go.assignment;
 import org.xtext.go.block;
 import org.xtext.go.breakStmt;
+import org.xtext.go.constDecl;
 import org.xtext.go.continueStmt;
 import org.xtext.go.declaration;
 import org.xtext.go.deferStmt;
@@ -20,6 +24,7 @@ import org.xtext.go.expression;
 import org.xtext.go.expressionStmt;
 import org.xtext.go.fallthroughStmt;
 import org.xtext.go.forStmt;
+import org.xtext.go.functionDecl;
 import org.xtext.go.goStmt;
 import org.xtext.go.ifStmt;
 import org.xtext.go.incDecStmt;
@@ -29,9 +34,13 @@ import org.xtext.go.selectStmt;
 import org.xtext.go.sendStmt;
 import org.xtext.go.shortVarDecl;
 import org.xtext.go.simpleStmt;
+import org.xtext.go.sourceFile;
 import org.xtext.go.statement;
 import org.xtext.go.statementList;
 import org.xtext.go.switchStmt;
+import org.xtext.go.topLevelDecl;
+import org.xtext.go.typeDecl;
+import org.xtext.go.varDecl;
 
 /**
  * Generates code from your model files on save.
@@ -41,23 +50,113 @@ import org.xtext.go.switchStmt;
  */
 @SuppressWarnings("all")
 public class GoGenerator extends AbstractGenerator {
-  private Integer counter = Integer.valueOf(1);
-  
   private Integer variables = Integer.valueOf(1);
+  
+  private Integer counter = Integer.valueOf(1);
   
   private Integer address = Integer.valueOf(0);
   
   @Override
   public void doGenerate(final Resource input, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    fsa.generateFile("file.txt", "TESTE GO");
+    EObject _head = IterableExtensions.<EObject>head(input.getContents());
+    Model model = ((Model) _head);
+    EList<sourceFile> _greetings = model.getGreetings();
+    for (final sourceFile g : _greetings) {
+      Integer _plusPlus = this.counter++;
+      String _plus = ("compiled" + _plusPlus);
+      String _plus_1 = (_plus + ".txt");
+      fsa.generateFile(_plus_1, this.genCodeFromSource(g));
+    }
   }
   
-  /**
-   * for(e : input.allContents.toIterable.filter(ifStmt)) {
-   * fsa.generateFile("stmt" + counter + ".txt", e.compileIfStatement());
-   * counter++;
-   * }
-   */
+  public CharSequence genCodeFromSource(final sourceFile sf) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append(this.address);
+    _builder.append(": LD SP, 1000");
+    _builder.newLineIfNotEmpty();
+    this.nextAddress();
+    _builder.newLineIfNotEmpty();
+    {
+      EList<topLevelDecl> _topLevelDecls = sf.getTopLevelDecls();
+      for(final topLevelDecl tld : _topLevelDecls) {
+        CharSequence _genTopLevelDecl = this.genTopLevelDecl(tld);
+        _builder.append(_genTopLevelDecl);
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    return _builder;
+  }
+  
+  public CharSequence genTopLevelDecl(final topLevelDecl tld) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      if ((tld instanceof declaration)) {
+        CharSequence _genDeclaration = this.genDeclaration(((declaration) tld));
+        _builder.append(_genDeclaration);
+        _builder.newLineIfNotEmpty();
+      } else {
+        if ((tld instanceof functionDecl)) {
+          CharSequence _genFunctionDecl = this.genFunctionDecl(((functionDecl) tld));
+          _builder.append(_genFunctionDecl);
+          _builder.newLineIfNotEmpty();
+        }
+      }
+    }
+    return _builder;
+  }
+  
+  public CharSequence genDeclaration(final declaration d) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      if ((d instanceof varDecl)) {
+        CharSequence _genVarDecl = this.genVarDecl(((varDecl) d));
+        _builder.append(_genVarDecl);
+        _builder.newLineIfNotEmpty();
+      } else {
+        if ((d instanceof constDecl)) {
+          CharSequence _genConstDecl = this.genConstDecl(((constDecl) d));
+          _builder.append(_genConstDecl);
+          _builder.newLineIfNotEmpty();
+        } else {
+          if ((d instanceof typeDecl)) {
+            CharSequence _genTypeDecl = this.genTypeDecl(((typeDecl) d));
+            _builder.append(_genTypeDecl);
+            _builder.newLineIfNotEmpty();
+          }
+        }
+      }
+    }
+    return _builder;
+  }
+  
+  public CharSequence genVarDecl(final varDecl vd) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("TODO");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence genConstDecl(final constDecl cd) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("TODO");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence genTypeDecl(final typeDecl td) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("TODO");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence genFunctionDecl(final functionDecl fd) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("TODO");
+    _builder.newLine();
+    return _builder;
+  }
+  
   public CharSequence compileIfStatement(final ifStmt stmt) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append(this.address);

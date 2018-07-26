@@ -19,24 +19,61 @@ import org.eclipse.xtext.generator.IGeneratorContext
  */
  
 class GoGenerator extends AbstractGenerator {
-	Integer counter = 1;
 	Integer variables = 1;
-	
+	Integer counter = 1;
 	Integer address = 0;
 	
 	override doGenerate(Resource input, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		fsa.generateFile("file.txt", "TESTE GO");
+		//fsa.generateFile("file.txt", "TESTE GO");
+		var model = input.contents.head as Model
+		for(g : model.greetings) {
+			fsa.generateFile("compiled"+ counter++ +".txt", g.genCodeFromSource);
+		}
 	}
 	
-	//override void doGenerate(Resource input, IFileSystemAccess fsa) {
-		//counter = 1;
-		//fsa.generateFile("file.txt", "TESTE GO");
-		/*for(e : input.allContents.toIterable.filter(ifStmt)) {
-			fsa.generateFile("stmt" + counter + ".txt", e.compileIfStatement());
-			counter++;
-		}*/
-	//}
-		
+	def genCodeFromSource(sourceFile sf)'''
+		«address»: LD SP, 1000
+		«nextAddress»
+		«FOR tld : sf.getTopLevelDecls()»
+			«tld.genTopLevelDecl»
+		«ENDFOR»
+	'''
+	
+	def genTopLevelDecl(topLevelDecl tld)'''
+		«IF tld instanceof declaration»
+			«(tld as declaration).genDeclaration»
+		«ELSEIF tld instanceof functionDecl»
+			«(tld as functionDecl).genFunctionDecl»
+		«ENDIF»		
+	'''
+	
+	def genDeclaration(declaration d)'''
+		«IF d instanceof varDecl»
+			«(d as varDecl).genVarDecl»
+		«ELSEIF d instanceof constDecl»
+			«(d as constDecl).genConstDecl»
+		«ELSEIF d instanceof typeDecl»
+			«(d as typeDecl).genTypeDecl»
+		«ENDIF»
+	'''
+	
+	def genVarDecl(varDecl vd)'''
+		TODO
+	'''
+	
+	def genConstDecl(constDecl cd)'''
+		TODO
+	'''
+	
+	def genTypeDecl(typeDecl td)'''
+		TODO
+	'''
+	
+	def genFunctionDecl(functionDecl fd)'''
+		TODO
+	'''
+	
+	
 	def CharSequence compileIfStatement(ifStmt stmt) '''
 		«address»: LD SP, 1000
 		«nextAddress»
