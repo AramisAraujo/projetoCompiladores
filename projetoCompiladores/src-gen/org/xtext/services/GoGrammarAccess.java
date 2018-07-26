@@ -55,10 +55,10 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		
 		////SourceFile       = PackageClause ";" { ImportDecl ";" } { TopLevelDecl ";" } .
 		//sourceFile:
-		//	package=packageClause eos? (imports+=importDecl eos?)* (topLevelDecls+=topLevelDecl eos)*;
+		//	package=packageClause eos? (imports+=importDecl eos?)* (topLevelDecls+=topLevelDecl eos?)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//package=packageClause eos? (imports+=importDecl eos?)* (topLevelDecls+=topLevelDecl eos)*
+		//package=packageClause eos? (imports+=importDecl eos?)* (topLevelDecls+=topLevelDecl eos?)*
 		public Group getGroup() { return cGroup; }
 		
 		//package=packageClause
@@ -82,7 +82,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//eos?
 		public RuleCall getEosParserRuleCall_2_1() { return cEosParserRuleCall_2_1; }
 		
-		//(topLevelDecls+=topLevelDecl eos)*
+		//(topLevelDecls+=topLevelDecl eos?)*
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//topLevelDecls+=topLevelDecl
@@ -91,7 +91,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//topLevelDecl
 		public RuleCall getTopLevelDeclsTopLevelDeclParserRuleCall_3_0_0() { return cTopLevelDeclsTopLevelDeclParserRuleCall_3_0_0; }
 		
-		//eos
+		//eos?
 		public RuleCall getEosParserRuleCall_3_1() { return cEosParserRuleCall_3_1; }
 	}
 	public class PackageClauseElements extends AbstractParserRuleElementFinder {
@@ -314,10 +314,10 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		
 		////ConstDecl      = "const" ( ConstSpec | "(" { ConstSpec ";" } ")" ) .
 		//constDecl:
-		//	{constDecl} 'const' (spec+=constSpec | '(' (spec+=constSpec eos)* ')');
+		//	{constDecl} 'const' (spec+=constSpec | '(' (spec+=constSpec eos?)* ')');
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{constDecl} 'const' (spec+=constSpec | '(' (spec+=constSpec eos)* ')')
+		//{constDecl} 'const' (spec+=constSpec | '(' (spec+=constSpec eos?)* ')')
 		public Group getGroup() { return cGroup; }
 		
 		//{constDecl}
@@ -326,7 +326,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//'const'
 		public Keyword getConstKeyword_1() { return cConstKeyword_1; }
 		
-		//spec+=constSpec | '(' (spec+=constSpec eos)* ')'
+		//spec+=constSpec | '(' (spec+=constSpec eos?)* ')'
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 		
 		//spec+=constSpec
@@ -335,13 +335,13 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//constSpec
 		public RuleCall getSpecConstSpecParserRuleCall_2_0_0() { return cSpecConstSpecParserRuleCall_2_0_0; }
 		
-		//'(' (spec+=constSpec eos)* ')'
+		//'(' (spec+=constSpec eos?)* ')'
 		public Group getGroup_2_1() { return cGroup_2_1; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_2_1_0() { return cLeftParenthesisKeyword_2_1_0; }
 		
-		//(spec+=constSpec eos)*
+		//(spec+=constSpec eos?)*
 		public Group getGroup_2_1_1() { return cGroup_2_1_1; }
 		
 		//spec+=constSpec
@@ -350,7 +350,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//constSpec
 		public RuleCall getSpecConstSpecParserRuleCall_2_1_1_0_0() { return cSpecConstSpecParserRuleCall_2_1_1_0_0; }
 		
-		//eos
+		//eos?
 		public RuleCall getEosParserRuleCall_2_1_1_1() { return cEosParserRuleCall_2_1_1_1; }
 		
 		//')'
@@ -491,10 +491,10 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		
 		////TypeDecl     = "type" ( TypeSpec | "(" { TypeSpec ";" } ")" ) .
 		//typeDecl:
-		//	{typeDecl} 'type' (spec+=typeSpec | '(' (spec+=typeSpec eos)* ')');
+		//	{typeDecl} 'type' (spec+=typeSpec | '(' (spec+=typeSpec eos?)* ')');
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{typeDecl} 'type' (spec+=typeSpec | '(' (spec+=typeSpec eos)* ')')
+		//{typeDecl} 'type' (spec+=typeSpec | '(' (spec+=typeSpec eos?)* ')')
 		public Group getGroup() { return cGroup; }
 		
 		//{typeDecl}
@@ -503,7 +503,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//'type'
 		public Keyword getTypeKeyword_1() { return cTypeKeyword_1; }
 		
-		//spec+=typeSpec | '(' (spec+=typeSpec eos)* ')'
+		//spec+=typeSpec | '(' (spec+=typeSpec eos?)* ')'
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 		
 		//spec+=typeSpec
@@ -512,13 +512,13 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//typeSpec
 		public RuleCall getSpecTypeSpecParserRuleCall_2_0_0() { return cSpecTypeSpecParserRuleCall_2_0_0; }
 		
-		//'(' (spec+=typeSpec eos)* ')'
+		//'(' (spec+=typeSpec eos?)* ')'
 		public Group getGroup_2_1() { return cGroup_2_1; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_2_1_0() { return cLeftParenthesisKeyword_2_1_0; }
 		
-		//(spec+=typeSpec eos)*
+		//(spec+=typeSpec eos?)*
 		public Group getGroup_2_1_1() { return cGroup_2_1_1; }
 		
 		//spec+=typeSpec
@@ -527,7 +527,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//typeSpec
 		public RuleCall getSpecTypeSpecParserRuleCall_2_1_1_0_0() { return cSpecTypeSpecParserRuleCall_2_1_1_0_0; }
 		
-		//eos
+		//eos?
 		public RuleCall getEosParserRuleCall_2_1_1_1() { return cEosParserRuleCall_2_1_1_1; }
 		
 		//')'
@@ -723,10 +723,10 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		////VarDecl     = "var" ( VarSpec | "(" { VarSpec ";" } ")" ) .
 		////VarSpec     = IdentifierList ( Type [ "=" ExpressionList ] | "=" ExpressionList ) .
 		//varDecl:
-		//	{varDecl} 'var' (specs+=varSpec | '(' (specs+=varSpec eos)* ')');
+		//	{varDecl} 'var' (specs+=varSpec | '(' (specs+=varSpec eos?)* ')');
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{varDecl} 'var' (specs+=varSpec | '(' (specs+=varSpec eos)* ')')
+		//{varDecl} 'var' (specs+=varSpec | '(' (specs+=varSpec eos?)* ')')
 		public Group getGroup() { return cGroup; }
 		
 		//{varDecl}
@@ -735,7 +735,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//'var'
 		public Keyword getVarKeyword_1() { return cVarKeyword_1; }
 		
-		//specs+=varSpec | '(' (specs+=varSpec eos)* ')'
+		//specs+=varSpec | '(' (specs+=varSpec eos?)* ')'
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 		
 		//specs+=varSpec
@@ -744,13 +744,13 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//varSpec
 		public RuleCall getSpecsVarSpecParserRuleCall_2_0_0() { return cSpecsVarSpecParserRuleCall_2_0_0; }
 		
-		//'(' (specs+=varSpec eos)* ')'
+		//'(' (specs+=varSpec eos?)* ')'
 		public Group getGroup_2_1() { return cGroup_2_1; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_2_1_0() { return cLeftParenthesisKeyword_2_1_0; }
 		
-		//(specs+=varSpec eos)*
+		//(specs+=varSpec eos?)*
 		public Group getGroup_2_1_1() { return cGroup_2_1_1; }
 		
 		//specs+=varSpec
@@ -759,7 +759,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//varSpec
 		public RuleCall getSpecsVarSpecParserRuleCall_2_1_1_0_0() { return cSpecsVarSpecParserRuleCall_2_1_1_0_0; }
 		
-		//eos
+		//eos?
 		public RuleCall getEosParserRuleCall_2_1_1_1() { return cEosParserRuleCall_2_1_1_1; }
 		
 		//')'
@@ -4957,7 +4957,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////SourceFile       = PackageClause ";" { ImportDecl ";" } { TopLevelDecl ";" } .
 	//sourceFile:
-	//	package=packageClause eos? (imports+=importDecl eos?)* (topLevelDecls+=topLevelDecl eos)*;
+	//	package=packageClause eos? (imports+=importDecl eos?)* (topLevelDecls+=topLevelDecl eos?)*;
 	public SourceFileElements getSourceFileAccess() {
 		return pSourceFile;
 	}
@@ -5036,7 +5036,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////ConstDecl      = "const" ( ConstSpec | "(" { ConstSpec ";" } ")" ) .
 	//constDecl:
-	//	{constDecl} 'const' (spec+=constSpec | '(' (spec+=constSpec eos)* ')');
+	//	{constDecl} 'const' (spec+=constSpec | '(' (spec+=constSpec eos?)* ')');
 	public ConstDeclElements getConstDeclAccess() {
 		return pConstDecl;
 	}
@@ -5081,7 +5081,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////TypeDecl     = "type" ( TypeSpec | "(" { TypeSpec ";" } ")" ) .
 	//typeDecl:
-	//	{typeDecl} 'type' (spec+=typeSpec | '(' (spec+=typeSpec eos)* ')');
+	//	{typeDecl} 'type' (spec+=typeSpec | '(' (spec+=typeSpec eos?)* ')');
 	public TypeDeclElements getTypeDeclAccess() {
 		return pTypeDecl;
 	}
@@ -5151,7 +5151,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	////VarDecl     = "var" ( VarSpec | "(" { VarSpec ";" } ")" ) .
 	////VarSpec     = IdentifierList ( Type [ "=" ExpressionList ] | "=" ExpressionList ) .
 	//varDecl:
-	//	{varDecl} 'var' (specs+=varSpec | '(' (specs+=varSpec eos)* ')');
+	//	{varDecl} 'var' (specs+=varSpec | '(' (specs+=varSpec eos?)* ')');
 	public VarDeclElements getVarDeclAccess() {
 		return pVarDecl;
 	}

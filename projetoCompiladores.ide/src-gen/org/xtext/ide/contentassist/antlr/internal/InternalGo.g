@@ -4418,7 +4418,7 @@ rule__SourceFile__Group_3__1__Impl
 :
 (
 	{ before(grammarAccess.getSourceFileAccess().getEosParserRuleCall_3_1()); }
-	ruleeos
+	(ruleeos)?
 	{ after(grammarAccess.getSourceFileAccess().getEosParserRuleCall_3_1()); }
 )
 ;
@@ -4958,7 +4958,7 @@ rule__ConstDecl__Group_2_1_1__1__Impl
 :
 (
 	{ before(grammarAccess.getConstDeclAccess().getEosParserRuleCall_2_1_1_1()); }
-	ruleeos
+	(ruleeos)?
 	{ after(grammarAccess.getConstDeclAccess().getEosParserRuleCall_2_1_1_1()); }
 )
 ;
@@ -5525,7 +5525,7 @@ rule__TypeDecl__Group_2_1_1__1__Impl
 :
 (
 	{ before(grammarAccess.getTypeDeclAccess().getEosParserRuleCall_2_1_1_1()); }
-	ruleeos
+	(ruleeos)?
 	{ after(grammarAccess.getTypeDeclAccess().getEosParserRuleCall_2_1_1_1()); }
 )
 ;
@@ -6038,7 +6038,7 @@ rule__VarDecl__Group_2_1_1__1__Impl
 :
 (
 	{ before(grammarAccess.getVarDeclAccess().getEosParserRuleCall_2_1_1_1()); }
-	ruleeos
+	(ruleeos)?
 	{ after(grammarAccess.getVarDeclAccess().getEosParserRuleCall_2_1_1_1()); }
 )
 ;

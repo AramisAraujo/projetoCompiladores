@@ -202,16 +202,18 @@ rulesourceFile returns [EObject current=null]
 					}
 				)
 			)
-			{
-				/* */
-			}
-			{
-				newCompositeNode(grammarAccess.getSourceFileAccess().getEosParserRuleCall_3_1());
-			}
-			ruleeos
-			{
-				afterParserOrEnumRuleCall();
-			}
+			(
+				{
+					/* */
+				}
+				{
+					newCompositeNode(grammarAccess.getSourceFileAccess().getEosParserRuleCall_3_1());
+				}
+				ruleeos
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)?
 		)*
 	)
 ;
@@ -660,16 +662,18 @@ ruleconstDecl returns [EObject current=null]
 							}
 						)
 					)
-					{
-						/* */
-					}
-					{
-						newCompositeNode(grammarAccess.getConstDeclAccess().getEosParserRuleCall_2_1_1_1());
-					}
-					ruleeos
-					{
-						afterParserOrEnumRuleCall();
-					}
+					(
+						{
+							/* */
+						}
+						{
+							newCompositeNode(grammarAccess.getConstDeclAccess().getEosParserRuleCall_2_1_1_1());
+						}
+						ruleeos
+						{
+							afterParserOrEnumRuleCall();
+						}
+					)?
 				)*
 				otherlv_6=')'
 				{
@@ -962,16 +966,18 @@ ruletypeDecl returns [EObject current=null]
 							}
 						)
 					)
-					{
-						/* */
-					}
-					{
-						newCompositeNode(grammarAccess.getTypeDeclAccess().getEosParserRuleCall_2_1_1_1());
-					}
-					ruleeos
-					{
-						afterParserOrEnumRuleCall();
-					}
+					(
+						{
+							/* */
+						}
+						{
+							newCompositeNode(grammarAccess.getTypeDeclAccess().getEosParserRuleCall_2_1_1_1());
+						}
+						ruleeos
+						{
+							afterParserOrEnumRuleCall();
+						}
+					)?
 				)*
 				otherlv_6=')'
 				{
@@ -1390,16 +1396,18 @@ rulevarDecl returns [EObject current=null]
 							}
 						)
 					)
-					{
-						/* */
-					}
-					{
-						newCompositeNode(grammarAccess.getVarDeclAccess().getEosParserRuleCall_2_1_1_1());
-					}
-					ruleeos
-					{
-						afterParserOrEnumRuleCall();
-					}
+					(
+						{
+							/* */
+						}
+						{
+							newCompositeNode(grammarAccess.getVarDeclAccess().getEosParserRuleCall_2_1_1_1());
+						}
+						ruleeos
+						{
+							afterParserOrEnumRuleCall();
+						}
+					)?
 				)*
 				otherlv_6=')'
 				{

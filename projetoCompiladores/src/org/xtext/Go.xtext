@@ -10,7 +10,7 @@ Model:
 //SourceFile       = PackageClause ";" { ImportDecl ";" } { TopLevelDecl ";" } .
 sourceFile: 
 	package=packageClause (eos?) 
-	( imports+=importDecl (eos?) )* ( topLevelDecls+=topLevelDecl eos)*;
+	( imports+=importDecl (eos?) )* ( topLevelDecls+=topLevelDecl eos?)*;
 
 //PackageClause  = "package" PackageName .
 //PackageName    = identifier .
@@ -42,7 +42,7 @@ declaration:
 
 //ConstDecl      = "const" ( ConstSpec | "(" { ConstSpec ";" } ")" ) .
 constDecl: 
-	{constDecl} 'const' ( spec+=constSpec | '(' ( spec+=constSpec eos )* ')' );
+	{constDecl} 'const' ( spec+=constSpec | '(' ( spec+=constSpec eos? )* ')' );
 
 //ConstSpec      = IdentifierList [ [ Type ] "=" ExpressionList ] .
 constSpec: 
@@ -59,7 +59,7 @@ expressionList:
 
 //TypeDecl     = "type" ( TypeSpec | "(" { TypeSpec ";" } ")" ) .
 typeDecl: 
-	{typeDecl} 'type' ( spec+=typeSpec | '(' ( spec+=typeSpec eos )* ')' );
+	{typeDecl} 'type' ( spec+=typeSpec | '(' ( spec+=typeSpec eos? )* ')' );
 
 //TypeSpec     = identifier Type .
 typeSpec: 
@@ -89,7 +89,7 @@ receiver:
 //VarDecl     = "var" ( VarSpec | "(" { VarSpec ";" } ")" ) .
 //VarSpec     = IdentifierList ( Type [ "=" ExpressionList ] | "=" ExpressionList ) .
 varDecl: 
-	{varDecl} 'var' ( specs+=varSpec | '(' ( specs+=varSpec eos )* ')' );
+	{varDecl} 'var' ( specs+=varSpec | '(' ( specs+=varSpec eos? )* ')' );
 
 varSpec: 
 	idList=identifierList ( type=type ( '=' exprList+=expressionList )? |

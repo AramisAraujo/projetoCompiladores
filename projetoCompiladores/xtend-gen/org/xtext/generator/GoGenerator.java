@@ -21,6 +21,7 @@ import org.xtext.go.continueStmt;
 import org.xtext.go.declaration;
 import org.xtext.go.deferStmt;
 import org.xtext.go.expression;
+import org.xtext.go.expressionList;
 import org.xtext.go.expressionStmt;
 import org.xtext.go.fallthroughStmt;
 import org.xtext.go.forStmt;
@@ -136,7 +137,7 @@ public class GoGenerator extends AbstractGenerator {
     {
       EList<varSpec> _specs = vd.getSpecs();
       for(final varSpec spec : _specs) {
-        CharSequence _genVarSpec = this.genVarSpec(spec);
+        String _genVarSpec = this.genVarSpec(spec);
         _builder.append(_genVarSpec);
         _builder.newLineIfNotEmpty();
       }
@@ -144,11 +145,10 @@ public class GoGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  public CharSequence genVarSpec(final varSpec vs) {
+  public String genVarSpec(final varSpec vs) {
+    EList<expressionList> expList = vs.getExprList();
+    int counter = 0;
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append(this.address);
-    _builder.append(": ST vs.");
-    _builder.newLineIfNotEmpty();
     {
       EList<String> _ids = vs.getIdList().getIds();
       for(final String i : _ids) {
@@ -156,10 +156,16 @@ public class GoGenerator extends AbstractGenerator {
         _builder.append(_string);
         _builder.append(" ST ");
         _builder.append(i);
+        _builder.append(", ");
+        CharSequence _genExpression = this.genExpression(expList.get(counter).getExpr().get(counter));
+        _builder.append(_genExpression);
+        _builder.newLineIfNotEmpty();
+        int _plusPlus = counter++;
+        _builder.append(_plusPlus);
         _builder.newLineIfNotEmpty();
       }
     }
-    return _builder;
+    return _builder.toString();
   }
   
   public CharSequence genConstDecl(final constDecl cd) {
@@ -190,11 +196,11 @@ public class GoGenerator extends AbstractGenerator {
     _builder.newLineIfNotEmpty();
     this.nextAddress();
     _builder.newLineIfNotEmpty();
-    CharSequence _compileSimpleStatement = this.compileSimpleStatement(stmt.getSimplStatement());
-    _builder.append(_compileSimpleStatement);
+    CharSequence _genSimpleStatement = this.genSimpleStatement(stmt.getSimplStatement());
+    _builder.append(_genSimpleStatement);
     _builder.newLineIfNotEmpty();
-    CharSequence _compileExpression = this.compileExpression(stmt.getExpr());
-    _builder.append(_compileExpression);
+    CharSequence _genExpression = this.genExpression(stmt.getExpr());
+    _builder.append(_genExpression);
     _builder.newLineIfNotEmpty();
     CharSequence _compileBlock = this.compileBlock(stmt.getCodeBlock());
     _builder.append(_compileBlock);
@@ -202,7 +208,7 @@ public class GoGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  public CharSequence compileExpression(final expression expression) {
+  public CharSequence genExpression(final expression expression) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("//TODO");
     _builder.newLine();
@@ -280,8 +286,8 @@ public class GoGenerator extends AbstractGenerator {
             simpleStmt _simpleStmt = stmt.getSimpleStmt();
             boolean _tripleNotEquals_3 = (_simpleStmt != null);
             if (_tripleNotEquals_3) {
-              CharSequence _compileSimpleStatement = this.compileSimpleStatement(stmt.getSimpleStmt());
-              _builder.append(_compileSimpleStatement);
+              CharSequence _genSimpleStatement = this.genSimpleStatement(stmt.getSimpleStmt());
+              _builder.append(_genSimpleStatement);
               _builder.newLineIfNotEmpty();
               _builder.newLine();
             } else {
@@ -456,7 +462,7 @@ public class GoGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  public CharSequence compileSimpleStatement(final simpleStmt stmt) {
+  public CharSequence genSimpleStatement(final simpleStmt stmt) {
     StringConcatenation _builder = new StringConcatenation();
     {
       sendStmt _sendStmt = stmt.getSendStmt();
@@ -483,7 +489,7 @@ public class GoGenerator extends AbstractGenerator {
             assignment _assignment = stmt.getAssignment();
             boolean _tripleNotEquals_3 = (_assignment != null);
             if (_tripleNotEquals_3) {
-              this.compileAssignment(stmt.getAssignment());
+              this.genAssignment(stmt.getAssignment());
               _builder.newLineIfNotEmpty();
               _builder.newLine();
             } else {
@@ -506,15 +512,15 @@ public class GoGenerator extends AbstractGenerator {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
-  public void compileAssignment(final assignment assignment) {
+  public void genAssignment(final assignment assignment) {
     int _size = assignment.getExprList1().getExpr().size();
     ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _size, true);
     for (final Integer i : _doubleDotLessThan) {
-      this.compileSingleAssignment(assignment.getExprList1().getExpr().get((i).intValue()), assignment.getOperation(), assignment.getExprList2().getExpr().get((i).intValue()));
+      this.genSingleAssignment(assignment.getExprList1().getExpr().get((i).intValue()), assignment.getOperation(), assignment.getExprList2().getExpr().get((i).intValue()));
     }
   }
   
-  public CharSequence compileSingleAssignment(final expression expression, final String operator, final org.xtext.go.expression expression2) {
+  public CharSequence genSingleAssignment(final expression expression, final String operator, final org.xtext.go.expression expression2) {
     StringConcatenation _builder = new StringConcatenation();
     {
       boolean _equals = operator.equals("=");
@@ -525,8 +531,8 @@ public class GoGenerator extends AbstractGenerator {
         String _string_1 = this.variables.toString();
         _builder.append(_string_1);
         _builder.append(" ");
-        CharSequence _compileExpression = this.compileExpression(expression);
-        _builder.append(_compileExpression);
+        CharSequence _genExpression = this.genExpression(expression);
+        _builder.append(_genExpression);
         _builder.newLineIfNotEmpty();
         this.nextAddress();
         _builder.newLineIfNotEmpty();
@@ -536,8 +542,8 @@ public class GoGenerator extends AbstractGenerator {
         String _string_3 = this.variables.toString();
         _builder.append(_string_3);
         _builder.append(" ");
-        CharSequence _compileExpression_1 = this.compileExpression(expression2);
-        _builder.append(_compileExpression_1);
+        CharSequence _genExpression_1 = this.genExpression(expression2);
+        _builder.append(_genExpression_1);
         _builder.newLineIfNotEmpty();
         this.nextAddress();
         _builder.newLineIfNotEmpty();

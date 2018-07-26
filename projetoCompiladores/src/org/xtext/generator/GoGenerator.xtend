@@ -24,7 +24,6 @@ class GoGenerator extends AbstractGenerator {
 	Integer address = 0;
 	
 	override doGenerate(Resource input, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		//fsa.generateFile("file.txt", "TESTE GO");
 		var model = input.contents.head as Model
 		for(g : model.greetings) {
 			fsa.generateFile("compiled"+ counter++ +".txt", g.genCodeFromSource);
@@ -63,12 +62,17 @@ class GoGenerator extends AbstractGenerator {
 		«ENDFOR»
 	'''
 	
-	def genVarSpec(varSpec vs)'''
-		«address»: ST vs.
-		«FOR i : vs.getIdList().getIds()»
-			«address.toString()» ST «i»
-		«ENDFOR»
-	'''
+	def genVarSpec(varSpec vs){
+		var expList = vs.getExprList();
+		var counter = 0;
+		return '''
+			«FOR i : vs.getIdList().getIds()»
+				«address.toString()» ST «i», «expList.get(counter).getExpr().get(counter).genExpression»
+				«counter++»
+			«ENDFOR»
+		'''
+		
+	}
 	
 	def genConstDecl(constDecl cd)'''
 		TODO
@@ -86,12 +90,12 @@ class GoGenerator extends AbstractGenerator {
 	def CharSequence compileIfStatement(ifStmt stmt) '''
 		«address»: LD SP, 1000
 		«nextAddress»
-		«(stmt.simplStatement).compileSimpleStatement»
-		«(stmt.expr).compileExpression»
+		«(stmt.simplStatement).genSimpleStatement»
+		«(stmt.expr).genExpression»
 		«(stmt.codeBlock).compileBlock»
 	'''
 		
-	def compileExpression(expression expression) '''
+	def genExpression(expression expression) '''
 		//TODO
 
 	'''
@@ -128,7 +132,7 @@ class GoGenerator extends AbstractGenerator {
 			«compileLabeledStatement(stmt.labeledStmt)»
 			
 		«ELSEIF stmt.simpleStmt !== null»
-			«compileSimpleStatement(stmt.simpleStmt)»
+			«genSimpleStatement(stmt.simpleStmt)»
 			
 		«ELSEIF stmt.goStmt !== null»
 			«compileGoStatement(stmt.goStmt)»
@@ -207,7 +211,7 @@ class GoGenerator extends AbstractGenerator {
 //TODO
 	'''
 	
-	def compileSimpleStatement(simpleStmt stmt) '''
+	def genSimpleStatement(simpleStmt stmt) '''
 		«IF stmt.sendStmt !== null»
 			«compileSendStmt(stmt.sendStmt)»
 			
@@ -218,7 +222,7 @@ class GoGenerator extends AbstractGenerator {
 			«compileIncDecStmt(stmt.incDecStmt)»
 			
 		«ELSEIF stmt.assignment !== null»
-			«compileAssignment(stmt.assignment)»
+			«genAssignment(stmt.assignment)»
 			
 		«ELSEIF stmt.shortVarDecl !== null»
 			«compileShortVarDecl(stmt.shortVarDecl)»
@@ -230,17 +234,17 @@ class GoGenerator extends AbstractGenerator {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
 	
-	def compileAssignment(assignment assignment){
+	def genAssignment(assignment assignment){
 		for (i : 0 ..< assignment.exprList1.expr.size) {
-			compileSingleAssignment(assignment.exprList1.expr.get(i), assignment.operation, assignment.exprList2.expr.get(i))
+			genSingleAssignment(assignment.exprList1.expr.get(i), assignment.operation, assignment.exprList2.expr.get(i))
 		}
 	}
 		
-	def compileSingleAssignment(expression expression, String operator, expression expression2) '''
+	def genSingleAssignment(expression expression, String operator, expression expression2) '''
 		«IF operator.equals("=")»
-			«address.toString()»: LD R«variables.toString» «(expression).compileExpression»
+			«address.toString()»: LD R«variables.toString» «(expression).genExpression»
 			«nextAddress»
-			«address.toString()»: LD R«variables.toString» «(expression2).compileExpression»
+			«address.toString()»: LD R«variables.toString» «(expression2).genExpression»
 			«nextAddress»
 			«address.toString()»: LD R«(variables-2).toString» R«(variables-2).toString»
 			«nextAddress» // TODO: need create ST
