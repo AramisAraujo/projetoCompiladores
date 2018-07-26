@@ -8,6 +8,7 @@ import java.util.LinkedHashMap;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import org.eclipse.xtext.xbase.lib.Conversions;
 import org.xtext.go.basicLit;
 import org.xtext.go.expression;
 import org.xtext.go.expressionList;
@@ -17,7 +18,10 @@ import org.xtext.go.importSpec;
 import org.xtext.go.literal;
 import org.xtext.go.operand;
 import org.xtext.go.operandName;
+import org.xtext.go.parameterDecl;
+import org.xtext.go.parameterList;
 import org.xtext.go.shortVarDecl;
+import org.xtext.go.type;
 import org.xtext.go.varDecl;
 import org.xtext.validation.AbstractGoValidator;
 import org.xtext.validation.NullObj;
@@ -113,13 +117,38 @@ public class GoValidator extends AbstractGoValidator {
   
   @Check
   public void funcDecla(final functionDecl fd) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field id is undefined for the type parameterList"
-      + "\nThe method or field tp is undefined for the type String"
-      + "\nThe method or field id is undefined for the type parameterList"
-      + "\nThe method or field tp is undefined for the type String"
-      + "\nThe method or field id is undefined for the type parameterList"
-      + "\nThe method or field id is undefined for the type parameterList");
+    String funcName = fd.getName();
+    EList<parameterList> parameters = fd.getSig().getParams().getParamList();
+    LinkedHashMap<String, Object> parameterList = CollectionLiterals.<String, Object>newLinkedHashMap();
+    for (int i = 0; (i < ((Object[])Conversions.unwrapArray(parameters, Object.class)).length); i++) {
+      for (int j = 0; (j < ((Object[])Conversions.unwrapArray(parameters.get(i).getParamsDecl(), Object.class)).length); j++) {
+        {
+          parameterDecl p = parameters.get(i).getParamsDecl().get(j);
+          for (int k = 0; (k < ((Object[])Conversions.unwrapArray(p.getIdentifierList().getIds(), Object.class)).length); k++) {
+            type _type = p.getType();
+            boolean _tripleNotEquals = (_type != null);
+            if (_tripleNotEquals) {
+              parameterList.put(
+                p.getIdentifierList().getIds().get(k), 
+                p.getType().getContent());
+              this.ids.put(
+                p.getIdentifierList().getIds().get(k), 
+                p.getType().getContent());
+            } else {
+              String _get = p.getIdentifierList().getIds().get(k);
+              NullObj _nullObj = new NullObj();
+              parameterList.put(_get, _nullObj);
+              String _get_1 = p.getIdentifierList().getIds().get(k);
+              NullObj _nullObj_1 = new NullObj();
+              this.ids.put(_get_1, _nullObj_1);
+            }
+          }
+        }
+      }
+    }
+    for (final org.xtext.go.parameterList p : parameters) {
+      this.ids.put(funcName, parameterList.toString());
+    }
   }
   
   @Check

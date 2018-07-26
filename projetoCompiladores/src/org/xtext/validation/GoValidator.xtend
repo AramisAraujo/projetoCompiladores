@@ -124,29 +124,38 @@ class GoValidator extends AbstractGoValidator {
 		var parameters = fd.sig.params.paramList;
 		var parameterList = newLinkedHashMap()
 
-		for (p : parameters) {
-			if (p.type !== null) {
+		for (var i = 0; i < parameters.length; i++) {
+			for (var j = 0; j < parameters.get(i).paramsDecl.length; j++) {
+				var p = parameters.get(i).paramsDecl.get(j);
+				
+				for (var k = 0; k < p.identifierList.ids.length; k++) {
+					
+					if (p.type !== null) {
 
-				parameterList.put(
-					p.id,
-					p.type.tp
-				);
+						parameterList.put(
+							p.identifierList.ids.get(k),
+							p.type.content
+						);
 
-				ids.put(
-					p.id,
-					p.type.tp
-				);
-			} else {
-				parameterList.put(
-					p.id,
-					new NullObj()
-				);
+						ids.put(
+							p.identifierList.ids.get(k),
+							p.type.content
+						);
+					} else {
+						parameterList.put(
+							p.identifierList.ids.get(k),
+							new NullObj()
+						);
 
-				ids.put(
-					p.id,
-					new NullObj()
-				);
+						ids.put(
+							p.identifierList.ids.get(k),
+							new NullObj()
+						);
+					}
+				}
 			}
+		}
+		for (p : parameters) {
 
 //			for (param : parameters.parameterdecl) {
 //				if (param.type !== null) {
