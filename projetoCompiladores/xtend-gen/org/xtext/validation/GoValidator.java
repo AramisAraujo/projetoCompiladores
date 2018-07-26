@@ -4,35 +4,11 @@
 package org.xtext.validation;
 
 import com.google.common.base.Objects;
+import java.util.LinkedHashMap;
 import org.eclipse.xtext.validation.Check;
-import org.xtext.go.GoPackage;
-import org.xtext.go.assignment;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.xtext.go.basicLit;
-import org.xtext.go.compositeLit;
-import org.xtext.go.conversion;
 import org.xtext.go.expression;
-import org.xtext.go.expressionList;
-import org.xtext.go.expressionMatched;
-import org.xtext.go.expressionStmt;
-import org.xtext.go.functionLit;
-import org.xtext.go.identifierList;
-import org.xtext.go.ifStmt;
-import org.xtext.go.incDecStmt;
-import org.xtext.go.literal;
-import org.xtext.go.methodExpr;
-import org.xtext.go.operand;
-import org.xtext.go.operandName;
-import org.xtext.go.primaryExpr;
-import org.xtext.go.primaryExprArguments;
-import org.xtext.go.primaryExprIndex;
-import org.xtext.go.primaryExprSelector;
-import org.xtext.go.primaryExprSlice;
-import org.xtext.go.primaryExprTypeAssertion;
-import org.xtext.go.qualifiedIdent;
-import org.xtext.go.sendStmt;
-import org.xtext.go.shortVarDecl;
-import org.xtext.go.simpleStmt;
-import org.xtext.go.unaryExpr;
 import org.xtext.validation.AbstractGoValidator;
 
 /**
@@ -42,60 +18,227 @@ import org.xtext.validation.AbstractGoValidator;
  */
 @SuppressWarnings("all")
 public class GoValidator extends AbstractGoValidator {
+  private final LinkedHashMap<Object, Object> ids = CollectionLiterals.<Object, Object>newLinkedHashMap();
+  
   @Check
-  public Object checkIf(final ifStmt stmt) {
-    Object _xblockexpression = null;
-    {
-      simpleStmt _simplStatement = stmt.getSimplStatement();
-      boolean _tripleNotEquals = (_simplStatement != null);
-      if (_tripleNotEquals) {
-        this.checkSimple(stmt.getSimplStatement());
-      }
-      Object _xifexpression = null;
-      expression _expr = stmt.getExpr();
-      boolean _tripleNotEquals_1 = (_expr != null);
-      if (_tripleNotEquals_1) {
-        _xifexpression = this.checkExpression(stmt.getExpr());
-      }
-      _xblockexpression = _xifexpression;
-    }
-    return _xblockexpression;
+  public Object checkExpression(final expression e) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method checkAritOp(expression, String) from the type GoValidator refers to the missing type Object");
   }
   
   @Check
-  public Object checkDeclaration() {
+  public void checkConstDecl(final /* constDecl */Object cd) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nconstspec cannot be resolved"
+      + "\nid cannot be resolved"
+      + "\nid cannot be resolved"
+      + "\nconstspec cannot be resolved"
+      + "\ntp cannot be resolved"
+      + "\ntp cannot be resolved"
+      + "\nconstspec cannot be resolved"
+      + "\nexpressionlist cannot be resolved"
+      + "\nexp cannot be resolved"
+      + "\nup cannot be resolved"
+      + "\npr cannot be resolved"
+      + "\nop cannot be resolved"
+      + "\nliteral cannot be resolved"
+      + "\nbasic cannot be resolved"
+      + "\n!== cannot be resolved"
+      + "\n&& cannot be resolved"
+      + "\n!== cannot be resolved"
+      + "\n!== cannot be resolved"
+      + "\ntoUpperCase cannot be resolved"
+      + "\n&& cannot be resolved");
+  }
+  
+  @Check
+  public void checkVarDecl(final /* varDecl */Object vd) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nType mismatch: cannot convert from Object to String"
+      + "\nType mismatch: cannot convert from Object to basicLit"
+      + "\nType mismatch: cannot convert from Object to String"
+      + "\nvarspec cannot be resolved"
+      + "\nid cannot be resolved"
+      + "\nid cannot be resolved"
+      + "\nvarspec cannot be resolved"
+      + "\ntp2 cannot be resolved"
+      + "\nvarspec cannot be resolved"
+      + "\nexpressionlist cannot be resolved"
+      + "\nexp cannot be resolved"
+      + "\nup cannot be resolved"
+      + "\npr cannot be resolved"
+      + "\nop cannot be resolved"
+      + "\nliteral cannot be resolved"
+      + "\nbasic cannot be resolved"
+      + "\n!== cannot be resolved"
+      + "\n&& cannot be resolved"
+      + "\n!== cannot be resolved"
+      + "\ntp cannot be resolved"
+      + "\n!== cannot be resolved"
+      + "\ncharAt cannot be resolved"
+      + "\n!== cannot be resolved"
+      + "\ntoLowerCase cannot be resolved"
+      + "\ncharAt cannot be resolved"
+      + "\n&& cannot be resolved"
+      + "\nvarspec cannot be resolved"
+      + "\nid cannot be resolved"
+      + "\nid2 cannot be resolved"
+      + "\nvarspec cannot be resolved"
+      + "\nexpressionlist cannot be resolved"
+      + "\nexpression2 cannot be resolved"
+      + "\n!== cannot be resolved"
+      + "\nvarspec cannot be resolved"
+      + "\nexpressionlist cannot be resolved"
+      + "\nexpression2 cannot be resolved"
+      + "\nup cannot be resolved"
+      + "\npr cannot be resolved"
+      + "\nop cannot be resolved"
+      + "\nliteral cannot be resolved"
+      + "\nbasic cannot be resolved"
+      + "\n!== cannot be resolved"
+      + "\ntp cannot be resolved");
+  }
+  
+  @Check
+  public void imporDeclCheck(final /* importDecl */Object id) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nimports cannot be resolved"
+      + "\nip cannot be resolved"
+      + "\nreplaceAll cannot be resolved");
+  }
+  
+  @Check
+  public Object idDclrCheck() {
     return null;
   }
   
-  public Object checkOperation(final String string) {
-    return null;
+  @Check
+  public Object funcDecla(final /* functionDecl */Object fd) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nNullObj cannot be resolved."
+      + "\nNullObj cannot be resolved."
+      + "\nNullObj cannot be resolved."
+      + "\nfunctionn cannot be resolved"
+      + "\nsignature cannot be resolved"
+      + "\nparameters cannot be resolved"
+      + "\nparameterlist cannot be resolved"
+      + "\nparameterDecl1 cannot be resolved"
+      + "\ntype cannot be resolved"
+      + "\n!== cannot be resolved"
+      + "\nparameterDecl1 cannot be resolved"
+      + "\nid cannot be resolved"
+      + "\nparameterDecl1 cannot be resolved"
+      + "\ntype cannot be resolved"
+      + "\ntp cannot be resolved"
+      + "\nparameterDecl1 cannot be resolved"
+      + "\nid cannot be resolved"
+      + "\nparameterDecl1 cannot be resolved"
+      + "\ntype cannot be resolved"
+      + "\ntp cannot be resolved"
+      + "\nparameterDecl1 cannot be resolved"
+      + "\nid cannot be resolved"
+      + "\nparameterDecl1 cannot be resolved"
+      + "\nid cannot be resolved"
+      + "\nparameterdecl cannot be resolved"
+      + "\ntype cannot be resolved"
+      + "\n!== cannot be resolved"
+      + "\nid cannot be resolved"
+      + "\ntype cannot be resolved"
+      + "\ntp cannot be resolved"
+      + "\nid cannot be resolved");
   }
   
-  public Object checkLiteral(final literal literal) {
-    Object _xblockexpression = null;
-    {
-      basicLit _litBasic = literal.getLitBasic();
-      boolean _tripleNotEquals = (_litBasic != null);
-      if (_tripleNotEquals) {
-        return this.checkLitBasic(literal.getLitBasic());
+  @Check
+  public void checkOperandName(final /* operand */Object op) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method callMethodCheck(expressionList, String[], operand) from the type GoValidator refers to the missing type expressionList"
+      + "\noperandn cannot be resolved"
+      + "\nid cannot be resolved"
+      + "\noperandn cannot be resolved"
+      + "\nid cannot be resolved"
+      + "\noperandn cannot be resolved"
+      + "\nid cannot be resolved"
+      + "\noperandn cannot be resolved"
+      + "\nid cannot be resolved"
+      + "\nexp cannot be resolved");
+  }
+  
+  @Check
+  public Object shortVarDecl(final /* shortVarDecl */Object sv) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nidl cannot be resolved"
+      + "\nid cannot be resolved"
+      + "\nepl cannot be resolved");
+  }
+  
+  public void checkRelExp(final expression e) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field bool is undefined for the type basicLit"
+      + "\nThe method or field bool is undefined for the type basicLit"
+      + "\n=== cannot be resolved"
+      + "\n|| cannot be resolved"
+      + "\n=== cannot be resolved");
+  }
+  
+  public Object checkAritOp(final expression e, final String binaryOp) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method getType(Object) is undefined"
+      + "\nThe method getType(Object) is undefined"
+      + "\nThe method getType(Object) is undefined"
+      + "\nThe method getType(Object) is undefined"
+      + "\nThe method checkTypesInAritimeticOp(String, String, String) is undefined");
+  }
+  
+  public void checkBooleanOp(final expression e, final String binaryOp) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method getType(Object) is undefined"
+      + "\nThe method or field up is undefined for the type expression"
+      + "\nThe method getType(Object) is undefined"
+      + "\nThe method getType(Object) is undefined"
+      + "\nThe method getType(Object) is undefined"
+      + "\npr cannot be resolved"
+      + "\nop cannot be resolved"
+      + "\nliteral cannot be resolved"
+      + "\n!== cannot be resolved");
+  }
+  
+  protected void checkTypesInBoolOp(final String binaryOp, final String type1, final String type2) {
+    if ((Objects.equal(binaryOp, "==") || Objects.equal(binaryOp, "!="))) {
+      boolean _notEquals = (!Objects.equal(type1, type2));
+      if (_notEquals) {
+        this.error(((("Semantic Error: Invalid boolean operation. Mismatched types " + type1) + " and ") + type2), null);
       }
-      compositeLit _litComposite = literal.getLitComposite();
-      boolean _tripleNotEquals_1 = (_litComposite != null);
-      if (_tripleNotEquals_1) {
-        this.checkLitComposite(literal.getLitComposite());
+    } else {
+      boolean _equals = Objects.equal(type1, "int");
+      if (_equals) {
+        if ((Objects.equal(type2, "bool") || Objects.equal(type2, "string"))) {
+          this.error(((("Semantic Error: Invalid boolean operation. Mismatched types " + type1) + " and ") + type2), null);
+        }
+      } else {
+        boolean _equals_1 = Objects.equal(type1, "float");
+        if (_equals_1) {
+          if ((Objects.equal(type2, "bool") || Objects.equal(type2, "string"))) {
+            this.error(((("Semantic Error: Invalid boolean operation. Mismatched types " + type1) + " and ") + type2), null);
+          }
+        } else {
+          if ((Objects.equal(type1, "bool") || Objects.equal(type2, "bool"))) {
+            this.error((("Semantic Error: Invalid boolean operation. Operator " + binaryOp) + 
+              " not defined on bool."), null);
+          } else {
+            boolean _equals_2 = Objects.equal(type1, "string");
+            if (_equals_2) {
+              boolean _notEquals_1 = (!Objects.equal(type2, "string"));
+              if (_notEquals_1) {
+                this.error(((("Semantic Error: Invalid boolean operation. Mismatched types " + type1) + " and ") + type2), null);
+              }
+            }
+          }
+        }
       }
-      Object _xifexpression = null;
-      functionLit _litFunc = literal.getLitFunc();
-      boolean _tripleNotEquals_2 = (_litFunc != null);
-      if (_tripleNotEquals_2) {
-        _xifexpression = this.checkLitFunc(literal.getLitFunc());
-      }
-      _xblockexpression = _xifexpression;
     }
-    return _xblockexpression;
   }
   
-  public String checkLitBasic(final basicLit lit) {
+  public String getBasicLitType(final basicLit lit) {
     String _floatLit = lit.getFloatLit();
     boolean _tripleNotEquals = (_floatLit != null);
     if (_tripleNotEquals) {
@@ -116,356 +259,52 @@ public class GoValidator extends AbstractGoValidator {
     return null;
   }
   
-  public void checkLitComposite(final compositeLit lit) {
-    throw new UnsupportedOperationException("TODO: auto-generated method stub");
+  protected boolean isArithimeticOp(final String binaryOperator) {
+    return ((((Objects.equal(binaryOperator, "+") || Objects.equal(binaryOperator, "-")) || Objects.equal(binaryOperator, "*")) || Objects.equal(binaryOperator, "/")) || Objects.equal(binaryOperator, "%"));
   }
   
-  public Object checkPrimary(final primaryExpr expr) {
-    Object _xblockexpression = null;
-    {
-      operand _operand = expr.getOperand();
-      boolean _tripleNotEquals = (_operand != null);
-      if (_tripleNotEquals) {
-        return this.checkOperand(expr.getOperand());
-      }
-      conversion _conversion = expr.getConversion();
-      boolean _tripleNotEquals_1 = (_conversion != null);
-      if (_tripleNotEquals_1) {
-        this.checkConversion(expr.getConversion());
-      }
-      primaryExprArguments _primaryExprArguments = expr.getPrimaryExprArguments();
-      boolean _tripleNotEquals_2 = (_primaryExprArguments != null);
-      if (_tripleNotEquals_2) {
-        this.checkPrimaryExprArguments(expr.getPrimaryExprArguments());
-      }
-      primaryExprIndex _primaryExprIndex = expr.getPrimaryExprIndex();
-      boolean _tripleNotEquals_3 = (_primaryExprIndex != null);
-      if (_tripleNotEquals_3) {
-        this.checkPrimaryExprIndex(expr.getPrimaryExprIndex());
-      }
-      primaryExprSelector _primaryExprSelector = expr.getPrimaryExprSelector();
-      boolean _tripleNotEquals_4 = (_primaryExprSelector != null);
-      if (_tripleNotEquals_4) {
-        this.checkPrimaryExprSelector(expr.getPrimaryExprSelector());
-      }
-      primaryExprSlice _primaryExprSlice = expr.getPrimaryExprSlice();
-      boolean _tripleNotEquals_5 = (_primaryExprSlice != null);
-      if (_tripleNotEquals_5) {
-        this.checkPrimaryExprSlice(expr.getPrimaryExprSlice());
-      }
-      Object _xifexpression = null;
-      primaryExprTypeAssertion _primaryExprTypeAssertion = expr.getPrimaryExprTypeAssertion();
-      boolean _tripleNotEquals_6 = (_primaryExprTypeAssertion != null);
-      if (_tripleNotEquals_6) {
-        _xifexpression = this.checkPrimaryExprTypeAssertion(expr.getPrimaryExprTypeAssertion());
-      }
-      _xblockexpression = _xifexpression;
-    }
-    return _xblockexpression;
+  protected boolean isBooleanOp(final String binaryOperator) {
+    return (((((Objects.equal(binaryOperator, "==") || Objects.equal(binaryOperator, "!=")) || Objects.equal(binaryOperator, "<")) || Objects.equal(binaryOperator, "<=")) || Objects.equal(binaryOperator, ">")) || Objects.equal(binaryOperator, ">="));
   }
   
-  public Object checkPrimaryExprTypeAssertion(final primaryExprTypeAssertion assertion) {
-    return null;
+  public Object nullDeclaration(final String id) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nNullObj cannot be resolved.");
   }
   
-  public Object checkPrimaryExprSlice(final primaryExprSlice slice) {
-    return null;
+  public boolean checkAndMakeDecl(final String id, final String constType, final basicLit literal) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field bool is undefined for the type basicLit"
+      + "\nThe method or field bool is undefined for the type basicLit"
+      + "\n!== cannot be resolved");
   }
   
-  public Object checkPrimaryExprSelector(final primaryExprSelector selector) {
-    return null;
-  }
-  
-  public Object checkPrimaryExprIndex(final primaryExprIndex index) {
-    return null;
-  }
-  
-  public Object checkPrimaryExprArguments(final primaryExprArguments arguments) {
-    return null;
-  }
-  
-  public Object checkConversion(final conversion conversion) {
-    return null;
-  }
-  
-  public Object checkOperand(final operand operand) {
-    Object _xblockexpression = null;
-    {
-      literal _literal = operand.getLiteral();
-      boolean _tripleNotEquals = (_literal != null);
-      if (_tripleNotEquals) {
-        return this.checkLiteral(operand.getLiteral());
-      }
-      methodExpr _methodExpr = operand.getMethodExpr();
-      boolean _tripleNotEquals_1 = (_methodExpr != null);
-      if (_tripleNotEquals_1) {
-        this.checkMethodExpr(operand.getMethodExpr());
-      }
-      operandName _operandName = operand.getOperandName();
-      boolean _tripleNotEquals_2 = (_operandName != null);
-      if (_tripleNotEquals_2) {
-        this.checkOperandName(operand.getOperandName());
-      }
-      Object _xifexpression = null;
-      expression _expr = operand.getExpr();
-      boolean _tripleNotEquals_3 = (_expr != null);
-      if (_tripleNotEquals_3) {
-        _xifexpression = null;
-      }
-      _xblockexpression = _xifexpression;
-    }
-    return _xblockexpression;
-  }
-  
-  public void checkOperandName(final operandName name) {
-    String _name = name.getName();
-    boolean _tripleNotEquals = (_name != null);
-    if (_tripleNotEquals) {
-      char idFirstChar = name.getName().charAt(0);
-      boolean _isLetter = Character.isLetter(idFirstChar);
-      boolean _not = (!_isLetter);
-      if (_not) {
-        this.error(
-          "First char of operand name must be a letter", 
-          GoPackage.Literals.MODEL__GREETINGS);
-      }
-    }
-    qualifiedIdent _qualIdent = name.getQualIdent();
-    boolean _tripleNotEquals_1 = (_qualIdent != null);
-    if (_tripleNotEquals_1) {
-      this.checkQualIdent(name.getQualIdent());
-    }
-  }
-  
-  public void checkQualIdent(final qualifiedIdent ident) {
-    String _packageName = ident.getPackageName();
-    boolean _tripleNotEquals = (_packageName != null);
-    if (_tripleNotEquals) {
-      String name = ident.getPackageName();
-      boolean _equals = Objects.equal(name, "_");
-      if (_equals) {
-        this.error(
-          "PackageName cannot be blank", 
-          GoPackage.Literals.MODEL__GREETINGS);
-      }
-      boolean _isLetter = Character.isLetter(name.charAt(0));
-      boolean _not = (!_isLetter);
-      if (_not) {
-        this.error(
-          "First char of package name must be a letter", 
-          GoPackage.Literals.MODEL__GREETINGS);
-      }
-    }
-    String _name = ident.getName();
-    boolean _tripleNotEquals_1 = (_name != null);
-    if (_tripleNotEquals_1) {
-      String name_1 = ident.getName();
-      boolean _equals_1 = Objects.equal(name_1, "_");
-      if (_equals_1) {
-        this.error(
-          "Identifier cannot be blank", 
-          GoPackage.Literals.MODEL__GREETINGS);
-      }
-      boolean _isLetter_1 = Character.isLetter(name_1.charAt(0));
-      boolean _not_1 = (!_isLetter_1);
-      if (_not_1) {
-        this.error(
-          "First char of identifier name must be a letter", 
-          GoPackage.Literals.MODEL__GREETINGS);
-      }
-    }
-  }
-  
-  public Object checkMethodExpr(final methodExpr expr) {
-    return null;
-  }
-  
-  public Object checkLitFunc(final functionLit lit) {
-    return null;
-  }
-  
-  public Object checkCompLit(final compositeLit lit) {
-    return null;
-  }
-  
-  public Object checkBasicLit(final String string) {
-    return null;
-  }
-  
-  public void checkSimple(final simpleStmt stmt) {
-    sendStmt _sendStmt = stmt.getSendStmt();
-    boolean _tripleNotEquals = (_sendStmt != null);
-    if (_tripleNotEquals) {
-      this.checkSendStmt(stmt.getSendStmt());
-    }
-    expressionStmt _expressionStmt = stmt.getExpressionStmt();
-    boolean _tripleNotEquals_1 = (_expressionStmt != null);
-    if (_tripleNotEquals_1) {
-      this.checkExpression(stmt.getExpressionStmt().getExpr());
-    }
-    incDecStmt _incDecStmt = stmt.getIncDecStmt();
-    boolean _tripleNotEquals_2 = (_incDecStmt != null);
-    if (_tripleNotEquals_2) {
-      this.checkDcStmt(stmt.getIncDecStmt());
-    }
-    assignment _assignment = stmt.getAssignment();
-    boolean _tripleNotEquals_3 = (_assignment != null);
-    if (_tripleNotEquals_3) {
-      this.checkAssignment(stmt.getAssignment());
-    }
-    shortVarDecl _shortVarDecl = stmt.getShortVarDecl();
-    boolean _tripleNotEquals_4 = (_shortVarDecl != null);
-    if (_tripleNotEquals_4) {
-      this.checkShortVar(stmt.getShortVarDecl());
-    }
-  }
-  
-  public Object checkSendStmt(final sendStmt stmt) {
-    Object _xifexpression = null;
-    expression _expr1 = stmt.getExpr1();
-    boolean _tripleNotEquals = (_expr1 != null);
-    if (_tripleNotEquals) {
-      Object _xifexpression_1 = null;
-      expression _expr2 = stmt.getExpr2();
-      boolean _tripleNotEquals_1 = (_expr2 != null);
-      if (_tripleNotEquals_1) {
-        Object _xblockexpression = null;
-        {
-          Object type1 = this.checkExpression(stmt.getExpr1());
-          Object type2 = this.checkExpression(stmt.getExpr2());
-          Object _xifexpression_2 = null;
-          if ((type1 != type2)) {
-            Object _xifexpression_3 = null;
-            if (((type1 == "float") && (type2 == "int"))) {
-              _xifexpression_3 = null;
-            } else {
-              String _string = type1.toString();
-              String _plus = (_string + type2);
-              this.error(
-                "Incompatible types in send stmt", 
-                GoPackage.Literals.MODEL__GREETINGS, _plus);
-            }
-            _xifexpression_2 = _xifexpression_3;
-          }
-          _xblockexpression = _xifexpression_2;
-        }
-        _xifexpression_1 = _xblockexpression;
-      } else {
-        this.error(
-          "expression value can not be empty", 
-          GoPackage.Literals.MODEL__GREETINGS, 
-          stmt.toString());
-      }
-      _xifexpression = _xifexpression_1;
-    }
-    return _xifexpression;
-  }
-  
-  public void checkDcStmt(final incDecStmt stmt) {
-    expression _expr = stmt.getExpr();
-    boolean _tripleNotEquals = (_expr != null);
-    if (_tripleNotEquals) {
-      Object type = this.checkExpression(stmt.getExpr());
-      boolean _not = (!((type == "int") || Objects.equal(type, "float")));
-      if (_not) {
-        this.error(
-          "only number can be incremented/decremented", 
-          GoPackage.Literals.MODEL__GREETINGS, 
-          stmt.toString());
-      }
-    }
-  }
-  
-  public void checkAssignment(final assignment assignment) {
-    this.checkExpList(assignment.getExprList1());
-    this.checkExpList(assignment.getExprList2());
-  }
-  
-  public void checkShortVar(final shortVarDecl decl) {
-    identifierList _idList = decl.getIdList();
-    boolean _tripleNotEquals = (_idList != null);
-    if (_tripleNotEquals) {
-      expressionList _exprList = decl.getExprList();
-      boolean _tripleNotEquals_1 = (_exprList != null);
-      if (_tripleNotEquals_1) {
-        this.checkExpList(decl.getExprList());
-      }
-    }
-  }
-  
-  public void checkExpList(final expressionList list) {
-    String type = "";
-    for (int i = 0; (i < list.getExpr().size()); i++) {
-      {
-        Object nextType = this.checkExpression(list.getExpr().get(i));
-        if ((type != "")) {
-          if ((type != nextType)) {
-            this.error(
-              "Incompatible types in assignment", 
-              GoPackage.Literals.MODEL__GREETINGS, 
-              list.toString());
-          }
-        }
-      }
-    }
-  }
-  
-  public Object checkExpression(final expression expression) {
-    unaryExpr _unaryExpr = expression.getUnaryExpr();
-    boolean _tripleNotEquals = (_unaryExpr != null);
-    if (_tripleNotEquals) {
-      return this.checkUnary(expression.getUnaryExpr());
-    }
-    expressionMatched _expressionMatched = expression.getExpressionMatched();
-    boolean _tripleNotEquals_1 = (_expressionMatched != null);
-    if (_tripleNotEquals_1) {
-      this.checkMatched(expression.getExpressionMatched());
-    }
-    return null;
-  }
-  
-  public void checkMatched(final expressionMatched matched) {
-    expression _expression = matched.getExpression();
-    boolean _tripleNotEquals = (_expression != null);
-    if (_tripleNotEquals) {
-      this.checkExpression(matched.getExpression());
-    }
-    String _operator = matched.getOperator();
-    boolean _tripleNotEquals_1 = (_operator != null);
-    if (_tripleNotEquals_1) {
-      String operator = matched.getOperator();
-      String type = this.getOperatorType(operator);
-    }
-  }
-  
-  public String getOperatorType(final String operator) {
-    if ((((operator.equals("+") || operator.equals("-")) || operator.equals("/")) || operator.equals("*"))) {
-      return "ari";
-    } else {
-      if ((((((operator.equals(">") || operator.equals("<")) || operator.equals(">=")) || operator.equals("<=")) || 
-        operator.equals("==")) || operator.equals("!="))) {
-        return "rel";
-      }
-    }
-    return null;
-  }
-  
-  public Object checkUnary(final unaryExpr expr) {
-    Object _xblockexpression = null;
-    {
-      primaryExpr _primaryExpr = expr.getPrimaryExpr();
-      boolean _tripleNotEquals = (_primaryExpr != null);
-      if (_tripleNotEquals) {
-        return this.checkPrimary(expr.getPrimaryExpr());
-      }
-      Object _xifexpression = null;
-      unaryExpr _unaryExpr = expr.getUnaryExpr();
-      boolean _tripleNotEquals_1 = (_unaryExpr != null);
-      if (_tripleNotEquals_1) {
-        _xifexpression = this.checkUnary(expr.getUnaryExpr());
-      }
-      _xblockexpression = _xifexpression;
-    }
-    return _xblockexpression;
+  protected void callMethodCheck(final /* expressionList */Object expList, final String[] elements, final /* operand */Object op) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nexp cannot be resolved"
+      + "\nup cannot be resolved"
+      + "\npr cannot be resolved"
+      + "\nop cannot be resolved"
+      + "\noperandn cannot be resolved"
+      + "\n!== cannot be resolved"
+      + "\nexp cannot be resolved"
+      + "\nup cannot be resolved"
+      + "\npr cannot be resolved"
+      + "\nop cannot be resolved"
+      + "\noperandn cannot be resolved"
+      + "\nid cannot be resolved"
+      + "\n!== cannot be resolved"
+      + "\nexp cannot be resolved"
+      + "\nup cannot be resolved"
+      + "\npr cannot be resolved"
+      + "\nop cannot be resolved"
+      + "\nliteral cannot be resolved"
+      + "\nbasic cannot be resolved"
+      + "\n!== cannot be resolved"
+      + "\nexpression2 cannot be resolved"
+      + "\n!== cannot be resolved"
+      + "\nexpression2 cannot be resolved"
+      + "\noperandn cannot be resolved"
+      + "\nid cannot be resolved");
   }
 }

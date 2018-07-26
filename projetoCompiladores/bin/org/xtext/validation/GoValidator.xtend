@@ -4,31 +4,7 @@
 package org.xtext.validation
 
 import org.eclipse.xtext.validation.Check
-import org.xtext.go.GoPackage
-import org.xtext.go.assignment
-import org.xtext.go.compositeLit
-import org.xtext.go.conversion
 import org.xtext.go.expression
-import org.xtext.go.expressionList
-import org.xtext.go.expressionMatched
-import org.xtext.go.functionLit
-import org.xtext.go.ifStmt
-import org.xtext.go.incDecStmt
-import org.xtext.go.literal
-import org.xtext.go.methodExpr
-import org.xtext.go.operand
-import org.xtext.go.operandName
-import org.xtext.go.primaryExpr
-import org.xtext.go.primaryExprArguments
-import org.xtext.go.primaryExprIndex
-import org.xtext.go.primaryExprSelector
-import org.xtext.go.primaryExprSlice
-import org.xtext.go.primaryExprTypeAssertion
-import org.xtext.go.qualifiedIdent
-import org.xtext.go.sendStmt
-import org.xtext.go.shortVarDecl
-import org.xtext.go.simpleStmt
-import org.xtext.go.unaryExpr
 import org.xtext.go.basicLit
 
 /**
@@ -37,342 +13,754 @@ import org.xtext.go.basicLit
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class GoValidator extends AbstractGoValidator {
-
+	val ids = newLinkedHashMap();
+	
 	@Check
-	def checkIf(ifStmt stmt) {
-		if (stmt.getSimplStatement() !== null) {
-			checkSimple(stmt.getSimplStatement());
-		}
-		if (stmt.getExpr() !== null) {
-			checkExpression(stmt.getExpr());
-		}
-	}
-
-	@Check
-	def checkDeclaration() {
-	}
-
-	def checkOperation(String string) {
-		//TODO: auto-generated method stub"
-	}
-
-	def checkLiteral(literal literal) {
-		if (literal.getLitBasic() !== null) {
-			return checkLitBasic(literal.getLitBasic());
-		}
-		if (literal.getLitComposite() !== null) {
-			checkLitComposite(literal.getLitComposite());
-		}
-		if (literal.getLitFunc() !== null) {
-			checkLitFunc(literal.getLitFunc());
-		}
-	}
+	def checkExpression(expression e) {
 		
-		def checkLitBasic(basicLit lit) {
-			if(lit.getFloatLit !== null) {
-				return "float";
-			} else
-			if(lit.getIntLit !== null) {
-				return "int";
-			} else
-			if(lit.getStringLit !== null) {
-				return "string";
-			}
-		}
-		
-//	def checkLitBasic(String string) {
-//		try {
-//			var value = Float.valueOf(string);
-//			if(value % 1 == 0){
-//				return "int";
-//			} else {
-//				return "float";
-//			}
-//		} catch (Exception exception) {
-//			try {
-//				var value = Boolean.valueOf(string);
-//				return "boolean";
-//			} catch (Exception exception2) {
-//				return "string";
-//			}
-//			
-//		}
-//	}
-
-
-
-	def checkLitComposite(compositeLit lit) {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
-	}
-
-	def checkPrimary(primaryExpr expr) {
-		if (expr.getOperand() !== null) {
-			return checkOperand(expr.getOperand());
-		}
-		if (expr.getConversion() !== null) {
-			checkConversion(expr.getConversion());
-		}
-		if (expr.getPrimaryExprArguments() !== null) {
-			checkPrimaryExprArguments(expr.getPrimaryExprArguments());
-		}
-		if (expr.getPrimaryExprIndex() !== null) {
-			checkPrimaryExprIndex(expr.getPrimaryExprIndex());
-		}
-		if (expr.getPrimaryExprSelector() !== null) {
-			checkPrimaryExprSelector(expr.getPrimaryExprSelector());
-		}
-		if (expr.getPrimaryExprSlice() !== null) {
-			checkPrimaryExprSlice(expr.getPrimaryExprSlice());
-		}
-		if (expr.getPrimaryExprTypeAssertion() !== null) {
-			checkPrimaryExprTypeAssertion(expr.getPrimaryExprTypeAssertion());
-		}
-	}
-
-	def checkPrimaryExprTypeAssertion(primaryExprTypeAssertion assertion) {
-		// TODO: auto-generated method stub"
-	}
-
-	def checkPrimaryExprSlice(primaryExprSlice slice) {
-		// TODO: auto-generated method stub"
-	}
-
-	def checkPrimaryExprSelector(primaryExprSelector selector) {
-		// TODO: auto-generated method stub"
-	}
-
-	def checkPrimaryExprIndex(primaryExprIndex index) {
-		// TODO: auto-generated method stub"
-	}
-
-	def checkPrimaryExprArguments(primaryExprArguments arguments) {
-		// TODO: auto-generated method stub"
-	}
-
-	def checkConversion(conversion conversion) {
-		// TODO: auto-generated method stub"
-	}
-
-	def checkOperand(operand operand) {
-		if (operand.getLiteral() !== null) {
-			 return checkLiteral(operand.getLiteral());
-		}
-		if (operand.getMethodExpr() !== null) {
-			checkMethodExpr(operand.getMethodExpr());
-		}
-		if (operand.getOperandName() !== null) {
-			checkOperandName(operand.getOperandName());
-		}
-		if (operand.getExpr() !== null) {
-			// checkExpression(operand.getExpr()); TODO: fix this
-		}
-	}
-
-	def checkOperandName(operandName name) {
-		if (name.getName !== null) { // This is a string
-			//Identifier first char must be a letter
-			var idFirstChar = name.getName().charAt(0);
-			if(!Character.isLetter(idFirstChar)){
-				error(
-					"First char of operand name must be a letter",
-					GoPackage.Literals.MODEL__GREETINGS
-				)
-			}
+		if(e.expressionMatched.operator !== null) {
 			
-		}
-		if (name.getQualIdent() !== null) {
-			checkQualIdent(name.getQualIdent());
+			var binaryOperator = e.expressionMatched.operator;
+			
+			if(binaryOperator == "||" || binaryOperator == "&&") {
+				checkRelExp(e);
+			}
+			else if(isArithimeticOp(binaryOperator)) {	
+				checkAritOp(e, binaryOperator);
+			}
+			else if(isBooleanOp(binaryOperator)) {
+				checkBooleanOp(e, binaryOperator);
+			}
 		}
 	}
 	
-	def checkQualIdent(qualifiedIdent ident) {
-		if (ident.getPackageName() !== null) {
-			var name = ident.getPackageName()
-			
-			//PackageName cannot be blank
-			if(name == '_'){
-				error(
-					"PackageName cannot be blank",
-					GoPackage.Literals.MODEL__GREETINGS
-				)
-			}
-			
-			//Package name must start with a letter
-			if(!Character.isLetter(name.charAt(0))){
-				error(
-					"First char of package name must be a letter",
-					GoPackage.Literals.MODEL__GREETINGS
-				)
-			}
-		}
+	@Check
+	def checkConstDecl(constDecl cd) {
 		
-		if (ident.getName() !== null) {
-			
-			var name = ident.getName();
-			//Identifier's name cannot be blank
-			if(name == '_'){
-				error(
-					"Identifier cannot be blank",
-					GoPackage.Literals.MODEL__GREETINGS
-				)
-			}
-			
-			//Identifier's name must start with a letter
-			if(!Character.isLetter(name.charAt(0))){
-				error(
-					"First char of identifier name must be a letter",
-					GoPackage.Literals.MODEL__GREETINGS
-				)
-			}
-		}
-	}
-
-	def checkMethodExpr(methodExpr expr) {
-		// TODO: auto-generated method stub"
-
-	}
-
-	def checkLitFunc(functionLit lit) {
-		// TODO:			
-	}
-
-	def checkCompLit(compositeLit lit) {
-		// TODO:
-	}
-
-	def checkBasicLit(String string) {
-		// TODO:		
-
-	}
-
-	def checkSimple(simpleStmt stmt) {
-		if (stmt.getSendStmt() !== null) {
-			checkSendStmt(stmt.getSendStmt());
-		}
-		if (stmt.getExpressionStmt() !== null) {
-			checkExpression(stmt.getExpressionStmt().getExpr());
-		}
-		if (stmt.getIncDecStmt() !== null) {
-			checkDcStmt(stmt.getIncDecStmt());
-		}
-		if (stmt.getAssignment() !== null) {
-			checkAssignment(stmt.getAssignment());
-		}
-		if (stmt.getShortVarDecl() !== null) {
-			checkShortVar(stmt.getShortVarDecl());
-		}
-	}
-
-	def checkSendStmt(sendStmt stmt) {
-		if (stmt.getExpr1() !== null) {
-			if (stmt.getExpr2() !== null) {
-				var type1 = checkExpression(stmt.getExpr1());
-				var type2 = checkExpression(stmt.getExpr2());
+		var constId   = cd.constspec.id.id;
+		nullDeclaration(constId);
+		
+		var constType = cd.constspec.tp.tp;
+		var constExp  = cd.constspec.expressionlist.exp.up.pr.op.literal.basic;
 				
-				if(type1 !== type2) {
-					if (type1 === "float" && type2 === "int"){
-						// ITS OK
-					}else {
-						error(
-							"Incompatible types in send stmt",
-							GoPackage.Literals.MODEL__GREETINGS,
-							type1.toString() + type2
-						)
-					}
-				}
-			} else {
-				error(
-					"expression value can not be empty",
-					GoPackage.Literals.MODEL__GREETINGS,
-					stmt.toString()
-				)
+				
+		if(constType !== null && constExp !== null) {
+			var error = checkAndMakeDecl(constId, constType, constExp);
+			if(constId !== constId.toUpperCase() && !error) {
+				warning ("Constants usually be declared with Upper Case", null);
 			}
 		}
 	}
-
-	def checkDcStmt(incDecStmt stmt) {
-		if(stmt.getExpr() !== null) {
-			var type = checkExpression(stmt.getExpr());
-			if(!(type === "int" || type == "float")){
-				error(
-					"only number can be incremented/decremented",
-					GoPackage.Literals.MODEL__GREETINGS,
-					stmt.toString()
+	
+	@Check
+	def checkVarDecl(varDecl vd) {
+		
+		var varId   = vd.varspec.id.id;	
+		nullDeclaration(varId);
+		
+		var type    = vd.varspec.tp2;
+		var varExp  = vd.varspec.expressionlist.exp.up.pr.op.literal.basic;
+	
+		
+		if (type !== null && varExp !== null) {
+			var varType = type.tp; 		
+			if(varType !== null) {
+				var error = checkAndMakeDecl(varId, varType, varExp);
+				if(varId.charAt(0) !== varId.toLowerCase().charAt(0) && !error) {
+					warning ("Variables usually starts with Lower Case", null);
+				}
+			}
+		}
+		
+		var varIds = newLinkedList;
+		for(id : vd.varspec.id.id2) {
+			varIds.add(id)
+		}
+		
+		var exps = newLinkedList;
+		if(vd.varspec.expressionlist.expression2 !== null) {
+			for(expr : vd.varspec.expressionlist.expression2) {
+				exps.add(expr.up.pr.op.literal.basic)
+			}
+		}
+		
+		if(varIds.size == exps.size) {
+			var index = 0
+			for(id : varIds) {
+				if(type !== null) {
+					checkAndMakeDecl(id, type.tp, exps.get(index));
+				} else {
+					nullDeclaration(id)
+				}
+			}
+		}
+		else {
+			error('Semantic Error: Wrong number of atributes', null)
+		}
+	}
+	
+	@Check
+	def imporDeclCheck(importDecl id) {
+		var imports = id.imports
+		for(import:imports) {
+			nullDeclaration(import.ip.replaceAll("\"", ""))
+		}
+	}
+	
+	@Check
+	def idDclrCheck() {
+		//TODO: GOD PLEASE HELP ME
+	}
+	
+	@Check
+	def funcDecla(functionDecl fd) {
+		
+		var funcName      = fd.functionn;
+		var parameters    = fd.signature.parameters.parameterlist;
+		var parameterList = newLinkedHashMap()
+		
+		if(parameters.parameterDecl1.type !== null) {
+			
+			parameterList.put(
+				parameters.parameterDecl1.id,
+				parameters.parameterDecl1.type.tp
+			);
+			
+			ids.put(
+				parameters.parameterDecl1.id,
+				parameters.parameterDecl1.type.tp
+			);
+		}
+		else {
+			parameterList.put(
+				parameters.parameterDecl1.id,
+				new NullObj()
+			);
+			
+			ids.put(
+				parameters.parameterDecl1.id,
+				new NullObj()
+			);
+		}
+		
+		for(param : parameters.parameterdecl) {
+			if(param.type !== null) {
+				parameterList.put(
+					param.id,
+					param.type.tp
+				)
+			}else {
+				parameterList.put(
+					param.id,
+					new NullObj()
 				)
 			}
-		}		
+		}
+		
+		ids.put(funcName, parameterList.toString);	
 	}
-
-
-
-	def checkAssignment(assignment assignment) {
-		checkExpList(assignment.getExprList1);
-		checkExpList(assignment.getExprList2);
+	
+	@Check
+	def checkOperandName(operand op) {
+		
+		if(!ids.containsKey(op.operandn.id)) {	
+			error("Semantic Error: Identifier " + op.operandn.id + " was never declared" , null)
+		}
+		else if(ids.get(op.operandn.id).toString().contains(',')) {
+			
+			var elements   = ids.get(op.operandn.id).toString().split(",");
+			var expList    = op.exp;
+			callMethodCheck(expList, elements, op)
+		}
+		
 	}
-
-	def checkShortVar(shortVarDecl decl) {
-		if (decl.getIdList() !== null) {
-			if (decl.getExprList() !== null) {
-				checkExpList(decl.getExprList());
+	
+	@Check
+	def shortVarDecl(shortVarDecl sv) {
+		ids.put(
+			sv.idl.id,
+			sv.epl
+		);
+	}
+	
+	def checkRelExp(expression e) {
+		
+		if(e.unaryExpr.primaryExpr.operand.literal !== null && e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal !== null) {
+			var basicLiteral1 = e.unaryExpr.primaryExpr.operand.literal.litBasic
+			var basicLiteral2 = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal.litBasic
+			
+			if(basicLiteral1.bool === null || basicLiteral2.bool === null) {
+				error("Semantic Error: Invalid boolean expression", null);
 			}
-		// TODO: check declaration
+		}
+	}
+	
+	def checkAritOp(expression e, String binaryOp) {
+		
+		var type1 = "";
+		var type2 = "";
+		var id1 = "";
+		var id2 = "";
+		
+		if(e.unaryExpr.primaryExpr.operand.literal !== null && e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal !== null) {
+			var basicLiteral1 = e.unaryExpr.primaryExpr.operand.literal.litBasic;
+			var basicLiteral2 = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal.litBasic;
+			
+			type1 = getBasicLitType(basicLiteral1);
+			type2 = getBasicLitType(basicLiteral2);	
+		}
+		
+		else if(e.unaryExpr.primaryExpr.operand.literal !== null) {
+			var basicLiteral1 = e.unaryExpr.primaryExpr.operand.literal.litBasic;
+			id2               = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.operandName.name;
+			
+			type1 = getBasicLitType(basicLiteral1);
+			type2 = getType(ids.get(id2));
+		}
+		else if(e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal !== null){
+			id1               = e.unaryExpr.primaryExpr.operand.operandName.name;
+			var basicLiteral2 = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal.litBasic;
+			
+			type2 = getBasicLitType(basicLiteral2);
+			type1 = getType(ids.get(id1));
+		}
+		else {
+			id1 = e.unaryExpr.primaryExpr.operand.operandName.name
+			id2 = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.operandName.name
+			
+			type1 = getType(ids.get(id1));
+			type2 = getType(ids.get(id2));
+		}
+		
+		if(type1 == "null" || type2 == "null") {
+			if(type1 == "null") {
+				error("Semantic Error: " + id1 + " was declared but never assigned.", null)
+			}
+			if(type2 == "null") {
+				error("Semantic Error: " + id2 + " was declared but never assigned.", null)
+			}
+		}
+		else {
+			checkTypesInAritimeticOp(binaryOp, type1, type2)
+		}
+	}
+	
+	def checkBooleanOp(expression e, String binaryOp) {
+		
+		var type1 = "";
+		var type2 = "";
+		
+		var id1 = "";
+		var id2 = "";
+		
+		if(e.unaryExpr.primaryExpr.operand.literal !== null && e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal !== null) {
+			var basicLiteral1 = e.unaryExpr.primaryExpr.operand.literal.litBasic;
+			var basicLiteral2 = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal.litBasic;
+			
+			type1 = getBasicLitType(basicLiteral1);
+			type2 = getBasicLitType(basicLiteral2);	
+		}
+		else if(e.unaryExpr.primaryExpr.operand.literal !== null) {
+			var basicLiteral1 = e.unaryExpr.primaryExpr.operand.literal.litBasic;
+			id2               = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.operandName.name
+			
+			type1 = getBasicLitType(basicLiteral1);
+			type2 = getType(ids.get(id2));
+		}
+		else if(e.expressionMatched.expression.up.pr.op.literal !== null){
+			id1               = e.unaryExpr.primaryExpr.operand.operandName.name
+			var basicLiteral2 = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal.litBasic;
+			
+			type2 = getBasicLitType(basicLiteral2);
+			type1 = getType(ids.get(id1));
+		}
+		else {
+			id1 = e.unaryExpr.primaryExpr.operand.operandName.name
+			id2 = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.operandName.name
+			
+			type1 = getType(ids.get(id1));
+			type2 = getType(ids.get(id2));
+		}
+		
+		if(type1 == "null" || type2 == "null") {
+			if(type1 == "null") {
+				error("Semantic Error: " + id1 + " was declared but never assigned.", null)
+			}
+			if(type2 == "null") {
+				error("Semantic Error: " + id2 + " was declared but never assigned.", null)
+			}
+		}
+		else {
+			checkTypesInBoolOp(binaryOp, type1, type2)
+		}	
+	}
+	
+	protected def void checkTypesInBoolOp(String binaryOp, String type1, String type2) {
+		if(binaryOp == "==" || binaryOp == "!=") {
+			if(type1 != type2) {
+				error("Semantic Error: Invalid boolean operation. Mismatched types " + type1
+						+ " and " + type2, null)
+			}
+		}	
+		else{
+			if(type1 == "int") {
+				if(type2 == "bool" || type2 == "string") {
+					error("Semantic Error: Invalid boolean operation. Mismatched types " + type1
+						+ " and " + type2, null)
+				}
+			}
+			else if(type1 == "float") {
+				if(type2 == "bool" || type2 == "string") {
+					error("Semantic Error: Invalid boolean operation. Mismatched types " + type1
+						+ " and " + type2, null)
+				}
+			}else if(type1 == "bool" || type2 == "bool") {
+				error("Semantic Error: Invalid boolean operation. Operator " + binaryOp + 
+						" not defined on bool.", null)
+			} else if(type1 == "string") {
+				if(type2 != "string") {
+					error("Semantic Error: Invalid boolean operation. Mismatched types " + type1
+						+ " and " + type2, null)
+				}
+			}
 		}
 	}
 		
-	def checkExpList(expressionList list) {
-		var type = "";
-		for (var i = 0; i < list.getExpr().size(); i++) {
-			var nextType = checkExpression(list.getExpr().get(i));
-			if(type !== ""){
-				if (type !== nextType) {
-					error(
-						"Incompatible types in assignment",
-						GoPackage.Literals.MODEL__GREETINGS,
-						list.toString()
-					)
-				}
+	def getBasicLitType(basicLit lit) {
+			if(lit.getFloatLit !== null) {
+				return "float";
+			} else if(lit.getIntLit !== null) {
+				return "int";
+			} else if(lit.getStringLit !== null) {
+				return "string";
 			}
-
+	}
+	
+	protected def boolean isArithimeticOp(String binaryOperator) {
+		return (binaryOperator == "+" || binaryOperator == "-" || binaryOperator == "*"
+			 || binaryOperator == "/" || binaryOperator == "%")
+	}
+	
+	protected def boolean isBooleanOp(String binaryOperator) {
+		
+		return (  binaryOperator == "==" || binaryOperator == "!=" 
+			    || binaryOperator == "<" || binaryOperator == "<=" 
+			    || binaryOperator == ">" || binaryOperator == ">="  );
+	}
+	
+	def nullDeclaration(String id) {
+		ids.put(id, new NullObj());
+	}
+	
+	def checkAndMakeDecl(String id, String constType, basicLit literal) {
+		
+		var error = false;
+				
+		if(constType == "float") {
+			if(literal.intLit !== null) {
+				ids.put(id, new Integer(literal.intLit));
+			}
+			else if(literal.floatLit !== null) {
+				ids.put(id, new Double(literal.floatLit));
+			}
+			else {
+				error = true;
+				error("Semantic Error: Invalid declaration, operator 
+						not assigned to float.", null);
+			}
+		} 
+		else if(constType == "int") {
+			if(literal.intLit !== null) {
+				ids.put(id, new Integer(literal.intLit));
+			}
+			else {
+				error = true;
+				error("Semantic Error: Invalid declaration, operator 
+						not assigned to int.", null);
+			}
+		}
+		else if(constType == "string") {
+			if(literal.stringLit !== null) {
+				ids.put(id, new String(literal.stringLit));
+			}
+			else {
+				error = true;
+				error("Semantic Error: Invalid declaration, operator 
+						not assigned to string.", null);
+			}
+		}
+		else if(constType == "bool") {
+			if(literal.bool !== null) {
+				ids.put(id, new Boolean(literal.bool));
+			}
+			else {
+				error = true;
+				error("Semantic Error: Invalid declaration, operator 
+						not assigned to boolean.", null);
+			}
+		}
+		
+		return error;
+	}
+	
+	protected def void callMethodCheck(expressionList expList, String[] elements, operand op) {
+		var termsCount = 0
+	
+		if(expList.exp.up.pr.op.operandn !== null) {
+			if(expList.exp.up.pr.op.operandn.id !== null) {
+				termsCount += 1;
+			}
+		}else if(expList.exp.up.pr.op.literal.basic !== null) {
+			termsCount += 1;
+		}
+		
+		
+		if(expList.expression2 !== null) {
+			for(exp : expList.expression2) {
+				termsCount += 1;
+			}
+		}
+		
+		if(termsCount !== elements.length) {
+			error("Semantic Error: Wrong number of parameters for " + op.operandn.id, null )
 		}
 	}
 
-
-	def checkExpression(expression expression) {
-		if (expression.getUnaryExpr() !== null) {
-			return checkUnary(expression.getUnaryExpr());
-		}
-		if (expression.getExpressionMatched() !== null) {
-			checkMatched(expression.getExpressionMatched());
-		}
-	}
-
-	def checkMatched(expressionMatched matched) {
-		if (matched.getExpression() !== null) {
-			checkExpression(matched.getExpression());
-		}
-		if (matched.getOperator() !== null) {
-			var operator = matched.getOperator();
-			var type = getOperatorType(operator);
-		}
-	}
-
-	def getOperatorType(String operator) {
-		if (operator.equals("+") || operator.equals("-") || operator.equals("/") || operator.equals("*")) {
-			return "ari";
-		} else if (operator.equals(">") || operator.equals("<") || operator.equals(">=") || operator.equals("<=") ||
-			operator.equals("==") || operator.equals("!=")) {
-			return "rel";
-		}
-		return null;
-	}
-
-	def checkUnary(unaryExpr expr) {
-		if (expr.getPrimaryExpr() !== null) {
-			return checkPrimary(expr.getPrimaryExpr());
-		}
-		if (expr.getUnaryExpr() !== null) {
-			checkUnary(expr.getUnaryExpr());
-		}
-	}
+//	@Check
+//	def checkIf(ifStmt stmt) {
+//		if (stmt.getSimplStatement() !== null) {
+//			checkSimple(stmt.getSimplStatement());
+//		}
+//		if (stmt.getExpr() !== null) {
+//			checkExpression(stmt.getExpr());
+//		}
+//	}
+//
+//	@Check
+//	def checkDeclaration() {
+//	}
+//
+//	def checkOperation(String string) {
+//		//TODO: auto-generated method stub"
+//	}
+//
+//	def checkLiteral(literal literal) {
+//		if (literal.getLitBasic() !== null) {
+//			return checkLitBasic(literal.getLitBasic());
+//		}
+//		if (literal.getLitComposite() !== null) {
+//			checkLitComposite(literal.getLitComposite());
+//		}
+//		if (literal.getLitFunc() !== null) {
+//			checkLitFunc(literal.getLitFunc());
+//		}
+//	}
+//		
+//		def checkLitBasic(basicLit lit) {
+//			if(lit.getFloatLit !== null) {
+//				return "float";
+//			} else
+//			if(lit.getIntLit !== null) {
+//				return "int";
+//			} else
+//			if(lit.getStringLit !== null) {
+//				return "string";
+//			}
+//		}
+//		
+////	def checkLitBasic(String string) {
+////		try {
+////			var value = Float.valueOf(string);
+////			if(value % 1 == 0){
+////				return "int";
+////			} else {
+////				return "float";
+////			}
+////		} catch (Exception exception) {
+////			try {
+////				var value = Boolean.valueOf(string);
+////				return "boolean";
+////			} catch (Exception exception2) {
+////				return "string";
+////			}
+////			
+////		}
+////	}
+//
+//
+//
+//	def checkLitComposite(compositeLit lit) {
+//		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+//	}
+//
+//	def checkPrimary(primaryExpr expr) {
+//		if (expr.getOperand() !== null) {
+//			return checkOperand(expr.getOperand());
+//		}
+//		if (expr.getConversion() !== null) {
+//			checkConversion(expr.getConversion());
+//		}
+//		if (expr.getPrimaryExprArguments() !== null) {
+//			checkPrimaryExprArguments(expr.getPrimaryExprArguments());
+//		}
+//		if (expr.getPrimaryExprIndex() !== null) {
+//			checkPrimaryExprIndex(expr.getPrimaryExprIndex());
+//		}
+//		if (expr.getPrimaryExprSelector() !== null) {
+//			checkPrimaryExprSelector(expr.getPrimaryExprSelector());
+//		}
+//		if (expr.getPrimaryExprSlice() !== null) {
+//			checkPrimaryExprSlice(expr.getPrimaryExprSlice());
+//		}
+//		if (expr.getPrimaryExprTypeAssertion() !== null) {
+//			checkPrimaryExprTypeAssertion(expr.getPrimaryExprTypeAssertion());
+//		}
+//	}
+//
+//	def checkPrimaryExprTypeAssertion(primaryExprTypeAssertion assertion) {
+//		// TODO: auto-generated method stub"
+//	}
+//
+//	def checkPrimaryExprSlice(primaryExprSlice slice) {
+//		// TODO: auto-generated method stub"
+//	}
+//
+//	def checkPrimaryExprSelector(primaryExprSelector selector) {
+//		// TODO: auto-generated method stub"
+//	}
+//
+//	def checkPrimaryExprIndex(primaryExprIndex index) {
+//		// TODO: auto-generated method stub"
+//	}
+//
+//	def checkPrimaryExprArguments(primaryExprArguments arguments) {
+//		// TODO: auto-generated method stub"
+//	}
+//
+//	def checkConversion(conversion conversion) {
+//		// TODO: auto-generated method stub"
+//	}
+//
+//	def checkOperand(operand operand) {
+//		if (operand.getLiteral() !== null) {
+//			 return checkLiteral(operand.getLiteral());
+//		}
+//		if (operand.getMethodExpr() !== null) {
+//			checkMethodExpr(operand.getMethodExpr());
+//		}
+//		if (operand.getOperandName() !== null) {
+//			checkOperandName(operand.getOperandName());
+//		}
+//		if (operand.getExpr() !== null) {
+//			// checkExpression(operand.getExpr()); TODO: fix this
+//		}
+//	}
+//
+//	def checkOperandName(operandName name) {
+//		if (name.getName !== null) { // This is a string
+//			//Identifier first char must be a letter
+//			var idFirstChar = name.getName().charAt(0);
+//			if(!Character.isLetter(idFirstChar)){
+//				error(
+//					"First char of operand name must be a letter",
+//					GoPackage.Literals.MODEL__GREETINGS
+//				)
+//			}
+//			
+//		}
+//		if (name.getQualIdent() !== null) {
+//			checkQualIdent(name.getQualIdent());
+//		}
+//	}
+//	
+//	def checkQualIdent(qualifiedIdent ident) {
+//		if (ident.getPackageName() !== null) {
+//			var name = ident.getPackageName()
+//			
+//			//PackageName cannot be blank
+//			if(name == '_'){
+//				error(
+//					"PackageName cannot be blank",
+//					GoPackage.Literals.MODEL__GREETINGS
+//				)
+//			}
+//			
+//			//Package name must start with a letter
+//			if(!Character.isLetter(name.charAt(0))){
+//				error(
+//					"First char of package name must be a letter",
+//					GoPackage.Literals.MODEL__GREETINGS
+//				)
+//			}
+//		}
+//		
+//		if (ident.getName() !== null) {
+//			
+//			var name = ident.getName();
+//			//Identifier's name cannot be blank
+//			if(name == '_'){
+//				error(
+//					"Identifier cannot be blank",
+//					GoPackage.Literals.MODEL__GREETINGS
+//				)
+//			}
+//			
+//			//Identifier's name must start with a letter
+//			if(!Character.isLetter(name.charAt(0))){
+//				error(
+//					"First char of identifier name must be a letter",
+//					GoPackage.Literals.MODEL__GREETINGS
+//				)
+//			}
+//		}
+//	}
+//
+//	def checkMethodExpr(methodExpr expr) {
+//		// TODO: auto-generated method stub"
+//
+//	}
+//
+//	def checkLitFunc(functionLit lit) {
+//		// TODO:			
+//	}
+//
+//	def checkCompLit(compositeLit lit) {
+//		// TODO:
+//	}
+//
+//	def checkBasicLit(String string) {
+//		// TODO:		
+//
+//	}
+//
+//	def checkSimple(simpleStmt stmt) {
+//		if (stmt.getSendStmt() !== null) {
+//			checkSendStmt(stmt.getSendStmt());
+//		}
+//		if (stmt.getExpressionStmt() !== null) {
+//			checkExpression(stmt.getExpressionStmt().getExpr());
+//		}
+//		if (stmt.getIncDecStmt() !== null) {
+//			checkDcStmt(stmt.getIncDecStmt());
+//		}
+//		if (stmt.getAssignment() !== null) {
+//			checkAssignment(stmt.getAssignment());
+//		}
+//		if (stmt.getShortVarDecl() !== null) {
+//			checkShortVar(stmt.getShortVarDecl());
+//		}
+//	}
+//
+//	def checkSendStmt(sendStmt stmt) {
+//		if (stmt.getExpr1() !== null) {
+//			if (stmt.getExpr2() !== null) {
+//				var type1 = checkExpression(stmt.getExpr1());
+//				var type2 = checkExpression(stmt.getExpr2());
+//				
+//				if(type1 !== type2) {
+//					if (type1 === "float" && type2 === "int"){
+//						// ITS OK
+//					}else {
+//						error(
+//							"Incompatible types in send stmt",
+//							GoPackage.Literals.MODEL__GREETINGS,
+//							type1.toString() + type2
+//						)
+//					}
+//				}
+//			} else {
+//				error(
+//					"expression value can not be empty",
+//					GoPackage.Literals.MODEL__GREETINGS,
+//					stmt.toString()
+//				)
+//			}
+//		}
+//	}
+//
+//	def checkDcStmt(incDecStmt stmt) {
+//		if(stmt.getExpr() !== null) {
+//			var type = checkExpression(stmt.getExpr());
+//			if(!(type === "int" || type == "float")){
+//				error(
+//					"only number can be incremented/decremented",
+//					GoPackage.Literals.MODEL__GREETINGS,
+//					stmt.toString()
+//				)
+//			}
+//		}		
+//	}
+//
+//
+//
+//	def checkAssignment(assignment assignment) {
+//		checkExpList(assignment.getExprList1);
+//		checkExpList(assignment.getExprList2);
+//	}
+//
+//	def checkShortVar(shortVarDecl decl) {
+//		if (decl.getIdList() !== null) {
+//			if (decl.getExprList() !== null) {
+//				checkExpList(decl.getExprList());
+//			}
+//		// TODO: check declaration
+//		}
+//	}
+//		
+//	def checkExpList(expressionList list) {
+//		var type = "";
+//		for (var i = 0; i < list.getExpr().size(); i++) {
+//			var nextType = checkExpression(list.getExpr().get(i));
+//			if(type !== ""){
+//				if (type !== nextType) {
+//					error(
+//						"Incompatible types in assignment",
+//						GoPackage.Literals.MODEL__GREETINGS,
+//						list.toString()
+//					)
+//				}
+//			}
+//
+//		}
+//	}
+//
+//
+//	def checkExpression(expression expression) {
+//		if (expression.getUnaryExpr() !== null) {
+//			return checkUnary(expression.getUnaryExpr());
+//		}
+//		if (expression.getExpressionMatched() !== null) {
+//			checkMatched(expression.getExpressionMatched());
+//		}
+//	}
+//
+//	def checkMatched(expressionMatched matched) {
+//		if (matched.getExpression() !== null) {
+//			checkExpression(matched.getExpression());
+//		}
+//		if (matched.getOperator() !== null) {
+//			var operator = matched.getOperator();
+//			var type = getOperatorType(operator);
+//		}
+//	}
+//
+//	def getOperatorType(String operator) {
+//		if (operator.equals("+") || operator.equals("-") || operator.equals("/") || operator.equals("*")) {
+//			return "ari";
+//		} else if (operator.equals(">") || operator.equals("<") || operator.equals(">=") || operator.equals("<=") ||
+//			operator.equals("==") || operator.equals("!=")) {
+//			return "rel";
+//		}
+//		return null;
+//	}
+//
+//	def checkUnary(unaryExpr expr) {
+//		if (expr.getPrimaryExpr() !== null) {
+//			return checkPrimary(expr.getPrimaryExpr());
+//		}
+//		if (expr.getUnaryExpr() !== null) {
+//			checkUnary(expr.getUnaryExpr());
+//		}
+//	}
 
 }
