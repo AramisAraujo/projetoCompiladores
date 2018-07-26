@@ -1501,11 +1501,12 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		
 		////IfStmt = "" [ SimpleStmt ";" ] Expression Block [ "else" ( IfStmt | Block ) ] .
 		//ifStmt:
-		//	'if' (simplStatement=simpleStmt eos)? expr=expression
+		//	'if' (simplStatement=simpleStmt eos)? expr=expression?
 		//	codeBlock=block ('else' (ifStatement=ifStmt | codeBlockIf=block))?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'if' (simplStatement=simpleStmt eos)? expr=expression codeBlock=block ('else' (ifStatement=ifStmt | codeBlockIf=block))?
+		//'if' (simplStatement=simpleStmt eos)? expr=expression? codeBlock=block ('else' (ifStatement=ifStmt |
+		//codeBlockIf=block))?
 		public Group getGroup() { return cGroup; }
 		
 		//'if'
@@ -1523,7 +1524,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		//eos
 		public RuleCall getEosParserRuleCall_1_1() { return cEosParserRuleCall_1_1; }
 		
-		//expr=expression
+		//expr=expression?
 		public Assignment getExprAssignment_2() { return cExprAssignment_2; }
 		
 		//expression
@@ -4605,6 +4606,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	private final EosElements pEos;
 	private final TerminalRule tBOOL;
 	private final TerminalRule tIDENTIFIER;
+	private final TerminalRule tKEYWORD;
 	private final TerminalRule tBINARY_OP;
 	private final TerminalRule tREL_OP;
 	private final TerminalRule tADD_OP;
@@ -4763,6 +4765,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		this.pEos = new EosElements();
 		this.tBOOL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.BOOL");
 		this.tIDENTIFIER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.IDENTIFIER");
+		this.tKEYWORD = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.KEYWORD");
 		this.tBINARY_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.BINARY_OP");
 		this.tREL_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.REL_OP");
 		this.tADD_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.ADD_OP");
@@ -5269,7 +5272,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////IfStmt = "" [ SimpleStmt ";" ] Expression Block [ "else" ( IfStmt | Block ) ] .
 	//ifStmt:
-	//	'if' (simplStatement=simpleStmt eos)? expr=expression
+	//	'if' (simplStatement=simpleStmt eos)? expr=expression?
 	//	codeBlock=block ('else' (ifStatement=ifStmt | codeBlockIf=block))?;
 	public IfStmtElements getIfStmtAccess() {
 		return pIfStmt;
@@ -6161,6 +6164,40 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	//	LETTER (LETTER | DECIMAL_DIGIT)*;
 	public TerminalRule getIDENTIFIERRule() {
 		return tIDENTIFIER;
+	}
+	
+	//terminal fragment KEYWORD:
+	//	'break'
+	//	| 'int'
+	//	| 'string'
+	//	| 'float'
+	//	| 'bool'
+	//	| 'default'
+	//	| 'func'
+	//	| 'interface'
+	//	| 'select'
+	//	| 'case'
+	//	| 'defer'
+	//	| 'go'
+	//	| 'map'
+	//	| 'struct'
+	//	| 'chan'
+	//	| 'else'
+	//	| 'goto'
+	//	| 'package'
+	//	| 'switch'
+	//	| 'const'
+	//	| 'fallthrough'
+	//	| 'if'
+	//	| 'range'
+	//	| 'type'
+	//	| 'continue'
+	//	| 'for'
+	//	| 'import'
+	//	| 'return'
+	//	| 'var';
+	public TerminalRule getKEYWORDRule() {
+		return tKEYWORD;
 	}
 	
 	//terminal BINARY_OP:

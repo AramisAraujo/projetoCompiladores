@@ -61,8 +61,7 @@ class GoValidator extends AbstractGoValidator {
 	def checkVarDecl(varDecl vd) {
 		for (var i = 0; i < vd.specs.length; i++) {
 			var varspec = vd.specs.get(i);
-			
-			
+
 			if (varspec.idList.ids.length == varspec.exprList.length) {
 				var index = 0
 				var type = varspec.type;
@@ -77,21 +76,21 @@ class GoValidator extends AbstractGoValidator {
 			} else {
 				error('Semantic Error: Wrong number of atributes', null)
 			}
-			
+
 			for (var j = 0; j < varspec.idList.ids.length; j++) {
-				
+
 				var varId = varspec.idList.ids.get(j);
 				nullDeclaration(varId);
 				var type = varspec.type;
-				
+
 				for (var k = 0; k < varspec.exprList.get(j).expr.length; k++) {
 					var exp = varspec.exprList.get(j).expr.get(k);
-					
+
 					var varExp = exp.unaryExpr.primaryExpr.operand.literal.litBasic;
-					
+
 					if (type !== null && varExp !== null) {
 						var varType = extractType(type);
-						
+
 						if (varType !== null) {
 							var error = checkAndMakeDecl(varId, varType, varExp);
 							if (varId.charAt(0) !== varId.toLowerCase().charAt(0) && !error) {
@@ -103,11 +102,11 @@ class GoValidator extends AbstractGoValidator {
 			}
 		}
 	}
-		
+
 	def String extractType(type type) {
-		if(type.contentL !== null) {
+		if (type.contentL !== null) {
 			return type.contentL.contentType;
-		} else if(type.contentT !== null) {
+		} else if (type.contentT !== null) {
 			return type.contentT.name;
 		}
 		return extractType(type.content);
@@ -123,7 +122,17 @@ class GoValidator extends AbstractGoValidator {
 
 	@Check
 	def ifDclrCheck(ifStmt stmt) {
-		if(stmt.expr === null && stmt.simplStatement === null) {
+
+		if (stmt.expr !== null) {
+			var ifVar = stmt.expr.unaryExpr.primaryExpr.operand;
+			var t = getBasicLitType(ifVar.literal.litBasic);
+
+			if (t !== null) {
+				checkAndMakeDecl(ifVar.operandName.name, t, ifVar.literal.litBasic)
+			} else {
+				error("Semantic Error: Invalid declaration", null)
+			}
+		} else {
 			error("Semantic Error: Invalid declaration", null);
 		}
 	}
@@ -138,9 +147,9 @@ class GoValidator extends AbstractGoValidator {
 		for (var i = 0; i < parameters.length; i++) {
 			for (var j = 0; j < parameters.get(i).paramsDecl.length; j++) {
 				var p = parameters.get(i).paramsDecl.get(j);
-				
+
 				for (var k = 0; k < p.identifierList.ids.length; k++) {
-					
+
 					if (p.type !== null) {
 
 						parameterList.put(
@@ -431,17 +440,17 @@ class GoValidator extends AbstractGoValidator {
 
 	protected def void callMethodCheck(expression exp, String[] elements, operand op) {
 		var termsCount = 0
-	
-		if(exp.unaryExpr.primaryExpr.operand.operandName !== null) {
-			if(exp.unaryExpr.primaryExpr.operand.operandName.name !== null) {
+
+		if (exp.unaryExpr.primaryExpr.operand.operandName !== null) {
+			if (exp.unaryExpr.primaryExpr.operand.operandName.name !== null) {
 				termsCount += 1;
 			}
-		}else if(exp.unaryExpr.primaryExpr.operand.literal.litBasic !== null) {
+		} else if (exp.unaryExpr.primaryExpr.operand.literal.litBasic !== null) {
 			termsCount += 1;
 		}
-		
-		if(termsCount !== elements.length) {
-			error("Semantic Error: Wrong number of parameters for " + op.operandName.name, null )
+
+		if (termsCount !== elements.length) {
+			error("Semantic Error: Wrong number of parameters for " + op.operandName.name, null)
 		}
 	}
 

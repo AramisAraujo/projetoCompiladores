@@ -2810,7 +2810,7 @@ ruleifStmt returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)?
 		(
 			(
 				{
@@ -8142,6 +8142,8 @@ ruleeos returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 RULE_BOOL : ('true'|'false');
 
 RULE_IDENTIFIER : RULE_LETTER (RULE_LETTER|RULE_DECIMAL_DIGIT)*;
+
+fragment RULE_KEYWORD : ('break'|'int'|'string'|'float'|'bool'|'default'|'func'|'interface'|'select'|'case'|'defer'|'go'|'map'|'struct'|'chan'|'else'|'goto'|'package'|'switch'|'const'|'fallthrough'|'if'|'range'|'type'|'continue'|'for'|'import'|'return'|'var');
 
 RULE_BINARY_OP : ('||'|'&&'|RULE_REL_OP|RULE_ADD_OP|RULE_MUL_OP);
 

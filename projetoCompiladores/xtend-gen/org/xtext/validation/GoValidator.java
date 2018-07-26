@@ -134,10 +134,28 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   @Check
-  public void ifDclrCheck(final ifStmt stmt) {
-    if (((stmt.getExpr() == null) && (stmt.getSimplStatement() == null))) {
+  public Boolean ifDclrCheck(final ifStmt stmt) {
+    boolean _xifexpression = false;
+    expression _expr = stmt.getExpr();
+    boolean _tripleNotEquals = (_expr != null);
+    if (_tripleNotEquals) {
+      boolean _xblockexpression = false;
+      {
+        operand ifVar = stmt.getExpr().getUnaryExpr().getPrimaryExpr().getOperand();
+        String t = this.getBasicLitType(ifVar.getLiteral().getLitBasic());
+        boolean _xifexpression_1 = false;
+        if ((t != null)) {
+          _xifexpression_1 = this.checkAndMakeDecl(ifVar.getOperandName().getName(), t, ifVar.getLiteral().getLitBasic());
+        } else {
+          this.error("Semantic Error: Invalid declaration", null);
+        }
+        _xblockexpression = _xifexpression_1;
+      }
+      _xifexpression = _xblockexpression;
+    } else {
       this.error("Semantic Error: Invalid declaration", null);
     }
+    return Boolean.valueOf(_xifexpression);
   }
   
   @Check

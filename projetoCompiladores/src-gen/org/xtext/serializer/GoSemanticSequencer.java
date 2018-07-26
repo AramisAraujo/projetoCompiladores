@@ -1144,7 +1144,7 @@ public class GoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ifStmt returns ifStmt
 	 *
 	 * Constraint:
-	 *     (simplStatement=simpleStmt? expr=expression codeBlock=block (ifStatement=ifStmt | codeBlockIf=block)?)
+	 *     (simplStatement=simpleStmt? expr=expression? codeBlock=block (ifStatement=ifStmt | codeBlockIf=block)?)
 	 */
 	protected void sequence_ifStmt(ISerializationContext context, ifStmt semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

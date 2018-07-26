@@ -192,7 +192,7 @@ deferStmt:
 
 //IfStmt = "" [ SimpleStmt ";" ] Expression Block [ "else" ( IfStmt | Block ) ] .
 ifStmt: 
-	'if' (simplStatement=simpleStmt eos)? expr=expression
+	'if' (simplStatement=simpleStmt eos)? (expr=expression)?
 	 codeBlock=block ( 'else' ( ifStatement=ifStmt | codeBlockIf=block ) )?;
 
 //SwitchStmt = ExprSwitchStmt | TypeSwitchStmt .
@@ -624,33 +624,37 @@ terminal IDENTIFIER:
 // Keywords
 //
 
-//terminal fragment KEYWORD:
-//	'break'
-//    | 'default'
-//    | 'func'
-//    | 'interface'
-//    | 'select'
-//    | 'case'
-//    | 'defer'
-//    | 'go'
-//    | 'map'
-//    | 'struct'
-//    | 'chan'
-//    | 'else'
-//    | 'goto'
-//    | 'package'
-//    | 'switch'
-//    | 'const'
-//    | 'fallthrough'
-//    | 'if'
-//    | 'range'
-//    | 'type'
-//    | 'continue'
-//    | 'for'
-//    | 'import'
-//    | 'return'
-//    | 'var'
-//    ;
+terminal fragment KEYWORD:
+	'break'
+	| 'int'
+	| 'string'
+	| 'float'
+	| 'bool'
+    | 'default'
+    | 'func'
+    | 'interface'
+    | 'select'
+    | 'case'
+    | 'defer'
+    | 'go'
+    | 'map'
+    | 'struct'
+    | 'chan'
+    | 'else'
+    | 'goto'
+    | 'package'
+    | 'switch'
+    | 'const'
+    | 'fallthrough'
+    | 'if'
+    | 'range'
+    | 'type'
+    | 'continue'
+    | 'for'
+    | 'import'
+    | 'return'
+    | 'var'
+    ;
 
 
 //
