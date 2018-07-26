@@ -74,6 +74,8 @@ public class GoValidator extends AbstractGoValidator {
           EList<String> _ids = varspec.getIdList().getIds();
           for (final String id : _ids) {
             if ((type != null)) {
+              expression e = varspec.getExprList().get(index).getExpr().get(index);
+              this.checkAndMakeDecl(id, this.extractType(type), e.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral().getLitBasic());
             } else {
               this.nullDeclaration(id);
             }

@@ -71,8 +71,8 @@ class GoValidator extends AbstractGoValidator {
 				var type = varspec.type;
 				for (id : varspec.idList.ids) {
 					if (type !== null) {
-//						checkAndMakeDecl(id, extractType(type), varspec.exprList.get(index));
-						// TODO: FIX ME
+						var e = varspec.exprList.get(index).expr.get(index)
+						checkAndMakeDecl(id, extractType(type), e.unaryExpr.primaryExpr.operand.literal.litBasic);
 					} else {
 						nullDeclaration(id)
 					}
