@@ -124,16 +124,21 @@ public class GoValidator extends AbstractGoValidator {
   
   @Check
   public void checkOperandName(final operand op) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field operandn is undefined for the type operand"
-      + "\nThe method or field operandn is undefined for the type operand"
-      + "\nThe method or field operandn is undefined for the type operand"
-      + "\nThe method or field operandn is undefined for the type operand"
-      + "\nThe method or field exp is undefined for the type operand"
-      + "\nid cannot be resolved"
-      + "\nid cannot be resolved"
-      + "\nid cannot be resolved"
-      + "\nid cannot be resolved");
+    boolean _containsKey = this.ids.containsKey(op.getOperandName().getName());
+    boolean _not = (!_containsKey);
+    if (_not) {
+      String _name = op.getOperandName().getName();
+      String _plus = ("Semantic Error: Identifier " + _name);
+      String _plus_1 = (_plus + " was never declared");
+      this.error(_plus_1, null);
+    } else {
+      boolean _contains = this.ids.get(op.getOperandName().getName()).toString().contains(",");
+      if (_contains) {
+        String[] elements = this.ids.get(op.getOperandName().getName()).toString().split(",");
+        expression expList = op.getExpr();
+        this.callMethodCheck(expList, elements, op);
+      }
+    }
   }
   
   @Check
@@ -416,6 +421,34 @@ public class GoValidator extends AbstractGoValidator {
           int _termsCount_1 = termsCount;
           termsCount = (_termsCount_1 + 1);
         }
+      }
+    }
+    int _length = elements.length;
+    boolean _tripleNotEquals_3 = (termsCount != _length);
+    if (_tripleNotEquals_3) {
+      String _name_1 = op.getOperandName().getName();
+      String _plus = ("Semantic Error: Wrong number of parameters for " + _name_1);
+      this.error(_plus, null);
+    }
+  }
+  
+  protected void callMethodCheck(final expression exp, final String[] elements, final operand op) {
+    int termsCount = 0;
+    operandName _operandName = exp.getUnaryExpr().getPrimaryExpr().getOperand().getOperandName();
+    boolean _tripleNotEquals = (_operandName != null);
+    if (_tripleNotEquals) {
+      String _name = exp.getUnaryExpr().getPrimaryExpr().getOperand().getOperandName().getName();
+      boolean _tripleNotEquals_1 = (_name != null);
+      if (_tripleNotEquals_1) {
+        int _termsCount = termsCount;
+        termsCount = (_termsCount + 1);
+      }
+    } else {
+      basicLit _litBasic = exp.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral().getLitBasic();
+      boolean _tripleNotEquals_2 = (_litBasic != null);
+      if (_tripleNotEquals_2) {
+        int _termsCount_1 = termsCount;
+        termsCount = (_termsCount_1 + 1);
       }
     }
     int _length = elements.length;

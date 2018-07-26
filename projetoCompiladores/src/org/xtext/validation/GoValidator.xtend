@@ -13,6 +13,7 @@ import org.xtext.go.functionDecl
 import org.xtext.go.operand
 import org.xtext.go.shortVarDecl
 import org.xtext.go.expressionList
+import java.util.ArrayList
 
 /**
  * This class contains custom validation rules. 
@@ -167,12 +168,12 @@ class GoValidator extends AbstractGoValidator {
 	@Check
 	def checkOperandName(operand op) {
 
-		if (!ids.containsKey(op.operandn.id)) {
-			error("Semantic Error: Identifier " + op.operandn.id + " was never declared", null)
-		} else if (ids.get(op.operandn.id).toString().contains(',')) {
+		if (!ids.containsKey(op.operandName.name)) {
+			error("Semantic Error: Identifier " + op.operandName.name + " was never declared", null)
+		} else if (ids.get(op.operandName.name).toString().contains(',')) {
 
-			var elements = ids.get(op.operandn.id).toString().split(",");
-			var expList = op.exp;
+			var elements = ids.get(op.operandName.name).toString().split(",");
+			var expList = op.expr;
 			callMethodCheck(expList, elements, op)
 		}
 
@@ -182,7 +183,7 @@ class GoValidator extends AbstractGoValidator {
 	def shortVarDecl(shortVarDecl sv) {
 		for (var i = 0; i < sv.idList.ids.size; i++) {
 			ids.put(
-				sv.idList.ids.get(i) ,
+				sv.idList.ids.get(i),
 				sv.exprList
 			);
 		}
@@ -405,6 +406,22 @@ class GoValidator extends AbstractGoValidator {
 
 		if (termsCount !== elements.length) {
 			error("Semantic Error: Wrong number of parameters for " + op.operandName.name, null)
+		}
+	}
+
+	protected def void callMethodCheck(expression exp, String[] elements, operand op) {
+		var termsCount = 0
+	
+		if(exp.unaryExpr.primaryExpr.operand.operandName !== null) {
+			if(exp.unaryExpr.primaryExpr.operand.operandName.name !== null) {
+				termsCount += 1;
+			}
+		}else if(exp.unaryExpr.primaryExpr.operand.literal.litBasic !== null) {
+			termsCount += 1;
+		}
+		
+		if(termsCount !== elements.length) {
+			error("Semantic Error: Wrong number of parameters for " + op.operandName.name, null )
 		}
 	}
 
