@@ -3187,6 +3187,16 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getbasicLit_BoolLit()
+  {
+    return (EAttribute)basicLitEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getoperandName()
   {
     return operandNameEClass;
@@ -4441,6 +4451,7 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
     createEAttribute(basicLitEClass, BASIC_LIT__IMAGINARY_LIT);
     createEAttribute(basicLitEClass, BASIC_LIT__RUNE_LIT);
     createEAttribute(basicLitEClass, BASIC_LIT__STRING_LIT);
+    createEAttribute(basicLitEClass, BASIC_LIT__BOOL_LIT);
 
     operandNameEClass = createEClass(OPERAND_NAME);
     createEAttribute(operandNameEClass, OPERAND_NAME__NAME);
@@ -4897,6 +4908,7 @@ public class GoPackageImpl extends EPackageImpl implements GoPackage
     initEAttribute(getbasicLit_ImaginaryLit(), ecorePackage.getEString(), "imaginaryLit", null, 0, 1, basicLit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getbasicLit_RuneLit(), ecorePackage.getEString(), "runeLit", null, 0, 1, basicLit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getbasicLit_StringLit(), ecorePackage.getEString(), "stringLit", null, 0, 1, basicLit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getbasicLit_BoolLit(), ecorePackage.getEString(), "boolLit", null, 0, 1, basicLit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(operandNameEClass, operandName.class, "operandName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getoperandName_Name(), ecorePackage.getEString(), "name", null, 0, 1, operandName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

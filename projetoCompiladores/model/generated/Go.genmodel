@@ -305,6 +305,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//basicLit/imaginaryLit"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//basicLit/runeLit"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//basicLit/stringLit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//basicLit/boolLit"/>
     </genClasses>
     <genClasses ecoreClass="Go.ecore#//operandName">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Go.ecore#//operandName/name"/>

@@ -2824,13 +2824,22 @@ public interface GoPackage extends EPackage
   int BASIC_LIT__STRING_LIT = 4;
 
   /**
+   * The feature id for the '<em><b>Bool Lit</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASIC_LIT__BOOL_LIT = 5;
+
+  /**
    * The number of structural features of the '<em>basic Lit</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BASIC_LIT_FEATURE_COUNT = 5;
+  int BASIC_LIT_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link org.xtext.go.impl.operandNameImpl <em>operand Name</em>}' class.
@@ -6381,6 +6390,17 @@ public interface GoPackage extends EPackage
   EAttribute getbasicLit_StringLit();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.go.basicLit#getBoolLit <em>Bool Lit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Bool Lit</em>'.
+   * @see org.xtext.go.basicLit#getBoolLit()
+   * @see #getbasicLit()
+   * @generated
+   */
+  EAttribute getbasicLit_BoolLit();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.go.operandName <em>operand Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -9344,6 +9364,14 @@ public interface GoPackage extends EPackage
      * @generated
      */
     EAttribute BASIC_LIT__STRING_LIT = eINSTANCE.getbasicLit_StringLit();
+
+    /**
+     * The meta object literal for the '<em><b>Bool Lit</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BASIC_LIT__BOOL_LIT = eINSTANCE.getbasicLit_BoolLit();
 
     /**
      * The meta object literal for the '{@link org.xtext.go.impl.operandNameImpl <em>operand Name</em>}' class.

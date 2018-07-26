@@ -5695,6 +5695,26 @@ rulebasicLit returns [EObject current=null]
 				}
 			)
 		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getBasicLitAccess().getBoolLitBoolLitParserRuleCall_5_0());
+				}
+				lv_boolLit_5_0=ruleboolLit
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBasicLitRule());
+					}
+					set(
+						$current,
+						"boolLit",
+						lv_boolLit_5_0,
+						"org.xtext.Go.boolLit");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
@@ -5815,6 +5835,30 @@ rulestringLit returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken
 	}
 	{
 		newLeafNode(this_STRING_LIT_0, grammarAccess.getStringLitAccess().getSTRING_LITTerminalRuleCall());
+	}
+;
+
+// Entry rule entryRuleboolLit
+entryRuleboolLit returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getBoolLitRule()); }
+	iv_ruleboolLit=ruleboolLit
+	{ $current=$iv_ruleboolLit.current.getText(); }
+	EOF;
+
+// Rule boolLit
+ruleboolLit returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	this_BOOL_0=RULE_BOOL
+	{
+		$current.merge(this_BOOL_0);
+	}
+	{
+		newLeafNode(this_BOOL_0, grammarAccess.getBoolLitAccess().getBOOLTerminalRuleCall());
 	}
 ;
 
@@ -8092,6 +8136,8 @@ ruleeos returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 		newLeafNode(kw, grammarAccess.getEosAccess().getSemicolonKeyword());
 	}
 ;
+
+RULE_BOOL : ('true'|'false');
 
 RULE_IDENTIFIER : RULE_LETTER (RULE_LETTER|RULE_DECIMAL_DIGIT)*;
 

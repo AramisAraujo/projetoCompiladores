@@ -2100,6 +2100,31 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Entry rule entryRuleboolLit
+entryRuleboolLit
+:
+{ before(grammarAccess.getBoolLitRule()); }
+	 ruleboolLit
+{ after(grammarAccess.getBoolLitRule()); } 
+	 EOF 
+;
+
+// Rule boolLit
+ruleboolLit 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getBoolLitAccess().getBOOLTerminalRuleCall()); }
+		RULE_BOOL
+		{ after(grammarAccess.getBoolLitAccess().getBOOLTerminalRuleCall()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 // Entry rule entryRuleoperandName
 entryRuleoperandName
 :
@@ -3824,6 +3849,12 @@ rule__BasicLit__Alternatives
 		{ before(grammarAccess.getBasicLitAccess().getStringLitAssignment_4()); }
 		(rule__BasicLit__StringLitAssignment_4)
 		{ after(grammarAccess.getBasicLitAccess().getStringLitAssignment_4()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getBasicLitAccess().getBoolLitAssignment_5()); }
+		(rule__BasicLit__BoolLitAssignment_5)
+		{ after(grammarAccess.getBasicLitAccess().getBoolLitAssignment_5()); }
 	)
 ;
 finally {
@@ -16292,6 +16323,21 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__BasicLit__BoolLitAssignment_5
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getBasicLitAccess().getBoolLitBoolLitParserRuleCall_5_0()); }
+		ruleboolLit
+		{ after(grammarAccess.getBasicLitAccess().getBoolLitBoolLitParserRuleCall_5_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__OperandName__NameAssignment_0
 	@init {
 		int stackSize = keepStackSize();
@@ -17386,6 +17432,8 @@ rule__Conversion__ExpressionAssignment_2
 finally {
 	restoreStackSize(stackSize);
 }
+
+RULE_BOOL : ('true'|'false');
 
 RULE_IDENTIFIER : RULE_LETTER (RULE_LETTER|RULE_DECIMAL_DIGIT)*;
 

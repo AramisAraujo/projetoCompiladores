@@ -386,7 +386,9 @@ basicLit:
 	floatLit=floatLit | 
 	imaginaryLit=imaginaryLit | 
 	runeLit=runeLit |
-	stringLit=stringLit;
+	stringLit=stringLit |
+	boolLit=boolLit
+;
 	
 
 intLit:
@@ -409,6 +411,10 @@ runeLit:
 
 stringLit:
 	STRING_LIT
+;
+
+boolLit:
+	BOOL
 ;
 
 operandName: 
@@ -598,6 +604,10 @@ eos:
 ///
 ///
 
+
+terminal BOOL:
+	'true'| 'false'
+;
 
 
 //

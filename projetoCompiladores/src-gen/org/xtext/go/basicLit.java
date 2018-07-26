@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.go.basicLit#getImaginaryLit <em>Imaginary Lit</em>}</li>
  *   <li>{@link org.xtext.go.basicLit#getRuneLit <em>Rune Lit</em>}</li>
  *   <li>{@link org.xtext.go.basicLit#getStringLit <em>String Lit</em>}</li>
+ *   <li>{@link org.xtext.go.basicLit#getBoolLit <em>Bool Lit</em>}</li>
  * </ul>
  * </p>
  *
@@ -156,5 +157,31 @@ public interface basicLit extends EObject
    * @generated
    */
   void setStringLit(String value);
+
+  /**
+   * Returns the value of the '<em><b>Bool Lit</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Bool Lit</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Bool Lit</em>' attribute.
+   * @see #setBoolLit(String)
+   * @see org.xtext.go.GoPackage#getbasicLit_BoolLit()
+   * @model
+   * @generated
+   */
+  String getBoolLit();
+
+  /**
+   * Sets the value of the '{@link org.xtext.go.basicLit#getBoolLit <em>Bool Lit</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Bool Lit</em>' attribute.
+   * @see #getBoolLit()
+   * @generated
+   */
+  void setBoolLit(String value);
 
 } // basicLit

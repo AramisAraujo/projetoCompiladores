@@ -189,7 +189,7 @@ class GoValidator extends AbstractGoValidator {
 			var basicLiteral1 = e.unaryExpr.primaryExpr.operand.literal.litBasic
 			var basicLiteral2 = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal.litBasic
 			
-			if(basicLiteral1.bool === null || basicLiteral2.bool === null) {
+			if(basicLiteral1.boolLit === null || basicLiteral2.boolLit === null) {
 				error("Semantic Error: Invalid boolean expression", null);
 			}
 		}
@@ -267,7 +267,7 @@ class GoValidator extends AbstractGoValidator {
 			type1 = getBasicLitType(basicLiteral1);
 			type2 = getType(ids.get(id2));
 		}
-		else if(e.expressionMatched.expression.up.pr.op.literal !== null){
+		else if(e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal !== null){
 			id1               = e.unaryExpr.primaryExpr.operand.operandName.name
 			var basicLiteral2 = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal.litBasic;
 			
@@ -390,8 +390,8 @@ class GoValidator extends AbstractGoValidator {
 			}
 		}
 		else if(constType == "bool") {
-			if(literal.bool !== null) {
-				ids.put(id, new Boolean(literal.bool));
+			if(literal.boolLit !== null) {
+				ids.put(id, new Boolean(literal.boolLit));
 			}
 			else {
 				error = true;
@@ -423,6 +423,46 @@ class GoValidator extends AbstractGoValidator {
 		
 		if(termsCount !== elements.length) {
 			error("Semantic Error: Wrong number of parameters for " + op.operandn.id, null )
+		}
+	}
+	
+	def getType(Object obj) {	
+		if(obj instanceof Integer) {
+			return "int"
+		}
+		else if(obj instanceof Double) {
+			return "float"
+		}
+		else if(obj instanceof Boolean) {
+			return "bool"
+		}
+		else if(obj instanceof String) {
+			return "string"
+		}
+		else if(obj instanceof NullObj) {
+			return "null"
+		}
+	}
+
+	def checkTypesInAritimeticOp(String binaryOp, String type1, String type2) {
+	
+		if(type1 == "string" || type2 == "string") {
+			if(type1 == "string" && binaryOp == "+") {
+				if(type2 !== "string") {
+					error("Semantic Error: Invalid arithmetic operation", null)
+				}
+			}
+			else if(type2 == "string" && binaryOp == "+") {
+				if(type1 !== "string") {
+					error("Semantic Error: Invalid arithmetic operation", null)
+				}
+			}else {
+				error("Semantic Error: Invalid arithmetic operation, operator "
+						+ binaryOp + " not defined on string.", null
+					)
+			}
+		}else if(type1 == "bool" || type2 == "bool") {
+			error("Semantic Error: Invalid arithmetic operation" , null)
 		}
 	}
 

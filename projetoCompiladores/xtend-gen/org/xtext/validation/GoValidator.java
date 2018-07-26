@@ -9,6 +9,7 @@ import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.xtext.go.basicLit;
 import org.xtext.go.expression;
+import org.xtext.go.literal;
 import org.xtext.validation.AbstractGoValidator;
 
 /**
@@ -21,9 +22,25 @@ public class GoValidator extends AbstractGoValidator {
   private final LinkedHashMap<Object, Object> ids = CollectionLiterals.<Object, Object>newLinkedHashMap();
   
   @Check
-  public Object checkExpression(final expression e) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method checkAritOp(expression, String) from the type GoValidator refers to the missing type Object");
+  public void checkExpression(final expression e) {
+    String _operator = e.getExpressionMatched().getOperator();
+    boolean _tripleNotEquals = (_operator != null);
+    if (_tripleNotEquals) {
+      String binaryOperator = e.getExpressionMatched().getOperator();
+      if ((Objects.equal(binaryOperator, "||") || Objects.equal(binaryOperator, "&&"))) {
+        this.checkRelExp(e);
+      } else {
+        boolean _isArithimeticOp = this.isArithimeticOp(binaryOperator);
+        if (_isArithimeticOp) {
+          this.checkAritOp(e, binaryOperator);
+        } else {
+          boolean _isBooleanOp = this.isBooleanOp(binaryOperator);
+          if (_isBooleanOp) {
+            this.checkBooleanOp(e, binaryOperator);
+          }
+        }
+      }
+    }
   }
   
   @Check
@@ -172,34 +189,109 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   public void checkRelExp(final expression e) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field bool is undefined for the type basicLit"
-      + "\nThe method or field bool is undefined for the type basicLit"
-      + "\n=== cannot be resolved"
-      + "\n|| cannot be resolved"
-      + "\n=== cannot be resolved");
+    if (((e.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral() != null) && (e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getLiteral() != null))) {
+      basicLit basicLiteral1 = e.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral().getLitBasic();
+      basicLit basicLiteral2 = e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getLiteral().getLitBasic();
+      if (((basicLiteral1.getBoolLit() == null) || (basicLiteral2.getBoolLit() == null))) {
+        this.error("Semantic Error: Invalid boolean expression", null);
+      }
+    }
   }
   
-  public Object checkAritOp(final expression e, final String binaryOp) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method getType(Object) is undefined"
-      + "\nThe method getType(Object) is undefined"
-      + "\nThe method getType(Object) is undefined"
-      + "\nThe method getType(Object) is undefined"
-      + "\nThe method checkTypesInAritimeticOp(String, String, String) is undefined");
+  public void checkAritOp(final expression e, final String binaryOp) {
+    String type1 = "";
+    String type2 = "";
+    String id1 = "";
+    String id2 = "";
+    if (((e.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral() != null) && (e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getLiteral() != null))) {
+      basicLit basicLiteral1 = e.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral().getLitBasic();
+      basicLit basicLiteral2 = e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getLiteral().getLitBasic();
+      type1 = this.getBasicLitType(basicLiteral1);
+      type2 = this.getBasicLitType(basicLiteral2);
+    } else {
+      literal _literal = e.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral();
+      boolean _tripleNotEquals = (_literal != null);
+      if (_tripleNotEquals) {
+        basicLit basicLiteral1_1 = e.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral().getLitBasic();
+        id2 = e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getOperandName().getName();
+        type1 = this.getBasicLitType(basicLiteral1_1);
+        type2 = this.getType(this.ids.get(id2));
+      } else {
+        literal _literal_1 = e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getLiteral();
+        boolean _tripleNotEquals_1 = (_literal_1 != null);
+        if (_tripleNotEquals_1) {
+          id1 = e.getUnaryExpr().getPrimaryExpr().getOperand().getOperandName().getName();
+          basicLit basicLiteral2_1 = e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getLiteral().getLitBasic();
+          type2 = this.getBasicLitType(basicLiteral2_1);
+          type1 = this.getType(this.ids.get(id1));
+        } else {
+          id1 = e.getUnaryExpr().getPrimaryExpr().getOperand().getOperandName().getName();
+          id2 = e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getOperandName().getName();
+          type1 = this.getType(this.ids.get(id1));
+          type2 = this.getType(this.ids.get(id2));
+        }
+      }
+    }
+    if ((Objects.equal(type1, "null") || Objects.equal(type2, "null"))) {
+      boolean _equals = Objects.equal(type1, "null");
+      if (_equals) {
+        this.error((("Semantic Error: " + id1) + " was declared but never assigned."), null);
+      }
+      boolean _equals_1 = Objects.equal(type2, "null");
+      if (_equals_1) {
+        this.error((("Semantic Error: " + id2) + " was declared but never assigned."), null);
+      }
+    } else {
+      this.checkTypesInAritimeticOp(binaryOp, type1, type2);
+    }
   }
   
   public void checkBooleanOp(final expression e, final String binaryOp) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method getType(Object) is undefined"
-      + "\nThe method or field up is undefined for the type expression"
-      + "\nThe method getType(Object) is undefined"
-      + "\nThe method getType(Object) is undefined"
-      + "\nThe method getType(Object) is undefined"
-      + "\npr cannot be resolved"
-      + "\nop cannot be resolved"
-      + "\nliteral cannot be resolved"
-      + "\n!== cannot be resolved");
+    String type1 = "";
+    String type2 = "";
+    String id1 = "";
+    String id2 = "";
+    if (((e.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral() != null) && (e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getLiteral() != null))) {
+      basicLit basicLiteral1 = e.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral().getLitBasic();
+      basicLit basicLiteral2 = e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getLiteral().getLitBasic();
+      type1 = this.getBasicLitType(basicLiteral1);
+      type2 = this.getBasicLitType(basicLiteral2);
+    } else {
+      literal _literal = e.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral();
+      boolean _tripleNotEquals = (_literal != null);
+      if (_tripleNotEquals) {
+        basicLit basicLiteral1_1 = e.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral().getLitBasic();
+        id2 = e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getOperandName().getName();
+        type1 = this.getBasicLitType(basicLiteral1_1);
+        type2 = this.getType(this.ids.get(id2));
+      } else {
+        literal _literal_1 = e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getLiteral();
+        boolean _tripleNotEquals_1 = (_literal_1 != null);
+        if (_tripleNotEquals_1) {
+          id1 = e.getUnaryExpr().getPrimaryExpr().getOperand().getOperandName().getName();
+          basicLit basicLiteral2_1 = e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getLiteral().getLitBasic();
+          type2 = this.getBasicLitType(basicLiteral2_1);
+          type1 = this.getType(this.ids.get(id1));
+        } else {
+          id1 = e.getUnaryExpr().getPrimaryExpr().getOperand().getOperandName().getName();
+          id2 = e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getOperandName().getName();
+          type1 = this.getType(this.ids.get(id1));
+          type2 = this.getType(this.ids.get(id2));
+        }
+      }
+    }
+    if ((Objects.equal(type1, "null") || Objects.equal(type2, "null"))) {
+      boolean _equals = Objects.equal(type1, "null");
+      if (_equals) {
+        this.error((("Semantic Error: " + id1) + " was declared but never assigned."), null);
+      }
+      boolean _equals_1 = Objects.equal(type2, "null");
+      if (_equals_1) {
+        this.error((("Semantic Error: " + id2) + " was declared but never assigned."), null);
+      }
+    } else {
+      this.checkTypesInBoolOp(binaryOp, type1, type2);
+    }
   }
   
   protected void checkTypesInBoolOp(final String binaryOp, final String type1, final String type2) {
@@ -273,10 +365,71 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   public boolean checkAndMakeDecl(final String id, final String constType, final basicLit literal) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field bool is undefined for the type basicLit"
-      + "\nThe method or field bool is undefined for the type basicLit"
-      + "\n!== cannot be resolved");
+    boolean error = false;
+    boolean _equals = Objects.equal(constType, "float");
+    if (_equals) {
+      String _intLit = literal.getIntLit();
+      boolean _tripleNotEquals = (_intLit != null);
+      if (_tripleNotEquals) {
+        String _intLit_1 = literal.getIntLit();
+        Integer _integer = new Integer(_intLit_1);
+        this.ids.put(id, _integer);
+      } else {
+        String _floatLit = literal.getFloatLit();
+        boolean _tripleNotEquals_1 = (_floatLit != null);
+        if (_tripleNotEquals_1) {
+          String _floatLit_1 = literal.getFloatLit();
+          Double _double = new Double(_floatLit_1);
+          this.ids.put(id, _double);
+        } else {
+          error = true;
+          this.error("Semantic Error: Invalid declaration, operator \n\t\t\t\t\t\tnot assigned to float.", null);
+        }
+      }
+    } else {
+      boolean _equals_1 = Objects.equal(constType, "int");
+      if (_equals_1) {
+        String _intLit_2 = literal.getIntLit();
+        boolean _tripleNotEquals_2 = (_intLit_2 != null);
+        if (_tripleNotEquals_2) {
+          String _intLit_3 = literal.getIntLit();
+          Integer _integer_1 = new Integer(_intLit_3);
+          this.ids.put(id, _integer_1);
+        } else {
+          error = true;
+          this.error("Semantic Error: Invalid declaration, operator \n\t\t\t\t\t\tnot assigned to int.", null);
+        }
+      } else {
+        boolean _equals_2 = Objects.equal(constType, "string");
+        if (_equals_2) {
+          String _stringLit = literal.getStringLit();
+          boolean _tripleNotEquals_3 = (_stringLit != null);
+          if (_tripleNotEquals_3) {
+            String _stringLit_1 = literal.getStringLit();
+            String _string = new String(_stringLit_1);
+            this.ids.put(id, _string);
+          } else {
+            error = true;
+            this.error("Semantic Error: Invalid declaration, operator \n\t\t\t\t\t\tnot assigned to string.", null);
+          }
+        } else {
+          boolean _equals_3 = Objects.equal(constType, "bool");
+          if (_equals_3) {
+            String _boolLit = literal.getBoolLit();
+            boolean _tripleNotEquals_4 = (_boolLit != null);
+            if (_tripleNotEquals_4) {
+              String _boolLit_1 = literal.getBoolLit();
+              Boolean _boolean = new Boolean(_boolLit_1);
+              this.ids.put(id, _boolean);
+            } else {
+              error = true;
+              this.error("Semantic Error: Invalid declaration, operator \n\t\t\t\t\t\tnot assigned to boolean.", null);
+            }
+          }
+        }
+      }
+    }
+    return error;
   }
   
   protected void callMethodCheck(final /* expressionList */Object expList, final String[] elements, final /* operand */Object op) {
@@ -306,5 +459,34 @@ public class GoValidator extends AbstractGoValidator {
       + "\nexpression2 cannot be resolved"
       + "\noperandn cannot be resolved"
       + "\nid cannot be resolved");
+  }
+  
+  public String getType(final Object obj) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nNullObj cannot be resolved to a type."
+      + "\nUnreachable code: The if condition can never match. It is already handled by a previous condition.");
+  }
+  
+  public void checkTypesInAritimeticOp(final String binaryOp, final String type1, final String type2) {
+    if ((Objects.equal(type1, "string") || Objects.equal(type2, "string"))) {
+      if ((Objects.equal(type1, "string") && Objects.equal(binaryOp, "+"))) {
+        if ((type2 != "string")) {
+          this.error("Semantic Error: Invalid arithmetic operation", null);
+        }
+      } else {
+        if ((Objects.equal(type2, "string") && Objects.equal(binaryOp, "+"))) {
+          if ((type1 != "string")) {
+            this.error("Semantic Error: Invalid arithmetic operation", null);
+          }
+        } else {
+          this.error(
+            (("Semantic Error: Invalid arithmetic operation, operator " + binaryOp) + " not defined on string."), null);
+        }
+      }
+    } else {
+      if ((Objects.equal(type1, "bool") || Objects.equal(type2, "bool"))) {
+        this.error("Semantic Error: Invalid arithmetic operation", null);
+      }
+    }
   }
 }

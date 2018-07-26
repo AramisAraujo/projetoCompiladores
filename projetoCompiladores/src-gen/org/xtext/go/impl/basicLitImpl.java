@@ -25,6 +25,7 @@ import org.xtext.go.basicLit;
  *   <li>{@link org.xtext.go.impl.basicLitImpl#getImaginaryLit <em>Imaginary Lit</em>}</li>
  *   <li>{@link org.xtext.go.impl.basicLitImpl#getRuneLit <em>Rune Lit</em>}</li>
  *   <li>{@link org.xtext.go.impl.basicLitImpl#getStringLit <em>String Lit</em>}</li>
+ *   <li>{@link org.xtext.go.impl.basicLitImpl#getBoolLit <em>Bool Lit</em>}</li>
  * </ul>
  * </p>
  *
@@ -131,6 +132,26 @@ public class basicLitImpl extends MinimalEObjectImpl.Container implements basicL
    * @ordered
    */
   protected String stringLit = STRING_LIT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getBoolLit() <em>Bool Lit</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBoolLit()
+   * @generated
+   * @ordered
+   */
+  protected static final String BOOL_LIT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getBoolLit() <em>Bool Lit</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBoolLit()
+   * @generated
+   * @ordered
+   */
+  protected String boolLit = BOOL_LIT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -273,6 +294,29 @@ public class basicLitImpl extends MinimalEObjectImpl.Container implements basicL
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getBoolLit()
+  {
+    return boolLit;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBoolLit(String newBoolLit)
+  {
+    String oldBoolLit = boolLit;
+    boolLit = newBoolLit;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GoPackage.BASIC_LIT__BOOL_LIT, oldBoolLit, boolLit));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -288,6 +332,8 @@ public class basicLitImpl extends MinimalEObjectImpl.Container implements basicL
         return getRuneLit();
       case GoPackage.BASIC_LIT__STRING_LIT:
         return getStringLit();
+      case GoPackage.BASIC_LIT__BOOL_LIT:
+        return getBoolLit();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -316,6 +362,9 @@ public class basicLitImpl extends MinimalEObjectImpl.Container implements basicL
         return;
       case GoPackage.BASIC_LIT__STRING_LIT:
         setStringLit((String)newValue);
+        return;
+      case GoPackage.BASIC_LIT__BOOL_LIT:
+        setBoolLit((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -346,6 +395,9 @@ public class basicLitImpl extends MinimalEObjectImpl.Container implements basicL
       case GoPackage.BASIC_LIT__STRING_LIT:
         setStringLit(STRING_LIT_EDEFAULT);
         return;
+      case GoPackage.BASIC_LIT__BOOL_LIT:
+        setBoolLit(BOOL_LIT_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -370,6 +422,8 @@ public class basicLitImpl extends MinimalEObjectImpl.Container implements basicL
         return RUNE_LIT_EDEFAULT == null ? runeLit != null : !RUNE_LIT_EDEFAULT.equals(runeLit);
       case GoPackage.BASIC_LIT__STRING_LIT:
         return STRING_LIT_EDEFAULT == null ? stringLit != null : !STRING_LIT_EDEFAULT.equals(stringLit);
+      case GoPackage.BASIC_LIT__BOOL_LIT:
+        return BOOL_LIT_EDEFAULT == null ? boolLit != null : !BOOL_LIT_EDEFAULT.equals(boolLit);
     }
     return super.eIsSet(featureID);
   }
@@ -395,6 +449,8 @@ public class basicLitImpl extends MinimalEObjectImpl.Container implements basicL
     result.append(runeLit);
     result.append(", stringLit: ");
     result.append(stringLit);
+    result.append(", boolLit: ");
+    result.append(boolLit);
     result.append(')');
     return result.toString();
   }

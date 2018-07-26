@@ -3110,12 +3110,15 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRuneLitRuneLitParserRuleCall_3_0 = (RuleCall)cRuneLitAssignment_3.eContents().get(0);
 		private final Assignment cStringLitAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
 		private final RuleCall cStringLitStringLitParserRuleCall_4_0 = (RuleCall)cStringLitAssignment_4.eContents().get(0);
+		private final Assignment cBoolLitAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
+		private final RuleCall cBoolLitBoolLitParserRuleCall_5_0 = (RuleCall)cBoolLitAssignment_5.eContents().get(0);
 		
 		//basicLit:
-		//	intLit=intLit | floatLit=floatLit | imaginaryLit=imaginaryLit | runeLit=runeLit | stringLit=stringLit;
+		//	intLit=intLit | floatLit=floatLit | imaginaryLit=imaginaryLit | runeLit=runeLit | stringLit=stringLit |
+		//	boolLit=boolLit;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//intLit=intLit | floatLit=floatLit | imaginaryLit=imaginaryLit | runeLit=runeLit | stringLit=stringLit
+		//intLit=intLit | floatLit=floatLit | imaginaryLit=imaginaryLit | runeLit=runeLit | stringLit=stringLit | boolLit=boolLit
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//intLit=intLit
@@ -3147,6 +3150,12 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//stringLit
 		public RuleCall getStringLitStringLitParserRuleCall_4_0() { return cStringLitStringLitParserRuleCall_4_0; }
+		
+		//boolLit=boolLit
+		public Assignment getBoolLitAssignment_5() { return cBoolLitAssignment_5; }
+		
+		//boolLit
+		public RuleCall getBoolLitBoolLitParserRuleCall_5_0() { return cBoolLitBoolLitParserRuleCall_5_0; }
 	}
 	public class IntLitElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.intLit");
@@ -3202,6 +3211,17 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//STRING_LIT
 		public RuleCall getSTRING_LITTerminalRuleCall() { return cSTRING_LITTerminalRuleCall; }
+	}
+	public class BoolLitElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.boolLit");
+		private final RuleCall cBOOLTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//boolLit:
+		//	BOOL;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//BOOL
+		public RuleCall getBOOLTerminalRuleCall() { return cBOOLTerminalRuleCall; }
 	}
 	public class OperandNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.operandName");
@@ -4550,6 +4570,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	private final ImaginaryLitElements pImaginaryLit;
 	private final RuneLitElements pRuneLit;
 	private final StringLitElements pStringLit;
+	private final BoolLitElements pBoolLit;
 	private final OperandNameElements pOperandName;
 	private final QualifiedIdentElements pQualifiedIdent;
 	private final CompositeLitElements pCompositeLit;
@@ -4582,6 +4603,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	private final UnaryExprElements pUnaryExpr;
 	private final ConversionElements pConversion;
 	private final EosElements pEos;
+	private final TerminalRule tBOOL;
 	private final TerminalRule tIDENTIFIER;
 	private final TerminalRule tBINARY_OP;
 	private final TerminalRule tREL_OP;
@@ -4706,6 +4728,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		this.pImaginaryLit = new ImaginaryLitElements();
 		this.pRuneLit = new RuneLitElements();
 		this.pStringLit = new StringLitElements();
+		this.pBoolLit = new BoolLitElements();
 		this.pOperandName = new OperandNameElements();
 		this.pQualifiedIdent = new QualifiedIdentElements();
 		this.pCompositeLit = new CompositeLitElements();
@@ -4738,6 +4761,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		this.pUnaryExpr = new UnaryExprElements();
 		this.pConversion = new ConversionElements();
 		this.pEos = new EosElements();
+		this.tBOOL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.BOOL");
 		this.tIDENTIFIER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.IDENTIFIER");
 		this.tBINARY_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.BINARY_OP");
 		this.tREL_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Go.REL_OP");
@@ -5686,7 +5710,8 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//basicLit:
-	//	intLit=intLit | floatLit=floatLit | imaginaryLit=imaginaryLit | runeLit=runeLit | stringLit=stringLit;
+	//	intLit=intLit | floatLit=floatLit | imaginaryLit=imaginaryLit | runeLit=runeLit | stringLit=stringLit |
+	//	boolLit=boolLit;
 	public BasicLitElements getBasicLitAccess() {
 		return pBasicLit;
 	}
@@ -5743,6 +5768,16 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getStringLitRule() {
 		return getStringLitAccess().getRule();
+	}
+	
+	//boolLit:
+	//	BOOL;
+	public BoolLitElements getBoolLitAccess() {
+		return pBoolLit;
+	}
+	
+	public ParserRule getBoolLitRule() {
+		return getBoolLitAccess().getRule();
 	}
 	
 	//operandName:
@@ -6116,6 +6151,12 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 		return getEosAccess().getRule();
 	}
 	
+	//terminal BOOL:
+	//	'true' | 'false';
+	public TerminalRule getBOOLRule() {
+		return tBOOL;
+	}
+	
 	//terminal IDENTIFIER:
 	//	LETTER (LETTER | DECIMAL_DIGIT)*;
 	public TerminalRule getIDENTIFIERRule() {
@@ -6233,6 +6274,7 @@ public class GoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal LITTLE_U_VALUE:
+	//	'\\\u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT;
 	public TerminalRule getLITTLE_U_VALUERule() {
 		return tLITTLE_U_VALUE;
 	}
