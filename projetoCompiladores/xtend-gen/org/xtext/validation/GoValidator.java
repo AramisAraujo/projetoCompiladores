@@ -16,6 +16,7 @@ import org.xtext.go.importDecl;
 import org.xtext.go.importSpec;
 import org.xtext.go.literal;
 import org.xtext.go.operand;
+import org.xtext.go.operandName;
 import org.xtext.go.shortVarDecl;
 import org.xtext.go.varDecl;
 import org.xtext.validation.AbstractGoValidator;
@@ -55,9 +56,9 @@ public class GoValidator extends AbstractGoValidator {
   @Check
   public void checkVarDecl(final varDecl vd) {
     throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field varspec is undefined for the type varDecl"
-      + "\nThe method or field varspec is undefined for the type varDecl"
-      + "\nThe method or field varspec is undefined for the type varDecl"
+      + "\nThe method or field id is undefined for the type varSpec"
+      + "\nThe method or field tp2 is undefined for the type varSpec"
+      + "\nThe method or field expressionlist is undefined for the type varSpec"
       + "\nThe method or field varspec is undefined for the type varDecl"
       + "\nThe method or field varspec is undefined for the type varDecl"
       + "\nThe method or field varspec is undefined for the type varDecl"
@@ -65,9 +66,6 @@ public class GoValidator extends AbstractGoValidator {
       + "\nType mismatch: cannot convert from Object to basicLit"
       + "\nType mismatch: cannot convert from Object to String"
       + "\nid cannot be resolved"
-      + "\nid cannot be resolved"
-      + "\ntp2 cannot be resolved"
-      + "\nexpressionlist cannot be resolved"
       + "\nexp cannot be resolved"
       + "\nup cannot be resolved"
       + "\npr cannot be resolved"
@@ -114,36 +112,14 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   @Check
-  public Object funcDecla(final functionDecl fd) {
+  public void funcDecla(final functionDecl fd) {
     throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field functionn is undefined for the type functionDecl"
-      + "\nThe method or field signature is undefined for the type functionDecl"
-      + "\nparameters cannot be resolved"
-      + "\nparameterlist cannot be resolved"
-      + "\nparameterDecl1 cannot be resolved"
-      + "\ntype cannot be resolved"
-      + "\n!== cannot be resolved"
-      + "\nparameterDecl1 cannot be resolved"
-      + "\nid cannot be resolved"
-      + "\nparameterDecl1 cannot be resolved"
-      + "\ntype cannot be resolved"
-      + "\ntp cannot be resolved"
-      + "\nparameterDecl1 cannot be resolved"
-      + "\nid cannot be resolved"
-      + "\nparameterDecl1 cannot be resolved"
-      + "\ntype cannot be resolved"
-      + "\ntp cannot be resolved"
-      + "\nparameterDecl1 cannot be resolved"
-      + "\nid cannot be resolved"
-      + "\nparameterDecl1 cannot be resolved"
-      + "\nid cannot be resolved"
-      + "\nparameterdecl cannot be resolved"
-      + "\ntype cannot be resolved"
-      + "\n!== cannot be resolved"
-      + "\nid cannot be resolved"
-      + "\ntype cannot be resolved"
-      + "\ntp cannot be resolved"
-      + "\nid cannot be resolved");
+      + "\nThe method or field id is undefined for the type parameterList"
+      + "\nThe method or field tp is undefined for the type String"
+      + "\nThe method or field id is undefined for the type parameterList"
+      + "\nThe method or field tp is undefined for the type String"
+      + "\nThe method or field id is undefined for the type parameterList"
+      + "\nThe method or field id is undefined for the type parameterList");
   }
   
   @Check
@@ -161,15 +137,17 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   @Check
-  public Object shortVarDecl(final shortVarDecl sv) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field idl is undefined for the type shortVarDecl"
-      + "\nThe method or field epl is undefined for the type shortVarDecl"
-      + "\nid cannot be resolved");
+  public void shortVarDecl(final shortVarDecl sv) {
+    for (int i = 0; (i < sv.getIdList().getIds().size()); i++) {
+      this.ids.put(
+        sv.getIdList().getIds().get(i), 
+        sv.getExprList());
+    }
   }
   
   public void checkRelExp(final expression e) {
-    if (((e.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral() != null) && (e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getLiteral() != null))) {
+    if (((e.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral() != null) && 
+      (e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getLiteral() != null))) {
       basicLit basicLiteral1 = e.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral().getLitBasic();
       basicLit basicLiteral2 = e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getLiteral().getLitBasic();
       if (((basicLiteral1.getBoolLit() == null) || (basicLiteral2.getBoolLit() == null))) {
@@ -183,7 +161,8 @@ public class GoValidator extends AbstractGoValidator {
     String type2 = "";
     String id1 = "";
     String id2 = "";
-    if (((e.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral() != null) && (e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getLiteral() != null))) {
+    if (((e.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral() != null) && 
+      (e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getLiteral() != null))) {
       basicLit basicLiteral1 = e.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral().getLitBasic();
       basicLit basicLiteral2 = e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getLiteral().getLitBasic();
       type1 = this.getBasicLitType(basicLiteral1);
@@ -231,7 +210,8 @@ public class GoValidator extends AbstractGoValidator {
     String type2 = "";
     String id1 = "";
     String id2 = "";
-    if (((e.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral() != null) && (e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getLiteral() != null))) {
+    if (((e.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral() != null) && 
+      (e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getLiteral() != null))) {
       basicLit basicLiteral1 = e.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral().getLitBasic();
       basicLit basicLiteral2 = e.getExpressionMatched().getExpression().getUnaryExpr().getPrimaryExpr().getOperand().getLiteral().getLitBasic();
       type1 = this.getBasicLitType(basicLiteral1);
@@ -284,24 +264,26 @@ public class GoValidator extends AbstractGoValidator {
       boolean _equals = Objects.equal(type1, "int");
       if (_equals) {
         if ((Objects.equal(type2, "bool") || Objects.equal(type2, "string"))) {
-          this.error(((("Semantic Error: Invalid boolean operation. Mismatched types " + type1) + " and ") + type2), null);
+          this.error(((("Semantic Error: Invalid boolean operation. Mismatched types " + type1) + " and ") + type2), 
+            null);
         }
       } else {
         boolean _equals_1 = Objects.equal(type1, "float");
         if (_equals_1) {
           if ((Objects.equal(type2, "bool") || Objects.equal(type2, "string"))) {
-            this.error(((("Semantic Error: Invalid boolean operation. Mismatched types " + type1) + " and ") + type2), null);
+            this.error(((("Semantic Error: Invalid boolean operation. Mismatched types " + type1) + " and ") + type2), 
+              null);
           }
         } else {
           if ((Objects.equal(type1, "bool") || Objects.equal(type2, "bool"))) {
-            this.error((("Semantic Error: Invalid boolean operation. Operator " + binaryOp) + 
-              " not defined on bool."), null);
+            this.error((("Semantic Error: Invalid boolean operation. Operator " + binaryOp) + " not defined on bool."), null);
           } else {
             boolean _equals_2 = Objects.equal(type1, "string");
             if (_equals_2) {
               boolean _notEquals_1 = (!Objects.equal(type2, "string"));
               if (_notEquals_1) {
-                this.error(((("Semantic Error: Invalid boolean operation. Mismatched types " + type1) + " and ") + type2), null);
+                this.error(((("Semantic Error: Invalid boolean operation. Mismatched types " + type1) + " and ") + type2), 
+                  null);
               }
             }
           }
@@ -332,11 +314,13 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   protected boolean isArithimeticOp(final String binaryOperator) {
-    return ((((Objects.equal(binaryOperator, "+") || Objects.equal(binaryOperator, "-")) || Objects.equal(binaryOperator, "*")) || Objects.equal(binaryOperator, "/")) || Objects.equal(binaryOperator, "%"));
+    return ((((Objects.equal(binaryOperator, "+") || Objects.equal(binaryOperator, "-")) || Objects.equal(binaryOperator, "*")) || Objects.equal(binaryOperator, "/")) || 
+      Objects.equal(binaryOperator, "%"));
   }
   
   protected boolean isBooleanOp(final String binaryOperator) {
-    return (((((Objects.equal(binaryOperator, "==") || Objects.equal(binaryOperator, "!=")) || Objects.equal(binaryOperator, "<")) || Objects.equal(binaryOperator, "<=")) || Objects.equal(binaryOperator, ">")) || Objects.equal(binaryOperator, ">="));
+    return (((((Objects.equal(binaryOperator, "==") || Objects.equal(binaryOperator, "!=")) || Objects.equal(binaryOperator, "<")) || Objects.equal(binaryOperator, "<=")) || 
+      Objects.equal(binaryOperator, ">")) || Objects.equal(binaryOperator, ">="));
   }
   
   public Object nullDeclaration(final String id) {
@@ -413,32 +397,34 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   protected void callMethodCheck(final expressionList expList, final String[] elements, final operand op) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field exp is undefined for the type expressionList"
-      + "\nThe method or field exp is undefined for the type expressionList"
-      + "\nThe method or field exp is undefined for the type expressionList"
-      + "\nThe method or field expression2 is undefined for the type expressionList"
-      + "\nThe method or field expression2 is undefined for the type expressionList"
-      + "\nThe method or field operandn is undefined for the type operand"
-      + "\nup cannot be resolved"
-      + "\npr cannot be resolved"
-      + "\nop cannot be resolved"
-      + "\noperandn cannot be resolved"
-      + "\n!== cannot be resolved"
-      + "\nup cannot be resolved"
-      + "\npr cannot be resolved"
-      + "\nop cannot be resolved"
-      + "\noperandn cannot be resolved"
-      + "\nid cannot be resolved"
-      + "\n!== cannot be resolved"
-      + "\nup cannot be resolved"
-      + "\npr cannot be resolved"
-      + "\nop cannot be resolved"
-      + "\nliteral cannot be resolved"
-      + "\nbasic cannot be resolved"
-      + "\n!== cannot be resolved"
-      + "\n!== cannot be resolved"
-      + "\nid cannot be resolved");
+    int termsCount = 0;
+    EList<expression> _expr = expList.getExpr();
+    for (final expression exp : _expr) {
+      operandName _operandName = exp.getUnaryExpr().getPrimaryExpr().getOperand().getOperandName();
+      boolean _tripleNotEquals = (_operandName != null);
+      if (_tripleNotEquals) {
+        String _name = exp.getUnaryExpr().getPrimaryExpr().getOperand().getOperandName().getName();
+        boolean _tripleNotEquals_1 = (_name != null);
+        if (_tripleNotEquals_1) {
+          int _termsCount = termsCount;
+          termsCount = (_termsCount + 1);
+        }
+      } else {
+        basicLit _litBasic = exp.getUnaryExpr().getPrimaryExpr().getOperand().getLiteral().getLitBasic();
+        boolean _tripleNotEquals_2 = (_litBasic != null);
+        if (_tripleNotEquals_2) {
+          int _termsCount_1 = termsCount;
+          termsCount = (_termsCount_1 + 1);
+        }
+      }
+    }
+    int _length = elements.length;
+    boolean _tripleNotEquals_3 = (termsCount != _length);
+    if (_tripleNotEquals_3) {
+      String _name_1 = op.getOperandName().getName();
+      String _plus = ("Semantic Error: Wrong number of parameters for " + _name_1);
+      this.error(_plus, null);
+    }
   }
   
   public String getType(final Object obj) {
@@ -477,7 +463,8 @@ public class GoValidator extends AbstractGoValidator {
           }
         } else {
           this.error(
-            (("Semantic Error: Invalid arithmetic operation, operator " + binaryOp) + " not defined on string."), null);
+            (("Semantic Error: Invalid arithmetic operation, operator " + binaryOp) + " not defined on string."), 
+            null);
         }
       }
     } else {

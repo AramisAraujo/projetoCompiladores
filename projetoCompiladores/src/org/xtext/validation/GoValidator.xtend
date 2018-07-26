@@ -21,26 +21,24 @@ import org.xtext.go.expressionList
  */
 class GoValidator extends AbstractGoValidator {
 	val ids = newLinkedHashMap();
-	
+
 	@Check
 	def checkExpression(expression e) {
-		
-		if(e.expressionMatched.operator !== null) {
-			
+
+		if (e.expressionMatched.operator !== null) {
+
 			var binaryOperator = e.expressionMatched.operator;
-			
-			if(binaryOperator == "||" || binaryOperator == "&&") {
+
+			if (binaryOperator == "||" || binaryOperator == "&&") {
 				checkRelExp(e);
-			}
-			else if(isArithimeticOp(binaryOperator)) {	
+			} else if (isArithimeticOp(binaryOperator)) {
 				checkAritOp(e, binaryOperator);
-			}
-			else if(isBooleanOp(binaryOperator)) {
+			} else if (isBooleanOp(binaryOperator)) {
 				checkBooleanOp(e, binaryOperator);
 			}
 		}
 	}
-	
+
 //	@Check
 //	def checkConstDecl(constDecl cd) {
 //		
@@ -58,418 +56,391 @@ class GoValidator extends AbstractGoValidator {
 //			}
 //		}
 //	}
-	
 	@Check
 	def checkVarDecl(varDecl vd) {
-		
-		var varId   = vd.varspec.id.id;	
-		nullDeclaration(varId);
-		
-		var type    = vd.varspec.tp2;
-		var varExp  = vd.varspec.expressionlist.exp.up.pr.op.literal.basic;
-	
-		
-		if (type !== null && varExp !== null) {
-			var varType = type.tp; 		
-			if(varType !== null) {
-				var error = checkAndMakeDecl(varId, varType, varExp);
-				if(varId.charAt(0) !== varId.toLowerCase().charAt(0) && !error) {
-					warning ("Variables usually starts with Lower Case", null);
+
+		for (varspec : vd.specs) {
+			var varId = varspec.id.id;
+			nullDeclaration(varId);
+
+			var type = varspec.tp2;
+			var varExp = varspec.expressionlist.exp.up.pr.op.literal.basic;
+
+			if (type !== null && varExp !== null) {
+				var varType = type.tp;
+				if (varType !== null) {
+					var error = checkAndMakeDecl(varId, varType, varExp);
+					if (varId.charAt(0) !== varId.toLowerCase().charAt(0) && !error) {
+						warning("Variables usually starts with Lower Case", null);
+					}
 				}
 			}
-		}
-		
-		var varIds = newLinkedList;
-		for(id : vd.varspec.id.id2) {
-			varIds.add(id)
-		}
-		
-		var exps = newLinkedList;
-		if(vd.varspec.expressionlist.expression2 !== null) {
-			for(expr : vd.varspec.expressionlist.expression2) {
-				exps.add(expr.up.pr.op.literal.basic)
+
+			var varIds = newLinkedList;
+			for (id : vd.varspec.id.id2) {
+				varIds.add(id)
 			}
-		}
-		
-		if(varIds.size == exps.size) {
-			var index = 0
-			for(id : varIds) {
-				if(type !== null) {
-					checkAndMakeDecl(id, type.tp, exps.get(index));
-				} else {
-					nullDeclaration(id)
+
+			var exps = newLinkedList;
+			if (vd.varspec.expressionlist.expression2 !== null) {
+				for (expr : vd.varspec.expressionlist.expression2) {
+					exps.add(expr.up.pr.op.literal.basic)
 				}
 			}
-		}
-		else {
-			error('Semantic Error: Wrong number of atributes', null)
+
+			if (varIds.size == exps.size) {
+				var index = 0
+				for (id : varIds) {
+					if (type !== null) {
+						checkAndMakeDecl(id, type.tp, exps.get(index));
+					} else {
+						nullDeclaration(id)
+					}
+				}
+			} else {
+				error('Semantic Error: Wrong number of atributes', null)
+			}
 		}
 	}
-	
+
 	@Check
 	def imporDeclCheck(importDecl id) {
 		var imports = id.specs
-		for(import:imports) {
+		for (import : imports) {
 			nullDeclaration(import.path.replaceAll("\"", ""))
 		}
 	}
-	
+
 	@Check
 	def ifDclrCheck() {
-		//TODO: GOD PLEASE HELP ME
+		// TODO: GOD PLEASE HELP ME
 	}
-	
+
 	@Check
 	def funcDecla(functionDecl fd) {
-		
-		var funcName      = fd.functionn;
-		var parameters    = fd.signature.parameters.parameterlist;
+
+		var funcName = fd.name;
+		var parameters = fd.sig.params.paramList;
 		var parameterList = newLinkedHashMap()
-		
-		if(parameters.parameterDecl1.type !== null) {
-			
-			parameterList.put(
-				parameters.parameterDecl1.id,
-				parameters.parameterDecl1.type.tp
-			);
-			
-			ids.put(
-				parameters.parameterDecl1.id,
-				parameters.parameterDecl1.type.tp
-			);
-		}
-		else {
-			parameterList.put(
-				parameters.parameterDecl1.id,
-				new NullObj()
-			);
-			
-			ids.put(
-				parameters.parameterDecl1.id,
-				new NullObj()
-			);
-		}
-		
-		for(param : parameters.parameterdecl) {
-			if(param.type !== null) {
+
+		for (p : parameters) {
+			if (p.type !== null) {
+
 				parameterList.put(
-					param.id,
-					param.type.tp
-				)
-			}else {
+					p.id,
+					p.type.tp
+				);
+
+				ids.put(
+					p.id,
+					p.type.tp
+				);
+			} else {
 				parameterList.put(
-					param.id,
+					p.id,
 					new NullObj()
-				)
+				);
+
+				ids.put(
+					p.id,
+					new NullObj()
+				);
 			}
+
+//			for (param : parameters.parameterdecl) {
+//				if (param.type !== null) {
+//					parameterList.put(
+//						param.id,
+//						param.type.tp
+//					)
+//				} else {
+//					parameterList.put(
+//						param.id,
+//						new NullObj()
+//					)
+//				}
+//			}
+			ids.put(funcName, parameterList.toString);
 		}
-		
-		ids.put(funcName, parameterList.toString);	
 	}
-	
+
 	@Check
 	def checkOperandName(operand op) {
-		
-		if(!ids.containsKey(op.operandn.id)) {	
-			error("Semantic Error: Identifier " + op.operandn.id + " was never declared" , null)
-		}
-		else if(ids.get(op.operandn.id).toString().contains(',')) {
-			
-			var elements   = ids.get(op.operandn.id).toString().split(",");
-			var expList    = op.exp;
+
+		if (!ids.containsKey(op.operandn.id)) {
+			error("Semantic Error: Identifier " + op.operandn.id + " was never declared", null)
+		} else if (ids.get(op.operandn.id).toString().contains(',')) {
+
+			var elements = ids.get(op.operandn.id).toString().split(",");
+			var expList = op.exp;
 			callMethodCheck(expList, elements, op)
 		}
-		
+
 	}
-	
+
 	@Check
 	def shortVarDecl(shortVarDecl sv) {
-		ids.put(
-			sv.idl.id,
-			sv.epl
-		);
+		for (var i = 0; i < sv.idList.ids.size; i++) {
+			ids.put(
+				sv.idList.ids.get(i) ,
+				sv.exprList
+			);
+		}
+
 	}
-	
+
 	def checkRelExp(expression e) {
-		
-		if(e.unaryExpr.primaryExpr.operand.literal !== null && e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal !== null) {
+
+		if (e.unaryExpr.primaryExpr.operand.literal !== null &&
+			e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal !== null) {
 			var basicLiteral1 = e.unaryExpr.primaryExpr.operand.literal.litBasic
 			var basicLiteral2 = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal.litBasic
-			
-			if(basicLiteral1.boolLit === null || basicLiteral2.boolLit === null) {
+
+			if (basicLiteral1.boolLit === null || basicLiteral2.boolLit === null) {
 				error("Semantic Error: Invalid boolean expression", null);
 			}
 		}
 	}
-	
+
 	def checkAritOp(expression e, String binaryOp) {
-		
+
 		var type1 = "";
 		var type2 = "";
 		var id1 = "";
 		var id2 = "";
-		
-		if(e.unaryExpr.primaryExpr.operand.literal !== null && e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal !== null) {
+
+		if (e.unaryExpr.primaryExpr.operand.literal !== null &&
+			e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal !== null) {
 			var basicLiteral1 = e.unaryExpr.primaryExpr.operand.literal.litBasic;
 			var basicLiteral2 = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal.litBasic;
-			
+
 			type1 = getBasicLitType(basicLiteral1);
-			type2 = getBasicLitType(basicLiteral2);	
-		}
-		
-		else if(e.unaryExpr.primaryExpr.operand.literal !== null) {
+			type2 = getBasicLitType(basicLiteral2);
+		} else if (e.unaryExpr.primaryExpr.operand.literal !== null) {
 			var basicLiteral1 = e.unaryExpr.primaryExpr.operand.literal.litBasic;
-			id2               = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.operandName.name;
-			
+			id2 = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.operandName.name;
+
 			type1 = getBasicLitType(basicLiteral1);
 			type2 = getType(ids.get(id2));
-		}
-		else if(e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal !== null){
-			id1               = e.unaryExpr.primaryExpr.operand.operandName.name;
+		} else if (e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal !== null) {
+			id1 = e.unaryExpr.primaryExpr.operand.operandName.name;
 			var basicLiteral2 = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal.litBasic;
-			
+
 			type2 = getBasicLitType(basicLiteral2);
 			type1 = getType(ids.get(id1));
-		}
-		else {
+		} else {
 			id1 = e.unaryExpr.primaryExpr.operand.operandName.name
 			id2 = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.operandName.name
-			
+
 			type1 = getType(ids.get(id1));
 			type2 = getType(ids.get(id2));
 		}
-		
-		if(type1 == "null" || type2 == "null") {
-			if(type1 == "null") {
+
+		if (type1 == "null" || type2 == "null") {
+			if (type1 == "null") {
 				error("Semantic Error: " + id1 + " was declared but never assigned.", null)
 			}
-			if(type2 == "null") {
+			if (type2 == "null") {
 				error("Semantic Error: " + id2 + " was declared but never assigned.", null)
 			}
-		}
-		else {
+		} else {
 			checkTypesInAritimeticOp(binaryOp, type1, type2)
 		}
 	}
-	
+
 	def checkBooleanOp(expression e, String binaryOp) {
-		
+
 		var type1 = "";
 		var type2 = "";
-		
+
 		var id1 = "";
 		var id2 = "";
-		
-		if(e.unaryExpr.primaryExpr.operand.literal !== null && e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal !== null) {
+
+		if (e.unaryExpr.primaryExpr.operand.literal !== null &&
+			e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal !== null) {
 			var basicLiteral1 = e.unaryExpr.primaryExpr.operand.literal.litBasic;
 			var basicLiteral2 = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal.litBasic;
-			
+
 			type1 = getBasicLitType(basicLiteral1);
-			type2 = getBasicLitType(basicLiteral2);	
-		}
-		else if(e.unaryExpr.primaryExpr.operand.literal !== null) {
+			type2 = getBasicLitType(basicLiteral2);
+		} else if (e.unaryExpr.primaryExpr.operand.literal !== null) {
 			var basicLiteral1 = e.unaryExpr.primaryExpr.operand.literal.litBasic;
-			id2               = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.operandName.name
-			
+			id2 = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.operandName.name
+
 			type1 = getBasicLitType(basicLiteral1);
 			type2 = getType(ids.get(id2));
-		}
-		else if(e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal !== null){
-			id1               = e.unaryExpr.primaryExpr.operand.operandName.name
+		} else if (e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal !== null) {
+			id1 = e.unaryExpr.primaryExpr.operand.operandName.name
 			var basicLiteral2 = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.literal.litBasic;
-			
+
 			type2 = getBasicLitType(basicLiteral2);
 			type1 = getType(ids.get(id1));
-		}
-		else {
+		} else {
 			id1 = e.unaryExpr.primaryExpr.operand.operandName.name
 			id2 = e.expressionMatched.expression.unaryExpr.primaryExpr.operand.operandName.name
-			
+
 			type1 = getType(ids.get(id1));
 			type2 = getType(ids.get(id2));
 		}
-		
-		if(type1 == "null" || type2 == "null") {
-			if(type1 == "null") {
+
+		if (type1 == "null" || type2 == "null") {
+			if (type1 == "null") {
 				error("Semantic Error: " + id1 + " was declared but never assigned.", null)
 			}
-			if(type2 == "null") {
+			if (type2 == "null") {
 				error("Semantic Error: " + id2 + " was declared but never assigned.", null)
 			}
-		}
-		else {
+		} else {
 			checkTypesInBoolOp(binaryOp, type1, type2)
-		}	
+		}
 	}
-	
+
 	protected def void checkTypesInBoolOp(String binaryOp, String type1, String type2) {
-		if(binaryOp == "==" || binaryOp == "!=") {
-			if(type1 != type2) {
-				error("Semantic Error: Invalid boolean operation. Mismatched types " + type1
-						+ " and " + type2, null)
+		if (binaryOp == "==" || binaryOp == "!=") {
+			if (type1 != type2) {
+				error("Semantic Error: Invalid boolean operation. Mismatched types " + type1 + " and " + type2, null)
 			}
-		}	
-		else{
-			if(type1 == "int") {
-				if(type2 == "bool" || type2 == "string") {
-					error("Semantic Error: Invalid boolean operation. Mismatched types " + type1
-						+ " and " + type2, null)
+		} else {
+			if (type1 == "int") {
+				if (type2 == "bool" || type2 == "string") {
+					error("Semantic Error: Invalid boolean operation. Mismatched types " + type1 + " and " + type2,
+						null)
 				}
-			}
-			else if(type1 == "float") {
-				if(type2 == "bool" || type2 == "string") {
-					error("Semantic Error: Invalid boolean operation. Mismatched types " + type1
-						+ " and " + type2, null)
+			} else if (type1 == "float") {
+				if (type2 == "bool" || type2 == "string") {
+					error("Semantic Error: Invalid boolean operation. Mismatched types " + type1 + " and " + type2,
+						null)
 				}
-			}else if(type1 == "bool" || type2 == "bool") {
-				error("Semantic Error: Invalid boolean operation. Operator " + binaryOp + 
-						" not defined on bool.", null)
-			} else if(type1 == "string") {
-				if(type2 != "string") {
-					error("Semantic Error: Invalid boolean operation. Mismatched types " + type1
-						+ " and " + type2, null)
+			} else if (type1 == "bool" || type2 == "bool") {
+				error("Semantic Error: Invalid boolean operation. Operator " + binaryOp + " not defined on bool.", null)
+			} else if (type1 == "string") {
+				if (type2 != "string") {
+					error("Semantic Error: Invalid boolean operation. Mismatched types " + type1 + " and " + type2,
+						null)
 				}
 			}
 		}
 	}
-		
+
 	def getBasicLitType(basicLit lit) {
-			if(lit.getFloatLit !== null) {
-				return "float";
-			} else if(lit.getIntLit !== null) {
-				return "int";
-			} else if(lit.getStringLit !== null) {
-				return "string";
-			}
+		if (lit.getFloatLit !== null) {
+			return "float";
+		} else if (lit.getIntLit !== null) {
+			return "int";
+		} else if (lit.getStringLit !== null) {
+			return "string";
+		}
 	}
-	
+
 	protected def boolean isArithimeticOp(String binaryOperator) {
-		return (binaryOperator == "+" || binaryOperator == "-" || binaryOperator == "*"
-			 || binaryOperator == "/" || binaryOperator == "%")
+		return (binaryOperator == "+" || binaryOperator == "-" || binaryOperator == "*" || binaryOperator == "/" ||
+			binaryOperator == "%")
 	}
-	
+
 	protected def boolean isBooleanOp(String binaryOperator) {
-		
-		return (  binaryOperator == "==" || binaryOperator == "!=" 
-			    || binaryOperator == "<" || binaryOperator == "<=" 
-			    || binaryOperator == ">" || binaryOperator == ">="  );
+
+		return (  binaryOperator == "==" || binaryOperator == "!=" || binaryOperator == "<" || binaryOperator == "<=" ||
+			binaryOperator == ">" || binaryOperator == ">="  );
 	}
-	
+
 	def nullDeclaration(String id) {
 		ids.put(id, new NullObj());
 	}
-	
+
 	def checkAndMakeDecl(String id, String constType, basicLit literal) {
-		
+
 		var error = false;
-				
-		if(constType == "float") {
-			if(literal.intLit !== null) {
+
+		if (constType == "float") {
+			if (literal.intLit !== null) {
 				ids.put(id, new Integer(literal.intLit));
-			}
-			else if(literal.floatLit !== null) {
+			} else if (literal.floatLit !== null) {
 				ids.put(id, new Double(literal.floatLit));
-			}
-			else {
+			} else {
 				error = true;
 				error("Semantic Error: Invalid declaration, operator 
 						not assigned to float.", null);
 			}
-		} 
-		else if(constType == "int") {
-			if(literal.intLit !== null) {
+		} else if (constType == "int") {
+			if (literal.intLit !== null) {
 				ids.put(id, new Integer(literal.intLit));
-			}
-			else {
+			} else {
 				error = true;
 				error("Semantic Error: Invalid declaration, operator 
 						not assigned to int.", null);
 			}
-		}
-		else if(constType == "string") {
-			if(literal.stringLit !== null) {
+		} else if (constType == "string") {
+			if (literal.stringLit !== null) {
 				ids.put(id, new String(literal.stringLit));
-			}
-			else {
+			} else {
 				error = true;
 				error("Semantic Error: Invalid declaration, operator 
 						not assigned to string.", null);
 			}
-		}
-		else if(constType == "bool") {
-			if(literal.boolLit !== null) {
+		} else if (constType == "bool") {
+			if (literal.boolLit !== null) {
 				ids.put(id, new Boolean(literal.boolLit));
-			}
-			else {
+			} else {
 				error = true;
 				error("Semantic Error: Invalid declaration, operator 
 						not assigned to boolean.", null);
 			}
 		}
-		
+
 		return error;
 	}
-	
+
 	protected def void callMethodCheck(expressionList expList, String[] elements, operand op) {
 		var termsCount = 0
-	
-		if(expList.exp.up.pr.op.operandn !== null) {
-			if(expList.exp.up.pr.op.operandn.id !== null) {
-				termsCount += 1;
-			}
-		}else if(expList.exp.up.pr.op.literal.basic !== null) {
-			termsCount += 1;
-		}
-		
-		
-		if(expList.expression2 !== null) {
-			for(exp : expList.expression2) {
+
+		for (exp : expList.expr) {
+			if (exp.unaryExpr.primaryExpr.operand.operandName !== null) {
+				if (exp.unaryExpr.primaryExpr.operand.operandName.name !== null) {
+					termsCount += 1;
+				}
+			} else if (exp.unaryExpr.primaryExpr.operand.literal.litBasic !== null) {
 				termsCount += 1;
 			}
 		}
-		
-		if(termsCount !== elements.length) {
-			error("Semantic Error: Wrong number of parameters for " + op.operandn.id, null )
+
+		if (termsCount !== elements.length) {
+			error("Semantic Error: Wrong number of parameters for " + op.operandName.name, null)
 		}
 	}
-	
-	def getType(Object obj) {	
-		if(obj instanceof Integer) {
+
+	def getType(Object obj) {
+		if (obj instanceof Integer) {
 			return "int"
-		}
-		else if(obj instanceof Double) {
+		} else if (obj instanceof Double) {
 			return "float"
-		}
-		else if(obj instanceof Boolean) {
+		} else if (obj instanceof Boolean) {
 			return "bool"
-		}
-		else if(obj instanceof String) {
+		} else if (obj instanceof String) {
 			return "string"
-		}
-		else if(obj instanceof NullObj) {
+		} else if (obj instanceof NullObj) {
 			return "null"
 		}
 	}
 
 	def checkTypesInAritimeticOp(String binaryOp, String type1, String type2) {
-	
-		if(type1 == "string" || type2 == "string") {
-			if(type1 == "string" && binaryOp == "+") {
-				if(type2 !== "string") {
+
+		if (type1 == "string" || type2 == "string") {
+			if (type1 == "string" && binaryOp == "+") {
+				if (type2 !== "string") {
 					error("Semantic Error: Invalid arithmetic operation", null)
 				}
-			}
-			else if(type2 == "string" && binaryOp == "+") {
-				if(type1 !== "string") {
+			} else if (type2 == "string" && binaryOp == "+") {
+				if (type1 !== "string") {
 					error("Semantic Error: Invalid arithmetic operation", null)
 				}
-			}else {
-				error("Semantic Error: Invalid arithmetic operation, operator "
-						+ binaryOp + " not defined on string.", null
-					)
+			} else {
+				error(
+					"Semantic Error: Invalid arithmetic operation, operator " + binaryOp + " not defined on string.",
+					null
+				)
 			}
-		}else if(type1 == "bool" || type2 == "bool") {
-			error("Semantic Error: Invalid arithmetic operation" , null)
+		} else if (type1 == "bool" || type2 == "bool") {
+			error("Semantic Error: Invalid arithmetic operation", null)
 		}
 	}
 
@@ -809,5 +780,4 @@ class GoValidator extends AbstractGoValidator {
 //			checkUnary(expr.getUnaryExpr());
 //		}
 //	}
-
 }
