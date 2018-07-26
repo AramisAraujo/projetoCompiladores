@@ -6,6 +6,12 @@ package org.xtext.validation
 import org.eclipse.xtext.validation.Check
 import org.xtext.go.expression
 import org.xtext.go.basicLit
+import org.xtext.go.constDecl
+import org.xtext.go.varDecl
+import org.xtext.go.importDecl
+import org.xtext.go.functionDecl
+import org.xtext.go.operand
+import org.xtext.go.shortVarDecl
 
 /**
  * This class contains custom validation rules. 

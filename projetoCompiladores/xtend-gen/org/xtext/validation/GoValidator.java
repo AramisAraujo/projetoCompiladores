@@ -8,8 +8,14 @@ import java.util.LinkedHashMap;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.xtext.go.basicLit;
+import org.xtext.go.constDecl;
 import org.xtext.go.expression;
+import org.xtext.go.functionDecl;
+import org.xtext.go.importDecl;
 import org.xtext.go.literal;
+import org.xtext.go.operand;
+import org.xtext.go.shortVarDecl;
+import org.xtext.go.varDecl;
 import org.xtext.validation.AbstractGoValidator;
 
 /**
@@ -44,15 +50,15 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   @Check
-  public void checkConstDecl(final /* constDecl */Object cd) {
+  public void checkConstDecl(final constDecl cd) {
     throw new Error("Unresolved compilation problems:"
-      + "\nconstspec cannot be resolved"
+      + "\nThe method or field constspec is undefined for the type constDecl"
+      + "\nThe method or field constspec is undefined for the type constDecl"
+      + "\nThe method or field constspec is undefined for the type constDecl"
       + "\nid cannot be resolved"
       + "\nid cannot be resolved"
-      + "\nconstspec cannot be resolved"
       + "\ntp cannot be resolved"
       + "\ntp cannot be resolved"
-      + "\nconstspec cannot be resolved"
       + "\nexpressionlist cannot be resolved"
       + "\nexp cannot be resolved"
       + "\nup cannot be resolved"
@@ -69,17 +75,20 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   @Check
-  public void checkVarDecl(final /* varDecl */Object vd) {
+  public void checkVarDecl(final varDecl vd) {
     throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field varspec is undefined for the type varDecl"
+      + "\nThe method or field varspec is undefined for the type varDecl"
+      + "\nThe method or field varspec is undefined for the type varDecl"
+      + "\nThe method or field varspec is undefined for the type varDecl"
+      + "\nThe method or field varspec is undefined for the type varDecl"
+      + "\nThe method or field varspec is undefined for the type varDecl"
       + "\nType mismatch: cannot convert from Object to String"
       + "\nType mismatch: cannot convert from Object to basicLit"
       + "\nType mismatch: cannot convert from Object to String"
-      + "\nvarspec cannot be resolved"
       + "\nid cannot be resolved"
       + "\nid cannot be resolved"
-      + "\nvarspec cannot be resolved"
       + "\ntp2 cannot be resolved"
-      + "\nvarspec cannot be resolved"
       + "\nexpressionlist cannot be resolved"
       + "\nexp cannot be resolved"
       + "\nup cannot be resolved"
@@ -97,14 +106,11 @@ public class GoValidator extends AbstractGoValidator {
       + "\ntoLowerCase cannot be resolved"
       + "\ncharAt cannot be resolved"
       + "\n&& cannot be resolved"
-      + "\nvarspec cannot be resolved"
       + "\nid cannot be resolved"
       + "\nid2 cannot be resolved"
-      + "\nvarspec cannot be resolved"
       + "\nexpressionlist cannot be resolved"
       + "\nexpression2 cannot be resolved"
       + "\n!== cannot be resolved"
-      + "\nvarspec cannot be resolved"
       + "\nexpressionlist cannot be resolved"
       + "\nexpression2 cannot be resolved"
       + "\nup cannot be resolved"
@@ -117,9 +123,9 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   @Check
-  public void imporDeclCheck(final /* importDecl */Object id) {
+  public void imporDeclCheck(final importDecl id) {
     throw new Error("Unresolved compilation problems:"
-      + "\nimports cannot be resolved"
+      + "\nThe method or field imports is undefined for the type importDecl"
       + "\nip cannot be resolved"
       + "\nreplaceAll cannot be resolved");
   }
@@ -130,13 +136,13 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   @Check
-  public Object funcDecla(final /* functionDecl */Object fd) {
+  public Object funcDecla(final functionDecl fd) {
     throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field functionn is undefined for the type functionDecl"
+      + "\nThe method or field signature is undefined for the type functionDecl"
       + "\nNullObj cannot be resolved."
       + "\nNullObj cannot be resolved."
       + "\nNullObj cannot be resolved."
-      + "\nfunctionn cannot be resolved"
-      + "\nsignature cannot be resolved"
       + "\nparameters cannot be resolved"
       + "\nparameterlist cannot be resolved"
       + "\nparameterDecl1 cannot be resolved"
@@ -166,26 +172,26 @@ public class GoValidator extends AbstractGoValidator {
   }
   
   @Check
-  public void checkOperandName(final /* operand */Object op) {
+  public void checkOperandName(final operand op) {
     throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field operandn is undefined for the type operand"
+      + "\nThe method or field operandn is undefined for the type operand"
+      + "\nThe method or field operandn is undefined for the type operand"
+      + "\nThe method or field operandn is undefined for the type operand"
+      + "\nThe method or field exp is undefined for the type operand"
       + "\nThe method callMethodCheck(expressionList, String[], operand) from the type GoValidator refers to the missing type expressionList"
-      + "\noperandn cannot be resolved"
       + "\nid cannot be resolved"
-      + "\noperandn cannot be resolved"
       + "\nid cannot be resolved"
-      + "\noperandn cannot be resolved"
       + "\nid cannot be resolved"
-      + "\noperandn cannot be resolved"
-      + "\nid cannot be resolved"
-      + "\nexp cannot be resolved");
+      + "\nid cannot be resolved");
   }
   
   @Check
-  public Object shortVarDecl(final /* shortVarDecl */Object sv) {
+  public Object shortVarDecl(final shortVarDecl sv) {
     throw new Error("Unresolved compilation problems:"
-      + "\nidl cannot be resolved"
-      + "\nid cannot be resolved"
-      + "\nepl cannot be resolved");
+      + "\nThe method or field idl is undefined for the type shortVarDecl"
+      + "\nThe method or field epl is undefined for the type shortVarDecl"
+      + "\nid cannot be resolved");
   }
   
   public void checkRelExp(final expression e) {
@@ -432,8 +438,9 @@ public class GoValidator extends AbstractGoValidator {
     return error;
   }
   
-  protected void callMethodCheck(final /* expressionList */Object expList, final String[] elements, final /* operand */Object op) {
+  protected void callMethodCheck(final /* expressionList */Object expList, final String[] elements, final operand op) {
     throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field operandn is undefined for the type operand"
       + "\nexp cannot be resolved"
       + "\nup cannot be resolved"
       + "\npr cannot be resolved"
@@ -457,7 +464,6 @@ public class GoValidator extends AbstractGoValidator {
       + "\nexpression2 cannot be resolved"
       + "\n!== cannot be resolved"
       + "\nexpression2 cannot be resolved"
-      + "\noperandn cannot be resolved"
       + "\nid cannot be resolved");
   }
   
